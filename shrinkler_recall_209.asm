@@ -14,9 +14,6 @@
 ; input IX=source
 ; input DE=destination
 
-	;push	hl
-	;pop	ix
-	jr	shrinkler_decrunch
 
 getnumber
 ;in: hl point to prob table

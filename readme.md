@@ -60,21 +60,20 @@ test data:MEGASDHC.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |-|-|-|-|-|
-|Exomizer|deexo.asm| 169| 9,373| 5,908,411|
-|Exomizer|deexo_180.asm| 168| 9,373| 5,909,517|
-|Exomizer|deexo_180_fast.asm| 173| 9,373| 5,147,822|
-|Exomizer|deexo_180_fast_jp.asm| 184| 9,373| 5,103,279|
-|mhmt|dehrust_ix| 234| 9,397| 2,400,116|
-|mhmt|dehrust_stk| 209| 9,397| 2,160,551|
-|lze|lzdec| 119| 10,092| 1,213,495|
-|lze|lzdec_106| 106| 10,092| 1,135,800|
-|MegaLZ|megalz_dec40| 110| 9,718| 2,363,816|
-|Pletter|unpletter | 170| 9,706| 1,459,575|
-|Pletter|unpletter_180| 169| 9,706| 1,459,583|
-|Shrinkler|shrinkler_recall_209| 211| 8,984|147,898,068|
-|Shrinkler|shrinkler_recall_209_r800| 209| 8,984|147,898,055|
-|zx7b|dzx7b_fast| 191| 9,762| 1,088,297|
-|zx7b|dzx7b_fast_r800| 193| 9,762| 1,099,847|
-|zx7b|dzx7b_slow| 64| 9,762| 1,718,914|
-|zx7b|dzx7b_slow_r800| 65| 9,762| 1,730,464|
-
+|Exomizer|deexo.asm|        169|      9,373|  5,908,411|
+|Exomizer|deexo_180.asm|        168|      9,373|  5,909,517|
+|Exomizer|deexo_180_fast.asm|        173|      9,373|  5,147,822|
+|Exomizer|deexo_180_fast_jp.asm|        184|      9,373|  5,103,279|
+|mhmt|dehrust_ix|        234|      9,397|  2,400,116|
+|mhmt|dehrust_stk|        209|      9,397|  2,160,551|
+|lze|lzdec|        119|     10,092|  1,213,495|
+|lze|lzdec_106|        106|     10,092|  1,135,800|
+|MegaLZ|megalz_dec40|        110|      9,718|  2,363,816|
+|Pletter|unpletter	|        170|      9,706|  1,459,575|
+|Pletter|unpletter_180|        169|      9,706|  1,459,583|
+|Shrinkler|shrinkler_recall_209|        209|      8,984|147,898,055|
+|Shrinkler|shrinkler_recall_209_r800|        209|      8,984|147,898,055|
+|zx7b|dzx7b_fast|        191|      9,762|  1,088,297|
+|zx7b|dzx7b_fast_r800|        193|      9,762|  1,099,847|
+|zx7b|dzx7b_slow|        64|      9,762|  1,718,914|
+|zx7b|dzx7b_slow_r800|        65|      9,762|  1,730,464|
