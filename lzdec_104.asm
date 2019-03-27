@@ -11,11 +11,10 @@
 ;================================================
 
 DECODE_LZE:
-	PUSH	DE
-	EXX
-	POP	DE
+	PUSH	HL
 	LD	BC,0	;CopyCount = 0;
 	EXX
+	POP	HL
 
 	LD	BC,108H	;BitCount=1, BitCountReset=8
 DECODE_LZE_1:
@@ -79,8 +78,9 @@ DECODE_LZE_01:
 	INC	HL
 	EXX
 	LD	L,A
+	AND	7		;and	CopyCount,7
+	LD	C,A
 	EX	AF,AF'
-	LD	C,L		;mov	CopyCount,Distance
 	RRA			;shr	Distance,1
 	RR	L
 	RRA			;shr	Distance,1
@@ -90,9 +90,7 @@ DECODE_LZE_01:
 	OR	0E0H		;or	DistanceH,0e0h
 	LD	H,A
 
-	LD	A,C
-	AND	7		;and	CopyCount,7
-	LD	C,A
+	EX	AF,AF'
 	JP	NZ,DECODE_LZE_00_1	;[[[ or JR ]]]
  	EXX
 	LD	A,(HL)
