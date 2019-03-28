@@ -1,11 +1,11 @@
 ;	LZEe DECODE ROUTINE
 ;
-;	LZEe - LZE enhancement for z80 by uniabis
+;	LZEe - LZE enhancement for Z80 by uniabis
 ;
 ;	LZE Original Copyright (C)1995,2008 GORRY.
 ;	Porting for Z80 by Kei Moroboshi 2017/SEP.
 ;
-; License:original LZE license or zlib/libpng license
+; License:zlib license or original LZE license
 ;
 ; This software is provided 'as-is', without any express or implied
 ; warranty. In no event will the authors be held liable for any damages
