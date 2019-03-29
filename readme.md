@@ -13,6 +13,12 @@ License:GPLv3
 
 [mhmt google code archive](https://code.google.com/archive/p/mhmt/source/default/source)
 
+### [LZ48](http://www.cpcwiki.eu/forum/programming/lz48-cruncherdecruncher/)
+
+### [LZ4](https://github.com/lz4/lz4) v1.8.3 (-9)
+
+[lz4stream for Z80](http://www.geocities.jp/submarine600/html/p6/randd.html)
+
 ### [LZE](http://gorry.haun.org/pw/?lze) 20080228a
 
 [LZEe - LZE enhancement for z80](https://github.com/uniabis/lzee)
@@ -33,55 +39,61 @@ License:CC-BY-SA
 
 ## Compression rate
 
+
 test data:DEOCM-PLD-CV BIOS(16x16KB)
 
-|SectionName|exomizer|mhmt-base|lze|lzee|megalz|pletter|shrinkler|zx7b|
-|-|-|-|-|-|-|-|-|-|
-|MEGASDHC.B00|9,373|9,397|10,092|10,088|9,718|9,706|8,984|9,762|
-|MEGASDHC.B01|4,902|4,923|5,463|5,459|5,124|5,083|4,680|5,091|
-|MEGASDHC.B02|12,494|12,592|13,472|13,468|12,965|12,945|12,148|13,103|
-|MEGASDHC.B03|12,297|12,320|13,187|13,183|12,660|12,700|11,916|12,810|
-|MSX2MAIN.B00|12,740|12,790|13,698|13,694|13,072|13,205|12,276|13,248|
-|MSX2MAIN.B01|13,402|13,485|14,389|14,385|13,917|13,909|13,100|14,002|
-|MSXMUSIC.B00|10,068|10,118|10,830|10,826|10,407|10,466|9,536|10,495|
-|MSX2EXT.B00|12,351|12,370|13,303|13,299|12,833|12,858|11,820|12,964|
-|KANJJ1.B00|6,097|6,454|7,027|7,023|6,514|6,511|5,728|6,591|
-|KANJJ1.B01|3,975|4,241|4,664|4,660|4,320|4,269|3,700|4,424|
-|KANJJ1.B02|10,688|10,960|11,696|11,692|11,362|11,340|10,212|11,629|
-|KANJJ1.B03|10,510|10,765|11,493|11,489|11,161|11,105|10,020|11,451|
-|KANJJ1.B04|10,415|10,708|11,373|11,369|11,016|10,992|9,876|11,327|
-|KANJJ1.B05|10,348|10,610|11,283|11,279|11,012|10,908|9,808|11,341|
-|KANJJ1.B06|10,650|10,934|11,634|11,630|11,281|11,252|10,148|11,601|
-|KANJJ1.B07|9,701|9,953|10,578|10,574|10,247|10,245|9,212|10,586|
-|ALL|160,011|162,620|174,182|174,118|167,609|167,494|153,164|170,425|
+
+|SectionName|exomizer|mhmt-base|lz48|lz4|lze|lzee|megalz|pletter|shrinkler|zx7b|
+|-|-|-|-|-|-|-|-|-|-|-|
+|MEGASDHC.B00|9,373|9,397|10,717|10,839|10,092|10,088|9,718|9,706|8,984|9,762|
+|MEGASDHC.B01|4,902|4,923|5,752|5,798|5,463|5,459|5,124|5,083|4,680|5,091|
+|MEGASDHC.B02|12,494|12,592|14,588|14,749|13,472|13,468|12,965|12,945|12,148|13,103|
+|MEGASDHC.B03|12,297|12,320|14,250|14,298|13,187|13,183|12,660|12,700|11,916|12,810|
+|MSX2MAIN.B00|12,740|12,790|14,268|14,847|13,698|13,694|13,072|13,205|12,276|13,248|
+|MSX2MAIN.B01|13,402|13,485|15,305|15,454|14,389|14,385|13,917|13,909|13,100|14,002|
+|MSXMUSIC.B00|10,068|10,118|12,121|11,634|10,830|10,826|10,407|10,466|9,536|10,495|
+|MSX2EXT.B00|12,351|12,370|14,074|14,583|13,303|13,299|12,833|12,858|11,820|12,964|
+|KANJJ1.B00|6,097|6,454|8,167|8,140|7,027|7,023|6,514|6,511|5,728|6,591|
+|KANJJ1.B01|3,975|4,241|5,532|5,472|4,664|4,660|4,320|4,269|3,700|4,424|
+|KANJJ1.B02|10,688|10,960|14,290|13,019|11,696|11,692|11,362|11,340|10,212|11,629|
+|KANJJ1.B03|10,510|10,765|14,024|12,751|11,493|11,489|11,161|11,105|10,020|11,451|
+|KANJJ1.B04|10,415|10,708|13,960|12,688|11,373|11,369|11,016|10,992|9,876|11,327|
+|KANJJ1.B05|10,348|10,610|13,952|12,552|11,283|11,279|11,012|10,908|9,808|11,341|
+|KANJJ1.B06|10,650|10,934|14,179|12,993|11,634|11,630|11,281|11,252|10,148|11,601|
+|KANJJ1.B07|9,701|9,953|13,048|11,840|10,578|10,574|10,247|10,245|9,212|10,586|
+|ALL|160,011|162,620|198,227|191,657|174,182|174,118|167,609|167,494|153,164|170,425|
 
 
 ## Decompression speed
+
 
 
 test data:ALL(16*16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |-|-|-|-|-|
-Exomizer|deexo.asm|            169|        160,011|    108,490,817|
-Exomizer|deexo_180.asm|            168|        160,011|    108,508,513|
-Exomizer|deexo_180_fast.asm|            173|        160,011|     94,297,587|
-Exomizer|deexo_180_fast_jp.asm|            184|        160,011|     93,483,961|
-mhmt|dehrust_ix|            234|        162,620|     45,607,398|
-mhmt|dehrust_stk|            209|        162,620|     41,333,579|
-lze|lzdec|            119|        174,182|     21,831,226|
-lze|lzdec_104|            104|        174,182|     20,141,132|
-lzee|lzee_dec|             99|        174,118|     19,608,607|
-MegaLZ|megalz_dec40|            110|        167,609|     45,653,296|
-Pletter|unpletter	|            170|        167,494|     28,812,190|
-Pletter|unpletter_180|            169|        167,494|     28,812,318|
-Shrinkler|shrinkler_recall_209|            209|        153,164|  2,648,153,963|
-Shrinkler|shrinkler_recall_209_r800|            209|        153,164|  2,648,153,963|
-zx7b|dzx7b_fast|            191|        170,425|     20,907,617|
-zx7b|dzx7b_fast_r800|            193|        170,425|     21,155,467|
-zx7b|dzx7b_slow|             64|        170,425|     33,688,687|
-zx7b|dzx7b_slow_r800|             65|        170,425|     33,936,537|
-
+|Exomizer|deexo.asm|            169|        160,011|    108,490,817|
+|Exomizer|deexo_180.asm|            168|        160,011|    108,508,513|
+|Exomizer|deexo_180_fast.asm|            173|        160,011|     94,297,587|
+|Exomizer|deexo_180_fast_jp.asm|            184|        160,011|     93,483,961|
+|mhmt|dehrust_ix|            234|        162,620|     45,607,398|
+|mhmt|dehrust_stk|            209|        162,620|     41,333,579|
+|lz48|lz48decrunch_v006|             84|        198,227|     10,096,491|
+|lz4|lz4dec|             97|        191,657|     11,017,032|
+|lze|lzdec|            119|        174,182|     21,831,226|
+|lze|lzdec_104|            104|        174,182|     20,141,132|
+|lzee|lzee_dec_area|             88|        174,118|     25,615,019|
+|lzee|lzee_dec|             99|        174,118|     19,608,607|
+|lzee|lzee_dec_speed|            102|        174,118|     19,569,112|
+|MegaLZ|megalz_dec40|            110|        167,609|     45,653,296|
+|Pletter|unpletter	|            170|        167,494|     28,812,190|
+|Pletter|unpletter_180|            169|        167,494|     28,812,318|
+|Shrinkler|shrinkler_recall_209|            209|        153,164|  2,648,153,963|
+|Shrinkler|shrinkler_recall_209_r800|            209|        153,164|  2,648,153,963|
+|zx7b|dzx7b_fast|            191|        170,425|     20,907,617|
+|zx7b|dzx7b_fast_r800|            193|        170,425|     21,155,467|
+|zx7b|dzx7b_slow|             64|        170,425|     33,688,687|
+|zx7b|dzx7b_slow_r800|             65|        170,425|     33,936,537|
 
 
 
@@ -95,9 +107,13 @@ test data:MEGASDHC.B00(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|          9,373|      5,103,279|
 |mhmt|dehrust_ix|            234|          9,397|      2,400,116|
 |mhmt|dehrust_stk|            209|          9,397|      2,160,551|
+|lz48|lz48decrunch_v006|             84|         10,717|        562,276|
+|lz4|lz4dec|             97|         10,839|        570,164|
 |lze|lzdec|            119|         10,092|      1,213,495|
 |lze|lzdec_104|            104|         10,092|      1,132,145|
+|lzee|lzee_dec_area|             88|         10,088|      1,461,777|
 |lzee|lzee_dec|             99|         10,088|      1,113,895|
+|lzee|lzee_dec_speed|            102|         10,088|      1,112,077|
 |MegaLZ|megalz_dec40|            110|          9,718|      2,363,816|
 |Pletter|unpletter	|            170|          9,706|      1,459,575|
 |Pletter|unpletter_180|            169|          9,706|      1,459,583|
@@ -120,9 +136,13 @@ test data:MEGASDHC.B01(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|          4,902|      2,887,834|
 |mhmt|dehrust_ix|            234|          4,923|      1,520,370|
 |mhmt|dehrust_stk|            209|          4,923|      1,393,765|
+|lz48|lz48decrunch_v006|             84|          5,752|        506,229|
+|lz4|lz4dec|             97|          5,798|        517,676|
 |lze|lzdec|            119|          5,463|        846,520|
 |lze|lzdec_104|            104|          5,463|        798,828|
+|lzee|lzee_dec_area|             88|          5,459|        973,795|
 |lzee|lzee_dec|             99|          5,459|        786,603|
+|lzee|lzee_dec_speed|            102|          5,459|        785,523|
 |MegaLZ|megalz_dec40|            110|          5,124|      1,578,986|
 |Pletter|unpletter	|            170|          5,083|        905,030|
 |Pletter|unpletter_180|            169|          5,083|        905,038|
@@ -145,9 +165,13 @@ test data:MEGASDHC.B02(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         12,494|      6,846,967|
 |mhmt|dehrust_ix|            234|         12,592|      3,184,499|
 |mhmt|dehrust_stk|            209|         12,592|      2,868,962|
+|lz48|lz48decrunch_v006|             84|         14,588|        597,859|
+|lz4|lz4dec|             97|         14,749|        630,168|
 |lze|lzdec|            119|         13,472|      1,536,039|
 |lze|lzdec_104|            104|         13,472|      1,417,875|
+|lzee|lzee_dec_area|             88|         13,468|      1,864,327|
 |lzee|lzee_dec|             99|         13,468|      1,389,850|
+|lzee|lzee_dec_speed|            102|         13,468|      1,387,184|
 |MegaLZ|megalz_dec40|            110|         12,965|      3,108,603|
 |Pletter|unpletter	|            170|         12,945|      1,990,443|
 |Pletter|unpletter_180|            169|         12,945|      1,990,451|
@@ -170,9 +194,13 @@ test data:MEGASDHC.B03(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         12,297|      6,645,226|
 |mhmt|dehrust_ix|            234|         12,320|      2,994,167|
 |mhmt|dehrust_stk|            209|         12,320|      2,684,358|
+|lz48|lz48decrunch_v006|             84|         14,250|        585,776|
+|lz4|lz4dec|             97|         14,298|        599,908|
 |lze|lzdec|            119|         13,187|      1,481,802|
 |lze|lzdec_104|            104|         13,187|      1,372,662|
+|lzee|lzee_dec_area|             88|         13,183|      1,809,889|
 |lzee|lzee_dec|             99|         13,183|      1,348,762|
+|lzee|lzee_dec_speed|            102|         13,183|      1,346,324|
 |MegaLZ|megalz_dec40|            110|         12,660|      2,979,373|
 |Pletter|unpletter	|            170|         12,700|      1,873,970|
 |Pletter|unpletter_180|            169|         12,700|      1,873,978|
@@ -195,9 +223,13 @@ test data:MSX2MAIN.B00(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         12,740|      6,640,800|
 |mhmt|dehrust_ix|            234|         12,790|      3,081,329|
 |mhmt|dehrust_stk|            209|         12,790|      2,753,298|
+|lz48|lz48decrunch_v006|             84|         14,268|        619,366|
+|lz4|lz4dec|             97|         14,847|        609,147|
 |lze|lzdec|            119|         13,698|      1,533,796|
 |lze|lzdec_104|            104|         13,698|      1,416,718|
+|lzee|lzee_dec_area|             88|         13,694|      1,897,881|
 |lzee|lzee_dec|             99|         13,694|      1,398,093|
+|lzee|lzee_dec_speed|            102|         13,694|      1,395,540|
 |MegaLZ|megalz_dec40|            110|         13,072|      3,077,702|
 |Pletter|unpletter	|            170|         13,205|      1,788,932|
 |Pletter|unpletter_180|            169|         13,205|      1,788,940|
@@ -220,9 +252,13 @@ test data:MSX2MAIN.B01(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         13,402|      6,979,927|
 |mhmt|dehrust_ix|            234|         13,485|      3,142,810|
 |mhmt|dehrust_stk|            209|         13,485|      2,808,962|
+|lz48|lz48decrunch_v006|             84|         15,305|        566,961|
+|lz4|lz4dec|             97|         15,454|        588,184|
 |lze|lzdec|            119|         14,389|      1,560,048|
 |lze|lzdec_104|            104|         14,389|      1,446,466|
+|lzee|lzee_dec_area|             88|         14,385|      1,916,137|
 |lzee|lzee_dec|             99|         14,385|      1,420,691|
+|lzee|lzee_dec_speed|            102|         14,385|      1,418,151|
 |MegaLZ|megalz_dec40|            110|         13,917|      3,129,990|
 |Pletter|unpletter	|            170|         13,909|      1,997,407|
 |Pletter|unpletter_180|            169|         13,909|      1,997,415|
@@ -245,9 +281,13 @@ test data:MSXMUSIC.B00(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         10,068|      5,174,139|
 |mhmt|dehrust_ix|            234|         10,118|      2,529,789|
 |mhmt|dehrust_stk|            209|         10,118|      2,274,112|
+|lz48|lz48decrunch_v006|             84|         12,121|        597,381|
+|lz4|lz4dec|             97|         11,634|        608,085|
 |lze|lzdec|            119|         10,830|      1,270,114|
 |lze|lzdec_104|            104|         10,830|      1,183,499|
+|lzee|lzee_dec_area|             88|         10,826|      1,543,591|
 |lzee|lzee_dec|             99|         10,826|      1,165,924|
+|lzee|lzee_dec_speed|            102|         10,826|      1,164,007|
 |MegaLZ|megalz_dec40|            110|         10,407|      2,560,679|
 |Pletter|unpletter	|            170|         10,466|      1,474,879|
 |Pletter|unpletter_180|            169|         10,466|      1,474,887|
@@ -270,9 +310,13 @@ test data:MSX2EXT.B00(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         12,351|      6,961,868|
 |mhmt|dehrust_ix|            234|         12,370|      3,112,516|
 |mhmt|dehrust_stk|            209|         12,370|      2,798,981|
+|lz48|lz48decrunch_v006|             84|         14,074|        638,203|
+|lz4|lz4dec|             97|         14,583|        624,663|
 |lze|lzdec|            119|         13,303|      1,505,104|
 |lze|lzdec_104|            104|         13,303|      1,391,024|
+|lzee|lzee_dec_area|             88|         13,299|      1,847,207|
 |lzee|lzee_dec|             99|         13,299|      1,369,549|
+|lzee|lzee_dec_speed|            102|         13,299|      1,367,029|
 |MegaLZ|megalz_dec40|            110|         12,833|      3,030,834|
 |Pletter|unpletter	|            170|         12,858|      2,027,765|
 |Pletter|unpletter_180|            169|         12,858|      2,027,773|
@@ -295,9 +339,13 @@ test data:KANJJ1.B00(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|          6,097|      4,432,577|
 |mhmt|dehrust_ix|            234|          6,454|      2,490,929|
 |mhmt|dehrust_stk|            209|          6,454|      2,300,068|
+|lz48|lz48decrunch_v006|             84|          8,167|        753,001|
+|lz4|lz4dec|             97|          8,140|        793,238|
 |lze|lzdec|            119|          7,027|      1,145,514|
 |lze|lzdec_104|            104|          7,027|      1,048,779|
+|lzee|lzee_dec_area|             88|          7,023|      1,256,449|
 |lzee|lzee_dec|             99|          7,023|      1,010,079|
+|lzee|lzee_dec_speed|            102|          7,023|      1,007,713|
 |MegaLZ|megalz_dec40|            110|          6,514|      2,432,743|
 |Pletter|unpletter	|            170|          6,511|      1,461,388|
 |Pletter|unpletter_180|            169|          6,511|      1,461,396|
@@ -320,9 +368,13 @@ test data:KANJJ1.B01(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|          3,975|      3,046,689|
 |mhmt|dehrust_ix|            234|          4,241|      1,826,309|
 |mhmt|dehrust_stk|            209|          4,241|      1,698,453|
+|lz48|lz48decrunch_v006|             84|          5,532|        669,209|
+|lz4|lz4dec|             97|          5,472|        681,619|
 |lze|lzdec|            119|          4,664|        907,166|
 |lze|lzdec_104|            104|          4,664|        838,447|
+|lzee|lzee_dec_area|             88|          4,660|        976,705|
 |lzee|lzee_dec|             99|          4,660|        810,672|
+|lzee|lzee_dec_speed|            102|          4,660|        808,991|
 |MegaLZ|megalz_dec40|            110|          4,320|      1,795,413|
 |Pletter|unpletter	|            170|          4,269|      1,106,926|
 |Pletter|unpletter_180|            169|          4,269|      1,106,934|
@@ -345,9 +397,13 @@ test data:KANJJ1.B02(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         10,688|      6,671,145|
 |mhmt|dehrust_ix|            234|         10,960|      3,286,239|
 |mhmt|dehrust_stk|            209|         10,960|      2,990,229|
+|lz48|lz48decrunch_v006|             84|         14,290|        662,376|
+|lz4|lz4dec|             97|         13,019|        802,910|
 |lze|lzdec|            119|         11,696|      1,503,720|
 |lze|lzdec_104|            104|         11,696|      1,377,399|
+|lzee|lzee_dec_area|             88|         11,692|      1,719,598|
 |lzee|lzee_dec|             99|         11,692|      1,326,874|
+|lzee|lzee_dec_speed|            102|         11,692|      1,323,812|
 |MegaLZ|megalz_dec40|            110|         11,362|      3,337,759|
 |Pletter|unpletter	|            170|         11,340|      2,176,730|
 |Pletter|unpletter_180|            169|         11,340|      2,176,738|
@@ -370,9 +426,13 @@ test data:KANJJ1.B03(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         10,510|      6,524,879|
 |mhmt|dehrust_ix|            234|         10,765|      3,242,574|
 |mhmt|dehrust_stk|            209|         10,765|      2,950,438|
+|lz48|lz48decrunch_v006|             84|         14,024|        676,681|
+|lz4|lz4dec|             97|         12,751|        799,080|
 |lze|lzdec|            119|         11,493|      1,480,718|
 |lze|lzdec_104|            104|         11,493|      1,357,652|
+|lzee|lzee_dec_area|             88|         11,489|      1,688,902|
 |lzee|lzee_dec|             99|         11,489|      1,307,102|
+|lzee|lzee_dec_speed|            102|         11,489|      1,304,107|
 |MegaLZ|megalz_dec40|            110|         11,161|      3,294,363|
 |Pletter|unpletter	|            170|         11,105|      2,137,378|
 |Pletter|unpletter_180|            169|         11,105|      2,137,386|
@@ -395,9 +455,13 @@ test data:KANJJ1.B04(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         10,415|      6,371,370|
 |mhmt|dehrust_ix|            234|         10,708|      3,254,294|
 |mhmt|dehrust_stk|            209|         10,708|      2,963,646|
+|lz48|lz48decrunch_v006|             84|         13,960|        681,024|
+|lz4|lz4dec|             97|         12,688|        816,617|
 |lze|lzdec|            119|         11,373|      1,480,839|
 |lze|lzdec_104|            104|         11,373|      1,356,257|
+|lzee|lzee_dec_area|             88|         11,369|      1,687,826|
 |lzee|lzee_dec|             99|         11,369|      1,305,907|
+|lzee|lzee_dec_speed|            102|         11,369|      1,302,881|
 |MegaLZ|megalz_dec40|            110|         11,016|      3,271,673|
 |Pletter|unpletter	|            170|         10,992|      2,130,343|
 |Pletter|unpletter_180|            169|         10,992|      2,130,351|
@@ -420,9 +484,13 @@ test data:KANJJ1.B05(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         10,348|      6,415,365|
 |mhmt|dehrust_ix|            234|         10,610|      3,218,897|
 |mhmt|dehrust_stk|            209|         10,610|      2,929,495|
+|lz48|lz48decrunch_v006|             84|         13,952|        675,287|
+|lz4|lz4dec|             97|         12,552|        806,935|
 |lze|lzdec|            119|         11,283|      1,468,273|
 |lze|lzdec_104|            104|         11,283|      1,345,731|
+|lzee|lzee_dec_area|             88|         11,279|      1,670,829|
 |lzee|lzee_dec|             99|         11,279|      1,295,256|
+|lzee|lzee_dec_speed|            102|         11,279|      1,292,271|
 |MegaLZ|megalz_dec40|            110|         11,012|      3,284,220|
 |Pletter|unpletter	|            170|         10,908|      2,106,071|
 |Pletter|unpletter_180|            169|         10,908|      2,106,079|
@@ -445,9 +513,13 @@ test data:KANJJ1.B06(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|         10,650|      6,650,849|
 |mhmt|dehrust_ix|            234|         10,934|      3,297,965|
 |mhmt|dehrust_stk|            209|         10,934|      3,001,103|
+|lz48|lz48decrunch_v006|             84|         14,179|        662,958|
+|lz4|lz4dec|             97|         12,993|        811,542|
 |lze|lzdec|            119|         11,634|      1,504,858|
 |lze|lzdec_104|            104|         11,634|      1,377,964|
+|lzee|lzee_dec_area|             88|         11,630|      1,713,147|
 |lzee|lzee_dec|             99|         11,630|      1,325,489|
+|lzee|lzee_dec_speed|            102|         11,630|      1,322,396|
 |MegaLZ|megalz_dec40|            110|         11,281|      3,337,059|
 |Pletter|unpletter	|            170|         11,252|      2,178,723|
 |Pletter|unpletter_180|            169|         11,252|      2,178,731|
@@ -470,9 +542,13 @@ test data:KANJJ1.B07(16KB)
 |Exomizer|deexo_180_fast_jp.asm|            184|          9,701|      6,131,047|
 |mhmt|dehrust_ix|            234|          9,953|      3,024,595|
 |mhmt|dehrust_stk|            209|          9,953|      2,757,158|
+|lz48|lz48decrunch_v006|             84|         13,048|        641,904|
+|lz4|lz4dec|             97|         11,840|        757,096|
 |lze|lzdec|            119|         10,578|      1,393,220|
 |lze|lzdec_104|            104|         10,578|      1,279,686|
+|lzee|lzee_dec_area|             88|         10,574|      1,586,959|
 |lzee|lzee_dec|             99|         10,574|      1,233,861|
+|lzee|lzee_dec_speed|            102|         10,574|      1,231,106|
 |MegaLZ|megalz_dec40|            110|         10,247|      3,070,083|
 |Pletter|unpletter	|            170|         10,245|      1,996,630|
 |Pletter|unpletter_180|            169|         10,245|      1,996,638|
@@ -482,9 +558,4 @@ test data:KANJJ1.B07(16KB)
 |zx7b|dzx7b_fast_r800|            193|         10,586|      1,449,679|
 |zx7b|dzx7b_slow|             64|         10,586|      2,328,107|
 |zx7b|dzx7b_slow_r800|             65|         10,586|      2,345,962|
-
-
-
-
-
 
