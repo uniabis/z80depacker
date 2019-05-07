@@ -78,6 +78,8 @@ test data:ALL(16*16KB)
 |mhmt|dehrust_stk|            209|        162,620|     41,333,579|
 |lz48|lz48decrunch_v006|             84|        198,227|     10,096,491|
 |lz48|lz48decrunch_v006_180|             89|        198,227|      9,985,825|
+|lz48|lz48decrunch_v006_|             70|        198,227|      9,987,125|
+|lz48|lz48decrunch_v006__180|             74|        198,227|      9,880,129|
 |lz49|lz49decrunch_v001|            106|        195,027|     11,349,204|
 |lz49|lz49decrunch_v001_180|            112|        195,027|     11,315,936|
 |lz4|lz4dec|             97|        191,657|     11,017,032|
@@ -110,6 +112,8 @@ test data:MEGASDHC.B00(16KB)
 |mhmt|dehrust_stk|            209|          9,397|      2,160,551|
 |lz48|lz48decrunch_v006|             84|         10,717|        562,276|
 |lz48|lz48decrunch_v006_180|             89|         10,717|        557,720|
+|lz48|lz48decrunch_v006_|             70|         10,717|        557,554|
+|lz48|lz48decrunch_v006__180|             74|         10,717|        552,447|
 |lz49|lz49decrunch_v001|            106|         10,628|        608,577|
 |lz49|lz49decrunch_v001_180|            112|         10,628|        607,777|
 |lz4|lz4dec|             97|         10,839|        570,164|
@@ -142,6 +146,8 @@ test data:MEGASDHC.B01(16KB)
 |mhmt|dehrust_stk|            209|          4,923|      1,393,765|
 |lz48|lz48decrunch_v006|             84|          5,752|        506,229|
 |lz48|lz48decrunch_v006_180|             89|          5,752|        502,977|
+|lz48|lz48decrunch_v006_|             70|          5,752|        504,561|
+|lz48|lz48decrunch_v006__180|             74|          5,752|        500,894|
 |lz49|lz49decrunch_v001|            106|          5,559|        540,251|
 |lz49|lz49decrunch_v001_180|            112|          5,559|        539,444|
 |lz4|lz4dec|             97|          5,798|        517,676|
@@ -174,6 +180,8 @@ test data:MEGASDHC.B02(16KB)
 |mhmt|dehrust_stk|            209|         12,592|      2,868,962|
 |lz48|lz48decrunch_v006|             84|         14,588|        597,859|
 |lz48|lz48decrunch_v006_180|             89|         14,588|        592,539|
+|lz48|lz48decrunch_v006_|             70|         14,588|        593,341|
+|lz48|lz48decrunch_v006__180|             74|         14,588|        587,052|
 |lz49|lz49decrunch_v001|            106|         14,512|        675,825|
 |lz49|lz49decrunch_v001_180|            112|         14,512|        674,815|
 |lz4|lz4dec|             97|         14,749|        630,168|
@@ -206,6 +214,8 @@ test data:MEGASDHC.B03(16KB)
 |mhmt|dehrust_stk|            209|         12,320|      2,684,358|
 |lz48|lz48decrunch_v006|             84|         14,250|        585,776|
 |lz48|lz48decrunch_v006_180|             89|         14,250|        580,906|
+|lz48|lz48decrunch_v006_|             70|         14,250|        581,226|
+|lz48|lz48decrunch_v006__180|             74|         14,250|        575,253|
 |lz49|lz49decrunch_v001|            106|         14,030|        658,644|
 |lz49|lz49decrunch_v001_180|            112|         14,030|        657,704|
 |lz4|lz4dec|             97|         14,298|        599,908|
@@ -238,6 +248,8 @@ test data:MSX2MAIN.B00(16KB)
 |mhmt|dehrust_stk|            209|         12,790|      2,753,298|
 |lz48|lz48decrunch_v006|             84|         14,268|        619,366|
 |lz48|lz48decrunch_v006_180|             89|         14,268|        612,933|
+|lz48|lz48decrunch_v006_|             70|         14,268|        613,020|
+|lz48|lz48decrunch_v006__180|             74|         14,268|        606,546|
 |lz49|lz49decrunch_v001|            106|         14,196|        680,983|
 |lz49|lz49decrunch_v001_180|            112|         14,196|        679,175|
 |lz4|lz4dec|             97|         14,847|        609,147|
@@ -270,6 +282,8 @@ test data:MSX2MAIN.B01(16KB)
 |mhmt|dehrust_stk|            209|         13,485|      2,808,962|
 |lz48|lz48decrunch_v006|             84|         15,305|        566,961|
 |lz48|lz48decrunch_v006_180|             89|         15,305|        562,871|
+|lz48|lz48decrunch_v006_|             70|         15,305|        563,268|
+|lz48|lz48decrunch_v006__180|             74|         15,305|        557,634|
 |lz49|lz49decrunch_v001|            106|         15,254|        636,775|
 |lz49|lz49decrunch_v001_180|            112|         15,254|        636,255|
 |lz4|lz4dec|             97|         15,454|        588,184|
@@ -302,6 +316,8 @@ test data:MSXMUSIC.B00(16KB)
 |mhmt|dehrust_stk|            209|         10,118|      2,274,112|
 |lz48|lz48decrunch_v006|             84|         12,121|        597,381|
 |lz48|lz48decrunch_v006_180|             89|         12,121|        592,068|
+|lz48|lz48decrunch_v006_|             70|         12,121|        593,944|
+|lz48|lz48decrunch_v006__180|             74|         12,121|        587,545|
 |lz49|lz49decrunch_v001|            106|         11,980|        648,929|
 |lz49|lz49decrunch_v001_180|            112|         11,980|        648,073|
 |lz4|lz4dec|             97|         11,634|        608,085|
@@ -334,6 +350,8 @@ test data:MSX2EXT.B00(16KB)
 |mhmt|dehrust_stk|            209|         12,370|      2,798,981|
 |lz48|lz48decrunch_v006|             84|         14,074|        638,203|
 |lz48|lz48decrunch_v006_180|             89|         14,074|        631,729|
+|lz48|lz48decrunch_v006_|             70|         14,074|        633,823|
+|lz48|lz48decrunch_v006__180|             74|         14,074|        626,334|
 |lz49|lz49decrunch_v001|            106|         13,969|        708,915|
 |lz49|lz49decrunch_v001_180|            112|         13,969|        707,716|
 |lz4|lz4dec|             97|         14,583|        624,663|
@@ -366,6 +384,8 @@ test data:KANJJ1.B00(16KB)
 |mhmt|dehrust_stk|            209|          6,454|      2,300,068|
 |lz48|lz48decrunch_v006|             84|          8,167|        753,001|
 |lz48|lz48decrunch_v006_180|             89|          8,167|        739,890|
+|lz48|lz48decrunch_v006_|             70|          8,167|        735,565|
+|lz48|lz48decrunch_v006__180|             74|          8,167|        727,779|
 |lz49|lz49decrunch_v001|            106|          7,824|        820,492|
 |lz49|lz49decrunch_v001_180|            112|          7,824|        814,841|
 |lz4|lz4dec|             97|          8,140|        793,238|
@@ -398,6 +418,8 @@ test data:KANJJ1.B01(16KB)
 |mhmt|dehrust_stk|            209|          4,241|      1,698,453|
 |lz48|lz48decrunch_v006|             84|          5,532|        669,209|
 |lz48|lz48decrunch_v006_180|             89|          5,532|        658,590|
+|lz48|lz48decrunch_v006_|             70|          5,532|        654,070|
+|lz48|lz48decrunch_v006__180|             74|          5,532|        648,433|
 |lz49|lz49decrunch_v001|            106|          5,240|        714,209|
 |lz49|lz49decrunch_v001_180|            112|          5,240|        709,503|
 |lz4|lz4dec|             97|          5,472|        681,619|
@@ -430,6 +452,8 @@ test data:KANJJ1.B02(16KB)
 |mhmt|dehrust_stk|            209|         10,960|      2,990,229|
 |lz48|lz48decrunch_v006|             84|         14,290|        662,376|
 |lz48|lz48decrunch_v006_180|             89|         14,290|        655,173|
+|lz48|lz48decrunch_v006_|             70|         14,290|        656,629|
+|lz48|lz48decrunch_v006__180|             74|         14,290|        648,620|
 |lz49|lz49decrunch_v001|            106|         13,985|        783,598|
 |lz49|lz49decrunch_v001_180|            112|         13,985|        781,440|
 |lz4|lz4dec|             97|         13,019|        802,910|
@@ -462,6 +486,8 @@ test data:KANJJ1.B03(16KB)
 |mhmt|dehrust_stk|            209|         10,765|      2,950,438|
 |lz48|lz48decrunch_v006|             84|         14,024|        676,681|
 |lz48|lz48decrunch_v006_180|             89|         14,024|        668,372|
+|lz48|lz48decrunch_v006_|             70|         14,024|        668,286|
+|lz48|lz48decrunch_v006__180|             74|         14,024|        660,487|
 |lz49|lz49decrunch_v001|            106|         13,761|        786,435|
 |lz49|lz49decrunch_v001_180|            112|         13,761|        783,668|
 |lz4|lz4dec|             97|         12,751|        799,080|
@@ -494,6 +520,8 @@ test data:KANJJ1.B04(16KB)
 |mhmt|dehrust_stk|            209|         10,708|      2,963,646|
 |lz48|lz48decrunch_v006|             84|         13,960|        681,024|
 |lz48|lz48decrunch_v006_180|             89|         13,960|        672,638|
+|lz48|lz48decrunch_v006_|             70|         13,960|        673,078|
+|lz48|lz48decrunch_v006__180|             74|         13,960|        665,075|
 |lz49|lz49decrunch_v001|            106|         13,717|        784,719|
 |lz49|lz49decrunch_v001_180|            112|         13,717|        782,015|
 |lz4|lz4dec|             97|         12,688|        816,617|
@@ -526,6 +554,8 @@ test data:KANJJ1.B05(16KB)
 |mhmt|dehrust_stk|            209|         10,610|      2,929,495|
 |lz48|lz48decrunch_v006|             84|         13,952|        675,287|
 |lz48|lz48decrunch_v006_180|             89|         13,952|        667,212|
+|lz48|lz48decrunch_v006_|             70|         13,952|        667,919|
+|lz48|lz48decrunch_v006__180|             74|         13,952|        659,949|
 |lz49|lz49decrunch_v001|            106|         13,674|        789,919|
 |lz49|lz49decrunch_v001_180|            112|         13,674|        787,271|
 |lz4|lz4dec|             97|         12,552|        806,935|
@@ -558,6 +588,8 @@ test data:KANJJ1.B06(16KB)
 |mhmt|dehrust_stk|            209|         10,934|      3,001,103|
 |lz48|lz48decrunch_v006|             84|         14,179|        662,958|
 |lz48|lz48decrunch_v006_180|             89|         14,179|        655,412|
+|lz48|lz48decrunch_v006_|             70|         14,179|        656,277|
+|lz48|lz48decrunch_v006__180|             74|         14,179|        648,507|
 |lz49|lz49decrunch_v001|            106|         13,920|        774,080|
 |lz49|lz49decrunch_v001_180|            112|         13,920|        771,593|
 |lz4|lz4dec|             97|         12,993|        811,542|
@@ -590,6 +622,8 @@ test data:KANJJ1.B07(16KB)
 |mhmt|dehrust_stk|            209|          9,953|      2,757,158|
 |lz48|lz48decrunch_v006|             84|         13,048|        641,904|
 |lz48|lz48decrunch_v006_180|             89|         13,048|        634,795|
+|lz48|lz48decrunch_v006_|             70|         13,048|        634,564|
+|lz48|lz48decrunch_v006__180|             74|         13,048|        627,574|
 |lz49|lz49decrunch_v001|            106|         12,778|        736,853|
 |lz49|lz49decrunch_v001_180|            112|         12,778|        734,646|
 |lz4|lz4dec|             97|         11,840|        757,096|
