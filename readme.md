@@ -17,7 +17,7 @@ License:GPLv3
 
 ### [LZ4](https://github.com/lz4/lz4) v1.8.3 (-9)
 
-[lz4stream for Z80](http://www.geocities.jp/submarine600/html/p6/randd.html)
+[lz4stream for Z80](http://mydocuments.g2.xrea.com/html/p6/randd.html)
 
 ### [LZE](http://gorry.haun.org/pw/?lze) 20080228a
 
@@ -43,7 +43,7 @@ License:CC-BY-SA
 test data:DEOCM-PLD-CV BIOS(16x16KB)
 
 |SectionName|exomizer|mhmt-base|lz48|lz49|lz4|lze|lzee|megalz|pletter|shrinkler|zx7b|
-|-|-|-|-|-|-|-|-|-|-|-|-|
+|---|---|---|---|---|---|---|---|---|---|---|---|
 |MEGASDHC.B00|9,373|9,397|10,717|10,628|10,839|10,092|10,088|9,718|9,706|8,984|9,762|
 |MEGASDHC.B01|4,902|4,923|5,752|5,559|5,798|5,463|5,459|5,124|5,083|4,680|5,091|
 |MEGASDHC.B02|12,494|12,592|14,588|14,512|14,749|13,472|13,468|12,965|12,945|12,148|13,103|
@@ -66,10 +66,11 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 ## Decompression speed
 
 
+
 test data:ALL(16*16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|        160,011|    108,490,817|
 |Exomizer|deexo_180.asm|            168|        160,011|    108,508,513|
 |Exomizer|deexo_180_fast.asm|            173|        160,011|     94,297,587|
@@ -77,7 +78,6 @@ test data:ALL(16*16KB)
 |mhmt|dehrust_ix|            234|        162,620|     45,607,398|
 |mhmt|dehrust_stk|            209|        162,620|     41,333,579|
 |lz48|lz48decrunch_v006|             84|        198,227|     10,096,491|
-|lz48|lz48decrunch_v006_180|             89|        198,227|      9,985,825|
 |lz48|lz48decrunch_v006_|             70|        198,227|      9,987,125|
 |lz48|lz48decrunch_v006__180|             74|        198,227|      9,880,129|
 |lz49|lz49decrunch_v001|            106|        195,027|     11,349,204|
@@ -93,6 +93,7 @@ test data:ALL(16*16KB)
 |Pletter|unpletter_180|            169|        167,494|     28,812,318|
 |Shrinkler|shrinkler_recall_209|            209|        153,164|  2,648,153,963|
 |Shrinkler|shrinkler_recall_209_r800|            209|        153,164|  2,648,153,963|
+|Shrinkler|shrinkler_recall_209_r800_|            211|        153,164|  2,699,900,331|
 |zx7b|dzx7b_fast|            191|        170,425|     20,907,617|
 |zx7b|dzx7b_fast_r800|            193|        170,425|     21,155,467|
 |zx7b|dzx7b_slow|             64|        170,425|     33,688,687|
@@ -103,7 +104,7 @@ test data:ALL(16*16KB)
 test data:MEGASDHC.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|          9,373|      5,908,411|
 |Exomizer|deexo_180.asm|            168|          9,373|      5,909,517|
 |Exomizer|deexo_180_fast.asm|            173|          9,373|      5,147,822|
@@ -111,7 +112,6 @@ test data:MEGASDHC.B00(16KB)
 |mhmt|dehrust_ix|            234|          9,397|      2,400,116|
 |mhmt|dehrust_stk|            209|          9,397|      2,160,551|
 |lz48|lz48decrunch_v006|             84|         10,717|        562,276|
-|lz48|lz48decrunch_v006_180|             89|         10,717|        557,720|
 |lz48|lz48decrunch_v006_|             70|         10,717|        557,554|
 |lz48|lz48decrunch_v006__180|             74|         10,717|        552,447|
 |lz49|lz49decrunch_v001|            106|         10,628|        608,577|
@@ -127,6 +127,7 @@ test data:MEGASDHC.B00(16KB)
 |Pletter|unpletter_180|            169|          9,706|      1,459,583|
 |Shrinkler|shrinkler_recall_209|            209|          8,984|    147,898,055|
 |Shrinkler|shrinkler_recall_209_r800|            209|          8,984|    147,898,055|
+|Shrinkler|shrinkler_recall_209_r800_|            211|          8,984|    150,852,880|
 |zx7b|dzx7b_fast|            191|          9,762|      1,088,297|
 |zx7b|dzx7b_fast_r800|            193|          9,762|      1,099,847|
 |zx7b|dzx7b_slow|             64|          9,762|      1,718,914|
@@ -137,7 +138,7 @@ test data:MEGASDHC.B00(16KB)
 test data:MEGASDHC.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|          4,902|      3,307,149|
 |Exomizer|deexo_180.asm|            168|          4,902|      3,308,255|
 |Exomizer|deexo_180_fast.asm|            173|          4,902|      2,910,323|
@@ -145,7 +146,6 @@ test data:MEGASDHC.B01(16KB)
 |mhmt|dehrust_ix|            234|          4,923|      1,520,370|
 |mhmt|dehrust_stk|            209|          4,923|      1,393,765|
 |lz48|lz48decrunch_v006|             84|          5,752|        506,229|
-|lz48|lz48decrunch_v006_180|             89|          5,752|        502,977|
 |lz48|lz48decrunch_v006_|             70|          5,752|        504,561|
 |lz48|lz48decrunch_v006__180|             74|          5,752|        500,894|
 |lz49|lz49decrunch_v001|            106|          5,559|        540,251|
@@ -161,6 +161,7 @@ test data:MEGASDHC.B01(16KB)
 |Pletter|unpletter_180|            169|          5,083|        905,038|
 |Shrinkler|shrinkler_recall_209|            209|          4,680|     78,117,653|
 |Shrinkler|shrinkler_recall_209_r800|            209|          4,680|     78,117,653|
+|Shrinkler|shrinkler_recall_209_r800_|            211|          4,680|     79,661,805|
 |zx7b|dzx7b_fast|            191|          5,091|        769,861|
 |zx7b|dzx7b_fast_r800|            193|          5,091|        776,056|
 |zx7b|dzx7b_slow|             64|          5,091|      1,109,193|
@@ -171,7 +172,7 @@ test data:MEGASDHC.B01(16KB)
 test data:MEGASDHC.B02(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         12,494|      7,962,111|
 |Exomizer|deexo_180.asm|            168|         12,494|      7,963,217|
 |Exomizer|deexo_180_fast.asm|            173|         12,494|      6,909,262|
@@ -179,7 +180,6 @@ test data:MEGASDHC.B02(16KB)
 |mhmt|dehrust_ix|            234|         12,592|      3,184,499|
 |mhmt|dehrust_stk|            209|         12,592|      2,868,962|
 |lz48|lz48decrunch_v006|             84|         14,588|        597,859|
-|lz48|lz48decrunch_v006_180|             89|         14,588|        592,539|
 |lz48|lz48decrunch_v006_|             70|         14,588|        593,341|
 |lz48|lz48decrunch_v006__180|             74|         14,588|        587,052|
 |lz49|lz49decrunch_v001|            106|         14,512|        675,825|
@@ -195,6 +195,7 @@ test data:MEGASDHC.B02(16KB)
 |Pletter|unpletter_180|            169|         12,945|      1,990,451|
 |Shrinkler|shrinkler_recall_209|            209|         12,148|    204,353,362|
 |Shrinkler|shrinkler_recall_209_r800|            209|         12,148|    204,353,362|
+|Shrinkler|shrinkler_recall_209_r800_|            211|         12,148|    208,379,158|
 |zx7b|dzx7b_fast|            191|         13,103|      1,438,531|
 |zx7b|dzx7b_fast_r800|            193|         13,103|      1,456,646|
 |zx7b|dzx7b_slow|             64|         13,103|      2,374,575|
@@ -205,7 +206,7 @@ test data:MEGASDHC.B02(16KB)
 test data:MEGASDHC.B03(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         12,297|      7,705,336|
 |Exomizer|deexo_180.asm|            168|         12,297|      7,706,442|
 |Exomizer|deexo_180_fast.asm|            173|         12,297|      6,703,203|
@@ -213,7 +214,6 @@ test data:MEGASDHC.B03(16KB)
 |mhmt|dehrust_ix|            234|         12,320|      2,994,167|
 |mhmt|dehrust_stk|            209|         12,320|      2,684,358|
 |lz48|lz48decrunch_v006|             84|         14,250|        585,776|
-|lz48|lz48decrunch_v006_180|             89|         14,250|        580,906|
 |lz48|lz48decrunch_v006_|             70|         14,250|        581,226|
 |lz48|lz48decrunch_v006__180|             74|         14,250|        575,253|
 |lz49|lz49decrunch_v001|            106|         14,030|        658,644|
@@ -229,6 +229,7 @@ test data:MEGASDHC.B03(16KB)
 |Pletter|unpletter_180|            169|         12,700|      1,873,978|
 |Shrinkler|shrinkler_recall_209|            209|         11,916|    198,247,021|
 |Shrinkler|shrinkler_recall_209_r800|            209|         11,916|    198,247,021|
+|Shrinkler|shrinkler_recall_209_r800_|            211|         11,916|    202,175,137|
 |zx7b|dzx7b_fast|            191|         12,810|      1,341,173|
 |zx7b|dzx7b_fast_r800|            193|         12,810|      1,357,098|
 |zx7b|dzx7b_slow|             64|         12,810|      2,211,732|
@@ -239,7 +240,7 @@ test data:MEGASDHC.B03(16KB)
 test data:MSX2MAIN.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         12,740|      7,678,676|
 |Exomizer|deexo_180.asm|            168|         12,740|      7,679,782|
 |Exomizer|deexo_180_fast.asm|            173|         12,740|      6,695,662|
@@ -247,7 +248,6 @@ test data:MSX2MAIN.B00(16KB)
 |mhmt|dehrust_ix|            234|         12,790|      3,081,329|
 |mhmt|dehrust_stk|            209|         12,790|      2,753,298|
 |lz48|lz48decrunch_v006|             84|         14,268|        619,366|
-|lz48|lz48decrunch_v006_180|             89|         14,268|        612,933|
 |lz48|lz48decrunch_v006_|             70|         14,268|        613,020|
 |lz48|lz48decrunch_v006__180|             74|         14,268|        606,546|
 |lz49|lz49decrunch_v001|            106|         14,196|        680,983|
@@ -263,6 +263,7 @@ test data:MSX2MAIN.B00(16KB)
 |Pletter|unpletter_180|            169|         13,205|      1,788,940|
 |Shrinkler|shrinkler_recall_209|            209|         12,276|    202,922,527|
 |Shrinkler|shrinkler_recall_209_r800|            209|         12,276|    202,922,527|
+|Shrinkler|shrinkler_recall_209_r800_|            211|         12,276|    206,980,245|
 |zx7b|dzx7b_fast|            191|         13,248|      1,312,892|
 |zx7b|dzx7b_fast_r800|            193|         13,248|      1,328,717|
 |zx7b|dzx7b_slow|             64|         13,248|      2,140,196|
@@ -273,7 +274,7 @@ test data:MSX2MAIN.B00(16KB)
 test data:MSX2MAIN.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         13,402|      8,119,431|
 |Exomizer|deexo_180.asm|            168|         13,402|      8,120,537|
 |Exomizer|deexo_180_fast.asm|            173|         13,402|      7,044,380|
@@ -281,7 +282,6 @@ test data:MSX2MAIN.B01(16KB)
 |mhmt|dehrust_ix|            234|         13,485|      3,142,810|
 |mhmt|dehrust_stk|            209|         13,485|      2,808,962|
 |lz48|lz48decrunch_v006|             84|         15,305|        566,961|
-|lz48|lz48decrunch_v006_180|             89|         15,305|        562,871|
 |lz48|lz48decrunch_v006_|             70|         15,305|        563,268|
 |lz48|lz48decrunch_v006__180|             74|         15,305|        557,634|
 |lz49|lz49decrunch_v001|            106|         15,254|        636,775|
@@ -297,6 +297,7 @@ test data:MSX2MAIN.B01(16KB)
 |Pletter|unpletter_180|            169|         13,909|      1,997,415|
 |Shrinkler|shrinkler_recall_209|            209|         13,100|    219,699,688|
 |Shrinkler|shrinkler_recall_209_r800|            209|         13,100|    219,699,688|
+|Shrinkler|shrinkler_recall_209_r800_|            211|         13,100|    224,017,138|
 |zx7b|dzx7b_fast|            191|         14,002|      1,411,404|
 |zx7b|dzx7b_fast_r800|            193|         14,002|      1,428,649|
 |zx7b|dzx7b_slow|             64|         14,002|      2,355,118|
@@ -307,7 +308,7 @@ test data:MSX2MAIN.B01(16KB)
 test data:MSXMUSIC.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         10,068|      5,986,114|
 |Exomizer|deexo_180.asm|            168|         10,068|      5,987,220|
 |Exomizer|deexo_180_fast.asm|            173|         10,068|      5,218,038|
@@ -315,7 +316,6 @@ test data:MSXMUSIC.B00(16KB)
 |mhmt|dehrust_ix|            234|         10,118|      2,529,789|
 |mhmt|dehrust_stk|            209|         10,118|      2,274,112|
 |lz48|lz48decrunch_v006|             84|         12,121|        597,381|
-|lz48|lz48decrunch_v006_180|             89|         12,121|        592,068|
 |lz48|lz48decrunch_v006_|             70|         12,121|        593,944|
 |lz48|lz48decrunch_v006__180|             74|         12,121|        587,545|
 |lz49|lz49decrunch_v001|            106|         11,980|        648,929|
@@ -331,6 +331,7 @@ test data:MSXMUSIC.B00(16KB)
 |Pletter|unpletter_180|            169|         10,466|      1,474,887|
 |Shrinkler|shrinkler_recall_209|            209|          9,536|    157,373,448|
 |Shrinkler|shrinkler_recall_209_r800|            209|          9,536|    157,373,448|
+|Shrinkler|shrinkler_recall_209_r800_|            211|          9,536|    160,533,280|
 |zx7b|dzx7b_fast|            191|         10,495|      1,103,981|
 |zx7b|dzx7b_fast_r800|            193|         10,495|      1,115,571|
 |zx7b|dzx7b_slow|             64|         10,495|      1,753,820|
@@ -341,7 +342,7 @@ test data:MSXMUSIC.B00(16KB)
 test data:MSX2EXT.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         12,351|      8,066,566|
 |Exomizer|deexo_180.asm|            168|         12,351|      8,067,672|
 |Exomizer|deexo_180_fast.asm|            173|         12,351|      7,021,261|
@@ -349,7 +350,6 @@ test data:MSX2EXT.B00(16KB)
 |mhmt|dehrust_ix|            234|         12,370|      3,112,516|
 |mhmt|dehrust_stk|            209|         12,370|      2,798,981|
 |lz48|lz48decrunch_v006|             84|         14,074|        638,203|
-|lz48|lz48decrunch_v006_180|             89|         14,074|        631,729|
 |lz48|lz48decrunch_v006_|             70|         14,074|        633,823|
 |lz48|lz48decrunch_v006__180|             74|         14,074|        626,334|
 |lz49|lz49decrunch_v001|            106|         13,969|        708,915|
@@ -365,6 +365,7 @@ test data:MSX2EXT.B00(16KB)
 |Pletter|unpletter_180|            169|         12,858|      2,027,773|
 |Shrinkler|shrinkler_recall_209|            209|         11,820|    196,044,987|
 |Shrinkler|shrinkler_recall_209_r800|            209|         11,820|    196,044,987|
+|Shrinkler|shrinkler_recall_209_r800_|            211|         11,820|    199,947,902|
 |zx7b|dzx7b_fast|            191|         12,964|      1,328,878|
 |zx7b|dzx7b_fast_r800|            193|         12,964|      1,344,828|
 |zx7b|dzx7b_slow|             64|         12,964|      2,165,985|
@@ -375,7 +376,7 @@ test data:MSX2EXT.B00(16KB)
 test data:KANJJ1.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|          6,097|      5,111,648|
 |Exomizer|deexo_180.asm|            168|          6,097|      5,112,754|
 |Exomizer|deexo_180_fast.asm|            173|          6,097|      4,465,791|
@@ -383,7 +384,6 @@ test data:KANJJ1.B00(16KB)
 |mhmt|dehrust_ix|            234|          6,454|      2,490,929|
 |mhmt|dehrust_stk|            209|          6,454|      2,300,068|
 |lz48|lz48decrunch_v006|             84|          8,167|        753,001|
-|lz48|lz48decrunch_v006_180|             89|          8,167|        739,890|
 |lz48|lz48decrunch_v006_|             70|          8,167|        735,565|
 |lz48|lz48decrunch_v006__180|             74|          8,167|        727,779|
 |lz49|lz49decrunch_v001|            106|          7,824|        820,492|
@@ -399,6 +399,7 @@ test data:KANJJ1.B00(16KB)
 |Pletter|unpletter_180|            169|          6,511|      1,461,396|
 |Shrinkler|shrinkler_recall_209|            209|          5,728|    102,142,021|
 |Shrinkler|shrinkler_recall_209_r800|            209|          5,728|    102,142,021|
+|Shrinkler|shrinkler_recall_209_r800_|            211|          5,728|    104,134,819|
 |zx7b|dzx7b_fast|            191|          6,591|      1,161,342|
 |zx7b|dzx7b_fast_r800|            193|          6,591|      1,173,877|
 |zx7b|dzx7b_slow|             64|          6,591|      1,765,077|
@@ -409,7 +410,7 @@ test data:KANJJ1.B00(16KB)
 test data:KANJJ1.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|          3,975|      3,493,148|
 |Exomizer|deexo_180.asm|            168|          3,975|      3,494,254|
 |Exomizer|deexo_180_fast.asm|            173|          3,975|      3,068,080|
@@ -417,7 +418,6 @@ test data:KANJJ1.B01(16KB)
 |mhmt|dehrust_ix|            234|          4,241|      1,826,309|
 |mhmt|dehrust_stk|            209|          4,241|      1,698,453|
 |lz48|lz48decrunch_v006|             84|          5,532|        669,209|
-|lz48|lz48decrunch_v006_180|             89|          5,532|        658,590|
 |lz48|lz48decrunch_v006_|             70|          5,532|        654,070|
 |lz48|lz48decrunch_v006__180|             74|          5,532|        648,433|
 |lz49|lz49decrunch_v001|            106|          5,240|        714,209|
@@ -433,6 +433,7 @@ test data:KANJJ1.B01(16KB)
 |Pletter|unpletter_180|            169|          4,269|      1,106,934|
 |Shrinkler|shrinkler_recall_209|            209|          3,700|     65,685,212|
 |Shrinkler|shrinkler_recall_209_r800|            209|          3,700|     65,685,212|
+|Shrinkler|shrinkler_recall_209_r800_|            211|          3,700|     66,958,071|
 |zx7b|dzx7b_fast|            191|          4,424|        930,945|
 |zx7b|dzx7b_fast_r800|            193|          4,424|        939,750|
 |zx7b|dzx7b_slow|             64|          4,424|      1,349,287|
@@ -443,7 +444,7 @@ test data:KANJJ1.B01(16KB)
 test data:KANJJ1.B02(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         10,688|      7,768,783|
 |Exomizer|deexo_180.asm|            168|         10,688|      7,769,889|
 |Exomizer|deexo_180_fast.asm|            173|         10,688|      6,730,946|
@@ -451,7 +452,6 @@ test data:KANJJ1.B02(16KB)
 |mhmt|dehrust_ix|            234|         10,960|      3,286,239|
 |mhmt|dehrust_stk|            209|         10,960|      2,990,229|
 |lz48|lz48decrunch_v006|             84|         14,290|        662,376|
-|lz48|lz48decrunch_v006_180|             89|         14,290|        655,173|
 |lz48|lz48decrunch_v006_|             70|         14,290|        656,629|
 |lz48|lz48decrunch_v006__180|             74|         14,290|        648,620|
 |lz49|lz49decrunch_v001|            106|         13,985|        783,598|
@@ -467,6 +467,7 @@ test data:KANJJ1.B02(16KB)
 |Pletter|unpletter_180|            169|         11,340|      2,176,738|
 |Shrinkler|shrinkler_recall_209|            209|         10,212|    184,251,287|
 |Shrinkler|shrinkler_recall_209_r800|            209|         10,212|    184,251,287|
+|Shrinkler|shrinkler_recall_209_r800_|            211|         10,212|    187,790,113|
 |zx7b|dzx7b_fast|            191|         11,629|      1,530,270|
 |zx7b|dzx7b_fast_r800|            193|         11,629|      1,549,850|
 |zx7b|dzx7b_slow|             64|         11,629|      2,506,048|
@@ -477,7 +478,7 @@ test data:KANJJ1.B02(16KB)
 test data:KANJJ1.B03(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         10,510|      7,603,571|
 |Exomizer|deexo_180.asm|            168|         10,510|      7,604,677|
 |Exomizer|deexo_180_fast.asm|            173|         10,510|      6,584,139|
@@ -485,7 +486,6 @@ test data:KANJJ1.B03(16KB)
 |mhmt|dehrust_ix|            234|         10,765|      3,242,574|
 |mhmt|dehrust_stk|            209|         10,765|      2,950,438|
 |lz48|lz48decrunch_v006|             84|         14,024|        676,681|
-|lz48|lz48decrunch_v006_180|             89|         14,024|        668,372|
 |lz48|lz48decrunch_v006_|             70|         14,024|        668,286|
 |lz48|lz48decrunch_v006__180|             74|         14,024|        660,487|
 |lz49|lz49decrunch_v001|            106|         13,761|        786,435|
@@ -501,6 +501,7 @@ test data:KANJJ1.B03(16KB)
 |Pletter|unpletter_180|            169|         11,105|      2,137,386|
 |Shrinkler|shrinkler_recall_209|            209|         10,020|    181,710,794|
 |Shrinkler|shrinkler_recall_209_r800|            209|         10,020|    181,710,794|
+|Shrinkler|shrinkler_recall_209_r800_|            211|         10,020|    185,186,436|
 |zx7b|dzx7b_fast|            191|         11,451|      1,505,939|
 |zx7b|dzx7b_fast_r800|            193|         11,451|      1,524,884|
 |zx7b|dzx7b_slow|             64|         11,451|      2,465,218|
@@ -511,7 +512,7 @@ test data:KANJJ1.B03(16KB)
 test data:KANJJ1.B04(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         10,415|      7,416,607|
 |Exomizer|deexo_180.asm|            168|         10,415|      7,417,713|
 |Exomizer|deexo_180_fast.asm|            173|         10,415|      6,427,856|
@@ -519,7 +520,6 @@ test data:KANJJ1.B04(16KB)
 |mhmt|dehrust_ix|            234|         10,708|      3,254,294|
 |mhmt|dehrust_stk|            209|         10,708|      2,963,646|
 |lz48|lz48decrunch_v006|             84|         13,960|        681,024|
-|lz48|lz48decrunch_v006_180|             89|         13,960|        672,638|
 |lz48|lz48decrunch_v006_|             70|         13,960|        673,078|
 |lz48|lz48decrunch_v006__180|             74|         13,960|        665,075|
 |lz49|lz49decrunch_v001|            106|         13,717|        784,719|
@@ -535,6 +535,7 @@ test data:KANJJ1.B04(16KB)
 |Pletter|unpletter_180|            169|         10,992|      2,130,351|
 |Shrinkler|shrinkler_recall_209|            209|          9,876|    179,896,027|
 |Shrinkler|shrinkler_recall_209_r800|            209|          9,876|    179,896,027|
+|Shrinkler|shrinkler_recall_209_r800_|            211|          9,876|    183,336,722|
 |zx7b|dzx7b_fast|            191|         11,327|      1,521,877|
 |zx7b|dzx7b_fast_r800|            193|         11,327|      1,541,167|
 |zx7b|dzx7b_slow|             64|         11,327|      2,488,567|
@@ -545,7 +546,7 @@ test data:KANJJ1.B04(16KB)
 test data:KANJJ1.B05(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         10,348|      7,475,213|
 |Exomizer|deexo_180.asm|            168|         10,348|      7,476,319|
 |Exomizer|deexo_180_fast.asm|            173|         10,348|      6,473,434|
@@ -553,7 +554,6 @@ test data:KANJJ1.B05(16KB)
 |mhmt|dehrust_ix|            234|         10,610|      3,218,897|
 |mhmt|dehrust_stk|            209|         10,610|      2,929,495|
 |lz48|lz48decrunch_v006|             84|         13,952|        675,287|
-|lz48|lz48decrunch_v006_180|             89|         13,952|        667,212|
 |lz48|lz48decrunch_v006_|             70|         13,952|        667,919|
 |lz48|lz48decrunch_v006__180|             74|         13,952|        659,949|
 |lz49|lz49decrunch_v001|            106|         13,674|        789,919|
@@ -569,6 +569,7 @@ test data:KANJJ1.B05(16KB)
 |Pletter|unpletter_180|            169|         10,908|      2,106,079|
 |Shrinkler|shrinkler_recall_209|            209|          9,808|    178,129,932|
 |Shrinkler|shrinkler_recall_209_r800|            209|          9,808|    178,129,932|
+|Shrinkler|shrinkler_recall_209_r800_|            211|          9,808|    181,532,215|
 |zx7b|dzx7b_fast|            191|         11,341|      1,500,846|
 |zx7b|dzx7b_fast_r800|            193|         11,341|      1,519,786|
 |zx7b|dzx7b_slow|             64|         11,341|      2,450,589|
@@ -579,7 +580,7 @@ test data:KANJJ1.B05(16KB)
 test data:KANJJ1.B06(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|         10,650|      7,752,805|
 |Exomizer|deexo_180.asm|            168|         10,650|      7,753,911|
 |Exomizer|deexo_180_fast.asm|            173|         10,650|      6,711,316|
@@ -587,7 +588,6 @@ test data:KANJJ1.B06(16KB)
 |mhmt|dehrust_ix|            234|         10,934|      3,297,965|
 |mhmt|dehrust_stk|            209|         10,934|      3,001,103|
 |lz48|lz48decrunch_v006|             84|         14,179|        662,958|
-|lz48|lz48decrunch_v006_180|             89|         14,179|        655,412|
 |lz48|lz48decrunch_v006_|             70|         14,179|        656,277|
 |lz48|lz48decrunch_v006__180|             74|         14,179|        648,507|
 |lz49|lz49decrunch_v001|            106|         13,920|        774,080|
@@ -603,6 +603,7 @@ test data:KANJJ1.B06(16KB)
 |Pletter|unpletter_180|            169|         11,252|      2,178,731|
 |Shrinkler|shrinkler_recall_209|            209|         10,148|    184,730,043|
 |Shrinkler|shrinkler_recall_209_r800|            209|         10,148|    184,730,043|
+|Shrinkler|shrinkler_recall_209_r800_|            211|         10,148|    188,255,537|
 |zx7b|dzx7b_fast|            191|         11,601|      1,529,557|
 |zx7b|dzx7b_fast_r800|            193|         11,601|      1,549,062|
 |zx7b|dzx7b_slow|             64|         11,601|      2,506,261|
@@ -613,7 +614,7 @@ test data:KANJJ1.B06(16KB)
 test data:KANJJ1.B07(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Exomizer|deexo.asm|            169|          9,701|      7,135,248|
 |Exomizer|deexo_180.asm|            168|          9,701|      7,136,354|
 |Exomizer|deexo_180_fast.asm|            173|          9,701|      6,186,074|
@@ -621,7 +622,6 @@ test data:KANJJ1.B07(16KB)
 |mhmt|dehrust_ix|            234|          9,953|      3,024,595|
 |mhmt|dehrust_stk|            209|          9,953|      2,757,158|
 |lz48|lz48decrunch_v006|             84|         13,048|        641,904|
-|lz48|lz48decrunch_v006_180|             89|         13,048|        634,795|
 |lz48|lz48decrunch_v006_|             70|         13,048|        634,564|
 |lz48|lz48decrunch_v006__180|             74|         13,048|        627,574|
 |lz49|lz49decrunch_v001|            106|         12,778|        736,853|
@@ -637,10 +637,12 @@ test data:KANJJ1.B07(16KB)
 |Pletter|unpletter_180|            169|         10,245|      1,996,638|
 |Shrinkler|shrinkler_recall_209|            209|          9,212|    166,951,906|
 |Shrinkler|shrinkler_recall_209_r800|            209|          9,212|    166,951,906|
+|Shrinkler|shrinkler_recall_209_r800_|            211|          9,212|    170,158,873|
 |zx7b|dzx7b_fast|            191|         10,586|      1,431,824|
 |zx7b|dzx7b_fast_r800|            193|         10,586|      1,449,679|
 |zx7b|dzx7b_slow|             64|         10,586|      2,328,107|
 |zx7b|dzx7b_slow_r800|             65|         10,586|      2,345,962|
+
 
 
 
