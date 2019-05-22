@@ -43,7 +43,7 @@ License:CC-BY-SA
 test data:DEOCM-PLD-CV BIOS(16x16KB)
 
 |SectionName|exomizer|mhmt-base|lz48|lz49|lz4|lze|lzee|megalz|pletter|shrinkler|zx7b|
-|---|---|---|---|---|---|---|---|---|---|---|---|
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 |MEGASDHC.B00|9,373|9,397|10,717|10,628|10,839|10,092|10,088|9,718|9,706|8,984|9,762|
 |MEGASDHC.B01|4,902|4,923|5,752|5,559|5,798|5,463|5,459|5,124|5,083|4,680|5,091|
 |MEGASDHC.B02|12,494|12,592|14,588|14,512|14,749|13,472|13,468|12,965|12,945|12,148|13,103|
@@ -70,7 +70,7 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 test data:ALL(16*16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|        160,011|    108,490,817|
 |Exomizer|deexo_180.asm|            168|        160,011|    108,508,513|
 |Exomizer|deexo_180_fast.asm|            173|        160,011|     94,297,587|
@@ -89,7 +89,7 @@ test data:ALL(16*16KB)
 |lzee|lzee_dec|             99|        174,118|     19,608,607|
 |lzee|lzee_dec_speed|            102|        174,118|     19,569,112|
 |MegaLZ|megalz_dec40|            110|        167,609|     45,653,296|
-|Pletter|unpletter	|            170|        167,494|     28,812,190|
+|Pletter|unpletter|            170|        167,494|     28,812,190|
 |Pletter|unpletter_180|            169|        167,494|     28,812,318|
 |Shrinkler|shrinkler_recall_209|            209|        153,164|  2,648,153,963|
 |Shrinkler|shrinkler_recall_209_r800|            209|        153,164|  2,648,153,963|
@@ -104,7 +104,7 @@ test data:ALL(16*16KB)
 test data:MEGASDHC.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|          9,373|      5,908,411|
 |Exomizer|deexo_180.asm|            168|          9,373|      5,909,517|
 |Exomizer|deexo_180_fast.asm|            173|          9,373|      5,147,822|
@@ -123,7 +123,7 @@ test data:MEGASDHC.B00(16KB)
 |lzee|lzee_dec|             99|         10,088|      1,113,895|
 |lzee|lzee_dec_speed|            102|         10,088|      1,112,077|
 |MegaLZ|megalz_dec40|            110|          9,718|      2,363,816|
-|Pletter|unpletter	|            170|          9,706|      1,459,575|
+|Pletter|unpletter|            170|          9,706|      1,459,575|
 |Pletter|unpletter_180|            169|          9,706|      1,459,583|
 |Shrinkler|shrinkler_recall_209|            209|          8,984|    147,898,055|
 |Shrinkler|shrinkler_recall_209_r800|            209|          8,984|    147,898,055|
@@ -138,7 +138,7 @@ test data:MEGASDHC.B00(16KB)
 test data:MEGASDHC.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|          4,902|      3,307,149|
 |Exomizer|deexo_180.asm|            168|          4,902|      3,308,255|
 |Exomizer|deexo_180_fast.asm|            173|          4,902|      2,910,323|
@@ -157,7 +157,7 @@ test data:MEGASDHC.B01(16KB)
 |lzee|lzee_dec|             99|          5,459|        786,603|
 |lzee|lzee_dec_speed|            102|          5,459|        785,523|
 |MegaLZ|megalz_dec40|            110|          5,124|      1,578,986|
-|Pletter|unpletter	|            170|          5,083|        905,030|
+|Pletter|unpletter|            170|          5,083|        905,030|
 |Pletter|unpletter_180|            169|          5,083|        905,038|
 |Shrinkler|shrinkler_recall_209|            209|          4,680|     78,117,653|
 |Shrinkler|shrinkler_recall_209_r800|            209|          4,680|     78,117,653|
@@ -172,7 +172,7 @@ test data:MEGASDHC.B01(16KB)
 test data:MEGASDHC.B02(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         12,494|      7,962,111|
 |Exomizer|deexo_180.asm|            168|         12,494|      7,963,217|
 |Exomizer|deexo_180_fast.asm|            173|         12,494|      6,909,262|
@@ -191,7 +191,7 @@ test data:MEGASDHC.B02(16KB)
 |lzee|lzee_dec|             99|         13,468|      1,389,850|
 |lzee|lzee_dec_speed|            102|         13,468|      1,387,184|
 |MegaLZ|megalz_dec40|            110|         12,965|      3,108,603|
-|Pletter|unpletter	|            170|         12,945|      1,990,443|
+|Pletter|unpletter|            170|         12,945|      1,990,443|
 |Pletter|unpletter_180|            169|         12,945|      1,990,451|
 |Shrinkler|shrinkler_recall_209|            209|         12,148|    204,353,362|
 |Shrinkler|shrinkler_recall_209_r800|            209|         12,148|    204,353,362|
@@ -206,7 +206,7 @@ test data:MEGASDHC.B02(16KB)
 test data:MEGASDHC.B03(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         12,297|      7,705,336|
 |Exomizer|deexo_180.asm|            168|         12,297|      7,706,442|
 |Exomizer|deexo_180_fast.asm|            173|         12,297|      6,703,203|
@@ -225,7 +225,7 @@ test data:MEGASDHC.B03(16KB)
 |lzee|lzee_dec|             99|         13,183|      1,348,762|
 |lzee|lzee_dec_speed|            102|         13,183|      1,346,324|
 |MegaLZ|megalz_dec40|            110|         12,660|      2,979,373|
-|Pletter|unpletter	|            170|         12,700|      1,873,970|
+|Pletter|unpletter|            170|         12,700|      1,873,970|
 |Pletter|unpletter_180|            169|         12,700|      1,873,978|
 |Shrinkler|shrinkler_recall_209|            209|         11,916|    198,247,021|
 |Shrinkler|shrinkler_recall_209_r800|            209|         11,916|    198,247,021|
@@ -240,7 +240,7 @@ test data:MEGASDHC.B03(16KB)
 test data:MSX2MAIN.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         12,740|      7,678,676|
 |Exomizer|deexo_180.asm|            168|         12,740|      7,679,782|
 |Exomizer|deexo_180_fast.asm|            173|         12,740|      6,695,662|
@@ -259,7 +259,7 @@ test data:MSX2MAIN.B00(16KB)
 |lzee|lzee_dec|             99|         13,694|      1,398,093|
 |lzee|lzee_dec_speed|            102|         13,694|      1,395,540|
 |MegaLZ|megalz_dec40|            110|         13,072|      3,077,702|
-|Pletter|unpletter	|            170|         13,205|      1,788,932|
+|Pletter|unpletter|            170|         13,205|      1,788,932|
 |Pletter|unpletter_180|            169|         13,205|      1,788,940|
 |Shrinkler|shrinkler_recall_209|            209|         12,276|    202,922,527|
 |Shrinkler|shrinkler_recall_209_r800|            209|         12,276|    202,922,527|
@@ -274,7 +274,7 @@ test data:MSX2MAIN.B00(16KB)
 test data:MSX2MAIN.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         13,402|      8,119,431|
 |Exomizer|deexo_180.asm|            168|         13,402|      8,120,537|
 |Exomizer|deexo_180_fast.asm|            173|         13,402|      7,044,380|
@@ -293,7 +293,7 @@ test data:MSX2MAIN.B01(16KB)
 |lzee|lzee_dec|             99|         14,385|      1,420,691|
 |lzee|lzee_dec_speed|            102|         14,385|      1,418,151|
 |MegaLZ|megalz_dec40|            110|         13,917|      3,129,990|
-|Pletter|unpletter	|            170|         13,909|      1,997,407|
+|Pletter|unpletter|            170|         13,909|      1,997,407|
 |Pletter|unpletter_180|            169|         13,909|      1,997,415|
 |Shrinkler|shrinkler_recall_209|            209|         13,100|    219,699,688|
 |Shrinkler|shrinkler_recall_209_r800|            209|         13,100|    219,699,688|
@@ -308,7 +308,7 @@ test data:MSX2MAIN.B01(16KB)
 test data:MSXMUSIC.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         10,068|      5,986,114|
 |Exomizer|deexo_180.asm|            168|         10,068|      5,987,220|
 |Exomizer|deexo_180_fast.asm|            173|         10,068|      5,218,038|
@@ -327,7 +327,7 @@ test data:MSXMUSIC.B00(16KB)
 |lzee|lzee_dec|             99|         10,826|      1,165,924|
 |lzee|lzee_dec_speed|            102|         10,826|      1,164,007|
 |MegaLZ|megalz_dec40|            110|         10,407|      2,560,679|
-|Pletter|unpletter	|            170|         10,466|      1,474,879|
+|Pletter|unpletter|            170|         10,466|      1,474,879|
 |Pletter|unpletter_180|            169|         10,466|      1,474,887|
 |Shrinkler|shrinkler_recall_209|            209|          9,536|    157,373,448|
 |Shrinkler|shrinkler_recall_209_r800|            209|          9,536|    157,373,448|
@@ -342,7 +342,7 @@ test data:MSXMUSIC.B00(16KB)
 test data:MSX2EXT.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         12,351|      8,066,566|
 |Exomizer|deexo_180.asm|            168|         12,351|      8,067,672|
 |Exomizer|deexo_180_fast.asm|            173|         12,351|      7,021,261|
@@ -361,7 +361,7 @@ test data:MSX2EXT.B00(16KB)
 |lzee|lzee_dec|             99|         13,299|      1,369,549|
 |lzee|lzee_dec_speed|            102|         13,299|      1,367,029|
 |MegaLZ|megalz_dec40|            110|         12,833|      3,030,834|
-|Pletter|unpletter	|            170|         12,858|      2,027,765|
+|Pletter|unpletter|            170|         12,858|      2,027,765|
 |Pletter|unpletter_180|            169|         12,858|      2,027,773|
 |Shrinkler|shrinkler_recall_209|            209|         11,820|    196,044,987|
 |Shrinkler|shrinkler_recall_209_r800|            209|         11,820|    196,044,987|
@@ -376,7 +376,7 @@ test data:MSX2EXT.B00(16KB)
 test data:KANJJ1.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|          6,097|      5,111,648|
 |Exomizer|deexo_180.asm|            168|          6,097|      5,112,754|
 |Exomizer|deexo_180_fast.asm|            173|          6,097|      4,465,791|
@@ -395,7 +395,7 @@ test data:KANJJ1.B00(16KB)
 |lzee|lzee_dec|             99|          7,023|      1,010,079|
 |lzee|lzee_dec_speed|            102|          7,023|      1,007,713|
 |MegaLZ|megalz_dec40|            110|          6,514|      2,432,743|
-|Pletter|unpletter	|            170|          6,511|      1,461,388|
+|Pletter|unpletter|            170|          6,511|      1,461,388|
 |Pletter|unpletter_180|            169|          6,511|      1,461,396|
 |Shrinkler|shrinkler_recall_209|            209|          5,728|    102,142,021|
 |Shrinkler|shrinkler_recall_209_r800|            209|          5,728|    102,142,021|
@@ -410,7 +410,7 @@ test data:KANJJ1.B00(16KB)
 test data:KANJJ1.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|          3,975|      3,493,148|
 |Exomizer|deexo_180.asm|            168|          3,975|      3,494,254|
 |Exomizer|deexo_180_fast.asm|            173|          3,975|      3,068,080|
@@ -429,7 +429,7 @@ test data:KANJJ1.B01(16KB)
 |lzee|lzee_dec|             99|          4,660|        810,672|
 |lzee|lzee_dec_speed|            102|          4,660|        808,991|
 |MegaLZ|megalz_dec40|            110|          4,320|      1,795,413|
-|Pletter|unpletter	|            170|          4,269|      1,106,926|
+|Pletter|unpletter|            170|          4,269|      1,106,926|
 |Pletter|unpletter_180|            169|          4,269|      1,106,934|
 |Shrinkler|shrinkler_recall_209|            209|          3,700|     65,685,212|
 |Shrinkler|shrinkler_recall_209_r800|            209|          3,700|     65,685,212|
@@ -444,7 +444,7 @@ test data:KANJJ1.B01(16KB)
 test data:KANJJ1.B02(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         10,688|      7,768,783|
 |Exomizer|deexo_180.asm|            168|         10,688|      7,769,889|
 |Exomizer|deexo_180_fast.asm|            173|         10,688|      6,730,946|
@@ -463,7 +463,7 @@ test data:KANJJ1.B02(16KB)
 |lzee|lzee_dec|             99|         11,692|      1,326,874|
 |lzee|lzee_dec_speed|            102|         11,692|      1,323,812|
 |MegaLZ|megalz_dec40|            110|         11,362|      3,337,759|
-|Pletter|unpletter	|            170|         11,340|      2,176,730|
+|Pletter|unpletter|            170|         11,340|      2,176,730|
 |Pletter|unpletter_180|            169|         11,340|      2,176,738|
 |Shrinkler|shrinkler_recall_209|            209|         10,212|    184,251,287|
 |Shrinkler|shrinkler_recall_209_r800|            209|         10,212|    184,251,287|
@@ -478,7 +478,7 @@ test data:KANJJ1.B02(16KB)
 test data:KANJJ1.B03(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         10,510|      7,603,571|
 |Exomizer|deexo_180.asm|            168|         10,510|      7,604,677|
 |Exomizer|deexo_180_fast.asm|            173|         10,510|      6,584,139|
@@ -497,7 +497,7 @@ test data:KANJJ1.B03(16KB)
 |lzee|lzee_dec|             99|         11,489|      1,307,102|
 |lzee|lzee_dec_speed|            102|         11,489|      1,304,107|
 |MegaLZ|megalz_dec40|            110|         11,161|      3,294,363|
-|Pletter|unpletter	|            170|         11,105|      2,137,378|
+|Pletter|unpletter|            170|         11,105|      2,137,378|
 |Pletter|unpletter_180|            169|         11,105|      2,137,386|
 |Shrinkler|shrinkler_recall_209|            209|         10,020|    181,710,794|
 |Shrinkler|shrinkler_recall_209_r800|            209|         10,020|    181,710,794|
@@ -512,7 +512,7 @@ test data:KANJJ1.B03(16KB)
 test data:KANJJ1.B04(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         10,415|      7,416,607|
 |Exomizer|deexo_180.asm|            168|         10,415|      7,417,713|
 |Exomizer|deexo_180_fast.asm|            173|         10,415|      6,427,856|
@@ -531,7 +531,7 @@ test data:KANJJ1.B04(16KB)
 |lzee|lzee_dec|             99|         11,369|      1,305,907|
 |lzee|lzee_dec_speed|            102|         11,369|      1,302,881|
 |MegaLZ|megalz_dec40|            110|         11,016|      3,271,673|
-|Pletter|unpletter	|            170|         10,992|      2,130,343|
+|Pletter|unpletter|            170|         10,992|      2,130,343|
 |Pletter|unpletter_180|            169|         10,992|      2,130,351|
 |Shrinkler|shrinkler_recall_209|            209|          9,876|    179,896,027|
 |Shrinkler|shrinkler_recall_209_r800|            209|          9,876|    179,896,027|
@@ -546,7 +546,7 @@ test data:KANJJ1.B04(16KB)
 test data:KANJJ1.B05(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         10,348|      7,475,213|
 |Exomizer|deexo_180.asm|            168|         10,348|      7,476,319|
 |Exomizer|deexo_180_fast.asm|            173|         10,348|      6,473,434|
@@ -565,7 +565,7 @@ test data:KANJJ1.B05(16KB)
 |lzee|lzee_dec|             99|         11,279|      1,295,256|
 |lzee|lzee_dec_speed|            102|         11,279|      1,292,271|
 |MegaLZ|megalz_dec40|            110|         11,012|      3,284,220|
-|Pletter|unpletter	|            170|         10,908|      2,106,071|
+|Pletter|unpletter|            170|         10,908|      2,106,071|
 |Pletter|unpletter_180|            169|         10,908|      2,106,079|
 |Shrinkler|shrinkler_recall_209|            209|          9,808|    178,129,932|
 |Shrinkler|shrinkler_recall_209_r800|            209|          9,808|    178,129,932|
@@ -580,7 +580,7 @@ test data:KANJJ1.B05(16KB)
 test data:KANJJ1.B06(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|         10,650|      7,752,805|
 |Exomizer|deexo_180.asm|            168|         10,650|      7,753,911|
 |Exomizer|deexo_180_fast.asm|            173|         10,650|      6,711,316|
@@ -599,7 +599,7 @@ test data:KANJJ1.B06(16KB)
 |lzee|lzee_dec|             99|         11,630|      1,325,489|
 |lzee|lzee_dec_speed|            102|         11,630|      1,322,396|
 |MegaLZ|megalz_dec40|            110|         11,281|      3,337,059|
-|Pletter|unpletter	|            170|         11,252|      2,178,723|
+|Pletter|unpletter|            170|         11,252|      2,178,723|
 |Pletter|unpletter_180|            169|         11,252|      2,178,731|
 |Shrinkler|shrinkler_recall_209|            209|         10,148|    184,730,043|
 |Shrinkler|shrinkler_recall_209_r800|            209|         10,148|    184,730,043|
@@ -614,7 +614,7 @@ test data:KANJJ1.B06(16KB)
 test data:KANJJ1.B07(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
-|---|---|---|---|---|
+|---|---|---:|---:|---:|
 |Exomizer|deexo.asm|            169|          9,701|      7,135,248|
 |Exomizer|deexo_180.asm|            168|          9,701|      7,136,354|
 |Exomizer|deexo_180_fast.asm|            173|          9,701|      6,186,074|
@@ -633,7 +633,7 @@ test data:KANJJ1.B07(16KB)
 |lzee|lzee_dec|             99|         10,574|      1,233,861|
 |lzee|lzee_dec_speed|            102|         10,574|      1,231,106|
 |MegaLZ|megalz_dec40|            110|         10,247|      3,070,083|
-|Pletter|unpletter	|            170|         10,245|      1,996,630|
+|Pletter|unpletter|            170|         10,245|      1,996,630|
 |Pletter|unpletter_180|            169|         10,245|      1,996,638|
 |Shrinkler|shrinkler_recall_209|            209|          9,212|    166,951,906|
 |Shrinkler|shrinkler_recall_209_r800|            209|          9,212|    166,951,906|
@@ -642,7 +642,6 @@ test data:KANJJ1.B07(16KB)
 |zx7b|dzx7b_fast_r800|            193|         10,586|      1,449,679|
 |zx7b|dzx7b_slow|             64|         10,586|      2,328,107|
 |zx7b|dzx7b_slow_r800|             65|         10,586|      2,345,962|
-
 
 
 
