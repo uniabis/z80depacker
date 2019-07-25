@@ -3,7 +3,7 @@
 
 ## Packers
 
-### [Exomizer](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.0.2(raw -P0)
+### [Exomizer](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.0.2(raw -P0/raw)
 
 License:LGPL
 
@@ -42,25 +42,25 @@ License:CC-BY-SA
 
 test data:DEOCM-PLD-CV BIOS(16x16KB)
 
-|SectionName|exomizer|mhmt-base|lz48|lz49|lz4|lze|lzee|megalz|pletter|shrinkler|zx7b|
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-|MEGASDHC.B00|9,373|9,397|10,717|10,628|10,839|10,092|10,088|9,718|9,706|8,984|9,762|
-|MEGASDHC.B01|4,902|4,923|5,752|5,559|5,798|5,463|5,459|5,124|5,083|4,680|5,091|
-|MEGASDHC.B02|12,494|12,592|14,588|14,512|14,749|13,472|13,468|12,965|12,945|12,148|13,103|
-|MEGASDHC.B03|12,297|12,320|14,250|14,030|14,298|13,187|13,183|12,660|12,700|11,916|12,810|
-|MSX2MAIN.B00|12,740|12,790|14,268|14,196|14,847|13,698|13,694|13,072|13,205|12,276|13,248|
-|MSX2MAIN.B01|13,402|13,485|15,305|15,254|15,454|14,389|14,385|13,917|13,909|13,100|14,002|
-|MSXMUSIC.B00|10,068|10,118|12,121|11,980|11,634|10,830|10,826|10,407|10,466|9,536|10,495|
-|MSX2EXT.B00|12,351|12,370|14,074|13,969|14,583|13,303|13,299|12,833|12,858|11,820|12,964|
-|KANJJ1.B00|6,097|6,454|8,167|7,824|8,140|7,027|7,023|6,514|6,511|5,728|6,591|
-|KANJJ1.B01|3,975|4,241|5,532|5,240|5,472|4,664|4,660|4,320|4,269|3,700|4,424|
-|KANJJ1.B02|10,688|10,960|14,290|13,985|13,019|11,696|11,692|11,362|11,340|10,212|11,629|
-|KANJJ1.B03|10,510|10,765|14,024|13,761|12,751|11,493|11,489|11,161|11,105|10,020|11,451|
-|KANJJ1.B04|10,415|10,708|13,960|13,717|12,688|11,373|11,369|11,016|10,992|9,876|11,327|
-|KANJJ1.B05|10,348|10,610|13,952|13,674|12,552|11,283|11,279|11,012|10,908|9,808|11,341|
-|KANJJ1.B06|10,650|10,934|14,179|13,920|12,993|11,634|11,630|11,281|11,252|10,148|11,601|
-|KANJJ1.B07|9,701|9,953|13,048|12,778|11,840|10,578|10,574|10,247|10,245|9,212|10,586|
-|ALL|160,011|162,620|198,227|195,027|191,657|174,182|174,118|167,609|167,494|153,164|170,425|
+|SectionName|Exomizer2|Exomizer3|mhmt-base|lz48|lz49|lz4|lze|lzee|megalz|pletter|shrinkler|zx7b|
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+|MEGASDHC.B00|9,373|9,373|9,397|10,717|10,628|10,839|10,092|10,088|9,718|9,706|8,984|9,762|
+|MEGASDHC.B01|4,902|4,902|4,923|5,752|5,559|5,798|5,463|5,459|5,124|5,083|4,680|5,091|
+|MEGASDHC.B02|12,494|12,494|12,592|14,588|14,512|14,749|13,472|13,468|12,965|12,945|12,148|13,103|
+|MEGASDHC.B03|12,297|12,297|12,320|14,250|14,030|14,298|13,187|13,183|12,660|12,700|11,916|12,810|
+|MSX2MAIN.B00|12,740|12,739|12,790|14,268|14,196|14,847|13,698|13,694|13,072|13,205|12,276|13,248|
+|MSX2MAIN.B01|13,402|13,402|13,485|15,305|15,254|15,454|14,389|14,385|13,917|13,909|13,100|14,002|
+|MSXMUSIC.B00|10,068|10,068|10,118|12,121|11,980|11,634|10,830|10,826|10,407|10,466|9,536|10,495|
+|MSX2EXT.B00|12,351|12,351|12,370|14,074|13,969|14,583|13,303|13,299|12,833|12,858|11,820|12,964|
+|KANJJ1.B00|6,097|6,097|6,454|8,167|7,824|8,140|7,027|7,023|6,514|6,511|5,728|6,591|
+|KANJJ1.B01|3,975|3,974|4,241|5,532|5,240|5,472|4,664|4,660|4,320|4,269|3,700|4,424|
+|KANJJ1.B02|10,688|10,688|10,960|14,290|13,985|13,019|11,696|11,692|11,362|11,340|10,212|11,629|
+|KANJJ1.B03|10,510|10,509|10,765|14,024|13,761|12,751|11,493|11,489|11,161|11,105|10,020|11,451|
+|KANJJ1.B04|10,415|10,415|10,708|13,960|13,717|12,688|11,373|11,369|11,016|10,992|9,876|11,327|
+|KANJJ1.B05|10,348|10,347|10,610|13,952|13,674|12,552|11,283|11,279|11,012|10,908|9,808|11,341|
+|KANJJ1.B06|10,650|10,650|10,934|14,179|13,920|12,993|11,634|11,630|11,281|11,252|10,148|11,601|
+|KANJJ1.B07|9,701|9,701|9,953|13,048|12,778|11,840|10,578|10,574|10,247|10,245|9,212|10,586|
+|ALL|160,011|160,007|162,620|198,227|195,027|191,657|174,182|174,118|167,609|167,494|153,164|170,425|
 
 
 ## Decompression speed
@@ -71,10 +71,11 @@ test data:ALL(16*16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|        160,011|    108,490,817|
-|Exomizer|deexo_180|            168|        160,011|    108,508,513|
-|Exomizer|deexo_180_fast|            173|        160,011|     94,297,587|
-|Exomizer|deexo_180_fast_jp|            184|        160,011|     93,483,961|
+|Exomizer2|deexo|            169|        160,011|    108,490,817|
+|Exomizer2|deexo_180|            168|        160,011|    108,508,513|
+|Exomizer2|deexo_180_fast|            173|        160,011|     94,297,587|
+|Exomizer2|deexo_180_fast_jp|            184|        160,011|     93,483,961|
+|Exomizer3|deexo3|            230|        160,007|     81,754,301|
 |mhmt|dehrust_ix|            234|        162,620|     45,607,398|
 |mhmt|dehrust_stk|            209|        162,620|     41,333,579|
 |lz48|lz48decrunch_v006|             84|        198,227|     10,096,491|
@@ -107,10 +108,11 @@ test data:MEGASDHC.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|          9,373|      5,908,411|
-|Exomizer|deexo_180|            168|          9,373|      5,909,517|
-|Exomizer|deexo_180_fast|            173|          9,373|      5,147,822|
-|Exomizer|deexo_180_fast_jp|            184|          9,373|      5,103,279|
+|Exomizer2|deexo|            169|          9,373|      5,908,411|
+|Exomizer2|deexo_180|            168|          9,373|      5,909,517|
+|Exomizer2|deexo_180_fast|            173|          9,373|      5,147,822|
+|Exomizer2|deexo_180_fast_jp|            184|          9,373|      5,103,279|
+|Exomizer3|deexo3|            230|          9,373|      4,622,146|
 |mhmt|dehrust_ix|            234|          9,397|      2,400,116|
 |mhmt|dehrust_stk|            209|          9,397|      2,160,551|
 |lz48|lz48decrunch_v006|             84|         10,717|        562,276|
@@ -143,10 +145,11 @@ test data:MEGASDHC.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|          4,902|      3,307,149|
-|Exomizer|deexo_180|            168|          4,902|      3,308,255|
-|Exomizer|deexo_180_fast|            173|          4,902|      2,910,323|
-|Exomizer|deexo_180_fast_jp|            184|          4,902|      2,887,834|
+|Exomizer2|deexo|            169|          4,902|      3,307,149|
+|Exomizer2|deexo_180|            168|          4,902|      3,308,255|
+|Exomizer2|deexo_180_fast|            173|          4,902|      2,910,323|
+|Exomizer2|deexo_180_fast_jp|            184|          4,902|      2,887,834|
+|Exomizer3|deexo3|            230|          4,902|      2,740,416|
 |mhmt|dehrust_ix|            234|          4,923|      1,520,370|
 |mhmt|dehrust_stk|            209|          4,923|      1,393,765|
 |lz48|lz48decrunch_v006|             84|          5,752|        506,229|
@@ -179,10 +182,11 @@ test data:MEGASDHC.B02(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         12,494|      7,962,111|
-|Exomizer|deexo_180|            168|         12,494|      7,963,217|
-|Exomizer|deexo_180_fast|            173|         12,494|      6,909,262|
-|Exomizer|deexo_180_fast_jp|            184|         12,494|      6,846,967|
+|Exomizer2|deexo|            169|         12,494|      7,962,111|
+|Exomizer2|deexo_180|            168|         12,494|      7,963,217|
+|Exomizer2|deexo_180_fast|            173|         12,494|      6,909,262|
+|Exomizer2|deexo_180_fast_jp|            184|         12,494|      6,846,967|
+|Exomizer3|deexo3|            230|         12,494|      5,975,468|
 |mhmt|dehrust_ix|            234|         12,592|      3,184,499|
 |mhmt|dehrust_stk|            209|         12,592|      2,868,962|
 |lz48|lz48decrunch_v006|             84|         14,588|        597,859|
@@ -215,10 +219,11 @@ test data:MEGASDHC.B03(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         12,297|      7,705,336|
-|Exomizer|deexo_180|            168|         12,297|      7,706,442|
-|Exomizer|deexo_180_fast|            173|         12,297|      6,703,203|
-|Exomizer|deexo_180_fast_jp|            184|         12,297|      6,645,226|
+|Exomizer2|deexo|            169|         12,297|      7,705,336|
+|Exomizer2|deexo_180|            168|         12,297|      7,706,442|
+|Exomizer2|deexo_180_fast|            173|         12,297|      6,703,203|
+|Exomizer2|deexo_180_fast_jp|            184|         12,297|      6,645,226|
+|Exomizer3|deexo3|            230|         12,297|      6,101,463|
 |mhmt|dehrust_ix|            234|         12,320|      2,994,167|
 |mhmt|dehrust_stk|            209|         12,320|      2,684,358|
 |lz48|lz48decrunch_v006|             84|         14,250|        585,776|
@@ -251,10 +256,11 @@ test data:MSX2MAIN.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         12,740|      7,678,676|
-|Exomizer|deexo_180|            168|         12,740|      7,679,782|
-|Exomizer|deexo_180_fast|            173|         12,740|      6,695,662|
-|Exomizer|deexo_180_fast_jp|            184|         12,740|      6,640,800|
+|Exomizer2|deexo|            169|         12,740|      7,678,676|
+|Exomizer2|deexo_180|            168|         12,740|      7,679,782|
+|Exomizer2|deexo_180_fast|            173|         12,740|      6,695,662|
+|Exomizer2|deexo_180_fast_jp|            184|         12,740|      6,640,800|
+|Exomizer3|deexo3|            230|         12,739|      6,188,628|
 |mhmt|dehrust_ix|            234|         12,790|      3,081,329|
 |mhmt|dehrust_stk|            209|         12,790|      2,753,298|
 |lz48|lz48decrunch_v006|             84|         14,268|        619,366|
@@ -287,10 +293,11 @@ test data:MSX2MAIN.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         13,402|      8,119,431|
-|Exomizer|deexo_180|            168|         13,402|      8,120,537|
-|Exomizer|deexo_180_fast|            173|         13,402|      7,044,380|
-|Exomizer|deexo_180_fast_jp|            184|         13,402|      6,979,927|
+|Exomizer2|deexo|            169|         13,402|      8,119,431|
+|Exomizer2|deexo_180|            168|         13,402|      8,120,537|
+|Exomizer2|deexo_180_fast|            173|         13,402|      7,044,380|
+|Exomizer2|deexo_180_fast_jp|            184|         13,402|      6,979,927|
+|Exomizer3|deexo3|            230|         13,402|      6,022,594|
 |mhmt|dehrust_ix|            234|         13,485|      3,142,810|
 |mhmt|dehrust_stk|            209|         13,485|      2,808,962|
 |lz48|lz48decrunch_v006|             84|         15,305|        566,961|
@@ -323,10 +330,11 @@ test data:MSXMUSIC.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         10,068|      5,986,114|
-|Exomizer|deexo_180|            168|         10,068|      5,987,220|
-|Exomizer|deexo_180_fast|            173|         10,068|      5,218,038|
-|Exomizer|deexo_180_fast_jp|            184|         10,068|      5,174,139|
+|Exomizer2|deexo|            169|         10,068|      5,986,114|
+|Exomizer2|deexo_180|            168|         10,068|      5,987,220|
+|Exomizer2|deexo_180_fast|            173|         10,068|      5,218,038|
+|Exomizer2|deexo_180_fast_jp|            184|         10,068|      5,174,139|
+|Exomizer3|deexo3|            230|         10,068|      4,769,840|
 |mhmt|dehrust_ix|            234|         10,118|      2,529,789|
 |mhmt|dehrust_stk|            209|         10,118|      2,274,112|
 |lz48|lz48decrunch_v006|             84|         12,121|        597,381|
@@ -359,10 +367,11 @@ test data:MSX2EXT.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         12,351|      8,066,566|
-|Exomizer|deexo_180|            168|         12,351|      8,067,672|
-|Exomizer|deexo_180_fast|            173|         12,351|      7,021,261|
-|Exomizer|deexo_180_fast_jp|            184|         12,351|      6,961,868|
+|Exomizer2|deexo|            169|         12,351|      8,066,566|
+|Exomizer2|deexo_180|            168|         12,351|      8,067,672|
+|Exomizer2|deexo_180_fast|            173|         12,351|      7,021,261|
+|Exomizer2|deexo_180_fast_jp|            184|         12,351|      6,961,868|
+|Exomizer3|deexo3|            230|         12,351|      6,352,876|
 |mhmt|dehrust_ix|            234|         12,370|      3,112,516|
 |mhmt|dehrust_stk|            209|         12,370|      2,798,981|
 |lz48|lz48decrunch_v006|             84|         14,074|        638,203|
@@ -395,10 +404,11 @@ test data:KANJJ1.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|          6,097|      5,111,648|
-|Exomizer|deexo_180|            168|          6,097|      5,112,754|
-|Exomizer|deexo_180_fast|            173|          6,097|      4,465,791|
-|Exomizer|deexo_180_fast_jp|            184|          6,097|      4,432,577|
+|Exomizer2|deexo|            169|          6,097|      5,111,648|
+|Exomizer2|deexo_180|            168|          6,097|      5,112,754|
+|Exomizer2|deexo_180_fast|            173|          6,097|      4,465,791|
+|Exomizer2|deexo_180_fast_jp|            184|          6,097|      4,432,577|
+|Exomizer3|deexo3|            230|          6,097|      3,959,800|
 |mhmt|dehrust_ix|            234|          6,454|      2,490,929|
 |mhmt|dehrust_stk|            209|          6,454|      2,300,068|
 |lz48|lz48decrunch_v006|             84|          8,167|        753,001|
@@ -431,10 +441,11 @@ test data:KANJJ1.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|          3,975|      3,493,148|
-|Exomizer|deexo_180|            168|          3,975|      3,494,254|
-|Exomizer|deexo_180_fast|            173|          3,975|      3,068,080|
-|Exomizer|deexo_180_fast_jp|            184|          3,975|      3,046,689|
+|Exomizer2|deexo|            169|          3,975|      3,493,148|
+|Exomizer2|deexo_180|            168|          3,975|      3,494,254|
+|Exomizer2|deexo_180_fast|            173|          3,975|      3,068,080|
+|Exomizer2|deexo_180_fast_jp|            184|          3,975|      3,046,689|
+|Exomizer3|deexo3|            230|          3,974|      2,697,944|
 |mhmt|dehrust_ix|            234|          4,241|      1,826,309|
 |mhmt|dehrust_stk|            209|          4,241|      1,698,453|
 |lz48|lz48decrunch_v006|             84|          5,532|        669,209|
@@ -467,10 +478,11 @@ test data:KANJJ1.B02(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         10,688|      7,768,783|
-|Exomizer|deexo_180|            168|         10,688|      7,769,889|
-|Exomizer|deexo_180_fast|            173|         10,688|      6,730,946|
-|Exomizer|deexo_180_fast_jp|            184|         10,688|      6,671,145|
+|Exomizer2|deexo|            169|         10,688|      7,768,783|
+|Exomizer2|deexo_180|            168|         10,688|      7,769,889|
+|Exomizer2|deexo_180_fast|            173|         10,688|      6,730,946|
+|Exomizer2|deexo_180_fast_jp|            184|         10,688|      6,671,145|
+|Exomizer3|deexo3|            230|         10,688|      5,528,410|
 |mhmt|dehrust_ix|            234|         10,960|      3,286,239|
 |mhmt|dehrust_stk|            209|         10,960|      2,990,229|
 |lz48|lz48decrunch_v006|             84|         14,290|        662,376|
@@ -503,10 +515,11 @@ test data:KANJJ1.B03(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         10,510|      7,603,571|
-|Exomizer|deexo_180|            168|         10,510|      7,604,677|
-|Exomizer|deexo_180_fast|            173|         10,510|      6,584,139|
-|Exomizer|deexo_180_fast_jp|            184|         10,510|      6,524,879|
+|Exomizer2|deexo|            169|         10,510|      7,603,571|
+|Exomizer2|deexo_180|            168|         10,510|      7,604,677|
+|Exomizer2|deexo_180_fast|            173|         10,510|      6,584,139|
+|Exomizer2|deexo_180_fast_jp|            184|         10,510|      6,524,879|
+|Exomizer3|deexo3|            230|         10,509|      5,432,644|
 |mhmt|dehrust_ix|            234|         10,765|      3,242,574|
 |mhmt|dehrust_stk|            209|         10,765|      2,950,438|
 |lz48|lz48decrunch_v006|             84|         14,024|        676,681|
@@ -539,10 +552,11 @@ test data:KANJJ1.B04(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         10,415|      7,416,607|
-|Exomizer|deexo_180|            168|         10,415|      7,417,713|
-|Exomizer|deexo_180_fast|            173|         10,415|      6,427,856|
-|Exomizer|deexo_180_fast_jp|            184|         10,415|      6,371,370|
+|Exomizer2|deexo|            169|         10,415|      7,416,607|
+|Exomizer2|deexo_180|            168|         10,415|      7,417,713|
+|Exomizer2|deexo_180_fast|            173|         10,415|      6,427,856|
+|Exomizer2|deexo_180_fast_jp|            184|         10,415|      6,371,370|
+|Exomizer3|deexo3|            230|         10,415|      5,350,357|
 |mhmt|dehrust_ix|            234|         10,708|      3,254,294|
 |mhmt|dehrust_stk|            209|         10,708|      2,963,646|
 |lz48|lz48decrunch_v006|             84|         13,960|        681,024|
@@ -575,10 +589,11 @@ test data:KANJJ1.B05(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         10,348|      7,475,213|
-|Exomizer|deexo_180|            168|         10,348|      7,476,319|
-|Exomizer|deexo_180_fast|            173|         10,348|      6,473,434|
-|Exomizer|deexo_180_fast_jp|            184|         10,348|      6,415,365|
+|Exomizer2|deexo|            169|         10,348|      7,475,213|
+|Exomizer2|deexo_180|            168|         10,348|      7,476,319|
+|Exomizer2|deexo_180_fast|            173|         10,348|      6,473,434|
+|Exomizer2|deexo_180_fast_jp|            184|         10,348|      6,415,365|
+|Exomizer3|deexo3|            230|         10,347|      5,364,136|
 |mhmt|dehrust_ix|            234|         10,610|      3,218,897|
 |mhmt|dehrust_stk|            209|         10,610|      2,929,495|
 |lz48|lz48decrunch_v006|             84|         13,952|        675,287|
@@ -611,10 +626,11 @@ test data:KANJJ1.B06(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|         10,650|      7,752,805|
-|Exomizer|deexo_180|            168|         10,650|      7,753,911|
-|Exomizer|deexo_180_fast|            173|         10,650|      6,711,316|
-|Exomizer|deexo_180_fast_jp|            184|         10,650|      6,650,849|
+|Exomizer2|deexo|            169|         10,650|      7,752,805|
+|Exomizer2|deexo_180|            168|         10,650|      7,753,911|
+|Exomizer2|deexo_180_fast|            173|         10,650|      6,711,316|
+|Exomizer2|deexo_180_fast_jp|            184|         10,650|      6,650,849|
+|Exomizer3|deexo3|            230|         10,650|      5,558,625|
 |mhmt|dehrust_ix|            234|         10,934|      3,297,965|
 |mhmt|dehrust_stk|            209|         10,934|      3,001,103|
 |lz48|lz48decrunch_v006|             84|         14,179|        662,958|
@@ -647,10 +663,11 @@ test data:KANJJ1.B07(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|Exomizer|deexo|            169|          9,701|      7,135,248|
-|Exomizer|deexo_180|            168|          9,701|      7,136,354|
-|Exomizer|deexo_180_fast|            173|          9,701|      6,186,074|
-|Exomizer|deexo_180_fast_jp|            184|          9,701|      6,131,047|
+|Exomizer2|deexo|            169|          9,701|      7,135,248|
+|Exomizer2|deexo_180|            168|          9,701|      7,136,354|
+|Exomizer2|deexo_180_fast|            173|          9,701|      6,186,074|
+|Exomizer2|deexo_180_fast_jp|            184|          9,701|      6,131,047|
+|Exomizer3|deexo3|            230|          9,701|      5,088,954|
 |mhmt|dehrust_ix|            234|          9,953|      3,024,595|
 |mhmt|dehrust_stk|            209|          9,953|      2,757,158|
 |lz48|lz48decrunch_v006|             84|         13,048|        641,904|
