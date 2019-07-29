@@ -56,8 +56,10 @@
 		ENDM
 
 		MACRO ADD_OFFSET
+		push hl
 		or a
 		sbc hl,de
+		pop de
 		ENDM
 
 		MACRO BLOCKCOPY
@@ -71,6 +73,7 @@
 		ENDM
 
 		MACRO ADD_OFFSET
+		ex de,hl
 		add hl,de
 		ENDM
 
@@ -213,7 +216,6 @@ MatchLen:	inc a
 
 CopyMatch:	ld c,a
 .useC		ex (sp),hl
-		ex de,hl
 		ADD_OFFSET
 		BLOCKCOPY
 		pop hl
