@@ -4,6 +4,7 @@
 ;Optimized by Antonio Villena and Urusergi (169 bytes)
 ;Modified using z80 alternate registers to prevent undocumented instruction(169 -> 167bytes)
 ;Modified for Exomizer 3 raw -P7(default) (167 -> 195bytes)
+;Apply speed boost( 195 -> 202bytes )
 ;
 ;Compression algorithm by Magnus Lind
 ;
@@ -52,7 +53,8 @@ exo_initbits:
                 ld      e, l
 
 exo_get4bits:   exx
-                call    exo_getbit   ;get one bit
+                sla     a
+                call    z,exo_getbit   ;get one bit
                 exx
 
                 rl      c
@@ -85,10 +87,13 @@ exo_literalcopy:
                 ldi
 
 exo_mainloop:   inc     c
-                call    exo_getbit      ;literal?
+                sla     a
+                call    z,exo_getbit      ;literal?
                 jr      c, exo_literalcopy
                 ld      c, 239
-exo_getindex:   call    exo_getbit
+exo_getindex:
+                sla     a
+                call    z,exo_getbit
                 inc     c
                 jr      nc,exo_getindex
                 ret     z
@@ -110,7 +115,8 @@ exo_dontgo:     ld      bc, 1024+16     ;4 bits, 32 offset
                 ld      de, 0
                 ld      c, d            ;16 offset
 exo_goforit:
-                call    exo_getbit
+                sla     a
+                call    z,exo_getbit
                 rl      e
                 djnz    exo_goforit
 
@@ -150,7 +156,8 @@ exo_getpair:    add     iy, bc
                 jr      z,.skp3
                 ex      af,af';'
 .lp1:
-                call    exo_getbit
+                sla     a
+                call    z,exo_getbit
                 rl      e
                 djnz    .lp1
                 ex      af,af';'
@@ -172,9 +179,6 @@ exo_getpair:    add     iy, bc
                 ret
 
 exo_getbit:
-                sla     a
-                ret     nz
-
                 ld      a, (hl)
                 inc     hl
 
