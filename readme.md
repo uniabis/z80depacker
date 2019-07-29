@@ -27,9 +27,9 @@ License:GPLv3
 
 [LZEe - LZE enhancement for z80](https://github.com/uniabis/lzee)
 
-### [lzsa1] https://github.com/emmanuel-marty/lzsa 1.0.6(-f1 -r)
+### [lzsa1](https://github.com/emmanuel-marty/lzsa) 1.0.6(-f1 -r)
 
-### [lzsa2] https://github.com/emmanuel-marty/lzsa 1.0.6(-f2 -r)
+### [lzsa2](https://github.com/emmanuel-marty/lzsa) 1.0.6(-f2 -r)
 
 ### MegaLZ v4.89
 
