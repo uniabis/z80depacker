@@ -241,55 +241,46 @@ next:
 	inc	b
 	dec	b
 	jr	nz,defaultofs
-IF (PFLAG & PFLAG_4_OFFSET_TABLES)
 	dec	c
 	jr	z,ofs1
 	dec	c
 	jr	z,ofs2
+IF (PFLAG & PFLAG_4_OFFSET_TABLES)
 	dec	c
 	jr	z,ofs3
 
 defaultofs:
-	ld	a,16
+	ld	c,01h
 	jr	ofsb4
 
 ofs1:
-	ld	a,64
-	ld	b,02h
+	ld	bc,0210h
 	jr	getofs
 
 ofs2:
-	ld	a,48
+	ld	c,03h
 	jr	ofsb4
 
 ofs3:
 ELSE
-	dec	c
-	jr	z,ofs1
-	dec	c
-	jr	z,ofs2
 
 defaultofs:
-	ld	a,16
+	ld	c,01h
 	jr	ofsb4
 
 ofs1:
-	ld	a,48
-	ld	b,02h
+	ld	bc,020Ch
 	jr	getofs
 
 ofs2:
 ENDIF
 
-	ld	a,32
+	ld	c,02h
 ofsb4:
-	ld	bc,0400h
+	ld	b,04h
 getofs:
 
 	m_getbits8
-
-	add	c
-	ld	c,a
 
 	call	p_readtable
 

@@ -3,8 +3,8 @@
 ;
 ;Optimized by Antonio Villena and Urusergi (169 bytes)
 ;Modified using z80 alternate registers to prevent undocumented instruction(169 -> 167bytes)
-;Modified for Exomizer 3 raw -P7(default) (167 -> 195bytes)
-;Apply speed boost( 195 -> 202bytes )
+;Modified for Exomizer 3 raw -P7(default) (167 -> 180bytes)
+;Apply speed boost(180 -> 187bytes)
 ;
 ;Compression algorithm by Magnus Lind
 ;
@@ -39,16 +39,16 @@ deexo:          ld      iy, exo_mapbasebits+11
                 inc     hl
 
 tableinit:
-                ld      bc, 52 * 256 + 1
+                ld      b, 52
                 cp      a ; SET ZF
 
 exo_initbits:
                 exx
 
                 ld      hl, 1
-                ld      c, 16
+                ld      b, 16
                 jr      nz, exo_get4bits
-                ld      b, c
+                ld      c, b
                 ld      d, h
                 ld      e, l
 
@@ -57,28 +57,25 @@ exo_get4bits:   exx
                 call    z,exo_getbit   ;get one bit
                 exx
 
-                rl      c
+                rl      b
                 jr      nc, exo_get4bits
 
-                ex      af,af';'
-                srl     c
+                srl     b
                 jr      nc,.skp1
-                ld      a,c
-                or      8
-                ld      c,a
-.skp1:
-                ex      af,af';'
 
-                inc     c
-                ld      (iy+41), c      ;bits[i]=b1 (and opcode 41 == add hl,hl)
-exo_setbit:     dec     c
-                jr      nz, exo_setbit-1 ;jump to add hl,hl instruction
-                ld      (iy-11), e
-                ld      (iy+93), d      ;base[i]=b2
+                set     3,b
+.skp1:
+
+                ld      (iy-11), b      ;bits[i]
+                inc     b
+                ld      (iy+93), d      ;baseh[i]
+                ld      (iy+41), e      ;basel[i] (and opcode 41 == add hl,hl)
+exo_setbit:
+                djnz    exo_setbit-1 ;jump to add hl,hl instruction
                 add     hl, de
                 ex      de, hl
                 inc     iy
-                dec     b
+                dec     c
 
                 exx
                 djnz    exo_initbits
@@ -86,11 +83,11 @@ exo_setbit:     dec     c
 exo_literalcopy:
                 ldi
 
-exo_mainloop:   inc     c
+exo_mainloop:
                 sla     a
                 call    z,exo_getbit      ;literal?
                 jr      c, exo_literalcopy
-                ld      c, 239
+                ld      bc, 240-1
 exo_getindex:
                 sla     a
                 call    z,exo_getbit
@@ -100,28 +97,25 @@ exo_getindex:
                 jp      p, exo_literalrun
 
                 push    de
-                ld      d, b
-                ld      iy, exo_mapbasebits-229
+                ld      iy, exo_mapbasebits+11-240
                 call    exo_getpair
                 push    de
                 rlc     d
                 jr      nz, exo_dontgo
                 dec     e
-                ld      bc, 512+32      ;2 bits, 48 offset
+                ld      bc, 2*256 + 8   ;2 bits, 48 offset
                 jr      z, exo_goforit
                 dec     e               ;2?
-exo_dontgo:     ld      bc, 1024+16     ;4 bits, 32 offset
+exo_dontgo:     ld      bc, 4*256 + 1   ;4 bits, 32 offset
                 jr      z, exo_goforit
-                ld      de, 0
-                ld      c, d            ;16 offset
+                dec     c
 exo_goforit:
                 sla     a
                 call    z,exo_getbit
-                rl      e
+                rl      c
                 djnz    exo_goforit
 
-                ld      iy, exo_mapbasebits+27
-                add     iy, de
+                ld      iy, exo_mapbasebits+11+16
                 call    exo_getpair
                 pop     bc
                 ex      (sp), hl
@@ -142,37 +136,33 @@ exo_literalrun:
 
 
 exo_getpair:    add     iy, bc
-                ld      e, d
-                ld      c, (iy+41)
 
-                ex      af,af';'
+                ld      d, b
+                ld      c, (iy-11)
 
-                dec     c
-                ld      a,c
+                ld      e, a
+                ld      a, c
                 and     7
-                ld      b,a
-                ld      a,c
+                ld      b, a
+                ld      a, e
+                ld      e, d
 
                 jr      z,.skp3
-                ex      af,af';'
 .lp1:
                 sla     a
                 call    z,exo_getbit
                 rl      e
                 djnz    .lp1
-                ex      af,af';'
 .skp3:
-                and     8
+                bit     3,c
                 jr      z,.skp4
 
                 ld      d,e
                 ld      e,(hl)
                 inc     hl
 .skp4:
-                ex      af,af';'
-
                 ex      de, hl
-                ld      c, (iy-11)
+                ld      c, (iy+41)
                 ld      b, (iy+93)
                 add     hl, bc          ;Always clear C flag
                 ex      de, hl
