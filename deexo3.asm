@@ -67,7 +67,7 @@ ENDIF
 
 IF (PFLAG & PFLAG_BITS_ORDER_BE)
 	MACRO	m_getbit1
-	sla	a
+	add	a
 	ENDM
 
 	MACRO	m_filbit1

@@ -3,7 +3,7 @@
 ;
 ;Optimized by Antonio Villena and Urusergi (169 bytes)
 ;Modified using z80 alternate registers to prevent undocumented instruction(169 -> 167bytes)
-;Modified for Exomizer 3 raw -P7(default) (167 -> 180bytes)
+;Modified for Exomizer 3 raw -P7(default) (167 -> 179bytes)
 ;
 ;Compression algorithm by Magnus Lind
 ;
@@ -28,8 +28,8 @@
 ;               you may change exo_mapbasebits to point to any free buffer
 ;
 ;ATTENTION!
-;A huge speed boost (around 14%) can be gained at the cost of only 7 bytes.
-;If you want this, replace all instances of "call exo_getbit" with "sla a" followed by
+;A huge speed boost (around 14%) can be gained at the cost of only 3 bytes.
+;If you want this, replace all instances of "call exo_getbit" with "add a" followed by
 ;"call z,exo_getbit", and remove the first two instructions in exo_getbit routine.
 
 deexo:          ld      iy, exo_mapbasebits+11
@@ -163,7 +163,7 @@ exo_getpair:    add     iy, bc
                 ret
 
 exo_getbit:
-                sla     a
+                add     a
                 ret     nz
 
                 ld      a, (hl)

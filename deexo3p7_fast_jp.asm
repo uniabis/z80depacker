@@ -3,9 +3,9 @@
 ;
 ;Optimized by Antonio Villena and Urusergi (169 bytes)
 ;Modified using z80 alternate registers to prevent undocumented instruction(169 -> 167bytes)
-;Modified for Exomizer 3 raw -P7(default) (167 -> 180bytes)
-;Apply speed boost(180 -> 187bytes)
-;Replace JR with JP(187-> 189ytes)
+;Modified for Exomizer 3 raw -P7(default) (167 -> 179bytes)
+;Apply speed boost(179 -> 182bytes)
+;Replace JR with JP(182-> 184ytes)
 ;
 ;Compression algorithm by Magnus Lind
 ;
@@ -30,8 +30,8 @@
 ;               you may change exo_mapbasebits to point to any free buffer
 ;
 ;ATTENTION!
-;A huge speed boost (around 14%) can be gained at the cost of only 7 bytes.
-;If you want this, replace all instances of "call exo_getbit" with "sla a" followed by
+;A huge speed boost (around 14%) can be gained at the cost of only 3 bytes.
+;If you want this, replace all instances of "call exo_getbit" with "add a" followed by
 ;"call z,exo_getbit", and remove the first two instructions in exo_getbit routine.
 
 deexo:          ld      iy, exo_mapbasebits+11
@@ -54,7 +54,7 @@ exo_initbits:
                 ld      e, l
 
 exo_get4bits:   exx
-                sla     a
+                add     a
                 call    z,exo_getbit   ;get one bit
                 exx
 
@@ -85,12 +85,12 @@ exo_literalcopy:
                 ldi
 
 exo_mainloop:
-                sla     a
+                add     a
                 call    z,exo_getbit      ;literal?
                 jr      c, exo_literalcopy
                 ld      bc, 240-1
 exo_getindex:
-                sla     a
+                add     a
                 call    z,exo_getbit
                 inc     c
                 jr      nc,exo_getindex
@@ -111,7 +111,7 @@ exo_dontgo:     ld      bc, 4*256 + 1   ;4 bits, 32 offset
                 jr      z, exo_goforit
                 dec     c
 exo_goforit:
-                sla     a
+                add     a
                 call    z,exo_getbit
                 rl      c
                 djnz    exo_goforit
@@ -150,7 +150,7 @@ exo_getpair:    add     iy, bc
 
                 jr      z,.skp3
 .lp1:
-                sla     a
+                add     a
                 call    z,exo_getbit
                 rl      e
                 djnz    .lp1
