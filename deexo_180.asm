@@ -2,7 +2,7 @@
 ;Copyright (C) 2008-2016 by Jaime Tejedor Gomez (Metalbrain)
 ;
 ;Optimized by Antonio Villena and Urusergi (169 bytes)
-;Use z80 alternate registers to prevent undocumented instruction( 169 -> 168bytes )
+;Use z80 alternate registers to prevent undocumented instruction( 169 -> 167bytes )
 ;
 ;Compression algorithm by Magnus Lind
 ;
@@ -43,10 +43,12 @@ tableinit:
 exo_initbits:
                 exx
 
+                ld      hl, 1
                 ld      c, 16
                 jr      nz, exo_get4bits
                 ld      b, c
-                ld      de, 1           ;DE=b2
+                ld      d, h
+                ld      e, l
 
 exo_get4bits:   exx
                 call    exo_getbit   ;get one bit
@@ -55,7 +57,6 @@ exo_get4bits:   exx
                 rl      c
                 jr      nc, exo_get4bits
                 inc     c
-                ld      hl, 1
                 ld      (iy+41), c      ;bits[i]=b1 (and opcode 41 == add hl,hl)
 exo_setbit:     dec     c
                 jr      nz, exo_setbit-1 ;jump to add hl,hl instruction
