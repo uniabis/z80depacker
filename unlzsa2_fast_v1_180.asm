@@ -1,5 +1,5 @@
 ;
-;  Speed-optimized LZSA2 decompressor by spke (v.1 02-07/06/2019, 216 bytes)
+;  Speed-optimized LZSA2 decompressor by spke (v.1 02-07/06/2019, 215 bytes)
 ;
 ;  The data must be compressed using the command line compressor by Emmanuel Marty
 ;  The compression is done as follows:
@@ -213,9 +213,8 @@ MatchLen:	inc a
 
 CopyMatch:	ld c,a
 .useC		ex (sp),hl
-		push hl					; BC = len, DE = offset, HL = dest, SP ->[dest,src]
+		ex de,hl
 		ADD_OFFSET
-		pop de					; BC = len, DE = dest, HL = dest-offset, SP->[src]
 		BLOCKCOPY
 		pop hl
 
