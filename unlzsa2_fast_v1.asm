@@ -56,8 +56,7 @@
 		ENDM
 
 		MACRO ADD_OFFSET
-		or a
-		sbc hl,de
+		or a : sbc hl,de
 		ENDM
 
 		MACRO BLOCKCOPY
@@ -80,104 +79,57 @@
 
 	ENDIF
 
-	MACRO exa
-	ex af,af';'
-	ENDM
-
 @DecompressLZSA2:
 		; A' stores next nibble as %1111.... or assumed to contain trash
 		; B is assumed to be 0
-		xor a
-		ld b,a
-		exa
-		jr ReadToken
+		xor a : ld b,a : exa : jr ReadToken
 
 
 
 
 
-LongerMatch:	exa
-		jp m,.noUpdate
+LongerMatch:	exa : jp m,.noUpdate
 
-		ld a,(hl)
-		or #F0
-		exa
-		ld a,(hl)
-		NEXT_HL
-		or #0F
-		rrca
-		rrca
-		rrca
-		rrca
+			ld a,(hl) : or #F0 : exa
+			ld a,(hl) : NEXT_HL : or #0F
+			rrca : rrca : rrca : rrca
 
-.noUpdate	sub #F0-9
-		cp 15+9
-		jr c,CopyMatch
-		;inc a
-		;jr z,LongMatch
-		;sub #F0-9+1
-		;jp CopyMatch
+.noUpdate	sub #F0-9 : cp 15+9 : jr c,CopyMatch
+		;inc a : jr z,LongMatch : sub #F0-9+1 : jp CopyMatch
 
-LongMatch:	;ld a,24
-		add (hl)
-		NEXT_HL
-		jr nc,CopyMatch
-		ld c,(hl)
-		NEXT_HL
-		ld b,(hl)
-		NEXT_HL
+LongMatch:	;ld a,24 : 
+		add (hl) : NEXT_HL : jr nc,CopyMatch
+		ld c,(hl) : NEXT_HL
+		ld b,(hl) : NEXT_HL
 		jr nz,CopyMatch.useC
-		pop de
-		ret
+		pop de : ret
 
 
 
 
-ManyLiterals:	ld a,18
-		add (hl)
-		NEXT_HL
-		jr nc,CopyLiterals
-		ld c,(hl)
-		NEXT_HL
-		ld a,b
-		ld b,(hl)
-		NEXT_HL
+ManyLiterals:	ld a,18 : 
+		add (hl) : NEXT_HL : jr nc,CopyLiterals
+		ld c,(hl) : NEXT_HL
+		ld a,b : ld b,(hl) : NEXT_HL
 		jr CopyLiterals.useBC
 
 
 
 
-MoreLiterals:	ld b,(hl)
-		NEXT_HL
-		exa
-		jp m,.noUpdate
+MoreLiterals:	ld b,(hl) : NEXT_HL
+		exa : jp m,.noUpdate
 
-		ld a,(hl)
-		or #F0
-		exa
-		ld a,(hl)
-		NEXT_HL
-		or #0F
-		rrca
-		rrca
-		rrca
-		rrca
+			ld a,(hl) : or #F0 : exa
+			ld a,(hl) : NEXT_HL : or #0F
+			rrca : rrca : rrca : rrca
 
-.noUpdate	;sub #F0-3
-		;cp 15+3
-		;jr z,ManyLiterals
-		inc a
-		jr z,ManyLiterals
-		sub #F0-3+1
+.noUpdate	;sub #F0-3 : cp 15+3 : jr z,ManyLiterals
+		inc a : jr z,ManyLiterals : sub #F0-3+1
 
 CopyLiterals:	ld c,a
-.useC		ld a,b
-		ld b,0
+.useC		ld a,b : ld b,0
 .useBC		BLOCKCOPY
-		push de
-		or a
-		jp p,CASE0xx
-		jr CASE1xx
+		push de : or a : jp p,CASE0xx : jr CASE1xx
 
 
 
@@ -185,124 +137,72 @@ CopyLiterals:	ld c,a
 
 		; if "LL" of the byte token is equal to 0,
 		; there are no literals to copy
-NoLiterals:	xor (hl)
-		NEXT_HL
-		push de
-		jp m,CASE1xx
+NoLiterals:	xor (hl) : NEXT_HL
+		push de : jp m,CASE1xx
 
 		; short (5 or 9 bit long) offsets
-CASE0xx		ld d,#FF
-		cp %01000000
-		jr c,CASE00x
+CASE0xx		ld d,#FF : cp %01000000 : jr c,CASE00x
 
 		; "01x": the case of the 9-bit offset
-CASE01x:	cp %01100000
-		rl d
+CASE01x:	cp %01100000 : rl d
 
-ReadOffsetE:	ld e,(hl)
-		NEXT_HL
+ReadOffsetE:	ld e,(hl) : NEXT_HL
 
-SaveOffset:	ld ixl,e
-		ld ixh,d
+SaveOffset:	ld ixl,e : ld ixh,d
 
-MatchLen:	inc a
-		and %00000111
-		jr z,LongerMatch
-		inc a
+MatchLen:	inc a : and %00000111 : jr z,LongerMatch : inc a
 
 CopyMatch:	ld c,a
-.useC		ex (sp),hl
-		push hl					; BC = len, DE = offset, HL = dest, SP ->[dest,src]
-		ADD_OFFSET
-		pop de					; BC = len, DE = dest, HL = dest-offset, SP->[src]
-		BLOCKCOPY
-		pop hl
+.useC		ex (sp),hl : push hl					; BC = len, DE = offset, HL = dest, SP ->[dest,src]
+		ADD_OFFSET : pop de					; BC = len, DE = dest, HL = dest-offset, SP->[src]
+		BLOCKCOPY : pop hl
 
 		; compressed data stream contains records
 		; each record begins with the byte token "XYZ|LL|MMM"
-ReadToken:	ld a,(hl)
-		and %00011000
-		jr z,NoLiterals
+ReadToken:	ld a,(hl) : and %00011000 : jr z,NoLiterals
 
 		jp pe,MoreLiterals					; 00 has already been processed; this identifies the case of 11
-		rrca
-		rrca
-		rrca
+		rrca : rrca : rrca
 
-		ld c,a
-		ld a,(hl)
-		NEXT_HL				; token is re-read for further processing
+		ld c,a : ld a,(hl) : NEXT_HL				; token is re-read for further processing
 		BLOCKCOPY
 
 		; the token and literals are followed by the offset
-		push de
-		or a
-		jp p,CASE0xx
+		push de : or a : jp p,CASE0xx
 
-CASE1xx		cp %11000000
-		jr nc,CASE11x
+CASE1xx		cp %11000000 : jr nc,CASE11x
 
 		; "10x": the case of the 5-bit offset
-CASE10x:	ld c,a
-		xor a
-		exa
-		jp m,.noUpdate
+CASE10x:	ld c,a : xor a
+		exa : jp m,.noUpdate
 
-		ld a,(hl)
-		or #F0
-		exa
-		ld a,(hl)
-		NEXT_HL
-		or #0F
-		rrca
-		rrca
-		rrca
-		rrca
+			ld a,(hl) : or #F0 : exa
+			ld a,(hl) : NEXT_HL : or #0F
+			rrca : rrca : rrca : rrca
 
-.noUpdate	ld d,a
-		ld a,c
-		cp %10100000
-		rl d
-		dec d
-		dec d
-		jr ReadOffsetE
+.noUpdate	ld d,a : ld a,c
+		cp %10100000 : rl d
+		dec d : dec d : jr ReadOffsetE
 
 		; "00x": the case of the 5-bit offset
-CASE00x:	ld c,a
-		xor a
-		exa
-		jp m,.noUpdate
+CASE00x:	ld c,a : xor a
+		exa : jp m,.noUpdate
 
-		ld a,(hl)
-		or #F0
-		exa
-		ld a,(hl)
-		NEXT_HL
-		or #0F
-		rrca
-		rrca
-		rrca
-		rrca
+			ld a,(hl) : or #F0 : exa
+			ld a,(hl) : NEXT_HL : or #0F
+			rrca : rrca : rrca : rrca
 
-.noUpdate	ld e,a
-		ld a,c
-		cp %00100000
-		rl e
-		jp SaveOffset
+.noUpdate	ld e,a : ld a,c
+		cp %00100000 : rl e : jp SaveOffset
 
 		; two remaining cases
-CASE11x		cp %11100000
-		jr c,CASE110
+CASE11x		cp %11100000 : jr c,CASE110
 
 		; "111": repeated offset
-CASE111:	ld e,ixl
-		ld d,ixh
-		jr MatchLen
+CASE111:	ld e,ixl : ld d,ixh : jr MatchLen
 
 		; "110": 16-bit offset
-CASE110:	ld d,(hl)
-		NEXT_HL
-		jr ReadOffsetE
+CASE110:	ld d,(hl) : NEXT_HL : jr ReadOffsetE
 
 
 

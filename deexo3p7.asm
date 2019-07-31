@@ -3,7 +3,9 @@
 ;
 ;Optimized by Antonio Villena and Urusergi (169 bytes)
 ;Modified using z80 alternate registers to prevent undocumented instruction(169 -> 167bytes)
-;Modified for Exomizer 3 raw -P7(default) (167 -> 179bytes)
+;Modified for Exomizer 3 raw -P7(default) (167 -> 176bytes)
+;Apply speed boost(176 -> 179bytes)
+;Replace JR with JP(179-> 181ytes)
 ;
 ;Compression algorithm by Magnus Lind
 ;
@@ -32,6 +34,16 @@
 ;If you want this, replace all instances of "call exo_getbit" with "add a" followed by
 ;"call z,exo_getbit", and remove the first two instructions in exo_getbit routine.
 
+                MACRO   m_getbit
+IFDEF INLINE_GETBIT
+                add     a
+                call    z,p_getbit
+ELSE
+                call    p_getbit
+ENDIF
+                ENDM
+
+
 deexo:          ld      iy, exo_mapbasebits+11
 
                 ld      a, (hl)
@@ -52,11 +64,13 @@ exo_initbits:
                 ld      e, l
 
 exo_get4bits:   exx
-                call    exo_getbit   ;get one bit
+                m_getbit
                 exx
 
                 rl      b
                 jr      nc, exo_get4bits
+
+                ld      (iy-11), b      ;bits[i]
 
                 srl     b
                 jr      nc,.skp1
@@ -64,7 +78,6 @@ exo_get4bits:   exx
                 set     3,b
 .skp1:
 
-                ld      (iy-11), b      ;bits[i]
                 inc     b
                 ld      (iy+93), d      ;baseh[i]
                 ld      (iy+41), e      ;basel[i] (and opcode 41 == add hl,hl)
@@ -82,11 +95,11 @@ exo_literalcopy:
                 ldi
 
 exo_mainloop:
-                call    exo_getbit      ;literal?
+                m_getbit
                 jr      c, exo_literalcopy
                 ld      bc, 240-1
 exo_getindex:
-                call    exo_getbit
+                m_getbit
                 inc     c
                 jr      nc,exo_getindex
                 ret     z
@@ -106,7 +119,7 @@ exo_dontgo:     ld      bc, 4*256 + 1   ;4 bits, 32 offset
                 jr      z, exo_goforit
                 dec     c
 exo_goforit:
-                call    exo_getbit
+                m_getbit
                 rl      c
                 djnz    exo_goforit
 
@@ -119,7 +132,11 @@ exo_goforit:
                 pop     de
                 ldir
                 pop     hl
+IFDEF ABSOLUTE_JUMP
+                jp      exo_mainloop    ;Next!
+ELSE
                 jr      exo_mainloop    ;Next!
+ENDIF
 
 exo_literalrun:
                 ld      b,(hl)
@@ -127,28 +144,29 @@ exo_literalrun:
                 ld      c,(hl)
                 inc     hl
                 ldir
-                jr      exo_mainloop
+IFDEF ABSOLUTE_JUMP
+                jp      exo_mainloop    ;Next!
+ELSE
+                jr      exo_mainloop    ;Next!
+ENDIF
 
 
 exo_getpair:    add     iy, bc
 
                 ld      d, b
-                ld      c, (iy-11)
+                ld      e, b
 
-                ld      e, a
-                ld      a, c
-                and     7
-                ld      b, a
-                ld      a, e
-                ld      e, d
+                ld      c, (iy-11)
+                ld      b, c
+                srl	b
 
                 jr      z,.skp3
 .lp1:
-                call    exo_getbit
+                m_getbit
                 rl      e
                 djnz    .lp1
 .skp3:
-                bit     3,c
+                bit     0,c
                 jr      z,.skp4
 
                 ld      d,e
@@ -162,10 +180,12 @@ exo_getpair:    add     iy, bc
                 ex      de, hl
                 ret
 
-exo_getbit:
+p_getbit:
+IFDEF INLINE_GETBIT
+ELSE
                 add     a
                 ret     nz
-
+ENDIF
                 ld      a, (hl)
                 inc     hl
 

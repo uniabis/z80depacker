@@ -172,6 +172,11 @@ ENDIF
 
 	exx
 
+	ld	(iy+tbl_ofs_bits),a
+	ld	(iy+tbl_ofs_lo),e
+	ld	(iy+tbl_ofs_hi),d
+	inc	iy
+
 IF (PFLAG & PFLAG_BITS_COPY_GT_7)
 
 	srl	a
@@ -179,13 +184,8 @@ IF (PFLAG & PFLAG_BITS_COPY_GT_7)
 	or	8
 .skp2:
 ELSE
-	and	15
+	and	a
 ENDIF
-
-	ld	(iy+tbl_ofs_bits),a
-	ld	(iy+tbl_ofs_lo),e
-	ld	(iy+tbl_ofs_hi),d
-	inc	iy
 
 	jr	z,.skp3
 
@@ -319,20 +319,16 @@ p_readtable:
 
 IF (PFLAG & PFLAG_BITS_COPY_GT_7)
 
-	ld	c,a
-	and	7
+	ld	c,b
+	rr	a
 	ld	b,a
-	ld	a,c
-
-	ld	c,0
 
 	jr	z,.skp3
 
 	m_getbits8
 
 .skp3:
-	and	8
-	jr	z,.skp4
+	jr	nc,.skp4
 
 	ld	b,c
 	ld	c,(hl)

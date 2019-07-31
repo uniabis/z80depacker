@@ -56,8 +56,7 @@
 		ENDM
 
 		MACRO ADD_OFFSET
-		or a
-		sbc hl,de
+		or a : sbc hl,de
 		ENDM
 
 		MACRO BLOCKCOPY
@@ -80,85 +79,50 @@
 
 	ENDIF
 
-	MACRO exa
-	ex af,af';'
-	ENDM
-
 @DecompressLZSA:
 		ld b,0
 
 		; first a byte token "O|LLL|MMMM" is read from the stream,
 		; where LLL is the number of literals and MMMM is
 		; a length of the match that follows after the literals
-ReadToken:	ld a,(hl)
-		exa
-		ld a,(hl)
-		NEXT_HL
-		and #70
-		jr z,NoLiterals
+ReadToken:	ld a,(hl) : exa : ld a,(hl) : NEXT_HL
+		and #70 : jr z,NoLiterals
 
-		rrca
-		rrca
-		rrca
-		rrca					; LLL<7 means 0..6 literals...
-		cp #07
-		call z,ReadLongBA					; LLL=7 means 7+ literals...
+		rrca : rrca : rrca : rrca					; LLL<7 means 0..6 literals...
+		cp #07 : call z,ReadLongBA					; LLL=7 means 7+ literals...
 
-		ld c,a
-		BLOCKCOPY
+		ld c,a : BLOCKCOPY
 
 		; next we read the low byte of the -offset
-NoLiterals:	push de
-		ld e,(hl)
-		NEXT_HL
-		ld d,#FF
+NoLiterals:	push de : ld e,(hl) : NEXT_HL : ld d,#FF
 		; the top bit of token is set if
 		; the offset contains the high byte as well
-		exa
-		or a
-		jp p,ShortOffset
+		exa : or a : jp p,ShortOffset
 
-LongOffset:	ld d,(hl)
-		NEXT_HL
+LongOffset:	ld d,(hl) : NEXT_HL
 
 		; last but not least, the match length is read
-ShortOffset:	and #0F
-		add 3							; MMMM<15 means match lengths 0+3..14+3
-		cp 15+3
-		call z,ReadLongBA					; MMMM=15 means lengths 14+3+
+ShortOffset:	and #0F : add 3							; MMMM<15 means match lengths 0+3..14+3
+		cp 15+3 : call z,ReadLongBA					; MMMM=15 means lengths 14+3+
 		ld c,a
 
-		ex (sp),hl
-		push hl						; BC = len, DE = -offset, HL = dest, SP ->[dest,src]
-		ADD_OFFSET
-		pop de						; BC = len, DE = dest, HL = dest+(-offset), SP->[src]
-		BLOCKCOPY
-		pop hl						; BC = 0, DE = dest, HL = src
+		ex (sp),hl : push hl						; BC = len, DE = -offset, HL = dest, SP ->[dest,src]
+		ADD_OFFSET : pop de						; BC = len, DE = dest, HL = dest+(-offset), SP->[src]
+		BLOCKCOPY : pop hl						; BC = 0, DE = dest, HL = src
 		jr ReadToken
 
 		; a standard routine to read extended codes
 		; into registers B (higher byte) and A (lower byte).
-ReadLongBA:	add (hl)
-		NEXT_HL
-		ret nc
+ReadLongBA:	add (hl) : NEXT_HL : ret nc
 
 		; the codes are designed to overflow;
 		; the overflow value 1 means read 1 extra byte
 		; and overflow value 0 means read 2 extra bytes
-.code1:		ld b,a
-		ld a,(hl)
-		NEXT_HL
-		ret nz
-.code0:		ld c,a
-		ld b,(hl)
-		NEXT_HL
+.code1:		ld b,a : ld a,(hl) : NEXT_HL : ret nz
+.code0:		ld c,a : ld b,(hl) : NEXT_HL
 
 		; the two-byte match length equal to zero
 		; designates the end-of-data marker
-		or b
-		ld a,c
-		ret nz
-		pop de
-		pop de
-		ret
+		or b : ld a,c : ret nz
+		pop de : pop de : ret
 

@@ -1,10 +1,10 @@
 ;
-;  Size-optimized LZSA2 decompressor by spke (v.1 02-09/06/2019, 145 bytes)
+;  Size-optimized LZSA decompressor by spke (v.1 23/04/2019 +patch1-30/07/2019, 68 bytes)
 ;
 ;  The data must be compressed using the command line compressor by Emmanuel Marty
 ;  The compression is done as follows:
 ;
-;  lzsa.exe -f2 -r <sourcefile> <outfile>
+;  lzsa.exe -f1 -r <sourcefile> <outfile>
 ;
 ;  where option -r asks for the generation of raw (frame-less) data.
 ;
@@ -12,21 +12,21 @@
 ;
 ;  ld hl,FirstByteOfCompressedData
 ;  ld de,FirstByteOfMemoryForDecompressedData
-;  call DecompressLZSA2
+;  call DecompressLZSA
 ;
 ;  Backward compression is also supported; you can compress files backward using:
 ;
-;  lzsa.exe -f2 -r -b <sourcefile> <outfile>
+;  lzsa.exe -f1 -r -b <sourcefile> <outfile>
 ;
 ;  and decompress the resulting files using:
 ;
 ;  ld hl,LastByteOfCompressedData
 ;  ld de,LastByteOfMemoryForDecompressedData
-;  call DecompressLZSA2
+;  call DecompressLZSA
 ;
 ;  (do not forget to uncomment the BACKWARD_DECOMPRESS option in the decompressor).
 ;
-;  Of course, LZSA2 compression algorithm is (c) 2019 Emmanuel Marty,
+;  Of course, LZSA compression algorithm is (c) 2019 Emmanuel Marty,
 ;  see https://github.com/emmanuel-marty/lzsa for more information
 ;
 ;  Drop me an email if you have any comments/ideas/suggestions: zxintrospec@gmail.com
@@ -46,7 +46,6 @@
 ;  2. Altered source versions must be plainly marked as such, and must not be
 ;     misrepresented as being the original software.
 ;  3. This notice may not be removed or altered from any source distribution.
-;
 
 ;	DEFINE	BACKWARD_DECOMPRESS
 
@@ -57,7 +56,7 @@
 		ENDM
 
 		MACRO ADD_OFFSET
-		or a : sbc hl,de
+		push hl : or a : sbc hl,de : pop de
 		ENDM
 
 		MACRO BLOCKCOPY
@@ -71,7 +70,7 @@
 		ENDM
 
 		MACRO ADD_OFFSET
-		add hl,de
+		ex de,hl : add hl,de
 		ENDM
 
 		MACRO BLOCKCOPY
@@ -80,77 +79,50 @@
 
 	ENDIF
 
-@DecompressLZSA2:
-		xor a : ld b,a : exa : jr ReadToken
+@DecompressLZSA:
+		ld b,0
 
-CASE0xx		ld d,#FF : cp %01000000 : jr c,CASE00x
+		; first a byte token "O|LLL|MMMM" is read from the stream,
+		; where LLL is the number of literals and MMMM is
+		; a length of the match that follows after the literals
+ReadToken:	ld a,(hl) : exa : ld a,(hl) : NEXT_HL
+		and #70 : jr z,NoLiterals
 
-CASE01x:	cp %01100000 : rl d
+		rrca : rrca : rrca : rrca					; LLL<7 means 0..6 literals...
+		cp #07 : call z,ReadLongBA					; LLL=7 means 7+ literals...
 
-OffsetReadE:	ld e,(hl) : NEXT_HL
-		
-SaveOffset:	ld iyl,e : ld iyh,d
+		ld c,a : BLOCKCOPY
 
-MatchLen:	and %00000111 : add 2 : cp 9 : call z,ExtendedCode
+		; next we read the low byte of the -offset
+NoLiterals:	push de : ld e,(hl) : NEXT_HL : ld d,#FF
+		; the top bit of token is set if
+		; the offset contains the high byte as well
+		exa : or a : jp p,ShortOffset
 
-CopyMatch:	ld c,a
-		ex (sp),hl : push hl						; BC = len, DE = offset, HL = dest, SP ->[dest,src]
-		ADD_OFFSET : pop de						; BC = len, DE = dest, HL = dest-offset, SP->[src]
-		BLOCKCOPY : pop hl
+LongOffset:	ld d,(hl) : NEXT_HL
 
-ReadToken:	ld a,(hl) : ld ixl,a : NEXT_HL
-		and %00011000 : jr z,NoLiterals
-
-		rrca : rrca : rrca
-		call pe,ExtendedCode
-
+		; last but not least, the match length is read
+ShortOffset:	and #0F : add 3							; MMMM<15 means match lengths 0+3..14+3
+		cp 15+3 : call z,ReadLongBA					; MMMM=15 means lengths 14+3+
 		ld c,a
-		BLOCKCOPY
 
-NoLiterals:	push de : ld a,ixl
-		or a : jp p,CASE0xx
+		ex (sp),hl							; BC = len, DE = -offset, HL = dest, SP ->[src]
+		ADD_OFFSET							; BC = len, DE = dest, HL = dest+(-offset), SP->[src]
+		BLOCKCOPY : pop hl						; BC = 0, DE = dest, HL = src
+		jr ReadToken
 
-CASE1xx		cp %11000000 : jr nc,CASE11x
+		; a standard routine to read extended codes
+		; into registers B (higher byte) and A (lower byte).
+ReadLongBA:	add (hl) : NEXT_HL : ret nc
 
-CASE10x:	call ReadNibble
-		ld d,a : ld a,c
-		cp %10100000 : rl d
-		dec d : dec d : jr OffsetReadE
+		; the codes are designed to overflow;
+		; the overflow value 1 means read 1 extra byte
+		; and overflow value 0 means read 2 extra bytes
+.code1:		ld b,a : ld a,(hl) : NEXT_HL : ret nz
+.code0:		ld c,a : ld b,(hl) : NEXT_HL
 
-CASE00x:	call ReadNibble
-		ld e,a : ld a,c
-		cp %00100000 : rl e : jr SaveOffset
-
-CASE11x		cp %11100000 : jr c,CASE110
-
-CASE111:	ld e,iyl : ld d,iyh : jr MatchLen
-
-CASE110:	ld d,(hl) : NEXT_HL : jr OffsetReadE
-
-ExtendedCode:	call ReadNibble : inc a : jr z,ExtraByte
-		sub #F0+1 : add c : ret
-ExtraByte	ld a,15 : add c : add (hl) : NEXT_HL : ret nc
-		ld a,(hl) : NEXT_HL
-		ld b,(hl) : NEXT_HL : ret nz
+		; the two-byte match length equal to zero
+		; designates the end-of-data marker
+		or b : ld a,c : ret nz
 		pop de : pop de : ret
-
-ReadNibble:	ld c,a : xor a : exa : ret m
-UpdateNibble	ld a,(hl) : or #F0 : exa
-		ld a,(hl) : NEXT_HL : or #0F
-		rrca : rrca : rrca : rrca : ret
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
