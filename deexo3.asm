@@ -52,7 +52,7 @@ tbl_bytes	EQU	(16 + 16 + 16 + 4)
 ENDIF
 
 
-tbl_shift	EQU	(-64)
+tbl_shift	EQU	(41 - tbl_bytes - tbl_bytes)
 tbl_ofs_bits	EQU	(tbl_shift)
 tbl_ofs_lo	EQU	(tbl_shift + tbl_bytes)
 tbl_ofs_hi	EQU	(tbl_shift + tbl_bytes + tbl_bytes)
@@ -135,74 +135,80 @@ ENDIF
 
 deexo3:
 
-IF (PFLAG & PFLAG_BITS_ALIGN_START)
-	ld	a,first_byte
-ELSE
-	ld	a,(hl)
-	inc	hl
-ENDIF
-
-	ex	af,af'	;'
-	exx
-
-	; initialize table 
 	ld	iy,exo_mapbasebits - tbl_shift
-	ld      c,tbl_bytes
 
-inittable:
+	cp	a	;set ZF
+	ex	af, af';'
 
-	ld	hl,1
+	ld	bc, tbl_bytes * 256 + 16
 
-	ld	a,c
-IF ((-tbl_bytes) & 15)
-	add	((-tbl_bytes) & 15)
+IF (PFLAG & PFLAG_BITS_ALIGN_START)
+	or	a	;reset CF
+	ld	a,first_byte
+
+	defb	218	;218=0DAh;JP C,nnnn
+ELSE
+	;scf		 ;set CF
+	or	a	;reset CF
 ENDIF
-	and	15
+
+gb4:
+	ld	a, (hl)
+	inc	hl
+
+init:
+get4:
+IF (PFLAG & PFLAG_BITS_ORDER_BE)
+	adc	a, a
+ELSE
+	rr	a
+ENDIF
+	jr	z, gb4
+	rl	c
+	jr	nc, get4
+
+	ex	af, af';'
+	ld	a, c
+
+	exx
+
+	ld	hl, 1
 	jr	nz,.skp1
-	ld	d,h
-	ld	e,l
+	ld	d, h
+	ld	e, l
+	ld	c, 16
 .skp1:
-	exx
-
-	ld	bc,0400h
-
-	m_getbits8
-
-	ld	a,c
-
-	exx
 
 	ld	(iy+tbl_ofs_bits),a
-	ld	(iy+tbl_ofs_lo),e
-	ld	(iy+tbl_ofs_hi),d
-	inc	iy
 
 IF (PFLAG & PFLAG_BITS_COPY_GT_7)
 
-	srl	a
+	rra
 	jr	nc,.skp2
 	or	8
 .skp2:
 ELSE
 	and	a
 ENDIF
+	inc	a
 
-	jr	z,.skp3
+	ld	(iy+tbl_ofs_lo),e
+	ld	(iy+tbl_ofs_hi),d
+setbit:
+	dec	a
+	jr	nz, setbit-1
 
-	ld	b,a
-.lp1:
-	add	hl,hl
-	djnz	.lp1
+	add	hl, de
+	ex	de, hl
 
-.skp3:
-	add	hl,de
-	ex	de,hl
-
+	inc	iy
 	dec	c
-	jr	nz,inittable
-
+	ex	af, af';'
 	exx
-	ex	af,af'	;'
+
+	ld	c,16
+	or	a	;reset CF
+	djnz	init
 
 IF (PFLAG & PFLAG_IMPL_1LITERAL)
 

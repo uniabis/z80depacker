@@ -1,23 +1,36 @@
 @echo off
 
+goto skip_debug
+
+sjasm deexo3.asm deexo3.bin
+del deexo3.lst
+
+rem sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
+
+pause
+
+exit
+
+:skip_debug
+
 goto skip_deexoopt
 
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=1 -Dback=1 -Dspeed=0 --raw=do3lbs0.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=1 -Dback=1 -Dspeed=1 --raw=do3lbs1.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=1 -Dback=1 -Dspeed=2 --raw=do3lbs2.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=1 -Dback=1 -Dspeed=3 --raw=do3lbs3.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=1 -Dback=0 -Dspeed=0 --raw=do3lfs0.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=1 -Dback=0 -Dspeed=1 --raw=do3lfs1.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=1 -Dback=0 -Dspeed=2 --raw=do3lfs2.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=1 -Dback=0 -Dspeed=3 --raw=do3lfs3.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=0 -Dback=1 -Dspeed=0 --raw=do3nbs0.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=0 -Dback=1 -Dspeed=1 --raw=do3nbs1.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=0 -Dback=1 -Dspeed=2 --raw=do3nbs2.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=0 -Dback=1 -Dspeed=3 --raw=do3nbs3.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=0 -Dback=0 -Dspeed=0 --raw=do3nfs0.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=0 -Dback=0 -Dspeed=1 --raw=do3nfs1.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=0 -Dback=0 -Dspeed=2 --raw=do3nfs2.bin deexoopt.asm
-sjasmplus -Dbitsalignstart=1 -Dmapbase=0190h -Dliterals=0 -Dback=0 -Dspeed=3 --raw=do3nfs3.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=1 -Dback=1 -Dspeed=0 --raw=do3lbs0.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=1 -Dback=1 -Dspeed=1 --raw=do3lbs1.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=1 -Dback=1 -Dspeed=2 --raw=do3lbs2.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=1 -Dback=1 -Dspeed=3 --raw=do3lbs3.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=0 --raw=do3lfs0.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=1 --raw=do3lfs1.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=2 --raw=do3lfs2.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=3 --raw=do3lfs3.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=0 -Dback=1 -Dspeed=0 --raw=do3nbs0.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=0 -Dback=1 -Dspeed=1 --raw=do3nbs1.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=0 -Dback=1 -Dspeed=2 --raw=do3nbs2.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=0 -Dback=1 -Dspeed=3 --raw=do3nbs3.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=0 -Dback=0 -Dspeed=0 --raw=do3nfs0.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=0 -Dback=0 -Dspeed=1 --raw=do3nfs1.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=0 -Dback=0 -Dspeed=2 --raw=do3nfs2.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=1 -Dmapbase=0100h -Dliterals=0 -Dback=0 -Dspeed=3 --raw=do3nfs3.bin deexoopt.asm
 
 pause
 
@@ -54,7 +67,8 @@ sjasm deexo3.asm deexo3.bin
 del deexo3.lst
 
 sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=3 --raw=deexoopt_p7.bin deexoopt.asm
-rem sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_p7.bin deexoopt_f3.asm
+
+sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
 
 rem hrust
 

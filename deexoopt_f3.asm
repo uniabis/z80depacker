@@ -23,63 +23,82 @@
 ;   License along with this library; if not, write to the Free Software
 ;   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 ;
+        ;push    de
+
       IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
         ld      iy, 256+mapbase/256*256
       ELSE
         ld      iy, (mapbase+16)/256*256+112
       ENDIF
+
+        cp      a	;set ZF
+        ex      af, af';'
+
+        ld      bc, 52 * 256 + 16
+
       IF bitsalignstart=0
-        ld      a, (hl)
-        inc     hl
+        or      a       ;reset CF
       ELSE
+        ;scf             ;set CF
+        or      a       ;reset CF
         ld      a, 128
-      ENDIF
-        ld      b, 52
-        push    de
-        cp      a
-init    ld      c, 16
-        jr      nz, get4
-        ld      de, 1
-        ld      ixl, c
         defb    218     ;218=0DAh;JP C,nnnn
+      ENDIF
+
 gb4     ld      a, (hl)
         inc     hl
 get4    adc     a, a
         jr      z, gb4
         rl      c
         jr      nc, get4
-        ex      af, af'
+
+        ex      af, af';'
         ld      a, c
+
+        exx
+
+        ld      hl, 1
+        jr      nz,.skp1
+        ld      d, h
+        ld      e, l
+        ld      c, 16
+.skp1:
+
         rrca
         inc     a
+
       IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
         ld      (iy-256+mapbase-mapbase/256*256), a
-      ELSE
-        ld      (iy-112+mapbase-(mapbase+16)/256*256), a
-      ENDIF
-        jr      nc, get5
-        xor     088h
-get5    push    hl
-        ld      hl, 1
-        defb    56      ;56=38h;JR C.nn
-setbit  add     hl, hl
-        dec     a
-        jr      nz, setbit
-        ex      af, af'
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
         ld      (iy-204+mapbase-mapbase/256*256), e
         ld      (iy-152+mapbase-mapbase/256*256), d
       ELSE
+        ld      (iy-112+mapbase-(mapbase+16)/256*256), a
         ld      (iy-60+mapbase-(mapbase+16)/256*256), e
         ld      (iy-8+mapbase-(mapbase+16)/256*256), d
       ENDIF
+
+        jr      nc, get5
+        sub     128 - 8
+        defb    56      ;56=38h;JR C.nn
+setbit  add     hl, hl
+get5:   dec     a
+        jr      nz, setbit
+
         add     hl, de
         ex      de, hl
+
         inc     iyl
-        pop     hl
-        dec     ixl
-        djnz    init
-        pop     de
+        dec     c
+        ex      af,af';'
+        exx
+
+        ld      c,16
+        or      a       ;reset CF
+        djnz    get4
+
+        ;pop     de
+        ;ret
+
 litcop  ldi
 mloop   add     a, a
         jr      z, gbm
