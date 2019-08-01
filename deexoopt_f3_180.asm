@@ -25,13 +25,9 @@
 ;
         ;push    de
 
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      iy, 256+mapbase/256*256
-      ELSE
-        ld      iy, (mapbase+16)/256*256+112
-      ENDIF
+        ld      iy, mapbase+128
 
-        cp      a	;set ZF
+        cp      a       ;set ZF
         ex      af, af';'
 
         ld      bc, 52 * 256 + 16
@@ -67,15 +63,9 @@ get4    adc     a, a
         rrca
         inc     a
 
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      (iy-256+mapbase-mapbase/256*256), a
-        ld      (iy-204+mapbase-mapbase/256*256), e
-        ld      (iy-152+mapbase-mapbase/256*256), d
-      ELSE
-        ld      (iy-112+mapbase-(mapbase+16)/256*256), a
-        ld      (iy-60+mapbase-(mapbase+16)/256*256), e
-        ld      (iy-8+mapbase-(mapbase+16)/256*256), d
-      ENDIF
+        ld      (iy-128+52*0), a
+        ld      (iy-128+52*1), e
+        ld      (iy-128+52*2), d
 
         jr      nc, get5
         sub     128-8+1
@@ -86,7 +76,7 @@ get5:   dec     a
         add     hl, de
         ex      de, hl
 
-        inc     iyl
+        inc     iy
         dec     c
         ex      af,af';'
         exx
@@ -102,52 +92,34 @@ litcop  ldi
 mloop   add     a, a
         jr      z, gbm
         jr      c, litcop
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-gbmc    ld      c, 256-1
-      ELSE
 gbmc    ld      c, 112-1
-      ENDIF
 getind  add     a, a
         jr      z, gbi
 gbic    inc     c
         jr      nc, getind
         ccf
-    IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        bit     4, c
-      IF  literals=1
-        jr      nz, litcat
-      ELSE
-        ret     nz
-      ENDIF
-    ELSE
       IF  literals=1
         jp      m, litcat
       ELSE
         ret     m
       ENDIF
-    ENDIF
         push    de
-        ld      iyl, c
-        ld      c, 0
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      b, (iy-256+mapbase-mapbase/256*256)
-      ELSE
-        ld      b, (iy-112+mapbase-(mapbase+16)/256*256)
-      ENDIF
+
+        ld      b, 0
+
+        ld      iy, mapbase+128-112
+        add     iy,bc
+
+        ld      c, b
+        ld      b, (iy-128+52*0)
         dec     b
         call    nz, getbits
         ex      de, hl
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      l, (iy-204+mapbase-mapbase/256*256)
-        ld      h, (iy-152+mapbase-mapbase/256*256)
-      ELSE
-        ld      l, (iy-60+mapbase-(mapbase+16)/256*256)
-        ld      h, (iy-8+mapbase-(mapbase+16)/256*256)
-      ENDIF
+        ld      l, (iy-128+52*1)
+        ld      h, (iy-128+52*2)
         add     hl, bc
         ex      de, hl
         push    de
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
         inc     d
         dec     d
         jr      nz, dontgo
@@ -158,37 +130,19 @@ gbic    inc     c
 dontgo  ld      bc, 1024+32/16
         jr      z, goit
         dec     c
-      ELSE
-        inc     d
-        dec     d
-        jr      nz, dontgo
-        ld      bc, 512+160/4
-        dec     e
-        jr      z, goit
-        dec     e
-dontgo  ld      bc, 1024+144/16
-        jr      z, goit
-        dec     c
-      ENDIF
 goit:
         call    lee8
-        ld      iyl, c
-        ld      c, b
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      b, (iy-256+mapbase-mapbase/256*256)
-      ELSE
-        ld      b, (iy-112+mapbase-(mapbase+16)/256*256)
-      ENDIF
+
+        ld      iy, mapbase+128
+        add     iy,bc
+
+        ld      c,b
+        ld      b, (iy-128+52*0)
         dec     b
         call    nz, getbits
         ex      de, hl
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      l, (iy-204+mapbase-mapbase/256*256)
-        ld      h, (iy-152+mapbase-mapbase/256*256)
-      ELSE
-        ld      l, (iy-60+mapbase-(mapbase+16)/256*256)
-        ld      h, (iy-8+mapbase-(mapbase+16)/256*256)
-      ENDIF
+        ld      l, (iy-128+52*1)
+        ld      h, (iy-128+52*2)
         add     hl, bc
         ex      de, hl
         pop     bc
@@ -202,9 +156,6 @@ goit:
 
     IF  literals=1
 litcat  
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        rl      c
-      ENDIF
         ret     pe
         ld      b, (hl)
         inc     hl

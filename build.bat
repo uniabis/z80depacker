@@ -2,14 +2,19 @@
 
 goto skip_debug
 
-sjasm deexo3.asm deexo3.bin
-del deexo3.lst
-
-rem sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
+sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
+sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_180_p7.bin deexoopt_f3_180.asm
+sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_180c_p7.bin deexoopt_f3_180c.asm
 
 pause
 
 exit
+
+sjasm deexo3.asm deexo3.bin
+del deexo3.lst
+
+sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
+
 
 :skip_debug
 
@@ -161,17 +166,13 @@ rem lzsa
 
 sjasmplus --raw=unlzsa1_fast_v1.bin unlzsa1_fast_v1.asm
 
-sjasmplus --raw=unlzsa1_fast_v1_p1.bin unlzsa1_fast_v1_p1.asm
-
 sjasmplus --raw=unlzsa1_small_v1.bin unlzsa1_small_v1.asm
 
-sjasmplus --raw=unlzsa1_small_v1_p1.bin unlzsa1_small_v1_p1.asm
-
-sjasmplus -DHD64180=1 --raw=unlzsa2_fast_v1_180.bin unlzsa2_fast_v1_180.asm
+sjasmplus -DHD64180=1 --raw=unlzsa2_fast_v1_180.bin unlzsa2_fast_v1.asm
 
 sjasmplus --raw=unlzsa2_fast_v1.bin unlzsa2_fast_v1.asm
 
-sjasmplus -DHD64180=1 --raw=unlzsa2_small_v1_180.bin unlzsa2_small_v1_180.asm
+sjasmplus -DHD64180=1 --raw=unlzsa2_small_v1_180.bin unlzsa2_small_v1.asm
 
 sjasmplus --raw=unlzsa2_small_v1.bin unlzsa2_small_v1.asm
 
@@ -182,3 +183,5 @@ del unpletter.lst
 
 sjasm unpletter_180.asm unpletter_180.bin
 del unpletter_180.lst
+
+pause
