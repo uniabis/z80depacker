@@ -87,6 +87,12 @@ get5:   dec     a
 
         ;pop     de
         ;ret
+        jr      litcop
+
+gbm     ld      a, (hl)
+        inc     hl
+        adc     a, a
+        jr      nc, gbmc
 
 litcop  ldi
 mloop   add     a, a
@@ -165,11 +171,6 @@ litcat
         jr      mloop
     ENDIF
 
-gbm     ld      a, (hl)
-        inc     hl
-        adc     a, a
-        jr      nc, gbmc
-        jp      litcop
 
 gbi     ld      a, (hl)
         inc     hl
