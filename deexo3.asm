@@ -187,8 +187,6 @@ IF (PFLAG & PFLAG_BITS_COPY_GT_7)
 	jr	nc,.skp2
 	or	8
 .skp2:
-ELSE
-	and	a
 ENDIF
 	inc	a
 
