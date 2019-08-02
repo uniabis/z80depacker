@@ -2,7 +2,9 @@
 
 goto skip_debug
 
-sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_180c_p7.bin deexoopt_f3_180c.asm
+sjasmplus --lst=a.lst -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=3 --raw=deexoopt_p7.bin deexoopt.asm
+
+rem sjasmplus --lst=a.lst -Dbitsalignstart=0 -Dmapbase=0188h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
 
 pause
 
