@@ -28,10 +28,10 @@
 ;   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 ;
 ; SIZE        speed 0   speed 1   speed 2   speed 3   range88-ef
-; forw nolit      152       154       171       208       +5
-; back nolit      150       152       169       206       +5
-; forw liter      167       170       189       219       +5
-; back liter      165       168       187       217       +5
+; forw nolit      152       154       171       208       +2
+; back nolit      150       152       169       206       +2
+; forw liter      167       170       189       219       +3
+; back liter      165       168       187       217       +3
 ;        output  deexoopt.bin
 ;        define  mapbase  $5b00
 ;        define  speed    3
@@ -154,14 +154,22 @@ exlit   ldi
     IF  speed=0
 exloop  call    exgetb
         jr      c, exlit
+      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
+        ld      c, 256-1
+      ELSE
         ld      c, 112-1
+      ENDIF
 exgeti  call    exgetb
     ENDIF
     IF  speed=1
 exloop  add     a, a
         call    z, exgetb
         jr      c, exlit
+      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
+        ld      c, 256-1
+      ELSE
         ld      c, 112-1
+      ENDIF
 exgeti  add     a, a
         call    z, exgetb
     ENDIF
@@ -169,7 +177,11 @@ exgeti  add     a, a
 exloop  add     a, a
         jr      z, exgbm
         jr      c, exlit
+      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
+exgbmc  ld      c, 256-1
+      ELSE
 exgbmc  ld      c, 112-1
+      ENDIF
 exgeti  add     a, a
         jr      z, exgbi
 exgbic  inc     c
@@ -179,21 +191,22 @@ exgbic  inc     c
 exgbic  inc     c
         jr      nc, exgeti
     ENDIF
+    IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
+        bit     4, c
+      IF  literals=1
+        jr      nz, excat
+      ELSE
+        ret     nz
+      ENDIF
+    ELSE
       IF  literals=1
         jp      m, excat
       ELSE
         ret     m
       ENDIF
+    ENDIF
         push    de
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ex      af, af'
-        ld      a,256-112
-        add     c
-        ld      iyl, a
-        ex      af, af'
-      ELSE
         ld      iyl, c
-      ENDIF
     IF  speed=2 OR speed=3
         ld      de, 0
     ENDIF
@@ -297,8 +310,13 @@ exgoit  ld      d, e
         jr      exloop
 
     IF  literals=1
-excat:
+excat  
+      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
+        bit     0, c
+        ret     z
+      ELSE
         ret     pe
+      ENDIF
     IF  speed=3
         ld      b, (hl)
         IF  back=1
