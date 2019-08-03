@@ -30,7 +30,7 @@
   DEFINE PFLAG_BITS_COPY_GT_7 (1<<1)
   DEFINE PFLAG_IMPL_1LITERAL (1<<2)
   DEFINE PFLAG_BITS_ALIGN_START (1<<3)
-  ;DEFINE PFLAG_4_OFFSET_TABLES (1<<4)
+  DEFINE PFLAG_4_OFFSET_TABLES (1<<4)
 
   IFNDEF PFLAG_CODE
     IFNDEF bitsalignstart
@@ -51,16 +51,27 @@
     ENDIF
   ENDIF
 
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      iy, 256+mapbase/256*256
-      ELSE
-        ld      iy, (mapbase+16)/256*256+112
-      ENDIF
+  IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
+    DEFINE map_len (16*4+4)
+  ELSE
+    DEFINE map_len (16*3+4)
+  ENDIF
+  IF  (low mapbase)<256+(128-16)-128 AND (low mapbase)>(128-16)-map_len*2+127
+    DEFINE map_ofs 0
+  ELSE
+    DEFINE map_ofs (128-16)
+  ENDIF
+map_iyh equ (high (mapbase-map_ofs+128))
+map_disp_bit equ ((low (mapbase-map_ofs+128))-128)
+map_disp_lo equ (map_disp_bit+map_len*1)
+map_disp_hi equ (map_disp_bit+map_len*2)
+
+        ld      iy, map_iyh*256+map_ofs
 
         cp      a	;set ZF
         ex      af, af';'
 
-        ld      bc, 52 * 256 + 16
+        ld      bc, map_len * 256 + 16
 
     IF (PFLAG_CODE & PFLAG_BITS_ALIGN_START)
         or      a       ;reset CF
@@ -102,15 +113,9 @@ get4    rr      a
         rrca
         inc     a
 
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      (iy-256+mapbase-mapbase/256*256), a
-        ld      (iy-204+mapbase-mapbase/256*256), e
-        ld      (iy-152+mapbase-mapbase/256*256), d
-      ELSE
-        ld      (iy-112+mapbase-(mapbase+16)/256*256), a
-        ld      (iy-60+mapbase-(mapbase+16)/256*256), e
-        ld      (iy-8+mapbase-(mapbase+16)/256*256), d
-      ENDIF
+        ld      (iy+map_disp_bit), a
+        ld      (iy+map_disp_lo), e
+        ld      (iy+map_disp_hi), d
 
         jr      nc, get5
         sub     128-8+1
@@ -119,13 +124,8 @@ get5:   dec     a
         jr      nz, setbit
     ELSE
 
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      (iy-204+mapbase-mapbase/256*256), e
-        ld      (iy-152+mapbase-mapbase/256*256), d
-      ELSE
-        ld      (iy-60+mapbase-(mapbase+16)/256*256), e
-        ld      (iy-8+mapbase-(mapbase+16)/256*256), d
-      ENDIF
+        ld      (iy+map_disp_lo), e
+        ld      (iy+map_disp_hi), d
 
         or      a
         jr      z, bit0
@@ -141,11 +141,7 @@ setbit  add     hl, hl
 
 bit0    inc     a
 
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      (iy-256+mapbase-mapbase/256*256), a
-      ELSE
-        ld      (iy-112+mapbase-(mapbase+16)/256*256), a
-      ENDIF
+        ld      (iy+map_disp_bit), a
 
     ENDIF
 
@@ -188,11 +184,7 @@ mloop   srl     a
       ENDIF
         jr      z, gbm
         jr      c, litcop
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-gbmc    ld      c, 256-1
-      ELSE
-gbmc    ld      c, 112-1
-      ENDIF
+gbmc    ld      c, (map_ofs-1) & 255
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 getind  add     a, a
       ELSE
@@ -201,7 +193,7 @@ getind  srl     a
         jr      z, gbi
 gbic    inc     c
         jr      nc, getind
-    IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
+    IF  map_ofs==0
         bit     4, c
       IF  literals=1
         jr      nz, litcat
@@ -223,49 +215,35 @@ gbic    inc     c
         ld      c, 0
     ELSE
         ld      b,0
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      iy, 256+mapbase/256*256
-      ELSE
-        ld      iy, (mapbase+16)/256*256
-      ENDIF
+        ld      iy, map_iyh*256
         add     iy, bc
         ld      c, b
     ENDIF
 
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      b, (iy-256+mapbase-mapbase/256*256)
-      ELSE
-        ld      b, (iy-112+mapbase-(mapbase+16)/256*256)
-      ENDIF
+        ld      b, (iy+map_disp_bit)
         dec     b
         call    nz, getbits
         ex      de, hl
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      l, (iy-204+mapbase-mapbase/256*256)
-        ld      h, (iy-152+mapbase-mapbase/256*256)
-      ELSE
-        ld      l, (iy-60+mapbase-(mapbase+16)/256*256)
-        ld      h, (iy-8+mapbase-(mapbase+16)/256*256)
-      ENDIF
+        ld      l, (iy+map_disp_lo)
+        ld      h, (iy+map_disp_hi)
         add     hl, bc
         ex      de, hl
         push    de
         inc     d
         dec     d
         jr      nz, dontgo
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      bc, 512+48/4
+      IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
+        ld      bc, 2*256+(map_ofs+64)/4
+        dec     e
+        jr      z, goit
+        ld      bc, 4*256+(map_ofs+48)/16
       ELSE
-        ld      bc, 512+160/4
+        ld      bc, 2*256+(map_ofs+48)/4
       ENDIF
         dec     e
         jr      z, goit
         dec     e
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-dontgo  ld      bc, 1024+32/16
-      ELSE
-dontgo  ld      bc, 1024+144/16
-      ENDIF
+dontgo  ld      bc, 4*256+(map_ofs+32)/16
         jr      z, goit
         dec     c
 goit:
@@ -275,30 +253,17 @@ goit:
         ld      iyl, c
         ld      c, b
     ELSE
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      iy, 256+mapbase/256*256
-      ELSE
-        ld      iy, (mapbase+16)/256*256
-      ENDIF
+        ld      iy, map_iyh*256
         add     iy, bc
         ld      c, b
     ENDIF
 
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      b, (iy-256+mapbase-mapbase/256*256)
-      ELSE
-        ld      b, (iy-112+mapbase-(mapbase+16)/256*256)
-      ENDIF
+        ld      b, (iy+map_disp_bit)
         dec     b
         call    nz, getbits
         ex      de, hl
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
-        ld      l, (iy-204+mapbase-mapbase/256*256)
-        ld      h, (iy-152+mapbase-mapbase/256*256)
-      ELSE
-        ld      l, (iy-60+mapbase-(mapbase+16)/256*256)
-        ld      h, (iy-8+mapbase-(mapbase+16)/256*256)
-      ENDIF
+        ld      l, (iy+map_disp_lo)
+        ld      h, (iy+map_disp_hi)
         add     hl, bc
         ex      de, hl
         pop     bc
@@ -312,7 +277,7 @@ goit:
 
     IF  literals=1
 litcat:
-      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
+      IF  map_ofs==0
         bit     0, c
         ret     z
       ELSE
