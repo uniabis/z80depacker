@@ -1,6 +1,6 @@
 ; -----------------------------------------------------------------------------
 ; ZX7 Backwards by Einar Saukas, Antonio Villena
-; "Standard" version (65 bytes only) for R800
+; "Standard" version (64 bytes only) for R800
 ; -----------------------------------------------------------------------------
 ; Parameters:
 ;   HL: source address (compressed data)
