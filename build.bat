@@ -48,25 +48,15 @@ rem exomizer2
 sjasm deexo.asm deexo.bin
 del deexo.lst
 
-sjasm deexo_180.asm deexo_180.bin
-del deexo_180.lst
-
-sjasm deexo_180_fast.asm deexo_180_fast.bin
-del deexo_180_fast.lst
-
-sjasm deexo_180_fast_jp.asm deexo_180_fast_jp.bin
-del deexo_180_fast_jp.lst
+sjasmplus --raw=deexo_180.bin deexo_180.asm
+sjasmplus -DINLINE_GETBIT=1 --raw=deexo_180_fast.bin deexo_180.asm
+sjasmplus -DINLINE_GETBIT=1 -DOPTIMIZE_JUMP=1 --raw=deexo_180_fast_jp.bin deexo_180.asm
 
 rem exomizer3
 
-sjasm deexo3p7.asm deexo3p7.bin
-del deexo3p7.lst
-
-sjasm deexo3p7_fast.asm deexo3p7_fast.bin
-del deexo3p7_fast.lst
-
-sjasm deexo3p7_fast_jp.asm deexo3p7_fast_jp.bin
-del deexo3p7_fast_jp.lst
+sjasmplus --raw=deexo3p7.bin deexo3p7.asm 
+sjasmplus -DINLINE_GETBIT=1 --raw=deexo3p7_fast.bin deexo3p7.asm 
+sjasmplus -DINLINE_GETBIT=1 -DABSOLUTE_JUMP=1 --raw=deexo3p7_fast_jp.bin deexo3p7.asm 
 
 sjasm deexo3.asm deexo3.bin
 del deexo3.lst
@@ -75,7 +65,7 @@ sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=3 --r
 
 
 sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
-sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_180_p7.bin deexoopt_f3_180.asm
+sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p7.bin deexoopt_f3.asm
 
 rem hrust
 
@@ -90,14 +80,12 @@ rem zx7b
 sjasm dzx7b_fast.asm dzx7b_fast.bin
 del dzx7b_fast.lst
 
-sjasm dzx7b_fast_r800.asm dzx7b_fast_r800.bin
-del dzx7b_fast_r800.lst
+sjasmplus -DR800=1 --raw=dzx7b_fast_r800.bin dzx7b_fast_r800.asm
 
 sjasm dzx7b_slow.asm dzx7b_slow.bin
 del dzx7b_slow.lst
 
-sjasm dzx7b_slow_r800.asm dzx7b_slow_r800.bin
-del dzx7b_slow_r800.lst
+sjasmplus -DR800=1 --raw=dzx7b_slow_r800.bin dzx7b_slow_r800.asm
 
 rem lz48
 

@@ -84,7 +84,11 @@ get5:   dec     a
         add     hl, de
         ex      de, hl
 
+      IFNDEF HD64180
         inc     iyl
+      ELSE
+        inc     iy
+      ENDIF
         dec     c
         ex      af,af';'
         exx
@@ -131,8 +135,22 @@ gbic    inc     c
         ccf
     ENDIF
         push    de
+
+    IFNDEF HD64180
         ld      iyl, c
         ld      c, 0
+    ELSE
+        ld      b,0
+      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
+        ld      iy, 256+mapbase/256*256
+      ELSE
+        ld      iy, (mapbase+16)/256*256
+      ENDIF
+        add     iy, bc
+        ld      c, b
+      ENDIF
+    ENDIF
+
       IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
         ld      b, (iy-256+mapbase-mapbase/256*256)
       ELSE
@@ -171,8 +189,20 @@ dontgo  ld      bc, 1024+144/16
         dec     c
 goit:
         call    lee8
+
+    IFNDEF HD64180
         ld      iyl, c
         ld      c, b
+    ELSE
+      IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
+        ld      iy, 256+mapbase/256*256
+      ELSE
+        ld      iy, (mapbase+16)/256*256
+      ENDIF
+        add     iy, bc
+        ld      c, b
+    ENDIF
+
       IF  mapbase-mapbase/256*256<240 AND mapbase-mapbase/256*256>135
         ld      b, (iy-256+mapbase-mapbase/256*256)
       ELSE

@@ -35,12 +35,12 @@
 ;"call z,exo_getbit", and remove the first two instructions in exo_getbit routine.
 
                 MACRO   m_getbit
-IFDEF INLINE_GETBIT
+              IFNDEF INLINE_GETBIT
+                call    p_getbit
+              ELSE
                 add     a
                 call    z,p_getbit
-ELSE
-                call    p_getbit
-ENDIF
+              ENDIF
                 ENDM
 
 
@@ -132,11 +132,11 @@ exo_goforit:
                 pop     de
                 ldir
                 pop     hl
-IFDEF ABSOLUTE_JUMP
-                jp      exo_mainloop    ;Next!
-ELSE
+              IFNDEF ABSOLUTE_JUMP
                 jr      exo_mainloop    ;Next!
-ENDIF
+              ELSE
+                jp      exo_mainloop    ;Next!
+              ENDIF
 
 exo_literalrun:
                 ld      b,(hl)
@@ -144,11 +144,11 @@ exo_literalrun:
                 ld      c,(hl)
                 inc     hl
                 ldir
-IFDEF ABSOLUTE_JUMP
-                jp      exo_mainloop    ;Next!
-ELSE
+              IFNDEF ABSOLUTE_JUMP
                 jr      exo_mainloop    ;Next!
-ENDIF
+              ELSE
+                jp      exo_mainloop    ;Next!
+              ENDIF
 
 
 exo_getpair:    add     iy, bc
@@ -181,11 +181,10 @@ exo_getpair:    add     iy, bc
                 ret
 
 p_getbit:
-IFDEF INLINE_GETBIT
-ELSE
+              IFNDEF INLINE_GETBIT
                 add     a
                 ret     nz
-ENDIF
+              ENDIF
                 ld      a, (hl)
                 inc     hl
 

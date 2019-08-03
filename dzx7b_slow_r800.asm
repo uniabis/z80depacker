@@ -29,9 +29,12 @@ lenval: call    nc, getbit      ; don't call first time (to save bytes)
 ; determine offset
         ld      e, (hl)         ; load offset flag (1 bit) + offset value (7 bits)
         dec     hl
-        scf
+      ifndef R800
+        sll     e
+      else
+        ;scf
         rl      e
-        ;sll     e
+      endif
         jr      nc, offend      ; if offset flag is set, load 4 extra bits
         ld      d, $10          ; bit marker to load 4 bits
 nexbit: call    getbit

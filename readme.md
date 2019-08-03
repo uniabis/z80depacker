@@ -86,14 +86,14 @@ test data:ALL(16*16KB)
 |Exomizer2|deexo|            169|        160,011|    108,490,817|
 |Exomizer2|deexo_180|            167|        160,011|    108,508,449|
 |Exomizer2|deexo_180_fast|            172|        160,011|     94,297,523|
-|Exomizer2|deexo_180_fast_jp|            183|        160,011|     93,483,897|
+|Exomizer2|deexo_180_fast_jp|            178|        160,011|     93,040,303|
 |Exomizer3|deexo3p7|            176|        160,007|     82,034,254|
 |Exomizer3|deexo3p7_fast|            179|        160,007|     70,447,066|
 |Exomizer3|deexo3p7_fast_jp|            181|        160,007|     70,324,722|
 |Exomizer3|deexo3|            197|        160,007|     73,567,920|
 |Exomizer3|deexoopt_p7|            219|        160,007|     63,745,458|
 |Exomizer3|deexoopt_f3_p7|            208|        160,007|     61,871,602|
-|Exomizer3|deexoopt_f3_180_p7|            217|        160,007|     64,992,934|
+|Exomizer3|deexoopt_f3_180_p7|            217|        160,007|     64,992,834|
 |hrust|dehrust_ix|            234|        162,620|     45,607,398|
 |hrust|dehrust_stk|            209|        162,620|     41,333,579|
 |lz4|lz4dec|             97|        191,657|     11,017,032|
@@ -122,9 +122,9 @@ test data:ALL(16*16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|        153,164|  2,648,153,963|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|        153,164|  2,699,900,331|
 |zx7b|dzx7b_fast|            191|        170,425|     20,907,617|
-|zx7b|dzx7b_fast_r800|            193|        170,425|     21,155,467|
+|zx7b|dzx7b_fast_r800|            191|        170,425|     20,907,617|
 |zx7b|dzx7b_slow|             64|        170,425|     33,688,687|
-|zx7b|dzx7b_slow_r800|             65|        170,425|     33,936,537|
+|zx7b|dzx7b_slow_r800|             64|        170,425|     33,688,687|
 
 
 
@@ -135,14 +135,14 @@ test data:MEGASDHC.B00(16KB)
 |Exomizer2|deexo|            169|          9,373|      5,908,411|
 |Exomizer2|deexo_180|            167|          9,373|      5,909,513|
 |Exomizer2|deexo_180_fast|            172|          9,373|      5,147,818|
-|Exomizer2|deexo_180_fast_jp|            183|          9,373|      5,103,275|
+|Exomizer2|deexo_180_fast_jp|            178|          9,373|      5,083,758|
 |Exomizer3|deexo3p7|            176|          9,373|      4,644,675|
 |Exomizer3|deexo3p7_fast|            179|          9,373|      3,991,419|
 |Exomizer3|deexo3p7_fast_jp|            181|          9,373|      3,984,529|
 |Exomizer3|deexo3|            197|          9,373|      4,161,356|
 |Exomizer3|deexoopt_p7|            219|          9,373|      3,567,353|
 |Exomizer3|deexoopt_f3_p7|            208|          9,373|      3,463,911|
-|Exomizer3|deexoopt_f3_180_p7|            217|          9,373|      3,639,715|
+|Exomizer3|deexoopt_f3_180_p7|            217|          9,373|      3,639,710|
 |hrust|dehrust_ix|            234|          9,397|      2,400,116|
 |hrust|dehrust_stk|            209|          9,397|      2,160,551|
 |lz4|lz4dec|             97|         10,839|        570,164|
@@ -171,9 +171,9 @@ test data:MEGASDHC.B00(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          8,984|    147,898,055|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|          8,984|    150,852,880|
 |zx7b|dzx7b_fast|            191|          9,762|      1,088,297|
-|zx7b|dzx7b_fast_r800|            193|          9,762|      1,099,847|
+|zx7b|dzx7b_fast_r800|            191|          9,762|      1,088,297|
 |zx7b|dzx7b_slow|             64|          9,762|      1,718,914|
-|zx7b|dzx7b_slow_r800|             65|          9,762|      1,730,464|
+|zx7b|dzx7b_slow_r800|             64|          9,762|      1,718,914|
 
 
 
@@ -184,14 +184,14 @@ test data:MEGASDHC.B01(16KB)
 |Exomizer2|deexo|            169|          4,902|      3,307,149|
 |Exomizer2|deexo_180|            167|          4,902|      3,308,251|
 |Exomizer2|deexo_180_fast|            172|          4,902|      2,910,319|
-|Exomizer2|deexo_180_fast_jp|            183|          4,902|      2,887,830|
+|Exomizer2|deexo_180_fast_jp|            178|          4,902|      2,877,234|
 |Exomizer3|deexo3p7|            176|          4,902|      2,759,609|
 |Exomizer3|deexo3p7_fast|            179|          4,902|      2,386,716|
 |Exomizer3|deexo3p7_fast_jp|            181|          4,902|      2,382,976|
 |Exomizer3|deexo3|            197|          4,902|      2,483,633|
 |Exomizer3|deexoopt_p7|            219|          4,902|      2,155,892|
 |Exomizer3|deexoopt_f3_p7|            208|          4,902|      2,098,178|
-|Exomizer3|deexoopt_f3_180_p7|            217|          4,902|      2,193,611|
+|Exomizer3|deexoopt_f3_180_p7|            217|          4,902|      2,193,601|
 |hrust|dehrust_ix|            234|          4,923|      1,520,370|
 |hrust|dehrust_stk|            209|          4,923|      1,393,765|
 |lz4|lz4dec|             97|          5,798|        517,676|
@@ -220,9 +220,9 @@ test data:MEGASDHC.B01(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          4,680|     78,117,653|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|          4,680|     79,661,805|
 |zx7b|dzx7b_fast|            191|          5,091|        769,861|
-|zx7b|dzx7b_fast_r800|            193|          5,091|        776,056|
+|zx7b|dzx7b_fast_r800|            191|          5,091|        769,861|
 |zx7b|dzx7b_slow|             64|          5,091|      1,109,193|
-|zx7b|dzx7b_slow_r800|             65|          5,091|      1,115,388|
+|zx7b|dzx7b_slow_r800|             64|          5,091|      1,109,193|
 
 
 
@@ -233,14 +233,14 @@ test data:MEGASDHC.B02(16KB)
 |Exomizer2|deexo|            169|         12,494|      7,962,111|
 |Exomizer2|deexo_180|            167|         12,494|      7,963,213|
 |Exomizer2|deexo_180_fast|            172|         12,494|      6,909,258|
-|Exomizer2|deexo_180_fast_jp|            183|         12,494|      6,846,963|
+|Exomizer2|deexo_180_fast_jp|            178|         12,494|      6,813,101|
 |Exomizer3|deexo3p7|            176|         12,494|      6,005,290|
 |Exomizer3|deexo3p7_fast|            179|         12,494|      5,131,915|
 |Exomizer3|deexo3p7_fast_jp|            181|         12,494|      5,123,001|
 |Exomizer3|deexo3|            197|         12,494|      5,368,287|
 |Exomizer3|deexoopt_p7|            219|         12,494|      4,676,657|
 |Exomizer3|deexoopt_f3_p7|            208|         12,494|      4,542,223|
-|Exomizer3|deexoopt_f3_180_p7|            217|         12,494|      4,769,593|
+|Exomizer3|deexoopt_f3_180_p7|            217|         12,494|      4,769,583|
 |hrust|dehrust_ix|            234|         12,592|      3,184,499|
 |hrust|dehrust_stk|            209|         12,592|      2,868,962|
 |lz4|lz4dec|             97|         14,749|        630,168|
@@ -269,9 +269,9 @@ test data:MEGASDHC.B02(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         12,148|    204,353,362|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|         12,148|    208,379,158|
 |zx7b|dzx7b_fast|            191|         13,103|      1,438,531|
-|zx7b|dzx7b_fast_r800|            193|         13,103|      1,456,646|
+|zx7b|dzx7b_fast_r800|            191|         13,103|      1,438,531|
 |zx7b|dzx7b_slow|             64|         13,103|      2,374,575|
-|zx7b|dzx7b_slow_r800|             65|         13,103|      2,392,690|
+|zx7b|dzx7b_slow_r800|             64|         13,103|      2,374,575|
 
 
 
@@ -282,14 +282,14 @@ test data:MEGASDHC.B03(16KB)
 |Exomizer2|deexo|            169|         12,297|      7,705,336|
 |Exomizer2|deexo_180|            167|         12,297|      7,706,438|
 |Exomizer2|deexo_180_fast|            172|         12,297|      6,703,199|
-|Exomizer2|deexo_180_fast_jp|            183|         12,297|      6,645,222|
+|Exomizer2|deexo_180_fast_jp|            178|         12,297|      6,618,439|
 |Exomizer3|deexo3p7|            176|         12,297|      6,143,310|
 |Exomizer3|deexo3p7_fast|            179|         12,297|      5,251,846|
 |Exomizer3|deexo3p7_fast_jp|            181|         12,297|      5,242,630|
 |Exomizer3|deexo3|            197|         12,297|      5,478,882|
 |Exomizer3|deexoopt_p7|            219|         12,297|      4,667,845|
 |Exomizer3|deexoopt_f3_p7|            208|         12,297|      4,530,193|
-|Exomizer3|deexoopt_f3_180_p7|            217|         12,297|      4,765,310|
+|Exomizer3|deexoopt_f3_180_p7|            217|         12,297|      4,765,305|
 |hrust|dehrust_ix|            234|         12,320|      2,994,167|
 |hrust|dehrust_stk|            209|         12,320|      2,684,358|
 |lz4|lz4dec|             97|         14,298|        599,908|
@@ -318,9 +318,9 @@ test data:MEGASDHC.B03(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         11,916|    198,247,021|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|         11,916|    202,175,137|
 |zx7b|dzx7b_fast|            191|         12,810|      1,341,173|
-|zx7b|dzx7b_fast_r800|            193|         12,810|      1,357,098|
+|zx7b|dzx7b_fast_r800|            191|         12,810|      1,341,173|
 |zx7b|dzx7b_slow|             64|         12,810|      2,211,732|
-|zx7b|dzx7b_slow_r800|             65|         12,810|      2,227,657|
+|zx7b|dzx7b_slow_r800|             64|         12,810|      2,211,732|
 
 
 
@@ -331,14 +331,14 @@ test data:MSX2MAIN.B00(16KB)
 |Exomizer2|deexo|            169|         12,740|      7,678,676|
 |Exomizer2|deexo_180|            167|         12,740|      7,679,778|
 |Exomizer2|deexo_180_fast|            172|         12,740|      6,695,658|
-|Exomizer2|deexo_180_fast_jp|            183|         12,740|      6,640,796|
+|Exomizer2|deexo_180_fast_jp|            178|         12,740|      6,614,072|
 |Exomizer3|deexo3p7|            176|         12,739|      6,207,944|
 |Exomizer3|deexo3p7_fast|            179|         12,739|      5,319,462|
 |Exomizer3|deexo3p7_fast_jp|            181|         12,739|      5,309,942|
 |Exomizer3|deexo3|            197|         12,739|      5,555,193|
 |Exomizer3|deexoopt_p7|            219|         12,739|      4,714,326|
 |Exomizer3|deexoopt_f3_p7|            208|         12,739|      4,572,675|
-|Exomizer3|deexoopt_f3_180_p7|            217|         12,739|      4,815,452|
+|Exomizer3|deexoopt_f3_180_p7|            217|         12,739|      4,815,437|
 |hrust|dehrust_ix|            234|         12,790|      3,081,329|
 |hrust|dehrust_stk|            209|         12,790|      2,753,298|
 |lz4|lz4dec|             97|         14,847|        609,147|
@@ -367,9 +367,9 @@ test data:MSX2MAIN.B00(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         12,276|    202,922,527|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|         12,276|    206,980,245|
 |zx7b|dzx7b_fast|            191|         13,248|      1,312,892|
-|zx7b|dzx7b_fast_r800|            193|         13,248|      1,328,717|
+|zx7b|dzx7b_fast_r800|            191|         13,248|      1,312,892|
 |zx7b|dzx7b_slow|             64|         13,248|      2,140,196|
-|zx7b|dzx7b_slow_r800|             65|         13,248|      2,156,021|
+|zx7b|dzx7b_slow_r800|             64|         13,248|      2,140,196|
 
 
 
@@ -380,14 +380,14 @@ test data:MSX2MAIN.B01(16KB)
 |Exomizer2|deexo|            169|         13,402|      8,119,431|
 |Exomizer2|deexo_180|            167|         13,402|      8,120,533|
 |Exomizer2|deexo_180_fast|            172|         13,402|      7,044,376|
-|Exomizer2|deexo_180_fast_jp|            183|         13,402|      6,979,923|
+|Exomizer2|deexo_180_fast_jp|            178|         13,402|      6,946,408|
 |Exomizer3|deexo3p7|            176|         13,402|      6,031,181|
 |Exomizer3|deexo3p7_fast|            179|         13,402|      5,165,489|
 |Exomizer3|deexo3p7_fast_jp|            181|         13,402|      5,156,357|
 |Exomizer3|deexo3|            197|         13,402|      5,409,124|
 |Exomizer3|deexoopt_p7|            219|         13,402|      4,709,224|
 |Exomizer3|deexoopt_f3_p7|            208|         13,402|      4,572,790|
-|Exomizer3|deexoopt_f3_180_p7|            217|         13,402|      4,805,765|
+|Exomizer3|deexoopt_f3_180_p7|            217|         13,402|      4,805,760|
 |hrust|dehrust_ix|            234|         13,485|      3,142,810|
 |hrust|dehrust_stk|            209|         13,485|      2,808,962|
 |lz4|lz4dec|             97|         15,454|        588,184|
@@ -416,9 +416,9 @@ test data:MSX2MAIN.B01(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         13,100|    219,699,688|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|         13,100|    224,017,138|
 |zx7b|dzx7b_fast|            191|         14,002|      1,411,404|
-|zx7b|dzx7b_fast_r800|            193|         14,002|      1,428,649|
+|zx7b|dzx7b_fast_r800|            191|         14,002|      1,411,404|
 |zx7b|dzx7b_slow|             64|         14,002|      2,355,118|
-|zx7b|dzx7b_slow_r800|             65|         14,002|      2,372,363|
+|zx7b|dzx7b_slow_r800|             64|         14,002|      2,355,118|
 
 
 
@@ -429,14 +429,14 @@ test data:MSXMUSIC.B00(16KB)
 |Exomizer2|deexo|            169|         10,068|      5,986,114|
 |Exomizer2|deexo_180|            167|         10,068|      5,987,216|
 |Exomizer2|deexo_180_fast|            172|         10,068|      5,218,034|
-|Exomizer2|deexo_180_fast_jp|            183|         10,068|      5,174,135|
+|Exomizer2|deexo_180_fast_jp|            178|         10,068|      5,155,288|
 |Exomizer3|deexo3p7|            176|         10,068|      4,792,485|
 |Exomizer3|deexo3p7_fast|            179|         10,068|      4,112,838|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,068|      4,105,700|
 |Exomizer3|deexo3|            197|         10,068|      4,292,489|
 |Exomizer3|deexoopt_p7|            219|         10,068|      3,672,667|
 |Exomizer3|deexoopt_f3_p7|            208|         10,068|      3,564,146|
-|Exomizer3|deexoopt_f3_180_p7|            217|         10,068|      3,746,274|
+|Exomizer3|deexoopt_f3_180_p7|            217|         10,068|      3,746,269|
 |hrust|dehrust_ix|            234|         10,118|      2,529,789|
 |hrust|dehrust_stk|            209|         10,118|      2,274,112|
 |lz4|lz4dec|             97|         11,634|        608,085|
@@ -465,9 +465,9 @@ test data:MSXMUSIC.B00(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          9,536|    157,373,448|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|          9,536|    160,533,280|
 |zx7b|dzx7b_fast|            191|         10,495|      1,103,981|
-|zx7b|dzx7b_fast_r800|            193|         10,495|      1,115,571|
+|zx7b|dzx7b_fast_r800|            191|         10,495|      1,103,981|
 |zx7b|dzx7b_slow|             64|         10,495|      1,753,820|
-|zx7b|dzx7b_slow_r800|             65|         10,495|      1,765,410|
+|zx7b|dzx7b_slow_r800|             64|         10,495|      1,753,820|
 
 
 
@@ -478,14 +478,14 @@ test data:MSX2EXT.B00(16KB)
 |Exomizer2|deexo|            169|         12,351|      8,066,566|
 |Exomizer2|deexo_180|            167|         12,351|      8,067,668|
 |Exomizer2|deexo_180_fast|            172|         12,351|      7,021,257|
-|Exomizer2|deexo_180_fast_jp|            183|         12,351|      6,961,864|
+|Exomizer2|deexo_180_fast_jp|            178|         12,351|      6,932,637|
 |Exomizer3|deexo3p7|            176|         12,351|      6,374,679|
 |Exomizer3|deexo3p7_fast|            179|         12,351|      5,462,561|
 |Exomizer3|deexo3p7_fast_jp|            181|         12,351|      5,452,809|
 |Exomizer3|deexo3|            197|         12,351|      5,703,404|
 |Exomizer3|deexoopt_p7|            219|         12,351|      4,856,626|
 |Exomizer3|deexoopt_f3_p7|            208|         12,351|      4,711,405|
-|Exomizer3|deexoopt_f3_180_p7|            217|         12,351|      4,960,190|
+|Exomizer3|deexoopt_f3_180_p7|            217|         12,351|      4,960,185|
 |hrust|dehrust_ix|            234|         12,370|      3,112,516|
 |hrust|dehrust_stk|            209|         12,370|      2,798,981|
 |lz4|lz4dec|             97|         14,583|        624,663|
@@ -514,9 +514,9 @@ test data:MSX2EXT.B00(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         11,820|    196,044,987|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|         11,820|    199,947,902|
 |zx7b|dzx7b_fast|            191|         12,964|      1,328,878|
-|zx7b|dzx7b_fast_r800|            193|         12,964|      1,344,828|
+|zx7b|dzx7b_fast_r800|            191|         12,964|      1,328,878|
 |zx7b|dzx7b_slow|             64|         12,964|      2,165,985|
-|zx7b|dzx7b_slow_r800|             65|         12,964|      2,181,935|
+|zx7b|dzx7b_slow_r800|             64|         12,964|      2,165,985|
 
 
 
@@ -527,14 +527,14 @@ test data:KANJJ1.B00(16KB)
 |Exomizer2|deexo|            169|          6,097|      5,111,648|
 |Exomizer2|deexo_180|            167|          6,097|      5,112,750|
 |Exomizer2|deexo_180_fast|            172|          6,097|      4,465,787|
-|Exomizer2|deexo_180_fast_jp|            183|          6,097|      4,432,573|
+|Exomizer2|deexo_180_fast_jp|            178|          6,097|      4,407,853|
 |Exomizer3|deexo3p7|            176|          6,097|      3,967,129|
 |Exomizer3|deexo3p7_fast|            179|          6,097|      3,417,207|
 |Exomizer3|deexo3p7_fast_jp|            181|          6,097|      3,411,495|
 |Exomizer3|deexo3|            197|          6,097|      3,574,199|
 |Exomizer3|deexoopt_p7|            219|          6,097|      3,141,994|
 |Exomizer3|deexoopt_f3_p7|            208|          6,097|      3,051,152|
-|Exomizer3|deexoopt_f3_180_p7|            217|          6,097|      3,196,917|
+|Exomizer3|deexoopt_f3_180_p7|            217|          6,097|      3,196,912|
 |hrust|dehrust_ix|            234|          6,454|      2,490,929|
 |hrust|dehrust_stk|            209|          6,454|      2,300,068|
 |lz4|lz4dec|             97|          8,140|        793,238|
@@ -563,9 +563,9 @@ test data:KANJJ1.B00(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          5,728|    102,142,021|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|          5,728|    104,134,819|
 |zx7b|dzx7b_fast|            191|          6,591|      1,161,342|
-|zx7b|dzx7b_fast_r800|            193|          6,591|      1,173,877|
+|zx7b|dzx7b_fast_r800|            191|          6,591|      1,161,342|
 |zx7b|dzx7b_slow|             64|          6,591|      1,765,077|
-|zx7b|dzx7b_slow_r800|             65|          6,591|      1,777,612|
+|zx7b|dzx7b_slow_r800|             64|          6,591|      1,765,077|
 
 
 
@@ -576,14 +576,14 @@ test data:KANJJ1.B01(16KB)
 |Exomizer2|deexo|            169|          3,975|      3,493,148|
 |Exomizer2|deexo_180|            167|          3,975|      3,494,250|
 |Exomizer2|deexo_180_fast|            172|          3,975|      3,068,076|
-|Exomizer2|deexo_180_fast_jp|            183|          3,975|      3,046,685|
+|Exomizer2|deexo_180_fast_jp|            178|          3,975|      3,027,804|
 |Exomizer3|deexo3p7|            176|          3,974|      2,708,049|
 |Exomizer3|deexo3p7_fast|            179|          3,974|      2,349,018|
 |Exomizer3|deexo3p7_fast_jp|            181|          3,974|      2,345,386|
 |Exomizer3|deexo3|            197|          3,974|      2,448,056|
 |Exomizer3|deexoopt_p7|            219|          3,974|      2,176,336|
 |Exomizer3|deexoopt_f3_p7|            208|          3,974|      2,114,904|
-|Exomizer3|deexoopt_f3_180_p7|            217|          3,974|      2,207,629|
+|Exomizer3|deexoopt_f3_180_p7|            217|          3,974|      2,207,624|
 |hrust|dehrust_ix|            234|          4,241|      1,826,309|
 |hrust|dehrust_stk|            209|          4,241|      1,698,453|
 |lz4|lz4dec|             97|          5,472|        681,619|
@@ -612,9 +612,9 @@ test data:KANJJ1.B01(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          3,700|     65,685,212|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|          3,700|     66,958,071|
 |zx7b|dzx7b_fast|            191|          4,424|        930,945|
-|zx7b|dzx7b_fast_r800|            193|          4,424|        939,750|
+|zx7b|dzx7b_fast_r800|            191|          4,424|        930,945|
 |zx7b|dzx7b_slow|             64|          4,424|      1,349,287|
-|zx7b|dzx7b_slow_r800|             65|          4,424|      1,358,092|
+|zx7b|dzx7b_slow_r800|             64|          4,424|      1,349,287|
 
 
 
@@ -625,14 +625,14 @@ test data:KANJJ1.B02(16KB)
 |Exomizer2|deexo|            169|         10,688|      7,768,783|
 |Exomizer2|deexo_180|            167|         10,688|      7,769,885|
 |Exomizer2|deexo_180_fast|            172|         10,688|      6,730,942|
-|Exomizer2|deexo_180_fast_jp|            183|         10,688|      6,671,141|
+|Exomizer2|deexo_180_fast_jp|            178|         10,688|      6,635,982|
 |Exomizer3|deexo3p7|            176|         10,688|      5,531,415|
 |Exomizer3|deexo3p7_fast|            179|         10,688|      4,763,402|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,688|      4,754,980|
 |Exomizer3|deexo3|            197|         10,688|      4,974,849|
 |Exomizer3|deexoopt_p7|            219|         10,688|      4,341,061|
 |Exomizer3|deexoopt_f3_p7|            208|         10,688|      4,210,061|
-|Exomizer3|deexoopt_f3_180_p7|            217|         10,688|      4,424,931|
+|Exomizer3|deexoopt_f3_180_p7|            217|         10,688|      4,424,926|
 |hrust|dehrust_ix|            234|         10,960|      3,286,239|
 |hrust|dehrust_stk|            209|         10,960|      2,990,229|
 |lz4|lz4dec|             97|         13,019|        802,910|
@@ -661,9 +661,9 @@ test data:KANJJ1.B02(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         10,212|    184,251,287|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|         10,212|    187,790,113|
 |zx7b|dzx7b_fast|            191|         11,629|      1,530,270|
-|zx7b|dzx7b_fast_r800|            193|         11,629|      1,549,850|
+|zx7b|dzx7b_fast_r800|            191|         11,629|      1,530,270|
 |zx7b|dzx7b_slow|             64|         11,629|      2,506,048|
-|zx7b|dzx7b_slow_r800|             65|         11,629|      2,525,628|
+|zx7b|dzx7b_slow_r800|             64|         11,629|      2,506,048|
 
 
 
@@ -674,14 +674,14 @@ test data:KANJJ1.B03(16KB)
 |Exomizer2|deexo|            169|         10,510|      7,603,571|
 |Exomizer2|deexo_180|            167|         10,510|      7,604,673|
 |Exomizer2|deexo_180_fast|            172|         10,510|      6,584,135|
-|Exomizer2|deexo_180_fast_jp|            183|         10,510|      6,524,875|
+|Exomizer2|deexo_180_fast_jp|            178|         10,510|      6,491,079|
 |Exomizer3|deexo3p7|            176|         10,509|      5,446,711|
 |Exomizer3|deexo3p7_fast|            179|         10,509|      4,679,854|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,509|      4,671,690|
 |Exomizer3|deexo3|            197|         10,509|      4,889,398|
 |Exomizer3|deexoopt_p7|            219|         10,509|      4,275,571|
 |Exomizer3|deexoopt_f3_p7|            208|         10,509|      4,149,537|
-|Exomizer3|deexoopt_f3_180_p7|            217|         10,509|      4,357,828|
+|Exomizer3|deexoopt_f3_180_p7|            217|         10,509|      4,357,823|
 |hrust|dehrust_ix|            234|         10,765|      3,242,574|
 |hrust|dehrust_stk|            209|         10,765|      2,950,438|
 |lz4|lz4dec|             97|         12,751|        799,080|
@@ -710,9 +710,9 @@ test data:KANJJ1.B03(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         10,020|    181,710,794|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|         10,020|    185,186,436|
 |zx7b|dzx7b_fast|            191|         11,451|      1,505,939|
-|zx7b|dzx7b_fast_r800|            193|         11,451|      1,524,884|
+|zx7b|dzx7b_fast_r800|            191|         11,451|      1,505,939|
 |zx7b|dzx7b_slow|             64|         11,451|      2,465,218|
-|zx7b|dzx7b_slow_r800|             65|         11,451|      2,484,163|
+|zx7b|dzx7b_slow_r800|             64|         11,451|      2,465,218|
 
 
 
@@ -723,14 +723,14 @@ test data:KANJJ1.B04(16KB)
 |Exomizer2|deexo|            169|         10,415|      7,416,607|
 |Exomizer2|deexo_180|            167|         10,415|      7,417,709|
 |Exomizer2|deexo_180_fast|            172|         10,415|      6,427,852|
-|Exomizer2|deexo_180_fast_jp|            183|         10,415|      6,371,366|
+|Exomizer2|deexo_180_fast_jp|            178|         10,415|      6,338,772|
 |Exomizer3|deexo3p7|            176|         10,415|      5,360,921|
 |Exomizer3|deexo3p7_fast|            179|         10,415|      4,610,302|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,415|      4,602,224|
 |Exomizer3|deexo3|            197|         10,415|      4,815,949|
 |Exomizer3|deexoopt_p7|            219|         10,415|      4,200,109|
 |Exomizer3|deexoopt_f3_p7|            208|         10,415|      4,074,591|
-|Exomizer3|deexoopt_f3_180_p7|            217|         10,415|      4,280,689|
+|Exomizer3|deexoopt_f3_180_p7|            217|         10,415|      4,280,684|
 |hrust|dehrust_ix|            234|         10,708|      3,254,294|
 |hrust|dehrust_stk|            209|         10,708|      2,963,646|
 |lz4|lz4dec|             97|         12,688|        816,617|
@@ -759,9 +759,9 @@ test data:KANJJ1.B04(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          9,876|    179,896,027|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|          9,876|    183,336,722|
 |zx7b|dzx7b_fast|            191|         11,327|      1,521,877|
-|zx7b|dzx7b_fast_r800|            193|         11,327|      1,541,167|
+|zx7b|dzx7b_fast_r800|            191|         11,327|      1,521,877|
 |zx7b|dzx7b_slow|             64|         11,327|      2,488,567|
-|zx7b|dzx7b_slow_r800|             65|         11,327|      2,507,857|
+|zx7b|dzx7b_slow_r800|             64|         11,327|      2,488,567|
 
 
 
@@ -772,14 +772,14 @@ test data:KANJJ1.B05(16KB)
 |Exomizer2|deexo|            169|         10,348|      7,475,213|
 |Exomizer2|deexo_180|            167|         10,348|      7,476,315|
 |Exomizer2|deexo_180_fast|            172|         10,348|      6,473,430|
-|Exomizer2|deexo_180_fast_jp|            183|         10,348|      6,415,361|
+|Exomizer2|deexo_180_fast_jp|            178|         10,348|      6,382,720|
 |Exomizer3|deexo3p7|            176|         10,347|      5,383,242|
 |Exomizer3|deexo3p7_fast|            179|         10,347|      4,624,586|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,347|      4,616,542|
 |Exomizer3|deexo3|            197|         10,347|      4,828,463|
 |Exomizer3|deexoopt_p7|            219|         10,347|      4,216,060|
 |Exomizer3|deexoopt_f3_p7|            208|         10,347|      4,090,864|
-|Exomizer3|deexoopt_f3_180_p7|            217|         10,347|      4,296,095|
+|Exomizer3|deexoopt_f3_180_p7|            217|         10,347|      4,296,090|
 |hrust|dehrust_ix|            234|         10,610|      3,218,897|
 |hrust|dehrust_stk|            209|         10,610|      2,929,495|
 |lz4|lz4dec|             97|         12,552|        806,935|
@@ -808,9 +808,9 @@ test data:KANJJ1.B05(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          9,808|    178,129,932|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|          9,808|    181,532,215|
 |zx7b|dzx7b_fast|            191|         11,341|      1,500,846|
-|zx7b|dzx7b_fast_r800|            193|         11,341|      1,519,786|
+|zx7b|dzx7b_fast_r800|            191|         11,341|      1,500,846|
 |zx7b|dzx7b_slow|             64|         11,341|      2,450,589|
-|zx7b|dzx7b_slow_r800|             65|         11,341|      2,469,529|
+|zx7b|dzx7b_slow_r800|             64|         11,341|      2,450,589|
 
 
 
@@ -821,14 +821,14 @@ test data:KANJJ1.B06(16KB)
 |Exomizer2|deexo|            169|         10,650|      7,752,805|
 |Exomizer2|deexo_180|            167|         10,650|      7,753,907|
 |Exomizer2|deexo_180_fast|            172|         10,650|      6,711,312|
-|Exomizer2|deexo_180_fast_jp|            183|         10,650|      6,650,845|
+|Exomizer2|deexo_180_fast_jp|            178|         10,650|      6,616,092|
 |Exomizer3|deexo3p7|            176|         10,650|      5,584,601|
 |Exomizer3|deexo3p7_fast|            179|         10,650|      4,791,391|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,650|      4,783,085|
 |Exomizer3|deexo3|            197|         10,650|      5,001,850|
 |Exomizer3|deexoopt_p7|            219|         10,650|      4,366,865|
 |Exomizer3|deexoopt_f3_p7|            208|         10,650|      4,237,496|
-|Exomizer3|deexoopt_f3_180_p7|            217|         10,650|      4,449,408|
+|Exomizer3|deexoopt_f3_180_p7|            217|         10,650|      4,449,403|
 |hrust|dehrust_ix|            234|         10,934|      3,297,965|
 |hrust|dehrust_stk|            209|         10,934|      3,001,103|
 |lz4|lz4dec|             97|         12,993|        811,542|
@@ -857,9 +857,9 @@ test data:KANJJ1.B06(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         10,148|    184,730,043|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|         10,148|    188,255,537|
 |zx7b|dzx7b_fast|            191|         11,601|      1,529,557|
-|zx7b|dzx7b_fast_r800|            193|         11,601|      1,549,062|
+|zx7b|dzx7b_fast_r800|            191|         11,601|      1,529,557|
 |zx7b|dzx7b_slow|             64|         11,601|      2,506,261|
-|zx7b|dzx7b_slow_r800|             65|         11,601|      2,525,766|
+|zx7b|dzx7b_slow_r800|             64|         11,601|      2,506,261|
 
 
 
@@ -870,14 +870,14 @@ test data:KANJJ1.B07(16KB)
 |Exomizer2|deexo|            169|          9,701|      7,135,248|
 |Exomizer2|deexo_180|            167|          9,701|      7,136,350|
 |Exomizer2|deexo_180_fast|            172|          9,701|      6,186,070|
-|Exomizer2|deexo_180_fast_jp|            183|          9,701|      6,131,043|
+|Exomizer2|deexo_180_fast_jp|            178|          9,701|      6,099,064|
 |Exomizer3|deexo3p7|            176|          9,701|      5,093,013|
 |Exomizer3|deexo3p7_fast|            179|          9,701|      4,389,060|
 |Exomizer3|deexo3p7_fast_jp|            181|          9,701|      4,381,376|
 |Exomizer3|deexo3|            197|          9,701|      4,582,788|
 |Exomizer3|deexoopt_p7|            219|          9,701|      4,006,872|
 |Exomizer3|deexoopt_f3_p7|            208|          9,701|      3,887,476|
-|Exomizer3|deexoopt_f3_180_p7|            217|          9,701|      4,083,527|
+|Exomizer3|deexoopt_f3_180_p7|            217|          9,701|      4,083,522|
 |hrust|dehrust_ix|            234|          9,953|      3,024,595|
 |hrust|dehrust_stk|            209|          9,953|      2,757,158|
 |lz4|lz4dec|             97|         11,840|        757,096|
@@ -906,9 +906,9 @@ test data:KANJJ1.B07(16KB)
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          9,212|    166,951,906|
 |Shrinkler|shrinkler_recall_209_r800_rom|            211|          9,212|    170,158,873|
 |zx7b|dzx7b_fast|            191|         10,586|      1,431,824|
-|zx7b|dzx7b_fast_r800|            193|         10,586|      1,449,679|
+|zx7b|dzx7b_fast_r800|            191|         10,586|      1,431,824|
 |zx7b|dzx7b_slow|             64|         10,586|      2,328,107|
-|zx7b|dzx7b_slow_r800|             65|         10,586|      2,345,962|
+|zx7b|dzx7b_slow_r800|             64|         10,586|      2,328,107|
 
 
 

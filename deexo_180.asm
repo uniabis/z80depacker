@@ -2,7 +2,9 @@
 ;Copyright (C) 2008-2016 by Jaime Tejedor Gomez (Metalbrain)
 ;
 ;Optimized by Antonio Villena and Urusergi (169 bytes)
-;Use z80 alternate registers to prevent undocumented instruction( 169 -> 167bytes )
+;Use z80 alternate registers to prevent undocumented instruction(169 -> 167bytes)
+;Apply speed boost(167 -> 172bytes)
+;Replace JR with JP(172 -> 178bytes)
 ;
 ;Compression algorithm by Magnus Lind
 ;
@@ -31,6 +33,12 @@
 ;If you want this, replace all instances of "call exo_getbit" with "srl a" followed by
 ;"call z,exo_getbit", and remove the first two instructions in exo_getbit routine.
 
+  IFNDEF OPTIMIZE_JUMP
+    DEFINE JPX jr
+  ELSE
+    DEFINE JPX jp
+  ENDIF
+
 deexo:          ld      iy, exo_mapbasebits+11
 
                 ld      a, (hl)
@@ -45,21 +53,26 @@ exo_initbits:
 
                 ld      hl, 1
                 ld      c, 16
-                jr      nz, exo_get4bits
+                JPX     nz, exo_get4bits
                 ld      b, c
                 ld      d, h
                 ld      e, l
 
 exo_get4bits:   exx
-                call    exo_getbit   ;get one bit
+              IFNDEF INLINE_GETBIT
+                call    exo_getbit
+              ELSE
+                srl     a
+                call    z,exo_getbit
+              ENDIF
                 exx
 
                 rl      c
-                jr      nc, exo_get4bits
+                JPX     nc, exo_get4bits
                 inc     c
                 ld      (iy+41), c      ;bits[i]=b1 (and opcode 41 == add hl,hl)
 exo_setbit:     dec     c
-                jr      nz, exo_setbit-1 ;jump to add hl,hl instruction
+                JPX     nz, exo_setbit-1 ;jump to add hl,hl instruction
                 ld      (iy-11), e
                 ld      (iy+93), d      ;base[i]=b2
                 add     hl, de
@@ -72,7 +85,7 @@ exo_setbit:     dec     c
 
                 ld      c,b             ;C=B=0
 
-                jr      exo_mainloop
+                JPX     exo_mainloop
 
 
 
@@ -80,10 +93,16 @@ exo_setbit:     dec     c
 exo_literalrun: ld      e, c            ;DE=1
 exo_getbits:    dec     b
                 ret     z
-exo_getbits1:   call    exo_getbit
+exo_getbits1:
+              IFNDEF INLINE_GETBIT
+                call    exo_getbit
+              ELSE
+                srl     a
+                call    z,exo_getbit
+              ENDIF
                 rl      e
                 rl      d
-                jr      nc, exo_getbits
+                JPX     nc, exo_getbits
 
                 ld      b, d
                 ld      c, e
@@ -93,10 +112,21 @@ exo_literalcopy:
                 ldir
 
 exo_mainloop:   inc     c
-                call    exo_getbit      ;literal?
+              IFNDEF INLINE_GETBIT
+                call    exo_getbit
+              ELSE
+                srl     a
+                call    z,exo_getbit
+              ENDIF
                 jr      c, exo_literalcopy
                 ld      c, 239
-exo_getindex:   call    exo_getbit
+exo_getindex:
+              IFNDEF INLINE_GETBIT
+                call    exo_getbit
+              ELSE
+                srl     a
+                call    z,exo_getbit
+              ENDIF
                 inc     c
                 jr      nc,exo_getindex
                 ret     z
@@ -127,7 +157,7 @@ exo_goforit:    call    exo_getbits1
                 pop     de
                 ldir
                 pop     hl
-                jr      exo_mainloop    ;Next!
+                JPX     exo_mainloop    ;Next!
 
 
 
@@ -143,8 +173,11 @@ exo_getpair:    add     iy, bc
                 ret
 
 
-exo_getbit:     srl     a
+exo_getbit:
+              IFNDEF INLINE_GETBIT
+                srl     a
                 ret     nz
+              ENDIF
 
                 ld      a, (hl)
                 inc     hl

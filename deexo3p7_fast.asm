@@ -1,3 +1,0 @@
-DEFINE INLINE_GETBIT 1
-
-INCLUDE deexo3p7.asm
