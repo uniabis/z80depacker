@@ -68,7 +68,7 @@ map_disp_hi equ (map_disp_bit+map_len*2)
 
         ld      iy, map_iyh*256+map_ofs
 
-        cp      a	;set ZF
+        cp      a       ;set ZF
         ex      af, af';'
 
         ld      bc, map_len * 256 + 16
@@ -127,21 +127,18 @@ get5:   dec     a
         ld      (iy+map_disp_lo), e
         ld      (iy+map_disp_hi), d
 
-        or      a
-        jr      z, bit0
-
+        inc     a
         ld      b, a
+        defb    40      ;40=028h;JR Z,nnnn
 
 setbit  add     hl, hl
         djnz    setbit
 
-        bit     3, a
-        jr      z, bit0
+        cp      8+1
+        jr      c, bit0
         add     080h-8
 
-bit0    inc     a
-
-        ld      (iy+map_disp_bit), a
+bit0    ld      (iy+map_disp_bit), a
 
     ENDIF
 
@@ -207,12 +204,12 @@ gbic    inc     c
         ret     m
       ENDIF
     ENDIF
-        ccf
         push    de
 
     IFNDEF HD64180
         ld      iyl, c
         ld      c, 0
+        or      a
     ELSE
         ld      b,0
         ld      iy, map_iyh*256
@@ -319,7 +316,7 @@ xopy    ld      a, (hl)
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 lee16   adc     a, a
       ELSE
-lee16   rr     a
+lee16   rr      a
       ENDIF
         jr      z, xopy
         rl      c
@@ -342,7 +339,7 @@ getbits16:
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 lee16   adc     a, a
       ELSE
-lee16   rr     a
+lee16   rr      a
       ENDIF
         jr      z, xopy
         rl      c
@@ -363,7 +360,6 @@ gby:    ld      c, 1
         jr      z,.f
         rl      c
         jr      nc, .l
-        ;or      a
         ret
 
     ENDIF
@@ -373,7 +369,7 @@ copy    ld      a, (hl)
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 lee8    adc     a, a
       ELSE
-lee8    rr     a
+lee8    rr      a
       ENDIF
         jr      z, copy
         rl      c
