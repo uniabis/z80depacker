@@ -40,36 +40,8 @@ LZ49_decrunch
 	ld de,0f03h
 	ld h,18
 	exx
+	jr nextsequence
 
-nextsequence
-	ld a,(hl)
-	inc hl
-
-	exx
-
-	ld l,a
-	and c
-	jr z,lzunpack ; no litteral bytes
-	rrca
-	rrca
-	rrca
-	rrca
-
-	cp b ; more bytes for length?
-
-	exx
-
-	ld c,a
-	jr nz,copyliteral
-
-getadditionallength
-	ld a,(hl)
-	inc hl
-	inc a
-	jr nz,lengthnext
-	inc b
-	dec bc
-	jr getadditionallength
 lengthnext
 	dec a
 	add a,c
@@ -101,6 +73,7 @@ getadditionallengthbis
 	inc b
 	dec bc
 	jr getadditionallengthbis
+
 lengthnextbis
 	dec a
 	add a,c
@@ -133,7 +106,36 @@ readoffset
 	; source=dest-copyoffset
 	ldir
 	pop hl
-	jr nextsequence
+
+nextsequence
+	ld a,(hl)
+	inc hl
+
+	exx
+
+	ld l,a
+	and c
+	jr z,lzunpack ; no litteral bytes
+	rrca
+	rrca
+	rrca
+	rrca
+
+	cp b ; more bytes for length?
+
+	exx
+
+	ld c,a
+	jr nz,copyliteral
+
+getadditionallength
+	ld a,(hl)
+	inc hl
+	inc a
+	jr nz,lengthnext
+	inc b
+	dec bc
+	jr getadditionallength
 
 extendedoffset
 

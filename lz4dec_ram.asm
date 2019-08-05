@@ -16,13 +16,14 @@ lz4decrunch:
 	ld			a,h
 	adc			a,b
 	ld			(.endH+1),a					;圧縮データの終端アドレス
-	ld			b,0
 
+	ld			b,0
 	ld			ix,.loop
+
 .loop:
 	ld			a,(hl)
-	inc			hl
 	ld			(.litteral+1),a
+	inc			hl
 	and			$F0
 	jr			z,.copy						;長さ 0 なら既に転送済みのデータをコピー
 	rrca

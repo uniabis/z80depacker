@@ -26,10 +26,9 @@ lz4decrunch:
 
 .loop:
 	ld			a,(hl)
-	inc			hl
-	ld			c,a
 	ex			af,af'
-	ld			a,c
+	ld			a,(hl)
+	inc			hl
 	and			$F0
 	jr			z,.copy						;長さ 0 なら既に転送済みのデータをコピー
 	rrca
@@ -43,14 +42,12 @@ lz4decrunch:
 	ldir									;長さ情報の次から転送開始
 
 .copy:
-	ld			a,h
-	exx
-	ld			h,a
-	exx
-	ld			a,l
+	ld			a,l							;圧縮データが最終アドレスに達したかどうか
 	exx
 	sub			c
+	exx
 	ld			a,h
+	exx
 	sbc			b
 	exx
 	ret			nc							;実質 zf=1 チェック
