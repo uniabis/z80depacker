@@ -103,29 +103,25 @@ get4    rr      a
         exx
 
         ld      hl, 1
-        jr      nz,.skp1
+        jr      nz, .skp1
         ld      d, h
         ld      e, l
         ld      c, 16
-.skp1:
+.skp1   ld      (iy+map_disp_lo), e
+        ld      (iy+map_disp_hi), d
 
     IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
         rrca
         inc     a
 
         ld      (iy+map_disp_bit), a
-        ld      (iy+map_disp_lo), e
-        ld      (iy+map_disp_hi), d
 
         jr      nc, get5
         sub     128-8+1
 setbit  add     hl, hl
-get5:   dec     a
+get5    dec     a
         jr      nz, setbit
     ELSE
-
-        ld      (iy+map_disp_lo), e
-        ld      (iy+map_disp_hi), d
 
         inc     a
         ld      b, a
@@ -151,10 +147,10 @@ bit0    ld      (iy+map_disp_bit), a
         inc     iy
       ENDIF
         dec     c
-        ex      af,af';'
+        ex      af, af';'
         exx
 
-        ld      c,16
+        ld      c, 16
         or      a       ;reset CF
         djnz    get4
 
@@ -211,7 +207,7 @@ gbic    inc     c
         ld      c, 0
         or      a
     ELSE
-        ld      b,0
+        ld      b, 0
         ld      iy, map_iyh*256
         add     iy, bc
         ld      c, b
@@ -243,8 +239,8 @@ gbic    inc     c
 dontgo  ld      bc, 4*256+(map_ofs+32)/16
         jr      z, goit
         dec     c
-goit:
-        call    lee8
+
+goit    call    lee8
 
     IFNDEF HD64180
         ld      iyl, c
@@ -289,7 +285,7 @@ litcat:
       ELSE
         ld      bc, 8 * 256
         or      a
-        call    getbits16
+        call    lee16
       ENDIF
         ldir
         jr      mloop
@@ -304,8 +300,6 @@ gbi     ld      a, (hl)
       ENDIF
         jp      gbic
 
-    IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
-
 getbits jp      p, lee8
         sla     b
         jr      z, gby
@@ -313,29 +307,7 @@ getbits jp      p, lee8
         defb    250     ;250=0FAh;JP M,nnnn
 xopy    ld      a, (hl)
         inc     hl
-      IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
-lee16   adc     a, a
-      ELSE
-lee16   rr      a
-      ENDIF
-        jr      z, xopy
-        rl      c
-        djnz    lee16
-        ld      b,c
-gby     ld      c, (hl)
-        inc     hl
-        ret
 
-    ELSE
-
-getbits jp      p, lee8
-        sla     b
-        jr      z, gby
-        srl     b
-        defb    250     ;250=0FAh;JP M,nnnn
-xopy    ld      a, (hl)
-        inc     hl
-getbits16:
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 lee16   adc     a, a
       ELSE
@@ -345,19 +317,27 @@ lee16   rr      a
         rl      c
         djnz    lee16
         ld      b, c
-gby:    ld      c, 1
+
+    IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
+
+gby     ld      c, (hl)
+        inc     hl
+        ret
+
+    ELSE
+
+gby     ld      c, 1
         or      a
         defb    218     ;218=0DAh;JP C,nnnn
-.f:
-        ld      a, (hl)
+.f      ld      a, (hl)
         inc     hl
-.l:
+
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
-        adc     a, a
+.l      adc     a, a
       ELSE
-        rr      a
+.l      rr      a
       ENDIF
-        jr      z,.f
+        jr      z, .f
         rl      c
         jr      nc, .l
         ret
