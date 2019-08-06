@@ -46,8 +46,8 @@ lengthnext
 	dec a
 	add a,c
 	ld c,a
-	ld a,b
-	adc a,0
+	adc a,b
+	sub c
 	ld b,a ; bc=length
 
 copyliteral
@@ -78,8 +78,8 @@ lengthnextbis
 	dec a
 	add a,c
 	ld c,a
-	ld a,b
-	adc a,0
+	adc a,b
+	sub c
 	ld b,a ; bc=length
 
 readoffset
@@ -90,9 +90,9 @@ readoffset
 
 	ld a,(hl)
 	inc hl
+	inc a
 	jr c,extendedoffset
 	; read encoded offset
-	inc a
 	ret z ; LZ49 end with zero offset
 
 	push hl
@@ -100,8 +100,8 @@ readoffset
 	ld a,e
 	sub l
 	ld l,a
-	ld a,d
-	sbc a,0
+	sbc a,l
+	add d
 	ld h,a
 	; source=dest-copyoffset
 	ldir
@@ -138,8 +138,6 @@ getadditionallength
 	jr getadditionallength
 
 extendedoffset
-
-	inc a
 
 	push hl
 	ld l,a

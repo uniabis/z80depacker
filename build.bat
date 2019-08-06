@@ -111,11 +111,9 @@ rem lz4
 sjasm lz4dec.asm lz4dec.bin
 del lz4dec.lst
 
-sjasm lz4dec_ram.asm lz4dec_ram.bin
-del lz4dec_ram.lst
+sjasmplus --raw=lz4dec_ram.bin lz4dec_rom.asm 
 
-sjasm lz4dec_rom.asm lz4dec_rom.bin
-del lz4dec_rom.lst
+sjasmplus -DROM=1 --raw=lz4dec_rom.bin lz4dec_rom.asm 
 
 rem lze
 

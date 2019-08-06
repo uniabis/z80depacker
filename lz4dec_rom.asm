@@ -12,6 +12,12 @@ lz4decrunch:
 
 	ld			a,l
 	add			a,c
+	IFNDEF ROM
+	ld			(.endL+1),a
+	ld			a,h
+	adc			a,b
+	ld			(.endH+1),a					;圧縮データの終端アドレス
+	ELSE
 	exx
 	ld			c,a
 	exx
@@ -20,14 +26,18 @@ lz4decrunch:
 	exx
 	ld			b,a
 	exx
-
+	ENDIF
 	ld			b,0
 	ld			ix,.loop
 
 .loop:
 	ld			a,(hl)
+	IFNDEF ROM
+	ld			(.litteral+1),a
+	ELSE
 	ex			af,af'
 	ld			a,(hl)
+	ENDIF
 	inc			hl
 	and			$F0
 	jr			z,.copy						;長さ 0 なら既に転送済みのデータをコピー
@@ -43,6 +53,13 @@ lz4decrunch:
 
 .copy:
 	ld			a,l							;圧縮データが最終アドレスに達したかどうか
+	IFNDEF ROM
+.endL:
+	sub			$FF
+	ld			a,h
+.endH:
+	sbc			a,$FF
+	ELSE
 	exx
 	sub			c
 	exx
@@ -50,6 +67,7 @@ lz4decrunch:
 	exx
 	sbc			b
 	exx
+	ENDIF
 	ret			nc							;実質 zf=1 チェック
 
 	ld			c,(hl)
@@ -57,7 +75,12 @@ lz4decrunch:
 	ld			b,(hl)						;bc=2byte オフセット値を読み込む
 	inc			hl
 
+	IFNDEF ROM
+.litteral:
+	ld			a,0							;litteral ここは書き換え
+	ELSE
 	ex			af,af'
+	ENDIF
 	and			$0F
 	add			a,$04							;cf=0
 
