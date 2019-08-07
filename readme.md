@@ -115,7 +115,7 @@ test data:ALL(16*16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|        168,961|     18,515,013|
 |MegaLZ|megalz_dec40|            110|        167,609|     45,653,296|
 |Pletter|unpletter|            170|        167,494|     28,812,190|
-|Pletter|unpletter_180|            169|        167,494|     28,812,318|
+|Pletter|unpletter_180|            169|        167,494|     28,746,568|
 |Shrinkler|shrinkler_recall_209|            209|        153,164|  2,648,153,963|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|        153,164|  2,648,153,963|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|        153,164|  2,699,900,075|
@@ -162,7 +162,7 @@ test data:MEGASDHC.B00(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|          9,741|        965,467|
 |MegaLZ|megalz_dec40|            110|          9,718|      2,363,816|
 |Pletter|unpletter|            170|          9,706|      1,459,575|
-|Pletter|unpletter_180|            169|          9,706|      1,459,583|
+|Pletter|unpletter_180|            169|          9,706|      1,456,713|
 |Shrinkler|shrinkler_recall_209|            209|          8,984|    147,898,055|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          8,984|    147,898,055|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|          8,984|    150,852,864|
@@ -209,7 +209,7 @@ test data:MEGASDHC.B01(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|          5,129|        696,998|
 |MegaLZ|megalz_dec40|            110|          5,124|      1,578,986|
 |Pletter|unpletter|            170|          5,083|        905,030|
-|Pletter|unpletter_180|            169|          5,083|        905,038|
+|Pletter|unpletter_180|            169|          5,083|        903,388|
 |Shrinkler|shrinkler_recall_209|            209|          4,680|     78,117,653|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          4,680|     78,117,653|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|          4,680|     79,661,789|
@@ -256,7 +256,7 @@ test data:MEGASDHC.B02(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         13,204|      1,213,790|
 |MegaLZ|megalz_dec40|            110|         12,965|      3,108,603|
 |Pletter|unpletter|            170|         12,945|      1,990,443|
-|Pletter|unpletter_180|            169|         12,945|      1,990,451|
+|Pletter|unpletter_180|            169|         12,945|      1,985,591|
 |Shrinkler|shrinkler_recall_209|            209|         12,148|    204,353,362|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         12,148|    204,353,362|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|         12,148|    208,379,142|
@@ -303,7 +303,7 @@ test data:MEGASDHC.B03(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         12,888|      1,136,475|
 |MegaLZ|megalz_dec40|            110|         12,660|      2,979,373|
 |Pletter|unpletter|            170|         12,700|      1,873,970|
-|Pletter|unpletter_180|            169|         12,700|      1,873,978|
+|Pletter|unpletter_180|            169|         12,700|      1,869,238|
 |Shrinkler|shrinkler_recall_209|            209|         11,916|    198,247,021|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         11,916|    198,247,021|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|         11,916|    202,175,121|
@@ -350,7 +350,7 @@ test data:MSX2MAIN.B00(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         13,372|      1,133,459|
 |MegaLZ|megalz_dec40|            110|         13,072|      3,077,702|
 |Pletter|unpletter|            170|         13,205|      1,788,932|
-|Pletter|unpletter_180|            169|         13,205|      1,788,940|
+|Pletter|unpletter_180|            169|         13,205|      1,784,570|
 |Shrinkler|shrinkler_recall_209|            209|         12,276|    202,922,527|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         12,276|    202,922,527|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|         12,276|    206,980,229|
@@ -397,7 +397,7 @@ test data:MSX2MAIN.B01(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         14,123|      1,179,781|
 |MegaLZ|megalz_dec40|            110|         13,917|      3,129,990|
 |Pletter|unpletter|            170|         13,909|      1,997,407|
-|Pletter|unpletter_180|            169|         13,909|      1,997,415|
+|Pletter|unpletter_180|            169|         13,909|      1,992,525|
 |Shrinkler|shrinkler_recall_209|            209|         13,100|    219,699,688|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         13,100|    219,699,688|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|         13,100|    224,017,122|
@@ -444,7 +444,7 @@ test data:MSXMUSIC.B00(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         10,420|        996,096|
 |MegaLZ|megalz_dec40|            110|         10,407|      2,560,679|
 |Pletter|unpletter|            170|         10,466|      1,474,879|
-|Pletter|unpletter_180|            169|         10,466|      1,474,887|
+|Pletter|unpletter_180|            169|         10,466|      1,472,247|
 |Shrinkler|shrinkler_recall_209|            209|          9,536|    157,373,448|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          9,536|    157,373,448|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|          9,536|    160,533,264|
@@ -491,7 +491,7 @@ test data:MSX2EXT.B00(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         12,882|      1,152,596|
 |MegaLZ|megalz_dec40|            110|         12,833|      3,030,834|
 |Pletter|unpletter|            170|         12,858|      2,027,765|
-|Pletter|unpletter_180|            169|         12,858|      2,027,773|
+|Pletter|unpletter_180|            169|         12,858|      2,022,773|
 |Shrinkler|shrinkler_recall_209|            209|         11,820|    196,044,987|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         11,820|    196,044,987|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|         11,820|    199,947,886|
@@ -538,7 +538,7 @@ test data:KANJJ1.B00(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|          6,523|      1,123,554|
 |MegaLZ|megalz_dec40|            110|          6,514|      2,432,743|
 |Pletter|unpletter|            170|          6,511|      1,461,388|
-|Pletter|unpletter_180|            169|          6,511|      1,461,396|
+|Pletter|unpletter_180|            169|          6,511|      1,458,166|
 |Shrinkler|shrinkler_recall_209|            209|          5,728|    102,142,021|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          5,728|    102,142,021|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|          5,728|    104,134,803|
@@ -585,7 +585,7 @@ test data:KANJJ1.B01(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|          4,297|        899,692|
 |MegaLZ|megalz_dec40|            110|          4,320|      1,795,413|
 |Pletter|unpletter|            170|          4,269|      1,106,926|
-|Pletter|unpletter_180|            169|          4,269|      1,106,934|
+|Pletter|unpletter_180|            169|          4,269|      1,104,864|
 |Shrinkler|shrinkler_recall_209|            209|          3,700|     65,685,212|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          3,700|     65,685,212|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|          3,700|     66,958,055|
@@ -632,7 +632,7 @@ test data:KANJJ1.B02(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         11,428|      1,367,606|
 |MegaLZ|megalz_dec40|            110|         11,362|      3,337,759|
 |Pletter|unpletter|            170|         11,340|      2,176,730|
-|Pletter|unpletter_180|            169|         11,340|      2,176,738|
+|Pletter|unpletter_180|            169|         11,340|      2,171,638|
 |Shrinkler|shrinkler_recall_209|            209|         10,212|    184,251,287|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         10,212|    184,251,287|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|         10,212|    187,790,097|
@@ -679,7 +679,7 @@ test data:KANJJ1.B03(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         11,165|      1,329,637|
 |MegaLZ|megalz_dec40|            110|         11,161|      3,294,363|
 |Pletter|unpletter|            170|         11,105|      2,137,378|
-|Pletter|unpletter_180|            169|         11,105|      2,137,386|
+|Pletter|unpletter_180|            169|         11,105|      2,132,416|
 |Shrinkler|shrinkler_recall_209|            209|         10,020|    181,710,794|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         10,020|    181,710,794|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|         10,020|    185,186,420|
@@ -726,7 +726,7 @@ test data:KANJJ1.B04(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         11,070|      1,345,880|
 |MegaLZ|megalz_dec40|            110|         11,016|      3,271,673|
 |Pletter|unpletter|            170|         10,992|      2,130,343|
-|Pletter|unpletter_180|            169|         10,992|      2,130,351|
+|Pletter|unpletter_180|            169|         10,992|      2,125,041|
 |Shrinkler|shrinkler_recall_209|            209|          9,876|    179,896,027|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          9,876|    179,896,027|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|          9,876|    183,336,706|
@@ -773,7 +773,7 @@ test data:KANJJ1.B05(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         10,960|      1,339,021|
 |MegaLZ|megalz_dec40|            110|         11,012|      3,284,220|
 |Pletter|unpletter|            170|         10,908|      2,106,071|
-|Pletter|unpletter_180|            169|         10,908|      2,106,079|
+|Pletter|unpletter_180|            169|         10,908|      2,101,239|
 |Shrinkler|shrinkler_recall_209|            209|          9,808|    178,129,932|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          9,808|    178,129,932|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|          9,808|    181,532,199|
@@ -820,7 +820,7 @@ test data:KANJJ1.B06(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         11,386|      1,368,552|
 |MegaLZ|megalz_dec40|            110|         11,281|      3,337,059|
 |Pletter|unpletter|            170|         11,252|      2,178,723|
-|Pletter|unpletter_180|            169|         11,252|      2,178,731|
+|Pletter|unpletter_180|            169|         11,252|      2,173,801|
 |Shrinkler|shrinkler_recall_209|            209|         10,148|    184,730,043|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|         10,148|    184,730,043|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|         10,148|    188,255,521|
@@ -867,7 +867,7 @@ test data:KANJJ1.B07(16KB)
 |lzsa2|unlzsa2_small_v1_180|            138|         10,373|      1,266,409|
 |MegaLZ|megalz_dec40|            110|         10,247|      3,070,083|
 |Pletter|unpletter|            170|         10,245|      1,996,630|
-|Pletter|unpletter_180|            169|         10,245|      1,996,638|
+|Pletter|unpletter_180|            169|         10,245|      1,992,358|
 |Shrinkler|shrinkler_recall_209|            209|          9,212|    166,951,906|
 |Shrinkler|shrinkler_recall_209_r800_ram|            209|          9,212|    166,951,906|
 |Shrinkler|shrinkler_recall_209_r800_rom|            207|          9,212|    170,158,857|

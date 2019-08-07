@@ -163,7 +163,6 @@ rem pletter
 sjasm unpletter.asm unpletter.bin
 del unpletter.lst
 
-sjasm unpletter_180.asm unpletter_180.bin
-del unpletter_180.lst
+sjasmplus -DHD64180=1 --raw=unpletter_180.bin unpletter_180.asm
 
 pause

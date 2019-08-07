@@ -12,12 +12,12 @@
   macro GETBIT
   add a,a
   call z,getbit
-  endmacro
+  endm
 
   macro GETBITEXX
   add a,a
   call z,getbitexx
-  endmacro
+  endm
 
 @unpack
 
@@ -40,13 +40,19 @@
   rl e
   ld hl,modes
   add hl,de
-
+  ifndef HD64180
+  ld e,(hl)
+  ld ixl,e
+  inc hl
+  ld e,(hl)
+  ld ixh,e
+  else
   ld c,(hl)
   inc hl
   ld b,(hl)
   push bc
   pop ix
-
+  endif
   ld e,1
   exx
   ld iy,loop
@@ -55,11 +61,11 @@ literal
 loop
   GETBIT
   jr nc,literal
+getlen
+  GETBIT
   exx
   ld h,d
   ld l,e
-getlen
-  GETBITEXX
   jr nc,.lenok
 .lus
   GETBITEXX
