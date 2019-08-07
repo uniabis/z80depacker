@@ -9,7 +9,7 @@
 ; v7: slight getkind factorization  14.23 s   / 213 bytes
 ; v8: replace D5 by HL              14.23 s   / 209 bytes
 ; r800: replace SLL A to SCF/RLA    14.23 s   / 209 bytes
-; r800_: remove self-modification   14.51 s   / 211 bytes
+; rom: remove self-modification   14.51 s   / 211 bytes
 
 ; shrinkler_decrunch
 ; input IX=source
@@ -19,7 +19,10 @@ shrinkler_decrunch
 
           EXX
           LD   HL,10*256+probs
-          LD   IY,0
+        IFNDEF ROM
+        ELSE
+          ;LD   IY,0
+        ENDIF
           LD   B,10
           XOR  A        ; start by LSB
 init
@@ -72,9 +75,12 @@ readoffset
           RET
 
 zero
+        IFNDEF ROM
+          LD   (d2+1),HL
+        ELSE
           PUSH HL
           POP  IY
-          ;LD   (d2+1),HL
+        ENDIF
           EX   DE,HL
           SBC  HL,BC    ; d3.  still NC after
           EX   DE,HL
@@ -128,16 +134,19 @@ readbit
           RLA
 _rbok
 
+        IFNDEF ROM
+          PUSH HL
+d2        LD   HL,#00   ; TODO replace by IY
+          ADC  HL,HL
+          LD   (d2+1),HL
+          POP  HL
+        ELSE
           PUSH IY
           EX   (SP),HL
           ADC  HL,HL
           EX   (SP),HL
           POP  IY
-;          PUSH HL
-;d2        LD   HL,#00   ; TODO replace by IY
-;          ADC  HL,HL
-;          LD   (d2+1),HL
-;          POP  HL
+        ENDIF
           EX   AF,AF'
           JR   getbit
 
@@ -192,10 +201,12 @@ _mulcont
           DEC  A
           JR   NZ,muluw
 
+        IFNDEF ROM
+          LD   HL,(d2+1)
+        ELSE
           PUSH IY
           POP  HL
-          ;LD   HL,(d2+1)
-
+        ENDIF
           OR   A
 	  SBC  HL,BC
           JR   NC,zero

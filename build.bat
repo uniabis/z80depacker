@@ -49,15 +49,15 @@ sjasm deexo.asm deexo.bin
 del deexo.lst
 
 sjasmplus --raw=deexo_180.bin deexo_180.asm
-sjasmplus -DINLINE_GETBIT=1 --raw=deexo_180_fast.bin deexo_180.asm
+rem sjasmplus -DINLINE_GETBIT=1 --raw=deexo_180_fast.bin deexo_180.asm
 sjasmplus -DINLINE_GETBIT=1 -DOPTIMIZE_JUMP=1 --raw=deexo_180_fast_jp.bin deexo_180.asm
 sjasmplus -DPFLAG_CODE=0 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p0.bin deexoopt_f3.asm
 
 rem exomizer3
 
 sjasmplus --raw=deexo3p7.bin deexo3p7.asm 
-sjasmplus -DINLINE_GETBIT=1 --raw=deexo3p7_fast.bin deexo3p7.asm 
-sjasmplus -DINLINE_GETBIT=1 -DABSOLUTE_JUMP=1 --raw=deexo3p7_fast_jp.bin deexo3p7.asm 
+rem sjasmplus -DINLINE_GETBIT=1 --raw=deexo3p7_fast.bin deexo3p7.asm 
+sjasmplus -DINLINE_GETBIT=1 -DOPTIMIZE_JUMP=1 --raw=deexo3p7_fast_jp.bin deexo3p7.asm 
 
 sjasm deexo3.asm deexo3.bin
 del deexo3.lst
@@ -125,9 +125,6 @@ del lzdec_104.lst
 
 rem lzee
 
-sjasm lzee_dec.asm lzee_dec.bin
-del lzee_dec.lst
-
 sjasm lzee_dec_area.asm lzee_dec_area.bin
 del lzee_dec_area.lst
 
@@ -144,11 +141,8 @@ rem shrinkler
 sjasm shrinkler_recall_209.asm shrinkler_recall_209.bin
 del shrinkler_recall_209.lst
 
-sjasm shrinkler_recall_209_r800_ram.asm shrinkler_recall_209_r800_ram.bin
-del shrinkler_recall_209_r800_ram.lst
-
-sjasm shrinkler_recall_209_r800_rom.asm shrinkler_recall_209_r800_rom.bin
-del shrinkler_recall_209_r800_rom.lst
+sjasmplus --raw=shrinkler_recall_209_r800_ram.bin shrinkler_recall_209_r800.asm
+sjasmplus --raw=shrinkler_recall_209_r800_rom.bin -DROM=1 shrinkler_recall_209_r800.asm
 
 rem lzsa
 

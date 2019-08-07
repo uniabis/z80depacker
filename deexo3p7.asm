@@ -34,6 +34,12 @@
 ;If you want this, replace all instances of "call exo_getbit" with "add a" followed by
 ;"call z,exo_getbit", and remove the first two instructions in exo_getbit routine.
 
+              IFNDEF OPTIMIZE_JUMP
+                DEFINE JPX jr
+              ELSE
+                DEFINE JPX jp
+              ENDIF
+
                 MACRO   m_getbit
               IFNDEF INLINE_GETBIT
                 call    p_getbit
@@ -132,11 +138,7 @@ exo_goforit:
                 pop     de
                 ldir
                 pop     hl
-              IFNDEF ABSOLUTE_JUMP
-                jr      exo_mainloop    ;Next!
-              ELSE
-                jp      exo_mainloop    ;Next!
-              ENDIF
+                JPX     exo_mainloop    ;Next!
 
 exo_literalrun:
                 ld      b,(hl)
@@ -144,11 +146,7 @@ exo_literalrun:
                 ld      c,(hl)
                 inc     hl
                 ldir
-              IFNDEF ABSOLUTE_JUMP
-                jr      exo_mainloop    ;Next!
-              ELSE
-                jp      exo_mainloop    ;Next!
-              ENDIF
+                JPX     exo_mainloop    ;Next!
 
 
 exo_getpair:    add     iy, bc
