@@ -19,10 +19,6 @@ shrinkler_decrunch
 
           EXX
           LD   HL,10*256+probs
-        IFNDEF ROM
-        ELSE
-          ;LD   IY,0
-        ENDIF
           LD   B,10
           XOR  A        ; start by LSB
 init
@@ -141,11 +137,12 @@ d2        LD   HL,#00   ; TODO replace by IY
           LD   (d2+1),HL
           POP  HL
         ELSE
-          PUSH IY
-          EX   (SP),HL
-          ADC  HL,HL
-          EX   (SP),HL
-          POP  IY
+          JR   NC,iync
+          ADD  IY,IY
+          INC  IY
+          JR   iyc
+iync      ADD  IY,IY
+iyc
         ENDIF
           EX   AF,AF'
           JR   getbit

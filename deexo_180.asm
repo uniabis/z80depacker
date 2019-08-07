@@ -33,11 +33,11 @@
 ;If you want this, replace all instances of "call exo_getbit" with "srl a" followed by
 ;"call z,exo_getbit", and remove the first two instructions in exo_getbit routine.
 
-  IFNDEF OPTIMIZE_JUMP
-    DEFINE JPX jr
-  ELSE
-    DEFINE JPX jp
-  ENDIF
+              IFNDEF OPTIMIZE_JUMP
+                DEFINE JPX jr
+              ELSE
+                DEFINE JPX jp
+              ENDIF
 
 deexo:          ld      iy, exo_mapbasebits+11
 
@@ -53,7 +53,7 @@ exo_initbits:
 
                 ld      hl, 1
                 ld      c, 16
-                JPX     nz, exo_get4bits
+                jr      nz, exo_get4bits
                 ld      b, c
                 ld      d, h
                 ld      e, l
@@ -68,11 +68,11 @@ exo_get4bits:   exx
                 exx
 
                 rl      c
-                JPX     nc, exo_get4bits
+                jr      nc, exo_get4bits
                 inc     c
                 ld      (iy+41), c      ;bits[i]=b1 (and opcode 41 == add hl,hl)
 exo_setbit:     dec     c
-                JPX     nz, exo_setbit-1 ;jump to add hl,hl instruction
+                jr      nz, exo_setbit-1 ;jump to add hl,hl instruction
                 ld      (iy-11), e
                 ld      (iy+93), d      ;base[i]=b2
                 add     hl, de
@@ -85,7 +85,12 @@ exo_setbit:     dec     c
 
                 ld      c,b             ;C=B=0
 
-                JPX     exo_mainloop
+              IFNDEF OPTIMIZE_JUMP
+                jr      exo_mainloop
+              ELSE
+                ld      ix,exo_mainloop
+                jp      (ix)
+              ENDIF
 
 
 
@@ -157,7 +162,11 @@ exo_goforit:    call    exo_getbits1
                 pop     de
                 ldir
                 pop     hl
-                JPX     exo_mainloop    ;Next!
+              IFNDEF OPTIMIZE_JUMP
+                jr      exo_mainloop
+              ELSE
+                jp      (ix)     ;Next!
+              ENDIF
 
 
 
