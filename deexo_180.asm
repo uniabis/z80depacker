@@ -52,9 +52,9 @@ exo_initbits:
                 exx
 
                 ld      hl, 1
-                ld      c, 16
+                ld      b, 16
                 jr      nz, exo_get4bits
-                ld      b, c
+                ld      c, b
                 ld      d, h
                 ld      e, l
 
@@ -67,18 +67,17 @@ exo_get4bits:   exx
               ENDIF
                 exx
 
-                rl      c
+                rl      b
                 jr      nc, exo_get4bits
-                inc     c
-                ld      (iy+41), c      ;bits[i]=b1 (and opcode 41 == add hl,hl)
-exo_setbit:     dec     c
-                jr      nz, exo_setbit-1 ;jump to add hl,hl instruction
+                inc     b
+                ld      (iy+41), b      ;bits[i]=b1 (and opcode 41 == add hl,hl)
+exo_setbit:     djnz    exo_setbit-1 ;jump to add hl,hl instruction
                 ld      (iy-11), e
                 ld      (iy+93), d      ;base[i]=b2
                 add     hl, de
                 ex      de, hl
                 inc     iy
-                dec     b
+                dec     c
 
                 exx
                 djnz    exo_initbits

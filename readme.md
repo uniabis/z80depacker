@@ -84,8 +84,8 @@ test data:ALL(16*16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|        160,011|    108,490,817|
-|Exomizer2|deexo_180|            167|        160,011|    108,508,449|
-|Exomizer2|deexo_180_fast_jp|            177|        160,011|     92,988,165|
+|Exomizer2|deexo_180|            166|        160,011|    108,490,229|
+|Exomizer2|deexo_180_fast_jp|            176|        160,011|     92,969,945|
 |Exomizer2|deexoopt_f3_180_p0|            238|        160,011|     75,264,500|
 |Exomizer3|deexo3p7|            176|        160,007|     82,034,254|
 |Exomizer3|deexo3p7_fast_jp|            181|        160,007|     70,324,722|
@@ -131,8 +131,8 @@ test data:MEGASDHC.B00(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|          9,373|      5,908,411|
-|Exomizer2|deexo_180|            167|          9,373|      5,909,513|
-|Exomizer2|deexo_180_fast_jp|            177|          9,373|      5,080,900|
+|Exomizer2|deexo_180|            166|          9,373|      5,908,329|
+|Exomizer2|deexo_180_fast_jp|            176|          9,373|      5,079,716|
 |Exomizer2|deexoopt_f3_180_p0|            238|          9,373|      4,112,910|
 |Exomizer3|deexo3p7|            176|          9,373|      4,644,675|
 |Exomizer3|deexo3p7_fast_jp|            181|          9,373|      3,984,529|
@@ -178,8 +178,8 @@ test data:MEGASDHC.B01(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|          4,902|      3,307,149|
-|Exomizer2|deexo_180|            167|          4,902|      3,308,251|
-|Exomizer2|deexo_180_fast_jp|            177|          4,902|      2,875,976|
+|Exomizer2|deexo_180|            166|          4,902|      3,307,019|
+|Exomizer2|deexo_180_fast_jp|            176|          4,902|      2,874,744|
 |Exomizer2|deexoopt_f3_180_p0|            238|          4,902|      2,366,212|
 |Exomizer3|deexo3p7|            176|          4,902|      2,759,609|
 |Exomizer3|deexo3p7_fast_jp|            181|          4,902|      2,382,976|
@@ -225,8 +225,8 @@ test data:MEGASDHC.B02(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         12,494|      7,962,111|
-|Exomizer2|deexo_180|            167|         12,494|      7,963,213|
-|Exomizer2|deexo_180_fast_jp|            177|         12,494|      6,809,244|
+|Exomizer2|deexo_180|            166|         12,494|      7,962,005|
+|Exomizer2|deexo_180_fast_jp|            176|         12,494|      6,808,036|
 |Exomizer2|deexoopt_f3_180_p0|            238|         12,494|      5,499,871|
 |Exomizer3|deexo3p7|            176|         12,494|      6,005,290|
 |Exomizer3|deexo3p7_fast_jp|            181|         12,494|      5,123,001|
@@ -272,8 +272,8 @@ test data:MEGASDHC.B03(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         12,297|      7,705,336|
-|Exomizer2|deexo_180|            167|         12,297|      7,706,438|
-|Exomizer2|deexo_180_fast_jp|            177|         12,297|      6,614,420|
+|Exomizer2|deexo_180|            166|         12,297|      7,705,250|
+|Exomizer2|deexo_180_fast_jp|            176|         12,297|      6,613,232|
 |Exomizer2|deexoopt_f3_180_p0|            238|         12,297|      5,315,885|
 |Exomizer3|deexo3p7|            176|         12,297|      6,143,310|
 |Exomizer3|deexo3p7_fast_jp|            181|         12,297|      5,242,630|
@@ -319,8 +319,8 @@ test data:MSX2MAIN.B00(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         12,740|      7,678,676|
-|Exomizer2|deexo_180|            167|         12,740|      7,679,778|
-|Exomizer2|deexo_180_fast_jp|            177|         12,740|      6,609,817|
+|Exomizer2|deexo_180|            166|         12,740|      7,678,762|
+|Exomizer2|deexo_180_fast_jp|            176|         12,740|      6,608,801|
 |Exomizer2|deexoopt_f3_180_p0|            238|         12,740|      5,320,811|
 |Exomizer3|deexo3p7|            176|         12,739|      6,207,944|
 |Exomizer3|deexo3p7_fast_jp|            181|         12,739|      5,309,942|
@@ -366,8 +366,8 @@ test data:MSX2MAIN.B01(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         13,402|      8,119,431|
-|Exomizer2|deexo_180|            167|         13,402|      8,120,533|
-|Exomizer2|deexo_180_fast_jp|            177|         13,402|      6,942,423|
+|Exomizer2|deexo_180|            166|         13,402|      8,119,361|
+|Exomizer2|deexo_180_fast_jp|            176|         13,402|      6,941,251|
 |Exomizer2|deexoopt_f3_180_p0|            238|         13,402|      5,612,446|
 |Exomizer3|deexo3p7|            176|         13,402|      6,031,181|
 |Exomizer3|deexo3p7_fast_jp|            181|         13,402|      5,156,357|
@@ -413,8 +413,8 @@ test data:MSXMUSIC.B00(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         10,068|      5,986,114|
-|Exomizer2|deexo_180|            167|         10,068|      5,987,216|
-|Exomizer2|deexo_180_fast_jp|            177|         10,068|      5,152,278|
+|Exomizer2|deexo_180|            166|         10,068|      5,986,088|
+|Exomizer2|deexo_180_fast_jp|            176|         10,068|      5,151,150|
 |Exomizer2|deexoopt_f3_180_p0|            238|         10,068|      4,176,257|
 |Exomizer3|deexo3p7|            176|         10,068|      4,792,485|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,068|      4,105,700|
@@ -460,8 +460,8 @@ test data:MSX2EXT.B00(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         12,351|      8,066,566|
-|Exomizer2|deexo_180|            167|         12,351|      8,067,668|
-|Exomizer2|deexo_180_fast_jp|            177|         12,351|      6,928,310|
+|Exomizer2|deexo_180|            166|         12,351|      8,066,560|
+|Exomizer2|deexo_180_fast_jp|            176|         12,351|      6,927,202|
 |Exomizer2|deexoopt_f3_180_p0|            238|         12,351|      5,575,198|
 |Exomizer3|deexo3p7|            176|         12,351|      6,374,679|
 |Exomizer3|deexo3p7_fast_jp|            181|         12,351|      5,452,809|
@@ -507,8 +507,8 @@ test data:KANJJ1.B00(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|          6,097|      5,111,648|
-|Exomizer2|deexo_180|            167|          6,097|      5,112,750|
-|Exomizer2|deexo_180_fast_jp|            177|          6,097|      4,405,496|
+|Exomizer2|deexo_180|            166|          6,097|      5,111,742|
+|Exomizer2|deexo_180_fast_jp|            176|          6,097|      4,404,488|
 |Exomizer2|deexoopt_f3_180_p0|            238|          6,097|      3,612,264|
 |Exomizer3|deexo3p7|            176|          6,097|      3,967,129|
 |Exomizer3|deexo3p7_fast_jp|            181|          6,097|      3,411,495|
@@ -554,8 +554,8 @@ test data:KANJJ1.B01(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|          3,975|      3,493,148|
-|Exomizer2|deexo_180|            167|          3,975|      3,494,250|
-|Exomizer2|deexo_180_fast_jp|            177|          3,975|      3,026,507|
+|Exomizer2|deexo_180|            166|          3,975|      3,493,202|
+|Exomizer2|deexo_180_fast_jp|            176|          3,975|      3,025,459|
 |Exomizer2|deexoopt_f3_180_p0|            238|          3,975|      2,489,721|
 |Exomizer3|deexo3p7|            176|          3,974|      2,708,049|
 |Exomizer3|deexo3p7_fast_jp|            181|          3,974|      2,345,386|
@@ -601,8 +601,8 @@ test data:KANJJ1.B02(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         10,688|      7,768,783|
-|Exomizer2|deexo_180|            167|         10,688|      7,769,885|
-|Exomizer2|deexo_180_fast_jp|            177|         10,688|      6,632,332|
+|Exomizer2|deexo_180|            166|         10,688|      7,768,753|
+|Exomizer2|deexo_180_fast_jp|            176|         10,688|      6,631,200|
 |Exomizer2|deexoopt_f3_180_p0|            238|         10,688|      5,363,319|
 |Exomizer3|deexo3p7|            176|         10,688|      5,531,415|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,688|      4,754,980|
@@ -648,8 +648,8 @@ test data:KANJJ1.B03(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         10,510|      7,603,571|
-|Exomizer2|deexo_180|            167|         10,510|      7,604,673|
-|Exomizer2|deexo_180_fast_jp|            177|         10,510|      6,487,560|
+|Exomizer2|deexo_180|            166|         10,510|      7,603,537|
+|Exomizer2|deexo_180_fast_jp|            176|         10,510|      6,486,424|
 |Exomizer2|deexoopt_f3_180_p0|            238|         10,510|      5,250,939|
 |Exomizer3|deexo3p7|            176|         10,509|      5,446,711|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,509|      4,671,690|
@@ -695,8 +695,8 @@ test data:KANJJ1.B04(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         10,415|      7,416,607|
-|Exomizer2|deexo_180|            167|         10,415|      7,417,709|
-|Exomizer2|deexo_180_fast_jp|            177|         10,415|      6,335,302|
+|Exomizer2|deexo_180|            166|         10,415|      7,416,561|
+|Exomizer2|deexo_180_fast_jp|            176|         10,415|      6,334,154|
 |Exomizer2|deexoopt_f3_180_p0|            238|         10,415|      5,130,121|
 |Exomizer3|deexo3p7|            176|         10,415|      5,360,921|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,415|      4,602,224|
@@ -742,8 +742,8 @@ test data:KANJJ1.B05(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         10,348|      7,475,213|
-|Exomizer2|deexo_180|            167|         10,348|      7,476,315|
-|Exomizer2|deexo_180_fast_jp|            177|         10,348|      6,379,259|
+|Exomizer2|deexo_180|            166|         10,348|      7,475,183|
+|Exomizer2|deexo_180_fast_jp|            176|         10,348|      6,378,127|
 |Exomizer2|deexoopt_f3_180_p0|            238|         10,348|      5,161,555|
 |Exomizer3|deexo3p7|            176|         10,347|      5,383,242|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,347|      4,616,542|
@@ -789,8 +789,8 @@ test data:KANJJ1.B06(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|         10,650|      7,752,805|
-|Exomizer2|deexo_180|            167|         10,650|      7,753,907|
-|Exomizer2|deexo_180_fast_jp|            177|         10,650|      6,612,520|
+|Exomizer2|deexo_180|            166|         10,650|      7,752,735|
+|Exomizer2|deexo_180_fast_jp|            176|         10,650|      6,611,348|
 |Exomizer2|deexoopt_f3_180_p0|            238|         10,650|      5,338,926|
 |Exomizer3|deexo3p7|            176|         10,650|      5,584,601|
 |Exomizer3|deexo3p7_fast_jp|            181|         10,650|      4,783,085|
@@ -836,8 +836,8 @@ test data:KANJJ1.B07(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |Exomizer2|deexo|            169|          9,701|      7,135,248|
-|Exomizer2|deexo_180|            167|          9,701|      7,136,350|
-|Exomizer2|deexo_180_fast_jp|            177|          9,701|      6,095,821|
+|Exomizer2|deexo_180|            166|          9,701|      7,135,142|
+|Exomizer2|deexo_180_fast_jp|            176|          9,701|      6,094,613|
 |Exomizer2|deexoopt_f3_180_p0|            238|          9,701|      4,938,065|
 |Exomizer3|deexo3p7|            176|          9,701|      5,093,013|
 |Exomizer3|deexo3p7_fast_jp|            181|          9,701|      4,381,376|
