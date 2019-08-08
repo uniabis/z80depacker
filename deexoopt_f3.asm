@@ -160,6 +160,15 @@ bit0    ld      (iy+map_disp_bit), a
         jr      mloop
       ENDIF
 
+gbi     ld      a, (hl)
+        inc     hl
+      IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
+        adc     a, a
+      ELSE
+        rra
+      ENDIF
+        jp      gbic
+
 gbm     ld      a, (hl)
         inc     hl
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
@@ -201,6 +210,7 @@ gbic    inc     c
       ENDIF
     ENDIF
         push    de
+        ex      de, hl
 
     IFNDEF HD64180
         ld      iyl, c
@@ -216,26 +226,24 @@ gbic    inc     c
         ld      b, (iy+map_disp_bit)
         dec     b
         call    nz, getbits
-        ex      de, hl
         ld      l, (iy+map_disp_lo)
         ld      h, (iy+map_disp_hi)
         add     hl, bc
-        ex      de, hl
-        push    de
-        inc     d
-        dec     d
+        push    hl
+        inc     h
+        dec     h
         jr      nz, dontgo
       IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
         ld      bc, 2*256+(map_ofs+64)/4
-        dec     e
+        dec     l
         jr      z, goit
         ld      bc, 4*256+(map_ofs+48)/16
       ELSE
         ld      bc, 2*256+(map_ofs+48)/4
       ENDIF
-        dec     e
+        dec     l
         jr      z, goit
-        dec     e
+        dec     l
 dontgo  ld      bc, 4*256+(map_ofs+32)/16
         jr      z, goit
         dec     c
@@ -254,7 +262,6 @@ goit    call    lee8
         ld      b, (iy+map_disp_bit)
         dec     b
         call    nz, getbits
-        ex      de, hl
         ld      l, (iy+map_disp_lo)
         ld      h, (iy+map_disp_hi)
         add     hl, bc
@@ -285,28 +292,21 @@ litcat:
       ELSE
         ld      bc, 8 * 256
         or      a
+        ex      de, hl
         call    lee16
+        ex      de, hl
       ENDIF
         ldir
         jr      mloop
     ENDIF
-
-gbi     ld      a, (hl)
-        inc     hl
-      IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
-        adc     a, a
-      ELSE
-        rra
-      ENDIF
-        jp      gbic
 
 getbits jp      p, lee8
         sla     b
         jr      z, gby
         srl     b
         defb    250     ;250=0FAh;JP M,nnnn
-xopy    ld      a, (hl)
-        inc     hl
+xopy    ld      a, (de)
+        inc     de
 
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 lee16   adc     a, a
@@ -320,8 +320,10 @@ lee16   rr      a
 
     IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
 
-gby     ld      c, (hl)
+gby     ex      de, hl
+        ld      c, (hl)
         inc     hl
+        ex      de, hl
         ret
 
     ELSE
@@ -329,8 +331,8 @@ gby     ld      c, (hl)
 gby     ld      c, 1
         or      a
         defb    218     ;218=0DAh;JP C,nnnn
-.f      ld      a, (hl)
-        inc     hl
+.f      ld      a, (de)
+        inc     de
 
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 .l      adc     a, a
@@ -344,8 +346,8 @@ gby     ld      c, 1
 
     ENDIF
 
-copy    ld      a, (hl)
-        inc     hl
+copy    ld      a, (de)
+        inc     de
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 lee8    adc     a, a
       ELSE
