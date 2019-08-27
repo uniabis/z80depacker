@@ -141,7 +141,7 @@ rem shrinkler
 sjasm shrinkler_recall_209.asm shrinkler_recall_209.bin
 del shrinkler_recall_209.lst
 
-sjasmplus --raw=shrinkler_recall_209_r800_ram.bin shrinkler_recall_209_r800.asm
+rem sjasmplus --raw=shrinkler_recall_209_r800_ram.bin shrinkler_recall_209_r800.asm
 sjasmplus --raw=shrinkler_recall_209_r800_rom.bin -DROM=1 shrinkler_recall_209_r800.asm
 
 rem lzsa
