@@ -56,7 +56,7 @@
   ELSE
     DEFINE map_len (16*3+4)
   ENDIF
-  IF  (low mapbase)<256+(128-16)-128 AND (low mapbase)>(128-16)-map_len*2+127
+  IF  ((low mapbase)<256+(128-16)-128) && ((low mapbase)>(128-16)-map_len*2+127)
     DEFINE map_ofs 0
   ELSE
     DEFINE map_ofs (128-16)
@@ -73,17 +73,14 @@ map_disp_hi equ (map_disp_bit+map_len*2)
 
         ld      bc, map_len * 256 + 16
 
-    IF (PFLAG_CODE & PFLAG_BITS_ALIGN_START)
         or      a       ;reset CF
+    IF (PFLAG_CODE & PFLAG_BITS_ALIGN_START)
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
         ld      a, 080h
       ELSE
         ld      a, 001h
       ENDIF
         defb    218     ;218=0DAh;JP C,nnnn
-    ELSE
-        or      a       ;reset CF
-        ;scf             ;set CF
     ENDIF
 
 gb4     ld      a, (hl)
@@ -93,7 +90,7 @@ get4    adc     a, a
       ELSE
 get4    rr      a
       ENDIF
-        jr      z, gb4
+get4l   jr      z, gb4
         rl      c
         jr      nc, get4
 
@@ -151,14 +148,27 @@ bit0    ld      (iy+map_disp_bit), a
         exx
 
         ld      c, 16
+    IF (PFLAG_CODE & PFLAG_IMPL_1LITERAL)
         or      a       ;reset CF
         djnz    get4
-
-      IF (PFLAG_CODE & PFLAG_IMPL_1LITERAL)
-        jr      litcop
+    ELSE
+      IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
+        add     a, a
       ELSE
-        jr      mloop
+        srl     a
       ENDIF
+        djnz    get4l
+    ENDIF
+
+      IFNDEF OPTIMIZE_JUMP
+      ELSE
+        ld      ix, mloop
+      ENDIF
+    IF (PFLAG_CODE & PFLAG_IMPL_1LITERAL)
+        jr      litcop
+    ELSE
+        jr      mloopl
+    ENDIF
 
 gbi     ld      a, (hl)
         inc     hl
@@ -167,7 +177,12 @@ gbi     ld      a, (hl)
       ELSE
         rra
       ENDIF
+
+      IFNDEF OPTIMIZE_JUMP
+        jr      gbic
+      ELSE
         jp      gbic
+      ENDIF
 
 gbm     ld      a, (hl)
         inc     hl
@@ -184,9 +199,13 @@ mloop   add     a, a
       ELSE
 mloop   srl     a
       ENDIF
-        jr      z, gbm
+mloopl  jr      z, gbm
         jr      c, litcop
+    IFNDEF HD64180
 gbmc    ld      c, (map_ofs-1) & 255
+    ELSE
+gbmc    ld      bc, (map_ofs-1) & 255
+    ENDIF
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 getind  add     a, a
       ELSE
@@ -217,7 +236,6 @@ gbic    inc     c
         ld      c, 0
         or      a
     ELSE
-        ld      b, 0
         ld      iy, map_iyh*256
         add     iy, bc
         ld      c, b
@@ -252,12 +270,11 @@ goit    call    lee8
 
     IFNDEF HD64180
         ld      iyl, c
-        ld      c, b
     ELSE
         ld      iy, map_iyh*256
         add     iy, bc
-        ld      c, b
     ENDIF
+        ld      c, b
 
         ld      b, (iy+map_disp_bit)
         dec     b
@@ -273,7 +290,11 @@ goit    call    lee8
         pop     de
         ldir
         pop     hl
+      IFNDEF OPTIMIZE_JUMP
         jr      mloop
+      ELSE
+        jp      (ix)
+      ENDIF
 
     IF  literals=1
 litcat:
@@ -297,7 +318,11 @@ litcat:
         ex      de, hl
       ENDIF
         ldir
+      IFNDEF OPTIMIZE_JUMP
         jr      mloop
+      ELSE
+        jp      (ix)
+      ENDIF
     ENDIF
 
 getbits jp      p, lee8
