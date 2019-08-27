@@ -146,7 +146,7 @@ sjasmplus --raw=shrinkler_recall_209_r800_rom.bin -DROM=1 shrinkler_recall_209_r
 
 rem lzsa
 
-sjasmplus --raw=unlzsa1_fast_v2.bin unlzsa1_fast_v2.asm
+sjasmplus --raw=unlzsa1_fast_v1.bin unlzsa1_fast_v1.asm
 
 sjasmplus --raw=unlzsa1_small_v1.bin unlzsa1_small_v1.asm
 
