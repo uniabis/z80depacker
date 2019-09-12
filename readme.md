@@ -114,6 +114,8 @@ test data:ALL(16*16KB)
 |lzsa2|unlzsa2_small_v1|            140|        168,748|     18,268,195|
 |lzsa2|unlzsa2_small_v1_180|            138|        168,748|     18,539,715|
 |MegaLZ|megalz_dec40|            110|        167,609|     45,653,296|
+|MegaLZ|unmegalz_fast_v2|            233|        167,609|     20,775,177|
+|MegaLZ|unmegalz_small_v2|             92|        167,609|     32,642,661|
 |Pletter|unpletter|            170|        167,494|     28,812,190|
 |Pletter|unpletter_180|            169|        167,494|     28,746,568|
 |Shrinkler|shrinkler_recall_209|            209|        153,164|  2,648,153,963|
@@ -160,6 +162,8 @@ test data:MEGASDHC.B00(16KB)
 |lzsa2|unlzsa2_small_v1|            140|          9,732|        958,909|
 |lzsa2|unlzsa2_small_v1_180|            138|          9,732|        971,501|
 |MegaLZ|megalz_dec40|            110|          9,718|      2,363,816|
+|MegaLZ|unmegalz_fast_v2|            233|          9,718|      1,089,557|
+|MegaLZ|unmegalz_small_v2|             92|          9,718|      1,677,063|
 |Pletter|unpletter|            170|          9,706|      1,459,575|
 |Pletter|unpletter_180|            169|          9,706|      1,456,713|
 |Shrinkler|shrinkler_recall_209|            209|          8,984|    147,898,055|
@@ -206,6 +210,8 @@ test data:MEGASDHC.B01(16KB)
 |lzsa2|unlzsa2_small_v1|            140|          5,125|        692,026|
 |lzsa2|unlzsa2_small_v1_180|            138|          5,125|        699,026|
 |MegaLZ|megalz_dec40|            110|          5,124|      1,578,986|
+|MegaLZ|unmegalz_fast_v2|            233|          5,124|        838,672|
+|MegaLZ|unmegalz_small_v2|             92|          5,124|      1,194,407|
 |Pletter|unpletter|            170|          5,083|        905,030|
 |Pletter|unpletter_180|            169|          5,083|        903,388|
 |Shrinkler|shrinkler_recall_209|            209|          4,680|     78,117,653|
@@ -252,6 +258,8 @@ test data:MEGASDHC.B02(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         13,185|      1,210,099|
 |lzsa2|unlzsa2_small_v1_180|            138|         13,185|      1,228,651|
 |MegaLZ|megalz_dec40|            110|         12,965|      3,108,603|
+|MegaLZ|unmegalz_fast_v2|            233|         12,965|      1,352,140|
+|MegaLZ|unmegalz_small_v2|             92|         12,965|      2,168,953|
 |Pletter|unpletter|            170|         12,945|      1,990,443|
 |Pletter|unpletter_180|            169|         12,945|      1,985,591|
 |Shrinkler|shrinkler_recall_209|            209|         12,148|    204,353,362|
@@ -298,6 +306,8 @@ test data:MEGASDHC.B03(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         12,868|      1,128,051|
 |lzsa2|unlzsa2_small_v1_180|            138|         12,868|      1,144,691|
 |MegaLZ|megalz_dec40|            110|         12,660|      2,979,373|
+|MegaLZ|unmegalz_fast_v2|            233|         12,660|      1,300,533|
+|MegaLZ|unmegalz_small_v2|             92|         12,660|      2,077,557|
 |Pletter|unpletter|            170|         12,700|      1,873,970|
 |Pletter|unpletter_180|            169|         12,700|      1,869,238|
 |Shrinkler|shrinkler_recall_209|            209|         11,916|    198,247,021|
@@ -344,6 +354,8 @@ test data:MSX2MAIN.B00(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         13,352|      1,104,359|
 |lzsa2|unlzsa2_small_v1_180|            138|         13,352|      1,120,815|
 |MegaLZ|megalz_dec40|            110|         13,072|      3,077,702|
+|MegaLZ|unmegalz_fast_v2|            233|         13,072|      1,336,616|
+|MegaLZ|unmegalz_small_v2|             92|         13,072|      2,132,837|
 |Pletter|unpletter|            170|         13,205|      1,788,932|
 |Pletter|unpletter_180|            169|         13,205|      1,784,570|
 |Shrinkler|shrinkler_recall_209|            209|         12,276|    202,922,527|
@@ -390,6 +402,8 @@ test data:MSX2MAIN.B01(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         14,105|      1,156,703|
 |lzsa2|unlzsa2_small_v1_180|            138|         14,105|      1,173,495|
 |MegaLZ|megalz_dec40|            110|         13,917|      3,129,990|
+|MegaLZ|unmegalz_fast_v2|            233|         13,917|      1,336,318|
+|MegaLZ|unmegalz_small_v2|             92|         13,917|      2,161,096|
 |Pletter|unpletter|            170|         13,909|      1,997,407|
 |Pletter|unpletter_180|            169|         13,909|      1,992,525|
 |Shrinkler|shrinkler_recall_209|            209|         13,100|    219,699,688|
@@ -436,6 +450,8 @@ test data:MSXMUSIC.B00(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         10,407|        992,052|
 |lzsa2|unlzsa2_small_v1_180|            138|         10,407|      1,005,364|
 |MegaLZ|megalz_dec40|            110|         10,407|      2,560,679|
+|MegaLZ|unmegalz_fast_v2|            233|         10,407|      1,164,712|
+|MegaLZ|unmegalz_small_v2|             92|         10,407|      1,804,490|
 |Pletter|unpletter|            170|         10,466|      1,474,879|
 |Pletter|unpletter_180|            169|         10,466|      1,472,247|
 |Shrinkler|shrinkler_recall_209|            209|          9,536|    157,373,448|
@@ -482,6 +498,8 @@ test data:MSX2EXT.B00(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         12,867|      1,149,569|
 |lzsa2|unlzsa2_small_v1_180|            138|         12,867|      1,166,897|
 |MegaLZ|megalz_dec40|            110|         12,833|      3,030,834|
+|MegaLZ|unmegalz_fast_v2|            233|         12,833|      1,318,517|
+|MegaLZ|unmegalz_small_v2|             92|         12,833|      2,100,776|
 |Pletter|unpletter|            170|         12,858|      2,027,765|
 |Pletter|unpletter_180|            169|         12,858|      2,022,773|
 |Shrinkler|shrinkler_recall_209|            209|         11,820|    196,044,987|
@@ -528,6 +546,8 @@ test data:KANJJ1.B00(16KB)
 |lzsa2|unlzsa2_small_v1|            140|          6,517|      1,099,878|
 |lzsa2|unlzsa2_small_v1_180|            138|          6,517|      1,116,446|
 |MegaLZ|megalz_dec40|            110|          6,514|      2,432,743|
+|MegaLZ|unmegalz_fast_v2|            233|          6,514|      1,220,803|
+|MegaLZ|unmegalz_small_v2|             92|          6,514|      1,823,065|
 |Pletter|unpletter|            170|          6,511|      1,461,388|
 |Pletter|unpletter_180|            169|          6,511|      1,458,166|
 |Shrinkler|shrinkler_recall_209|            209|          5,728|    102,142,021|
@@ -574,6 +594,8 @@ test data:KANJJ1.B01(16KB)
 |lzsa2|unlzsa2_small_v1|            140|          4,293|        882,811|
 |lzsa2|unlzsa2_small_v1_180|            138|          4,293|        894,451|
 |MegaLZ|megalz_dec40|            110|          4,320|      1,795,413|
+|MegaLZ|unmegalz_fast_v2|            233|          4,320|        969,230|
+|MegaLZ|unmegalz_small_v2|             92|          4,320|      1,383,479|
 |Pletter|unpletter|            170|          4,269|      1,106,926|
 |Pletter|unpletter_180|            169|          4,269|      1,104,864|
 |Shrinkler|shrinkler_recall_209|            209|          3,700|     65,685,212|
@@ -620,6 +642,8 @@ test data:KANJJ1.B02(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         11,412|      1,349,197|
 |lzsa2|unlzsa2_small_v1_180|            138|         11,412|      1,370,661|
 |MegaLZ|megalz_dec40|            110|         11,362|      3,337,759|
+|MegaLZ|unmegalz_fast_v2|            233|         11,362|      1,498,314|
+|MegaLZ|unmegalz_small_v2|             92|         11,362|      2,398,346|
 |Pletter|unpletter|            170|         11,340|      2,176,730|
 |Pletter|unpletter_180|            169|         11,340|      2,171,638|
 |Shrinkler|shrinkler_recall_209|            209|         10,212|    184,251,287|
@@ -666,6 +690,8 @@ test data:KANJJ1.B03(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         11,147|      1,310,698|
 |lzsa2|unlzsa2_small_v1_180|            138|         11,147|      1,331,514|
 |MegaLZ|megalz_dec40|            110|         11,161|      3,294,363|
+|MegaLZ|unmegalz_fast_v2|            233|         11,161|      1,485,045|
+|MegaLZ|unmegalz_small_v2|             92|         11,161|      2,371,355|
 |Pletter|unpletter|            170|         11,105|      2,137,378|
 |Pletter|unpletter_180|            169|         11,105|      2,132,416|
 |Shrinkler|shrinkler_recall_209|            209|         10,020|    181,710,794|
@@ -712,6 +738,8 @@ test data:KANJJ1.B04(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         11,054|      1,323,623|
 |lzsa2|unlzsa2_small_v1_180|            138|         11,054|      1,344,519|
 |MegaLZ|megalz_dec40|            110|         11,016|      3,271,673|
+|MegaLZ|unmegalz_fast_v2|            233|         11,016|      1,479,510|
+|MegaLZ|unmegalz_small_v2|             92|         11,016|      2,355,764|
 |Pletter|unpletter|            170|         10,992|      2,130,343|
 |Pletter|unpletter_180|            169|         10,992|      2,125,041|
 |Shrinkler|shrinkler_recall_209|            209|          9,876|    179,896,027|
@@ -758,6 +786,8 @@ test data:KANJJ1.B05(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         10,950|      1,317,468|
 |lzsa2|unlzsa2_small_v1_180|            138|         10,950|      1,338,308|
 |MegaLZ|megalz_dec40|            110|         11,012|      3,284,220|
+|MegaLZ|unmegalz_fast_v2|            233|         11,012|      1,484,175|
+|MegaLZ|unmegalz_small_v2|             92|         11,012|      2,369,275|
 |Pletter|unpletter|            170|         10,908|      2,106,071|
 |Pletter|unpletter_180|            169|         10,908|      2,101,239|
 |Shrinkler|shrinkler_recall_209|            209|          9,808|    178,129,932|
@@ -804,6 +834,8 @@ test data:KANJJ1.B06(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         11,375|      1,344,284|
 |lzsa2|unlzsa2_small_v1_180|            138|         11,375|      1,365,700|
 |MegaLZ|megalz_dec40|            110|         11,281|      3,337,059|
+|MegaLZ|unmegalz_fast_v2|            233|         11,281|      1,499,052|
+|MegaLZ|unmegalz_small_v2|             92|         11,281|      2,399,747|
 |Pletter|unpletter|            170|         11,252|      2,178,723|
 |Pletter|unpletter_180|            169|         11,252|      2,173,801|
 |Shrinkler|shrinkler_recall_209|            209|         10,148|    184,730,043|
@@ -850,6 +882,8 @@ test data:KANJJ1.B07(16KB)
 |lzsa2|unlzsa2_small_v1|            140|         10,359|      1,248,468|
 |lzsa2|unlzsa2_small_v1_180|            138|         10,359|      1,267,676|
 |MegaLZ|megalz_dec40|            110|         10,247|      3,070,083|
+|MegaLZ|unmegalz_fast_v2|            233|         10,247|      1,401,983|
+|MegaLZ|unmegalz_small_v2|             92|         10,247|      2,224,451|
 |Pletter|unpletter|            170|         10,245|      1,996,630|
 |Pletter|unpletter_180|            169|         10,245|      1,992,358|
 |Shrinkler|shrinkler_recall_209|            209|          9,212|    166,951,906|
