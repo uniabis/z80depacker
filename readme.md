@@ -31,9 +31,15 @@ License:GPLv3
 
 ### [lzsa1](https://github.com/emmanuel-marty/lzsa) 1.0.7(-f1 -r)
 
+License:zlib
+
 ### [lzsa2](https://github.com/emmanuel-marty/lzsa) 1.0.7(-f2 -r)
 
+License:zlib
+
 ### MegaLZ v4.89
+
+[unmegalz](http://hype.retroscene.org/blog/933.html)
 
 ### [Pletter](http://www.xl2s.tk/) v0.5c1
 
