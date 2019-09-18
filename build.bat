@@ -43,6 +43,11 @@ exit
 
 :skip_deexoopt
 
+rem ldir
+
+sjasmplus --raw=ldir.bin ldir.asm
+
+
 rem exomizer2
 
 sjasm deexo.asm deexo.bin
@@ -51,7 +56,7 @@ del deexo.lst
 sjasmplus --raw=deexo_180.bin deexo_180.asm
 rem sjasmplus -DINLINE_GETBIT=1 --raw=deexo_180_fast.bin deexo_180.asm
 sjasmplus -DINLINE_GETBIT=1 -DOPTIMIZE_JUMP=1 --raw=deexo_180_fast_jp.bin deexo_180.asm
-sjasmplus -DPFLAG_CODE=0 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p0.bin deexoopt_f3.asm
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=0 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p0.bin deexoopt_f3.asm
 
 rem exomizer3
 
@@ -64,8 +69,8 @@ del deexo3.lst
 
 sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=3 --raw=deexoopt_p7.bin deexoopt.asm
 
-sjasmplus -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
-sjasmplus -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p7.bin deexoopt_f3.asm
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p7.bin deexoopt_f3.asm
 
 rem hrust
 
@@ -135,6 +140,10 @@ rem megalz
 
 sjasm megalz_dec40.asm megalz_dec40.bin
 del megalz_dec40.lst
+
+
+sjasmplus --raw=unmegalz_fast_v2.bin unmegalz_fast_v2.asm
+sjasmplus --raw=unmegalz_small_v2.bin unmegalz_small_v2.asm
 
 rem shrinkler
 
