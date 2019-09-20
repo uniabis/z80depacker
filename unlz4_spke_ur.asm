@@ -71,11 +71,10 @@ DecompressRaw:
 
 		; short matches have length 0+4..14+4
 		; placed here this saves one JP per iteration
-ShortMatch:	add 4								; ADD 4 could have been optimized for size,
-										; but here it resets flag C for SBC HL,DE below
+ShortMatch:
 CopyMatch:
-		ld c,a:ex (sp),hl : push hl						; BC = len, DE = offset, HL = dest, SP ->[dest,src]
-		sbc hl,de : pop de						; BC = len, DE = dest, HL = dest-offset, SP->[src]
+		ld c,a:ex (sp),hl : ex hl,de					; BC = len, DE = dest, HL = -offset, SP ->[src]
+		add hl,de							; BC = len, DE = dest, HL = dest+-offset, SP->[src]
 	IFDEF	ALLOW_LDIR_UNROLLING
 		ldi
 		ldi
@@ -105,15 +104,17 @@ CopyLiterals:	ld c,a : ldir
 		; zero offset as a marker of the end of the block
 		; (see https://github.com/lz4/lz4/wiki/lz4_Block_format.md)
 NoLiterals:	push de								; SP -> [dest]
-		ld e,(hl) : inc hl : ld d,(hl) : inc hl				; DE = offset
-		ld a,d : or e : jr z,BlockEnd					; ugly branching is optimized for speed
+		xor a : sub (hl) : inc hl : ld e,a
+		sbc (hl) : sub e : ld d,a					: DE = -offset
+		or e : jr z,BlockEnd						; ugly branching is optimized for speed
+		inc hl
 
 		; this is optimized for shorter matches, because
 		; they are likely to be a lot more common
-ProcessMatch:	exa : and #0F : cp 15 : jp c,ShortMatch				; MMMM<15 means match lengths between 0+4 and 14+4
+ProcessMatch:	exa : and #0F : add 4 : cp 15+4 : jp c,ShortMatch		; MMMM+4<15+4 means match lengths between 0+4 and 14+4
 
 		; MMMM=15 indicates a multi-byte length of the match
-LongerMatch:	add 4								; this needs to be done before adding extra bytes
+LongerMatch:
 ReadMatchLen:	ld c,(hl) : inc hl : add c : jr c,MatchIncB			; overflow does not happen often, hence the ugly branching
 MatchContinue:	inc c : jr z,ReadMatchLen
 
@@ -125,7 +126,7 @@ MatchContinue:	inc c : jr z,ReadMatchLen
 
 NumberOverflow:	inc b : jp NumberContinue
 
-MatchIncB:	inc b : or a : jp MatchContinue
+MatchIncB:	inc b : jp MatchContinue
 
 BlockEnd:	pop de : ret
 
