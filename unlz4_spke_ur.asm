@@ -38,15 +38,15 @@ DecompressLZ4:	; generally speaking, .LZ4 file can contain multiple frames (comp
 	IFDEF	DATA_HAS_HEADERS
 		ld bc,4 : add hl,bc						; skip 4 "magic" bytes at the start of the frame
 	IFNDEF	ALLOW_UNCOMPRESSED
-		ld c,3+4							; must also skip "Frame Descriptor" (3 bytes) and "Block Size" (4 bytes)
-		bit 3,(hl) : jr z,NoContentSize					; bit 3 of the "FLG" byte is 1 if "Content Size" is included...
-		ld c,3+8+4							; ..which may also need to be skipped ("Content Size" is 8 bytes long)
-NoContentSize:	add hl,bc							; skip all that needs to be skipped
+		ld a,(hl)							; must also skip "Frame Descriptor" (3 bytes) and "Block Size" (4 bytes)
+		and 8								; bit 3 of the "FLG" byte is 1 if "Content Size" is included...
+		add 3+4 : ld c,a						; ..which may also need to be skipped ("Content Size" is 8 bytes long)
+		add hl,bc							; skip all that needs to be skipped
 	ELSE
-		ld c,3								; must also skip "Frame Descriptor" (3 bytes)
-		bit 3,(hl) : jr z,NoContentSize					; bit 3 of the "FLG" byte is 1 if "Content Size" is included...
-		ld c,3+8							; ..which may also need to be skipped ("Content Size" is 8 bytes long)
-NoContentSize:	add hl,bc							; skip all that needs to be skipped
+		ld a,(hl)							; must also skip "Frame Descriptor" (3 bytes)
+		and 8								; bit 3 of the "FLG" byte is 1 if "Content Size" is included...
+		add 3 : ld c,a							; ..which may also need to be skipped ("Content Size" is 8 bytes long)
+		add hl,bc							; skip all that needs to be skipped
 
 		ld c,(hl) : inc hl : ld b,(hl) : inc hl
 		ld a,b : or c : ret z						; frame end marker?
@@ -69,8 +69,6 @@ DecompressRaw:
 	ENDIF
 		jr ReadToken							; a small price to pay to getting rid of a JP per every short match!
 
-		; short matches have length 0+4..14+4
-		; placed here this saves one JP per iteration
 ShortMatch:
 CopyMatch:
 		ld c,a:ex (sp),hl : ex hl,de					; BC = len, DE = dest, HL = -offset, SP ->[src]
