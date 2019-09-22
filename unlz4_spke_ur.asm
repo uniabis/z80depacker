@@ -28,7 +28,6 @@
 
 	DEFINE	DATA_HAS_HEADERS			; comment this line out if using to decompress a stripped (frameless) ZX4 data
 	;DEFINE	ALLOW_UNCOMPRESSED			; uncomment to correctly process uncompressed blocks (i've no idea why you would do such a thing!)
-	;DEFINE	ALLOW_USING_IX				; uncomment this line for a very marginal speed up, which requires the use of IX
 
 
 DecompressLZ4:	; generally speaking, .LZ4 file can contain multiple frames (compressed or uncompressed);
@@ -64,14 +63,11 @@ Compressed:	ld b,0
 
 DecompressRaw:
 
-	IFDEF	ALLOW_USING_IX
-		ld ix,CopyMatch							; a slight speed-up (2 t-states per iteration)
-	ENDIF
 		jr ReadToken							; a small price to pay to getting rid of a JP per every short match!
 
 ShortMatch:
 CopyMatch:
-		ld c,a:ex (sp),hl : ex hl,de					; BC = len, DE = dest, HL = -offset, SP ->[src]
+		ld c,a : ex (sp),hl : ex hl,de					; BC = len, DE = dest, HL = -offset, SP ->[src]
 		add hl,de							; BC = len, DE = dest, HL = dest+-offset, SP->[src]
 	IFDEF	ALLOW_LDIR_UNROLLING
 		ldi
@@ -114,13 +110,9 @@ ProcessMatch:	exa : and #0F : add 4 : cp 15+4 : jp c,ShortMatch		; MMMM+4<15+4 m
 		; MMMM=15 indicates a multi-byte length of the match
 LongerMatch:
 ReadMatchLen:	ld c,(hl) : inc hl : add c : jr c,MatchIncB			; overflow does not happen often, hence the ugly branching
-MatchContinue:	inc c : jr z,ReadMatchLen
-
-	IFDEF	ALLOW_USING_IX
-		jp (ix)
-	ELSE
-		jp CopyMatch
-	ENDIF
+MatchContinue:	inc c
+		jr nz,CopyMatch
+		jp ReadMatchLen
 
 NumberOverflow:	inc b : jp NumberContinue
 
