@@ -133,7 +133,9 @@ sjasmplus -DROM=1 --raw=lz4dec_rom.bin lz4dec_rom.asm
 sjasmplus --raw=unlz4_stephenw32768.bin unlz4_stephenw32768.asm 
 sjasmplus --raw=unlz4_drapich.bin unlz4_drapich.asm 
 sjasmplus --raw=unlz4_spke.bin unlz4_spke.asm 
-sjasmplus -DALLOW_LDIR_UNROLLING=1 --raw=unlz4_spke_ur.bin unlz4_spke_ur.asm 
+sjasmplus --raw=unlz4_spke_fast.bin unlz4_spke_fast.asm 
+sjasmplus --raw=unlz4_spke_small.bin unlz4_spke_small.asm 
+
 
 
 
