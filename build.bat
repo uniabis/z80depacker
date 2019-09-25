@@ -102,6 +102,10 @@ del dzx7b_slow.lst
 
 sjasmplus -DR800=1 --raw=dzx7b_slow_r800.bin dzx7b_slow_r800.asm
 
+rem zx7mini
+
+sjasmplus -DBACKWORD=1 --raw=dzx7mini.bin dzx7mini.asm
+
 rem lz48
 
 sjasm lz48decrunch_v006.asm lz48decrunch_v006.bin
@@ -192,5 +196,6 @@ sjasm unpletter.asm unpletter.bin
 del unpletter.lst
 
 sjasmplus -DHD64180=1 --raw=unpletter_180.bin unpletter_180.asm
+
 
 pause
