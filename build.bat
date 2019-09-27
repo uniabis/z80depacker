@@ -2,8 +2,11 @@
 
 goto skip_debug
 
-sjasmplus -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
-sjasmplus -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p7.bin deexoopt_f3.asm
+sjasmplus --raw=dlze_fast.bin dlze_fast.asm
+sjasmplus --raw=dlze_small.bin dlze_small.asm
+
+sjasmplus --raw=dlzee_fast.bin dlzee_fast.asm
+sjasmplus --raw=dlzee_small.bin dlzee_small.asm
 
 
 pause
@@ -151,6 +154,9 @@ del lzdec.lst
 sjasm lzdec_104.asm lzdec_104.bin
 del lzdec_104.lst
 
+sjasmplus --raw=dlze_fast.bin dlze_fast.asm
+sjasmplus --raw=dlze_small.bin dlze_small.asm
+
 rem lzee
 
 sjasm lzee_dec_area.asm lzee_dec_area.bin
@@ -158,6 +164,9 @@ del lzee_dec_area.lst
 
 sjasm lzee_dec_speed.asm lzee_dec_speed.bin
 del lzee_dec_speed.lst
+
+sjasmplus --raw=dlzee_fast.bin dlzee_fast.asm
+sjasmplus --raw=dlzee_small.bin dlzee_small.asm
 
 rem megalz
 
