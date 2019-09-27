@@ -178,17 +178,17 @@ sjasmplus --raw=shrinkler_recall_209_r800_rom.bin -DROM=1 shrinkler_recall_209_r
 
 rem lzsa
 
-sjasmplus --raw=unlzsa1_fast_v1.bin unlzsa1_fast_v1.asm
+sjasmplus --raw=unlzsa1_fast.bin unlzsa1_fast.asm
 
-sjasmplus --raw=unlzsa1_small_v1.bin unlzsa1_small_v1.asm
+sjasmplus --raw=unlzsa1_small.bin unlzsa1_small.asm
 
-sjasmplus -DHD64180=1 --raw=unlzsa2_fast_v1_180.bin unlzsa2_fast_v1.asm
+sjasmplus -DHD64180=1 --raw=unlzsa2_fast_180.bin unlzsa2_fast.asm
 
-sjasmplus --raw=unlzsa2_fast_v1.bin unlzsa2_fast_v1.asm
+sjasmplus --raw=unlzsa2_fast.bin unlzsa2_fast.asm
 
-sjasmplus -DHD64180=1 --raw=unlzsa2_small_v1_180.bin unlzsa2_small_v1.asm
+sjasmplus -DHD64180=1 --raw=unlzsa2_small_180.bin unlzsa2_small.asm
 
-sjasmplus --raw=unlzsa2_small_v1.bin unlzsa2_small_v1.asm
+sjasmplus --raw=unlzsa2_small.bin unlzsa2_small.asm
 
 rem pletter
 
