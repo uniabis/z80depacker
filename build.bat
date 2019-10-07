@@ -206,5 +206,9 @@ del unpletter.lst
 
 sjasmplus -DHD64180=1 --raw=unpletter_180.bin unpletter_180.asm
 
+rem aplib
+
+sjasmplus --raw=aplib247b.bin aplib247b.asm
+sjasmplus --raw=aplib247b_180.bin aplib247b_180.asm
 
 pause
