@@ -29,16 +29,16 @@
 
 	IFNDEF	ALLOW_INLINE_GETBIT
 
-	MACRO GET_BIT
+		MACRO GET_BIT
 		call	getbit
-	ENDM
+		ENDM
 
 	ELSE
 
-	MACRO	GET_BIT
+		MACRO	GET_BIT
 		add	a
 		call	z,getbit
-	ENDM
+		ENDM
 
 	ENDIF
 
