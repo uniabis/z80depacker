@@ -2,7 +2,7 @@
 ; original source by dwedit
 ; very slightly adapted by utopian
 ; optimized by Metalbrain & Antonio Villena
-;247b to 239b optimized by uniabis
+;247b to 238b optimized by uniabis
 
     ;hl = source
     ;de = dest
@@ -118,16 +118,15 @@ apbranch2           ex      af,af'
                     ex      de,hl
 
                     ex      af,af'
-                    ld      a,4
-                    cp      d
-                    jr      nc,apskip2
+                    ld      a,d
+                    cp      5
+                    jr      c,apskip2
                     inc     bc
-apskip2             ld      a,e
+apskip2             or      a
+                    jr      nz,apskip3
+                    ld      a,e
                     rla
                     jr      c,apskip3
-                    inc     d
-                    dec     d
-                    jr      nz,apskip3
                     inc     bc
                     inc     bc
 apskip3             push    hl
