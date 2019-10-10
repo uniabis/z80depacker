@@ -2,7 +2,7 @@
 ; original source by dwedit
 ; very slightly adapted by utopian
 ; optimized by Metalbrain & Antonio Villena
-;247b to 241b optimized by uniabis
+;247b to 239b optimized by uniabis
 
     ;hl = source
     ;de = dest
@@ -17,7 +17,7 @@ depack              ;di
 init                ld      a,128
                     jr      apbranch1
 
-apgetbit1:          ld      a,(hl)
+apgetbit1           ld      a,(hl)
                     inc     hl
                     rla
                     jr      c,apbranch1n
@@ -26,7 +26,7 @@ aploop2             ld      b,255
 aploop              add     a,a
                     jr      z,apgetbit1
                     jr      nc,apbranch1
-apbranch1n:         add     a,a
+apbranch1n          add     a,a
                     jr      nz,apnogetbit2
                     ld      a,(hl)
                     inc     hl
@@ -54,14 +54,18 @@ apnogetbit4         rl      c
                     jp      aploop2
 
 apbranch4           ex      af,af'
-                    or      a
-                    ex      de,hl       ;write a previous byte (1-15 away from dest)
-                    sbc     hl,bc
-                    ld      a,(hl)
-                    add     hl,bc
-                    ld      (hl),a
+
+                    ld      a,e
+                    sub     c
+                    ld      c,a
+                    sbc     a,a
+                    add     d
+                    ld      b,a
+                    ld      a,(bc)
+                    ld      (de),a
+
                     ex      af,af'
-                    ex      de,hl
+
                     inc     de
                     jp      aploop2
 
@@ -111,7 +115,6 @@ apbranch2           ex      af,af'
                     call    ap_getgamma
 
                     ex      (sp),hl      ;bc = len, hl=offs
-                    push    de
                     ex      de,hl
 
                     ex      af,af'
@@ -119,14 +122,15 @@ apbranch2           ex      af,af'
                     cp      d
                     jr      nc,apskip2
                     inc     bc
-                    or      a
-apskip2             ld      hl,127
-                    sbc     hl,de
+apskip2             ld      a,e
+                    rla
                     jr      c,apskip3
+                    inc     d
+                    dec     d
+                    jr      nz,apskip3
                     inc     bc
                     inc     bc
-apskip3             pop     hl      ;bc = len, de = offs, hl=junk
-                    push    hl
+apskip3             push    hl
                     ex      af,af'
                     sbc     hl,de
                     pop     de      ;hl=dest-offs, bc=len, de = dest
