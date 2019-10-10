@@ -2,7 +2,7 @@
 ; original source by dwedit
 ; very slightly adapted by utopian
 ; optimized by Metalbrain & Antonio Villena
-;247b to 242b
+;247b to 241b optimized by uniabis
 
     ;hl = source
     ;de = dest
@@ -66,10 +66,10 @@ apbranch4           ex      af,af'
                     jp      aploop2
 
 apbranch3           ld      c,(hl)      ;use 7 bit offset, length = 2 or 3
-                    inc     hl
                     ex      af,af'
                     srl     c
                     ret     z      ;if a zero is found here, it's EOF
+                    inc     hl
                     ld      a,2
                     ld      b,0
                     adc     a,b
@@ -127,9 +127,8 @@ apskip2             ld      hl,127
                     inc     bc
 apskip3             pop     hl      ;bc = len, de = offs, hl=junk
                     push    hl
-                    or      a
-                    sbc     hl,de
                     ex      af,af'
+                    sbc     hl,de
                     pop     de      ;hl=dest-offs, bc=len, de = dest
                     ldir
                     pop     hl
