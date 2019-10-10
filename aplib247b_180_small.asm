@@ -2,23 +2,21 @@
 ; original source by dwedit
 ; very slightly adapted by utopian
 ; optimized by Metalbrain & Antonio Villena
-;247b
+;247b to 181b
 
     ;hl = source
     ;de = dest
 
-depack         		;di
-			;push iy
-			or a
-			ex af,af'
-			;call init
-			;pop iy
-			;ei
-			;ret
+depack              ;di
+                    ;push iy
+                    ;call init
+                    ;pop iy
+                    ;ei
+                    ;ret
 
-init				ld      a,128
-apbranch1      		ldi
-aploop2        		ld      b,255
+init                ld      a,128
+apbranch1           ldi
+aploop2             ld      b,255
 aploop              add     a,a
                     call    z,apfilbuf
                     jr      nc,apbranch1
@@ -29,7 +27,7 @@ aploop              add     a,a
                     call    z,apfilbuf
                     jr      nc,apbranch3
                     ld      bc,16      ;get an offset
-apget4bits     		add     a,a
+apget4bits          add     a,a
                     call    z,apfilbuf
                     rl      c
                     jr      nc,apget4bits
@@ -39,7 +37,8 @@ apget4bits     		add     a,a
                     ex      de,hl
                     inc     de
                     jp      aploop2
-apbranch4      		ex      af,af'
+apbranch4           ex      af,af'
+                    or      a
                     ex      de,hl       ;write a previous byte (1-15 away from dest)
                     sbc     hl,bc
                     ld      a,(hl)
@@ -50,10 +49,10 @@ apbranch4      		ex      af,af'
                     inc     de
                     jp      aploop2
 
-apbranch3      		ld      c,(hl)      ;use 7 bit offset, length = 2 or 3
+apbranch3           ld      c,(hl)      ;use 7 bit offset, length = 2 or 3
                     inc     hl
                     ex      af,af'
-                    rr      c
+                    srl     c
                     ret     z      ;if a zero is found here, it's EOF
                     ld      a,2
                     ld      b,0
@@ -71,13 +70,13 @@ apbranch3      		ld      c,(hl)      ;use 7 bit offset, length = 2 or 3
                     ldir
                     pop     hl
                     jp      aploop
-apbranch2      		ex      af,af
+apbranch2           ex      af,af
                     ld      a,b
                     call    ap_getgamma   ;use a gamma code * 256 for offset, another gamma code for length
                     dec     c
                     ex      af,af'
                     add     a,c
-                    ccf
+
                     jr      z,ap_r0_gamma
                     dec     a
 
@@ -105,12 +104,12 @@ apbranch2      		ex      af,af
                     jr      nc,apskip2
                     inc     bc
                     or      a
-apskip2        		ld      hl,127
+apskip2             ld      hl,127
                     sbc     hl,de
                     jr      c,apskip3
                     inc     bc
                     inc     bc
-apskip3        		pop     hl      ;bc = len, de = offs, hl=junk
+apskip3             pop     hl      ;bc = len, de = offs, hl=junk
                     push    hl
                     or      a
                     sbc     hl,de
@@ -120,7 +119,7 @@ apskip3        		pop     hl      ;bc = len, de = offs, hl=junk
                     pop     hl
                     jp      aploop
 
-ap_r0_gamma    		call    ap_getgamma    ;and a new gamma code for length
+ap_r0_gamma         call    ap_getgamma    ;and a new gamma code for length
                     push    hl
                     push    de
                     ex      de,hl
@@ -135,9 +134,9 @@ ap_r0_gamma    		call    ap_getgamma    ;and a new gamma code for length
                     pop     hl
                     jp      aploop
 
-ap_getgamma    		ex      af,af'
+ap_getgamma         ex      af,af'
                     ld      bc,1
-ap_getgammaloop		add     a,a
+ap_getgammaloop     add     a,a
                     call    z,apfilbuf
                     rl      c
                     rl      b
@@ -146,7 +145,7 @@ ap_getgammaloop		add     a,a
                     ret     nc
                     jp      ap_getgammaloop
 
-apfilbuf       		ld      a,(hl)
+apfilbuf            ld      a,(hl)
                     inc     hl
                     rla
                     ret
