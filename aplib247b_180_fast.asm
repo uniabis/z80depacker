@@ -16,28 +16,37 @@ depack         		;di
 			;ei
 			;ret
 
-                    exx
-                    ld bc,1
-                    exx
-
 init				ld      a,128
+                    jr      apbranch1
+
+apgetbit1:     		ld      a,(hl)
+                    inc     hl
+                    rla
+                    jr      c,apbranch1n
 apbranch1      		ldi
-aploop2        		exx
-                    ld      h,c
-aploop              exx
-                    add     a,a
-                    call    z,apfilbuf
+aploop2        		ld      b,255
+aploop              add     a,a
+                    jr      z,apgetbit1
                     jr      nc,apbranch1
+apbranch1n:         add     a,a
+                    jr      nz,apnogetbit2
+                    ld      a,(hl)
+                    inc     hl
+                    rla
+apnogetbit2    		jr      nc,apbranch2
                     add     a,a
-                    call    z,apfilbuf
-                    jr      nc,apbranch2
-                    add     a,a
-                    call    z,apfilbuf
-                    jr      nc,apbranch3
+                    jr      nz,apnogetbit3
+                    ld      a,(hl)
+                    inc     hl
+                    rla
+apnogetbit3    		jr      nc,apbranch3
                     ld      bc,16      ;get an offset
 apget4bits     		add     a,a
-                    call    z,apfilbuf
-                    rl      c
+                    jr      nz,apnogetbit4
+                    ld      a,(hl)
+                    inc     hl
+                    rla
+apnogetbit4    		rl      c
                     jr      nc,apget4bits
                     jr      nz,apbranch4
                     ex      de,hl
@@ -76,18 +85,15 @@ apbranch3      		ld      c,(hl)      ;use 7 bit offset, length = 2 or 3
                     ex      af,af'
                     ldir
                     pop     hl
-                    exx
-                    ld      h,b
-                    ;ld      ixh,b
                     jp      aploop
-apbranch2      		call    ap_getgamma   ;use a gamma code * 256 for offset, another gamma code for length
+apbranch2      		ex      af,af'
+                    ld      a,b
+                    call    ap_getgamma2  ;use a gamma code * 256 for offset, another gamma code for length
                     dec     c
                     ex      af,af'
-                    ld      a,c
-                    exx
-                    sub     h
-                    exx
-                    ;sub     ixh
+                    add     a,c
+                    ccf
+
                     jr      z,ap_r0_gamma
                     dec     a
 
@@ -128,9 +134,6 @@ apskip3        		pop     hl      ;bc = len, de = offs, hl=junk
                     pop     de      ;hl=dest-offs, bc=len, de = dest
                     ldir
                     pop     hl
-                    exx
-                    ld      h,b
-                    ;ld      ixh,b
                     jp      aploop
 
 ap_r0_gamma    		call    ap_getgamma2   ;and a new gamma code for length
@@ -146,9 +149,6 @@ ap_r0_gamma    		call    ap_getgamma2   ;and a new gamma code for length
                     pop     de      ;hl=dest-offs, bc=len, de = dest
                     ldir
                     pop     hl
-                    exx
-                    ld      h,b
-                    ;ld      ixh,b
                     jp      aploop
 
 ap5            		ld      a,(hl)
@@ -178,11 +178,6 @@ ap10           		ld      a, (hl)
                     rla
                     ret     nc
                     jp      ap_getgammaloop
-
-apfilbuf            ld      a, (hl)
-                    inc     hl
-                    rla
-                    ret
 
 
 ap_getgamma2   		ex      af, af'
