@@ -73,7 +73,7 @@ apbranch3      		ld      c,(hl)      ;use 7 bit offset, length = 2 or 3
                     jp      aploop
 apbranch2      		ex      af,af
                     ld      a,b
-                    call    ap_getgamma2  ;use a gamma code * 256 for offset, another gamma code for length
+                    call    ap_getgamma   ;use a gamma code * 256 for offset, another gamma code for length
                     dec     c
                     ex      af,af'
                     add     a,c
@@ -93,7 +93,7 @@ apbranch2      		ex      af,af
 
                     push    bc
 
-                    call    ap_getgamma2
+                    call    ap_getgamma
 
                     ex      (sp),hl      ;bc = len, hl=offs
                     push    de
@@ -120,7 +120,7 @@ apskip3        		pop     hl      ;bc = len, de = offs, hl=junk
                     pop     hl
                     jp      aploop
 
-ap_r0_gamma    		call    ap_getgamma2   ;and a new gamma code for length
+ap_r0_gamma    		call    ap_getgamma    ;and a new gamma code for length
                     push    hl
                     push    de
                     ex      de,hl
@@ -135,25 +135,16 @@ ap_r0_gamma    		call    ap_getgamma2   ;and a new gamma code for length
                     pop     hl
                     jp      aploop
 
-ap_getgamma2   		ex      af,af'
-ap_getgamma    		ld      bc,1
+ap_getgamma    		ex      af,af'
+                    ld      bc,1
 ap_getgammaloop		add     a,a
                     call    z,apfilbuf
                     rl      c
-                    jr      c,ap_getgammaloop3
+                    rl      b
                     add     a,a
                     call    z,apfilbuf
                     ret     nc
                     jp      ap_getgammaloop
-
-ap_getgammaloop2	add     a,a
-                    call    z,apfilbuf
-                    rl      c
-ap_getgammaloop3	rl      b
-                    add     a,a
-                    call    z,apfilbuf
-                    ret     nc
-                    jp      ap_getgammaloop2
 
 apfilbuf       		ld      a,(hl)
                     inc     hl

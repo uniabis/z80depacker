@@ -104,7 +104,7 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |packer|unpacker|r800<br />support|hd64180<br />support|rom<br />support|unpacker<br />size|packed<br />size rate|unpacking<br />time rate|comment|
 |---|---|:---:|:---:|:---:|---:|---:|---:|---|
 |ApLib|aplib247b|o|x|o|            249|62.00%|LDIR x 5.92||
-|ApLib|aplib247b_180_small|o|o|o|            199|62.00%|LDIR x 6.22|Support for hd64180, shorter, but slower from aplib247b|
+|ApLib|aplib247b_180_small|o|o|o|            183|62.00%|LDIR x 6.26|Support for hd64180, shorter, but slower from aplib247b|
 |ApLib|aplib247b_180_fast|o|o|o|            244|62.00%|LDIR x 5.81|Support for hd64180, shorter, faster from aplib247b|
 |Exomizer2|deexo|o|x|o|            169|61.03%|LDIR x 17.99||
 |Exomizer2|deexo_180|o|o|o|            166|61.03%|LDIR x 17.99|Support for hd64180, shorter, faster from deexo|
@@ -174,7 +174,7 @@ test data:ALL(16*16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|        162,530<br />(62.00%)|     35,709,274<br />(LDIR x 5.9)|
-|ApLib|aplib247b_180_small|            199|        162,530<br />(62.00%)|     37,542,664<br />(LDIR x 6.2)|
+|ApLib|aplib247b_180_small|            183|        162,530<br />(62.00%)|     37,749,679<br />(LDIR x 6.2)|
 |ApLib|aplib247b_180_fast|            244|        162,530<br />(62.00%)|     35,059,967<br />(LDIR x 5.8)|
 |Exomizer2|deexo|            169|        160,011<br />(61.03%)|    108,490,817<br />(LDIR x 17.9)|
 |Exomizer2|deexo_180|            166|        160,011<br />(61.03%)|    108,490,229<br />(LDIR x 17.9)|
@@ -239,7 +239,7 @@ test data:MEGASDHC.B00(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|          9,412<br />(57.44%)|      1,878,359<br />(LDIR x 4.9)|
-|ApLib|aplib247b_180_small|            199|          9,412<br />(57.44%)|      1,947,199<br />(LDIR x 5.1)|
+|ApLib|aplib247b_180_small|            183|          9,412<br />(57.44%)|      1,955,820<br />(LDIR x 5.1)|
 |ApLib|aplib247b_180_fast|            244|          9,412<br />(57.44%)|      1,830,478<br />(LDIR x 4.8)|
 |Exomizer2|deexo|            169|          9,373<br />(57.20%)|      5,908,411<br />(LDIR x 15.6)|
 |Exomizer2|deexo_180|            166|          9,373<br />(57.20%)|      5,908,329<br />(LDIR x 15.6)|
@@ -304,7 +304,7 @@ test data:MEGASDHC.B01(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|          4,947<br />(30.19%)|      1,221,327<br />(LDIR x 3.2)|
-|ApLib|aplib247b_180_small|            199|          4,947<br />(30.19%)|      1,262,664<br />(LDIR x 3.3)|
+|ApLib|aplib247b_180_small|            183|          4,947<br />(30.19%)|      1,267,380<br />(LDIR x 3.3)|
 |ApLib|aplib247b_180_fast|            244|          4,947<br />(30.19%)|      1,198,201<br />(LDIR x 3.1)|
 |Exomizer2|deexo|            169|          4,902<br />(29.91%)|      3,307,149<br />(LDIR x 8.7)|
 |Exomizer2|deexo_180|            166|          4,902<br />(29.91%)|      3,307,019<br />(LDIR x 8.7)|
@@ -369,7 +369,7 @@ test data:MEGASDHC.B02(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         12,640<br />(77.14%)|      2,556,783<br />(LDIR x 6.7)|
-|ApLib|aplib247b_180_small|            199|         12,640<br />(77.14%)|      2,671,115<br />(LDIR x 7.0)|
+|ApLib|aplib247b_180_small|            183|         12,640<br />(77.14%)|      2,684,557<br />(LDIR x 7.1)|
 |ApLib|aplib247b_180_fast|            244|         12,640<br />(77.14%)|      2,501,033<br />(LDIR x 6.6)|
 |Exomizer2|deexo|            169|         12,494<br />(76.25%)|      7,962,111<br />(LDIR x 21.1)|
 |Exomizer2|deexo_180|            166|         12,494<br />(76.25%)|      7,962,005<br />(LDIR x 21.1)|
@@ -434,7 +434,7 @@ test data:MEGASDHC.B03(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         12,388<br />(75.61%)|      2,414,939<br />(LDIR x 6.4)|
-|ApLib|aplib247b_180_small|            199|         12,388<br />(75.61%)|      2,513,730<br />(LDIR x 6.6)|
+|ApLib|aplib247b_180_small|            183|         12,388<br />(75.61%)|      2,525,605<br />(LDIR x 6.7)|
 |ApLib|aplib247b_180_fast|            244|         12,388<br />(75.61%)|      2,355,976<br />(LDIR x 6.2)|
 |Exomizer2|deexo|            169|         12,297<br />(75.05%)|      7,705,336<br />(LDIR x 20.4)|
 |Exomizer2|deexo_180|            166|         12,297<br />(75.05%)|      7,705,250<br />(LDIR x 20.4)|
@@ -499,7 +499,7 @@ test data:MSX2MAIN.B00(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         12,879<br />(78.60%)|      2,409,717<br />(LDIR x 6.3)|
-|ApLib|aplib247b_180_small|            199|         12,879<br />(78.60%)|      2,486,587<br />(LDIR x 6.5)|
+|ApLib|aplib247b_180_small|            183|         12,879<br />(78.60%)|      2,496,385<br />(LDIR x 6.6)|
 |ApLib|aplib247b_180_fast|            244|         12,879<br />(78.60%)|      2,341,627<br />(LDIR x 6.2)|
 |Exomizer2|deexo|            169|         12,740<br />(77.75%)|      7,678,676<br />(LDIR x 20.3)|
 |Exomizer2|deexo_180|            166|         12,740<br />(77.75%)|      7,678,762<br />(LDIR x 20.3)|
@@ -564,7 +564,7 @@ test data:MSX2MAIN.B01(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         13,613<br />(83.08%)|      2,579,749<br />(LDIR x 6.8)|
-|ApLib|aplib247b_180_small|            199|         13,613<br />(83.08%)|      2,686,475<br />(LDIR x 7.1)|
+|ApLib|aplib247b_180_small|            183|         13,613<br />(83.08%)|      2,699,645<br />(LDIR x 7.1)|
 |ApLib|aplib247b_180_fast|            244|         13,613<br />(83.08%)|      2,514,192<br />(LDIR x 6.6)|
 |Exomizer2|deexo|            169|         13,402<br />(81.79%)|      8,119,431<br />(LDIR x 21.5)|
 |Exomizer2|deexo_180|            166|         13,402<br />(81.79%)|      8,119,361<br />(LDIR x 21.5)|
@@ -629,7 +629,7 @@ test data:MSXMUSIC.B00(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         10,100<br />(61.64%)|      1,970,797<br />(LDIR x 5.2)|
-|ApLib|aplib247b_180_small|            199|         10,100<br />(61.64%)|      2,039,760<br />(LDIR x 5.4)|
+|ApLib|aplib247b_180_small|            183|         10,100<br />(61.64%)|      2,048,391<br />(LDIR x 5.4)|
 |ApLib|aplib247b_180_fast|            244|         10,100<br />(61.64%)|      1,916,986<br />(LDIR x 5.0)|
 |Exomizer2|deexo|            169|         10,068<br />(61.45%)|      5,986,114<br />(LDIR x 15.8)|
 |Exomizer2|deexo_180|            166|         10,068<br />(61.45%)|      5,986,088<br />(LDIR x 15.8)|
@@ -694,7 +694,7 @@ test data:MSX2EXT.B00(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         12,410<br />(75.74%)|      2,453,215<br />(LDIR x 6.5)|
-|ApLib|aplib247b_180_small|            199|         12,410<br />(75.74%)|      2,547,656<br />(LDIR x 6.7)|
+|ApLib|aplib247b_180_small|            183|         12,410<br />(75.74%)|      2,559,270<br />(LDIR x 6.7)|
 |ApLib|aplib247b_180_fast|            244|         12,410<br />(75.74%)|      2,392,340<br />(LDIR x 6.3)|
 |Exomizer2|deexo|            169|         12,351<br />(75.38%)|      8,066,566<br />(LDIR x 21.4)|
 |Exomizer2|deexo_180|            166|         12,351<br />(75.38%)|      8,066,560<br />(LDIR x 21.4)|
@@ -759,7 +759,7 @@ test data:KANJJ1.B00(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|          6,317<br />(38.55%)|      1,803,858<br />(LDIR x 4.7)|
-|ApLib|aplib247b_180_small|            199|          6,317<br />(38.55%)|      1,924,106<br />(LDIR x 5.1)|
+|ApLib|aplib247b_180_small|            183|          6,317<br />(38.55%)|      1,936,513<br />(LDIR x 5.1)|
 |ApLib|aplib247b_180_fast|            244|          6,317<br />(38.55%)|      1,790,887<br />(LDIR x 4.7)|
 |Exomizer2|deexo|            169|          6,097<br />(37.21%)|      5,111,648<br />(LDIR x 13.5)|
 |Exomizer2|deexo_180|            166|          6,097<br />(37.21%)|      5,111,742<br />(LDIR x 13.5)|
@@ -824,7 +824,7 @@ test data:KANJJ1.B01(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|          4,153<br />(25.34%)|      1,348,275<br />(LDIR x 3.5)|
-|ApLib|aplib247b_180_small|            199|          4,153<br />(25.34%)|      1,432,878<br />(LDIR x 3.8)|
+|ApLib|aplib247b_180_small|            183|          4,153<br />(25.34%)|      1,441,398<br />(LDIR x 3.8)|
 |ApLib|aplib247b_180_fast|            244|          4,153<br />(25.34%)|      1,341,843<br />(LDIR x 3.5)|
 |Exomizer2|deexo|            169|          3,975<br />(24.26%)|      3,493,148<br />(LDIR x 9.2)|
 |Exomizer2|deexo_180|            166|          3,975<br />(24.26%)|      3,493,202<br />(LDIR x 9.2)|
@@ -889,7 +889,7 @@ test data:KANJJ1.B02(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         10,943<br />(66.79%)|      2,561,315<br />(LDIR x 6.7)|
-|ApLib|aplib247b_180_small|            199|         10,943<br />(66.79%)|      2,723,241<br />(LDIR x 7.2)|
+|ApLib|aplib247b_180_small|            183|         10,943<br />(66.79%)|      2,740,983<br />(LDIR x 7.2)|
 |ApLib|aplib247b_180_fast|            244|         10,943<br />(66.79%)|      2,526,928<br />(LDIR x 6.7)|
 |Exomizer2|deexo|            169|         10,688<br />(65.23%)|      7,768,783<br />(LDIR x 20.6)|
 |Exomizer2|deexo_180|            166|         10,688<br />(65.23%)|      7,768,753<br />(LDIR x 20.6)|
@@ -954,7 +954,7 @@ test data:KANJJ1.B03(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         10,733<br />(65.50%)|      2,546,326<br />(LDIR x 6.7)|
-|ApLib|aplib247b_180_small|            199|         10,733<br />(65.50%)|      2,710,032<br />(LDIR x 7.1)|
+|ApLib|aplib247b_180_small|            183|         10,733<br />(65.50%)|      2,727,816<br />(LDIR x 7.2)|
 |ApLib|aplib247b_180_fast|            244|         10,733<br />(65.50%)|      2,513,901<br />(LDIR x 6.6)|
 |Exomizer2|deexo|            169|         10,510<br />(64.14%)|      7,603,571<br />(LDIR x 20.1)|
 |Exomizer2|deexo_180|            166|         10,510<br />(64.14%)|      7,603,537<br />(LDIR x 20.1)|
@@ -1019,7 +1019,7 @@ test data:KANJJ1.B04(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         10,638<br />(64.92%)|      2,523,143<br />(LDIR x 6.6)|
-|ApLib|aplib247b_180_small|            199|         10,638<br />(64.92%)|      2,684,122<br />(LDIR x 7.1)|
+|ApLib|aplib247b_180_small|            183|         10,638<br />(64.92%)|      2,701,604<br />(LDIR x 7.1)|
 |ApLib|aplib247b_180_fast|            244|         10,638<br />(64.92%)|      2,490,940<br />(LDIR x 6.6)|
 |Exomizer2|deexo|            169|         10,415<br />(63.56%)|      7,416,607<br />(LDIR x 19.6)|
 |Exomizer2|deexo_180|            166|         10,415<br />(63.56%)|      7,416,561<br />(LDIR x 19.6)|
@@ -1084,7 +1084,7 @@ test data:KANJJ1.B05(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         10,560<br />(64.45%)|      2,489,114<br />(LDIR x 6.6)|
-|ApLib|aplib247b_180_small|            199|         10,560<br />(64.45%)|      2,648,473<br />(LDIR x 7.0)|
+|ApLib|aplib247b_180_small|            183|         10,560<br />(64.45%)|      2,665,809<br />(LDIR x 7.0)|
 |ApLib|aplib247b_180_fast|            244|         10,560<br />(64.45%)|      2,455,716<br />(LDIR x 6.5)|
 |Exomizer2|deexo|            169|         10,348<br />(63.15%)|      7,475,213<br />(LDIR x 19.8)|
 |Exomizer2|deexo_180|            166|         10,348<br />(63.15%)|      7,475,183<br />(LDIR x 19.8)|
@@ -1149,7 +1149,7 @@ test data:KANJJ1.B06(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|         10,908<br />(66.57%)|      2,580,721<br />(LDIR x 6.8)|
-|ApLib|aplib247b_180_small|            199|         10,908<br />(66.57%)|      2,746,460<br />(LDIR x 7.2)|
+|ApLib|aplib247b_180_small|            183|         10,908<br />(66.57%)|      2,764,428<br />(LDIR x 7.3)|
 |ApLib|aplib247b_180_fast|            244|         10,908<br />(66.57%)|      2,547,477<br />(LDIR x 6.7)|
 |Exomizer2|deexo|            169|         10,650<br />(65.00%)|      7,752,805<br />(LDIR x 20.5)|
 |Exomizer2|deexo_180|            166|         10,650<br />(65.00%)|      7,752,735<br />(LDIR x 20.5)|
@@ -1214,7 +1214,7 @@ test data:KANJJ1.B07(16KB)
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
 |ApLib|aplib247b|            249|          9,889<br />(60.35%)|      2,371,636<br />(LDIR x 6.2)|
-|ApLib|aplib247b_180_small|            199|          9,889<br />(60.35%)|      2,518,166<br />(LDIR x 6.6)|
+|ApLib|aplib247b_180_small|            183|          9,889<br />(60.35%)|      2,534,075<br />(LDIR x 6.7)|
 |ApLib|aplib247b_180_fast|            244|          9,889<br />(60.35%)|      2,341,442<br />(LDIR x 6.2)|
 |Exomizer2|deexo|            169|          9,701<br />(59.21%)|      7,135,248<br />(LDIR x 18.9)|
 |Exomizer2|deexo_180|            166|          9,701<br />(59.21%)|      7,135,142<br />(LDIR x 18.9)|
