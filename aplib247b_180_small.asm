@@ -117,9 +117,8 @@ apbranch2           ex      af,af'
                     inc     bc
 apskip2             inc     a
                     jr      nz,apskip3
-                    ld      a,l
-                    rla
-                    jr      nc,apskip3
+                    or      l
+                    jp      p,apskip3
                     inc     bc
                     inc     bc
 apskip3             ex      af,af'
