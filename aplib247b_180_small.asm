@@ -2,7 +2,7 @@
 ; original source by dwedit
 ; very slightly adapted by utopian
 ; optimized by Metalbrain & Antonio Villena
-;247b to 174b optimized by uniabis
+;247b to 173b optimized by uniabis
 
     ;hl = source
     ;de = dest
@@ -132,10 +132,8 @@ apskip3             inc     hl
 
 ap_r0_gamma         call    ap_getgamma    ;and a new gamma code for length
 
-                    push    hl
-
                     push    iy
-                    pop     hl
+                    ex      (sp),hl
 
                     inc     hl
 
