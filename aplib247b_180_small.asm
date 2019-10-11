@@ -68,10 +68,11 @@ apbranch3           ex      af,af'
                     ld      h,255
                     cpl
                     ld      l,a
-                    inc     hl
 
                     push    hl
                     pop     iy
+
+                    inc     hl
 
                     ex      af,af'
 
@@ -102,7 +103,6 @@ apbranch2           ex      af,af'
 
                     push    bc
 
-                    inc     bc
                     push    bc
                     pop     iy
 
@@ -121,8 +121,9 @@ apskip2             inc     a
                     jp      p,apskip3
                     inc     bc
                     inc     bc
-apskip3             ex      af,af'
-                    inc     hl
+apskip3             inc     hl
+
+                    ex      af,af'
 
                     add     hl,de
                     ldir
@@ -135,6 +136,8 @@ ap_r0_gamma         call    ap_getgamma    ;and a new gamma code for length
 
                     push    iy
                     pop     hl
+
+                    inc     hl
 
                     add     hl,de
                     ldir
