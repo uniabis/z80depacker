@@ -72,9 +72,8 @@ apbranch3           ex      af,af'
                     push    hl
                     pop     iy
 
-                    inc     hl
-
-                    ex      af,af'
+apskip3             ex      af,af'
+apskip4             inc     hl
 
                     add     hl,de
                     ldir
@@ -121,35 +120,34 @@ apskip2             inc     a
                     jp      p,apskip3
                     inc     bc
                     inc     bc
-apskip3             inc     hl
-
-                    ex      af,af'
-
-                    add     hl,de
-                    ldir
-                    pop     hl
-                    jp      aploop
+                    jp      apskip3
 
 ap_r0_gamma         call    ap_getgamma    ;and a new gamma code for length
 
                     push    iy
                     ex      (sp),hl
 
-                    inc     hl
-
-                    add     hl,de
-                    ldir
-                    pop     hl
-                    jp      aploop
+                    jp      apskip4
 
 ap_getgamma         ex      af,af'
                     ld      bc,1
 ap_getgammaloop     add     a,a
-                    call    z,apfilbuf
-                    rl      c
+                    jr      z,ap_getgammafb1
+ap_getgammafb1r     rl      c
                     rl      b
                     add     a,a
-                    call    z,apfilbuf
+                    jr      z,ap_getgammafb2
+                    ret     nc
+                    jp      ap_getgammaloop
+
+ap_getgammafb1      ld      a,(hl)
+                    inc     hl
+                    rla
+                    jp      ap_getgammafb1r
+
+ap_getgammafb2      ld      a,(hl)
+                    inc     hl
+                    rla
                     ret     nc
                     jp      ap_getgammaloop
 
