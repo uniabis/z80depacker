@@ -2,7 +2,7 @@
 ; original source by dwedit
 ; very slightly adapted by utopian
 ; optimized by Metalbrain & Antonio Villena
-;247b to 173b optimized by uniabis
+;247b to 171b optimized by uniabis
 
     ;hl = source
     ;de = dest
@@ -15,12 +15,18 @@ depack              ;di
                     ;ret
 
 init                ld      a,128
+                    jr      apbranch1
+
+apfilbuf1           ld      a,(hl)
+                    inc     hl
+                    rla
+                    jr      c,apbranch1n
 apbranch1           ldi
 aploop2             ld      b,255
 aploop              add     a,a
-                    call    z,apfilbuf
+                    jr      z,apfilbuf1
                     jr      nc,apbranch1
-                    add     a,a
+apbranch1n          add     a,a
                     call    z,apfilbuf
                     jr      nc,apbranch2
                     add     a,a
@@ -36,7 +42,7 @@ apget4bits          add     a,a
                     ld      (hl),c      ;write a 0
                     ex      de,hl
                     inc     de
-                    jp      aploop2
+                    jr      aploop2
 
 apbranch4           ex      af,af'
 
@@ -52,7 +58,7 @@ apbranch4           ex      af,af'
                     ex      af,af'
 
                     inc     de
-                    jp      aploop2
+                    jr      aploop2
 
 apbranch3           ex      af,af'
 
@@ -78,7 +84,7 @@ apskip4             inc     hl
                     add     hl,de
                     ldir
                     pop     hl
-                    jp      aploop
+                    jr      aploop
 
 apbranch2           ex      af,af'
                     ld      a,b
@@ -120,14 +126,14 @@ apskip2             inc     a
                     jp      p,apskip3
                     inc     bc
                     inc     bc
-                    jp      apskip3
+                    jr      apskip3
 
 ap_r0_gamma         call    ap_getgamma    ;and a new gamma code for length
 
                     push    iy
                     ex      (sp),hl
 
-                    jp      apskip4
+                    jr      apskip4
 
 ap_getgamma         ex      af,af'
                     ld      bc,1
@@ -138,18 +144,18 @@ ap_getgammafb1r     rl      c
                     add     a,a
                     jr      z,ap_getgammafb2
                     ret     nc
-                    jp      ap_getgammaloop
+                    jr      ap_getgammaloop
 
 ap_getgammafb1      ld      a,(hl)
                     inc     hl
                     rla
-                    jp      ap_getgammafb1r
+                    jr      ap_getgammafb1r
 
 ap_getgammafb2      ld      a,(hl)
                     inc     hl
                     rla
                     ret     nc
-                    jp      ap_getgammaloop
+                    jr      ap_getgammaloop
 
 apfilbuf            ld      a,(hl)
                     inc     hl
