@@ -98,8 +98,9 @@ CopyLiterals:	ld c,a : ldir
 		; marker is given, which is 4 zero bytes, we can use
 		; zero offset as a marker of the end of the block
 		; (see https://github.com/lz4/lz4/wiki/lz4_Block_format.md)
+		xor a
 NoLiterals:	push de								; SP -> [dest]
-		xor a : sub (hl) : inc hl : ld e,a
+		sub (hl) : inc hl : ld e,a
 		sbc (hl) : sub e : ld d,a					: DE = -offset
 		or e : jr z,BlockEnd						; ugly branching is optimized for speed
 		inc hl
