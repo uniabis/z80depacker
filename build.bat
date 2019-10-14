@@ -133,10 +133,6 @@ rem lz4
 sjasm lz4dec.asm lz4dec.bin
 del lz4dec.lst
 
-sjasmplus --raw=lz4dec_ram.bin lz4dec_rom.asm 
-
-sjasmplus -DROM=1 --raw=lz4dec_rom.bin lz4dec_rom.asm 
-
 sjasmplus --raw=unlz4_stephenw32768.bin unlz4_stephenw32768.asm 
 sjasmplus --raw=unlz4_drapich.bin unlz4_drapich.asm 
 sjasmplus --raw=unlz4_spke.bin unlz4_spke.asm 
@@ -150,9 +146,6 @@ rem lze
 
 sjasm lzdec.asm lzdec.bin
 del lzdec.lst
-
-sjasm lzdec_104.asm lzdec_104.bin
-del lzdec_104.lst
 
 sjasmplus --raw=dlze_fast.bin dlze_fast.asm
 sjasmplus --raw=dlze_small.bin dlze_small.asm
