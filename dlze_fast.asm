@@ -24,60 +24,48 @@
 ;   distribution.
 ;
 
-	DEFINE	ALLOW_LDIR_UNROLLING
-	DEFINE	ALLOW_INLINE_GETBIT
-
-	IFNDEF	ALLOW_INLINE_GETBIT
-
-		MACRO GET_BIT
-		call	getbit
-		ENDM
-
-	ELSE
-
-		MACRO	GET_BIT
-		add	a
-		call	z,getbit
-		ENDM
-
-	ENDIF
-
 dlze:
 		ld	a,080h
+		jr	dlze_lp1
+
+getbit1:
+		ld	a,(hl)
+		inc	hl
+		adc	a,a
+		jr	nc,dlze_lp1n
+
 dlze_lp1:
 		ldi
 dlze_lp2:
-		GET_BIT
-		jp	c,dlze_lp1
-
-		GET_BIT
-		ld	b,0
+		add	a
+		jr	z,getbit1
+		jr	c,dlze_lp1
+dlze_lp1n:
+		add	a
+		call	z,getbit
 		jr	c,dlze_far
-		ld	c,b
+		ld	bc,0
 
-		GET_BIT
+		add	a
+		call	z,getbit
 		rl	c
-		GET_BIT
+
+		add	a
+		call	z,getbit
 		rl	c
 
 		push	hl
 		ld	l,(hl)
 		ld	h,-1
 
-dlze_copy1:
+dlze_copy:
 		inc	c
-dlze_copy2:
 		add	hl,de
-	IFNDEF	ALLOW_LDIR_UNROLLING
-		inc	bc
-		ldir
-	ELSE
 		ldir
 		ldi
-	ENDIF
 		pop	hl
 		inc	hl
-		jp	dlze_lp2
+		jr	dlze_lp2
 
 dlze_far:
 		exa
@@ -96,27 +84,23 @@ dlze_far:
 		ld	h,a
 		ld	a,c
 		and	7
-		jr	z,dlze_long
-		ld	c,a
-		exa
-		jp	dlze_copy1
-dlze_long:
-		exx
-		pop	hl
-		inc	hl
-		or	(hl)
+		jr	nz,dlze_skip
+
+		pop	bc
+		inc	bc
+		ld	a,(bc)
+		or	a
 		ret	z
-		push	hl
-		exx
+		push	bc
+		dec	a
+
+dlze_skip:
+		ld	b,0
 		ld	c,a
 		exa
-		jp	dlze_copy2
+		jr	dlze_copy
 
 getbit:
-	IFNDEF	ALLOW_INLINE_GETBIT
-		add	a
-		ret	nz
-	ENDIF
 		ld	a,(hl)
 		inc	hl
 		adc	a
