@@ -15,6 +15,11 @@ depack              ;di
                     ;ret
 
 init                ld      a,128
+
+                    ;;cap v1.2 with load address version requires to copy two bytes on top
+                    ;ldi
+                    ;ldi
+
                     jr      apbranch1
 
 apgetbit1           ld      a,(hl)

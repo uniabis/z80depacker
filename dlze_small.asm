@@ -51,9 +51,8 @@ dlze_lp2:
 		jr	c,dlze_lp1
 
 		GET_BIT
-		ld	b,0
 		jr	c,dlze_far
-		ld	c,b
+		ld	bc,0
 
 		GET_BIT
 		rl	c
@@ -97,17 +96,16 @@ dlze_far:
 		and	7
 		jr	nz,dlze_skip
 
-		exx
-		pop	hl
-		inc	hl
-		ld	a,(hl)
+		pop	bc
+		inc	bc
+		ld	a,(bc)
 		or	a
 		ret	z
-		push	hl
-		exx
+		push	bc
 
 		dec	a
 dlze_skip:
+		ld	b,0
 		ld	c,a
 		exa
 		jr	dlze_copy

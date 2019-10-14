@@ -101,8 +101,7 @@ dlze_long:
 		exx
 		pop	hl
 		inc	hl
-		ld	a,(hl)
-		or	a
+		or	(hl)
 		ret	z
 		push	hl
 		exx
