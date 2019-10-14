@@ -159,12 +159,6 @@ sjasmplus --raw=dlze_small.bin dlze_small.asm
 
 rem lzee
 
-sjasm lzee_dec_area.asm lzee_dec_area.bin
-del lzee_dec_area.lst
-
-sjasm lzee_dec_speed.asm lzee_dec_speed.bin
-del lzee_dec_speed.lst
-
 sjasmplus --raw=dlzee_fast.bin dlzee_fast.asm
 sjasmplus --raw=dlzee_small.bin dlzee_small.asm
 
