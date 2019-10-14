@@ -205,5 +205,7 @@ rem aplib
 sjasmplus --raw=aplib247b.bin aplib247b.asm
 sjasmplus --raw=aplib247b_180_fast.bin aplib247b_180_fast.asm
 sjasmplus --raw=aplib247b_180_small.bin aplib247b_180_small.asm
+sjasmplus --raw=aplib247b_180_minimal.bin aplib247b_180_minimal.asm
+sjasmplus --raw=aplib156b.bin aplib156b.asm
 
 pause
