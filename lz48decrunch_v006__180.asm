@@ -78,13 +78,12 @@ readoffset
 	ld c,a
 ; read encoded offset
 	ld a,(hl)
-	inc a
+	xor #FF
 	ret z ; LZ48 end with zero offset
 	inc hl
 	push hl
 ; source=dest-copyoffset
 	; A != 0 here
-	neg
 	ld l,a
 	ld h,#FF
 	add hl,de
