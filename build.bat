@@ -13,9 +13,6 @@ pause
 
 exit
 
-sjasm deexo3.asm deexo3.bin
-del deexo3.lst
-
 sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
 
 
@@ -89,7 +86,6 @@ rem sjasmplus -DINLINE_GETBIT=1 --lst=unhrust.lst --raw=unhrust.bin unhrust.asm
 rem zx7
 
 sjasmplus --raw=dzx7_lom_v1.bin dzx7_lom_v1.asm
-sjasmplus --raw=dzx7_mega.bin dzx7_mega.asm
 sjasmplus --raw=dzx7_turbo.bin dzx7_turbo.asm
 sjasmplus --raw=dzx7_standard.bin dzx7_standard.asm
 
@@ -111,9 +107,6 @@ sjasmplus -DBACKWORD=1 --raw=dzx7mini.bin dzx7mini.asm
 
 rem lz48
 
-sjasm lz48decrunch_v006.asm lz48decrunch_v006.bin
-del lz48decrunch_v006.lst
-
 sjasm lz48decrunch_v006_.asm lz48decrunch_v006_.bin
 del lz48decrunch_v006_.lst
 
@@ -133,8 +126,6 @@ rem lz4
 sjasm lz4dec.asm lz4dec.bin
 del lz4dec.lst
 
-sjasmplus --raw=unlz4_stephenw32768.bin unlz4_stephenw32768.asm 
-sjasmplus --raw=unlz4_drapich.bin unlz4_drapich.asm 
 sjasmplus --raw=unlz4_spke.bin unlz4_spke.asm 
 sjasmplus --raw=unlz4_spke_fast.bin unlz4_spke_fast.asm 
 sjasmplus --raw=unlz4_spke_small.bin unlz4_spke_small.asm 
