@@ -85,24 +85,22 @@ lengthnextbis
 readoffset
 	exx
 	ld a,l
-	exx
 	add a
+	exx
 
 	ld a,(hl)
 	inc hl
-	inc a
+
+	cpl
 	jr c,extendedoffset
 	; read encoded offset
+	or a
 	ret z ; LZ49 end with zero offset
 
 	push hl
 	ld l,a
-	ld a,e
-	sub l
-	ld l,a
-	sbc a,l
-	add d
-	ld h,a
+	ld h,0ffh
+	add hl,de
 	; source=dest-copyoffset
 	ldir
 	pop hl
@@ -140,13 +138,12 @@ getadditionallength
 extendedoffset
 
 	push hl
+
+	dec a
 	ld l,a
-	ld a,e
-	sub l
-	ld l,a
-	ld a,d
-	sbc a,1
-	ld h,a
+	ld h,0feh
+	adc hl,de
+
 	; source=dest-copyoffset
 	ldir
 	pop hl
