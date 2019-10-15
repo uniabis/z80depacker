@@ -101,6 +101,8 @@ readoffset
 	ld l,a
 	ld h,0ffh
 	add hl,de
+
+copykey
 	; source=dest-copyoffset
 	ldir
 	pop hl
@@ -144,10 +146,7 @@ extendedoffset
 	ld h,0feh
 	adc hl,de
 
-	; source=dest-copyoffset
-	ldir
-	pop hl
-	jr nextsequence
+	jr copykey
 
 
 
