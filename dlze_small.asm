@@ -99,11 +99,10 @@ dlze_far:
 		pop	bc
 		inc	bc
 		ld	a,(bc)
-		or	a
-		ret	z
+		sub	1
+		ret	c
 		push	bc
 
-		dec	a
 dlze_skip:
 		ld	b,0
 		ld	c,a
