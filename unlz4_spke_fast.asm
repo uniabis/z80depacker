@@ -101,7 +101,7 @@ CopyLiterals:	ld c,a : ldir
 		xor a
 NoLiterals:	push de								; SP -> [dest]
 		sub (hl) : inc hl : ld e,a
-		sbc (hl) : sub e : ld d,a					: DE = -offset
+		sbc (hl) : sub e : ld d,a					; DE = -offset
 		or e : jr z,BlockEnd						; ugly branching is optimized for speed
 		inc hl
 
