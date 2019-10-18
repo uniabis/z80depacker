@@ -47,11 +47,19 @@
   pop hl
 
   ld iy,loop
+  jr literal
+
+filbuf
+  ld a,(hl)
+  inc hl
+  rla
+  jr c,getlen
 
 literal
   ldi
 loop
-  GETBIT
+  add a,a
+  jr z,filbuf
   jr nc,literal
 
 getlen
@@ -60,11 +68,6 @@ getlen
   ld bc,1
   jr nc,.lenok
 .lus
-  GETBIT
-  rl c
-  rl b
-  GETBIT
-  jr nc,.lenok
   GETBIT
   rl c
   rl b
