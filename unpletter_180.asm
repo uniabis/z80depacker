@@ -70,7 +70,6 @@ getlen
 .lus
   GETBITEXX
   adc hl,hl
-  ret c
   GETBITEXX
   jr nc,.lenok
   GETBITEXX
