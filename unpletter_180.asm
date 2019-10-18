@@ -14,11 +14,6 @@
   call z,getbit
   endm
 
-  macro GETBITEXX
-  add a,a
-  call z,getbitexx
-  endm
-
 @unpack
 
   ifdef LENGTHINDATA
@@ -28,95 +23,94 @@
 
   ld a,(hl)
   inc hl
-  exx
-  ld de,0
+
+  push hl
+
+  ld bc,0
   add a,a
   inc a
-  rl e
+  rl c
   add a,a
-  rl e
+  rl c
   add a,a
-  rl e
-  rl e
+  rl c
   ld hl,modes
-  add hl,de
-  ifndef HD64180
-  ld e,(hl)
-  ld ixl,e
-  inc hl
-  ld e,(hl)
-  ld ixh,e
-  else
+  add hl,bc
+  add hl,bc
   ld c,(hl)
   inc hl
   ld b,(hl)
+
   push bc
   pop ix
-  endif
-  ld e,1
-  exx
+
+  pop hl
+
   ld iy,loop
+
 literal
   ldi
 loop
   GETBIT
   jr nc,literal
+
 getlen
   GETBIT
-  exx
-  ld h,d
-  ld l,e
+
+  ld bc,1
   jr nc,.lenok
 .lus
-  GETBITEXX
-  adc hl,hl
-  GETBITEXX
+  GETBIT
+  rl c
+  rl b
+  GETBIT
   jr nc,.lenok
-  GETBITEXX
-  adc hl,hl
+  GETBIT
+  rl c
+  rl b
   ret c
-  GETBITEXX
+  GETBIT
   jp c,.lus
 .lenok
+  inc bc
+
+  push de
+
+  ld e,(hl)
   inc hl
-  exx
-  ld c,(hl)
-  inc hl
-  ld b,0
-  bit 7,c
+  ld d,0
+  bit 7,e
   jp z,offsok
   jp ix
 
 mode6
   GETBIT
-  rl b
+  rl d
 mode5
   GETBIT
-  rl b
+  rl d
 mode4
   GETBIT
-  rl b
+  rl d
 mode3
   GETBIT
-  rl b
+  rl d
 mode2
   GETBIT
-  rl b
+  rl d
   GETBIT
   jr nc,offsok
   or a
-  inc b
-  res 7,c
+  inc d
+  res 7,e
 offsok
-  inc bc
+  inc de
+
+  ex (sp),hl
   push hl
-  exx
-  push hl
-  exx
-  ld l,e
-  ld h,d
-  sbc hl,bc
-  pop bc
+  sbc hl,de
+  pop de
+
   ldir
   pop hl
   jp iy
@@ -124,14 +118,6 @@ offsok
 getbit
   ld a,(hl)
   inc hl
-  rla
-  ret
-
-getbitexx
-  exx
-  ld a,(hl)
-  inc hl
-  exx
   rla
   ret
 
