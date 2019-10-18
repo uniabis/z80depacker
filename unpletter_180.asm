@@ -100,14 +100,13 @@ mode2
   rl d
   GETBIT
   jr nc,offsok
-  or a
   inc d
   res 7,e
 offsok
-  inc de
 
   ex (sp),hl
   push hl
+  scf
   sbc hl,de
   pop de
 
