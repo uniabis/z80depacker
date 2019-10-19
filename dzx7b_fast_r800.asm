@@ -22,16 +22,16 @@
       endif
     endm
 
-dzx7:   ld      a, $80          ; set marker bit as MSB
+
+dzx7:
       if speed>1
         ldd                     ; copy literal byte
-        add     a, a            ; read next bit, faster method
-        jr      z, mailab       ; call routine only if need to load next byte
-        jr      c, maicoo       ; next bit indicates either literal or sequence
-        ldd                     ; loop unrolling x4
-        add     a, a
-        jr      c, maicoe
+        scf
+        jr      mailab
+      else
+        ld      a, $80          ; set marker bit as MSB
       endif
+
 copbye: ldd                     ; copy literal byte
         add     a, a            ; read next bit, faster method
         jr      z, mailab       ; call routine only if need to load next byte
@@ -64,12 +64,7 @@ levale: add     a, a
 ; determine offset
 contie: ld      e, (hl)         ; load offset flag (1 bit) + offset value (7 bits)
         dec     hl
-      ifndef R800
-        sll     e
-      else
-        ;scf
         rl      e
-      endif
         jr      nc, offnde      ; if offset flag is set, load 4 extra bits
         add     a, a            ; load 4 bits by code
         rl      d               ; odd bits don't need end of byte checking
@@ -134,12 +129,7 @@ levalo: getbitm
         jr      z, exitdz
 contio: ld      e, (hl)
         dec     hl
-      ifndef R800
-        sll     e
-      else
-        ;scf
         rl      e
-      endif
         jr      nc, offndo
         getbitm
         rl      d
