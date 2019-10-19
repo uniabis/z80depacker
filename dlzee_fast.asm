@@ -25,8 +25,8 @@
 ;
 
 dlze:
-		ld	a,080h
-		jr	dlze_lp1
+		ldi
+		scf
 
 getbit1:
 		ld	a,(hl)
