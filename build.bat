@@ -155,6 +155,8 @@ del megalz_dec40.lst
 sjasmplus --raw=unmegalz_fast_v2.bin unmegalz_fast_v2.asm
 sjasmplus --raw=unmegalz_small_v2.bin unmegalz_small_v2.asm
 
+sjasmplus --raw=unmegalz_fast_v2p1.bin unmegalz_fast_v2p1.asm
+
 rem shrinkler
 
 sjasm shrinkler_recall_209.asm shrinkler_recall_209.bin

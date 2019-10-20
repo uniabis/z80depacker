@@ -1,5 +1,6 @@
 ;
 ;  Speed-optimized MegaLZ decompressor (v.2 31/07/2019, 233 bytes)
+;                                    (v.2p1 20/10/2019, 229 bytes)
 ;
 ;  The only decompressor for MegaLZ that I know of is a relocatable
 ;  110 byte version written by Fyrex^MhM
@@ -27,26 +28,8 @@
 		IFDEF	AllowUsingIX
 			ld ix,MainLoop
 		ENDIF
-			ld a,128 : jr CASE1
-
-ReloadByte3		ld a,(hl) : inc hl : rla : jr c,CASE001
-
-CASE000:		; "000"+ooo is a very close 1-byte match
-			ld bc,#FFFF
-			DUP 3
-			GET_BIT : rl c
-			EDUP
-
-			push hl : ld h,d : ld l,e
-			add hl,bc
 			ldi
-			pop hl			; 10 + 11+4+4+11+16+10 = 66t
-
-		IFDEF	AllowUsingIX
-			jp (ix)
-		ELSE
-			jp MainLoop
-		ENDIF
+			scf
 
 ReloadByte1		ld a,(hl) : inc hl : rla : jr nc,ProcessMatch1
 			DUP 2
@@ -65,13 +48,13 @@ ProcessMatch1		add a : jr z,ReloadByte2 : jr c,CASE01x
 ProcessMatch2		add a : jr z,ReloadByte3 : jr nc,CASE000
 
 CASE001:		; "001"+[OFFSET] is a close 2-byte match
-			ld b,#FF : ld c,(hl) : inc hl
+			push hl: ld l,(hl) : ld h,#FF
 
-			push hl : ld h,d : ld l,e
-			add hl,bc
+			add hl,de
 			ldi
 			ldi
 			pop hl
+			inc hl
 		IFDEF	AllowUsingIX
 			jp (ix)
 		ELSE
@@ -92,14 +75,33 @@ CASE010:		; "010" is a 3-byte match
 			EDUP
 			dec b
 
-ShortOffset1		ld c,(hl) : inc hl			; DE = -offset
+ShortOffset1		push hl : ld l,(hl) : ld h,b			; HL = -offset
 
-			push hl : ld h,d : ld l,e
-			add hl,bc
+			add hl,de
 			ldi
 			ldi
 			ldi
 			pop hl
+			inc hl
+		IFDEF	AllowUsingIX
+			jp (ix)
+		ELSE
+			jp MainLoop
+		ENDIF
+
+ReloadByte3		ld a,(hl) : inc hl : rla : jr c,CASE001
+
+CASE000:		; "000"+ooo is a very close 1-byte match
+			ld bc,#FFFF
+			DUP 3
+			GET_BIT : rl c
+			EDUP
+
+			push hl : ld h,d : ld l,e
+			add hl,bc
+			ldi
+			pop hl			; 10 + 11+4+4+11+16+10 = 66t
+
 		IFDEF	AllowUsingIX
 			jp (ix)
 		ELSE
