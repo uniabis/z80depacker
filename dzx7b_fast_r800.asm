@@ -1,6 +1,6 @@
 ; -----------------------------------------------------------------------------
 ; ZX7 Backwards by Einar Saukas, Antonio Villena
-; "Standard" version (156/177/182 bytes only) for R800
+; "Standard" version (156/177/180 bytes only) for R800
 ; -----------------------------------------------------------------------------
 ; Parameters:
 ;   HL: source address (compressed data)
@@ -22,12 +22,97 @@
       endif
     endm
 
+    macro getbiteom odd
+      if (odd)=1
+        add     a,a
+      else
+        getbitm
+      endif
+    endm
+
+    macro maicoeom odd
+
+; determine number of bits used for length (Elias gamma coding)
+.maico: ld      bc, 2           ; BC=$0002
+.maisi: push    de              ; store destination on stack
+        ld      d, b            ; D= 0
+        getbiteom odd^0         ; getbit with macro getbitm
+      if speed=0
+        jr      c, .conti
+      else
+        jp      c, .conti       ; jp is 2 cycles faster when jump not taken
+      endif
+        dec     c
+.leval: getbiteom odd^1
+        rl      c
+        rl      b               ; insert bit on BC
+        getbiteom odd^0
+        jr      nc, .leval      ; repeat, final length on BC
+
+; check escape sequence
+        inc     c               ; detect escape sequence
+        jr      z, exitdz       ; end of algorithm
+
+; determine offset
+.conti: ld      e, (hl)         ; load offset flag (1 bit) + offset value (7 bits)
+        dec     hl
+        rl      e
+        jr      nc, .offnd      ; if offset flag is set, load 4 extra bits
+        getbiteom odd^1         ; load 4 bits by code
+        rl      d               ; odd bits don't need end of byte checking
+        getbiteom odd^0
+        rl      d
+        getbiteom odd^1
+        rl      d
+        getbiteom odd^0
+        ccf
+        jr      c, .offnd
+        inc     d               ; equivalent to adding 128 to DE
+.offnd: rr      e               ; insert inverted fourth bit into E
+        ex      (sp), hl        ; store source, restore destination
+        ex      de, hl          ; destination from HL to DE
+        adc     hl, de          ; HL = destination + offset + 1
+        lddr
+        pop     hl              ; restore source address (compressed data)
+        getbiteom 1
+  if odd=1
+        jr      z, mailab
+        jr      c, maicoo
+        jp      copbyo
+  else
+    if speed=0
+        jr      c, .maico
+        jr      copbye
+    else
+      if speed=1
+        jr      c, .maico
+        jp      copbye
+      else
+        jr      nc, copbye
+        ld      c, 2
+        jp      .maisi
+      endif
+    endif
+
+  endif
+
+    endm
 
 dzx7:
       if speed>1
         ldd                     ; copy literal byte
         scf
-        jr      mailab
+
+mailab: ld      a, (hl)         ; save some cycles avoiding call getbit
+        dec     hl
+        adc     a, a
+        jr      nc, copbyo
+
+maicoo:
+	maicoeom 1
+
+exitdz: pop     hl              ; exit path
+        ret
       else
         ld      a, $80          ; set marker bit as MSB
       endif
@@ -40,63 +125,11 @@ copbyo: ldd                     ; loop unrolling x2
         add     a, a
         jr      nc, copbye      ; next bit indicates either literal or sequence
 
-; determine number of bits used for length (Elias gamma coding)
-maicoe: ld      bc, 2           ; BC=$0002
-maisie: push    de              ; store destination on stack
-        ld      d, b            ; D= 0
-        getbitm                 ; getbit with macro getbitm
-      if speed=0
-        jr      c, contie
+maicoe:
+	maicoeom 0
+
+      if speed>1
       else
-        jp      c, contie       ; jp is 2 cycles faster when jump not taken
-      endif
-        dec     c               
-levale: add     a, a
-        rl      c
-        rl      b               ; insert bit on BC
-        getbitm                 ; more bits?
-        jr      nc, levale      ; repeat, final length on BC
-
-; check escape sequence
-        inc     c               ; detect escape sequence
-        jr      z, exitdz       ; end of algorithm
-
-; determine offset
-contie: ld      e, (hl)         ; load offset flag (1 bit) + offset value (7 bits)
-        dec     hl
-        rl      e
-        jr      nc, offnde      ; if offset flag is set, load 4 extra bits
-        add     a, a            ; load 4 bits by code
-        rl      d               ; odd bits don't need end of byte checking
-        getbitm
-        rl      d
-        add     a, a
-        rl      d
-        getbitm
-        ccf
-        jr      c, offnde
-        inc     d               ; equivalent to adding 128 to DE
-offnde: rr      e               ; insert inverted fourth bit into E
-        ex      (sp), hl        ; store source, restore destination
-        ex      de, hl          ; destination from HL to DE
-        adc     hl, de          ; HL = destination + offset + 1
-        lddr
-        pop     hl              ; restore source address (compressed data)
-        add     a, a
-    if speed=0
-        jr      c, maicoe
-        jr      copbye
-    else
-      if speed=1
-        jr      c, maicoe
-        jp      copbye
-      else
-        jr      nc, copbye
-        ld      c, 2
-        jp      maisie
-      endif
-    endif
-
 exitdz: pop     hl              ; exit path
       if speed=0
 getbit: ld      a, (hl)         ; load another group of 8 bits
@@ -110,44 +143,6 @@ mailab: ld      a, (hl)         ; save some cycles avoiding call getbit
         adc     a, a
         jr      nc, copbyo
 
-maicoo: ld      bc, 2           ; repeats code above (maicoe), for odd bits
-        push    de
-        ld      d, b
-        add     a, a
-      if speed=0
-        jr      c, contio
-      else
-        jp      c, contio
+maicoo:
+	maicoeom 1
       endif
-        dec     c
-levalo: getbitm
-        rl      c
-        rl      b
-        add     a, a
-        jr      nc, levalo
-        inc     c
-        jr      z, exitdz
-contio: ld      e, (hl)
-        dec     hl
-        rl      e
-        jr      nc, offndo
-        getbitm
-        rl      d
-        add     a, a
-        rl      d
-        getbitm
-        rl      d
-        add     a, a
-        ccf
-        jr      c, offndo
-        inc     d
-offndo: rr      e
-        ex      (sp), hl
-        ex      de, hl
-        adc     hl, de
-        lddr
-        pop     hl
-        add     a,  a
-        jr      z, mailab
-        jr      c, maicoo
-        jp      copbyo
