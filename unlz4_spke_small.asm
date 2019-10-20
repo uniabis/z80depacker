@@ -62,6 +62,18 @@ Compressed:	ld b,0
 	ENDIF
 
 DecompressRaw:
+		jr ReadToken
+
+		; this is optimized for shorter matches, because
+		; they are likely to be a lot more common
+ProcessMatch:	inc hl
+		exa : and #0F : add 4 : cp 15+4 : call z,GetLongLength
+		; MMMM+4<15+4 means match lengths between 0+4 and 14+4
+		; MMMM+4=15+4 indicates a multi-byte length of the match
+
+		ld c,a : ex (sp),hl : ex hl,de					; BC = len, DE = dest, HL = -offset, SP ->[src]
+		add hl,de							; BC = len, DE = dest, HL = dest+-offset, SP->[src]
+		ldir : pop hl							; BC = 0, DE = dest, HL = src
 
 ReadToken:	; first a byte token "LLLLMMMM" is read from the stream,
 		; where LLLL is the number of literals and MMM is
@@ -87,19 +99,10 @@ CopyLiterals:
 NoLiterals:	push de								; SP -> [dest]
 		sub (hl) : inc hl : ld e,a
 		sbc (hl) : sub e : ld d,a					; DE = -offset
-		or e : jr z,BlockEnd						; ugly branching is optimized for speed
-		inc hl
+		or e : jp nz,ProcessMatch					; ugly branching is optimized for speed
 
-		; this is optimized for shorter matches, because
-		; they are likely to be a lot more common
-ProcessMatch:	exa : and #0F : add 4 : cp 15+4 : call z,GetLongLength
-		; MMMM+4<15+4 means match lengths between 0+4 and 14+4
-		; MMMM+4=15+4 indicates a multi-byte length of the match
-
-		ld c,a : ex (sp),hl : ex hl,de					; BC = len, DE = dest, HL = -offset, SP ->[src]
-		add hl,de							; BC = len, DE = dest, HL = dest+-offset, SP->[src]
-		ldir : pop hl							; BC = 0, DE = dest, HL = src
-		jr ReadToken
+		pop de
+		;ret; a=(hl)=0
 
 GetLongLength:
 		ld c,(hl) : inc hl : add c : jr nc,SkipIncB
@@ -109,7 +112,6 @@ SkipIncB:
 		jr z,GetLongLength
 		ret
 
-BlockEnd:	pop de : ret
 
 
 
