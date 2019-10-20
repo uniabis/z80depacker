@@ -1,7 +1,7 @@
 ; -----------------------------------------------------------------------------
 ; ZX7 decoder by Einar Saukas, Antonio Villena & Metalbrain
 ; with additional size-efficient speed optimizations by introspec ("Life on Mars" version 1)
-; 214 bytes long and is always faster than "mega" decompressor (by about 4% on average)
+; 213 bytes long and is always faster than "mega" decompressor (by about 4% on average)
 ; drop me an email if you have any comments/ideas/suggestions: zxintrospec@gmail.com
 ; -----------------------------------------------------------------------------
 ; Parameters:
@@ -14,8 +14,8 @@
 ;  first block is where the entry point is and all the literal copying codes are (fairly well optimized, i think)
 ;
 dzx7_lom:			ld	ix, dzx7l_main_loop
-				ld	a, $80
-				jr	dzx7l_copy_byte_loop		; the entry is ugly, but it helps a lot to speed things up
+				ldi
+				scf
 
 dzx7l_reload:			ld	a, (hl)
 				inc	hl

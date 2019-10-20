@@ -86,6 +86,7 @@ rem sjasmplus -DINLINE_GETBIT=1 --lst=unhrust.lst --raw=unhrust.bin unhrust.asm
 rem zx7
 
 sjasmplus --raw=dzx7_lom_v1.bin dzx7_lom_v1.asm
+sjasmplus --raw=dzx7_lom_v1p1.bin dzx7_lom_v1p1.asm
 sjasmplus --raw=dzx7_turbo.bin dzx7_turbo.asm
 sjasmplus --raw=dzx7_standard.bin dzx7_standard.asm
 
