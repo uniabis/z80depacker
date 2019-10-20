@@ -26,25 +26,29 @@
 
   push hl
 
-  ld bc,0
-  add a,a
-  inc a
+  ld bc,-1
+  xor 0e0h
+  scf
+  adc a,a
   rl c
   add a,a
   rl c
   add a,a
   rl c
-  ld hl,modes
-  add hl,bc
-  add hl,bc
-  ld c,(hl)
-  inc hl
-  ld b,(hl)
 
-  push bc
+  ld hl,offsok
+  inc c
+  jr z,.mode1
+  sla c
+
+  ld hl,mode2+6
+  add hl,bc
+  add hl,bc
+  add hl,bc
+
+.mode1:
+  ex (sp),hl
   pop ix
-
-  pop hl
 
   ld iy,loop
   jr literal
@@ -75,7 +79,6 @@ getlen
   GETBIT
   jp c,.lus
 .lenok
-  inc bc
 
   push de
 
@@ -114,6 +117,7 @@ offsok
   pop de
 
   ldir
+  ldi
   pop hl
   jp iy
 
@@ -122,14 +126,6 @@ getbit
   inc hl
   rla
   ret
-
-modes
-  word offsok
-  word mode2
-  word mode3
-  word mode4
-  word mode5
-  word mode6
 
   endmodule
 
