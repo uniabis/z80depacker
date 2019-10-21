@@ -6,14 +6,12 @@
 ; 	; DE=output data address
 ; Out	; HL    last address of compressed data read (you must inc once for LZ48 stream)
 ;	; DE    last address of decrunched data write +1
-;	; BC    always 3
+;	; BC    always 1
 ;	; A     always zero
-;	; flags (inc a -> 0)
+;	; flags (Z,NC,P,PE)
 ;	; L'    undetermined
-;	; DE'   always 0312h
 ;	; BC'   always 0f10h
-;	; AF'   undetermined
-; Modif	; AF, BC, DE, HL, AF', BC', DE', L'
+; Modif	; AF, BC, DE, HL, BC', L'
 
 LZ48_decrunch
 	ldi
@@ -21,16 +19,10 @@ LZ48_decrunch
 
 	exx
 	ld bc,0f10h
-	ld de,0312h
 	exx
+	jr nextsequence
 
-nextsequence
-	ld a,(hl)
-	inc hl
-
-	exx
-	cp c
-	jr c,lzunpack ; no literal bytes
+loop:
 	ld l,a
 	rrca
 	rrca
@@ -41,16 +33,8 @@ nextsequence
 	cp b ; more bytes for literal length?
 	exx
 
-	jr nz,copyliteral
-getadditionallength
-	ld c,(hl) ; get additional literal length byte
-	inc hl
-	add a,c ; compute literal length total
-	jr nc,lengthNC
-	inc b
-lengthNC
-	inc c
-	jr z,getadditionallength ; if last literal length byte was 255, we have more bytes to process
+	call z,getadditionallength
+
 copyliteral
 	ld c,a
 	ldir
@@ -59,36 +43,49 @@ copyliteral
 	ld a,l
 	and b
 lzunpack
-	add d
-	cp e ; more bytes for match length?
+	inc a
+	cp c ; more bytes for match length?
 	exx
 
-	jr nz,readoffset
-getadditionallengthbis
-	ld c,(hl) ; get additional match length byte
-	inc hl
-	add a,c ; compute match length size total
-	jr nc,lengthNCbis
-	inc b
-lengthNCbis
-	inc c
-	jr z,getadditionallengthbis ; if last match length byte was 255, we have more bytes to process
+	call z,getadditionallength
 
 readoffset
 	ld c,a
 ; read encoded offset
 	ld a,(hl)
-	xor #FF
+	xor 0ffh
 	ret z ; LZ48 end with zero offset
 	inc hl
 	push hl
 ; source=dest-copyoffset
 	; A != 0 here
 	ld l,a
-	ld h,#FF
+	ld h,0ffh
 	add hl,de
-copykey
 	ldir
+	inc b
+	ldi
+	ldi
 
 	pop hl
-	jr nextsequence
+
+nextsequence
+	ld a,(hl)
+	inc hl
+
+	exx
+	cp c
+	jr nc,loop
+	jr lzunpack ; no literal bytes
+
+getadditionallength
+	ld c,(hl) ; get additional literal length byte
+	inc hl
+	add a,c ; compute literal length total
+	jr nc,lengthNC
+	inc b
+lengthNC
+	inc c
+	ret nz
+	jr getadditionallength ; if last literal length byte was 255, we have more bytes to process
+
