@@ -42,6 +42,11 @@ LZ49_decrunch
 	exx
 	jr nextsequence
 
+moreadditionallengthbis
+	inc b
+	dec bc
+	jr getadditionallengthbis
+
 lengthnext
 	dec a
 	add a,c
@@ -69,10 +74,7 @@ getadditionallengthbis
 	ld a,(hl)
 	inc hl
 	inc a
-	jr nz,lengthnextbis
-	inc b
-	dec bc
-	jr getadditionallengthbis
+	jr z,moreadditionallengthbis
 
 lengthnextbis
 	dec a
@@ -93,6 +95,8 @@ readoffset
 
 	cpl
 	jr c,extendedoffset
+
+normaloffset
 	; read encoded offset
 	or a
 	ret z ; LZ49 end with zero offset
@@ -102,7 +106,7 @@ readoffset
 	ld h,0ffh
 	add hl,de
 
-copykey
+copymatch
 	; source=dest-copyoffset
 	ldir
 	pop hl
@@ -133,6 +137,8 @@ getadditionallength
 	inc hl
 	inc a
 	jr nz,lengthnext
+
+moreadditionallength
 	inc b
 	dec bc
 	jr getadditionallength
@@ -146,7 +152,7 @@ extendedoffset
 	ld h,0feh
 	adc hl,de
 
-	jr copykey
+	jr copymatch
 
 
 
