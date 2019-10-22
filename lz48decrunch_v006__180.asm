@@ -52,8 +52,8 @@ lzunpack
 readoffset
 	ld c,a
 ; read encoded offset
-	ld a,(hl)
-	xor 0ffh
+	sbc a,(hl)
+	sub c
 	ret z ; LZ48 end with zero offset
 	inc hl
 	push hl
@@ -85,6 +85,7 @@ getadditionallength
 	jr nc,lengthNC
 	inc b
 lengthNC
+	scf
 	inc c
 	ret nz
 	jr getadditionallength ; if last literal length byte was 255, we have more bytes to process
