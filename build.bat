@@ -80,8 +80,7 @@ del dehrust_ix.lst
 sjasm dehrust_stk.asm dehrust_stk.bin
 del dehrust_stk.lst
 
-rem sjasmplus -DINLINE_GETBIT=1 --raw=unhrust.bin unhrust.asm
-rem sjasmplus -DINLINE_GETBIT=1 --lst=unhrust.lst --raw=unhrust.bin unhrust.asm
+sjasmplus --raw=dehrust_ix_233b.bin dehrust_ix_233b.asm
 
 rem zx7
 

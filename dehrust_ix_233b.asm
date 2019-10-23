@@ -20,8 +20,7 @@ DEHRUST
         LD      B,0
 
         EXX 
-        LD D,#BF
-        LD C,#10
+        LD DE,#BF10
         CALL LL4115
 LL4036  LD A,(IX+#00)
         INC IX
@@ -33,7 +32,7 @@ LL403F  ADD HL,HL
         DJNZ LL4045
         CALL LL4115
 LL4045  JR C,LL4036
-        LD E,#01
+        LD C,#01
 LL4049  LD A,#80
 LL404B  ADD HL,HL
         DJNZ LL4051
@@ -42,11 +41,11 @@ LL4051  RLA
         JR C,LL404B
         CP #03
         JR C,LL405D
-        ADD A,E
-        LD E,A
-        XOR C
+        ADD A,C
+        LD C,A
+        XOR E
         JR NZ,LL4049
-LL405D  ADD A,E
+LL405D  ADD A,C
         CP #04
         JR Z,LL40C4
         ADC A,#FF
@@ -150,7 +149,7 @@ LL410A  LD A,(IX+#00)
         INC DE
         DJNZ LL410A
         JR LL409F
-LL4115  LD B,C
+LL4115  LD B,E
         LD L,(IX+#00)
         INC IX
         LD H,(IX+#00)
