@@ -1,7 +1,7 @@
 ; -----------------------------------------------------------------------------
 ; ZX7 decoder by Einar Saukas, Antonio Villena & Metalbrain
 ; with additional size-efficient speed optimizations by introspec ("Life on Mars" version 1)
-; 213 bytes long and is always faster than "mega" decompressor (by about 4% on average)
+; 214 bytes long and is always faster than "mega" decompressor (by about 4% on average)
 ; drop me an email if you have any comments/ideas/suggestions: zxintrospec@gmail.com
 ; -----------------------------------------------------------------------------
 ; Parameters:
@@ -108,7 +108,7 @@ dzx7l_len_value_loop:		add	a
 dzx7l_len_value_start:		dec	d
 				jr	nz, dzx7l_len_value_loop
 
-dzx7l_len_value_done:		inc     bc				; adjust length
+dzx7l_len_value_done:
 
 
 ;
@@ -141,6 +141,7 @@ dzx7l_copying:			ex	(sp), hl			; store source, restore destination
 				sbc	hl, de				; HL = destination - offset - 1
 				pop	de				; DE = destination
 				ldir					; copy previous sequence
+				ldi
 				pop	hl				; restore source address (compressed data)
 				jp	(ix)
 

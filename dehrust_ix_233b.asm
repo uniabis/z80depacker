@@ -11,7 +11,7 @@
 ; you must USE -hst switch and must NOT USE -zxh switch to mhmt in order to get
 ;  correct packed stream for this depacker!
 
-; length is 234 bytes, non-relocatable
+; length is 233 bytes, non-relocatable
 
 
 DEHRUST
