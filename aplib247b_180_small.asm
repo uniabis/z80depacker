@@ -8,9 +8,7 @@
     ;de = dest
 
 depack              ;di
-                    ;push iy
                     ;call init
-                    ;pop iy
                     ;ei
                     ;ret
 
@@ -81,7 +79,7 @@ apbranch3           ex      af,af'
                     ld      l,a
 
                     push    hl
-                    pop     iy
+                    pop     ix
 
 apskip3             ex      af,af'
 apskip4             inc     hl
@@ -114,7 +112,7 @@ apbranch2           ex      af,af'
                     push    bc
 
                     push    bc
-                    pop     iy
+                    pop     ix
 
                     call    ap_getgamma
 
@@ -135,7 +133,7 @@ apskip2             inc     a
 
 ap_r0_gamma         call    ap_getgamma    ;and a new gamma code for length
 
-                    push    iy
+                    push    ix
                     ex      (sp),hl
 
                     jr      apskip4
