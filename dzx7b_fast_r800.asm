@@ -1,6 +1,6 @@
 ; -----------------------------------------------------------------------------
 ; ZX7 Backwards by Einar Saukas, Antonio Villena
-; "Standard" version (156/177/180 bytes only) for R800
+; "Standard" version (156/177/184 bytes only) for R800
 ; -----------------------------------------------------------------------------
 ; Parameters:
 ;   HL: source address (compressed data)
@@ -31,6 +31,16 @@
     endm
 
     macro maicoeom odd
+      if odd=1
+mailab: ld      a, (hl)         ; save some cycles avoiding call getbit
+        dec     hl
+        adc     a, a
+        jr      nc, copbyo
+
+maicoo:
+      else
+maicoe:
+      endif
 
 ; determine number of bits used for length (Elias gamma coding)
 .maico: ld      bc, 2           ; BC=$0002
@@ -72,6 +82,9 @@
         ex      (sp), hl        ; store source, restore destination
         ex      de, hl          ; destination from HL to DE
         adc     hl, de          ; HL = destination + offset + 1
+      if speed>1
+        ldd
+      endif
         lddr
         pop     hl              ; restore source address (compressed data)
         getbiteom 1
@@ -103,12 +116,6 @@ dzx7:
         ldd                     ; copy literal byte
         scf
 
-mailab: ld      a, (hl)         ; save some cycles avoiding call getbit
-        dec     hl
-        adc     a, a
-        jr      nc, copbyo
-
-maicoo:
 	maicoeom 1
 
 exitdz: pop     hl              ; exit path
@@ -125,7 +132,6 @@ copbyo: ldd                     ; loop unrolling x2
         add     a, a
         jr      nc, copbye      ; next bit indicates either literal or sequence
 
-maicoe:
 	maicoeom 0
 
       if speed>1
@@ -138,11 +144,5 @@ getbit: ld      a, (hl)         ; load another group of 8 bits
       endif
         ret
 
-mailab: ld      a, (hl)         ; save some cycles avoiding call getbit
-        dec     hl
-        adc     a, a
-        jr      nc, copbyo
-
-maicoo:
 	maicoeom 1
       endif
