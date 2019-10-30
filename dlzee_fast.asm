@@ -68,7 +68,7 @@ dlze_copy:
 		jr	dlze_lp2
 
 dlze_far:
-		exa
+		ex      af, af';'
 		ld	a,(hl)
 		inc	hl
 		push	hl
@@ -93,7 +93,7 @@ dlze_far:
 dlze_skip:
 		ld	b,0
 		ld	c,a
-		exa
+		ex      af, af';'
 		jr	dlze_copy
 
 getbit:
