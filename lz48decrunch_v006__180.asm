@@ -9,9 +9,12 @@
 ;	; BC    always 1
 ;	; A     always zero
 ;	; flags (Z,NC,P,PE)
-;	; L'    undetermined
+;	; HL'   address of lzunpack(if OPTIMIZE_JUMP=2)
+;	; E'    undetermined
 ;	; BC'   always 0f10h
-; Modif	; AF, BC, DE, HL, BC', L'
+; Modif	; AF, BC, DE, HL, BC', E', HL'
+
+    ;DEFINE OPTIMIZE_JUMP 2
 
 LZ48_decrunch
 	ldi
@@ -19,11 +22,14 @@ LZ48_decrunch
 
 	exx
 	ld bc,0f10h
+    IF OPTIMIZE_JUMP=2
+	ld hl,lzunpack
+    ENDIF
 	exx
 	jr nextsequence
 
 loop:
-	ld l,a
+	ld e,a
 	rrca
 	rrca
 	rrca
@@ -33,21 +39,21 @@ loop:
 	cp b ; more bytes for literal length?
 	exx
 
-	call z,getadditionallength
+	call nc,getadditionallength
 
 copyliteral
 	ld c,a
 	ldir
 
 	exx
-	ld a,l
+	ld a,e
 	and b
 lzunpack
+	cp b ; more bytes for match length?
 	inc a
-	cp c ; more bytes for match length?
 	exx
 
-	call z,getadditionallength
+	call nc,getadditionallength
 
 readoffset
 	ld c,a
@@ -76,7 +82,15 @@ nextsequence
 	exx
 	cp c
 	jr nc,loop
+    IF OPTIMIZE_JUMP=2
+	jp (hl)
+    ELSE
+      IF OPTIMIZE_JUMP=1
+	jp lzunpack ; no literal bytes
+      ELSE
 	jr lzunpack ; no literal bytes
+      ENDIF
+    ENDIF
 
 getadditionallength
 	ld c,(hl) ; get additional literal length byte

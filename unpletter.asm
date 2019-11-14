@@ -12,12 +12,12 @@
   macro GETBIT
   add a,a
   call z,getbit
-  endmacro
+  endm
 
   macro GETBITEXX
   add a,a
   call z,getbitexx
-  endmacro
+  endm
 
 @unpack
 

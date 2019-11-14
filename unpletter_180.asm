@@ -9,6 +9,12 @@
 
   module pletter
 
+  ;OPTIMIZE_JUMP
+  ; 0 : 140 bytes
+  ; 1 : 143 bytes
+  ; 2 : 146 bytes, use IY
+  define OPTIMIZE_JUMP 2
+
   macro GETBIT
   add a,a
   call z,getbit
@@ -50,7 +56,9 @@
   ex (sp),hl
   pop ix
 
+  if OPTIMIZE_JUMP=2
   ld iy,loop
+  endif
   jr literal
 
 filbuf
@@ -77,7 +85,11 @@ getlen
   rl b
   ret c
   GETBIT
+  if OPTIMIZE_JUMP>0
   jp c,.lus
+  else
+  jr c,.lus
+  endif
 .lenok
 
   push de
@@ -86,8 +98,12 @@ getlen
   inc hl
   ld d,0
   bit 7,e
+  if OPTIMIZE_JUMP>0
   jp z,offsok
-  jp ix
+  else
+  jr z,offsok
+  endif
+  jp (ix)
 
 mode6
   GETBIT
@@ -119,7 +135,15 @@ offsok
   ldir
   ldi
   pop hl
-  jp iy
+  if OPTIMIZE_JUMP=2
+  jp (iy)
+  else
+  if OPTIMIZE_JUMP=1
+  jp loop
+  else
+  jr loop
+  endif
+  endif
 
 getbit
   ld a,(hl)
