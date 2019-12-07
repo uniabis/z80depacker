@@ -92,15 +92,17 @@ nextsequence
       ENDIF
     ENDIF
 
+lengthNC
+	scf
+lengthC
+	inc c
+	ret nz
+
 getadditionallength
 	ld c,(hl) ; get additional literal length byte
 	inc hl
 	add a,c ; compute literal length total
 	jr nc,lengthNC
 	inc b
-lengthNC
-	scf
-	inc c
-	ret nz
-	jr getadditionallength ; if last literal length byte was 255, we have more bytes to process
+	jr lengthC
 
