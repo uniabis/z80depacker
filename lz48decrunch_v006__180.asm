@@ -22,9 +22,12 @@ LZ48_decrunch
 
 	exx
 	ld bc,0f10h
+  IFNDEF OPTIMIZE_JUMP
+  ELSE
     IF OPTIMIZE_JUMP=2
 	ld hl,lzunpack
     ENDIF
+  ENDIF
 	exx
 	jr nextsequence
 
@@ -82,6 +85,9 @@ nextsequence
 	exx
 	cp c
 	jr nc,loop
+  IFNDEF OPTIMIZE_JUMP
+	jr lzunpack ; no literal bytes
+  ELSE
     IF OPTIMIZE_JUMP=2
 	jp (hl)
     ELSE
@@ -91,6 +97,7 @@ nextsequence
 	jr lzunpack ; no literal bytes
       ENDIF
     ENDIF
+  ENDIF
 
 lengthNC
 	scf
