@@ -3,7 +3,7 @@
 
 goto skip_debug
 
-rem sjasmplus --raw=unpletter.bin unpletter.asm
+rem sjasmplus --raw=deexo3.bin deexo3.asm 
 
 pause
 
@@ -38,6 +38,8 @@ sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=0 -Dmapbase=0100h -Dliterals=1 -DHD6418
 rem exomizer3
 
 sjasmplus --raw=deexo3p7.bin deexo3p7.asm 
+
+sjasmplus --raw=deexo3.bin deexo3.asm 
 
 rem sjasmplus -DINLINE_GETBIT=1 --raw=deexo3p7_fast.bin deexo3p7.asm 
 
