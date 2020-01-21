@@ -142,19 +142,16 @@ deexo3:
 	ld	iy,exo_mapbasebits - tbl_shift
 
 	cp	a	;set ZF
+	ex	af, af';'
 
+	ld	bc, tbl_bytes * 256 + 16
 
 
 	IF (PFLAG_CODE & PFLAG_BITS_ALIGN_START)
-
-	ld	bc, tbl_bytes * 256 + 16
-	ex	af, af';'
 	scf
-
 	ELSE
-	;workaround for first data byte corruption?
-	ld	b, tbl_bytes+1
-	jr	init0
+	;scf		 ;set CF
+	or	a	;reset CF(workaround for first data byte corruption?)
 	ENDIF
 
 gb4:
@@ -206,9 +203,8 @@ setbit:
 
 	inc	iy
 	dec	c
-	exx
-init0:
 	ex	af, af';'
+	exx
 
 	ld	c,16
 	or	a	;reset CF
