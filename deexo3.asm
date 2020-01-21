@@ -48,7 +48,6 @@
 
 
 opcode_add_hl	EQU	41	; 41=029h;ADD HL,HL
-opcode_jp_c	EQU	218	;218=0DAh;JP C,nnnn
 
 
 	IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
@@ -149,10 +148,7 @@ deexo3:
 
 
 	IF (PFLAG_CODE & PFLAG_BITS_ALIGN_START)
-	or	a
-	ld	a,first_byte
-
-	defb	opcode_jp_c
+	scf
 	ELSE
 	;scf		 ;set CF
 	or	a	;reset CF(workaround for first data byte corruption?)
