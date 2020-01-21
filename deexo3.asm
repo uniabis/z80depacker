@@ -255,9 +255,7 @@ start_copy:
 	ld	a,c
 	sub	16
 	ret	z
-
-	dec	a
-	jr	z,literal
+	jr	nc,literal
 
 	call	p_readtable
 
