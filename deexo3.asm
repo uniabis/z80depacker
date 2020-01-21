@@ -47,6 +47,9 @@
 	ENDIF
 
 
+opcode_add_hl	EQU	41	; 41=029h;ADD HL,HL
+opcode_jp_c	EQU	218	;218=0DAh;JP C,nnnn
+
 
 	IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
 tbl_bytes	EQU	(16 + 16 + 16 + 16 + 4)
@@ -54,8 +57,7 @@ tbl_bytes	EQU	(16 + 16 + 16 + 16 + 4)
 tbl_bytes	EQU	(16 + 16 + 16 + 4)
 	ENDIF
 
-
-tbl_shift	EQU	(41 - tbl_bytes - tbl_bytes)
+tbl_shift	EQU	(opcode_add_hl - tbl_bytes - tbl_bytes)
 tbl_ofs_bits	EQU	(tbl_shift)
 tbl_ofs_lo	EQU	(tbl_shift + tbl_bytes)
 tbl_ofs_hi	EQU	(tbl_shift + tbl_bytes + tbl_bytes)
@@ -145,14 +147,13 @@ deexo3:
 
 	ld	bc, tbl_bytes * 256 + 16
 
+	;scf		 ;set CF
+	or	a	;reset CF(workaround for bug?)
+
 	IF (PFLAG_CODE & PFLAG_BITS_ALIGN_START)
-	or	a	;reset CF
 	ld	a,first_byte
 
-	defb	218	;218=0DAh;JP C,nnnn
-	ELSE
-	;scf		 ;set CF
-	or	a	;reset CF
+	defb	opcode_jp_c
 	ENDIF
 
 gb4:
@@ -193,11 +194,11 @@ get4:
 	ENDIF
 	inc	a
 
+	ld	b,a
 	ld	(iy+tbl_ofs_lo),e
 	ld	(iy+tbl_ofs_hi),d
 setbit:
-	dec	a
-	jr	nz, setbit-1
+	djnz	setbit-1
 
 	add	hl, de
 	ex	de, hl
