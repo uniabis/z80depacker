@@ -261,8 +261,6 @@ start_copy:
 
 	push	bc
 
-	inc	b
-	dec	b
 	jr	nz,defaultofs
 	dec	c
 	jr	z,ofs1
