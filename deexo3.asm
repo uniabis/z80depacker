@@ -147,13 +147,15 @@ deexo3:
 
 	ld	bc, tbl_bytes * 256 + 16
 
-	;scf		 ;set CF
-	or	a	;reset CF(workaround for bug?)
 
 	IF (PFLAG_CODE & PFLAG_BITS_ALIGN_START)
+	or	a
 	ld	a,first_byte
 
 	defb	opcode_jp_c
+	ELSE
+	;scf		 ;set CF
+	or	a	;reset CF(workaround for first data byte corruption?)
 	ENDIF
 
 gb4:
