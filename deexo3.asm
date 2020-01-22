@@ -141,7 +141,7 @@ deexo3:
 
 	ld	iy,exo_mapbasebits - tbl_shift
 
-	cp	a	;set ZF
+	cp	a	;set ZF,reset CF
 	ex	af, af';'
 
 	ld	bc, tbl_bytes * 256 + 16
@@ -185,9 +185,9 @@ get4:
 
 	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
 
-	rra
+	rrca
 	jr	nc,.skp2
-	or	8
+	xor	088h
 .skp2:
 	ENDIF
 	inc	a
@@ -329,6 +329,7 @@ p_readtable:
 ; c :tableindex (0 <= c < tbl_bytes)
 ;[out]
 ; bc :bits data
+; ZF :set if high byte of output bits data equals zero
 ;[affect]
 ;af',hl :bit buffer & pointer
 ;[work]
@@ -393,6 +394,16 @@ literal:
 
 	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
 	ELSE
+p_getbits16:
+;p_getbits16 procedure
+;[in]
+; a : length of bits to read(0-16)
+;[out]
+; bc :bits data
+;[affect]
+;af',hl :bit buffer & pointer
+;[work]
+;af
 p_getbits16:
 	ld	bc,0
 	or	a
