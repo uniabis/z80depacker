@@ -73,14 +73,10 @@ map_disp_hi equ (map_disp_bit+map_len*2)
 
         ld      bc, map_len * 256 + 16
 
-        or      a       ;reset CF
     IF (PFLAG_CODE & PFLAG_BITS_ALIGN_START)
-      IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
-        ld      a, 080h
-      ELSE
-        ld      a, 001h
-      ENDIF
-        defb    218     ;218=0DAh;JP C,nnnn
+        scf
+    ELSE
+        or      a       ;reset CF
     ENDIF
 
 gb4     ld      a, (hl)

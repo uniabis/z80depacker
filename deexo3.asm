@@ -360,7 +360,9 @@ p_readtable:
 
 	ELSE
 
-	call	p_getbits16
+	ld	c, b
+	or	a
+	call	nz, p_getbits16_a
 
 	ENDIF
 
@@ -382,8 +384,9 @@ literal:
 	ld	c, (hl)
 	inc	hl
 	ELSE
-	ld	a, 16
-	call	p_getbits16
+	ld	c, b
+	ld	b, 16
+	call	p_getbits16_b
 	ENDIF
 
 	ldir
@@ -394,22 +397,29 @@ literal:
 
 	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
 	ELSE
-p_getbits16:
-;p_getbits16 procedure
+p_getbits16_a:
+;p_getbits16_a procedure
 ;[in]
-; a : length of bits to read(0-16)
+; a :length of bits to read(1-16)
+; c :must be 0
 ;[out]
 ; bc :bits data
 ;[affect]
 ; af', hl :bit buffer & pointer
 ;[work]
 ; af
-p_getbits16:
-	ld	bc, 0
-	or	a
-	ret	z
-
 	ld	b, a
+p_getbits16_b:
+;p_getbits16_b procedure
+;[in]
+; b :length of bits to read(1-16)
+; c :must be 0
+;[out]
+; bc :bits data
+;[affect]
+; af', hl :bit buffer & pointer
+;[work]
+; af
 	ld	a, d
 	ld	d, c
 
