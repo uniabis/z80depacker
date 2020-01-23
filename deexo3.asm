@@ -29,11 +29,11 @@
 	DEFINE	INLINE_GETBITS8	1
 	DEFINE	INLINE_FILBIT	0
 
-	DEFINE	PFLAG_BITS_ORDER_BE (1<<0)
-	DEFINE	PFLAG_BITS_COPY_GT_7 (1<<1)
-	DEFINE	PFLAG_IMPL_1LITERAL (1<<2)
-	DEFINE	PFLAG_BITS_ALIGN_START (1<<3)
-	DEFINE	PFLAG_4_OFFSET_TABLES (1<<4)
+	DEFINE	PFLAG_BITS_ORDER_BE	(1<<0)
+	DEFINE	PFLAG_BITS_COPY_GT_7	(1<<1)
+	DEFINE	PFLAG_IMPL_1LITERAL	(1<<2)
+	DEFINE	PFLAG_BITS_ALIGN_START	(1<<3)
+	DEFINE	PFLAG_4_OFFSET_TABLES	(1<<4)
 
 	IFNDEF PFLAG_CODE
 ; -P0 (Exomizer2 raw compatible)
@@ -47,7 +47,8 @@
 	ENDIF
 
 
-opcode_add_hl	EQU	41	; 41=029h;ADD HL,HL
+opcode_add_hl	EQU	41	;  41=029h;ADD HL, HL
+opcode_jp_z	EQU	202	; 202=0CAh;JP Z, nnnn
 
 
 	IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
@@ -63,19 +64,12 @@ tbl_ofs_hi	EQU	(tbl_shift + tbl_bytes + tbl_bytes)
 tbl_size_all	EQU	(tbl_bytes + tbl_bytes + tbl_bytes)
 
 	IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
-first_byte	EQU	(080h)
-	ELSE
-first_byte	EQU	(001h)
-	ENDIF
-
-
-	IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 	MACRO	m_getbit1
 	add	a
 	ENDM
 
 	MACRO	m_filbit1
-	ld	a,(hl)
+	ld	a, (hl)
 	inc	hl
 	rla
 	ENDM
@@ -85,7 +79,7 @@ first_byte	EQU	(001h)
 	ENDM
 
 	MACRO	m_filbit1
-	ld	a,(hl)
+	ld	a, (hl)
 	inc	hl
 	rra
 	ENDM
@@ -96,28 +90,28 @@ first_byte	EQU	(001h)
 ;[out]
 ; CF :bit data
 ;[affect]
-;af,hl :bit buffer & pointer
+; af, hl :bit buffer & pointer
 	IF (INLINE_GETBIT == 1)
 	m_getbit1
-	jr	nz,.bufremain
+	jr	nz, .bufremain
 	m_filbit1
 .bufremain:
 	ELSE
 
 	m_getbit1
-	call	z,p_fillbitbuf
+	call	z, p_fillbitbuf
 	ENDIF
 	ENDM
 
 	MACRO	m_getbits8i
 
-	ex	af,af'	;'
+	ex	af, af'	;'
 .lp1:
 	m_getbit
 	rl	c
 	djnz	.lp1
 
-	ex	af,af'	;'
+	ex	af, af'	;'
 	ENDM
 
 	MACRO	m_getbits8
@@ -129,7 +123,7 @@ first_byte	EQU	(001h)
 ; b :always 0
 ; c :bits data
 ;[affect]
-;af',hl :bit buffer & pointer
+; af', hl :bit buffer & pointer
 	IF (INLINE_GETBITS8 == 1)
 	m_getbits8i
 	ELSE
@@ -139,9 +133,9 @@ first_byte	EQU	(001h)
 
 deexo3:
 
-	ld	iy,exo_mapbasebits - tbl_shift
+	ld	iy, exo_mapbasebits - tbl_shift
 
-	cp	a	;set ZF,reset CF
+	cp	a	;set ZF, reset CF
 	ex	af, af';'
 
 	ld	bc, tbl_bytes * 256 + 16
@@ -150,8 +144,8 @@ deexo3:
 	IF (PFLAG_CODE & PFLAG_BITS_ALIGN_START)
 	scf
 	ELSE
-	;scf		 ;set CF
-	or	a	;reset CF(workaround for first data byte corruption?)
+	;scf		;set CF
+	or	a	;reset CF(bit data padding in first byte)
 	ENDIF
 
 gb4:
@@ -175,26 +169,26 @@ get4:
 	exx
 
 	ld	hl, 1
-	jr	nz,.skp1
+	jr	nz, .skp1
 	ld	d, h
 	ld	e, l
 	ld	c, 16
 .skp1:
 
-	ld	(iy+tbl_ofs_bits),a
+	ld	(iy+tbl_ofs_bits), a
 
 	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
 
 	rrca
-	jr	nc,.skp2
+	jr	nc, .skp2
 	xor	088h
 .skp2:
 	ENDIF
 	inc	a
 
-	ld	b,a
-	ld	(iy+tbl_ofs_lo),e
-	ld	(iy+tbl_ofs_hi),d
+	ld	b, a
+	ld	(iy+tbl_ofs_lo), e
+	ld	(iy+tbl_ofs_hi), d
 setbit:
 	djnz	setbit-1
 
@@ -206,7 +200,7 @@ setbit:
 	ex	af, af';'
 	exx
 
-	ld	c,16
+	ld	c, 16
 	or	a	;reset CF
 	djnz	init
 
@@ -221,7 +215,7 @@ setbit:
 	IF (INLINE_FILBIT == 1)
 filbit:
 	m_filbit1
-	jr	nc,start_copy
+	jr	nc, start_copy
 	ENDIF
 
 literal_one:
@@ -231,87 +225,75 @@ next:
 	IF (INLINE_FILBIT == 1)
 
 	m_getbit1
-	jr	z,filbit
-	jr	c,literal_one
+	jr	z, filbit
+	jr	c, literal_one
 start_copy:
 
 	ELSE
 
 	m_getbit
-	jr	c,literal_one
+	jr	c, literal_one
 
 	ENDIF
 
 
-	ld	bc,00ffh
+	ld	bc, 00ffh
 
 .alpha:
 	inc	c
 	m_getbit
-	jr	nc,.alpha
+	jr	nc, .alpha
 
-	ex	af,af'	;'
+	ex	af, af'	;'
 
-	ld	a,c
+	ld	a, c
 	sub	16
 	ret	z
-	jr	nc,literal
+	jr	nc, literal
 
 	call	p_readtable
 
 	push	bc
 
-	jr	nz,defaultofs
+	jr	nz, defaultofs
 	dec	c
-	jr	z,ofs1
+	jr	z, ofs1
 	dec	c
-	jr	z,ofs2
+	jr	z, ofs2
 	IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
 	dec	c
-	jr	z,ofs3
+	jr	z, ofs3
 
 defaultofs:
-	ld	c,01h
-	jr	ofsb4
-
-ofs1:
-	ld	bc,0210h
-	jr	getofs
-
-ofs2:
-	ld	c,03h
-	jr	ofsb4
+	ld	c, 01h
+	defb	opcode_jp_z
 
 ofs3:
 	ELSE
 
 defaultofs:
-	ld	c,01h
-	jr	ofsb4
-
-ofs1:
-	ld	bc,020Ch
-	jr	getofs
+	ld	c, 01h
+	defb	opcode_jp_z
 
 ofs2:
 	ENDIF
 
-	ld	c,02h
+	ld	c, 02h
 ofsb4:
-	ld	b,04h
+	ld	b, 04h
 getofs:
 
 	m_getbits8
 
 	call	p_readtable
 
-	ex	(sp),hl
+	ex	(sp), hl
 	push	hl
 
-	ld	h,d
-	ld	l,e
+	ld	h, d
+	ld	l, e
 	;or	a	;clear CF
-	sbc	hl,bc
+	sbc	hl, bc
 
 	pop	bc
 
@@ -319,8 +301,26 @@ getofs:
 
 	pop	hl
 
-	ex	af,af'	;'
+	ex	af, af'	;'
 	jp	next
+
+	IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
+
+ofs1:
+	ld	bc, 0210h
+	jr	getofs
+
+ofs2:
+	ld	c, 03h
+	jr	ofsb4
+
+	ELSE
+
+ofs1:
+	ld	bc, 020Ch
+	jr	getofs
+
+	ENDIF
 
 p_readtable:
 ;p_readtable procedure
@@ -331,29 +331,29 @@ p_readtable:
 ; bc :bits data
 ; ZF :set if high byte of output bits data equals zero
 ;[affect]
-;af',hl :bit buffer & pointer
+; af', hl :bit buffer & pointer
 ;[work]
-;af,iy
-	ld	iy,exo_mapbasebits - tbl_shift
-	add	iy,bc
+; af, iy
+	ld	iy, exo_mapbasebits - tbl_shift
+	add	iy, bc
 
-	ld	a,(iy+tbl_ofs_bits)
+	ld	a, (iy+tbl_ofs_bits)
 
 	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
 
-	ld	c,b
+	ld	c, b
 	rr	a
-	ld	b,a
+	ld	b, a
 
-	jr	z,.skp3
+	jr	z, .skp3
 
 	m_getbits8
 
 .skp3:
-	jr	nc,.skp4
+	jr	nc, .skp4
 
-	ld	b,c
-	ld	c,(hl)
+	ld	b, c
+	ld	c, (hl)
 	inc	hl
 
 .skp4:
@@ -364,31 +364,31 @@ p_readtable:
 
 	ENDIF
 
-	ld	a,(iy+tbl_ofs_lo)
+	ld	a, (iy+tbl_ofs_lo)
 	add	c
-	ld	c,a
-	ld	a,(iy+tbl_ofs_hi)
+	ld	c, a
+	ld	a, (iy+tbl_ofs_hi)
 	adc	b
-	ld	b,a
+	ld	b, a
 
 	ret
 
 literal:
 
 	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
-	ld	b,(hl)
+	ld	b, (hl)
 	inc	hl
 
-	ld	c,(hl)
+	ld	c, (hl)
 	inc	hl
 	ELSE
-	ld	a,16
+	ld	a, 16
 	call	p_getbits16
 	ENDIF
 
 	ldir
 
-	ex	af,af'	;'
+	ex	af, af'	;'
 	jp	next
 
 
@@ -401,19 +401,19 @@ p_getbits16:
 ;[out]
 ; bc :bits data
 ;[affect]
-;af',hl :bit buffer & pointer
+; af', hl :bit buffer & pointer
 ;[work]
-;af
+; af
 p_getbits16:
-	ld	bc,0
+	ld	bc, 0
 	or	a
 	ret	z
 
-	ld	b,a
-	ld	a,d
-	ld	d,c
+	ld	b, a
+	ld	a, d
+	ld	d, c
 
-	ex	af,af'	;'
+	ex	af, af'	;'
 .lp3:
 
 	m_getbit
@@ -422,10 +422,10 @@ p_getbits16:
 
 	djnz	.lp3
 
-	ex	af,af'	;'
+	ex	af, af'	;'
 
-	ld	b,d
-	ld	d,a
+	ld	b, d
+	ld	d, a
 
 	ret
 

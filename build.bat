@@ -40,6 +40,7 @@ rem exomizer3
 sjasmplus --raw=deexo3p7.bin deexo3p7.asm 
 
 sjasmplus --raw=deexo3.bin deexo3.asm 
+rem sjasmplus --raw=deexo3__.bin deexo3__.asm 
 
 rem sjasmplus -DINLINE_GETBIT=1 --raw=deexo3p7_fast.bin deexo3p7.asm 
 
