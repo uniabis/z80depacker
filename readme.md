@@ -121,7 +121,7 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |Exomizer3|deexoopt_p7|o|x|o|            219|61.03%|LDIR x 10.57|Support for Exomizer3(-P7) with bug fixes from deexoopt|
 |Exomizer3|deexoopt_f3_p7|o|x|o|            212|61.03%|LDIR x 10.16|Support for all -P options, faster, shorter from deexoopt_p7|
 |Exomizer3|deexoopt_f3_180_p7|o|o|o|            219|61.03%|LDIR x 10.57|Support for hd64180, but longer, slower from deexoopt_f3_p7|
-|Exomizer3|deexo3|o|o|o|            192|61.03%|LDIR x 11.53|Newly implemented|
+|Exomizer3|deexo3|o|o|o|            191|61.03%|LDIR x 11.42|Newly implemented|
 |hrust|dehrust_ix|o|o|o|            234|61.88%|LDIR x 7.54||
 |hrust|dehrust_ix_233b|o|o|o|            233|61.88%|LDIR x 7.54|Shorter, bit faster from dehrust_ix|
 |hrust|dehrust_stk|o|o|x data|            209|61.88%|LDIR x 6.84||
@@ -187,7 +187,7 @@ test data:ALL(16*16KB)
 |Exomizer3|deexoopt_p7|            219|        160,007<br />(61.03%)|     63,745,458<br />(LDIR x 10.57)|
 |Exomizer3|deexoopt_f3_p7|            212|        160,007<br />(61.03%)|     61,265,322<br />(LDIR x 10.16)|
 |Exomizer3|deexoopt_f3_180_p7|            219|        160,007<br />(61.03%)|     63,774,934<br />(LDIR x 10.57)|
-|Exomizer3|deexo3|            192|        160,007<br />(61.03%)|     69,521,802<br />(LDIR x 11.53)|
+|Exomizer3|deexo3|            191|        160,007<br />(61.03%)|     68,910,122<br />(LDIR x 11.42)|
 |hrust|dehrust_ix|            234|        162,217<br />(61.88%)|     45,520,962<br />(LDIR x 7.54)|
 |hrust|dehrust_ix_233b|            233|        162,217<br />(61.88%)|     45,520,882<br />(LDIR x 7.54)|
 |hrust|dehrust_stk|            209|        162,217<br />(61.88%)|     41,277,317<br />(LDIR x 6.84)|
@@ -248,7 +248,7 @@ test data:MEGASDHC.B00(16KB)
 |Exomizer3|deexoopt_p7|            219|          9,373<br />(57.20%)|      3,567,353<br />(LDIR x 9.46)|
 |Exomizer3|deexoopt_f3_p7|            212|          9,373<br />(57.20%)|      3,426,942<br />(LDIR x 9.09)|
 |Exomizer3|deexoopt_f3_180_p7|            219|          9,373<br />(57.20%)|      3,568,294<br />(LDIR x 9.46)|
-|Exomizer3|deexo3|            192|          9,373<br />(57.20%)|      3,934,163<br />(LDIR x 10.43)|
+|Exomizer3|deexo3|            191|          9,373<br />(57.20%)|      3,899,713<br />(LDIR x 10.34)|
 |hrust|dehrust_ix|            234|          9,369<br />(57.18%)|      2,390,975<br />(LDIR x 6.34)|
 |hrust|dehrust_ix_233b|            233|          9,369<br />(57.18%)|      2,390,970<br />(LDIR x 6.34)|
 |hrust|dehrust_stk|            209|          9,369<br />(57.18%)|      2,152,604<br />(LDIR x 5.71)|
@@ -309,7 +309,7 @@ test data:MEGASDHC.B01(16KB)
 |Exomizer3|deexoopt_p7|            219|          4,902<br />(29.91%)|      2,155,892<br />(LDIR x 5.72)|
 |Exomizer3|deexoopt_f3_p7|            212|          4,902<br />(29.91%)|      2,075,674<br />(LDIR x 5.50)|
 |Exomizer3|deexoopt_f3_180_p7|            219|          4,902<br />(29.91%)|      2,152,413<br />(LDIR x 5.71)|
-|Exomizer3|deexo3|            192|          4,902<br />(29.91%)|      2,359,847<br />(LDIR x 6.26)|
+|Exomizer3|deexo3|            191|          4,902<br />(29.91%)|      2,341,157<br />(LDIR x 6.21)|
 |hrust|dehrust_ix|            234|          4,895<br />(29.87%)|      1,520,335<br />(LDIR x 4.03)|
 |hrust|dehrust_ix_233b|            233|          4,895<br />(29.87%)|      1,520,330<br />(LDIR x 4.03)|
 |hrust|dehrust_stk|            209|          4,895<br />(29.87%)|      1,394,349<br />(LDIR x 3.70)|
@@ -370,7 +370,7 @@ test data:MEGASDHC.B02(16KB)
 |Exomizer3|deexoopt_p7|            219|         12,494<br />(76.25%)|      4,676,657<br />(LDIR x 12.41)|
 |Exomizer3|deexoopt_f3_p7|            212|         12,494<br />(76.25%)|      4,497,278<br />(LDIR x 11.93)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         12,494<br />(76.25%)|      4,680,084<br />(LDIR x 12.41)|
-|Exomizer3|deexo3|            192|         12,494<br />(76.25%)|      5,074,140<br />(LDIR x 13.46)|
+|Exomizer3|deexo3|            191|         12,494<br />(76.25%)|      5,029,580<br />(LDIR x 13.34)|
 |hrust|dehrust_ix|            234|         12,563<br />(76.67%)|      3,175,826<br />(LDIR x 8.42)|
 |hrust|dehrust_ix_233b|            233|         12,563<br />(76.67%)|      3,175,821<br />(LDIR x 8.42)|
 |hrust|dehrust_stk|            209|         12,563<br />(76.67%)|      2,861,857<br />(LDIR x 7.59)|
@@ -431,7 +431,7 @@ test data:MEGASDHC.B03(16KB)
 |Exomizer3|deexoopt_p7|            219|         12,297<br />(75.05%)|      4,667,845<br />(LDIR x 12.38)|
 |Exomizer3|deexoopt_f3_p7|            212|         12,297<br />(75.05%)|      4,478,345<br />(LDIR x 11.88)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         12,297<br />(75.05%)|      4,667,380<br />(LDIR x 12.38)|
-|Exomizer3|deexo3|            192|         12,297<br />(75.05%)|      5,175,400<br />(LDIR x 13.73)|
+|Exomizer3|deexo3|            191|         12,297<br />(75.05%)|      5,129,320<br />(LDIR x 13.61)|
 |hrust|dehrust_ix|            234|         12,282<br />(74.96%)|      2,984,997<br />(LDIR x 7.92)|
 |hrust|dehrust_ix_233b|            233|         12,282<br />(74.96%)|      2,984,992<br />(LDIR x 7.92)|
 |hrust|dehrust_stk|            209|         12,282<br />(74.96%)|      2,678,183<br />(LDIR x 7.10)|
@@ -492,7 +492,7 @@ test data:MSX2MAIN.B00(16KB)
 |Exomizer3|deexoopt_p7|            219|         12,739<br />(77.75%)|      4,714,326<br />(LDIR x 12.51)|
 |Exomizer3|deexoopt_f3_p7|            212|         12,739<br />(77.75%)|      4,517,671<br />(LDIR x 11.98)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         12,739<br />(77.75%)|      4,712,862<br />(LDIR x 12.50)|
-|Exomizer3|deexo3|            192|         12,739<br />(77.75%)|      5,242,301<br />(LDIR x 13.91)|
+|Exomizer3|deexo3|            191|         12,739<br />(77.75%)|      5,194,721<br />(LDIR x 13.78)|
 |hrust|dehrust_ix|            234|         12,768<br />(77.92%)|      3,074,734<br />(LDIR x 8.15)|
 |hrust|dehrust_ix_233b|            233|         12,768<br />(77.92%)|      3,074,729<br />(LDIR x 8.15)|
 |hrust|dehrust_stk|            209|         12,768<br />(77.92%)|      2,750,174<br />(LDIR x 7.29)|
@@ -553,7 +553,7 @@ test data:MSX2MAIN.B01(16KB)
 |Exomizer3|deexoopt_p7|            219|         13,402<br />(81.79%)|      4,709,224<br />(LDIR x 12.49)|
 |Exomizer3|deexoopt_f3_p7|            212|         13,402<br />(81.79%)|      4,528,588<br />(LDIR x 12.01)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         13,402<br />(81.79%)|      4,715,901<br />(LDIR x 12.51)|
-|Exomizer3|deexo3|            192|         13,402<br />(81.79%)|      5,108,004<br />(LDIR x 13.55)|
+|Exomizer3|deexo3|            191|         13,402<br />(81.79%)|      5,062,344<br />(LDIR x 13.43)|
 |hrust|dehrust_ix|            234|         13,454<br />(82.11%)|      3,143,717<br />(LDIR x 8.34)|
 |hrust|dehrust_ix_233b|            233|         13,454<br />(82.11%)|      3,143,712<br />(LDIR x 8.34)|
 |hrust|dehrust_stk|            209|         13,454<br />(82.11%)|      2,812,027<br />(LDIR x 7.46)|
@@ -614,7 +614,7 @@ test data:MSXMUSIC.B00(16KB)
 |Exomizer3|deexoopt_p7|            219|         10,068<br />(61.45%)|      3,672,667<br />(LDIR x 9.74)|
 |Exomizer3|deexoopt_f3_p7|            212|         10,068<br />(61.45%)|      3,524,205<br />(LDIR x 9.35)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         10,068<br />(61.45%)|      3,670,641<br />(LDIR x 9.74)|
-|Exomizer3|deexo3|            192|         10,068<br />(61.45%)|      4,057,168<br />(LDIR x 10.76)|
+|Exomizer3|deexo3|            191|         10,068<br />(61.45%)|      4,021,478<br />(LDIR x 10.67)|
 |hrust|dehrust_ix|            234|         10,079<br />(61.51%)|      2,526,759<br />(LDIR x 6.70)|
 |hrust|dehrust_ix_233b|            233|         10,079<br />(61.51%)|      2,526,754<br />(LDIR x 6.70)|
 |hrust|dehrust_stk|            209|         10,079<br />(61.51%)|      2,273,324<br />(LDIR x 6.03)|
@@ -675,7 +675,7 @@ test data:MSX2EXT.B00(16KB)
 |Exomizer3|deexoopt_p7|            219|         12,351<br />(75.38%)|      4,856,626<br />(LDIR x 12.88)|
 |Exomizer3|deexoopt_f3_p7|            212|         12,351<br />(75.38%)|      4,657,693<br />(LDIR x 12.35)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         12,351<br />(75.38%)|      4,857,716<br />(LDIR x 12.89)|
-|Exomizer3|deexo3|            192|         12,351<br />(75.38%)|      5,382,334<br />(LDIR x 14.28)|
+|Exomizer3|deexo3|            191|         12,351<br />(75.38%)|      5,333,574<br />(LDIR x 14.15)|
 |hrust|dehrust_ix|            234|         12,331<br />(75.26%)|      3,118,348<br />(LDIR x 8.27)|
 |hrust|dehrust_ix_233b|            233|         12,331<br />(75.26%)|      3,118,343<br />(LDIR x 8.27)|
 |hrust|dehrust_stk|            209|         12,331<br />(75.26%)|      2,808,254<br />(LDIR x 7.45)|
@@ -736,7 +736,7 @@ test data:KANJJ1.B00(16KB)
 |Exomizer3|deexoopt_p7|            219|          6,097<br />(37.21%)|      3,141,994<br />(LDIR x 8.33)|
 |Exomizer3|deexoopt_f3_p7|            212|          6,097<br />(37.21%)|      3,021,020<br />(LDIR x 8.01)|
 |Exomizer3|deexoopt_f3_180_p7|            219|          6,097<br />(37.21%)|      3,138,223<br />(LDIR x 8.32)|
-|Exomizer3|deexo3|            192|          6,097<br />(37.21%)|      3,384,333<br />(LDIR x 8.98)|
+|Exomizer3|deexo3|            191|          6,097<br />(37.21%)|      3,355,773<br />(LDIR x 8.90)|
 |hrust|dehrust_ix|            234|          6,434<br />(39.27%)|      2,481,382<br />(LDIR x 6.58)|
 |hrust|dehrust_ix_233b|            233|          6,434<br />(39.27%)|      2,481,377<br />(LDIR x 6.58)|
 |hrust|dehrust_stk|            209|          6,434<br />(39.27%)|      2,291,475<br />(LDIR x 6.08)|
@@ -797,7 +797,7 @@ test data:KANJJ1.B01(16KB)
 |Exomizer3|deexoopt_p7|            219|          3,974<br />(24.25%)|      2,176,336<br />(LDIR x 5.77)|
 |Exomizer3|deexoopt_f3_p7|            212|          3,974<br />(24.25%)|      2,096,142<br />(LDIR x 5.56)|
 |Exomizer3|deexoopt_f3_180_p7|            219|          3,974<br />(24.25%)|      2,170,705<br />(LDIR x 5.76)|
-|Exomizer3|deexo3|            192|          3,974<br />(24.25%)|      2,326,530<br />(LDIR x 6.17)|
+|Exomizer3|deexo3|            191|          3,974<br />(24.25%)|      2,308,370<br />(LDIR x 6.12)|
 |hrust|dehrust_ix|            234|          4,230<br />(25.81%)|      1,820,188<br />(LDIR x 4.83)|
 |hrust|dehrust_ix_233b|            233|          4,230<br />(25.81%)|      1,820,183<br />(LDIR x 4.83)|
 |hrust|dehrust_stk|            209|          4,230<br />(25.81%)|      1,692,991<br />(LDIR x 4.49)|
@@ -858,7 +858,7 @@ test data:KANJJ1.B02(16KB)
 |Exomizer3|deexoopt_p7|            219|         10,688<br />(65.23%)|      4,341,061<br />(LDIR x 11.51)|
 |Exomizer3|deexoopt_f3_p7|            212|         10,688<br />(65.23%)|      4,174,824<br />(LDIR x 11.07)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         10,688<br />(65.23%)|      4,347,582<br />(LDIR x 11.53)|
-|Exomizer3|deexo3|            192|         10,688<br />(65.23%)|      4,695,548<br />(LDIR x 12.46)|
+|Exomizer3|deexo3|            191|         10,688<br />(65.23%)|      4,653,438<br />(LDIR x 12.34)|
 |hrust|dehrust_ix|            234|         10,940<br />(66.77%)|      3,282,337<br />(LDIR x 8.71)|
 |hrust|dehrust_ix_233b|            233|         10,940<br />(66.77%)|      3,282,332<br />(LDIR x 8.71)|
 |hrust|dehrust_stk|            209|         10,940<br />(66.77%)|      2,988,194<br />(LDIR x 7.92)|
@@ -919,7 +919,7 @@ test data:KANJJ1.B03(16KB)
 |Exomizer3|deexoopt_p7|            219|         10,509<br />(64.14%)|      4,275,571<br />(LDIR x 11.34)|
 |Exomizer3|deexoopt_f3_p7|            212|         10,509<br />(64.14%)|      4,114,737<br />(LDIR x 10.91)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         10,509<br />(64.14%)|      4,282,206<br />(LDIR x 11.36)|
-|Exomizer3|deexo3|            192|         10,509<br />(64.14%)|      4,618,538<br />(LDIR x 12.25)|
+|Exomizer3|deexo3|            191|         10,509<br />(64.14%)|      4,577,718<br />(LDIR x 12.14)|
 |hrust|dehrust_ix|            234|         10,753<br />(65.63%)|      3,241,681<br />(LDIR x 8.60)|
 |hrust|dehrust_ix_233b|            233|         10,753<br />(65.63%)|      3,241,676<br />(LDIR x 8.60)|
 |hrust|dehrust_stk|            209|         10,753<br />(65.63%)|      2,951,087<br />(LDIR x 7.83)|
@@ -980,7 +980,7 @@ test data:KANJJ1.B04(16KB)
 |Exomizer3|deexoopt_p7|            219|         10,415<br />(63.56%)|      4,200,109<br />(LDIR x 11.14)|
 |Exomizer3|deexoopt_f3_p7|            212|         10,415<br />(63.56%)|      4,039,310<br />(LDIR x 10.71)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         10,415<br />(63.56%)|      4,205,016<br />(LDIR x 11.15)|
-|Exomizer3|deexo3|            192|         10,415<br />(63.56%)|      4,547,922<br />(LDIR x 12.06)|
+|Exomizer3|deexo3|            191|         10,415<br />(63.56%)|      4,507,532<br />(LDIR x 11.96)|
 |hrust|dehrust_ix|            234|         10,679<br />(65.17%)|      3,238,228<br />(LDIR x 8.59)|
 |hrust|dehrust_ix_233b|            233|         10,679<br />(65.17%)|      3,238,223<br />(LDIR x 8.59)|
 |hrust|dehrust_stk|            209|         10,679<br />(65.17%)|      2,950,117<br />(LDIR x 7.82)|
@@ -1041,7 +1041,7 @@ test data:KANJJ1.B05(16KB)
 |Exomizer3|deexoopt_p7|            219|         10,347<br />(63.15%)|      4,216,060<br />(LDIR x 11.18)|
 |Exomizer3|deexoopt_f3_p7|            212|         10,347<br />(63.15%)|      4,056,164<br />(LDIR x 10.76)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         10,347<br />(63.15%)|      4,221,173<br />(LDIR x 11.20)|
-|Exomizer3|deexo3|            192|         10,347<br />(63.15%)|      4,561,555<br />(LDIR x 12.10)|
+|Exomizer3|deexo3|            191|         10,347<br />(63.15%)|      4,521,335<br />(LDIR x 11.99)|
 |hrust|dehrust_ix|            234|         10,597<br />(64.67%)|      3,215,584<br />(LDIR x 8.53)|
 |hrust|dehrust_ix_233b|            233|         10,597<br />(64.67%)|      3,215,579<br />(LDIR x 8.53)|
 |hrust|dehrust_stk|            209|         10,597<br />(64.67%)|      2,927,176<br />(LDIR x 7.76)|
@@ -1102,7 +1102,7 @@ test data:KANJJ1.B06(16KB)
 |Exomizer3|deexoopt_p7|            219|         10,650<br />(65.00%)|      4,366,865<br />(LDIR x 11.58)|
 |Exomizer3|deexoopt_f3_p7|            212|         10,650<br />(65.00%)|      4,201,463<br />(LDIR x 11.14)|
 |Exomizer3|deexoopt_f3_180_p7|            219|         10,650<br />(65.00%)|      4,371,843<br />(LDIR x 11.60)|
-|Exomizer3|deexo3|            192|         10,650<br />(65.00%)|      4,726,151<br />(LDIR x 12.54)|
+|Exomizer3|deexo3|            191|         10,650<br />(65.00%)|      4,684,621<br />(LDIR x 12.43)|
 |hrust|dehrust_ix|            234|         10,906<br />(66.56%)|      3,290,847<br />(LDIR x 8.73)|
 |hrust|dehrust_ix_233b|            233|         10,906<br />(66.56%)|      3,290,842<br />(LDIR x 8.73)|
 |hrust|dehrust_stk|            209|         10,906<br />(66.56%)|      2,995,867<br />(LDIR x 7.95)|
@@ -1163,7 +1163,7 @@ test data:KANJJ1.B07(16KB)
 |Exomizer3|deexoopt_p7|            219|          9,701<br />(59.21%)|      4,006,872<br />(LDIR x 10.63)|
 |Exomizer3|deexoopt_f3_p7|            212|          9,701<br />(59.21%)|      3,855,266<br />(LDIR x 10.23)|
 |Exomizer3|deexoopt_f3_180_p7|            219|          9,701<br />(59.21%)|      4,012,895<br />(LDIR x 10.64)|
-|Exomizer3|deexo3|            192|          9,701<br />(59.21%)|      4,327,868<br />(LDIR x 11.48)|
+|Exomizer3|deexo3|            191|          9,701<br />(59.21%)|      4,289,448<br />(LDIR x 11.38)|
 |hrust|dehrust_ix|            234|          9,937<br />(60.65%)|      3,015,024<br />(LDIR x 8.00)|
 |hrust|dehrust_ix_233b|            233|          9,937<br />(60.65%)|      3,015,019<br />(LDIR x 8.00)|
 |hrust|dehrust_stk|            209|          9,937<br />(60.65%)|      2,749,638<br />(LDIR x 7.29)|

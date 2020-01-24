@@ -337,13 +337,12 @@ p_readtable:
 	ld	iy, exo_mapbasebits - tbl_shift
 	add	iy, bc
 
-	ld	a, (iy+tbl_ofs_bits)
+	ld	c, b
 
 	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
 
-	ld	c, b
-	rr	a
-	ld	b, a
+	ld	b, (iy+tbl_ofs_bits)
+	rr	b
 
 	jr	z, .skp3
 
@@ -360,8 +359,9 @@ p_readtable:
 
 	ELSE
 
-	ld	c, b
+	ld	a, (iy+tbl_ofs_bits)
 	or	a
+
 	call	nz, p_getbits16_a
 
 	ENDIF
