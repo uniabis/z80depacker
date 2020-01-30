@@ -55,23 +55,6 @@ dzx7l_process_ref:		push	de
 dzx7l_len_size_loop:		inc	d
 				add	a
 				jr	z, dzx7l_reload_size2
-				jp	c, dzx7l_len_value_loop
-	        		jp	dzx7l_len_size_loop
-
-dzx7l_reload_size1:		ld	a, (hl)
-				inc	hl
-				rla
-				jp	c, dzx7l_len_value_done
-				DUP	1				; values above 1 speed things up slightly, but not by much - not really worth it
-				inc	d
-				add	a
-				jp	c, dzx7l_len_value_loop
-				EDUP
-				jp	dzx7l_len_size_loop
-
-dzx7l_reload_size2:		ld	a, (hl)
-				inc	hl
-				rla
 				jr	nc, dzx7l_len_size_loop
 
 
@@ -120,11 +103,26 @@ dzx7l_copying:			ex	(sp), hl			; store source, restore destination
 				pop	hl				; restore source address (compressed data)
 				jp	(ix)
 
+dzx7l_reload_size1:		ld	a, (hl)
+				inc	hl
+				rla
+				jp	c, dzx7l_len_value_done
+				DUP	1				; values above 1 speed things up slightly, but not by much - not really worth it
+				inc	d
+				add	a
+				jp	c, dzx7l_len_value_loop
+				EDUP
+				jp	dzx7l_len_size_loop
+
+dzx7l_reload_size2:		ld	a, (hl)
+				inc	hl
+				rla
+				jp	c, dzx7l_len_value_loop
+				jp	dzx7l_len_size_loop
+
 ;
 ;  the length of the reference is determined here (NB: kinda ugly; the commented out sections runs faster, but takes too much space. DJNZ?)
 ;
-dzx7l_exit:			pop	de
-				ret
 
 dzx7l_len_value_reload:		ld	a, (hl)
 				inc	hl
@@ -144,7 +142,8 @@ dzx7l_len_value_bincluded:	rl	b
 				jr	nz, dzx7l_len_value_loop2
 				jp	dzx7l_len_value_done
 
-
+dzx7l_exit:			pop	de
+				ret
 
 dzx7l_reload_1:			ld	a, (hl)
 				inc	hl
