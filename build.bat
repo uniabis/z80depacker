@@ -1,9 +1,19 @@
 @echo off
 
 
+
 goto skip_debug
 
+rem sjasmplus --raw=dzx7_lom_v1p1.bin dzx7_lom_v1p1.asm
+
+
+rem sjasmplus --raw=deexo3__.bin deexo3__.asm 
+
 rem sjasmplus --raw=deexo3.bin deexo3.asm 
+
+rem sjasmplus --raw=aplib_z80.bin aplib_z80.z80
+rem sjasmplus --raw=deexo_simple.bin deexo_simple.z80
+rem sjasmplus --raw=exodecrunch.bin exodecrunch.z80
 
 pause
 

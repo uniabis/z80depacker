@@ -342,7 +342,7 @@ p_readtable:
 	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
 
 	ld	b, (iy+tbl_ofs_bits)
-	rr	b
+	srl	b
 
 	jr	z, .skp3
 

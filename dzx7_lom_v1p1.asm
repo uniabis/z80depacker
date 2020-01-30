@@ -72,33 +72,8 @@ dzx7l_reload_size1:		ld	a, (hl)
 dzx7l_reload_size2:		ld	a, (hl)
 				inc	hl
 				rla
-				jp	c, dzx7l_len_value_loop
-				jp	dzx7l_len_size_loop
+				jr	nc, dzx7l_len_size_loop
 
-
-;
-;  the length of the reference is determined here (NB: kinda ugly; the commented out sections runs faster, but takes too much space. DJNZ?)
-;
-dzx7l_exit:			pop	de
-				ret
-
-dzx7l_len_value_reload:		ld	a, (hl)
-				inc	hl
-;				rla
-;				rl	c
-;dzx7l_len_value_bincluded:	rl	b
-;				jr	c, dzx7l_exit			; check end marker
-;				dec	d
-;				jp	z, dzx7l_len_value_done
-
-dzx7l_len_value_loop2:		adc	a
-				jr	z, dzx7l_len_value_reload
-				rl	c
-dzx7l_len_value_bincluded:	rl	b
-				jr	c, dzx7l_exit			; check end marker
-				dec	d
-				jr	nz, dzx7l_len_value_loop2
-				jp	dzx7l_len_value_done
 
 dzx7l_len_value_loop:		add	a
 				jr	z, dzx7l_len_value_reload
@@ -144,6 +119,32 @@ dzx7l_copying:			ex	(sp), hl			; store source, restore destination
 				ldi
 				pop	hl				; restore source address (compressed data)
 				jp	(ix)
+
+;
+;  the length of the reference is determined here (NB: kinda ugly; the commented out sections runs faster, but takes too much space. DJNZ?)
+;
+dzx7l_exit:			pop	de
+				ret
+
+dzx7l_len_value_reload:		ld	a, (hl)
+				inc	hl
+;				rla
+;				rl	c
+;dzx7l_len_value_bincluded:	rl	b
+;				jr	c, dzx7l_exit			; check end marker
+;				dec	d
+;				jp	z, dzx7l_len_value_done
+
+dzx7l_len_value_loop2:		adc	a
+				jr	z, dzx7l_len_value_reload
+				rl	c
+dzx7l_len_value_bincluded:	rl	b
+				jr	c, dzx7l_exit			; check end marker
+				dec	d
+				jr	nz, dzx7l_len_value_loop2
+				jp	dzx7l_len_value_done
+
+
 
 dzx7l_reload_1:			ld	a, (hl)
 				inc	hl
