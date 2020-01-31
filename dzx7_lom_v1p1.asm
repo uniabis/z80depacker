@@ -10,12 +10,24 @@
 ; -----------------------------------------------------------------------------
 
 
+	DEFINE	AllowUsingIX
+	DEFINE	AllowUsingIY
+
+
 ;
 ;  first block is where the entry point is and all the literal copying codes are (fairly well optimized, i think)
 ;
-dzx7_lom:			ld	ix, dzx7l_main_loop
-				ldi
+dzx7_lom:			ldi
 				scf
+
+	IFNDEF	AllowUsingIX
+	ELSE
+				ld	ix, dzx7l_main_loop
+	ENDIF
+	IFNDEF	AllowUsingIY
+	ELSE
+				ld	iy, dzx7l_offset_eoverflow
+	ENDIF
 
 dzx7l_reload:			ld	a, (hl)
 				inc	hl
@@ -101,7 +113,11 @@ dzx7l_copying:			ex	(sp), hl			; store source, restore destination
 				ldir					; copy previous sequence
 				ldi
 				pop	hl				; restore source address (compressed data)
+	IFNDEF	AllowUsingIX
+				jp	dzx7l_main_loop
+	ELSE
 				jp	(ix)
+	ENDIF
 
 dzx7l_reload_size1:		ld	a, (hl)
 				inc	hl
@@ -157,7 +173,11 @@ dzx7l_reload_1:			ld	a, (hl)
 				add	a
 
 				jr	nc, dzx7l_copying
+	IFNDEF	AllowUsingIY
 				jp	dzx7l_offset_eoverflow
+	ELSE
+				jp	(iy)
+	ENDIF
 
 dzx7l_reload_2:			ld	a, (hl)
 				inc	hl
@@ -169,7 +189,11 @@ dzx7l_reload_2:			ld	a, (hl)
 				add	a
 
 				jr	nc, dzx7l_copying
+	IFNDEF	AllowUsingIY
 				jp	dzx7l_offset_eoverflow
+	ELSE
+				jp	(iy)
+	ENDIF
 
 dzx7l_reload_3:			ld	a, (hl)
 				inc	hl
@@ -179,13 +203,21 @@ dzx7l_reload_3:			ld	a, (hl)
 				add	a
 
 				jr	nc, dzx7l_copying
+	IFNDEF	AllowUsingIY
 				jp	dzx7l_offset_eoverflow
+	ELSE
+				jp	(iy)
+	ENDIF
 
 dzx7l_reload_4:			ld	a, (hl)
 				inc	hl
 				rla
 
 				jr	nc, dzx7l_copying
+	IFNDEF	AllowUsingIY
 				jp	dzx7l_offset_eoverflow
+	ELSE
+				jp	(iy)
+	ENDIF
 
 ; -----------------------------------------------------------------------------
