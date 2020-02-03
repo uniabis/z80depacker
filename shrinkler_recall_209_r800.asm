@@ -9,7 +9,7 @@
 ; v7: slight getkind factorization  14.23 s   / 213 bytes
 ; v8: replace D5 by HL              14.23 s   / 209 bytes
 ; r800: replace SLL A to SCF/RLA    14.23 s   / 209 bytes
-; rom: remove self-modification   14.51 s   / 211 bytes
+; rom: remove self-modification     14.17 s   / 208 bytes
 
 ; shrinkler_decrunch
 ; input IX=source
@@ -127,7 +127,7 @@ readbit
 
           ;SLL A
           SCF
-          RLA
+          ADC  A
 _rbok
 
         IFNDEF ROM
@@ -140,9 +140,8 @@ d2        LD   HL,#00   ; TODO replace by IY
           JR   NC,iync
           ADD  IY,IY
           INC  IY
-          JR   iyc
+          DB   #CA      ; (JP z,nnnn)
 iync      ADD  IY,IY
-iyc
         ENDIF
           EX   AF,AF'
           JR   getbit
