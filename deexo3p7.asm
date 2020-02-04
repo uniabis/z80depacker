@@ -156,7 +156,7 @@ exo_getpair:    add     iy, bc
 
                 ld      c, (iy-11)
                 ld      b, c
-                srl	b
+                srl     b
 
                 jr      z,.skp3
 .lp1:

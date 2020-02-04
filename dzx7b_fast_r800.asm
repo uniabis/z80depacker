@@ -116,7 +116,7 @@ dzx7:
         ldd                     ; copy literal byte
         scf
 
-	maicoeom 1
+        maicoeom 1
 
 exitdz: pop     hl              ; exit path
         ret
@@ -132,7 +132,7 @@ copbyo: ldd                     ; loop unrolling x2
         add     a, a
         jr      nc, copbye      ; next bit indicates either literal or sequence
 
-	maicoeom 0
+        maicoeom 0
 
       if speed>1
       else
@@ -144,5 +144,5 @@ getbit: ld      a, (hl)         ; load another group of 8 bits
       endif
         ret
 
-	maicoeom 1
+        maicoeom 1
       endif

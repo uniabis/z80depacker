@@ -24,8 +24,8 @@ shrinkler_decrunch
 init
           DEC  H
 iniloop   LD   (HL),A
-	  INC  L
-	  JR   NZ,iniloop ; fill #100 row
+          INC  L
+          JR   NZ,iniloop ; fill #100 row
           XOR  #80
           DJNZ init
 
@@ -42,7 +42,7 @@ getlit    CALL NC,getbit
           LD   A,L
           EXX
           LD   (DE),A
-	  INC  DE
+          INC  DE
 ;after literal
           CALL getkind
           JR   NC,literal
@@ -117,12 +117,12 @@ _bitsloop
 ;-----------------------------------
 readbit
           SLA  E
-	  RL   D ; d3 <<= 1
+          RL   D ; d3 <<= 1
           EX   AF,AF'
           ADD  A
           JR   NZ,_rbok
           LD   A,(IX)
-	  INC  IX
+          INC  IX
 
 
           ;SLL A
@@ -204,7 +204,7 @@ _mulcont
           POP  HL
         ENDIF
           OR   A
-	  SBC  HL,BC
+          SBC  HL,BC
           JR   NC,zero
 
 one
@@ -213,7 +213,7 @@ one
           POP  BC
 ; + #fff
           LD   A,B
-	  SUB  #F0 ; force Carry
+          SUB  #F0 ; force Carry
           LD   B,A
           DEC  BC
           JR   _probret
