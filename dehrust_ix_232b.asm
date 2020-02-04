@@ -11,7 +11,7 @@
 ; you must USE -hst switch and must NOT USE -zxh switch to mhmt in order to get
 ;  correct packed stream for this depacker!
 
-; length is 233 bytes, non-relocatable
+; length is 232 bytes, non-relocatable
 
 
 DEHRUST
@@ -19,15 +19,15 @@ DEHRUST
         POP     IX
         LD      B,0
 
-        EXX 
+        EXX
         LD DE,#BF10
         CALL LL4115
 LL4036  LD A,(IX+#00)
-        INC IX
-        EXX 
-LL403C  LD (DE),A
+        EXX
+LL403C  INC IX
+        LD (DE),A
         INC DE
-LL403E  EXX 
+LL403E  EXX
 LL403F  ADD HL,HL
         DJNZ LL4045
         CALL LL4115
@@ -37,7 +37,7 @@ LL4049  LD A,#80
 LL404B  ADD HL,HL
         DJNZ LL4051
         CALL LL4115
-LL4051  RLA 
+LL4051  RLA
         JR C,LL404B
         CP #03
         JR C,LL405D
@@ -50,15 +50,15 @@ LL405D  ADD A,C
         JR Z,LL40C4
         ADC A,#FF
         CP #02
-        EXX 
+        EXX
 LL4067  LD C,A
-LL4068  EXX 
+LL4068  EXX
         LD A,#BF
         JR C,LL4082
 LL406D  ADD HL,HL
         DJNZ LL4073
         CALL LL4115
-LL4073  RLA 
+LL4073  RLA
         JR C,LL406D
         JR Z,LL407D
         INC A
@@ -68,14 +68,14 @@ LL4073  RLA
 LL407D  INC A
         JR NZ,LL408D
         LD A,#EF
-LL4082  RRCA 
+LL4082  RRCA
         CP A
 LL4084  ADD HL,HL
         DJNZ LL408A
         CALL LL4115
-LL408A  RLA 
+LL408A  RLA
         JR C,LL4084
-LL408D  EXX 
+LL408D  EXX
         LD H,#FF
         JR Z,LL409B
         LD H,A
@@ -85,14 +85,20 @@ LL408D  EXX
         JR Z,LL40A6
 LL409B  LD L,A
         ADD HL,DE
-        LDIR 
-LL409F  JR LL403E
-LL40A1  EXX 
+        LDIR
+        JP LL403E
+
+
+
+LL40A1  EXX
         RRC D
         JR LL403F
+
+
+
 LL40A6  CP #E0
         JR C,LL409B
-        RLCA 
+        RLCA
         XOR C
         INC A
         JR Z,LL40A1
@@ -101,42 +107,63 @@ LL40B1  LD L,A
         LD C,A
         LD H,#FF
         ADD HL,DE
-        LDI 
+        LDI
         LD A,(IX+#00)
-        INC IX
         LD (DE),A
         INC HL
         INC DE
         LD A,(HL)
         JP LL403C
+
+
+
+LL40D5  LD B,A
+        LD C,(IX+#00)
+        INC IX
+        CCF
+        JR LL4068
+
+
+
+LL40DE  CP #0F
+        JR C,LL40D5
+        JR NZ,LL4067
+
+        ;RET
+
+
+
+LL4115  LD B,E
+        LD L,(IX+#00)
+        INC IX
+        LD H,(IX+#00)
+        INC IX
+        RET
+
+
+
 LL40C4  LD A,#80
 LL40C6  ADD HL,HL
         DJNZ LL40CC
         CALL LL4115
 LL40CC  ADC A,A
         JR NZ,LL40F3
-        JR C,LL40C6
-        LD A,#FC
-        JR LL40F6
-LL40D5  LD B,A
-        LD C,(IX+#00)
-        INC IX
-        CCF 
-        JR LL4068
-LL40DE  CP #0F
-        JR C,LL40D5
-        JR NZ,LL4067
 
-        RET 
+LL40CF  JR C,LL40C6
+LL40D1  LD A,#FC
+        JR LL40F6
+
+
 
 LL40F3  SBC A,A
         LD A,#EF
+
 LL40F6  ADD HL,HL
         DJNZ LL40FC
         CALL LL4115
-LL40FC  RLA 
+LL40FC  RLA
         JR C,LL40F6
-        EXX 
+        EXX
         JR NZ,LL40B1
         BIT 7,A
         JR Z,LL40DE
@@ -148,10 +175,7 @@ LL410A  LD A,(IX+#00)
         LD (DE),A
         INC DE
         DJNZ LL410A
-        JR LL409F
-LL4115  LD B,E
-        LD L,(IX+#00)
-        INC IX
-        LD H,(IX+#00)
-        INC IX
-        RET 
+        JP LL403E
+
+
+
