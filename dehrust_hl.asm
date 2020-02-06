@@ -22,10 +22,10 @@ DEHRUST
 
 
 
-        macro mGETBIT
+        macro mGETBIT preservea
         ADD HL,HL
         DJNZ .skip
-        CALL pFILBUF
+        CALL pFILBUF + 1 - preservea
 .skip:
         endm
 
@@ -48,12 +48,13 @@ LL4036  EXX
 
 LL403E  EXX
 
-LL403F  mGETBIT
+LL403F  mGETBIT 0
         JR C,LL4036
 
         LD C,#01
 LL4049  LD A,#80
-LL404B  mGETBIT
+
+LL404B  mGETBIT 1
         RLA
         JR C,LL404B
         CP #03
@@ -72,7 +73,8 @@ LL4067  LD C,A
 LL4068  EXX
         LD A,#BF
         JR C,LL4082
-LL406D  mGETBIT
+
+LL406D  mGETBIT 1
         RLA
         JR C,LL406D
         JR Z,LL407D
@@ -85,7 +87,8 @@ LL407D  INC A
         LD A,#EF
 LL4082  RRCA
         CP A
-LL4084  mGETBIT
+
+LL4084  mGETBIT 1
         RLA
         JR C,LL4084
 LL408D  EXX
@@ -191,7 +194,8 @@ LL40DE  CP #0F
 
 
 LL40C4  LD A,#80
-LL40C6  mGETBIT
+
+LL40C6  mGETBIT 1
         ADC A,A
         JR NZ,LL40F3
 
@@ -204,7 +208,7 @@ LL40C6  mGETBIT
 LL40F3  SBC A,A
         LD A,#EF
 
-LL40F6  mGETBIT
+LL40F6  mGETBIT 1
         RLA
         JR C,LL40F6
         EXX
