@@ -16,12 +16,23 @@
 
 DEHRUST
 
+
+
+        ;DEFINE AllowUsingIX
+
+
+
         macro mGETBIT
         ADD HL,HL
         DJNZ .skip
         CALL pFILBUF
 .skip:
         endm
+
+        IFNDEF AllowUsingIX
+        ELSE
+        LD IX,LL403E
+        ENDIF
 
         LD B,0
 
@@ -91,7 +102,11 @@ LL409C  ADD HL,DE
 
         POP HL
 
+        IFNDEF AllowUsingIX
         JP LL403E
+        ELSE
+        JP (IX)
+        ENDIF
 
 
 
@@ -160,7 +175,11 @@ LL40B1  PUSH HL
 
         POP HL
 
+        IFNDEF AllowUsingIX
         JP LL403E
+        ELSE
+        JP (IX)
+        ENDIF
 
 
 
@@ -200,7 +219,11 @@ LL40F6  mGETBIT
 
         LDIR
 
+        IFNDEF AllowUsingIX
         JP LL403E
+        ELSE
+        JP (IX)
+        ENDIF
 
 
 
