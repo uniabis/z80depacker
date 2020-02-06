@@ -4,6 +4,9 @@
 
 goto skip_debug
 
+rem sjasmplus --raw=dehrust_hl.bin dehrust_hl.asm
+rem sjasmplus --raw=dehrust_hlb.bin dehrust_hlb.asm
+
 rem sjasmplus --raw=dzx7_lom_v1p1.bin dzx7_lom_v1p1.asm
 
 
@@ -67,6 +70,8 @@ rem hrust
 sjasmplus --raw=dehrust_ix.bin dehrust_ix.asm
 
 sjasmplus --raw=dehrust_ix_232b.bin dehrust_ix_232b.asm
+
+sjasmplus --raw=dehrust_hl.bin dehrust_hl.asm
 
 sjasmplus --raw=dehrust_stk.bin dehrust_stk.asm
 
