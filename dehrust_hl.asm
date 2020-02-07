@@ -2,7 +2,7 @@
 ;
 ; in: HL - from
 ;     DE - to
-; kills: AF, BC,DE,HL, A', BC',DE',HL'
+; kills: AF, BC,DE,HL, A', BC',DE',HL', IX(option)
 ; does not move anything before depacking, unlike dehrust_*_hdr.asm
 ;
 ; Uses HL to get packed stream, so somewhat slower than *_stk_* versions, but
@@ -11,13 +11,13 @@
 ; you must USE -hst switch and must NOT USE -zxh switch to mhmt in order to get
 ;  correct packed stream for this depacker!
 
-; length is 225 bytes, non-relocatable
+; length is 226 bytes, non-relocatable
 
 
 DEHRUST
 
 
-
+        ; +1byte, bit faster
         ;DEFINE AllowUsingIX
 
 
@@ -34,12 +34,12 @@ DEHRUST
         LD IX,LL403E
         ENDIF
 
-        LD B,0
+        LD BC,0
 
         EXX
 
         LD DE,#BF10
-        CALL pFILBUF
+        CALL pFILBUF + 1
 
 LL4036  EXX
 
