@@ -213,8 +213,8 @@ LL40F6  mGETBIT 1
         JR C,LL40F6
         EXX
         JR NZ,LL40B1
-        BIT 7,A
-        JR Z,LL40DE
+        OR A
+        JP P,LL40DE
         SUB #EA
         ADD A,A
 
