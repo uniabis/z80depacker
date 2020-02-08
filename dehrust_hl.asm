@@ -98,7 +98,7 @@ LL408D  EXX
         PUSH HL
         LD H,#FF
 
-LL409B  LD L,A
+        LD L,A
 
 LL409C  ADD HL,DE
         LDIR
@@ -142,7 +142,7 @@ LL4092  EX AF,AF' ; '
         LD A,L
 
         CP #E0
-        JR C,LL409B
+        JR C,LL409C
         RLCA
         XOR C
         INC A
