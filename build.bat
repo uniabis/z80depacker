@@ -36,6 +36,11 @@ sjasmplus --raw=aplib247b_180_small.bin aplib247b_180_small.asm
 sjasmplus --raw=aplib247b_180_minimal.bin aplib247b_180_minimal.asm
 sjasmplus --raw=aplib156b.bin aplib156b.asm
 
+rem Bitbuster Extreme
+
+sjasmplus --raw=debitbust.bin debitbust.asm
+sjasmplus --raw=debitbustp1.bin debitbustp1.asm
+
 rem exomizer2
 
 sjasmplus --raw=deexo.bin deexo.asm
