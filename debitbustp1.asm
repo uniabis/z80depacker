@@ -38,6 +38,7 @@ get_gamma_value_end:
 
 	ld	h,d
 	ld	l,e		;destination address in HL...
+	scf
 	sbc	hl,bc		;calculate source address
 
 	pop	bc		;match length from stack
@@ -73,7 +74,6 @@ output_match:
 	jr	c,output_match1	;since extension mark already makes bit 7 set 
 	res	7,c		;only clear it if the bit should be cleared
 output_match1:
-	inc	bc
 
 
 ;return a gamma-encoded value

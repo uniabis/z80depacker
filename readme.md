@@ -122,7 +122,7 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |ApLib|aplib247b_180_small|o|o|o|            171|61.58%|LDIR x 5.80|Support for hd64180, shorter, faster from aplib247b|
 |ApLib|aplib247b_180_fast|o|o|o|            234|61.58%|LDIR x 5.51|Support for hd64180, shorter, faster from aplib247b|
 |BitbusterExtreme|debitbust|o|o|o|             89|65.64%|LDIR x 5.95||
-|BitbusterExtreme|debitbustp1|o|o|o|             88|65.64%|LDIR x 5.78|Shorter, bit faster from debitbust|
+|BitbusterExtreme|debitbustp1|o|o|o|             88|65.64%|LDIR x 5.77|Shorter, bit faster from debitbust|
 |Exomizer2|deexo|o|x|o|            169|61.03%|LDIR x 17.99||
 |Exomizer2|deexo_180|o|o|o|            166|61.03%|LDIR x 17.99|Support for hd64180, shorter, faster from deexo|
 |Exomizer2|deexo_180_fast_jp|o|o|o|            176|61.03%|LDIR x 15.41|Faster, but longer from deexo_180|
@@ -191,7 +191,7 @@ test data:ALL(16*16KB)
 |ApLib|aplib247b_180_small|            171|        161,438<br />(61.58%)|     34,998,599<br />(LDIR x 5.80)|
 |ApLib|aplib247b_180_fast|            234|        161,438<br />(61.58%)|     33,282,031<br />(LDIR x 5.51)|
 |BitbusterExtreme|debitbust|             89|        172,080<br />(65.64%)|     35,875,562<br />(LDIR x 5.95)|
-|BitbusterExtreme|debitbustp1|             88|        172,080<br />(65.64%)|     34,909,125<br />(LDIR x 5.78)|
+|BitbusterExtreme|debitbustp1|             88|        172,080<br />(65.64%)|     34,811,743<br />(LDIR x 5.77)|
 |Exomizer2|deexo|            169|        160,011<br />(61.03%)|    108,490,817<br />(LDIR x 17.99)|
 |Exomizer2|deexo_180|            166|        160,011<br />(61.03%)|    108,490,229<br />(LDIR x 17.99)|
 |Exomizer2|deexo_180_fast_jp|            176|        160,011<br />(61.03%)|     92,969,945<br />(LDIR x 15.41)|
@@ -255,7 +255,7 @@ test data:MEGASDHC.B00(16KB)
 |ApLib|aplib247b_180_small|            171|          9,367<br />(57.17%)|      1,837,979<br />(LDIR x 4.87)|
 |ApLib|aplib247b_180_fast|            234|          9,367<br />(57.17%)|      1,761,661<br />(LDIR x 4.67)|
 |BitbusterExtreme|debitbust|             89|          9,830<br />(59.99%)|      1,819,624<br />(LDIR x 4.82)|
-|BitbusterExtreme|debitbustp1|             88|          9,830<br />(59.99%)|      1,761,011<br />(LDIR x 4.67)|
+|BitbusterExtreme|debitbustp1|             88|          9,830<br />(59.99%)|      1,756,454<br />(LDIR x 4.66)|
 |Exomizer2|deexo|            169|          9,373<br />(57.20%)|      5,908,411<br />(LDIR x 15.67)|
 |Exomizer2|deexo_180|            166|          9,373<br />(57.20%)|      5,908,329<br />(LDIR x 15.67)|
 |Exomizer2|deexo_180_fast_jp|            176|          9,373<br />(57.20%)|      5,079,716<br />(LDIR x 13.47)|
@@ -319,7 +319,7 @@ test data:MEGASDHC.B01(16KB)
 |ApLib|aplib247b_180_small|            171|          4,928<br />(30.07%)|      1,193,933<br />(LDIR x 3.16)|
 |ApLib|aplib247b_180_fast|            234|          4,928<br />(30.07%)|      1,150,470<br />(LDIR x 3.05)|
 |BitbusterExtreme|debitbust|             89|          5,133<br />(31.32%)|      1,193,386<br />(LDIR x 3.16)|
-|BitbusterExtreme|debitbustp1|             88|          5,133<br />(31.32%)|      1,163,531<br />(LDIR x 3.08)|
+|BitbusterExtreme|debitbustp1|             88|          5,133<br />(31.32%)|      1,161,090<br />(LDIR x 3.08)|
 |Exomizer2|deexo|            169|          4,902<br />(29.91%)|      3,307,149<br />(LDIR x 8.77)|
 |Exomizer2|deexo_180|            166|          4,902<br />(29.91%)|      3,307,019<br />(LDIR x 8.77)|
 |Exomizer2|deexo_180_fast_jp|            176|          4,902<br />(29.91%)|      2,874,744<br />(LDIR x 7.62)|
@@ -383,7 +383,7 @@ test data:MEGASDHC.B02(16KB)
 |ApLib|aplib247b_180_small|            171|         12,595<br />(76.87%)|      2,505,386<br />(LDIR x 6.64)|
 |ApLib|aplib247b_180_fast|            234|         12,595<br />(76.87%)|      2,391,239<br />(LDIR x 6.34)|
 |BitbusterExtreme|debitbust|             89|         13,188<br />(80.49%)|      2,486,914<br />(LDIR x 6.59)|
-|BitbusterExtreme|debitbustp1|             88|         13,188<br />(80.49%)|      2,410,605<br />(LDIR x 6.39)|
+|BitbusterExtreme|debitbustp1|             88|         13,188<br />(80.49%)|      2,403,440<br />(LDIR x 6.37)|
 |Exomizer2|deexo|            169|         12,494<br />(76.25%)|      7,962,111<br />(LDIR x 21.12)|
 |Exomizer2|deexo_180|            166|         12,494<br />(76.25%)|      7,962,005<br />(LDIR x 21.12)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,494<br />(76.25%)|      6,808,036<br />(LDIR x 18.06)|
@@ -447,7 +447,7 @@ test data:MEGASDHC.B03(16KB)
 |ApLib|aplib247b_180_small|            171|         12,340<br />(75.31%)|      2,360,219<br />(LDIR x 6.26)|
 |ApLib|aplib247b_180_fast|            234|         12,340<br />(75.31%)|      2,256,658<br />(LDIR x 5.98)|
 |BitbusterExtreme|debitbust|             89|         12,856<br />(78.46%)|      2,322,296<br />(LDIR x 6.16)|
-|BitbusterExtreme|debitbustp1|             88|         12,856<br />(78.46%)|      2,246,556<br />(LDIR x 5.96)|
+|BitbusterExtreme|debitbustp1|             88|         12,856<br />(78.46%)|      2,240,141<br />(LDIR x 5.94)|
 |Exomizer2|deexo|            169|         12,297<br />(75.05%)|      7,705,336<br />(LDIR x 20.44)|
 |Exomizer2|deexo_180|            166|         12,297<br />(75.05%)|      7,705,250<br />(LDIR x 20.44)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,297<br />(75.05%)|      6,613,232<br />(LDIR x 17.54)|
@@ -511,7 +511,7 @@ test data:MSX2MAIN.B00(16KB)
 |ApLib|aplib247b_180_small|            171|         12,836<br />(78.34%)|      2,343,503<br />(LDIR x 6.21)|
 |ApLib|aplib247b_180_fast|            234|         12,836<br />(78.34%)|      2,249,606<br />(LDIR x 5.96)|
 |BitbusterExtreme|debitbust|             89|         13,293<br />(81.13%)|      2,262,023<br />(LDIR x 6.00)|
-|BitbusterExtreme|debitbustp1|             88|         13,293<br />(81.13%)|      2,181,758<br />(LDIR x 5.78)|
+|BitbusterExtreme|debitbustp1|             88|         13,293<br />(81.13%)|      2,175,561<br />(LDIR x 5.77)|
 |Exomizer2|deexo|            169|         12,740<br />(77.75%)|      7,678,676<br />(LDIR x 20.37)|
 |Exomizer2|deexo_180|            166|         12,740<br />(77.75%)|      7,678,762<br />(LDIR x 20.37)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,740<br />(77.75%)|      6,608,801<br />(LDIR x 17.53)|
@@ -575,7 +575,7 @@ test data:MSX2MAIN.B01(16KB)
 |ApLib|aplib247b_180_small|            171|         13,579<br />(82.87%)|      2,514,852<br />(LDIR x 6.67)|
 |ApLib|aplib247b_180_fast|            234|         13,579<br />(82.87%)|      2,402,478<br />(LDIR x 6.37)|
 |BitbusterExtreme|debitbust|             89|         14,088<br />(85.98%)|      2,431,874<br />(LDIR x 6.45)|
-|BitbusterExtreme|debitbustp1|             88|         14,088<br />(85.98%)|      2,348,017<br />(LDIR x 6.23)|
+|BitbusterExtreme|debitbustp1|             88|         14,088<br />(85.98%)|      2,341,212<br />(LDIR x 6.21)|
 |Exomizer2|deexo|            169|         13,402<br />(81.79%)|      8,119,431<br />(LDIR x 21.54)|
 |Exomizer2|deexo_180|            166|         13,402<br />(81.79%)|      8,119,361<br />(LDIR x 21.54)|
 |Exomizer2|deexo_180_fast_jp|            176|         13,402<br />(81.79%)|      6,941,251<br />(LDIR x 18.41)|
@@ -639,7 +639,7 @@ test data:MSXMUSIC.B00(16KB)
 |ApLib|aplib247b_180_small|            171|         10,048<br />(61.32%)|      1,919,953<br />(LDIR x 5.09)|
 |ApLib|aplib247b_180_fast|            234|         10,048<br />(61.32%)|      1,838,748<br />(LDIR x 4.87)|
 |BitbusterExtreme|debitbust|             89|         10,551<br />(64.39%)|      1,856,557<br />(LDIR x 4.92)|
-|BitbusterExtreme|debitbustp1|             88|         10,551<br />(64.39%)|      1,792,770<br />(LDIR x 4.75)|
+|BitbusterExtreme|debitbustp1|             88|         10,551<br />(64.39%)|      1,788,241<br />(LDIR x 4.74)|
 |Exomizer2|deexo|            169|         10,068<br />(61.45%)|      5,986,114<br />(LDIR x 15.88)|
 |Exomizer2|deexo_180|            166|         10,068<br />(61.45%)|      5,986,088<br />(LDIR x 15.88)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,068<br />(61.45%)|      5,151,150<br />(LDIR x 13.66)|
@@ -703,7 +703,7 @@ test data:MSX2EXT.B00(16KB)
 |ApLib|aplib247b_180_small|            171|         12,361<br />(75.44%)|      2,394,822<br />(LDIR x 6.35)|
 |ApLib|aplib247b_180_fast|            234|         12,361<br />(75.44%)|      2,291,135<br />(LDIR x 6.07)|
 |BitbusterExtreme|debitbust|             89|         13,013<br />(79.42%)|      2,299,272<br />(LDIR x 6.10)|
-|BitbusterExtreme|debitbustp1|             88|         13,013<br />(79.42%)|      2,221,708<br />(LDIR x 5.89)|
+|BitbusterExtreme|debitbustp1|             88|         13,013<br />(79.42%)|      2,215,389<br />(LDIR x 5.87)|
 |Exomizer2|deexo|            169|         12,351<br />(75.38%)|      8,066,566<br />(LDIR x 21.40)|
 |Exomizer2|deexo_180|            166|         12,351<br />(75.38%)|      8,066,560<br />(LDIR x 21.40)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,351<br />(75.38%)|      6,927,202<br />(LDIR x 18.38)|
@@ -767,7 +767,7 @@ test data:KANJJ1.B00(16KB)
 |ApLib|aplib247b_180_small|            171|          6,223<br />(37.98%)|      1,783,265<br />(LDIR x 4.73)|
 |ApLib|aplib247b_180_fast|            234|          6,223<br />(37.98%)|      1,682,457<br />(LDIR x 4.46)|
 |BitbusterExtreme|debitbust|             89|          6,683<br />(40.78%)|      2,000,457<br />(LDIR x 5.30)|
-|BitbusterExtreme|debitbustp1|             88|          6,683<br />(40.78%)|      1,968,336<br />(LDIR x 5.22)|
+|BitbusterExtreme|debitbustp1|             88|          6,683<br />(40.78%)|      1,963,355<br />(LDIR x 5.21)|
 |Exomizer2|deexo|            169|          6,097<br />(37.21%)|      5,111,648<br />(LDIR x 13.56)|
 |Exomizer2|deexo_180|            166|          6,097<br />(37.21%)|      5,111,742<br />(LDIR x 13.56)|
 |Exomizer2|deexo_180_fast_jp|            176|          6,097<br />(37.21%)|      4,404,488<br />(LDIR x 11.68)|
@@ -831,7 +831,7 @@ test data:KANJJ1.B01(16KB)
 |ApLib|aplib247b_180_small|            171|          4,092<br />(24.97%)|      1,337,045<br />(LDIR x 3.54)|
 |ApLib|aplib247b_180_fast|            234|          4,092<br />(24.97%)|      1,267,103<br />(LDIR x 3.36)|
 |BitbusterExtreme|debitbust|             89|          4,507<br />(27.50%)|      1,515,937<br />(LDIR x 4.02)|
-|BitbusterExtreme|debitbustp1|             88|          4,507<br />(27.50%)|      1,494,823<br />(LDIR x 3.96)|
+|BitbusterExtreme|debitbustp1|             88|          4,507<br />(27.50%)|      1,491,428<br />(LDIR x 3.95)|
 |Exomizer2|deexo|            169|          3,975<br />(24.26%)|      3,493,148<br />(LDIR x 9.26)|
 |Exomizer2|deexo_180|            166|          3,975<br />(24.26%)|      3,493,202<br />(LDIR x 9.26)|
 |Exomizer2|deexo_180_fast_jp|            176|          3,975<br />(24.26%)|      3,025,459<br />(LDIR x 8.02)|
@@ -895,7 +895,7 @@ test data:KANJJ1.B02(16KB)
 |ApLib|aplib247b_180_small|            171|         10,835<br />(66.13%)|      2,510,373<br />(LDIR x 6.66)|
 |ApLib|aplib247b_180_fast|            234|         10,835<br />(66.13%)|      2,373,738<br />(LDIR x 6.29)|
 |BitbusterExtreme|debitbust|             89|         11,785<br />(71.92%)|      2,663,938<br />(LDIR x 7.06)|
-|BitbusterExtreme|debitbustp1|             88|         11,785<br />(71.92%)|      2,601,039<br />(LDIR x 6.90)|
+|BitbusterExtreme|debitbustp1|             88|         11,785<br />(71.92%)|      2,593,406<br />(LDIR x 6.88)|
 |Exomizer2|deexo|            169|         10,688<br />(65.23%)|      7,768,783<br />(LDIR x 20.61)|
 |Exomizer2|deexo_180|            166|         10,688<br />(65.23%)|      7,768,753<br />(LDIR x 20.61)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,688<br />(65.23%)|      6,631,200<br />(LDIR x 17.59)|
@@ -959,7 +959,7 @@ test data:KANJJ1.B03(16KB)
 |ApLib|aplib247b_180_small|            171|         10,643<br />(64.95%)|      2,505,701<br />(LDIR x 6.64)|
 |ApLib|aplib247b_180_fast|            234|         10,643<br />(64.95%)|      2,368,308<br />(LDIR x 6.28)|
 |BitbusterExtreme|debitbust|             89|         11,599<br />(70.79%)|      2,638,165<br />(LDIR x 7.00)|
-|BitbusterExtreme|debitbustp1|             88|         11,599<br />(70.79%)|      2,576,442<br />(LDIR x 6.83)|
+|BitbusterExtreme|debitbustp1|             88|         11,599<br />(70.79%)|      2,568,953<br />(LDIR x 6.81)|
 |Exomizer2|deexo|            169|         10,510<br />(64.14%)|      7,603,571<br />(LDIR x 20.17)|
 |Exomizer2|deexo_180|            166|         10,510<br />(64.14%)|      7,603,537<br />(LDIR x 20.17)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,510<br />(64.14%)|      6,486,424<br />(LDIR x 17.21)|
@@ -1023,7 +1023,7 @@ test data:KANJJ1.B04(16KB)
 |ApLib|aplib247b_180_small|            171|         10,521<br />(64.21%)|      2,470,228<br />(LDIR x 6.55)|
 |ApLib|aplib247b_180_fast|            234|         10,521<br />(64.21%)|      2,333,328<br />(LDIR x 6.19)|
 |BitbusterExtreme|debitbust|             89|         11,542<br />(70.44%)|      2,638,215<br />(LDIR x 7.00)|
-|BitbusterExtreme|debitbustp1|             88|         11,542<br />(70.44%)|      2,576,896<br />(LDIR x 6.83)|
+|BitbusterExtreme|debitbustp1|             88|         11,542<br />(70.44%)|      2,569,415<br />(LDIR x 6.81)|
 |Exomizer2|deexo|            169|         10,415<br />(63.56%)|      7,416,607<br />(LDIR x 19.68)|
 |Exomizer2|deexo_180|            166|         10,415<br />(63.56%)|      7,416,561<br />(LDIR x 19.68)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,415<br />(63.56%)|      6,334,154<br />(LDIR x 16.80)|
@@ -1087,7 +1087,7 @@ test data:KANJJ1.B05(16KB)
 |ApLib|aplib247b_180_small|            171|         10,455<br />(63.81%)|      2,447,398<br />(LDIR x 6.49)|
 |ApLib|aplib247b_180_fast|            234|         10,455<br />(63.81%)|      2,309,474<br />(LDIR x 6.12)|
 |BitbusterExtreme|debitbust|             89|         11,493<br />(70.14%)|      2,613,596<br />(LDIR x 6.93)|
-|BitbusterExtreme|debitbustp1|             88|         11,493<br />(70.14%)|      2,552,285<br />(LDIR x 6.77)|
+|BitbusterExtreme|debitbustp1|             88|         11,493<br />(70.14%)|      2,544,868<br />(LDIR x 6.75)|
 |Exomizer2|deexo|            169|         10,348<br />(63.15%)|      7,475,213<br />(LDIR x 19.83)|
 |Exomizer2|deexo_180|            166|         10,348<br />(63.15%)|      7,475,183<br />(LDIR x 19.83)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,348<br />(63.15%)|      6,378,127<br />(LDIR x 16.92)|
@@ -1151,7 +1151,7 @@ test data:KANJJ1.B06(16KB)
 |ApLib|aplib247b_180_small|            171|         10,817<br />(66.02%)|      2,545,053<br />(LDIR x 6.75)|
 |ApLib|aplib247b_180_fast|            234|         10,817<br />(66.02%)|      2,402,411<br />(LDIR x 6.37)|
 |BitbusterExtreme|debitbust|             89|         11,778<br />(71.88%)|      2,661,582<br />(LDIR x 7.06)|
-|BitbusterExtreme|debitbustp1|             88|         11,778<br />(71.88%)|      2,598,760<br />(LDIR x 6.89)|
+|BitbusterExtreme|debitbustp1|             88|         11,778<br />(71.88%)|      2,591,181<br />(LDIR x 6.87)|
 |Exomizer2|deexo|            169|         10,650<br />(65.00%)|      7,752,805<br />(LDIR x 20.57)|
 |Exomizer2|deexo_180|            166|         10,650<br />(65.00%)|      7,752,735<br />(LDIR x 20.57)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,650<br />(65.00%)|      6,611,348<br />(LDIR x 17.54)|
@@ -1215,7 +1215,7 @@ test data:KANJJ1.B07(16KB)
 |ApLib|aplib247b_180_small|            171|          9,798<br />(59.80%)|      2,328,889<br />(LDIR x 6.18)|
 |ApLib|aplib247b_180_fast|            234|          9,798<br />(59.80%)|      2,203,217<br />(LDIR x 5.84)|
 |BitbusterExtreme|debitbust|             89|         10,741<br />(65.55%)|      2,471,726<br />(LDIR x 6.55)|
-|BitbusterExtreme|debitbustp1|             88|         10,741<br />(65.55%)|      2,414,588<br />(LDIR x 6.40)|
+|BitbusterExtreme|debitbustp1|             88|         10,741<br />(65.55%)|      2,407,609<br />(LDIR x 6.38)|
 |Exomizer2|deexo|            169|          9,701<br />(59.21%)|      7,135,248<br />(LDIR x 18.93)|
 |Exomizer2|deexo_180|            166|          9,701<br />(59.21%)|      7,135,142<br />(LDIR x 18.93)|
 |Exomizer2|deexo_180_fast_jp|            176|          9,701<br />(59.21%)|      6,094,613<br />(LDIR x 16.17)|
