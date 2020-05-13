@@ -19,17 +19,18 @@ shrinkler_decrunch
 
           EXX
           LD   HL,10*256+probs
-          LD   B,10
+          LD   BC,#0A80
           XOR  A        ; start by LSB
 init
           DEC  H
 iniloop   LD   (HL),A
           INC  L
           JR   NZ,iniloop ; fill #100 row
-          XOR  #80
+          XOR  C
           DJNZ init
 
-          EX   AF,AF'    ; A'= either 0 or #80, nevermind
+          LD   A,C
+          EX   AF,AF'   ; A'= #80
           LD   DE,#01   ; d3
 
 ; Here HL=probs
@@ -126,7 +127,7 @@ readbit
 
 
           ;SLL A
-          SCF
+          ;SCF
           ADC  A
 _rbok
 
