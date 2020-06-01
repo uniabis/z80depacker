@@ -36,6 +36,11 @@ sjasmplus --raw=aplib247b_180_small.bin aplib247b_180_small.asm
 sjasmplus --raw=aplib247b_180_minimal.bin aplib247b_180_minimal.asm
 sjasmplus --raw=aplib156b.bin aplib156b.asm
 
+sjasmplus --raw=unaplib_fast.bin unaplib_fast.asm
+sjasmplus -DHD64180=1 --raw=unaplib_fast_180.bin unaplib_fast_180.asm
+sjasmplus --raw=unaplib_small.bin unaplib_small.asm
+sjasmplus --raw=unaplib_small_180.bin unaplib_small_180.asm
+
 rem Bitbuster Extreme
 
 sjasmplus --raw=debitbust.bin debitbust.asm

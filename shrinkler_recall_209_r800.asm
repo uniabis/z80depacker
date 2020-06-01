@@ -1,6 +1,6 @@
 ; Madram/OVL version
-; V1: replace D4 (32 bits) by A':   16.03 s      
-; !!! fix abs adr in getnumber 
+; V1: replace D4 (32 bits) by A':   16.03 s
+; !!! fix abs adr in getnumber
 ; V2: replace D3 by DE'             14.83 s   / 217 bytes
 ; V3: exx' by default (prepare v4)  14.86 s   / 234 bytes
 ; V4: replace D6 by HL'             14.23 s   / 217 bytes   #800 buffer
@@ -47,7 +47,7 @@ getlit    CALL NC,getbit
 ;after literal
           CALL getkind
           JR   NC,literal
-;reference                       
+;reference
 ; l=0 here
           LD   H,probs_ref / 256
           CALL getbit
@@ -68,7 +68,7 @@ readoffset
           SBC  HL,BC
           EXX
           JR   NZ,readlength
-;END!!!        
+;END!!!
           RET
 
 zero
@@ -159,9 +159,9 @@ getkind
 
 getbit
 ;In: hl points to context prob
-; de = d3 
+; de = d3
 ;Out: hl preserved
-; de = new d3 value 
+; de = new d3 value
           LD   A,D      ; d3
           ADD  A
           JR   NC,readbit
@@ -172,7 +172,7 @@ getbit
           PUSH HL
 ;d1 = one prob
           LD   L,C
-          LD   H,B      ; bc=hl=d1 
+          LD   H,B      ; bc=hl=d1
           PUSH BC
           LD   A,%11100001 ;MSQ: cpt 4
 shift4
@@ -183,7 +183,7 @@ shift4
           SBC  HL,BC    ; hl=d1-d1/16
           POP  BC
           PUSH HL
-;here, A = 16       
+;here, A = 16
           SBC  HL,HL
 ; bchl = bc*de
 muluw

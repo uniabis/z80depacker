@@ -3,7 +3,7 @@
 
 ## Packers
 
-### [ApLib](http://ibsensoftware.com/products_aPLib.html) - [cap raw format support version](https://github.com/uniabis/cap) v1.2(er)
+### [ApLib](http://ibsensoftware.com/products_aPLib.html) - [apultra](https://github.com/emmanuel-marty/apultra) v1.3.0
 
 [appack_r57shell](http://hypr.ru/blog/dev/740.html)
 
@@ -55,11 +55,11 @@ License:LGPL
 
 [LZEe - LZE enhancement for z80](https://github.com/uniabis/lzee)
 
-### [lzsa1](https://github.com/emmanuel-marty/lzsa) 1.2.1(-f1 -r)
+### [lzsa1](https://github.com/emmanuel-marty/lzsa) 1.2.2(-f1 -r)
 
 License:zlib
 
-### [lzsa2](https://github.com/emmanuel-marty/lzsa) 1.2.1(-f2 -r)
+### [lzsa2](https://github.com/emmanuel-marty/lzsa) 1.2.2(-f2 -r)
 
 License:zlib
 
@@ -91,7 +91,7 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 
 |Packer|ALL|MEGASDHC.B00|MEGASDHC.B01|MEGASDHC.B02|MEGASDHC.B03|MSX2MAIN.B00|MSX2MAIN.B01|MSXMUSIC.B00|MSX2EXT.B00|KANJJ1.B00|KANJJ1.B01|KANJJ1.B02|KANJJ1.B03|KANJJ1.B04|KANJJ1.B05|KANJJ1.B06|KANJJ1.B07|
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-|ApLib<br />(cap er)|161,438<br />(61.58%)|9,367<br />(57.17%)|4,928<br />(30.08%)|12,595<br />(76.87%)|12,340<br />(75.32%)|12,836<br />(78.34%)|13,579<br />(82.88%)|10,048<br />(61.33%)|12,361<br />(75.45%)|6,223<br />(37.98%)|4,092<br />(24.98%)|10,835<br />(66.13%)|10,643<br />(64.96%)|10,521<br />(64.22%)|10,455<br />(63.81%)|10,817<br />(66.02%)|9,798<br />(59.80%)|
+|ApLib<br />(apultra)|161,465<br />(61.59%)|9,371<br />(57.20%)|4,926<br />(30.07%)|12,595<br />(76.87%)|12,342<br />(75.33%)|12,836<br />(78.34%)|13,580<br />(82.89%)|10,050<br />(61.34%)|12,361<br />(75.45%)|6,229<br />(38.02%)|4,095<br />(24.99%)|10,840<br />(66.16%)|10,644<br />(64.97%)|10,521<br />(64.22%)|10,456<br />(63.82%)|10,818<br />(66.03%)|9,801<br />(59.82%)|
 |Bitbuster Extreme|172,080<br />(65.64%)|9,830<br />(60.00%)|5,133<br />(31.33%)|13,188<br />(80.49%)|12,856<br />(78.47%)|13,293<br />(81.13%)|14,088<br />(85.99%)|10,551<br />(64.40%)|13,013<br />(79.43%)|6,683<br />(40.79%)|4,507<br />(27.51%)|11,785<br />(71.93%)|11,599<br />(70.79%)|11,542<br />(70.45%)|11,493<br />(70.15%)|11,778<br />(71.89%)|10,741<br />(65.56%)|
 |Exomizer2<br />(-P0)|160,011<br />(61.04%)|9,373<br />(57.21%)|4,902<br />(29.92%)|12,494<br />(76.26%)|12,297<br />(75.05%)|12,740<br />(77.76%)|13,402<br />(81.80%)|10,068<br />(61.45%)|12,351<br />(75.38%)|6,097<br />(37.21%)|3,975<br />(24.26%)|10,688<br />(65.23%)|10,510<br />(64.15%)|10,415<br />(63.57%)|10,348<br />(63.16%)|10,650<br />(65.00%)|9,701<br />(59.21%)|
 |Exomizer3<br />(-P7)|160,007<br />(61.04%)|9,373<br />(57.21%)|4,902<br />(29.92%)|12,494<br />(76.26%)|12,297<br />(75.05%)|12,739<br />(77.75%)|13,402<br />(81.80%)|10,068<br />(61.45%)|12,351<br />(75.38%)|6,097<br />(37.21%)|3,974<br />(24.26%)|10,688<br />(65.23%)|10,509<br />(64.14%)|10,415<br />(63.57%)|10,347<br />(63.15%)|10,650<br />(65.00%)|9,701<br />(59.21%)|
@@ -116,11 +116,15 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 
 |packer|unpacker|R800|180|ROM|unpacker<br />size|packed<br />size rate|unpacking<br />time rate|description|
 |---|---|:---:|:---:|:---:|---:|---:|---:|---|
-|ApLib|aplib156b|o|x|o|            156|61.58%|LDIR x 9.94||
-|ApLib|aplib247b|o|x|o|            249|61.58%|LDIR x 5.96||
-|ApLib|aplib247b_180_minimal|o|o|o|            152|61.58%|LDIR x 7.48|Support for hd64180, shorter, but slower from aplib247b|
-|ApLib|aplib247b_180_small|o|o|o|            171|61.58%|LDIR x 5.80|Support for hd64180, shorter, faster from aplib247b|
-|ApLib|aplib247b_180_fast|o|o|o|            234|61.58%|LDIR x 5.51|Support for hd64180, shorter, faster from aplib247b|
+|ApLib|aplib156b|o|x|o|            156|61.59%|LDIR x 9.90||
+|ApLib|aplib247b|o|x|o|            249|61.59%|LDIR x 5.94||
+|ApLib|aplib247b_180_minimal|o|o|o|            152|61.59%|LDIR x 7.44|Support for hd64180, shorter, but slower from aplib247b|
+|ApLib|aplib247b_180_small|o|o|o|            171|61.59%|LDIR x 5.77|Support for hd64180, shorter, faster from aplib247b|
+|ApLib|aplib247b_180_fast|o|o|o|            234|61.59%|LDIR x 5.49|Support for hd64180, shorter, faster from aplib247b|
+|ApLib|unaplib_fast|o|x|o|            233|61.59%|LDIR x 4.99|Fixed a bug|
+|ApLib|unaplib_fast_180|o|o|o|            230|61.59%|LDIR x 5.03|Support for hd64180, shorter, but slower from unaplib_fast|
+|ApLib|unaplib_small|o|x|o|            140|61.59%|LDIR x 7.65||
+|ApLib|unaplib_small_180|o|o|o|            141|61.59%|LDIR x 7.62|Support for hd64180, faster, but longer from unaplib_small|
 |BitbusterExtreme|debitbust|o|o|o|             89|65.64%|LDIR x 5.95||
 |BitbusterExtreme|debitbustp1|o|o|o|             88|65.64%|LDIR x 5.77|Shorter, bit faster from debitbust|
 |Exomizer2|deexo|o|x|o|            169|61.03%|LDIR x 17.99||
@@ -185,11 +189,15 @@ test data:ALL(16*16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|        161,438<br />(61.58%)|     59,951,437<br />(LDIR x 9.94)|
-|ApLib|aplib247b|            249|        161,438<br />(61.58%)|     35,994,335<br />(LDIR x 5.96)|
-|ApLib|aplib247b_180_minimal|            152|        161,438<br />(61.58%)|     45,108,903<br />(LDIR x 7.48)|
-|ApLib|aplib247b_180_small|            171|        161,438<br />(61.58%)|     34,998,599<br />(LDIR x 5.80)|
-|ApLib|aplib247b_180_fast|            234|        161,438<br />(61.58%)|     33,282,031<br />(LDIR x 5.51)|
+|ApLib|aplib156b|            156|        161,465<br />(61.59%)|     59,707,329<br />(LDIR x 9.90)|
+|ApLib|aplib247b|            249|        161,465<br />(61.59%)|     35,822,096<br />(LDIR x 5.94)|
+|ApLib|aplib247b_180_minimal|            152|        161,465<br />(61.59%)|     44,911,775<br />(LDIR x 7.44)|
+|ApLib|aplib247b_180_small|            171|        161,465<br />(61.59%)|     34,824,668<br />(LDIR x 5.77)|
+|ApLib|aplib247b_180_fast|            234|        161,465<br />(61.59%)|     33,125,289<br />(LDIR x 5.49)|
+|ApLib|unaplib_fast|            233|        161,465<br />(61.59%)|     30,099,521<br />(LDIR x 4.99)|
+|ApLib|unaplib_fast_180|            230|        161,465<br />(61.59%)|     30,382,030<br />(LDIR x 5.03)|
+|ApLib|unaplib_small|            140|        161,465<br />(61.59%)|     46,174,555<br />(LDIR x 7.65)|
+|ApLib|unaplib_small_180|            141|        161,465<br />(61.59%)|     45,977,292<br />(LDIR x 7.62)|
 |BitbusterExtreme|debitbust|             89|        172,080<br />(65.64%)|     35,875,562<br />(LDIR x 5.95)|
 |BitbusterExtreme|debitbustp1|             88|        172,080<br />(65.64%)|     34,811,743<br />(LDIR x 5.77)|
 |Exomizer2|deexo|            169|        160,011<br />(61.03%)|    108,490,817<br />(LDIR x 17.99)|
@@ -249,11 +257,15 @@ test data:MEGASDHC.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|          9,367<br />(57.17%)|      3,128,182<br />(LDIR x 8.30)|
-|ApLib|aplib247b|            249|          9,367<br />(57.17%)|      1,900,783<br />(LDIR x 5.04)|
-|ApLib|aplib247b_180_minimal|            152|          9,367<br />(57.17%)|      2,360,454<br />(LDIR x 6.26)|
-|ApLib|aplib247b_180_small|            171|          9,367<br />(57.17%)|      1,837,979<br />(LDIR x 4.87)|
-|ApLib|aplib247b_180_fast|            234|          9,367<br />(57.17%)|      1,761,661<br />(LDIR x 4.67)|
+|ApLib|aplib156b|            156|          9,371<br />(57.19%)|      3,116,225<br />(LDIR x 8.26)|
+|ApLib|aplib247b|            249|          9,371<br />(57.19%)|      1,893,245<br />(LDIR x 5.02)|
+|ApLib|aplib247b_180_minimal|            152|          9,371<br />(57.19%)|      2,350,799<br />(LDIR x 6.23)|
+|ApLib|aplib247b_180_small|            171|          9,371<br />(57.19%)|      1,830,426<br />(LDIR x 4.85)|
+|ApLib|aplib247b_180_fast|            234|          9,371<br />(57.19%)|      1,754,032<br />(LDIR x 4.65)|
+|ApLib|unaplib_fast|            233|          9,371<br />(57.19%)|      1,582,433<br />(LDIR x 4.19)|
+|ApLib|unaplib_fast_180|            230|          9,371<br />(57.19%)|      1,596,162<br />(LDIR x 4.23)|
+|ApLib|unaplib_small|            140|          9,371<br />(57.19%)|      2,426,457<br />(LDIR x 6.43)|
+|ApLib|unaplib_small_180|            141|          9,371<br />(57.19%)|      2,407,370<br />(LDIR x 6.38)|
 |BitbusterExtreme|debitbust|             89|          9,830<br />(59.99%)|      1,819,624<br />(LDIR x 4.82)|
 |BitbusterExtreme|debitbustp1|             88|          9,830<br />(59.99%)|      1,756,454<br />(LDIR x 4.66)|
 |Exomizer2|deexo|            169|          9,373<br />(57.20%)|      5,908,411<br />(LDIR x 15.67)|
@@ -313,11 +325,15 @@ test data:MEGASDHC.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|          4,928<br />(30.07%)|      1,897,486<br />(LDIR x 5.03)|
-|ApLib|aplib247b|            249|          4,928<br />(30.07%)|      1,225,666<br />(LDIR x 3.25)|
-|ApLib|aplib247b_180_minimal|            152|          4,928<br />(30.07%)|      1,479,751<br />(LDIR x 3.92)|
-|ApLib|aplib247b_180_small|            171|          4,928<br />(30.07%)|      1,193,933<br />(LDIR x 3.16)|
-|ApLib|aplib247b_180_fast|            234|          4,928<br />(30.07%)|      1,150,470<br />(LDIR x 3.05)|
+|ApLib|aplib156b|            156|          4,926<br />(30.06%)|      1,894,120<br />(LDIR x 5.02)|
+|ApLib|aplib247b|            249|          4,926<br />(30.06%)|      1,222,791<br />(LDIR x 3.24)|
+|ApLib|aplib247b_180_minimal|            152|          4,926<br />(30.06%)|      1,476,504<br />(LDIR x 3.91)|
+|ApLib|aplib247b_180_small|            171|          4,926<br />(30.06%)|      1,190,714<br />(LDIR x 3.15)|
+|ApLib|aplib247b_180_fast|            234|          4,926<br />(30.06%)|      1,147,596<br />(LDIR x 3.04)|
+|ApLib|unaplib_fast|            233|          4,926<br />(30.06%)|      1,054,457<br />(LDIR x 2.79)|
+|ApLib|unaplib_fast_180|            230|          4,926<br />(30.06%)|      1,062,356<br />(LDIR x 2.81)|
+|ApLib|unaplib_small|            140|          4,926<br />(30.06%)|      1,516,283<br />(LDIR x 4.02)|
+|ApLib|unaplib_small_180|            141|          4,926<br />(30.06%)|      1,507,270<br />(LDIR x 3.99)|
 |BitbusterExtreme|debitbust|             89|          5,133<br />(31.32%)|      1,193,386<br />(LDIR x 3.16)|
 |BitbusterExtreme|debitbustp1|             88|          5,133<br />(31.32%)|      1,161,090<br />(LDIR x 3.08)|
 |Exomizer2|deexo|            169|          4,902<br />(29.91%)|      3,307,149<br />(LDIR x 8.77)|
@@ -377,11 +393,15 @@ test data:MEGASDHC.B02(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         12,595<br />(76.87%)|      4,326,841<br />(LDIR x 11.48)|
-|ApLib|aplib247b|            249|         12,595<br />(76.87%)|      2,596,162<br />(LDIR x 6.88)|
-|ApLib|aplib247b_180_minimal|            152|         12,595<br />(76.87%)|      3,238,820<br />(LDIR x 8.59)|
-|ApLib|aplib247b_180_small|            171|         12,595<br />(76.87%)|      2,505,386<br />(LDIR x 6.64)|
-|ApLib|aplib247b_180_fast|            234|         12,595<br />(76.87%)|      2,391,239<br />(LDIR x 6.34)|
+|ApLib|aplib156b|            156|         12,595<br />(76.87%)|      4,306,194<br />(LDIR x 11.42)|
+|ApLib|aplib247b|            249|         12,595<br />(76.87%)|      2,581,126<br />(LDIR x 6.84)|
+|ApLib|aplib247b_180_minimal|            152|         12,595<br />(76.87%)|      3,222,214<br />(LDIR x 8.55)|
+|ApLib|aplib247b_180_small|            171|         12,595<br />(76.87%)|      2,491,270<br />(LDIR x 6.61)|
+|ApLib|aplib247b_180_fast|            234|         12,595<br />(76.87%)|      2,377,394<br />(LDIR x 6.30)|
+|ApLib|unaplib_fast|            233|         12,595<br />(76.87%)|      2,136,814<br />(LDIR x 5.67)|
+|ApLib|unaplib_fast_180|            230|         12,595<br />(76.87%)|      2,159,487<br />(LDIR x 5.73)|
+|ApLib|unaplib_small|            140|         12,595<br />(76.87%)|      3,321,519<br />(LDIR x 8.81)|
+|ApLib|unaplib_small_180|            141|         12,595<br />(76.87%)|      3,302,747<br />(LDIR x 8.76)|
 |BitbusterExtreme|debitbust|             89|         13,188<br />(80.49%)|      2,486,914<br />(LDIR x 6.59)|
 |BitbusterExtreme|debitbustp1|             88|         13,188<br />(80.49%)|      2,403,440<br />(LDIR x 6.37)|
 |Exomizer2|deexo|            169|         12,494<br />(76.25%)|      7,962,111<br />(LDIR x 21.12)|
@@ -441,11 +461,15 @@ test data:MEGASDHC.B03(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         12,340<br />(75.31%)|      4,080,119<br />(LDIR x 10.82)|
-|ApLib|aplib247b|            249|         12,340<br />(75.31%)|      2,450,631<br />(LDIR x 6.50)|
-|ApLib|aplib247b_180_minimal|            152|         12,340<br />(75.31%)|      3,052,047<br />(LDIR x 8.09)|
-|ApLib|aplib247b_180_small|            171|         12,340<br />(75.31%)|      2,360,219<br />(LDIR x 6.26)|
-|ApLib|aplib247b_180_fast|            234|         12,340<br />(75.31%)|      2,256,658<br />(LDIR x 5.98)|
+|ApLib|aplib156b|            156|         12,342<br />(75.32%)|      4,055,138<br />(LDIR x 10.76)|
+|ApLib|aplib247b|            249|         12,342<br />(75.32%)|      2,432,942<br />(LDIR x 6.45)|
+|ApLib|aplib247b_180_minimal|            152|         12,342<br />(75.32%)|      3,032,264<br />(LDIR x 8.04)|
+|ApLib|aplib247b_180_small|            171|         12,342<br />(75.32%)|      2,343,349<br />(LDIR x 6.21)|
+|ApLib|aplib247b_180_fast|            234|         12,342<br />(75.32%)|      2,240,768<br />(LDIR x 5.94)|
+|ApLib|unaplib_fast|            233|         12,342<br />(75.32%)|      2,008,316<br />(LDIR x 5.32)|
+|ApLib|unaplib_fast_180|            230|         12,342<br />(75.32%)|      2,028,660<br />(LDIR x 5.38)|
+|ApLib|unaplib_small|            140|         12,342<br />(75.32%)|      3,130,591<br />(LDIR x 8.30)|
+|ApLib|unaplib_small_180|            141|         12,342<br />(75.32%)|      3,108,499<br />(LDIR x 8.24)|
 |BitbusterExtreme|debitbust|             89|         12,856<br />(78.46%)|      2,322,296<br />(LDIR x 6.16)|
 |BitbusterExtreme|debitbustp1|             88|         12,856<br />(78.46%)|      2,240,141<br />(LDIR x 5.94)|
 |Exomizer2|deexo|            169|         12,297<br />(75.05%)|      7,705,336<br />(LDIR x 20.44)|
@@ -505,11 +529,15 @@ test data:MSX2MAIN.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         12,836<br />(78.34%)|      4,054,821<br />(LDIR x 10.76)|
-|ApLib|aplib247b|            249|         12,836<br />(78.34%)|      2,436,529<br />(LDIR x 6.46)|
-|ApLib|aplib247b_180_minimal|            152|         12,836<br />(78.34%)|      3,033,147<br />(LDIR x 8.04)|
-|ApLib|aplib247b_180_small|            171|         12,836<br />(78.34%)|      2,343,503<br />(LDIR x 6.21)|
-|ApLib|aplib247b_180_fast|            234|         12,836<br />(78.34%)|      2,249,606<br />(LDIR x 5.96)|
+|ApLib|aplib156b|            156|         12,836<br />(78.34%)|      4,046,309<br />(LDIR x 10.73)|
+|ApLib|aplib247b|            249|         12,836<br />(78.34%)|      2,429,762<br />(LDIR x 6.44)|
+|ApLib|aplib247b_180_minimal|            152|         12,836<br />(78.34%)|      3,025,998<br />(LDIR x 8.02)|
+|ApLib|aplib247b_180_small|            171|         12,836<br />(78.34%)|      2,336,478<br />(LDIR x 6.20)|
+|ApLib|aplib247b_180_fast|            234|         12,836<br />(78.34%)|      2,243,865<br />(LDIR x 5.95)|
+|ApLib|unaplib_fast|            233|         12,836<br />(78.34%)|      2,000,385<br />(LDIR x 5.30)|
+|ApLib|unaplib_fast_180|            230|         12,836<br />(78.34%)|      2,019,927<br />(LDIR x 5.36)|
+|ApLib|unaplib_small|            140|         12,836<br />(78.34%)|      3,136,507<br />(LDIR x 8.32)|
+|ApLib|unaplib_small_180|            141|         12,836<br />(78.34%)|      3,106,657<br />(LDIR x 8.24)|
 |BitbusterExtreme|debitbust|             89|         13,293<br />(81.13%)|      2,262,023<br />(LDIR x 6.00)|
 |BitbusterExtreme|debitbustp1|             88|         13,293<br />(81.13%)|      2,175,561<br />(LDIR x 5.77)|
 |Exomizer2|deexo|            169|         12,740<br />(77.75%)|      7,678,676<br />(LDIR x 20.37)|
@@ -569,11 +597,15 @@ test data:MSX2MAIN.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         13,579<br />(82.87%)|      4,384,059<br />(LDIR x 11.63)|
-|ApLib|aplib247b|            249|         13,579<br />(82.87%)|      2,614,413<br />(LDIR x 6.93)|
-|ApLib|aplib247b_180_minimal|            152|         13,579<br />(82.87%)|      3,267,235<br />(LDIR x 8.67)|
-|ApLib|aplib247b_180_small|            171|         13,579<br />(82.87%)|      2,514,852<br />(LDIR x 6.67)|
-|ApLib|aplib247b_180_fast|            234|         13,579<br />(82.87%)|      2,402,478<br />(LDIR x 6.37)|
+|ApLib|aplib156b|            156|         13,580<br />(82.88%)|      4,368,445<br />(LDIR x 11.59)|
+|ApLib|aplib247b|            249|         13,580<br />(82.88%)|      2,602,517<br />(LDIR x 6.90)|
+|ApLib|aplib247b_180_minimal|            152|         13,580<br />(82.88%)|      3,254,474<br />(LDIR x 8.63)|
+|ApLib|aplib247b_180_small|            171|         13,580<br />(82.88%)|      2,502,237<br />(LDIR x 6.64)|
+|ApLib|aplib247b_180_fast|            234|         13,580<br />(82.88%)|      2,392,057<br />(LDIR x 6.34)|
+|ApLib|unaplib_fast|            233|         13,580<br />(82.88%)|      2,136,995<br />(LDIR x 5.67)|
+|ApLib|unaplib_fast_180|            230|         13,580<br />(82.88%)|      2,159,426<br />(LDIR x 5.73)|
+|ApLib|unaplib_small|            140|         13,580<br />(82.88%)|      3,357,397<br />(LDIR x 8.90)|
+|ApLib|unaplib_small_180|            141|         13,580<br />(82.88%)|      3,332,603<br />(LDIR x 8.84)|
 |BitbusterExtreme|debitbust|             89|         14,088<br />(85.98%)|      2,431,874<br />(LDIR x 6.45)|
 |BitbusterExtreme|debitbustp1|             88|         14,088<br />(85.98%)|      2,341,212<br />(LDIR x 6.21)|
 |Exomizer2|deexo|            169|         13,402<br />(81.79%)|      8,119,431<br />(LDIR x 21.54)|
@@ -633,11 +665,15 @@ test data:MSXMUSIC.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         10,048<br />(61.32%)|      3,300,996<br />(LDIR x 8.75)|
-|ApLib|aplib247b|            249|         10,048<br />(61.32%)|      1,987,340<br />(LDIR x 5.27)|
-|ApLib|aplib247b_180_minimal|            152|         10,048<br />(61.32%)|      2,479,203<br />(LDIR x 6.57)|
-|ApLib|aplib247b_180_small|            171|         10,048<br />(61.32%)|      1,919,953<br />(LDIR x 5.09)|
-|ApLib|aplib247b_180_fast|            234|         10,048<br />(61.32%)|      1,838,748<br />(LDIR x 4.87)|
+|ApLib|aplib156b|            156|         10,050<br />(61.34%)|      3,293,129<br />(LDIR x 8.73)|
+|ApLib|aplib247b|            249|         10,050<br />(61.34%)|      1,980,988<br />(LDIR x 5.25)|
+|ApLib|aplib247b_180_minimal|            152|         10,050<br />(61.34%)|      2,472,539<br />(LDIR x 6.56)|
+|ApLib|aplib247b_180_small|            171|         10,050<br />(61.34%)|      1,913,569<br />(LDIR x 5.07)|
+|ApLib|aplib247b_180_fast|            234|         10,050<br />(61.34%)|      1,833,015<br />(LDIR x 4.86)|
+|ApLib|unaplib_fast|            233|         10,050<br />(61.34%)|      1,651,982<br />(LDIR x 4.38)|
+|ApLib|unaplib_fast_180|            230|         10,050<br />(61.34%)|      1,664,329<br />(LDIR x 4.41)|
+|ApLib|unaplib_small|            140|         10,050<br />(61.34%)|      2,555,367<br />(LDIR x 6.78)|
+|ApLib|unaplib_small_180|            141|         10,050<br />(61.34%)|      2,533,239<br />(LDIR x 6.72)|
 |BitbusterExtreme|debitbust|             89|         10,551<br />(64.39%)|      1,856,557<br />(LDIR x 4.92)|
 |BitbusterExtreme|debitbustp1|             88|         10,551<br />(64.39%)|      1,788,241<br />(LDIR x 4.74)|
 |Exomizer2|deexo|            169|         10,068<br />(61.45%)|      5,986,114<br />(LDIR x 15.88)|
@@ -697,11 +733,15 @@ test data:MSX2EXT.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         12,361<br />(75.44%)|      4,146,058<br />(LDIR x 11.00)|
-|ApLib|aplib247b|            249|         12,361<br />(75.44%)|      2,482,638<br />(LDIR x 6.58)|
-|ApLib|aplib247b_180_minimal|            152|         12,361<br />(75.44%)|      3,101,982<br />(LDIR x 8.23)|
-|ApLib|aplib247b_180_small|            171|         12,361<br />(75.44%)|      2,394,822<br />(LDIR x 6.35)|
-|ApLib|aplib247b_180_fast|            234|         12,361<br />(75.44%)|      2,291,135<br />(LDIR x 6.07)|
+|ApLib|aplib156b|            156|         12,361<br />(75.44%)|      4,133,030<br />(LDIR x 10.96)|
+|ApLib|aplib247b|            249|         12,361<br />(75.44%)|      2,472,832<br />(LDIR x 6.56)|
+|ApLib|aplib247b_180_minimal|            152|         12,361<br />(75.44%)|      3,091,414<br />(LDIR x 8.20)|
+|ApLib|aplib247b_180_small|            171|         12,361<br />(75.44%)|      2,385,096<br />(LDIR x 6.32)|
+|ApLib|aplib247b_180_fast|            234|         12,361<br />(75.44%)|      2,282,816<br />(LDIR x 6.05)|
+|ApLib|unaplib_fast|            233|         12,361<br />(75.44%)|      2,048,505<br />(LDIR x 5.43)|
+|ApLib|unaplib_fast_180|            230|         12,361<br />(75.44%)|      2,067,484<br />(LDIR x 5.48)|
+|ApLib|unaplib_small|            140|         12,361<br />(75.44%)|      3,195,138<br />(LDIR x 8.47)|
+|ApLib|unaplib_small_180|            141|         12,361<br />(75.44%)|      3,171,435<br />(LDIR x 8.41)|
 |BitbusterExtreme|debitbust|             89|         13,013<br />(79.42%)|      2,299,272<br />(LDIR x 6.10)|
 |BitbusterExtreme|debitbustp1|             88|         13,013<br />(79.42%)|      2,215,389<br />(LDIR x 5.87)|
 |Exomizer2|deexo|            169|         12,351<br />(75.38%)|      8,066,566<br />(LDIR x 21.40)|
@@ -761,11 +801,15 @@ test data:KANJJ1.B00(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|          6,223<br />(37.98%)|      2,948,079<br />(LDIR x 7.82)|
-|ApLib|aplib247b|            249|          6,223<br />(37.98%)|      1,800,346<br />(LDIR x 4.77)|
-|ApLib|aplib247b_180_minimal|            152|          6,223<br />(37.98%)|      2,260,059<br />(LDIR x 5.99)|
-|ApLib|aplib247b_180_small|            171|          6,223<br />(37.98%)|      1,783,265<br />(LDIR x 4.73)|
-|ApLib|aplib247b_180_fast|            234|          6,223<br />(37.98%)|      1,682,457<br />(LDIR x 4.46)|
+|ApLib|aplib156b|            156|          6,229<br />(38.01%)|      2,935,786<br />(LDIR x 7.79)|
+|ApLib|aplib247b|            249|          6,229<br />(38.01%)|      1,793,292<br />(LDIR x 4.75)|
+|ApLib|aplib247b_180_minimal|            152|          6,229<br />(38.01%)|      2,250,482<br />(LDIR x 5.97)|
+|ApLib|aplib247b_180_small|            171|          6,229<br />(38.01%)|      1,775,408<br />(LDIR x 4.71)|
+|ApLib|aplib247b_180_fast|            234|          6,229<br />(38.01%)|      1,675,429<br />(LDIR x 4.44)|
+|ApLib|unaplib_fast|            233|          6,229<br />(38.01%)|      1,563,210<br />(LDIR x 4.14)|
+|ApLib|unaplib_fast_180|            230|          6,229<br />(38.01%)|      1,576,341<br />(LDIR x 4.18)|
+|ApLib|unaplib_small|            140|          6,229<br />(38.01%)|      2,302,567<br />(LDIR x 6.11)|
+|ApLib|unaplib_small_180|            141|          6,229<br />(38.01%)|      2,303,905<br />(LDIR x 6.11)|
 |BitbusterExtreme|debitbust|             89|          6,683<br />(40.78%)|      2,000,457<br />(LDIR x 5.30)|
 |BitbusterExtreme|debitbustp1|             88|          6,683<br />(40.78%)|      1,963,355<br />(LDIR x 5.21)|
 |Exomizer2|deexo|            169|          6,097<br />(37.21%)|      5,111,648<br />(LDIR x 13.56)|
@@ -825,11 +869,15 @@ test data:KANJJ1.B01(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|          4,092<br />(24.97%)|      2,125,944<br />(LDIR x 5.64)|
-|ApLib|aplib247b|            249|          4,092<br />(24.97%)|      1,346,372<br />(LDIR x 3.57)|
-|ApLib|aplib247b_180_minimal|            152|          4,092<br />(24.97%)|      1,660,683<br />(LDIR x 4.40)|
-|ApLib|aplib247b_180_small|            171|          4,092<br />(24.97%)|      1,337,045<br />(LDIR x 3.54)|
-|ApLib|aplib247b_180_fast|            234|          4,092<br />(24.97%)|      1,267,103<br />(LDIR x 3.36)|
+|ApLib|aplib156b|            156|          4,095<br />(24.99%)|      2,118,332<br />(LDIR x 5.62)|
+|ApLib|aplib247b|            249|          4,095<br />(24.99%)|      1,340,470<br />(LDIR x 3.55)|
+|ApLib|aplib247b_180_minimal|            152|          4,095<br />(24.99%)|      1,654,470<br />(LDIR x 4.39)|
+|ApLib|aplib247b_180_small|            171|          4,095<br />(24.99%)|      1,332,156<br />(LDIR x 3.53)|
+|ApLib|aplib247b_180_fast|            234|          4,095<br />(24.99%)|      1,261,727<br />(LDIR x 3.34)|
+|ApLib|unaplib_fast|            233|          4,095<br />(24.99%)|      1,189,440<br />(LDIR x 3.15)|
+|ApLib|unaplib_fast_180|            230|          4,095<br />(24.99%)|      1,198,481<br />(LDIR x 3.18)|
+|ApLib|unaplib_small|            140|          4,095<br />(24.99%)|      1,689,109<br />(LDIR x 4.48)|
+|ApLib|unaplib_small_180|            141|          4,095<br />(24.99%)|      1,691,218<br />(LDIR x 4.48)|
 |BitbusterExtreme|debitbust|             89|          4,507<br />(27.50%)|      1,515,937<br />(LDIR x 4.02)|
 |BitbusterExtreme|debitbustp1|             88|          4,507<br />(27.50%)|      1,491,428<br />(LDIR x 3.95)|
 |Exomizer2|deexo|            169|          3,975<br />(24.26%)|      3,493,148<br />(LDIR x 9.26)|
@@ -889,11 +937,15 @@ test data:KANJJ1.B02(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         10,835<br />(66.13%)|      4,339,434<br />(LDIR x 11.51)|
-|ApLib|aplib247b|            249|         10,835<br />(66.13%)|      2,572,508<br />(LDIR x 6.82)|
-|ApLib|aplib247b_180_minimal|            152|         10,835<br />(66.13%)|      3,252,893<br />(LDIR x 8.63)|
-|ApLib|aplib247b_180_small|            171|         10,835<br />(66.13%)|      2,510,373<br />(LDIR x 6.66)|
-|ApLib|aplib247b_180_fast|            234|         10,835<br />(66.13%)|      2,373,738<br />(LDIR x 6.29)|
+|ApLib|aplib156b|            156|         10,840<br />(66.16%)|      4,319,206<br />(LDIR x 11.46)|
+|ApLib|aplib247b|            249|         10,840<br />(66.16%)|      2,557,214<br />(LDIR x 6.78)|
+|ApLib|aplib247b_180_minimal|            152|         10,840<br />(66.16%)|      3,236,748<br />(LDIR x 8.58)|
+|ApLib|aplib247b_180_small|            171|         10,840<br />(66.16%)|      2,496,266<br />(LDIR x 6.62)|
+|ApLib|aplib247b_180_fast|            234|         10,840<br />(66.16%)|      2,360,406<br />(LDIR x 6.26)|
+|ApLib|unaplib_fast|            233|         10,840<br />(66.16%)|      2,156,787<br />(LDIR x 5.72)|
+|ApLib|unaplib_fast_180|            230|         10,840<br />(66.16%)|      2,177,782<br />(LDIR x 5.77)|
+|ApLib|unaplib_small|            140|         10,840<br />(66.16%)|      3,317,446<br />(LDIR x 8.80)|
+|ApLib|unaplib_small_180|            141|         10,840<br />(66.16%)|      3,311,259<br />(LDIR x 8.78)|
 |BitbusterExtreme|debitbust|             89|         11,785<br />(71.92%)|      2,663,938<br />(LDIR x 7.06)|
 |BitbusterExtreme|debitbustp1|             88|         11,785<br />(71.92%)|      2,593,406<br />(LDIR x 6.88)|
 |Exomizer2|deexo|            169|         10,688<br />(65.23%)|      7,768,783<br />(LDIR x 20.61)|
@@ -953,11 +1005,15 @@ test data:KANJJ1.B03(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         10,643<br />(64.95%)|      4,332,516<br />(LDIR x 11.49)|
-|ApLib|aplib247b|            249|         10,643<br />(64.95%)|      2,565,213<br />(LDIR x 6.80)|
-|ApLib|aplib247b_180_minimal|            152|         10,643<br />(64.95%)|      3,249,206<br />(LDIR x 8.62)|
-|ApLib|aplib247b_180_small|            171|         10,643<br />(64.95%)|      2,505,701<br />(LDIR x 6.64)|
-|ApLib|aplib247b_180_fast|            234|         10,643<br />(64.95%)|      2,368,308<br />(LDIR x 6.28)|
+|ApLib|aplib156b|            156|         10,644<br />(64.96%)|      4,311,742<br />(LDIR x 11.44)|
+|ApLib|aplib247b|            249|         10,644<br />(64.96%)|      2,551,804<br />(LDIR x 6.77)|
+|ApLib|aplib247b_180_minimal|            152|         10,644<br />(64.96%)|      3,232,702<br />(LDIR x 8.57)|
+|ApLib|aplib247b_180_small|            171|         10,644<br />(64.96%)|      2,492,259<br />(LDIR x 6.61)|
+|ApLib|aplib247b_180_fast|            234|         10,644<br />(64.96%)|      2,355,514<br />(LDIR x 6.25)|
+|ApLib|unaplib_fast|            233|         10,644<br />(64.96%)|      2,153,727<br />(LDIR x 5.71)|
+|ApLib|unaplib_fast_180|            230|         10,644<br />(64.96%)|      2,174,430<br />(LDIR x 5.77)|
+|ApLib|unaplib_small|            140|         10,644<br />(64.96%)|      3,309,388<br />(LDIR x 8.78)|
+|ApLib|unaplib_small_180|            141|         10,644<br />(64.96%)|      3,304,556<br />(LDIR x 8.76)|
 |BitbusterExtreme|debitbust|             89|         11,599<br />(70.79%)|      2,638,165<br />(LDIR x 7.00)|
 |BitbusterExtreme|debitbustp1|             88|         11,599<br />(70.79%)|      2,568,953<br />(LDIR x 6.81)|
 |Exomizer2|deexo|            169|         10,510<br />(64.14%)|      7,603,571<br />(LDIR x 20.17)|
@@ -1017,11 +1073,15 @@ test data:KANJJ1.B04(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         10,521<br />(64.21%)|      4,260,868<br />(LDIR x 11.30)|
-|ApLib|aplib247b|            249|         10,521<br />(64.21%)|      2,526,731<br />(LDIR x 6.70)|
-|ApLib|aplib247b_180_minimal|            152|         10,521<br />(64.21%)|      3,197,914<br />(LDIR x 8.48)|
-|ApLib|aplib247b_180_small|            171|         10,521<br />(64.21%)|      2,470,228<br />(LDIR x 6.55)|
-|ApLib|aplib247b_180_fast|            234|         10,521<br />(64.21%)|      2,333,328<br />(LDIR x 6.19)|
+|ApLib|aplib156b|            156|         10,521<br />(64.21%)|      4,250,031<br />(LDIR x 11.27)|
+|ApLib|aplib247b|            249|         10,521<br />(64.21%)|      2,519,424<br />(LDIR x 6.68)|
+|ApLib|aplib247b_180_minimal|            152|         10,521<br />(64.21%)|      3,188,786<br />(LDIR x 8.46)|
+|ApLib|aplib247b_180_small|            171|         10,521<br />(64.21%)|      2,461,526<br />(LDIR x 6.53)|
+|ApLib|aplib247b_180_fast|            234|         10,521<br />(64.21%)|      2,326,671<br />(LDIR x 6.17)|
+|ApLib|unaplib_fast|            233|         10,521<br />(64.21%)|      2,128,478<br />(LDIR x 5.64)|
+|ApLib|unaplib_fast_180|            230|         10,521<br />(64.21%)|      2,149,137<br />(LDIR x 5.70)|
+|ApLib|unaplib_small|            140|         10,521<br />(64.21%)|      3,266,235<br />(LDIR x 8.66)|
+|ApLib|unaplib_small_180|            141|         10,521<br />(64.21%)|      3,261,483<br />(LDIR x 8.65)|
 |BitbusterExtreme|debitbust|             89|         11,542<br />(70.44%)|      2,638,215<br />(LDIR x 7.00)|
 |BitbusterExtreme|debitbustp1|             88|         11,542<br />(70.44%)|      2,569,415<br />(LDIR x 6.81)|
 |Exomizer2|deexo|            169|         10,415<br />(63.56%)|      7,416,607<br />(LDIR x 19.68)|
@@ -1081,11 +1141,15 @@ test data:KANJJ1.B05(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         10,455<br />(63.81%)|      4,226,479<br />(LDIR x 11.21)|
-|ApLib|aplib247b|            249|         10,455<br />(63.81%)|      2,501,490<br />(LDIR x 6.63)|
-|ApLib|aplib247b_180_minimal|            152|         10,455<br />(63.81%)|      3,170,556<br />(LDIR x 8.41)|
-|ApLib|aplib247b_180_small|            171|         10,455<br />(63.81%)|      2,447,398<br />(LDIR x 6.49)|
-|ApLib|aplib247b_180_fast|            234|         10,455<br />(63.81%)|      2,309,474<br />(LDIR x 6.12)|
+|ApLib|aplib156b|            156|         10,456<br />(63.81%)|      4,201,625<br />(LDIR x 11.14)|
+|ApLib|aplib247b|            249|         10,456<br />(63.81%)|      2,485,347<br />(LDIR x 6.59)|
+|ApLib|aplib247b_180_minimal|            152|         10,456<br />(63.81%)|      3,150,811<br />(LDIR x 8.36)|
+|ApLib|aplib247b_180_small|            171|         10,456<br />(63.81%)|      2,431,407<br />(LDIR x 6.45)|
+|ApLib|aplib247b_180_fast|            234|         10,456<br />(63.81%)|      2,294,700<br />(LDIR x 6.08)|
+|ApLib|unaplib_fast|            233|         10,456<br />(63.81%)|      2,099,896<br />(LDIR x 5.57)|
+|ApLib|unaplib_fast_180|            230|         10,456<br />(63.81%)|      2,119,893<br />(LDIR x 5.62)|
+|ApLib|unaplib_small|            140|         10,456<br />(63.81%)|      3,226,848<br />(LDIR x 8.56)|
+|ApLib|unaplib_small_180|            141|         10,456<br />(63.81%)|      3,221,470<br />(LDIR x 8.54)|
 |BitbusterExtreme|debitbust|             89|         11,493<br />(70.14%)|      2,613,596<br />(LDIR x 6.93)|
 |BitbusterExtreme|debitbustp1|             88|         11,493<br />(70.14%)|      2,544,868<br />(LDIR x 6.75)|
 |Exomizer2|deexo|            169|         10,348<br />(63.15%)|      7,475,213<br />(LDIR x 19.83)|
@@ -1145,11 +1209,15 @@ test data:KANJJ1.B06(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|         10,817<br />(66.02%)|      4,400,357<br />(LDIR x 11.67)|
-|ApLib|aplib247b|            249|         10,817<br />(66.02%)|      2,604,239<br />(LDIR x 6.91)|
-|ApLib|aplib247b_180_minimal|            152|         10,817<br />(66.02%)|      3,298,116<br />(LDIR x 8.75)|
-|ApLib|aplib247b_180_small|            171|         10,817<br />(66.02%)|      2,545,053<br />(LDIR x 6.75)|
-|ApLib|aplib247b_180_fast|            234|         10,817<br />(66.02%)|      2,402,411<br />(LDIR x 6.37)|
+|ApLib|aplib156b|            156|         10,818<br />(66.02%)|      4,381,887<br />(LDIR x 11.62)|
+|ApLib|aplib247b|            249|         10,818<br />(66.02%)|      2,591,408<br />(LDIR x 6.87)|
+|ApLib|aplib247b_180_minimal|            152|         10,818<br />(66.02%)|      3,283,174<br />(LDIR x 8.71)|
+|ApLib|aplib247b_180_small|            171|         10,818<br />(66.02%)|      2,530,398<br />(LDIR x 6.71)|
+|ApLib|aplib247b_180_fast|            234|         10,818<br />(66.02%)|      2,390,738<br />(LDIR x 6.34)|
+|ApLib|unaplib_fast|            233|         10,818<br />(66.02%)|      2,185,351<br />(LDIR x 5.79)|
+|ApLib|unaplib_fast_180|            230|         10,818<br />(66.02%)|      2,206,546<br />(LDIR x 5.85)|
+|ApLib|unaplib_small|            140|         10,818<br />(66.02%)|      3,361,007<br />(LDIR x 8.91)|
+|ApLib|unaplib_small_180|            141|         10,818<br />(66.02%)|      3,356,464<br />(LDIR x 8.90)|
 |BitbusterExtreme|debitbust|             89|         11,778<br />(71.88%)|      2,661,582<br />(LDIR x 7.06)|
 |BitbusterExtreme|debitbustp1|             88|         11,778<br />(71.88%)|      2,591,181<br />(LDIR x 6.87)|
 |Exomizer2|deexo|            169|         10,650<br />(65.00%)|      7,752,805<br />(LDIR x 20.57)|
@@ -1209,11 +1277,15 @@ test data:KANJJ1.B07(16KB)
 
 |packer|unpacker|unpacker size|packed size|unpacking clocks|
 |---|---|---:|---:|---:|
-|ApLib|aplib156b|            156|          9,798<br />(59.80%)|      3,999,198<br />(LDIR x 10.61)|
-|ApLib|aplib247b|            249|          9,798<br />(59.80%)|      2,383,274<br />(LDIR x 6.32)|
-|ApLib|aplib247b_180_minimal|            152|          9,798<br />(59.80%)|      3,006,837<br />(LDIR x 7.97)|
-|ApLib|aplib247b_180_small|            171|          9,798<br />(59.80%)|      2,328,889<br />(LDIR x 6.18)|
-|ApLib|aplib247b_180_fast|            234|          9,798<br />(59.80%)|      2,203,217<br />(LDIR x 5.84)|
+|ApLib|aplib156b|            156|          9,801<br />(59.82%)|      3,976,130<br />(LDIR x 10.55)|
+|ApLib|aplib247b|            249|          9,801<br />(59.82%)|      2,366,934<br />(LDIR x 6.28)|
+|ApLib|aplib247b_180_minimal|            152|          9,801<br />(59.82%)|      2,988,396<br />(LDIR x 7.93)|
+|ApLib|aplib247b_180_small|            171|          9,801<br />(59.82%)|      2,312,109<br />(LDIR x 6.13)|
+|ApLib|aplib247b_180_fast|            234|          9,801<br />(59.82%)|      2,188,561<br />(LDIR x 5.80)|
+|ApLib|unaplib_fast|            233|          9,801<br />(59.82%)|      2,002,745<br />(LDIR x 5.31)|
+|ApLib|unaplib_fast_180|            230|          9,801<br />(59.82%)|      2,021,589<br />(LDIR x 5.36)|
+|ApLib|unaplib_small|            140|          9,801<br />(59.82%)|      3,062,696<br />(LDIR x 8.12)|
+|ApLib|unaplib_small_180|            141|          9,801<br />(59.82%)|      3,057,117<br />(LDIR x 8.11)|
 |BitbusterExtreme|debitbust|             89|         10,741<br />(65.55%)|      2,471,726<br />(LDIR x 6.55)|
 |BitbusterExtreme|debitbustp1|             88|         10,741<br />(65.55%)|      2,407,609<br />(LDIR x 6.38)|
 |Exomizer2|deexo|            169|          9,701<br />(59.21%)|      7,135,248<br />(LDIR x 18.93)|
