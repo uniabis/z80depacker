@@ -297,13 +297,12 @@ LWM1:			; LWM = 1
 			call GetGammaCoded			; BC = len
 			push ix : ex (sp),hl
 	IFNDEF BackwardDecompression
-			push de : ex de,hl
-			sbc hl,de				; HL = dest-offset GetGammaCoded always returns NC
-			pop de					; DE = dest
+			exa
+			jp LWM0.CopyMatch
 	ELSE
 			add hl,de
-	ENDIF
 			jp LWM0.CopyMatchLDH
+	ENDIF
 
 ;==================================================================================================================
 ;==================================================================================================================
