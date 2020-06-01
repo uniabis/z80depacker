@@ -1,12 +1,12 @@
 ;
-;  Speed-optimized ApLib decompressor by spke (ver.05 17-31/05/2020, 230 bytes)
+;  Speed-optimized ApLib decompressor by spke (ver.05.1 01/06/2020, 228 bytes)
 ;
 ;  The original Z80 decompressors for ApLib were written by Dan Weiss (Dwedit),
 ;  then tweaked by Francisco Javier Pena Pareja (utopian),
 ;  and optimized by Jaime Tejedor Gomez (Metalbrain) and Antonio Villena.
 ;
 ;  This is a new "implicit state" decompressor heavily optimized for speed by spke.
-;  (It is 17 bytes shorter and 17% faster than the previously fastest
+;  (It is 19 bytes shorter and 17% faster than the previously fastest
 ;  247b decompressor by Metalbrain and Antonio Villena.)
 ;
 ;  ver.00 by spke (21/08/2018-01/09/2018, 244 bytes, an edit of the existing 247b decompressor);
@@ -15,6 +15,7 @@
 ;  ver.03 by spke (27/08/2019, 236(+2) bytes, +1% speed using partly expanded LDIR);
 ;  ver.04 by spke (spring 2020, added full revision history and support for long offsets)
 ;  ver.05 by spke & uniabis (17-31/05/2020, 230(-6) bytes, +3% speed, added support for backward compression)
+;  ver.05.1 by uniabis (01/06/2020, 228(-2) bytes, +0.1% speed, added support for HD64180 optionally)
 ;
 ;  The data must be compressed using any compressor for ApLib capable of generating raw data.
 ;  At present, two best available compressors are:
@@ -48,8 +49,8 @@
 ;  ld de,LastByteOfMemoryForDecompressedData
 ;  call DecompressApLib
 ;
-;  The decompressor modifies AF, AF', BC, DE, HL, IXH, IY.
-;  (However, note that the option "AllowSelfmodifyingCode" removes the dependency on IY.)
+;  The decompressor modifies AF, AF', BC, DE, HL, IX.
+;  (However, note that the option "AllowSelfmodifyingCode" removes the dependency on IX.)
 ;
 ;  Of course, ApLib compression algorithms are (c) 1998-2014 Joergen Ibsen,
 ;  see http://www.ibsensoftware.com/ for more information
@@ -73,8 +74,8 @@
 ;  3. This notice may not be removed or altered from any source distribution.
 
 ;	DEFINE SupportLongOffsets				; +4 bytes for long offset support. slows decompression down by 1%, but may be needed to decompress files >=32K
-;	DEFINE BackwardDecompression				; decompress data compressed backwards, -13 bytes, speeds decompression up by 2%
-;	DEFINE HD64180						; for HD64180/Z180 support.
+;	DEFINE BackwardDecompression				; decompress data compressed backwards, -9 bytes, speeds decompression up by 2%
+;	DEFINE HD64180						; -2 bytes for HD64180/Z180 support, slows decompression down by 1%
 
 	IFNDEF BackwardDecompression
 

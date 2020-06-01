@@ -1,5 +1,5 @@
 ;
-;  Size-optimized ApLib decompressor by spke (ver.02 05-07/01/2020, 140 bytes)
+;  Size-optimized ApLib decompressor by spke (ver.03.1 01/06/2020, 139 bytes)
 ;
 ;  The original Z80 decompressor for ApLib was written by Dan Weiss (Dwedit),
 ;  then tweaked by Francisco Javier Pena Pareja (utopian),
@@ -13,7 +13,8 @@
 ;  ver.02 by spke (05-07/01/2020, added full revision history, support for long offsets
 ;                  and an option to use self-modifying code instead of IY)
 ;  ver.03 by spke (18-29/05/2020, +0.5% speed, added support for backward compression)
-;
+;  ver.03.1 by uniabis (01/06/2020, 139(-1) bytes, +1% speed, added support for HD64180)
+;;
 ;  The data must be compressed using any compressor for ApLib capable of generating raw data.
 ;  At present, two best available compressors are:
 ;
@@ -46,8 +47,8 @@
 ;  ld de,LastByteOfMemoryForDecompressedData
 ;  call DecompressApLib
 ;
-;  The decompressor modifies AF, AF', BC, DE, HL, IXH, IY.
-;  (However, note that the option "AllowSelfmodifyingCode" removes the dependency on IY.)
+;  The decompressor modifies AF, AF', BC, DE, HL, IX.
+;  (However, note that the option "AllowSelfmodifyingCode" removes the dependency on IX.)
 ;
 ;  Of course, ApLib compression algorithms are (c) 1998-2014 Joergen Ibsen,
 ;  see http://www.ibsensoftware.com/ for more information
