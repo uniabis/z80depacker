@@ -122,7 +122,7 @@
 ;  case "0"+BYTE: copy a single literal
 
 CASE0:			COPY_1					; first byte is always copied as literal
-ResetLWM:		ld b,1					; LWM = 0 (LWM stands for "Last Was Match"; a flag that we did not have a match)
+ResetLWM:		ld b,255				; LWM = 0 (LWM stands for "Last Was Match"; a flag that we did not have a match)
 
 ;
 ;  main decompressor loop
@@ -190,9 +190,10 @@ CASE10:			exa
 			;
 			; so, the idea here is to use the fact that GetGammaCoded returns (offset/256)+2,
 			; and to split the first condition by noticing that C-1 can never be zero
-			exa : dec a : jr nz,NoLWM
-			dec c
-NoLWM			exa
+			exa
+			add c
+			ld c,a
+			exa
 			; "if gamma code is 2, use old r0 offset"
 			dec c : jr z,KickInLWM
 			dec c
