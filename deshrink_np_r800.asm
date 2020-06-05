@@ -1,5 +1,5 @@
 ; Madram/OVL version / modified roudoudou
-; V1: replace D4 (32 bits) by A':   16.03 s      
+; V1: replace D4 (32 bits) by A':   16.03 s
 ; V2: replace D3 by DE'             14.83 s   / 217 bytes
 ; V3: exx' by default (prepare v4)  14.86 s   / 234 bytes
 ; V4: replace D6 by HL'             14.23 s   / 217 bytes   #800 buffer
@@ -9,6 +9,8 @@
 ; v8: replace D5 by HL              14.23 s   / 209 bytes
 ; v9: DE init optimisation          14.23 s   / 208 bytes
 ; vA: no more parity context                  / 202 bytes
+; r800: replace SLL A to ADC A                / 202 bytes
+; rom: remove self-modification               / 201 bytes
 
 ; CALL shrinkler_decrunch
 ; input IX=source
@@ -21,14 +23,14 @@ shrinkler_decrunch
           LD   HL,8*256+probs
           LD   BC,#0880
           XOR  A        ; start by LSB
-	ld d,a
+          LD   D,A
 init
           DEC  H
 iniloop   LD   (HL),A
-	  INC  L
-	  JR   NZ,iniloop ; fill #100 row
+          INC  L
+          JR   NZ,iniloop ; fill #100 row
           XOR  C
-	ld e,b
+          LD   E,B
           DJNZ init
 
           LD   A,C
@@ -44,11 +46,11 @@ getlit    CALL NC,getbit
           LD   A,L
           EXX
           LD   (DE),A
-	  INC  DE
+          INC  DE
 ;after literal
           CALL getkind
           JR   NC,literal
-;reference                       
+;reference
 ; l=0 here
           LD   H,probs_ref / 256
           CALL getbit
@@ -69,7 +71,7 @@ readoffset
           SBC  HL,BC
           EXX
           JR   NZ,readlength
-;END!!!        
+;END!!!
           RET
 
 zero
@@ -119,12 +121,12 @@ _bitsloop
 ;-----------------------------------
 readbit
           SLA  E
-	  RL   D ; d3 <<= 1
+          RL   D ; d3 <<= 1
           EX   AF,AF'
           ADD  A
           JR   NZ,_rbok
           LD   A,(IX)
-	  INC  IX
+          INC  IX
           ADC  A
 _rbok
 
@@ -151,9 +153,9 @@ getkind
 
 getbit
 ;In: hl points to context prob
-; de = d3 
+; de = d3
 ;Out: hl preserved
-; de = new d3 value 
+; de = new d3 value
           LD   A,D      ; d3
           ADD  A
           JR   NC,readbit
@@ -164,7 +166,7 @@ getbit
           PUSH HL
 ;d1 = one prob
           LD   L,C
-          LD   H,B      ; bc=hl=d1 
+          LD   H,B      ; bc=hl=d1
           PUSH BC
           LD   A,%11100001 ;MSQ: cpt 4
 shift4
@@ -175,7 +177,7 @@ shift4
           SBC  HL,BC    ; hl=d1-d1/16
           POP  BC
           PUSH HL
-;here, A = 16       
+;here, A = 16
           SBC  HL,HL
 ; bchl = bc*de
 muluw
@@ -197,7 +199,7 @@ _mulcont
           POP  HL
         ENDIF
           OR   A
-	  SBC  HL,BC
+          SBC  HL,BC
           JR   NC,zero
 
 one
@@ -206,7 +208,7 @@ one
           POP  BC
 ; + #fff
           LD   A,B
-	  SUB  #F0 ; force Carry
+          SUB  #F0 ; force Carry
           LD   B,A
           DEC  BC
           JR   _probret

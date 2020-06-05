@@ -10,6 +10,7 @@
 ; v8: replace D5 by HL              14.23 s   / 209 bytes
 ; r800: replace SLL A to SCF/RLA    14.23 s   / 209 bytes
 ; rom: remove self-modification     14.17 s   / 208 bytes
+; v9: DE init optimisation          14.17 s   / 207 bytes
 
 ; shrinkler_decrunch
 ; input IX=source
@@ -21,17 +22,18 @@ shrinkler_decrunch
           LD   HL,10*256+probs
           LD   BC,#0A80
           XOR  A        ; start by LSB
+          LD   D,A
 init
           DEC  H
 iniloop   LD   (HL),A
           INC  L
           JR   NZ,iniloop ; fill #100 row
           XOR  C
+          LD   E,B
           DJNZ init
 
           LD   A,C
           EX   AF,AF'   ; A'= #80
-          LD   DE,#01   ; d3
 
 ; Here HL=probs
 
