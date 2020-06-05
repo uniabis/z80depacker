@@ -155,6 +155,12 @@ sjasmplus --raw=shrinkler_recall_209.bin shrinkler_recall_209.asm
 rem sjasmplus --raw=shrinkler_recall_209_r800_ram.bin shrinkler_recall_209_r800.asm
 sjasmplus -DROM=1 --raw=shrinkler_recall_209_r800_rom.bin shrinkler_recall_209_r800.asm
 
+
+rem shrinkler(NP)
+
+sjasmplus --raw=deshrink_np.bin deshrink_np.asm
+sjasmplus -DROM=1 --raw=deshrink_np_r800.bin deshrink_np_r800.asm
+
 rem zx7
 
 sjasmplus --raw=dzx7_lom_v1.bin dzx7_lom_v1.asm
