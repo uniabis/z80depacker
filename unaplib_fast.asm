@@ -74,7 +74,7 @@
 ;  3. This notice may not be removed or altered from any source distribution.
 
 ;	DEFINE SupportLongOffsets				; +4 bytes for long offset support. slows decompression down by 1%, but may be needed to decompress files >=32K
-;	DEFINE BackwardDecompression				; decompress data compressed backwards, -9 bytes, speeds decompression up by 2%
+;	DEFINE BackwardDecompression				; decompress data compressed backwards, -10 bytes, speeds decompression up by 2%
 ;	DEFINE HD64180						; -2 bytes for HD64180/Z180 support, slows decompression down by 1%
 
 	IFNDEF BackwardDecompression
@@ -229,9 +229,10 @@ LWM0:			;LWM = 0 (LWM stands for "Last Was Match"; a flag that we did not have a
 			ld a,d : sbc h
 			ld h,a : exa
 	ELSE
-			add hl,de : exa
+			exa
+.CopyMatchLDH		add hl,de
 	ENDIF
-.CopyMatchLDH		COPY_1 : COPY_BC
+			COPY_1 : COPY_BC
 .PreMainLoop		pop hl					; recover src
 
 ;==================================================================================================================
@@ -301,7 +302,6 @@ LWM1:			; LWM = 1
 			exa
 			jp LWM0.CopyMatch
 	ELSE
-			add hl,de
 			jp LWM0.CopyMatchLDH
 	ENDIF
 
