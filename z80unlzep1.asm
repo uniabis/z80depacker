@@ -14,9 +14,9 @@
 ; Clobbers: AF, AF', BC
 
 ; Optimizing for speed makes the getbit code be inlined, at the cost of
-; decompressor memory (145 bytes as of this writing)
+; decompressor memory (137 bytes as of this writing)
 ; Optimizing for size makes the code a bit slower due to the calls to getbit
-; (106 bytes as of this writing)
+; (98 bytes as of this writing)
 
 ;	DEFINE OPTIMIZE_FOR_SIZE
 
@@ -109,27 +109,30 @@ not_literal:	getbit
 		rla
 		getbit
 		rla
-		inc	a
 
 		push	bc
-		ld	c,a
-		ld	a,(hl)	; Offset in two's complement (always negative)
-		inc	hl
 		push	hl
-		ld	b,0
-		add	a,e
-		ld	l,a
-		ld	a,-1
-		adc	a,d
-		ld	h,a
 
-copy_match:	ldir
+		ld	l,(hl)	; Offset in two's complement (always negative)
+		ld	h,-1
+
+copy_match:	add	hl,de
+		inc	a
+		ld	c,a
+		ld	b,0
+		ldir
 		ldi
 		pop	hl
 
 clean_up_and_loop:
+		inc	hl
 		pop	bc
 		jp	mainloop
+
+clean_up_and_ret:
+		inc	hl
+		pop	bc
+		ret
 
 long_match:	push	bc
 		ld	c,(hl)
@@ -141,12 +144,11 @@ long_match:	push	bc
 		or	11100000b
 		ld	b,a
 		ld	a,(hl)
-		inc	hl
 		and	7
 		jp	nz,got_length
+		inc	hl
 		or	(hl)
 		jr	z,clean_up_and_ret	; less than 1, must be 0, exit
-		inc	hl
 
 		; Check special codes
 		dec	a
@@ -157,17 +159,9 @@ long_match:	push	bc
 
 got_length:	; Apply offset
 		push	hl
-		ld	h,d
-		ld	l,e
-		add	hl,bc
-		ld	c,a
-		ld	b,0
-		inc	bc
+		ld	l,c
+		ld	h,b
 		jp	copy_match
-
-clean_up_and_ret:
-		pop	bc
-		ret
 
 	IFNDEF OPTIMIZE_FOR_SIZE
 	ELSE
