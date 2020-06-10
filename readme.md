@@ -126,8 +126,8 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |ApLib|aplib247b_180_minimal|o|o|o|            152|61.57%|LDIR x 7.38|Support for hd64180, shorter, but slower from aplib247b|
 |ApLib|aplib247b_180_small|o|o|o|            171|61.57%|LDIR x 5.72|Support for hd64180, shorter, faster from aplib247b|
 |ApLib|aplib247b_180_fast|o|o|o|            234|61.57%|LDIR x 5.45|Support for hd64180, shorter, faster from aplib247b|
-|ApLib|unaplib_fast|o|x|o|            228|61.57%|LDIR x 4.93||
-|ApLib|unaplib_fast_180|o|o|o|            226|61.57%|LDIR x 4.98|Support for hd64180, shorter, but slower from unaplib_fast|
+|ApLib|unaplib_fast|o|x|o|            235|61.57%|LDIR x 4.86||
+|ApLib|unaplib_fast_180|o|o|o|            233|61.57%|LDIR x 4.91|Support for hd64180, shorter, but slower from unaplib_fast|
 |ApLib|unaplib_small|o|o|o|            139|61.57%|LDIR x 7.52||
 |BitbusterExtreme|debitbust|o|o|o|             89|65.64%|LDIR x 5.95||
 |BitbusterExtreme|debitbustp1|o|o|o|             88|65.64%|LDIR x 5.77|Shorter, bit faster from debitbust|
@@ -200,8 +200,8 @@ test data:ALL(16*16KB)
 |ApLib|aplib247b_180_minimal|            152|        161,422<br />(61.57%)|     44,514,579<br />(LDIR x 7.38)|
 |ApLib|aplib247b_180_small|            171|        161,422<br />(61.57%)|     34,489,373<br />(LDIR x 5.72)|
 |ApLib|aplib247b_180_fast|            234|        161,422<br />(61.57%)|     32,871,488<br />(LDIR x 5.45)|
-|ApLib|unaplib_fast|            228|        161,422<br />(61.57%)|     29,777,634<br />(LDIR x 4.93)|
-|ApLib|unaplib_fast_180|            226|        161,422<br />(61.57%)|     30,063,602<br />(LDIR x 4.98)|
+|ApLib|unaplib_fast|            235|        161,422<br />(61.57%)|     29,350,495<br />(LDIR x 4.86)|
+|ApLib|unaplib_fast_180|            233|        161,422<br />(61.57%)|     29,636,463<br />(LDIR x 4.91)|
 |ApLib|unaplib_small|            139|        161,422<br />(61.57%)|     45,350,252<br />(LDIR x 7.52)|
 |BitbusterExtreme|debitbust|             89|        172,080<br />(65.64%)|     35,875,562<br />(LDIR x 5.95)|
 |BitbusterExtreme|debitbustp1|             88|        172,080<br />(65.64%)|     34,811,743<br />(LDIR x 5.77)|
@@ -269,8 +269,8 @@ test data:MEGASDHC.B00(16KB)
 |ApLib|aplib247b_180_minimal|            152|          9,367<br />(57.17%)|      2,329,365<br />(LDIR x 6.18)|
 |ApLib|aplib247b_180_small|            171|          9,367<br />(57.17%)|      1,810,071<br />(LDIR x 4.80)|
 |ApLib|aplib247b_180_fast|            234|          9,367<br />(57.17%)|      1,739,018<br />(LDIR x 4.61)|
-|ApLib|unaplib_fast|            228|          9,367<br />(57.17%)|      1,564,196<br />(LDIR x 4.15)|
-|ApLib|unaplib_fast_180|            226|          9,367<br />(57.17%)|      1,577,876<br />(LDIR x 4.18)|
+|ApLib|unaplib_fast|            235|          9,367<br />(57.17%)|      1,543,251<br />(LDIR x 4.09)|
+|ApLib|unaplib_fast_180|            233|          9,367<br />(57.17%)|      1,556,931<br />(LDIR x 4.13)|
 |ApLib|unaplib_small|            139|          9,367<br />(57.17%)|      2,374,849<br />(LDIR x 6.30)|
 |BitbusterExtreme|debitbust|             89|          9,830<br />(59.99%)|      1,819,624<br />(LDIR x 4.82)|
 |BitbusterExtreme|debitbustp1|             88|          9,830<br />(59.99%)|      1,756,454<br />(LDIR x 4.66)|
@@ -338,8 +338,8 @@ test data:MEGASDHC.B01(16KB)
 |ApLib|aplib247b_180_minimal|            152|          4,926<br />(30.06%)|      1,470,893<br />(LDIR x 3.90)|
 |ApLib|aplib247b_180_small|            171|          4,926<br />(30.06%)|      1,185,181<br />(LDIR x 3.14)|
 |ApLib|aplib247b_180_fast|            234|          4,926<br />(30.06%)|      1,143,743<br />(LDIR x 3.03)|
-|ApLib|unaplib_fast|            228|          4,926<br />(30.06%)|      1,048,970<br />(LDIR x 2.78)|
-|ApLib|unaplib_fast_180|            226|          4,926<br />(30.06%)|      1,056,922<br />(LDIR x 2.80)|
+|ApLib|unaplib_fast|            235|          4,926<br />(30.06%)|      1,037,304<br />(LDIR x 2.75)|
+|ApLib|unaplib_fast_180|            233|          4,926<br />(30.06%)|      1,045,256<br />(LDIR x 2.77)|
 |ApLib|unaplib_small|            139|          4,926<br />(30.06%)|      1,495,184<br />(LDIR x 3.96)|
 |BitbusterExtreme|debitbust|             89|          5,133<br />(31.32%)|      1,193,386<br />(LDIR x 3.16)|
 |BitbusterExtreme|debitbustp1|             88|          5,133<br />(31.32%)|      1,161,090<br />(LDIR x 3.08)|
@@ -407,8 +407,8 @@ test data:MEGASDHC.B02(16KB)
 |ApLib|aplib247b_180_minimal|            152|         12,594<br />(76.86%)|      3,189,750<br />(LDIR x 8.46)|
 |ApLib|aplib247b_180_small|            171|         12,594<br />(76.86%)|      2,462,192<br />(LDIR x 6.53)|
 |ApLib|aplib247b_180_fast|            234|         12,594<br />(76.86%)|      2,355,349<br />(LDIR x 6.25)|
-|ApLib|unaplib_fast|            228|         12,594<br />(76.86%)|      2,109,969<br />(LDIR x 5.59)|
-|ApLib|unaplib_fast_180|            226|         12,594<br />(76.86%)|      2,132,313<br />(LDIR x 5.65)|
+|ApLib|unaplib_fast|            235|         12,594<br />(76.86%)|      2,079,003<br />(LDIR x 5.51)|
+|ApLib|unaplib_fast_180|            233|         12,594<br />(76.86%)|      2,101,347<br />(LDIR x 5.57)|
 |ApLib|unaplib_small|            139|         12,594<br />(76.86%)|      3,253,015<br />(LDIR x 8.63)|
 |BitbusterExtreme|debitbust|             89|         13,188<br />(80.49%)|      2,486,914<br />(LDIR x 6.59)|
 |BitbusterExtreme|debitbustp1|             88|         13,188<br />(80.49%)|      2,403,440<br />(LDIR x 6.37)|
@@ -476,8 +476,8 @@ test data:MEGASDHC.B03(16KB)
 |ApLib|aplib247b_180_minimal|            152|         12,340<br />(75.31%)|      3,003,320<br />(LDIR x 7.96)|
 |ApLib|aplib247b_180_small|            171|         12,340<br />(75.31%)|      2,317,774<br />(LDIR x 6.15)|
 |ApLib|aplib247b_180_fast|            234|         12,340<br />(75.31%)|      2,221,246<br />(LDIR x 5.89)|
-|ApLib|unaplib_fast|            228|         12,340<br />(75.31%)|      1,984,356<br />(LDIR x 5.26)|
-|ApLib|unaplib_fast_180|            226|         12,340<br />(75.31%)|      2,004,508<br />(LDIR x 5.31)|
+|ApLib|unaplib_fast|            235|         12,340<br />(75.31%)|      1,955,832<br />(LDIR x 5.19)|
+|ApLib|unaplib_fast_180|            233|         12,340<br />(75.31%)|      1,975,984<br />(LDIR x 5.24)|
 |ApLib|unaplib_small|            139|         12,340<br />(75.31%)|      3,063,845<br />(LDIR x 8.13)|
 |BitbusterExtreme|debitbust|             89|         12,856<br />(78.46%)|      2,322,296<br />(LDIR x 6.16)|
 |BitbusterExtreme|debitbustp1|             88|         12,856<br />(78.46%)|      2,240,141<br />(LDIR x 5.94)|
@@ -545,8 +545,8 @@ test data:MSX2MAIN.B00(16KB)
 |ApLib|aplib247b_180_minimal|            152|         12,835<br />(78.33%)|      3,000,238<br />(LDIR x 7.96)|
 |ApLib|aplib247b_180_small|            171|         12,835<br />(78.33%)|      2,313,034<br />(LDIR x 6.13)|
 |ApLib|aplib247b_180_fast|            234|         12,835<br />(78.33%)|      2,225,231<br />(LDIR x 5.90)|
-|ApLib|unaplib_fast|            228|         12,835<br />(78.33%)|      1,977,336<br />(LDIR x 5.24)|
-|ApLib|unaplib_fast_180|            226|         12,835<br />(78.33%)|      1,996,712<br />(LDIR x 5.29)|
+|ApLib|unaplib_fast|            235|         12,835<br />(78.33%)|      1,949,584<br />(LDIR x 5.17)|
+|ApLib|unaplib_fast_180|            233|         12,835<br />(78.33%)|      1,968,960<br />(LDIR x 5.22)|
 |ApLib|unaplib_small|            139|         12,835<br />(78.33%)|      3,066,458<br />(LDIR x 8.13)|
 |BitbusterExtreme|debitbust|             89|         13,293<br />(81.13%)|      2,262,023<br />(LDIR x 6.00)|
 |BitbusterExtreme|debitbustp1|             88|         13,293<br />(81.13%)|      2,175,561<br />(LDIR x 5.77)|
@@ -614,8 +614,8 @@ test data:MSX2MAIN.B01(16KB)
 |ApLib|aplib247b_180_minimal|            152|         13,579<br />(82.87%)|      3,205,020<br />(LDIR x 8.50)|
 |ApLib|aplib247b_180_small|            171|         13,579<br />(82.87%)|      2,461,268<br />(LDIR x 6.53)|
 |ApLib|aplib247b_180_fast|            234|         13,579<br />(82.87%)|      2,359,181<br />(LDIR x 6.26)|
-|ApLib|unaplib_fast|            228|         13,579<br />(82.87%)|      2,100,009<br />(LDIR x 5.57)|
-|ApLib|unaplib_fast_180|            226|         13,579<br />(82.87%)|      2,121,889<br />(LDIR x 5.63)|
+|ApLib|unaplib_fast|            235|         13,579<br />(82.87%)|      2,070,519<br />(LDIR x 5.49)|
+|ApLib|unaplib_fast_180|            233|         13,579<br />(82.87%)|      2,092,399<br />(LDIR x 5.55)|
 |ApLib|unaplib_small|            139|         13,579<br />(82.87%)|      3,267,039<br />(LDIR x 8.66)|
 |BitbusterExtreme|debitbust|             89|         14,088<br />(85.98%)|      2,431,874<br />(LDIR x 6.45)|
 |BitbusterExtreme|debitbustp1|             88|         14,088<br />(85.98%)|      2,341,212<br />(LDIR x 6.21)|
@@ -683,8 +683,8 @@ test data:MSXMUSIC.B00(16KB)
 |ApLib|aplib247b_180_minimal|            152|         10,048<br />(61.32%)|      2,450,737<br />(LDIR x 6.50)|
 |ApLib|aplib247b_180_small|            171|         10,048<br />(61.32%)|      1,894,773<br />(LDIR x 5.02)|
 |ApLib|aplib247b_180_fast|            234|         10,048<br />(61.32%)|      1,818,180<br />(LDIR x 4.82)|
-|ApLib|unaplib_fast|            228|         10,048<br />(61.32%)|      1,633,395<br />(LDIR x 4.33)|
-|ApLib|unaplib_fast_180|            226|         10,048<br />(61.32%)|      1,646,235<br />(LDIR x 4.36)|
+|ApLib|unaplib_fast|            235|         10,048<br />(61.32%)|      1,610,543<br />(LDIR x 4.27)|
+|ApLib|unaplib_fast_180|            233|         10,048<br />(61.32%)|      1,623,383<br />(LDIR x 4.30)|
 |ApLib|unaplib_small|            139|         10,048<br />(61.32%)|      2,500,088<br />(LDIR x 6.63)|
 |BitbusterExtreme|debitbust|             89|         10,551<br />(64.39%)|      1,856,557<br />(LDIR x 4.92)|
 |BitbusterExtreme|debitbustp1|             88|         10,551<br />(64.39%)|      1,788,241<br />(LDIR x 4.74)|
@@ -752,8 +752,8 @@ test data:MSX2EXT.B00(16KB)
 |ApLib|aplib247b_180_minimal|            152|         12,361<br />(75.44%)|      3,059,764<br />(LDIR x 8.11)|
 |ApLib|aplib247b_180_small|            171|         12,361<br />(75.44%)|      2,358,349<br />(LDIR x 6.25)|
 |ApLib|aplib247b_180_fast|            234|         12,361<br />(75.44%)|      2,261,395<br />(LDIR x 6.00)|
-|ApLib|unaplib_fast|            228|         12,361<br />(75.44%)|      2,021,525<br />(LDIR x 5.36)|
-|ApLib|unaplib_fast_180|            226|         12,361<br />(75.44%)|      2,040,741<br />(LDIR x 5.41)|
+|ApLib|unaplib_fast|            235|         12,361<br />(75.44%)|      1,991,967<br />(LDIR x 5.28)|
+|ApLib|unaplib_fast_180|            233|         12,361<br />(75.44%)|      2,011,183<br />(LDIR x 5.33)|
 |ApLib|unaplib_small|            139|         12,361<br />(75.44%)|      3,124,037<br />(LDIR x 8.29)|
 |BitbusterExtreme|debitbust|             89|         13,013<br />(79.42%)|      2,299,272<br />(LDIR x 6.10)|
 |BitbusterExtreme|debitbustp1|             88|         13,013<br />(79.42%)|      2,215,389<br />(LDIR x 5.87)|
@@ -821,8 +821,8 @@ test data:KANJJ1.B00(16KB)
 |ApLib|aplib247b_180_minimal|            152|          6,222<br />(37.97%)|      2,245,008<br />(LDIR x 5.95)|
 |ApLib|aplib247b_180_small|            171|          6,222<br />(37.97%)|      1,770,373<br />(LDIR x 4.69)|
 |ApLib|aplib247b_180_fast|            234|          6,222<br />(37.97%)|      1,672,478<br />(LDIR x 4.43)|
-|ApLib|unaplib_fast|            228|          6,222<br />(37.97%)|      1,557,039<br />(LDIR x 4.13)|
-|ApLib|unaplib_fast_180|            226|          6,222<br />(37.97%)|      1,571,167<br />(LDIR x 4.16)|
+|ApLib|unaplib_fast|            235|          6,222<br />(37.97%)|      1,534,158<br />(LDIR x 4.07)|
+|ApLib|unaplib_fast_180|            233|          6,222<br />(37.97%)|      1,548,286<br />(LDIR x 4.10)|
 |ApLib|unaplib_small|            139|          6,222<br />(37.97%)|      2,286,225<br />(LDIR x 6.06)|
 |BitbusterExtreme|debitbust|             89|          6,683<br />(40.78%)|      2,000,457<br />(LDIR x 5.30)|
 |BitbusterExtreme|debitbustp1|             88|          6,683<br />(40.78%)|      1,963,355<br />(LDIR x 5.21)|
@@ -890,8 +890,8 @@ test data:KANJJ1.B01(16KB)
 |ApLib|aplib247b_180_minimal|            152|          4,090<br />(24.96%)|      1,653,186<br />(LDIR x 4.38)|
 |ApLib|aplib247b_180_small|            171|          4,090<br />(24.96%)|      1,331,382<br />(LDIR x 3.53)|
 |ApLib|aplib247b_180_fast|            234|          4,090<br />(24.96%)|      1,262,517<br />(LDIR x 3.35)|
-|ApLib|unaplib_fast|            228|          4,090<br />(24.96%)|      1,186,969<br />(LDIR x 3.14)|
-|ApLib|unaplib_fast_180|            226|          4,090<br />(24.96%)|      1,196,825<br />(LDIR x 3.17)|
+|ApLib|unaplib_fast|            235|          4,090<br />(24.96%)|      1,171,136<br />(LDIR x 3.10)|
+|ApLib|unaplib_fast_180|            233|          4,090<br />(24.96%)|      1,180,992<br />(LDIR x 3.13)|
 |ApLib|unaplib_small|            139|          4,090<br />(24.96%)|      1,681,221<br />(LDIR x 4.46)|
 |BitbusterExtreme|debitbust|             89|          4,507<br />(27.50%)|      1,515,937<br />(LDIR x 4.02)|
 |BitbusterExtreme|debitbustp1|             88|          4,507<br />(27.50%)|      1,491,428<br />(LDIR x 3.95)|
@@ -959,8 +959,8 @@ test data:KANJJ1.B02(16KB)
 |ApLib|aplib247b_180_minimal|            152|         10,834<br />(66.12%)|      3,209,668<br />(LDIR x 8.51)|
 |ApLib|aplib247b_180_small|            171|         10,834<br />(66.12%)|      2,474,419<br />(LDIR x 6.56)|
 |ApLib|aplib247b_180_fast|            234|         10,834<br />(66.12%)|      2,343,976<br />(LDIR x 6.22)|
-|ApLib|unaplib_fast|            228|         10,834<br />(66.12%)|      2,135,323<br />(LDIR x 5.66)|
-|ApLib|unaplib_fast_180|            226|         10,834<br />(66.12%)|      2,156,723<br />(LDIR x 5.72)|
+|ApLib|unaplib_fast|            235|         10,834<br />(66.12%)|      2,103,511<br />(LDIR x 5.58)|
+|ApLib|unaplib_fast_180|            233|         10,834<br />(66.12%)|      2,124,911<br />(LDIR x 5.63)|
 |ApLib|unaplib_small|            139|         10,834<br />(66.12%)|      3,266,915<br />(LDIR x 8.66)|
 |BitbusterExtreme|debitbust|             89|         11,785<br />(71.92%)|      2,663,938<br />(LDIR x 7.06)|
 |BitbusterExtreme|debitbustp1|             88|         11,785<br />(71.92%)|      2,593,406<br />(LDIR x 6.88)|
@@ -1028,8 +1028,8 @@ test data:KANJJ1.B03(16KB)
 |ApLib|aplib247b_180_minimal|            152|         10,642<br />(64.95%)|      3,198,963<br />(LDIR x 8.48)|
 |ApLib|aplib247b_180_small|            171|         10,642<br />(64.95%)|      2,465,619<br />(LDIR x 6.54)|
 |ApLib|aplib247b_180_fast|            234|         10,642<br />(64.95%)|      2,335,743<br />(LDIR x 6.19)|
-|ApLib|unaplib_fast|            228|         10,642<br />(64.95%)|      2,128,146<br />(LDIR x 5.64)|
-|ApLib|unaplib_fast_180|            226|         10,642<br />(64.95%)|      2,149,122<br />(LDIR x 5.70)|
+|ApLib|unaplib_fast|            235|         10,642<br />(64.95%)|      2,096,823<br />(LDIR x 5.56)|
+|ApLib|unaplib_fast_180|            233|         10,642<br />(64.95%)|      2,117,799<br />(LDIR x 5.61)|
 |ApLib|unaplib_small|            139|         10,642<br />(64.95%)|      3,253,695<br />(LDIR x 8.63)|
 |BitbusterExtreme|debitbust|             89|         11,599<br />(70.79%)|      2,638,165<br />(LDIR x 7.00)|
 |BitbusterExtreme|debitbustp1|             88|         11,599<br />(70.79%)|      2,568,953<br />(LDIR x 6.81)|
@@ -1097,8 +1097,8 @@ test data:KANJJ1.B04(16KB)
 |ApLib|aplib247b_180_minimal|            152|         10,519<br />(64.20%)|      3,163,820<br />(LDIR x 8.39)|
 |ApLib|aplib247b_180_small|            171|         10,519<br />(64.20%)|      2,441,750<br />(LDIR x 6.47)|
 |ApLib|aplib247b_180_fast|            234|         10,519<br />(64.20%)|      2,311,830<br />(LDIR x 6.13)|
-|ApLib|unaplib_fast|            228|         10,519<br />(64.20%)|      2,108,920<br />(LDIR x 5.59)|
-|ApLib|unaplib_fast_180|            226|         10,519<br />(64.20%)|      2,130,040<br />(LDIR x 5.65)|
+|ApLib|unaplib_fast|            235|         10,519<br />(64.20%)|      2,077,467<br />(LDIR x 5.51)|
+|ApLib|unaplib_fast_180|            233|         10,519<br />(64.20%)|      2,098,587<br />(LDIR x 5.56)|
 |ApLib|unaplib_small|            139|         10,519<br />(64.20%)|      3,219,556<br />(LDIR x 8.54)|
 |BitbusterExtreme|debitbust|             89|         11,542<br />(70.44%)|      2,638,215<br />(LDIR x 7.00)|
 |BitbusterExtreme|debitbustp1|             88|         11,542<br />(70.44%)|      2,569,415<br />(LDIR x 6.81)|
@@ -1166,8 +1166,8 @@ test data:KANJJ1.B05(16KB)
 |ApLib|aplib247b_180_minimal|            152|         10,453<br />(63.80%)|      3,126,211<br />(LDIR x 8.29)|
 |ApLib|aplib247b_180_small|            171|         10,453<br />(63.80%)|      2,410,642<br />(LDIR x 6.39)|
 |ApLib|aplib247b_180_fast|            234|         10,453<br />(63.80%)|      2,279,930<br />(LDIR x 6.05)|
-|ApLib|unaplib_fast|            228|         10,453<br />(63.80%)|      2,081,366<br />(LDIR x 5.52)|
-|ApLib|unaplib_fast_180|            226|         10,453<br />(63.80%)|      2,101,766<br />(LDIR x 5.57)|
+|ApLib|unaplib_fast|            235|         10,453<br />(63.80%)|      2,050,560<br />(LDIR x 5.44)|
+|ApLib|unaplib_fast_180|            233|         10,453<br />(63.80%)|      2,070,960<br />(LDIR x 5.49)|
 |ApLib|unaplib_small|            139|         10,453<br />(63.80%)|      3,180,433<br />(LDIR x 8.43)|
 |BitbusterExtreme|debitbust|             89|         11,493<br />(70.14%)|      2,613,596<br />(LDIR x 6.93)|
 |BitbusterExtreme|debitbustp1|             88|         11,493<br />(70.14%)|      2,544,868<br />(LDIR x 6.75)|
@@ -1235,8 +1235,8 @@ test data:KANJJ1.B06(16KB)
 |ApLib|aplib247b_180_minimal|            152|         10,815<br />(66.00%)|      3,243,413<br />(LDIR x 8.60)|
 |ApLib|aplib247b_180_small|            171|         10,815<br />(66.00%)|      2,499,012<br />(LDIR x 6.63)|
 |ApLib|aplib247b_180_fast|            234|         10,815<br />(66.00%)|      2,365,907<br />(LDIR x 6.27)|
-|ApLib|unaplib_fast|            228|         10,815<br />(66.00%)|      2,156,051<br />(LDIR x 5.72)|
-|ApLib|unaplib_fast_180|            226|         10,815<br />(66.00%)|      2,177,459<br />(LDIR x 5.77)|
+|ApLib|unaplib_fast|            235|         10,815<br />(66.00%)|      2,123,900<br />(LDIR x 5.63)|
+|ApLib|unaplib_fast_180|            233|         10,815<br />(66.00%)|      2,145,308<br />(LDIR x 5.69)|
 |ApLib|unaplib_small|            139|         10,815<br />(66.00%)|      3,299,397<br />(LDIR x 8.75)|
 |BitbusterExtreme|debitbust|             89|         11,778<br />(71.88%)|      2,661,582<br />(LDIR x 7.06)|
 |BitbusterExtreme|debitbustp1|             88|         11,778<br />(71.88%)|      2,591,181<br />(LDIR x 6.87)|
@@ -1304,8 +1304,8 @@ test data:KANJJ1.B07(16KB)
 |ApLib|aplib247b_180_minimal|            152|          9,797<br />(59.79%)|      2,965,223<br />(LDIR x 7.86)|
 |ApLib|aplib247b_180_small|            171|          9,797<br />(59.79%)|      2,293,534<br />(LDIR x 6.08)|
 |ApLib|aplib247b_180_fast|            234|          9,797<br />(59.79%)|      2,175,764<br />(LDIR x 5.77)|
-|ApLib|unaplib_fast|            228|          9,797<br />(59.79%)|      1,984,064<br />(LDIR x 5.26)|
-|ApLib|unaplib_fast_180|            226|          9,797<br />(59.79%)|      2,003,304<br />(LDIR x 5.31)|
+|ApLib|unaplib_fast|            235|          9,797<br />(59.79%)|      1,954,937<br />(LDIR x 5.18)|
+|ApLib|unaplib_fast_180|            233|          9,797<br />(59.79%)|      1,974,177<br />(LDIR x 5.23)|
 |ApLib|unaplib_small|            139|          9,797<br />(59.79%)|      3,018,295<br />(LDIR x 8.00)|
 |BitbusterExtreme|debitbust|             89|         10,741<br />(65.55%)|      2,471,726<br />(LDIR x 6.55)|
 |BitbusterExtreme|debitbustp1|             88|         10,741<br />(65.55%)|      2,407,609<br />(LDIR x 6.38)|

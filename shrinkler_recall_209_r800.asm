@@ -8,9 +8,9 @@
 ; v6: reintroduce MSB table trick   ----------  idem        Discarded
 ; v7: slight getkind factorization  14.23 s   / 213 bytes
 ; v8: replace D5 by HL              14.23 s   / 209 bytes
-; r800: replace SLL A to SCF/RLA    14.23 s   / 209 bytes
-; rom: remove self-modification     14.17 s   / 208 bytes
-; v9: DE init optimisation          14.17 s   / 207 bytes
+; v9: DE init optimisation          14.23 s   / 208 bytes
+; r800: replace SLL A to SCF/RLA    14.23 s   / 208 bytes
+; rom: remove self-modification     14.17 s   / 207 bytes
 
 ; shrinkler_decrunch
 ; input IX=source
@@ -127,9 +127,6 @@ readbit
           LD   A,(IX)
           INC  IX
 
-
-          ;SLL A
-          ;SCF
           ADC  A
 _rbok
 
