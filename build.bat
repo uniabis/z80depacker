@@ -118,6 +118,14 @@ rem lzee
 sjasmplus --raw=dlzee_fast.bin dlzee_fast.asm
 sjasmplus --raw=dlzee_small.bin dlzee_small.asm
 
+rem lzexe
+
+sjasmplus --raw=z80unlze.bin z80unlze.asm
+sjasmplus -DOPTIMIZE_FOR_SIZE --raw=z80unlze_small.bin z80unlze.asm
+
+sjasmplus --raw=z80unlzep1.bin z80unlzep1.asm
+sjasmplus -DOPTIMIZE_FOR_SIZE --raw=z80unlzep1_small.bin z80unlzep1.asm
+
 rem lzsa
 
 sjasmplus --raw=unlzsa1_fast.bin unlzsa1_fast.asm
