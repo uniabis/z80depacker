@@ -20,6 +20,9 @@
 
 ;	DEFINE OPTIMIZE_FOR_SIZE
 
+; 157/122 bytes 09-06-2020 : https://msx.org/forum/msx-talk/development/lzexe-decompressor-for-z80
+; 157/122 bytes 10-06-2020 : modified for sjasmplus
+
 
 getbit_code	macro
 		; Get the next bit from the bitstream into the carry flag

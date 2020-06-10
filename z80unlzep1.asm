@@ -20,8 +20,8 @@
 
 ;	DEFINE OPTIMIZE_FOR_SIZE
 
-; 157/122 bytes 09-06-2020 : original https://msx.org/forum/msx-talk/development/lzexe-decompressor-for-z80
-; 137/ 98 bytes 10-06-2020 : optimized with sjasmplus
+; 157/122 bytes 09-06-2020 : https://msx.org/forum/msx-talk/development/lzexe-decompressor-for-z80
+; 137/ 98 bytes 10-06-2020 : modified for sjasmplus, optimized
 ;
 
 getbit_code	macro
