@@ -120,11 +120,11 @@ sjasmplus --raw=dlzee_small.bin dlzee_small.asm
 
 rem lzexe
 
-sjasmplus --raw=z80unlze.bin z80unlze.asm
-sjasmplus -DOPTIMIZE_FOR_SIZE --raw=z80unlze_small.bin z80unlze.asm
+pasmo --equ OPTIMIZE=1 --bin z80unlze.asm z80unlze.bin
+pasmo --equ OPTIMIZE=0 --bin z80unlze.asm z80unlze_small.bin
 
-sjasmplus --raw=z80unlzep1.bin z80unlzep1.asm
-sjasmplus -DOPTIMIZE_FOR_SIZE --raw=z80unlzep1_small.bin z80unlzep1.asm
+pasmo --equ OPTIMIZE=1 --bin z80unlzep1.asm z80unlzep1.bin
+pasmo --equ OPTIMIZE=0 --bin z80unlzep1.asm z80unlzep1_small.bin
 
 rem lzsa
 

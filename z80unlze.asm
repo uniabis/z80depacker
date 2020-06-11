@@ -1,4 +1,4 @@
-; Decompression routine for LZEXE-compressed streams
+; Decompression routine for LZEXE-compressed streams, v1.1
 ;
 ; Copyright © 2020 Pedro Gimeno Fortea
 ;
@@ -13,53 +13,93 @@
 ;       : DE=last dest address written+1 ( = initial destination address + length of decompressed stream)
 ; Clobbers: AF, AF', BC
 
+; Changes:
+;  1.1   156/112 bytes 11-06-2020 : Moved getbit_routine to bottom
+;  1.1   156/112 bytes 10-06-2020 : Very tiny optimization; also optimizing for size saves 10 more bytes
+;  1.0   157/122 bytes 09-06-2020 : Original version
+
+; Set OPTIMIZE to either SPEED or SIZE.
 ; Optimizing for speed makes the getbit code be inlined, at the cost of
-; decompressor memory (157 bytes as of this writing)
-; Optimizing for size makes the code a bit slower due to the calls to getbit
-; (122 bytes as of this writing)
+; decompressor memory (156 bytes as of this writing).
+; Optimizing for size (112 bytes as of this writing) makes the code a bit
+; slower due to the calls to getbit and the relative jumps.
 
-;	DEFINE OPTIMIZE_FOR_SIZE
+SIZE		equ	0
+SPEED		equ	1
 
-; 157/122 bytes 09-06-2020 : https://msx.org/forum/msx-talk/development/lzexe-decompressor-for-z80
-; 157/122 bytes 10-06-2020 : modified for sjasmplus
+; Change this to select what to optimize for
+		IF !defined OPTIMIZE
+OPTIMIZE	equ	SPEED
+		ENDIF
 
 
 getbit_code	macro
 		; Get the next bit from the bitstream into the carry flag
-		;local	gotbit
+		local	gotbit
 
 		srl	b
 		rr	c
 		ex	af,af'
 		dec	a
-		jp	nz,.gotbit
+		IF	OPTIMIZE=SPEED
+		jp	nz,gotbit
+		ELSE
+		jr	nz,gotbit
+		ENDIF
 		ld	c,(hl)
 		inc	hl
 		ld	b,(hl)
 		inc	hl
 		ld	a,16
-.gotbit:
+gotbit:
 		ex	af,af'
 		endm
 
-	IFNDEF OPTIMIZE_FOR_SIZE
+unlze		proc
+
+		IF OPTIMIZE=SPEED
+
+		; Optimize for speed
+
 getbit		macro
 		getbit_code
 		endm
-	ELSE
+
+j		macro	x
+		jp	x
+		endm
+
+jc		macro	x,y
+		jp	x,y
+		endm
+
+		ELSE
+
+		; Optimize for size
+
+		local	getbit_routine
+		; moved getbit_routine to bottom
+
 getbit		macro
 		call	getbit_routine
 		endm
-	ENDIF
 
-unlze:
+j		macro	x
+		jr	x
+		endm
 
-		;local	mainloop
-		;local	not_literal
-		;local	long_match
-		;local	got_length
-		;local	clean_up_and_loop
-		;local	clean_up_and_ret
+jc		macro	x,y
+		jr	x,y
+		endm
+
+		ENDIF
+
+		local	mainloop
+		local	not_literal
+		local	long_match
+		local	got_length
+		local	clean_up_and_loop
+		local	clean_up_and_ret
 
 		ld	a,16
 		ex	af,af'
@@ -87,16 +127,16 @@ unlze:
 		;        more, the actual length is the code + 1.
 
 mainloop:	getbit
-		jp	nc,not_literal
+		jc	nc,not_literal
 		; 1 = copy next byte verbatim
 		ld	a,(hl)
 		inc	hl
 		ld	(de),a
 		inc	de
-		jp	mainloop
+		j	mainloop
 
 not_literal:	getbit
-		jp	c,long_match
+		jc	c,long_match
 
 		; Short match
 		getbit
@@ -104,15 +144,15 @@ not_literal:	getbit
 		getbit
 		rla
 		and	3
-		add	a,2
+		add	a,2	; Length
 
 		push	bc
 		ld	c,a
 		ld	a,(hl)	; Offset in two's complement (always negative)
 		inc	hl
 		push	hl
-		ld	b,0
-		add	a,e
+		ld	b,0	; Length in BC
+		add	a,e	; HL = DE + offset (offset is always negative)
 		ld	l,a
 		ld	a,-1
 		adc	a,d
@@ -120,29 +160,28 @@ not_literal:	getbit
 		ldir
 		pop	hl
 		pop	bc
-		jp	mainloop
+		j	mainloop
 
 long_match:	push	bc
-		ld	a,(hl)
+		ld	c,(hl)
 		inc	hl
-		ld	c,a
-		ld	a,(hl)
-		rrca
-		rrca
-		rrca
-		or	11100000b
-		ld	b,a
-		ld	a,(hl)
+		ld	b,(hl)
+		ld	a,b
+		; Carry is assumed to be set here! (saves 1 cycle)
+		rr	b
+		sra	b
+		sra	b
+
 		inc	hl
 		and	7
-		jp	nz,got_length
+		jc	nz,got_length
 		ld	a,(hl)
 		inc	hl
 
 		; Check special codes
 		cp	1
-		jp	z,clean_up_and_loop	; equal to 1, ignore
-		jp	c,clean_up_and_ret	; less than 1, must be 0, exit
+		jc	z,clean_up_and_loop	; equal to 1, ignore
+		jc	c,clean_up_and_ret	; less than 1, must be 0, exit
 		; Actual lenght is A + 1, but we add 2 when falling through
 		; so we compensate here:
 		dec	a
@@ -152,24 +191,26 @@ got_length:	; Apply offset
 		push	hl
 		ld	h,d
 		ld	l,e
-		add	hl,bc
+		add	hl,bc	; HL = DE + offset (negative)
 		ld	c,a
 		ld	b,0
-		inc	bc
-		inc	bc
+		inc	c	; This one never overflows so inc only C
+		inc	bc	; This one could overflow so inc as a pair
 		ldir
 		pop	hl
 
 clean_up_and_loop:
 		pop	bc
-		jp	mainloop
+		j	mainloop
 
 clean_up_and_ret:
 		pop	bc
 		ret
 
-	IFNDEF OPTIMIZE_FOR_SIZE
-	ELSE
+		IF OPTIMIZE=SPEED
+		ELSE
 getbit_routine:	getbit_code
 		ret
-	ENDIF
+		ENDIF
+
+		endp
