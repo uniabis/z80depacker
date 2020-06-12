@@ -14,15 +14,14 @@
 ; Clobbers: AF, AF', BC
 
 ; Changes:
-;  1.1p1 137/ 92 bytes 11-06-2020 : Applied some changes from 1.1
+;  1.1p1 137/ 92 bytes 11-06-2020 : Moved getbit_routine to bottom, some optimizations by uniabis.
 ;  1.1   156/112 bytes 10-06-2020 : Very tiny optimization; also optimizing for size saves 10 more bytes
-;  1.0p1 137/ 98 bytes 10-06-2020 : Modified for sjasmplus, optimized
 ;  1.0   157/122 bytes 09-06-2020 : Original version
 
 ; Set OPTIMIZE to either SPEED or SIZE.
 ; Optimizing for speed makes the getbit code be inlined, at the cost of
-; decompressor memory (156 bytes as of this writing).
-; Optimizing for size (112 bytes as of this writing) makes the code a bit
+; decompressor memory (137 bytes as of this writing).
+; Optimizing for size ( 92 bytes as of this writing) makes the code a bit
 ; slower due to the calls to getbit and the relative jumps.
 
 SIZE		equ	0
@@ -59,7 +58,7 @@ gotbit:
 
 unlze		proc
 
-		IF OPTIMIZE=SPEED
+		IF	OPTIMIZE=SPEED
 
 		; Optimize for speed
 
@@ -80,7 +79,6 @@ jc		macro	x,y
 		; Optimize for size
 
 		local	getbit_routine
-		; moved getbit_routine to bottom
 
 getbit		macro
 		call	getbit_routine
@@ -106,7 +104,7 @@ jc		macro	x,y
 		local	clean_up_and_ret
 		local	initbits
 
-		IF OPTIMIZE=SPEED
+		IF	OPTIMIZE=SPEED
 		ld	c,(hl)
 		inc	hl
 		ld	b,(hl)
@@ -210,7 +208,7 @@ got_length:	; Offset in BC
 		ld	h,b
 		j	copy_match
 
-		IF OPTIMIZE=SPEED
+		IF	OPTIMIZE=SPEED
 		ELSE
 getbit_routine:	getbit_code
 		ret
