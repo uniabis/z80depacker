@@ -52,8 +52,8 @@ dlze_lp2:
 
 		GET_BIT
 		jr	c,dlze_far
-		ld	bc,0
 
+		ld	c,0
 		GET_BIT
 		rl	c
 		GET_BIT
@@ -64,6 +64,7 @@ dlze_lp2:
 		ld	h,-1
 
 dlze_copy:
+		ld	b,0
 		inc	c
 		add	hl,de
 	IFNDEF	ALLOW_LDIR_UNROLLING
@@ -80,29 +81,30 @@ dlze_copy:
 
 dlze_far:
 		ex      af, af';'
+
 		ld	a,(hl)
-		inc	hl
-		push	hl
-		ld	l,(hl)
-		ld	c,a
 		or	7
 		rrca
 		rrca
 		rrca
-		ld	h,a
-		ld	a,c
+		ld	b,a
+
+		ld	a,(hl)
+		inc	hl
+		ld	c,(hl)
+
 		and	7
 		jr	nz,dlze_skip
 
-		pop	bc
-		inc	bc
-		ld	a,(bc)
-		sub	1
-		ret	c
-		push	bc
+		inc	hl
+		or	(hl)
+		ret	z
+		dec	a
 
 dlze_skip:
-		ld	b,0
+		push	hl
+		ld	l,c
+		ld	h,b
 		ld	c,a
 		ex      af, af';'
 		jr	dlze_copy
