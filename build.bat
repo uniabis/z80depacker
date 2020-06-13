@@ -123,8 +123,8 @@ rem lzexe
 pasmo --equ OPTIMIZE=1 --bin z80unlze.asm z80unlze.bin
 pasmo --equ OPTIMIZE=0 --bin z80unlze.asm z80unlze_small.bin
 
-pasmo --equ OPTIMIZE=1 --bin z80unlzep1.asm z80unlzep1.bin
-pasmo --equ OPTIMIZE=0 --bin z80unlzep1.asm z80unlzep1_small.bin
+pasmo --equ OPTIMIZE=1 --bin z80unlzep2.asm z80unlzep2.bin
+pasmo --equ OPTIMIZE=0 --bin z80unlzep2.asm z80unlzep2_small.bin
 
 rem lzsa
 

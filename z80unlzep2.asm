@@ -1,4 +1,4 @@
-; Decompression routine for LZEXE-compressed streams, v1.1p1
+; Decompression routine for LZEXE-compressed streams, v1.1p2
 ;
 ; Copyright © 2020 Pedro Gimeno Fortea
 ;
@@ -14,6 +14,8 @@
 ; Clobbers: AF, AF', BC
 
 ; Changes:
+;  1.1p2 133/ 88 bytes 13-06-2020 : Removed suppot for x86 segment by uniabis.
+;  1.1p1 137/ 92 bytes 11-06-2020 : Moved getbit_routine to bottom, some optimizations by uniabis.
 ;  1.1p1 137/ 92 bytes 11-06-2020 : Moved getbit_routine to bottom, some optimizations by uniabis.
 ;  1.1   156/112 bytes 10-06-2020 : Very tiny optimization; also optimizing for size saves 10 more bytes
 ;  1.0   157/122 bytes 09-06-2020 : Original version
@@ -28,10 +30,11 @@ SIZE		equ	0
 SPEED		equ	1
 
 ; Change this to select what to optimize for
-		IF !defined OPTIMIZE
+		IF	!defined OPTIMIZE
 OPTIMIZE	equ	SPEED
 		ENDIF
 
+REMOVE_SUPPORT_FOR_SEGMENT	equ	1
 
 getbit_code	macro
 		; Get the next bit from the bitstream into the carry flag
@@ -169,14 +172,31 @@ copy_match:	add	hl,de	; HL = DE + offset (offset is always negative)
 		ldi
 		pop	hl
 
+
+		IF	!defined REMOVE_SUPPORT_FOR_SEGMENT
+
 clean_up_and_loop:
 		inc	hl
 		pop	bc
+
 		j	mainloop
 
 clean_up_and_ret:
 		inc	hl
 		pop	bc
+
+		ELSE
+
+clean_up_and_ret:
+
+		inc	hl
+		pop	bc
+
+		jc	nz,mainloop
+
+		ENDIF
+
+
 		ret
 
 long_match:	push	bc
@@ -197,7 +217,15 @@ long_match:	push	bc
 		jr	z,clean_up_and_ret	; less than 1, must be 0, exit
 
 		dec	a
+
+
+		IF	!defined REMOVE_SUPPORT_FOR_SEGMENT
+
 		jr	z,clean_up_and_loop	; equal to 1, ignore
+
+		ENDIF
+
+
 		; Actual lenght is A + 1, but we add 2 when falling through
 		; so we compensate here:
 		; Fall through
