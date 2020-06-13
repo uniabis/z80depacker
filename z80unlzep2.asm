@@ -16,7 +16,6 @@
 ; Changes:
 ;  1.1p2 133/ 88 bytes 13-06-2020 : Removed suppot for x86 segment by uniabis.
 ;  1.1p1 137/ 92 bytes 11-06-2020 : Moved getbit_routine to bottom, some optimizations by uniabis.
-;  1.1p1 137/ 92 bytes 11-06-2020 : Moved getbit_routine to bottom, some optimizations by uniabis.
 ;  1.1   156/112 bytes 10-06-2020 : Very tiny optimization; also optimizing for size saves 10 more bytes
 ;  1.0   157/122 bytes 09-06-2020 : Original version
 
