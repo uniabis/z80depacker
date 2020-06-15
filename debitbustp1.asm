@@ -47,7 +47,7 @@ get_gamma_value_end:
 
 	pop	hl		;address compressed data back from stack
 
-	db	0CAh		;skip next 2 bytes(JP C,nnnn)
+	db	01h		;skip next 2 bytes(LD BC,nnnn)
 	;jr	depack_loop
 
 copy_literal:
