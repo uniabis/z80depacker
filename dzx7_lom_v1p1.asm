@@ -49,7 +49,7 @@ dzx7l_main_loop:		DUP	2				; the more the better, but it may/will break down som
 				ldi
 				EDUP
 				add	a
-				jp	nc, dzx7l_copy_byte_loop	; next bit indicates either literal or sequence
+				jr	nc, dzx7l_copy_byte_loop	; next bit indicates either literal or sequence
 				jr	z, dzx7l_reload
 
 
@@ -62,7 +62,7 @@ dzx7l_process_ref:		push	de
 				ld	d, b
 				add	a
 				jr	z, dzx7l_reload_size1
-				jp	c, dzx7l_len_value_done
+				jr	c, dzx7l_len_value_done
 
 dzx7l_len_size_loop:		inc	d
 				add	a
@@ -122,18 +122,18 @@ dzx7l_copying:			ex	(sp), hl			; store source, restore destination
 dzx7l_reload_size1:		ld	a, (hl)
 				inc	hl
 				rla
-				jp	c, dzx7l_len_value_done
+				jr	c, dzx7l_len_value_done
 				DUP	1				; values above 1 speed things up slightly, but not by much - not really worth it
 				inc	d
 				add	a
-				jp	c, dzx7l_len_value_loop
+				jr	c, dzx7l_len_value_loop
 				EDUP
 				jp	dzx7l_len_size_loop
 
 dzx7l_reload_size2:		ld	a, (hl)
 				inc	hl
 				rla
-				jp	c, dzx7l_len_value_loop
+				jr	c, dzx7l_len_value_loop
 				jp	dzx7l_len_size_loop
 
 ;
@@ -147,7 +147,7 @@ dzx7l_len_value_reload:		ld	a, (hl)
 ;dzx7l_len_value_bincluded:	rl	b
 ;				jr	c, dzx7l_exit			; check end marker
 ;				dec	d
-;				jp	z, dzx7l_len_value_done
+;				jr	z, dzx7l_len_value_done
 
 dzx7l_len_value_loop2:		adc	a
 				jr	z, dzx7l_len_value_reload
