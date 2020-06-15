@@ -45,7 +45,7 @@ CASE1:			ldi					; first byte is always copied as literal
 
 MainLoop:		add a : jr z,ReloadByte1 : jr c,CASE1		; "1"+BYTE = copy literal
 ProcessMatch1		add a : jr z,ReloadByte2 : jr c,CASE01x
-ProcessMatch2		add a : jr z,ReloadByte3 : jr nc,CASE000
+ProcessMatch2		add a : jr nc,CASE000 : jr z,ReloadByte3
 
 CASE001:		; "001"+[OFFSET] is a close 2-byte match
 			push hl: ld l,(hl) : ld h,#FF

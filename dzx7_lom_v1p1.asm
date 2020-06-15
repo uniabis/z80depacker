@@ -49,8 +49,8 @@ dzx7l_main_loop:		DUP	2				; the more the better, but it may/will break down som
 				ldi
 				EDUP
 				add	a
-				jr	z, dzx7l_reload
 				jp	nc, dzx7l_copy_byte_loop	; next bit indicates either literal or sequence
+				jr	z, dzx7l_reload
 
 
 ;
@@ -66,8 +66,8 @@ dzx7l_process_ref:		push	de
 
 dzx7l_len_size_loop:		inc	d
 				add	a
-				jr	z, dzx7l_reload_size2
 				jr	nc, dzx7l_len_size_loop
+				jr	z, dzx7l_reload_size2
 
 
 dzx7l_len_value_loop:		add	a
@@ -99,9 +99,9 @@ dzx7l_len_value_done:
 				jr	z, dzx7l_reload_3
 				rl	d
 				add	a
+				jr	nc, dzx7l_copying		; we need to put 4-bit value into D, then INC D, then SRL D : RR E
 				jr	z, dzx7l_reload_4
 
-				jr	nc, dzx7l_copying		; we need to put 4-bit value into D, then INC D, then SRL D : RR E
 dzx7l_offset_eoverflow:		res	7, e				; since bit 7 of E is already 1, we do nothing when NC or RES 7,E : INC D
 				inc	d
 

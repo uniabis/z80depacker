@@ -27,8 +27,8 @@ apgetbit1           ld      a,(hl)
 apbranch1           ldi
 aploop2             ld      b,255
 aploop              add     a,a
-                    jr      z,apgetbit1
                     jr      nc,apbranch1
+                    jr      z,apgetbit1
 apbranch1n          add     a,a
                     jr      nz,apnogetbit2
                     ld      a,(hl)

@@ -71,8 +71,8 @@ literal
   ldi
 loop
   add a,a
-  jr z,filbuf
   jr nc,literal
+  jr z,filbuf
 
 getlen
   GETBIT

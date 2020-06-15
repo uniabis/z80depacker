@@ -27,8 +27,8 @@ apfilbuf1           ld      a,(hl)
 apbranch1           ldi
 aploop2             ld      b,255
 aploop              add     a,a
-                    jr      z,apfilbuf1
                     jr      nc,apbranch1
+                    jr      z,apfilbuf1
 apbranch1n          add     a,a
                     call    z,apfilbuf
                     jr      nc,apbranch2
