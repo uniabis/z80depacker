@@ -3,7 +3,7 @@
 
 	scf
 
-fill_bit_buffer:
+fill_bit_buffer1:
 	ld	a,(hl)
 	inc	hl
 	adc	a,a
@@ -15,7 +15,7 @@ one_literal:
 main_loop:
 	add	a
 	jr	nc,one_literal
-	jr	z,fill_bit_buffer
+	jr	z,fill_bit_buffer1
 
 get_offset
 	push	de	; (----sp) = dest
@@ -38,12 +38,19 @@ apply_offset:
 
 get_bit_length_loop:
 	inc	b
-	call	get_bit
+	add	a
+	jr	nc,get_bit_length_end
+	jr	nz,get_bit_length_loop
+	ld	a,(hl)
+	inc	hl
+	adc	a
 	jr	c,get_bit_length_loop
-	jr	get_bit_length_end
+	jp	get_bit_length_end
+
 
 get_length_loop:
-	call	get_bit
+	add	a
+	call	z,fill_bit_buffer2
 	rl	c
 	rl	d
 
@@ -64,7 +71,7 @@ get_bit_length_end:
 
 	pop	hl		; hl = (sp++++) = source
 
-	jr	main_loop
+	jp	main_loop
 
 
 exit:
@@ -76,18 +83,18 @@ long_offset:
 	ld	b,0c0h
 
 long_offset_loop:
-	call	get_bit
+	add	a
+	call	z,fill_bit_buffer2
 	rl	b
 	jr	c,long_offset_loop
-	call	get_bit
+	add	a
+	call	z,fill_bit_buffer2
 	jr	c,apply_offset
 	res	7,c
 	jr	apply_offset
 
 
-get_bit:
-	add	a
-	ret	nz
+fill_bit_buffer2:
 	ld	a,(hl)
 	inc	hl
 	adc	a,a

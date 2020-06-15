@@ -44,6 +44,7 @@ rem Bitbuster Extreme
 
 sjasmplus --raw=debitbust.bin debitbust.asm
 sjasmplus --raw=debitbustp1.bin debitbustp1.asm
+sjasmplus --raw=debitbustp2.bin debitbustp2.asm
 
 rem exomizer2
 
