@@ -9,6 +9,12 @@ fill_bit_buffer1:
 	adc	a,a
 	jr	c,get_offset
 
+	;DUP	6
+	;ldi
+	;add	a,a
+	;jr	c,get_offset
+	;EDUP
+
 one_literal:
 	ldi
 
@@ -17,9 +23,7 @@ main_loop:
 	jr	nc,one_literal
 	jr	z,fill_bit_buffer1
 
-get_offset
-	push	de	; (----sp) = dest
-
+get_offset:
 	ld	c,(hl)
 	inc	hl
 	bit	7,c
@@ -27,8 +31,8 @@ get_offset
 	ld	b,0
 
 apply_offset:
+	push	de	; (----sp) = dest
 	ex	de,hl
-	scf
 	sbc	hl,bc
 	ex	de,hl
 	push	de	; (----sp) = dest-offset
@@ -91,6 +95,7 @@ long_offset_loop:
 	call	z,fill_bit_buffer2
 	jr	c,apply_offset
 	res	7,c
+	scf
 	jr	apply_offset
 
 
