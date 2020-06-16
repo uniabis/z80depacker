@@ -36,6 +36,12 @@ getbit1:
 		adc	a,a
 		jr	c,dlze_lp1n
 
+	;	DUP	2
+	;	ldi
+	;	add	a
+	;	jr	c,dlze_lp1n
+	;	EDUP
+
 dlze_lp1:
 		ldi
 dlze_lp2:
@@ -44,8 +50,8 @@ dlze_lp2:
 		jr	z,getbit1
 dlze_lp1n:
 		add	a
-		call	z,getbit
 		jr	c,dlze_far
+dlze_near:
 		ld	bc,0
 
 		add	a
@@ -69,7 +75,14 @@ dlze_copy:
 		inc	hl
 		jr	dlze_lp2
 
+getbit2:
+		ld	a,(hl)
+		inc	hl
+		adc	a,a
+		jr	nc,dlze_near
+
 dlze_far:
+		jr	z,getbit2
 		ex      af, af';'
 		ld	a,(hl)
 		inc	hl
