@@ -42,6 +42,7 @@ get_bit_length_loop:
 	jr	c,get_bit_length_loop
 	jr	get_bit_length_end
 
+
 get_length_loop:
 	call	get_bit
 	rl	c
