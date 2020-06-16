@@ -43,13 +43,13 @@ dzx7l_copy_byte_loop:		ldi					; copy literal byte
 
 dzx7l_main_loop:		DUP	2				; the more the better, but it may/will break down some JR optimizations
 				add	a
-				jr	z, dzx7l_reload
-				jr	c, dzx7l_process_ref
+				jr	c, dzx7l_process_ref_or_reload
 
 				ldi
 				EDUP
 				add	a
 				jr	nc, dzx7l_copy_byte_loop	; next bit indicates either literal or sequence
+dzx7l_process_ref_or_reload:
 				jr	z, dzx7l_reload
 
 
