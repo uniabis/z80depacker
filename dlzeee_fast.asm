@@ -1,4 +1,4 @@
-; LZEee depacker for Z80 sjasm (lzee  with f4 option)
+; LZEee depacker for Z80 sjasm (lzee  with f5 option)
 ;
 ; license:zlib license
 ;
@@ -23,6 +23,8 @@
 ;   3. This notice may not be removed or altered from any source
 ;   distribution.
 ;
+
+	;DEFINE	OBSOLETED_F4
 
 dlzeee:
 		ldi
@@ -86,8 +88,13 @@ dlze_far:
 		pop	bc
 		inc	bc
 		ld	a,(bc)
+	IFNDEF	OBSOLETED_F4
+		or	a
+		ret	z
+	ELSE
 		sub	1
 		ret	c
+	ENDIF
 		push	bc
 
 dlze_skip:
