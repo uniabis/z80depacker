@@ -61,8 +61,18 @@ dzx7l_process_ref:		push	de
 
 				ld	d, b
 				add	a
-				jr	z, dzx7l_reload_size1
+				jr	nc, dzx7l_len_size_loop
+				jr	nz, dzx7l_len_value_done
+
+dzx7l_reload_size1:		ld	a, (hl)
+				inc	hl
+				rla
 				jr	c, dzx7l_len_value_done
+				DUP	1				; values above 1 speed things up slightly, but not by much - not really worth it
+				inc	d
+				add	a
+				jr	c, dzx7l_len_value_loop
+				EDUP
 
 dzx7l_len_size_loop:		inc	d
 				add	a
@@ -118,17 +128,6 @@ dzx7l_copying:			ex	(sp), hl			; store source, restore destination
 	ELSE
 				jp	(ix)
 	ENDIF
-
-dzx7l_reload_size1:		ld	a, (hl)
-				inc	hl
-				rla
-				jr	c, dzx7l_len_value_done
-				DUP	1				; values above 1 speed things up slightly, but not by much - not really worth it
-				inc	d
-				add	a
-				jr	c, dzx7l_len_value_loop
-				EDUP
-				jp	dzx7l_len_size_loop
 
 dzx7l_reload_size2:		ld	a, (hl)
 				inc	hl
