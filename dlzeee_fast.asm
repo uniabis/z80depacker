@@ -1,4 +1,4 @@
-; LZEee depacker for Z80 sjasm (lzee  with f5 option)
+; LZEee depacker for Z80 sjasm (lzee  with f5 option) 87bytes
 ;
 ; license:zlib license
 ;

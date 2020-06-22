@@ -117,6 +117,7 @@ sjasmplus --raw=dlze_small.bin dlze_small.asm
 rem lzeee
 
 sjasmplus --raw=dlzeee_fast.bin dlzeee_fast.asm
+sjasmplus --raw=dlzeee_fast2.bin dlzeee_fast2.asm
 sjasmplus --raw=dlzeee_small.bin dlzeee_small.asm
 
 rem lzexe

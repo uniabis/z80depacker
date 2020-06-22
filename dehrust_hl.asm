@@ -181,9 +181,9 @@ LL40B1  PUSH HL
 LL40D5  LD B,A
         LD A,(HL)
         INC HL
-        CCF
+        CCF ; CF=0(!CF), ZF=ZF(preserved)
 
-        DB #DA ; JP C,nnnn
+        DB #DA ; skip next 2bytes, opcode DA:JP C,nnnn
 
 LL40DE  CP #0F
         JR C,LL40D5
@@ -205,7 +205,7 @@ LL40C6  mGETBIT 1
 
 
 
-LL40F3  SBC A,A
+LL40F3  SBC A,A ; ZF=!CF
         LD A,#EF
 
 LL40F6  mGETBIT 1
