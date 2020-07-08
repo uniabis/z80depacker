@@ -49,8 +49,8 @@ get_bit_length_loop:
 	inc	hl
 	adc	a
 	jr	c,get_bit_length_loop
-	jp	get_bit_length_end
-
+	dec	b
+	jr	z,get_length_end
 
 get_length_loop:
 	add	a
@@ -60,7 +60,7 @@ get_length_loop:
 
 get_bit_length_end:
 	djnz	get_length_loop
-
+get_length_end:
 	ld	b,d		; bc = length - 1
 	pop	de		; de = (sp++++) = dest-offset
 
