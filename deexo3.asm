@@ -49,6 +49,7 @@
 
 opcode_add_hl	EQU	41	;  41=029h;ADD HL, HL
 opcode_jp_z	EQU	202	; 202=0CAh;JP Z, nnnn
+opcode_jp_c	EQU	218	; 218=0DAh;JP C, nnnn
 
 
 	IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
@@ -209,7 +210,11 @@ setbit:
 	jr	literal_one
 	ENDIF
 	ELSE
+	IF (INLINE_FILBIT == 1)
 	jr	next
+	ELSE
+	defb	opcode_jp_c
+	ENDIF
 	ENDIF
 
 	IF (INLINE_FILBIT == 1)
