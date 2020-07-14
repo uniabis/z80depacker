@@ -85,6 +85,8 @@ sjasmplus --raw=dehrust_hl.bin dehrust_hl.asm
 
 sjasmplus --raw=dehrust_stk.bin dehrust_stk.asm
 
+sjasmplus --raw=dehrust_stk_208b.bin dehrust_stk_208b.asm
+
 rem lz4
 
 sjasmplus --raw=lz4dec.bin lz4dec.asm
