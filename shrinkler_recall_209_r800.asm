@@ -10,7 +10,7 @@
 ; v8: replace D5 by HL              14.23 s   / 209 bytes
 ; v9: DE init optimisation          14.23 s   / 208 bytes
 ; r800: replace SLL A to SCF/RLA    14.23 s   / 208 bytes
-; rom: remove self-modification     14.17 s   / 207 bytes
+; rom: remove self-modification     14.17 s   / 210 bytes
 
 ; shrinkler_decrunch
 ; input IX=source
@@ -22,6 +22,11 @@ shrinkler_decrunch
           LD   HL,10*256+probs
           LD   BC,#0A80
           XOR  A        ; start by LSB
+        IFNDEF ROM
+        ELSE
+          PUSH AF
+          POP IY
+        ENDIF
           LD   D,A
 init
           DEC  H

@@ -10,7 +10,7 @@
 ; v9: DE init optimisation          14.23 s   / 208 bytes
 ; vA: no more parity context                  / 202 bytes
 ; r800: replace SLL A to ADC A                / 202 bytes
-; rom: remove self-modification               / 201 bytes
+; rom: remove self-modification               / 204 bytes
 
 ; CALL shrinkler_decrunch
 ; input IX=source
@@ -23,6 +23,11 @@ shrinkler_decrunch
           LD   HL,8*256+probs
           LD   BC,#0880
           XOR  A        ; start by LSB
+        IFNDEF ROM
+        ELSE
+          PUSH AF
+          POP IY
+        ENDIF
           LD   D,A
 init
           DEC  H
