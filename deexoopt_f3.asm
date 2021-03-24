@@ -280,10 +280,8 @@ gbic    inc     c
 
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
         ex      af, af';'
-        ld      b, a
         and     3
-        dec     a
-        ld      a, b
+        cp      1
         jr      z, checkreuse
         ex      af, af';'
 
