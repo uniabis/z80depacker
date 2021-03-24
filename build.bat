@@ -78,6 +78,8 @@ sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 --raw=de
 
 sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p7.bin deexoopt_f3.asm
 
+sjasmplus -Dmapbase=0200h -Dliterals=1 -Dreuse=0 --raw=deexoopt_f3_fixed_p7.bin deexoopt_f3_fixed.asm
+
 rem exomizer3.1
 
 sjasmplus -DPFLAG_CODE=39 --raw=deexo3_p39.bin deexo3.asm 
@@ -85,6 +87,8 @@ sjasmplus -DPFLAG_CODE=39 --raw=deexo3_p39.bin deexo3.asm
 sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=39 -Dmapbase=0200h -Dliterals=1 --raw=deexoopt_f3_p39.bin deexoopt_f3.asm
 
 sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=39 -Dmapbase=0200h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p39.bin deexoopt_f3.asm
+
+sjasmplus -Dmapbase=0200h -Dliterals=1 -Dreuse=1 --raw=deexoopt_f3_fixed_p39.bin deexoopt_f3_fixed.asm
 
 rem hrust
 
