@@ -4,13 +4,10 @@
 ;Optimized by Antonio Villena and Urusergi
 ;
 ;Compression algorithm by Magnus Lind
-;   exomizer raw -P0 -T0 (literals=1, PFLAG_CODE=0)
-;   exomizer raw -P0 -T1 (literals=0, PFLAG_CODE=0)
-;   exomizer raw -P7 -T0 (literals=1, PFLAG_CODE=7)
-;   exomizer raw -P7 -T1 (literals=0, PFLAG_CODE=7)
-;   exomizer raw -P15 -T0 (literals=1)
-;   exomizer raw -P15 -T1 (literals=0)
-;
+;   exomizer raw -P15 -T0 (literals=1) (reuse=0)
+;   exomizer raw -P15 -T1 (literals=0) (reuse=0)
+;   exomizer raw -P47 -T0 (literals=1) (reuse=1)
+;   exomizer raw -P47 -T1 (literals=0) (reuse=1);
 ;   This depacker is free software; you can redistribute it and/or
 ;   modify it under the terms of the GNU Lesser General Public
 ;   License as published by the Free Software Foundation; either
@@ -31,23 +28,25 @@
   DEFINE PFLAG_IMPL_1LITERAL (1<<2)
   DEFINE PFLAG_BITS_ALIGN_START (1<<3)
   DEFINE PFLAG_4_OFFSET_TABLES (1<<4)
+  DEFINE PFLAG_REUSE_OFFSET (1<<5)
+
+  ; -P0 (Exomizer2 raw compatible)
+  ;DEFINE PFLAG_CODE 0
+  ; -P7 (Exomizer3.0 raw default)
+  ;DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL)
+  ; -P7 (Exomizer3.1 raw default)
+  ;DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL | PFLAG_REUSE_OFFSET)
 
   IFNDEF PFLAG_CODE
-    IFNDEF bitsalignstart
-      ; -P0 (Exomizer2 raw compatible)
-      ;DEFINE PFLAG_CODE 0
-      ; -P7 (Exomizer3 raw default)
-      ;DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL)
+    IFNDEF reuse
+      ; -P15
+      DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL | PFLAG_BITS_ALIGN_START)
+    ELSEIF reuse=0
       ; -P15
       DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL | PFLAG_BITS_ALIGN_START)
     ELSE
-      IF bitsalignstart=0
-        ; -P7 (Exomizer3 raw default)
-        DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL)
-      ELSE
-        ; -P15
-        DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL | PFLAG_BITS_ALIGN_START)
-      ENDIF
+      ; -P47
+      DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL | PFLAG_BITS_ALIGN_START | PFLAG_REUSE_OFFSET)
     ENDIF
   ENDIF
 
@@ -156,11 +155,23 @@ bit0    ld      (iy+map_disp_bit), a
         djnz    get4l
     ENDIF
 
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+    IF (PFLAG_CODE & PFLAG_IMPL_1LITERAL)
+        inc     b
+    ELSE
+        ld      b, 1
+    ENDIF
+      ENDIF
+
       IFNDEF OPTIMIZE_JUMP
+      ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
       ELSE
         ld      ix, mloop
       ENDIF
     IF (PFLAG_CODE & PFLAG_IMPL_1LITERAL)
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        ;scf
+      ENDIF
         jr      litcop
     ELSE
         jr      mloopl
@@ -189,15 +200,25 @@ gbm     ld      a, (hl)
       ENDIF
         jr      nc, gbmc
 
-litcop  ldi
+litcop:
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        inc     c
+      ENDIF
+        ldi
+mloop:
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        rl      b
+      ENDIF
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
-mloop   add     a, a
+        add     a, a
       ELSE
-mloop   srl     a
+        srl     a
       ENDIF
 mloopl  jr      z, gbm
         jr      c, litcop
     IFNDEF HD64180
+gbmc    ld      c, (map_ofs-1) & 255
+    ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
 gbmc    ld      c, (map_ofs-1) & 255
     ELSE
 gbmc    ld      bc, (map_ofs-1) & 255
@@ -227,11 +248,24 @@ gbic    inc     c
         push    de
         ex      de, hl
 
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        ex      af, af';'
+        ld      a, b
+        ex      af, af';'
+      ENDIF
+
     IFNDEF HD64180
         ld      iyl, c
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        ld      bc, 0
+      ELSE
         ld      c, 0
+      ENDIF
         or      a
     ELSE
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        ld      b, 0
+      ENDIF
         ld      iy, map_iyh*256
         add     iy, bc
         ld      c, b
@@ -243,6 +277,19 @@ gbic    inc     c
         ld      l, (iy+map_disp_lo)
         ld      h, (iy+map_disp_hi)
         add     hl, bc
+
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        ex      af, af';'
+        ld      b, a
+        and     3
+        dec     a
+        ld      a, b
+        jr      z, checkreuse
+        ex      af, af';'
+
+readofs:
+      ENDIF
+
         push    hl
         inc     h
         dec     h
@@ -278,15 +325,34 @@ goit    call    lee8
         ld      l, (iy+map_disp_lo)
         ld      h, (iy+map_disp_hi)
         add     hl, bc
+
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        push    hl
+        pop     ix
+useofs:
+        or      a ;clear CF
+      ENDIF
+
         ex      de, hl
         pop     bc
+
         ex      (sp), hl
         push    hl
         sbc     hl, de
         pop     de
         ldir
         pop     hl
+
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        ex      af, af';'
+        ld      b, a
+        ex      af, af';'
+        or      a ;clear CF
+      ENDIF
+
       IFNDEF OPTIMIZE_JUMP
+        jr      mloop
+      ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
         jr      mloop
       ELSE
         jp      (ix)
@@ -299,6 +365,10 @@ litcat:
         ret     z
       ELSE
         ret     pe
+      ENDIF
+
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        push    bc
       ENDIF
 
       IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
@@ -314,12 +384,50 @@ litcat:
         ex      de, hl
       ENDIF
         ldir
+
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        pop     bc
+        scf
+        ld      c, 1
+      ENDIF
+
       IFNDEF OPTIMIZE_JUMP
         jr      mloop
+      ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        jp      mloop
       ELSE
         jp      (ix)
       ENDIF
     ENDIF
+
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+checkreuse:
+        ex      af, af';'
+
+      IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
+        add     a, a
+      ELSE
+        srl     a
+      ENDIF
+        jr      nz, .skip
+
+        ld      a, (de)
+        inc     de
+      IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
+        adc     a, a
+      ELSE
+        rra
+      ENDIF
+.skip:
+        jr      nc, readofs
+
+        push    ix
+        ex      (sp), hl
+
+        jr      useofs
+
+      ENDIF
 
 getbits jp      p, lee8
         sla     b

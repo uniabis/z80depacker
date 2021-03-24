@@ -4,6 +4,9 @@
 
 goto skip_debug
 
+rem sjasmplus --raw=lzedec.bin lzedec.mac
+rem sjasmplus --raw=lzedecr.bin lzedecR.mac
+
 rem sjasmplus --raw=dehrust_hl.bin dehrust_hl.asm
 rem sjasmplus --raw=dehrust_hlb.bin dehrust_hlb.asm
 
@@ -58,7 +61,7 @@ sjasmplus -DINLINE_GETBIT=1 -DOPTIMIZE_JUMP=1 --raw=deexo_180_fast_jp.bin deexo_
 
 sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=0 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p0.bin deexoopt_f3.asm
 
-rem exomizer3
+rem exomizer3.0
 
 sjasmplus --raw=deexo3p7.bin deexo3p7.asm 
 
@@ -74,6 +77,14 @@ sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=3 --r
 sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
 
 sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p7.bin deexoopt_f3.asm
+
+rem exomizer3.1
+
+sjasmplus -DPFLAG_CODE=39 --raw=deexo3_p39.bin deexo3.asm 
+
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=39 -Dmapbase=0200h -Dliterals=1 --raw=deexoopt_f3_p39.bin deexoopt_f3.asm
+
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=39 -Dmapbase=0200h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p39.bin deexoopt_f3.asm
 
 rem hrust
 
@@ -115,6 +126,9 @@ sjasmplus --raw=lzdec.bin lzdec.asm
 
 sjasmplus --raw=dlze_fast.bin dlze_fast.asm
 sjasmplus --raw=dlze_small.bin dlze_small.asm
+
+sjasmplus --raw=lzedec.bin lzedec.mac
+sjasmplus --raw=lzedecr.bin lzedecR.mac
 
 rem lzeee
 

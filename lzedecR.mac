@@ -1,0 +1,124 @@
+;//	LZE DECODE ROUTINE
+;//	Original Copyright (C)1995,2008 GORRY.
+;//	Porting for Z80 by Kei Moroboshi 2020/Nov
+;	.Z80
+;	PUBLIC	DECODE_LZE
+;==============================================================================
+;LZE data decoder type-R
+;Input:
+;	HL	LZE encoded data address(*)
+;	DE	extracting address
+;(*)lze.exe add 4 byte header as extracted size(big-endian).
+;Therefore, you must set HL as LZE data top + 4(skip the header).
+;Broken:
+;	AF,BC,DE,HL,AF',HL',IY
+;Example:
+;	LD	HL,LZEDATA+4
+;	LD	DE,EXTRACT_AREA
+;	CALL	DECODE_LZE
+;==============================================================================
+DECODE_LZE:				;ENTRY
+	LD	IY,MAINLP	;[[[or remove]]]
+	LDI
+	DB	01H	;skip next DJNZ
+MAINLP:
+	DJNZ	SKIP	;BitTest() {
+	LD	A,(HL)	;
+	INC	HL
+	LD	B,8
+SKIP:	RLCA		;}
+	JR	NC,EXTRAC	;1:Store
+				;0x:Copy
+STORE:	LDI		;*(DECODEPtr++) = *(LZEPtr++);
+	INC	BC
+	JP	(IY)	;or JR MAINLP
+
+EXTRAC:
+;Copy Byte Distance or Word Distance
+	DJNZ	SKIP0	;BitTest() {
+	LD	A,(HL)	;
+	INC	HL
+	LD	B,8	;8
+SKIP0:	RLCA		;}
+
+	JR	C,COPYWD	;01:Copy with Word Distance
+
+				;00:Copy with Byte Distance
+COPYBD:
+	DJNZ	SKIP00	;BitTest() {
+	LD	A,(HL)	;
+	INC	HL
+	LD	B,8
+SKIP00:	RLCA		;}
+	LD	C,0
+	RL	C	;adc	CopyCount,CopyCount
+
+	DJNZ	SKIP01	;BitTest() {
+	LD	A,(HL)	;
+	INC	HL
+	LD	B,8	;8
+SKIP01:	RLCA		;}
+	RL	C
+	EX	AF,AF'	;Save
+	LD	A,(HL)	;LoadDistanceB();
+	INC	HL
+	PUSH	HL
+	LD	L,A	;Distance = -256+((int)*(LZEPtr++));
+	LD	H,0FFH
+;
+CPCNTP2:		;CopyCount ++;
+	INC	C	;inc	CopyCount
+CPCNTP1:
+	LD	A,B	;Save BitCount
+	LD	B,0
+	INC	BC	;inc	CopyCount
+			;Copy() {
+	ADD	HL,DE	;	HL':CopyPtr=HL':Distance + DE':DECODEPtr
+	LDIR		;}	//BC':CopyCount would be 0
+	POP	HL
+	LD	B,A
+	EX	AF,AF'
+	JP	(IY)	;[[[JP/JR	MAINLP]]]
+
+;COPY with Word Distance
+COPYWD:
+	EX	AF,AF'	;Save BitData
+	LD	A,(HL)	;LoadDistanceW() {
+	INC	HL
+	LD	C,(HL)
+	INC	HL
+	PUSH	HL
+	LD	L,C		;L=DistanceL
+	LD	H,A		;H=DistanceH
+				;mov	CopyCount,Distance
+	RRA			;shr	Distance,1
+	RR	L
+	RRA			;shr	Distance,1
+	RR	L
+	RRA			;shr	Distance,1
+	RR	L
+	OR	0E0H		;or	DistanceH,0e0h
+	LD	H,A		;HL=(Distance>>3) | 0xE000;
+
+	LD	A,C		;if ( (CopyCount &= 7) != 0 ) {
+	AND	7		;  CopyCount += 2; Copy();
+	LD	C,A
+	JP	NZ,CPCNTP2	;[[[ or JR ]]]
+				;}else { // if CopyCount == 0
+
+	EXX		;4
+	POP	HL	;10
+	LD	A,(HL)		;  LoadCopyCount() {
+	INC	HL
+	PUSH	HL
+	EXX
+
+	LD	C,A		; } C'=CopyCountL
+	OR	A		;if ( CopyCount==0 ) goto DECODE_END
+	JP	NZ,CPCNTP1	;[[[ or JR ]]]
+				;else goto CPCNTP1
+DECODE_END:
+	POP	HL
+	RET
+
+

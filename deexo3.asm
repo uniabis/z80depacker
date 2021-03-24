@@ -2,7 +2,7 @@
 ;
 ; license:zlib license
 ;
-; Copyright (c) 2019-2020 uniabis
+; Copyright (c) 2019-2021 uniabis
 ;
 ; This software is provided 'as-is', without any express or implied
 ; warranty. In no event will the authors be held liable for any damages
@@ -34,23 +34,21 @@
 	DEFINE	PFLAG_IMPL_1LITERAL	(1<<2)
 	DEFINE	PFLAG_BITS_ALIGN_START	(1<<3)
 	DEFINE	PFLAG_4_OFFSET_TABLES	(1<<4)
+	DEFINE	PFLAG_REUSE_OFFSET	(1<<5)
 
 	IFNDEF PFLAG_CODE
 ; -P0 (Exomizer2 raw compatible)
 ;	DEFINE PFLAG_CODE 0
-; -P7 (Exomizer3 raw default)
+; -P7 (Exomizer3.0 raw default)
 	DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL)
-; -P15
-;	DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL | PFLAG_BITS_ALIGN_START)
-; -P31
-;	DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL | PFLAG_BITS_ALIGN_START | PFLAG_4_OFFSET_TABLES)
+; -P39 (Exomizer3.1 raw default)
+;	DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL | PFLAG_REUSE_OFFSET)
 	ENDIF
 
 
 opcode_add_hl	EQU	41	;  41=029h;ADD HL, HL
 opcode_jp_z	EQU	202	; 202=0CAh;JP Z, nnnn
 opcode_jp_c	EQU	218	; 218=0DAh;JP C, nnnn
-
 
 	IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
 tbl_bytes	EQU	(16 + 16 + 16 + 16 + 4)
@@ -205,16 +203,26 @@ setbit:
 	or	a	;reset CF
 	djnz	init
 
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+	;ld	ix, 0
+	inc	b	;B=1
+	ENDIF
+
 	IF (PFLAG_CODE & PFLAG_IMPL_1LITERAL)
+
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+	;scf		;literal=1
+	ENDIF
 	IF (INLINE_FILBIT == 1)
 	jr	literal_one
 	ENDIF
-	ELSE
-	IF (INLINE_FILBIT == 1)
+
+	ELSEIF (INLINE_FILBIT == 1)
 	jr	next
+	ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+	jr	next2
 	ELSE
 	defb	opcode_jp_c
-	ENDIF
 	ENDIF
 
 	IF (INLINE_FILBIT == 1)
@@ -224,9 +232,20 @@ filbit:
 	ENDIF
 
 literal_one:
+
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+	inc	c
+	ENDIF
+
 	ldi
 
 next:
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+	rl	b
+next2:
+	ENDIF
+
+
 	IF (INLINE_FILBIT == 1)
 
 	m_getbit1
@@ -242,7 +261,11 @@ start_copy:
 	ENDIF
 
 
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+	ld	c, 0ffh
+	ELSE
 	ld	bc, 00ffh
+	ENDIF
 
 .alpha:
 	inc	c
@@ -254,9 +277,43 @@ start_copy:
 	ld	a, c
 	sub	16
 	ret	z
+
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+	push	bc
+	ENDIF
+
 	jr	nc, literal
 
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+	ld	b, 0
+	ENDIF
+
 	call	p_readtable
+
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+	ex	(sp), hl
+	ld	a, h
+	and	3
+	dec	a
+	ex	(sp), hl
+
+	jr	nz, new_offset
+
+	ex	af, af'	;'
+
+	m_getbit
+
+	jr	c, reuse_offset_ix
+
+	ex	af, af'	;'
+
+new_offset:
+
+	ld	a, b
+	or	a
+
+	ENDIF
 
 	push	bc
 
@@ -292,6 +349,15 @@ getofs:
 
 	call	p_readtable
 
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+	push	bc
+	pop	ix
+
+	ENDIF
+
+reuse_offset_bc:
+
 	ex	(sp), hl
 	push	hl
 
@@ -307,6 +373,15 @@ getofs:
 	pop	hl
 
 	ex	af, af'	;'
+
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+	pop	bc
+	inc	c
+	or	a		;literal=0
+
+	ENDIF
+
 	jp	next
 
 	IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
@@ -324,6 +399,65 @@ ofs2:
 ofs1:
 	ld	bc, 020Ch
 	jr	getofs
+
+	ENDIF
+
+literal:
+
+	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
+	ld	b, (hl)
+	inc	hl
+
+	ld	c, (hl)
+	inc	hl
+	ELSE
+
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+	ld	bc, 1000h
+
+	ELSE
+
+	ld	c, b
+	ld	b, 10h
+
+	ENDIF
+
+	call	p_getbits16_b
+	ENDIF
+
+	ldir
+
+	ex	af, af'	;'
+
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+	pop	bc
+	inc	c
+
+	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
+	ELSE
+	scf		;literal=1
+	ENDIF
+
+	ENDIF
+
+	jp	next
+
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+reuse_offset_ix:
+
+	ex	af, af'	;'
+
+	push	bc
+
+	push	ix
+	pop	bc
+
+	;or	a	;clear CF
+
+	jp	reuse_offset_bc
 
 	ENDIF
 
@@ -379,26 +513,6 @@ p_readtable:
 	ld	b, a
 
 	ret
-
-literal:
-
-	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
-	ld	b, (hl)
-	inc	hl
-
-	ld	c, (hl)
-	inc	hl
-	ELSE
-	ld	c, b
-	ld	b, 16
-	call	p_getbits16_b
-	ENDIF
-
-	ldir
-
-	ex	af, af'	;'
-	jp	next
-
 
 	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
 	ELSE
@@ -457,6 +571,7 @@ p_fillbitbuf:
 	ret
 
 	ENDIF
+
 
 	IF (INLINE_GETBITS8 == 1)
 
