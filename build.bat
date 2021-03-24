@@ -191,6 +191,16 @@ rem shrinkler(NP)
 sjasmplus --raw=deshrink_np.bin deshrink_np.asm
 sjasmplus -DROM=1 --raw=deshrink_np_r800.bin deshrink_np_r800.asm
 
+rem zx0
+
+sjasmplus --raw=dzx0_mega.bin dzx0_mega.asm
+
+sjasmplus --raw=dzx0_standard.bin dzx0_standard.asm
+
+sjasmplus --raw=dzx0_turbo.bin dzx0_turbo.asm
+
+sjasmplus --raw=unzx0_fast.bin unzx0_fast.asm
+
 rem zx7
 
 sjasmplus --raw=dzx7_lom_v1.bin dzx7_lom_v1.asm
