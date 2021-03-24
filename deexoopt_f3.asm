@@ -328,7 +328,6 @@ goit    call    lee8
         push    hl
         pop     ix
 useofs:
-        or      a ;clear CF
       ENDIF
 
         ex      de, hl
@@ -345,7 +344,7 @@ useofs:
         ex      af, af';'
         ld      b, a
         ex      af, af';'
-        or      a ;clear CF
+        ;or      a ;clear CF
       ENDIF
 
       IFNDEF OPTIMIZE_JUMP
@@ -386,7 +385,7 @@ litcat:
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
         pop     bc
         scf
-        ld      c, 1
+        ld      c, b
       ENDIF
 
       IFNDEF OPTIMIZE_JUMP
@@ -422,6 +421,8 @@ checkreuse:
 
         push    ix
         ex      (sp), hl
+
+        or      a ;clear CF
 
         jr      useofs
 
