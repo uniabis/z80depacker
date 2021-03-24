@@ -69,11 +69,11 @@ License:LGPL
 
 [LZEXE decompressor for Z80](https://notabug.org/pgimeno/z80unlze)
 
-### [lzsa1](https://github.com/emmanuel-marty/lzsa) 1.3.4(-f1 -r)
+### [lzsa1](https://github.com/emmanuel-marty/lzsa) 1.3.6(-f1 -r)
 
 License:zlib
 
-### [lzsa2](https://github.com/emmanuel-marty/lzsa) 1.3.4(-f2 -r)
+### [lzsa2](https://github.com/emmanuel-marty/lzsa) 1.3.6(-f2 -r)
 
 License:zlib
 
