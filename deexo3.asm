@@ -204,23 +204,17 @@ setbit:
 	djnz	init
 
 	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-	;ld	ix, 0
-	inc	b	;B=1
+	ld	c, b	;BC=0
 	ENDIF
 
 	IF (PFLAG_CODE & PFLAG_IMPL_1LITERAL)
 
-	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-	;scf		;literal=1
-	ENDIF
 	IF (INLINE_FILBIT == 1)
 	jr	literal_one
 	ENDIF
 
 	ELSEIF (INLINE_FILBIT == 1)
 	jr	next
-	ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-	jr	next2
 	ELSE
 	defb	opcode_jp_c
 	ENDIF
@@ -233,19 +227,9 @@ filbit:
 
 literal_one:
 
-	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-	inc	c
-	ENDIF
-
 	ldi
 
 next:
-	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-	rl	b
-next2:
-	ENDIF
-
-
 	IF (INLINE_FILBIT == 1)
 
 	m_getbit1
@@ -262,10 +246,14 @@ start_copy:
 
 
 	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-	ld	c, 0ffh
-	ELSE
-	ld	bc, 00ffh
+
+	push	bc
+	exx
+	pop	bc
+	exx
 	ENDIF
+
+	ld	bc, 00ffh
 
 .alpha:
 	inc	c
@@ -278,25 +266,18 @@ start_copy:
 	sub	16
 	ret	z
 
-	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-	push	bc
-	ENDIF
-
 	jr	nc, literal
-
-	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-	ld	b, 0
-	ENDIF
 
 	call	p_readtable
 
 	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
 
-	ex	(sp), hl
-	ld	a, h
-	and	3
-	dec	a
-	ex	(sp), hl
+	exx
+
+	ld	a, b
+	or	c
+
+	exx
 
 	jr	nz, new_offset
 
@@ -376,9 +357,7 @@ reuse_offset_bc:
 
 	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
 
-	pop	bc
-	inc	c
-	or	a		;literal=0
+	inc	bc; BC=1
 
 	ENDIF
 
@@ -412,16 +391,8 @@ literal:
 	inc	hl
 	ELSE
 
-	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-
-	ld	bc, 1000h
-
-	ELSE
-
 	ld	c, b
 	ld	b, 10h
-
-	ENDIF
 
 	call	p_getbits16_b
 	ENDIF
@@ -432,13 +403,11 @@ literal:
 
 	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
 
+	exx
+	push	bc
+	exx
 	pop	bc
-	inc	c
-
-	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
-	ELSE
-	scf		;literal=1
-	ENDIF
+	dec	bc
 
 	ENDIF
 
