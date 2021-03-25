@@ -3,7 +3,7 @@
 ;
 ;  ver.00 by spke (27/01-23/03/2021, 191 bytes)
 ;  ver.01 by spke (24/03/2021, 193(+2) bytes - fixed a bug in the initialization)
-;  ver.01patch1 by uniabis (25/03/2021, 195(+2) bytes - fixed a bug with elias over 8bits)
+;  ver.01patch2 by uniabis (25/03/2021, 191(-2) bytes - fixed a bug with elias over 8bits)
 ;
 ;  Original ZX0 decompressors were written by Einar Saukas
 ;
@@ -154,27 +154,23 @@ ReadGammaAligned:	; this loop can be unrolled for a very minor increase in decom
 
 		;DEFINE	UNROLL_ME
 		IFNDEF	UNROLL_ME
+				DUP 2
 				ret c
 				add a : rl c
-				add a
-				DUP 1
-				ret c
-				add a : rl c : rl b
 				add a
 				EDUP
-				jr nz,ReadGammaAligned
 		ELSE
-				ret c
-				add a : rl c
-				add a
 				DUP 3
 				ret c
-				add a : rl c : rl b
+				add a : rl c
 				add a
 				EDUP
+				ret c
+				add a : rl c : rl b
+				add a
+ReloadBits		RELOAD_BITS
 		ENDIF
 
-ReloadBits		RELOAD_BITS
 
 ReadingLongGamma		; this loop does not need unrolling,
 				; as it does not get much use anyway
@@ -182,5 +178,10 @@ ReadingLongGamma		; this loop does not need unrolling,
 				add a : rl c : rl b
 				add a :	jr nz,ReadingLongGamma
 
+		IFNDEF	UNROLL_ME
+			RELOAD_BITS
+			jr ReadingLongGamma
+		ELSE
 			jr ReloadBits
+		ENDIF
 
