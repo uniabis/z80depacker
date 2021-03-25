@@ -156,11 +156,7 @@ bit0    ld      (iy+map_disp_bit), a
     ENDIF
 
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-    IF (PFLAG_CODE & PFLAG_IMPL_1LITERAL)
-        inc     b
-    ELSE
-        ld      b, 1
-    ENDIF
+        ld      c, b    ;BC=0
       ENDIF
 
       IFNDEF OPTIMIZE_JUMP
@@ -169,9 +165,6 @@ bit0    ld      (iy+map_disp_bit), a
         ld      ix, mloop
       ENDIF
     IF (PFLAG_CODE & PFLAG_IMPL_1LITERAL)
-      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-        ;scf
-      ENDIF
         jr      litcop
     ELSE
         jr      mloopl
@@ -201,14 +194,8 @@ gbm     ld      a, (hl)
         jr      nc, gbmc
 
 litcop:
-      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-        inc     c
-      ENDIF
         ldi
 mloop:
-      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-        rl      b
-      ENDIF
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
         add     a, a
       ELSE
@@ -216,12 +203,19 @@ mloop:
       ENDIF
 mloopl  jr      z, gbm
         jr      c, litcop
+
+gbmc:
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        push    bc
+        exx
+        pop     bc
+        exx
+      ENDIF
+
     IFNDEF HD64180
-gbmc    ld      c, (map_ofs-1) & 255
-    ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-gbmc    ld      c, (map_ofs-1) & 255
+        ld      c, (map_ofs-1) & 255
     ELSE
-gbmc    ld      bc, (map_ofs-1) & 255
+        ld      bc, (map_ofs-1) & 255
     ENDIF
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 getind  add     a, a
@@ -248,11 +242,6 @@ gbic    inc     c
         push    de
         ex      de, hl
 
-      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-        ex      af, af';'
-        ld      a, b
-        ex      af, af';'
-      ENDIF
 
     IFNDEF HD64180
         ld      iyl, c
@@ -279,10 +268,18 @@ gbic    inc     c
         add     hl, bc
 
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
         ex      af, af';'
-        and     3
-        cp      1
+
+        exx
+
+        ld      a, b
+        or      c
+
+        exx
+
         jr      z, checkreuse
+
         ex      af, af';'
 
 readofs:
@@ -341,10 +338,9 @@ useofs:
         pop     hl
 
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-        ex      af, af';'
-        ld      b, a
-        ex      af, af';'
-        ;or      a ;clear CF
+
+        inc     bc; BC=1
+
       ENDIF
 
       IFNDEF OPTIMIZE_JUMP
@@ -364,10 +360,6 @@ litcat:
         ret     pe
       ENDIF
 
-      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-        push    bc
-      ENDIF
-
       IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
         ld      b, (hl)
         inc     hl
@@ -383,9 +375,13 @@ litcat:
         ldir
 
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+        exx
+        push    bc
+        exx
         pop     bc
-        scf
-        ld      c, b
+        dec     bc
+
       ENDIF
 
       IFNDEF OPTIMIZE_JUMP
