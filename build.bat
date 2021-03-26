@@ -201,6 +201,18 @@ sjasmplus --raw=dzx0_standard.bin dzx0_standard.asm
 
 sjasmplus --raw=unzx0_fast.bin unzx0_fast.asm
 
+rem zx1
+
+sjasmplus --raw=dzx1_mega.bin dzx1_mega.asm
+
+sjasmplus --raw=dzx1_turbo.bin dzx1_turbo.asm
+
+sjasmplus --raw=dzx1_standard.bin dzx1_standard.asm
+
+rem zx2
+
+sjasmplus --raw=dzx2_nano.bin dzx2_nano.asm
+
 rem zx7
 
 sjasmplus --raw=dzx7_lom_v1.bin dzx7_lom_v1.asm
