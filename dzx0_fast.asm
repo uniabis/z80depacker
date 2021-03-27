@@ -5,6 +5,7 @@
 ;  ver.01 by spke (24/03/2021, 193(+2) bytes - fixed a bug in the initialization)
 ;  ver.01patch2 by uniabis (25/03/2021, 191(-2) bytes - fixed a bug with elias over 8bits)
 ;  ver.01patch3 by uniabis (27/03/2021, 191 bytes - a bit faster)
+;  ver.01patch4 by uniabis (28/03/2021, 191 bytes - a bit faster)
 ;
 ;  Original ZX0 decompressors were written by Einar Saukas
 ;
@@ -225,8 +226,8 @@ ReloadReadGamma:
         inc     hl
         rla
 
-ReadGammaAligned:
         ret     c
+ReadGammaAligned:
         add     a, a
         rl      c
         add     a, a
