@@ -195,11 +195,11 @@ rem zx0
 
 sjasmplus --raw=dzx0_mega.bin dzx0_mega.asm
 
+sjasmplus --raw=dzx0_fast.bin dzx0_fast.asm
+
 sjasmplus --raw=dzx0_turbo.bin dzx0_turbo.asm
 
 sjasmplus --raw=dzx0_standard.bin dzx0_standard.asm
-
-sjasmplus --raw=unzx0_fast.bin unzx0_fast.asm
 
 rem zx1
 
