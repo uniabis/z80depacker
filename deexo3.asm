@@ -248,9 +248,7 @@ start_copy:
 	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
 
 	push	bc
-	exx
-	pop	bc
-	exx
+
 	ENDIF
 
 	ld	bc, 00ffh
@@ -264,7 +262,16 @@ start_copy:
 
 	ld	a, c
 	sub	16
+
+	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+	jr	z, reuse_exit
+
+	ELSE
+
 	ret	z
+
+	ENDIF
 
 	jr	nc, literal
 
@@ -273,6 +280,8 @@ start_copy:
 	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
 
 	exx
+
+	pop	bc
 
 	ld	a, b
 	or	c
@@ -335,9 +344,9 @@ getofs:
 	push	bc
 	pop	ix
 
-	ENDIF
-
 reuse_offset_bc:
+
+	ENDIF
 
 	ex	(sp), hl
 	push	hl
@@ -403,9 +412,6 @@ literal:
 
 	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
 
-	exx
-	push	bc
-	exx
 	pop	bc
 	dec	bc
 
@@ -414,6 +420,10 @@ literal:
 	jp	next
 
 	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+reuse_exit
+	pop	bc
+	ret
 
 reuse_offset_ix:
 
