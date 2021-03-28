@@ -207,9 +207,6 @@ mloopl  jr      z, gbm
 gbmc:
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
         push    bc
-        exx
-        pop     bc
-        exx
       ENDIF
 
     IFNDEF HD64180
@@ -229,27 +226,30 @@ gbic    inc     c
         bit     4, c
       IF  literals=1
         jr      nz, litcat
+      ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        jr      nz, reuse_exit
       ELSE
         ret     nz
       ENDIF
     ELSE
       IF  literals=1
         jp      m, litcat
+      ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        jp      m, reuse_exit
       ELSE
         ret     m
       ENDIF
     ENDIF
-        push    de
-        ex      de, hl
 
+        ex      de, hl
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        ex      (sp), hl
+      ENDIF
+        push    hl
 
     IFNDEF HD64180
         ld      iyl, c
-      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-        ld      bc, 0
-      ELSE
         ld      c, 0
-      ENDIF
         or      a
     ELSE
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
@@ -271,12 +271,10 @@ gbic    inc     c
 
         ex      af, af';'
 
-        exx
+        pop     bc
 
         ld      a, b
         or      c
-
-        exx
 
         jr      z, checkreuse
 
@@ -355,9 +353,17 @@ useofs:
 litcat:
       IF  map_ofs==0
         bit     0, c
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        jr      z, reuse_exit
+      ELSE
         ret     z
+      ENDIF
+      ELSE
+      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+        jp      pe, reuse_exit
       ELSE
         ret     pe
+      ENDIF
       ENDIF
 
       IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
@@ -376,9 +382,6 @@ litcat:
 
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
 
-        exx
-        push    bc
-        exx
         pop     bc
         dec     bc
 
@@ -394,6 +397,10 @@ litcat:
     ENDIF
 
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
+
+reuse_exit:
+        pop     bc
+        ret
 
 checkreuse:
         ex      af, af';'
