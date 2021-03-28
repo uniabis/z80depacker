@@ -252,9 +252,6 @@ gbic    inc     c
         ld      c, 0
         or      a
     ELSE
-      IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
-        ld      b, 0
-      ENDIF
         ld      iy, map_iyh*256
         add     iy, bc
         ld      c, b
