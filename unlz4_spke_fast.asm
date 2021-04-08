@@ -27,7 +27,7 @@
 
 
 	DEFINE	ALLOW_LDIR_UNROLLING
-	DEFINE	DATA_HAS_HEADERS			; comment this line out if using to decompress a stripped (frameless) ZX4 data
+	;DEFINE	DATA_HAS_HEADERS			; comment this line out if using to decompress a stripped (frameless) ZX4 data
 	;DEFINE	ALLOW_UNCOMPRESSED			; uncomment to correctly process uncompressed blocks (i've no idea why you would do such a thing!)
 
 
