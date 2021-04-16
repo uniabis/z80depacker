@@ -366,7 +366,7 @@ reuse_offset_bc:
 
 	IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
 
-	inc	bc; BC=1
+	inc	c	; BC=1
 
 	ENDIF
 
