@@ -166,11 +166,9 @@ rem megalz
 
 sjasmplus --raw=megalz_dec40.bin megalz_dec40.asm
 
-sjasmplus --raw=unmegalz_fast_v2.bin unmegalz_fast_v2.asm
+sjasmplus --raw=unmegalz_fast.bin unmegalz_fast.asm
 
-sjasmplus --raw=unmegalz_fast_v2p1.bin unmegalz_fast_v2p1.asm
-
-sjasmplus --raw=unmegalz_small_v2.bin unmegalz_small_v2.asm
+sjasmplus --raw=unmegalz_small.bin unmegalz_small.asm
 
 rem pletter
 
