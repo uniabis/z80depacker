@@ -21,17 +21,17 @@
 
 License:MIT
 
-### [Exomizer2](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.1.0(raw -P0)
+### [Exomizer2](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.1.1(raw -P0)
 
 License:LGPL
 
-### [Exomizer3.0](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.1.0(raw -P7)
+### [Exomizer3.0](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.1.1(raw -P7)
 
 License:LGPL
 
 [deexoopt](https://github.com/antoniovillena/deexo)
 
-### [Exomizer3.1](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.1.0(raw -P39)
+### [Exomizer3.1](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.1.1(raw -P39)
 
 License:LGPL
 
