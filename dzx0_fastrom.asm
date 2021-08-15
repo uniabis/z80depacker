@@ -6,7 +6,7 @@
 ;  ver.01patch2 by uniabis (25/03/2021, 191(-2) bytes - fixed a bug with elias over 8bits)
 ;  ver.01patch5 by uniabis (29/03/2021, 191 bytes - a bit faster)
 ;  ver.01rom by uniabis (07/06/2021, 184(-7) bytes - support for ROM, but slower than the "Turbo")
-;  ver.01rom3 by uniabis (15/08/2021, 183(-1) bytes - support for ROM, but slower than the "Fast")
+;  ver.01rom4 by uniabis (15/08/2021, 181(-3) bytes - support for ROM, but slower than the "Fast")
 ;
 ;  Original ZX0 decompressors were written by Einar Saukas
 ;
@@ -15,7 +15,7 @@
 ;  about 5% faster than the "Turbo" decompressor, which is 128 bytes long.
 ;  It has about the same speed as the 412 bytes version of the "Mega" decompressor.
 ;
-;  The decompressor uses AF, AF', BC, DE, HL and IX and IY(optional).
+;  The decompressor uses AF, BC, DE, HL and IX and IY(optional).
 ;
 ;  The decompression is done in the standard way:
 ;
@@ -47,12 +47,10 @@
         ; +4byte, bit faster
         DEFINE AllowUsingIY
 
-        ; +4bytes, bit slower, support for hd64180/z180
+        ; +2bytes, bit slower, support for hd64180/z180
         ;DEFINE HD64180
 
 DecompressZX0:
-        scf
-        ex      af, af'
 
         IFDEF AllowUsingIY
         ld      iy, CopyMatch1
@@ -65,7 +63,6 @@ DecompressZX0:
 
         ; 7-bit offsets allow additional optimizations, based on the facts that C==0 and AF' has C ON!
 ShorterOffsets:
-        ex      af, af'                 ; note that AF' always has flag C ON
 
         IFDEF HD64180
         ld      b, $ff                  ; the top byte of the offset is always $FF
@@ -73,22 +70,20 @@ ShorterOffsets:
         ld      ixh, $ff                ; the top byte of the offset is always $FF
         ENDIF
 
-        ld      a, (hl)
+        ld      c, (hl)
         inc     hl
-        rra
+        rr      c
 
         IFDEF HD64180
-        ld      c, a
         push    bc
         pop     ix
         ELSE
-        ld      ixl, a
+        ld      ixl, c
         ENDIF
 
         jr      nc, LongerMatch
 
 CopyMatch2:                             ; the case of matches with len=2
-        ex      af, af'
 
         IFDEF HD64180
         ld      bc, 2
@@ -133,28 +128,37 @@ LongerOffets:
         call    z, ReloadReadGamma
 
 ProcessOffset:
-        ex      af, af'
+
+        ld      b, a
         xor     a
         sub     c
         ret     z                       ; end-of-data marker (only checked for longer offsets)
+
         rra
 
         IFDEF HD64180
-        ld      b, a
-        ELSE
-        ld      ixh, a
-        ENDIF
 
+        ld      c, a
+        ld      a, b
+        ld      b, c
+
+        ld      c, (hl)
+        inc     hl
+        rr      c
+
+        push    bc
+        pop     ix
+
+        ELSE
+
+        ld      ixh, a
         ld      a, (hl)
         inc     hl
         rra
-
-        IFDEF HD64180
-        ld      c, a
-        push    bc
-        pop     ix
-        ELSE
         ld      ixl, a
+        ld      a, b
+        ld      b, 0
+
         ENDIF
 
         ; lowest bit is the first bit of the gamma code for length
@@ -163,20 +167,12 @@ ProcessOffset:
         ; this wastes 1 t-state for longer matches far away,
         ; but saves 4 t-states for longer nearby (seems to pay off in testing)
 
-        IFNDEF HD64180
-        ld      c, b
-        ENDIF
-
 LongerMatch:
         IFDEF HD64180
         ld      bc, 1
         ELSE
-        inc     c
+        ld      c, 1
         ENDIF
-        ; doing SCF here ensures that AF' has flag C ON and costs
-        ; cheaper than doing SCF in the ShortestOffsets branch
-        scf
-        ex      af, af'
 
         add     a, a                    ; inline read gamma
         rl      c
