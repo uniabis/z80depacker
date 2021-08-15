@@ -51,17 +51,15 @@
         ;DEFINE HD64180
 
 DecompressZX0:
-        scf 
+        scf
         ex      af, af'
 
         IFDEF AllowUsingIY
         ld      iy, CopyMatch1
         ENDIF
 
-        ld      bc, $ffff
-        push    bc
-        pop     ix
-        inc     bc
+        ld      ix, $ffff
+        ld      bc, $0000
         ld      a, $80
         jr      RunOfLiterals           ; BC is assumed to contains 0 most of the time
 
@@ -117,7 +115,7 @@ UsualMatch:                             ; this is the case of usual match+offset
         add     a, a
         jr      nc, LongerOffets
         jr      nz, ShorterOffsets      ; NZ after NC == "confirmed C"
-        
+
         ld      a, (hl)                 ; reload bits
         inc     hl
         rla
@@ -211,7 +209,7 @@ RunOfLiterals:
         add     a, a
         jr      nc, LongerRun
         jr      nz, CopyLiteral         ; NZ after NC == "confirmed C"
-        
+
         ld      a, (hl)                 ; reload bits
         inc     hl
         rla
@@ -225,7 +223,7 @@ LongerRun:
         jr      nc, $-4
 
         jr      nz, CopyLiterals
-        
+
         ld      a, (hl)                 ; reload bits
         inc     hl
         rla
@@ -249,7 +247,7 @@ RepMatch:
         add     a, a
         jr      nc, LongerRepMatch
         jr      nz, CopyMatch1          ; NZ after NC == "confirmed C"
-        
+
         ld      a, (hl)                 ; reload bits
         inc     hl
         rla
