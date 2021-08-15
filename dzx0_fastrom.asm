@@ -1,12 +1,12 @@
 ;
-;  Speed-optimized ZX0 decompressor by spke (184 bytes)
+;  Speed-optimized ZX0 decompressor by spke, Without self-modified code by uniabis (180 bytes)
 ;
 ;  ver.00 by spke (27/01-23/03/2021, 191 bytes)
 ;  ver.01 by spke (24/03/2021, 193(+2) bytes - fixed a bug in the initialization)
 ;  ver.01patch2 by uniabis (25/03/2021, 191(-2) bytes - fixed a bug with elias over 8bits)
 ;  ver.01patch5 by uniabis (29/03/2021, 191 bytes - a bit faster)
 ;  ver.01rom by uniabis (07/06/2021, 184(-7) bytes - support for ROM, but slower than the "Turbo")
-;  ver.01rom4 by uniabis (15/08/2021, 181(-3) bytes - support for ROM, but slower than the "Fast")
+;  ver.01rom5 by uniabis (16/08/2021, 180(-4) bytes - support for ROM, but slower than the "Fast")
 ;
 ;  Original ZX0 decompressors were written by Einar Saukas
 ;
@@ -61,7 +61,6 @@ DecompressZX0:
         scf
         jr      RunOfLiteralsEntry
 
-        ; 7-bit offsets allow additional optimizations, based on the facts that C==0 and AF' has C ON!
 ShorterOffsets:
 
         IFDEF HD64180
@@ -163,9 +162,6 @@ ProcessOffset:
 
         ; lowest bit is the first bit of the gamma code for length
         jr      c, CopyMatch2
-
-        ; this wastes 1 t-state for longer matches far away,
-        ; but saves 4 t-states for longer nearby (seems to pay off in testing)
 
 LongerMatch:
         IFDEF HD64180
@@ -287,18 +283,17 @@ ReadGammaAligned:
         ret     c
         add     a, a
         rl      c
-        add     a, a
-
-ReadingLongGamma:                       ; this loop does not need unrolling, as it does not get much use anyway
+ReadingLongGamma1:
+        rla
+ReadingLongGamma2:                      ; this loop does not need unrolling, as it does not get much use anyway
         ret     c
         add     a, a
         rl      c
         rl      b
         add     a, a
-        jr      nz, ReadingLongGamma
+        jr      nz, ReadingLongGamma2
 
         ld      a, (hl)                 ; reload bits
         inc     hl
-        rla
 
-        jr      ReadingLongGamma
+        jr      ReadingLongGamma1
