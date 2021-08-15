@@ -6,6 +6,7 @@
 ;  ver.01patch2 by uniabis (25/03/2021, 191(-2) bytes - fixed a bug with elias over 8bits)
 ;  ver.01patch5 by uniabis (29/03/2021, 191 bytes - a bit faster)
 ;  ver.01rom by uniabis (07/06/2021, 184(-7) bytes - support for ROM, but slower than the "Turbo")
+;  ver.01rom2 by uniabis (15/08/2021, 184 bytes - support for ROM, but slower than the "Fast")
 ;
 ;  Original ZX0 decompressors were written by Einar Saukas
 ;
@@ -14,7 +15,7 @@
 ;  about 5% faster than the "Turbo" decompressor, which is 128 bytes long.
 ;  It has about the same speed as the 412 bytes version of the "Mega" decompressor.
 ;
-;  The decompressor uses AF, AF', BC, DE, HL and IX and relies upon self-modified code.
+;  The decompressor uses AF, AF', BC, DE, HL and IX and IY(optional).
 ;
 ;  The decompression is done in the standard way:
 ;
@@ -43,41 +44,67 @@
 ;     misrepresented as being the original software.
 ;  3. This notice may not be removed or altered from any source distribution.
 
+        ; +4byte, bit faster
+        DEFINE AllowUsingIY
+
+        ; +4bytes, bit slower, support for hd64180/z180
+        ;DEFINE HD64180
+
 DecompressZX0:
         scf 
         ex      af, af'
-        ld      ix, CopyMatch1
+
+        IFDEF AllowUsingIY
+        ld      iy, CopyMatch1
+        ENDIF
+
         ld      bc, $ffff
         push    bc
+        pop     ix
         inc     bc
         ld      a, $80
         jr      RunOfLiterals           ; BC is assumed to contains 0 most of the time
 
         ; 7-bit offsets allow additional optimizations, based on the facts that C==0 and AF' has C ON!
 ShorterOffsets:
-        ex      af, af'
-        sbc     a, a
-        pop     bc
-        ld      b, a                    ; the top byte of the offset is always $FF
+        ex      af, af'                 ; note that AF' always has flag C ON
+
+        IFDEF HD64180
+        ld      b, $ff                  ; the top byte of the offset is always $FF
+        ELSE
+        ld      ixh, $ff                ; the top byte of the offset is always $FF
+        ENDIF
+
         ld      a, (hl)
         inc     hl
         rra
-        ld      c, a                    ; note that AF' always has flag C ON
+
+        IFDEF HD64180
+        ld      c, a
         push    bc
+        pop     ix
+        ELSE
+        ld      ixl, a
+        ENDIF
+
         jr      nc, LongerMatch
 
 CopyMatch2:                             ; the case of matches with len=2
         ex      af, af'
+
+        IFDEF HD64180
         ld      bc, 2
+        ELSE
+        ld      c, 2
+        ENDIF
 
         ; the faster match copying code
 CopyMatch1:
+        push    ix                      ; preserve offset
         ex      (sp), hl                ; preserve source
-        push    hl                      ; preserve offset
         add     hl, de                  ; HL = dest - offset
         ldir
-        pop     hl                      ; restore offset
-        ex      (sp), hl                ; restore source
+        pop     hl                      ; restore source
 
         ; after a match you can have either
         ; 0 + <elias length> = run of literals, or
@@ -111,15 +138,26 @@ ProcessOffset:
         ex      af, af'
         xor     a
         sub     c
-        pop     bc
         ret     z                       ; end-of-data marker (only checked for longer offsets)
         rra
-        ld      b,a
+
+        IFDEF HD64180
+        ld      b, a
+        ELSE
+        ld      ixh, a
+        ENDIF
+
         ld      a, (hl)
         inc     hl
         rra
+
+        IFDEF HD64180
         ld      c, a
         push    bc
+        pop     ix
+        ELSE
+        ld      ixl, a
+        ENDIF
 
         ; lowest bit is the first bit of the gamma code for length
         jr      c, CopyMatch2
@@ -127,8 +165,16 @@ ProcessOffset:
         ; this wastes 1 t-state for longer matches far away,
         ; but saves 4 t-states for longer nearby (seems to pay off in testing)
 
+        IFNDEF HD64180
+        ld      c, b
+        ENDIF
+
 LongerMatch:
+        IFDEF HD64180
         ld      bc, 1
+        ELSE
+        inc     c
+        ENDIF
         ; doing SCF here ensures that AF' has flag C ON and costs
         ; cheaper than doing SCF in the ShortestOffsets branch
         scf
@@ -142,8 +188,8 @@ LongerMatch:
         call    z,ReloadReadGamma
 
 CopyMatch3:
+        push    ix                      ; preserve offset
         ex      (sp), hl                ; preserve source
-        push    hl                      ; preserve offset
         add     hl, de                  ; HL = dest - offset
 
         ; because BC>=3-1, we can do 2 x LDI safely
@@ -151,8 +197,7 @@ CopyMatch3:
         ldir
         inc     c
         ldi
-        pop     hl                      ; restore offset
-        ex      (sp), hl                ; restore source
+        pop     hl                      ; restore source
 
         ; after a match you can have either
         ; 0 + <elias length> = run of literals, or
@@ -217,10 +262,19 @@ LongerRepMatch:
         add     a, a
         jr      nc, $-4
 
+        IFDEF AllowUsingIY
+
         jp      nz, CopyMatch1
 
         ; this is a crafty equivalent of CALL ReloadReadGamma : JP CopyMatch1
-        push    ix
+        push    iy
+
+        ELSE
+
+        call    z, ReloadReadGamma
+        jr      CopyMatch1
+
+        ENDIF
 
         ;  the subroutine for reading the remainder of the partly read Elias gamma code.
         ;  it has two entry points: ReloadReadGamma first refills the bit reservoir in A,
