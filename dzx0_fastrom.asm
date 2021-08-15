@@ -6,7 +6,7 @@
 ;  ver.01patch2 by uniabis (25/03/2021, 191(-2) bytes - fixed a bug with elias over 8bits)
 ;  ver.01patch5 by uniabis (29/03/2021, 191 bytes - a bit faster)
 ;  ver.01rom by uniabis (07/06/2021, 184(-7) bytes - support for ROM, but slower than the "Turbo")
-;  ver.01rom2 by uniabis (15/08/2021, 184 bytes - support for ROM, but slower than the "Fast")
+;  ver.01rom3 by uniabis (15/08/2021, 183(-1) bytes - support for ROM, but slower than the "Fast")
 ;
 ;  Original ZX0 decompressors were written by Einar Saukas
 ;
@@ -59,9 +59,9 @@ DecompressZX0:
         ENDIF
 
         ld      ix, $ffff
-        ld      bc, $0000
-        ld      a, $80
-        jr      RunOfLiterals           ; BC is assumed to contains 0 most of the time
+        ld      bc, $0001
+        scf
+        jr      RunOfLiteralsEntry
 
         ; 7-bit offsets allow additional optimizations, based on the facts that C==0 and AF' has C ON!
 ShorterOffsets:
@@ -210,6 +210,7 @@ RunOfLiterals:
         jr      nc, LongerRun
         jr      nz, CopyLiteral         ; NZ after NC == "confirmed C"
 
+RunOfLiteralsEntry:
         ld      a, (hl)                 ; reload bits
         inc     hl
         rla
