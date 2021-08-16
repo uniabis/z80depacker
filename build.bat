@@ -211,6 +211,15 @@ sjasmplus --raw=dzx1_turbo.bin dzx1_turbo.asm
 
 sjasmplus --raw=dzx1_standard.bin dzx1_standard.asm
 
+sjasmplus --raw=dzx1_turbo_ix.bin dzx1_turbo_ix.asm
+
+sjasmplus -DHD64180=1 --raw=dzx1_turbo_ix_180.bin dzx1_turbo_ix.asm
+
+sjasmplus --raw=dzx1_standard_ix.bin dzx1_standard_ix.asm
+
+sjasmplus -DHD64180=1 --raw=dzx1_standard_ix_180.bin dzx1_standard_ix.asm
+
+
 rem zx2
 
 sjasmplus --raw=dzx2_nano.bin dzx2_nano.asm
