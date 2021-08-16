@@ -10,7 +10,7 @@
 ; v9: DE init optimisation          14.23 s   / 208 bytes
 ; vA: no more parity context                  / 202 bytes
 ; r800: replace SLL A to ADC A                / 202 bytes
-; rom: remove self-modification               / 204 bytes
+; rom: remove self-modification               / 205 bytes
 
 ; CALL shrinkler_decrunch
 ; input IX=source
@@ -19,16 +19,16 @@
 
 shrinkler_decrunch
 
+        IFNDEF ROM
+        ELSE
+          LD   IY,0
+        ENDIF
+
           EXX
           LD   HL,8*256+probs
           LD   BC,#0880
           XOR  A        ; start by LSB
-        IFNDEF ROM
-        ELSE
-          PUSH AF
-          POP IY
-        ENDIF
-          LD   D,A
+
 init
           DEC  H
 iniloop   LD   (HL),A
@@ -37,6 +37,8 @@ iniloop   LD   (HL),A
           XOR  C
           LD   E,B
           DJNZ init
+
+          LD   D,B
 
           LD   A,C
           EX   AF,AF'    ; A'= #80
@@ -77,24 +79,6 @@ readoffset
           EXX
           JR   NZ,readlength
 ;END!!!
-          RET
-
-zero
-        IFNDEF ROM
-          LD   (d2+1),HL
-        ELSE
-          PUSH HL
-          POP  IY
-        ENDIF
-          EX   DE,HL
-          SBC  HL,BC    ; d3.  still NC after
-          EX   DE,HL
-          POP  BC
-_probret
-          POP  HL
-          LD   (HL),C
-          DEC  H
-          LD   (HL),B
           RET
 
 getnumber
@@ -217,6 +201,24 @@ one
           LD   B,A
           DEC  BC
           JR   _probret
+
+zero
+        IFNDEF ROM
+          LD   (d2+1),HL
+        ELSE
+          PUSH HL
+          POP  IY
+        ENDIF
+          EX   DE,HL
+          SBC  HL,BC    ; d3.  still NC after
+          EX   DE,HL
+          POP  BC
+_probret
+          POP  HL
+          LD   (HL),C
+          DEC  H
+          LD   (HL),B
+          RET
 
 probs=($+256)&#FF00
 ;+#200: for odd context
