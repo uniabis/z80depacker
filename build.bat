@@ -94,7 +94,7 @@ rem hrust
 
 sjasmplus --raw=dehrust_ix.bin dehrust_ix.asm
 
-sjasmplus --raw=dehrust_ix_232b.bin dehrust_ix_232b.asm
+sjasmplus --raw=dehrust_ix_231b.bin dehrust_ix_231b.asm
 
 sjasmplus --raw=dehrust_hl.bin dehrust_hl.asm
 

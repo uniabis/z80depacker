@@ -11,7 +11,7 @@
 ; you must USE -hst switch and must NOT USE -zxh switch to mhmt in order to get
 ;  correct packed stream for this depacker!
 
-; length is 232 bytes, non-relocatable
+; length is 231 bytes, non-relocatable
 
 
 DEHRUST
@@ -117,19 +117,14 @@ LL40B1  LD L,A
 
 
 
+LL40DE  CP #0F
+        RET Z
+        JR NC,LL4067
 LL40D5  LD B,A
         LD C,(IX+#00)
         INC IX
         CCF
         JR LL4068
-
-
-
-LL40DE  CP #0F
-        JR C,LL40D5
-        JR NZ,LL4067
-
-        ;RET
 
 
 
