@@ -52,13 +52,12 @@ DecompressZX0:
         ld      a, $80
         jr      RunOfLiterals           ; BC is assumed to contains 0 most of the time
 
-        ; 7-bit offsets allow additional optimizations, based on the facts that C==0 and AF' has C ON!
 ShorterOffsets:
         ld      b, $ff                  ; the top byte of the offset is always $FF
         ld      c, (hl)
         inc     hl
         rr      c
-        ld      (PrevOffset+1), bc      ; note that AF' always has flag C ON
+        ld      (PrevOffset+1), bc
         jr      nc, LongerMatch
 
 CopyMatch2:                             ; the case of matches with len=2
@@ -190,7 +189,7 @@ RepMatch:
         add     a, a
         jr      nc, LongerRepMatch
         jr      nz, CopyMatch1          ; NZ after NC == "confirmed C"
-        
+
         ld      a, (hl)                 ; reload bits
         inc     hl
         rla

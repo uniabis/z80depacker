@@ -1,5 +1,5 @@
 ;
-;  Speed-optimized ZX0 decompressor by spke, Without self-modified code by uniabis (182 bytes)
+;  Speed-optimized ZX0 decompressor by spke, Without self-modified code by uniabis (181 bytes)
 ;
 ;  ver.00 by spke (27/01-23/03/2021, 191 bytes)
 ;  ver.01 by spke (24/03/2021, 193(+2) bytes - fixed a bug in the initialization)
