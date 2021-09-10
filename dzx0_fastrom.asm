@@ -1,5 +1,5 @@
 ;
-;  Speed-optimized ZX0 decompressor by spke, Without self-modified code by uniabis (180 bytes)
+;  Speed-optimized ZX0 decompressor by spke, Without self-modified code by uniabis (182 bytes)
 ;
 ;  ver.00 by spke (27/01-23/03/2021, 191 bytes)
 ;  ver.01 by spke (24/03/2021, 193(+2) bytes - fixed a bug in the initialization)
@@ -7,6 +7,7 @@
 ;  ver.01patch5 by uniabis (29/03/2021, 191 bytes - a bit faster)
 ;  ver.01rom by uniabis (07/06/2021, 184(-7) bytes - support for ROM, but slower than the "Turbo")
 ;  ver.01rom5 by uniabis (16/08/2021, 180(-4) bytes - support for ROM, but slower than the "Fast")
+;  ver.01rom6 by uniabis (10/09/2021, 181(+1) bytes - support for new v2 format)
 ;
 ;  Original ZX0 decompressors were written by Einar Saukas
 ;
@@ -47,7 +48,7 @@
         ; +4byte, bit faster
         DEFINE AllowUsingIY
 
-        ; +2bytes, bit slower, support for hd64180/z180
+        ; +-0bytes, bit slower, support for hd64180/z180
         ;DEFINE HD64180
 
 DecompressZX0:
@@ -117,7 +118,7 @@ UsualMatch:                             ; this is the case of usual match+offset
         jr      c, ShorterOffsets
 
 LongerOffets:
-        inc     c
+        ld      c, $fe
 
         add     a, a                    ; inline read gamma
         rl      c
@@ -128,17 +129,13 @@ LongerOffets:
 
 ProcessOffset:
 
-        ld      b, a
-        xor     a
-        sub     c
+        inc     c
         ret     z                       ; end-of-data marker (only checked for longer offsets)
 
-        rra
+        rr      c
 
         IFDEF HD64180
 
-        ld      c, a
-        ld      a, b
         ld      b, c
 
         ld      c, (hl)
@@ -150,12 +147,11 @@ ProcessOffset:
 
         ELSE
 
-        ld      ixh, a
-        ld      a, (hl)
+        ld      ixh, c
+        ld      c, (hl)
         inc     hl
-        rra
-        ld      ixl, a
-        ld      a, b
+        rr      c
+        ld      ixl, c
         ld      b, 0
 
         ENDIF
@@ -283,17 +279,16 @@ ReadGammaAligned:
         ret     c
         add     a, a
         rl      c
-ReadingLongGamma1:
-        rla
-ReadingLongGamma2:                      ; this loop does not need unrolling, as it does not get much use anyway
+        add     a, a
+ReadingLongGamma:                       ; this loop does not need unrolling, as it does not get much use anyway
         ret     c
         add     a, a
         rl      c
         rl      b
         add     a, a
-        jr      nz, ReadingLongGamma2
+        jr      nz, ReadingLongGamma
 
         ld      a, (hl)                 ; reload bits
         inc     hl
-
-        jr      ReadingLongGamma1
+        rla
+        jr      ReadingLongGamma
