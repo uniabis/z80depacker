@@ -7,7 +7,7 @@
 ;  ver.01patch5 by uniabis (29/03/2021, 191 bytes - a bit faster)
 ;  ver.01rom by uniabis (07/06/2021, 184(-7) bytes - support for ROM, but slower than the "Turbo")
 ;  ver.01rom5 by uniabis (16/08/2021, 180(-4) bytes - support for ROM, but slower than the "Fast")
-;  ver.01rom6 by uniabis (10/09/2021, 181(+1) bytes - support for new v2 format)
+;  ver.01rom7 by uniabis (10/09/2021, 181(+1) bytes - support for new v2 format)
 ;
 ;  Original ZX0 decompressors were written by Einar Saukas
 ;
@@ -85,11 +85,7 @@ ShorterOffsets:
 
 CopyMatch2:                             ; the case of matches with len=2
 
-        IFDEF HD64180
         ld      bc, 2
-        ELSE
-        ld      c, 2
-        ENDIF
 
         ; the faster match copying code
 CopyMatch1:
@@ -152,7 +148,6 @@ ProcessOffset:
         inc     hl
         rr      c
         ld      ixl, c
-        ld      b, 0
 
         ENDIF
 
@@ -160,11 +155,7 @@ ProcessOffset:
         jr      c, CopyMatch2
 
 LongerMatch:
-        IFDEF HD64180
         ld      bc, 1
-        ELSE
-        ld      c, 1
-        ENDIF
 
         add     a, a                    ; inline read gamma
         rl      c

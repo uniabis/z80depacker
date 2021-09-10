@@ -213,9 +213,9 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |Shrinkler(NP)|deshrink_np_r800|o|o|o|            205|58.10%|LDIR x 436.60|Support for ROM/R800/hd64180, bit faster, but longer from deshrink_np|
 |zx0|dzx0_standard|o|o|o|             68|61.81%|LDIR x 4.53||
 |zx0|dzx0_turbo|o|o|x code|            126|61.81%|LDIR x 3.55||
-|zx0|dzx0_fast|o|o|x code|            194|61.81%|LDIR x 3.43||
+|zx0|dzx0_fast|o|o|x code|            194|61.81%|LDIR x 3.41||
 |zx0|dzx0_mega|o|o|x code|            673|61.81%|LDIR x 3.21||
-|zx0|dzx0_fastrom|o|x|o|            181|61.81%|LDIR x 3.42|Support for ROM, shorter, but slower, uncompatible with hd64180 from dzx0_fast|
+|zx0|dzx0_fastrom|o|x|o|            181|61.81%|LDIR x 3.40|Support for ROM, shorter, but slower, uncompatible with hd64180 from dzx0_fast|
 |zx0|dzx0_fastrom_180|o|o|o|            181|61.81%|LDIR x 3.49|Support for ROM, shorter, but slower from dzx0_fast|
 |zx1|dzx1_standard|o|o|o|             68|63.78%|LDIR x 3.69||
 |zx1|dzx1_standard_ix|o|x|o|             69|63.78%|LDIR x 3.54|Faster, but longer, uncompatible with hd64180 from dzx1_standard|
@@ -314,9 +314,9 @@ test data:ALL(16*16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|        152,324<br />(58.10%)|  2,632,445,153<br />(LDIR x 436.60)|
 |zx0|dzx0_standard|             68|        162,051<br />(61.81%)|     27,359,692<br />(LDIR x 4.53)|
 |zx0|dzx0_turbo|            126|        162,051<br />(61.81%)|     21,412,558<br />(LDIR x 3.55)|
-|zx0|dzx0_fast|            194|        162,051<br />(61.81%)|     20,690,185<br />(LDIR x 3.43)|
+|zx0|dzx0_fast|            194|        162,051<br />(61.81%)|     20,620,535<br />(LDIR x 3.41)|
 |zx0|dzx0_mega|            673|        162,051<br />(61.81%)|     19,360,287<br />(LDIR x 3.21)|
-|zx0|dzx0_fastrom|            181|        162,051<br />(61.81%)|     20,624,956<br />(LDIR x 3.42)|
+|zx0|dzx0_fastrom|            181|        162,051<br />(61.81%)|     20,559,231<br />(LDIR x 3.40)|
 |zx0|dzx0_fastrom_180|            181|        162,051<br />(61.81%)|     21,061,772<br />(LDIR x 3.49)|
 |zx1|dzx1_standard|             68|        167,204<br />(63.78%)|     22,280,764<br />(LDIR x 3.69)|
 |zx1|dzx1_standard_ix|             69|        167,204<br />(63.78%)|     21,388,447<br />(LDIR x 3.54)|
@@ -410,9 +410,9 @@ test data:MEGASDHC.B00(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|          8,912<br />(54.39%)|    146,933,717<br />(LDIR x 389.91)|
 |zx0|dzx0_standard|             68|          9,315<br />(56.85%)|      1,420,536<br />(LDIR x 3.76)|
 |zx0|dzx0_turbo|            126|          9,315<br />(56.85%)|      1,129,301<br />(LDIR x 2.99)|
-|zx0|dzx0_fast|            194|          9,315<br />(56.85%)|      1,089,754<br />(LDIR x 2.89)|
+|zx0|dzx0_fast|            194|          9,315<br />(56.85%)|      1,087,722<br />(LDIR x 2.88)|
 |zx0|dzx0_mega|            673|          9,315<br />(56.85%)|      1,026,983<br />(LDIR x 2.72)|
-|zx0|dzx0_fastrom|            181|          9,315<br />(56.85%)|      1,089,535<br />(LDIR x 2.89)|
+|zx0|dzx0_fastrom|            181|          9,315<br />(56.85%)|      1,087,196<br />(LDIR x 2.88)|
 |zx0|dzx0_fastrom_180|            181|          9,315<br />(56.85%)|      1,111,103<br />(LDIR x 2.94)|
 |zx1|dzx1_standard|             68|          9,586<br />(58.50%)|      1,188,201<br />(LDIR x 3.15)|
 |zx1|dzx1_standard_ix|             69|          9,586<br />(58.50%)|      1,145,487<br />(LDIR x 3.03)|
@@ -506,9 +506,9 @@ test data:MEGASDHC.B01(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|          4,644<br />(28.34%)|     77,514,989<br />(LDIR x 205.69)|
 |zx0|dzx0_standard|             68|          4,844<br />(29.56%)|        949,209<br />(LDIR x 2.51)|
 |zx0|dzx0_turbo|            126|          4,844<br />(29.56%)|        791,101<br />(LDIR x 2.09)|
-|zx0|dzx0_fast|            194|          4,844<br />(29.56%)|        766,930<br />(LDIR x 2.03)|
+|zx0|dzx0_fast|            194|          4,844<br />(29.56%)|        766,245<br />(LDIR x 2.03)|
 |zx0|dzx0_mega|            673|          4,844<br />(29.56%)|        732,169<br />(LDIR x 1.94)|
-|zx0|dzx0_fastrom|            181|          4,844<br />(29.56%)|        766,559<br />(LDIR x 2.03)|
+|zx0|dzx0_fastrom|            181|          4,844<br />(29.56%)|        765,663<br />(LDIR x 2.03)|
 |zx0|dzx0_fastrom_180|            181|          4,844<br />(29.56%)|        778,975<br />(LDIR x 2.06)|
 |zx1|dzx1_standard|             68|          5,071<br />(30.95%)|        848,500<br />(LDIR x 2.25)|
 |zx1|dzx1_standard_ix|             69|          5,071<br />(30.95%)|        823,747<br />(LDIR x 2.18)|
@@ -602,9 +602,9 @@ test data:MEGASDHC.B02(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|         12,092<br />(73.80%)|    202,963,895<br />(LDIR x 538.59)|
 |zx0|dzx0_standard|             68|         12,560<br />(76.66%)|      1,968,159<br />(LDIR x 5.22)|
 |zx0|dzx0_turbo|            126|         12,560<br />(76.66%)|      1,528,613<br />(LDIR x 4.05)|
-|zx0|dzx0_fast|            194|         12,560<br />(76.66%)|      1,473,499<br />(LDIR x 3.91)|
+|zx0|dzx0_fast|            194|         12,560<br />(76.66%)|      1,468,357<br />(LDIR x 3.89)|
 |zx0|dzx0_mega|            673|         12,560<br />(76.66%)|      1,375,046<br />(LDIR x 3.64)|
-|zx0|dzx0_fastrom|            181|         12,560<br />(76.66%)|      1,470,551<br />(LDIR x 3.90)|
+|zx0|dzx0_fastrom|            181|         12,560<br />(76.66%)|      1,465,344<br />(LDIR x 3.88)|
 |zx0|dzx0_fastrom_180|            181|         12,560<br />(76.66%)|      1,504,383<br />(LDIR x 3.99)|
 |zx1|dzx1_standard|             68|         13,013<br />(79.42%)|      1,578,121<br />(LDIR x 4.18)|
 |zx1|dzx1_standard_ix|             69|         13,013<br />(79.42%)|      1,510,720<br />(LDIR x 4.00)|
@@ -698,9 +698,9 @@ test data:MEGASDHC.B03(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|         11,844<br />(72.29%)|    196,867,966<br />(LDIR x 522.42)|
 |zx0|dzx0_standard|             68|         12,291<br />(75.01%)|      1,796,853<br />(LDIR x 4.76)|
 |zx0|dzx0_turbo|            126|         12,291<br />(75.01%)|      1,404,984<br />(LDIR x 3.72)|
-|zx0|dzx0_fast|            194|         12,291<br />(75.01%)|      1,353,748<br />(LDIR x 3.59)|
+|zx0|dzx0_fast|            194|         12,291<br />(75.01%)|      1,349,358<br />(LDIR x 3.58)|
 |zx0|dzx0_mega|            673|         12,291<br />(75.01%)|      1,264,104<br />(LDIR x 3.35)|
-|zx0|dzx0_fastrom|            181|         12,291<br />(75.01%)|      1,351,994<br />(LDIR x 3.58)|
+|zx0|dzx0_fastrom|            181|         12,291<br />(75.01%)|      1,347,555<br />(LDIR x 3.57)|
 |zx0|dzx0_fastrom_180|            181|         12,291<br />(75.01%)|      1,381,706<br />(LDIR x 3.66)|
 |zx1|dzx1_standard|             68|         12,762<br />(77.89%)|      1,452,052<br />(LDIR x 3.85)|
 |zx1|dzx1_standard_ix|             69|         12,762<br />(77.89%)|      1,393,396<br />(LDIR x 3.69)|
@@ -794,9 +794,9 @@ test data:MSX2MAIN.B00(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|         12,176<br />(74.31%)|    201,216,087<br />(LDIR x 533.95)|
 |zx0|dzx0_standard|             68|         12,758<br />(77.86%)|      1,698,133<br />(LDIR x 4.50)|
 |zx0|dzx0_turbo|            126|         12,758<br />(77.86%)|      1,337,032<br />(LDIR x 3.54)|
-|zx0|dzx0_fast|            194|         12,758<br />(77.86%)|      1,277,086<br />(LDIR x 3.38)|
+|zx0|dzx0_fast|            194|         12,758<br />(77.86%)|      1,275,642<br />(LDIR x 3.38)|
 |zx0|dzx0_mega|            673|         12,758<br />(77.86%)|      1,202,269<br />(LDIR x 3.19)|
-|zx0|dzx0_fastrom|            181|         12,758<br />(77.86%)|      1,276,337<br />(LDIR x 3.38)|
+|zx0|dzx0_fastrom|            181|         12,758<br />(77.86%)|      1,274,342<br />(LDIR x 3.38)|
 |zx0|dzx0_fastrom_180|            181|         12,758<br />(77.86%)|      1,306,569<br />(LDIR x 3.46)|
 |zx1|dzx1_standard|             68|         13,148<br />(80.24%)|      1,413,238<br />(LDIR x 3.75)|
 |zx1|dzx1_standard_ix|             69|         13,148<br />(80.24%)|      1,356,865<br />(LDIR x 3.60)|
@@ -890,9 +890,9 @@ test data:MSX2MAIN.B01(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|         13,020<br />(79.46%)|    218,285,507<br />(LDIR x 579.25)|
 |zx0|dzx0_standard|             68|         13,573<br />(82.84%)|      1,906,033<br />(LDIR x 5.05)|
 |zx0|dzx0_turbo|            126|         13,573<br />(82.84%)|      1,479,890<br />(LDIR x 3.92)|
-|zx0|dzx0_fast|            194|         13,573<br />(82.84%)|      1,427,805<br />(LDIR x 3.78)|
+|zx0|dzx0_fast|            194|         13,573<br />(82.84%)|      1,422,660<br />(LDIR x 3.77)|
 |zx0|dzx0_mega|            673|         13,573<br />(82.84%)|      1,333,408<br />(LDIR x 3.53)|
-|zx0|dzx0_fastrom|            181|         13,573<br />(82.84%)|      1,424,777<br />(LDIR x 3.78)|
+|zx0|dzx0_fastrom|            181|         13,573<br />(82.84%)|      1,419,774<br />(LDIR x 3.76)|
 |zx0|dzx0_fastrom_180|            181|         13,573<br />(82.84%)|      1,456,161<br />(LDIR x 3.86)|
 |zx1|dzx1_standard|             68|         13,959<br />(85.19%)|      1,526,311<br />(LDIR x 4.05)|
 |zx1|dzx1_standard_ix|             69|         13,959<br />(85.19%)|      1,463,278<br />(LDIR x 3.88)|
@@ -986,9 +986,9 @@ test data:MSXMUSIC.B00(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|          9,516<br />(58.08%)|    156,388,559<br />(LDIR x 415.00)|
 |zx0|dzx0_standard|             68|          9,943<br />(60.68%)|      1,419,415<br />(LDIR x 3.76)|
 |zx0|dzx0_turbo|            126|          9,943<br />(60.68%)|      1,128,284<br />(LDIR x 2.99)|
-|zx0|dzx0_fast|            194|          9,943<br />(60.68%)|      1,084,458<br />(LDIR x 2.87)|
+|zx0|dzx0_fast|            194|          9,943<br />(60.68%)|      1,082,838<br />(LDIR x 2.87)|
 |zx0|dzx0_mega|            673|          9,943<br />(60.68%)|      1,016,094<br />(LDIR x 2.69)|
-|zx0|dzx0_fastrom|            181|          9,943<br />(60.68%)|      1,088,435<br />(LDIR x 2.88)|
+|zx0|dzx0_fastrom|            181|          9,943<br />(60.68%)|      1,086,579<br />(LDIR x 2.88)|
 |zx0|dzx0_fastrom_180|            181|          9,943<br />(60.68%)|      1,107,795<br />(LDIR x 2.93)|
 |zx1|dzx1_standard|             68|         10,233<br />(62.45%)|      1,235,686<br />(LDIR x 3.27)|
 |zx1|dzx1_standard_ix|             69|         10,233<br />(62.45%)|      1,191,745<br />(LDIR x 3.16)|
@@ -1082,9 +1082,9 @@ test data:MSX2EXT.B00(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|         11,772<br />(71.85%)|    194,442,161<br />(LDIR x 515.98)|
 |zx0|dzx0_standard|             68|         12,316<br />(75.17%)|      1,789,427<br />(LDIR x 4.74)|
 |zx0|dzx0_turbo|            126|         12,316<br />(75.17%)|      1,398,466<br />(LDIR x 3.71)|
-|zx0|dzx0_fast|            194|         12,316<br />(75.17%)|      1,342,680<br />(LDIR x 3.56)|
+|zx0|dzx0_fast|            194|         12,316<br />(75.17%)|      1,339,867<br />(LDIR x 3.55)|
 |zx0|dzx0_mega|            673|         12,316<br />(75.17%)|      1,254,457<br />(LDIR x 3.32)|
-|zx0|dzx0_fastrom|            181|         12,316<br />(75.17%)|      1,343,577<br />(LDIR x 3.56)|
+|zx0|dzx0_fastrom|            181|         12,316<br />(75.17%)|      1,340,348<br />(LDIR x 3.55)|
 |zx0|dzx0_fastrom_180|            181|         12,316<br />(75.17%)|      1,372,497<br />(LDIR x 3.64)|
 |zx1|dzx1_standard|             68|         12,694<br />(77.47%)|      1,492,865<br />(LDIR x 3.96)|
 |zx1|dzx1_standard_ix|             69|         12,694<br />(77.47%)|      1,432,748<br />(LDIR x 3.80)|
@@ -1178,9 +1178,9 @@ test data:KANJJ1.B00(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|          5,664<br />(34.57%)|    101,500,853<br />(LDIR x 269.34)|
 |zx0|dzx0_standard|             68|          6,264<br />(38.23%)|      1,452,032<br />(LDIR x 3.85)|
 |zx0|dzx0_turbo|            126|          6,264<br />(38.23%)|      1,152,127<br />(LDIR x 3.05)|
-|zx0|dzx0_fast|            194|          6,264<br />(38.23%)|      1,111,998<br />(LDIR x 2.95)|
+|zx0|dzx0_fast|            194|          6,264<br />(38.23%)|      1,110,794<br />(LDIR x 2.94)|
 |zx0|dzx0_mega|            673|          6,264<br />(38.23%)|      1,050,513<br />(LDIR x 2.78)|
-|zx0|dzx0_fastrom|            181|          6,264<br />(38.23%)|      1,105,467<br />(LDIR x 2.93)|
+|zx0|dzx0_fastrom|            181|          6,264<br />(38.23%)|      1,103,807<br />(LDIR x 2.92)|
 |zx0|dzx0_fastrom_180|            181|          6,264<br />(38.23%)|      1,129,859<br />(LDIR x 2.99)|
 |zx1|dzx1_standard|             68|          6,519<br />(39.78%)|      1,255,795<br />(LDIR x 3.33)|
 |zx1|dzx1_standard_ix|             69|          6,519<br />(39.78%)|      1,207,624<br />(LDIR x 3.20)|
@@ -1274,9 +1274,9 @@ test data:KANJJ1.B01(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|          3,656<br />(22.31%)|     65,314,777<br />(LDIR x 173.32)|
 |zx0|dzx0_standard|             68|          4,108<br />(25.07%)|      1,112,754<br />(LDIR x 2.95)|
 |zx0|dzx0_turbo|            126|          4,108<br />(25.07%)|        908,000<br />(LDIR x 2.40)|
-|zx0|dzx0_fast|            194|          4,108<br />(25.07%)|        880,124<br />(LDIR x 2.33)|
+|zx0|dzx0_fast|            194|          4,108<br />(25.07%)|        879,653<br />(LDIR x 2.33)|
 |zx0|dzx0_mega|            673|          4,108<br />(25.07%)|        837,877<br />(LDIR x 2.22)|
-|zx0|dzx0_fastrom|            181|          4,108<br />(25.07%)|        874,128<br />(LDIR x 2.31)|
+|zx0|dzx0_fastrom|            181|          4,108<br />(25.07%)|        873,164<br />(LDIR x 2.31)|
 |zx0|dzx0_fastrom_180|            181|          4,108<br />(25.07%)|        891,312<br />(LDIR x 2.36)|
 |zx1|dzx1_standard|             68|          4,323<br />(26.38%)|        991,425<br />(LDIR x 2.63)|
 |zx1|dzx1_standard_ix|             69|          4,323<br />(26.38%)|        957,696<br />(LDIR x 2.54)|
@@ -1370,9 +1370,9 @@ test data:KANJJ1.B02(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|         10,164<br />(62.03%)|    183,687,427<br />(LDIR x 487.44)|
 |zx0|dzx0_standard|             68|         11,022<br />(67.27%)|      2,018,075<br />(LDIR x 5.35)|
 |zx0|dzx0_turbo|            126|         11,022<br />(67.27%)|      1,557,766<br />(LDIR x 4.13)|
-|zx0|dzx0_fast|            194|         11,022<br />(67.27%)|      1,511,186<br />(LDIR x 4.01)|
+|zx0|dzx0_fast|            194|         11,022<br />(67.27%)|      1,503,392<br />(LDIR x 3.98)|
 |zx0|dzx0_mega|            673|         11,022<br />(67.27%)|      1,406,334<br />(LDIR x 3.73)|
-|zx0|dzx0_fastrom|            181|         11,022<br />(67.27%)|      1,502,528<br />(LDIR x 3.98)|
+|zx0|dzx0_fastrom|            181|         11,022<br />(67.27%)|      1,495,807<br />(LDIR x 3.96)|
 |zx0|dzx0_fastrom_180|            181|         11,022<br />(67.27%)|      1,534,872<br />(LDIR x 4.07)|
 |zx1|dzx1_standard|             68|         11,342<br />(69.22%)|      1,571,234<br />(LDIR x 4.16)|
 |zx1|dzx1_standard_ix|             69|         11,342<br />(69.22%)|      1,504,652<br />(LDIR x 3.99)|
@@ -1466,9 +1466,9 @@ test data:KANJJ1.B03(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|          9,980<br />(60.91%)|    181,043,291<br />(LDIR x 480.42)|
 |zx0|dzx0_standard|             68|         10,804<br />(65.94%)|      1,982,714<br />(LDIR x 5.26)|
 |zx0|dzx0_turbo|            126|         10,804<br />(65.94%)|      1,529,944<br />(LDIR x 4.05)|
-|zx0|dzx0_fast|            194|         10,804<br />(65.94%)|      1,486,120<br />(LDIR x 3.94)|
+|zx0|dzx0_fast|            194|         10,804<br />(65.94%)|      1,478,643<br />(LDIR x 3.92)|
 |zx0|dzx0_mega|            673|         10,804<br />(65.94%)|      1,382,484<br />(LDIR x 3.66)|
-|zx0|dzx0_fastrom|            181|         10,804<br />(65.94%)|      1,477,902<br />(LDIR x 3.92)|
+|zx0|dzx0_fastrom|            181|         10,804<br />(65.94%)|      1,471,459<br />(LDIR x 3.90)|
 |zx0|dzx0_fastrom_180|            181|         10,804<br />(65.94%)|      1,508,990<br />(LDIR x 4.00)|
 |zx1|dzx1_standard|             68|         11,092<br />(67.70%)|      1,549,981<br />(LDIR x 4.11)|
 |zx1|dzx1_standard_ix|             69|         11,092<br />(67.70%)|      1,484,719<br />(LDIR x 3.93)|
@@ -1562,9 +1562,9 @@ test data:KANJJ1.B04(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|          9,840<br />(60.05%)|    178,871,865<br />(LDIR x 474.66)|
 |zx0|dzx0_standard|             68|         10,687<br />(65.22%)|      1,985,509<br />(LDIR x 5.26)|
 |zx0|dzx0_turbo|            126|         10,687<br />(65.22%)|      1,533,447<br />(LDIR x 4.06)|
-|zx0|dzx0_fast|            194|         10,687<br />(65.22%)|      1,487,580<br />(LDIR x 3.94)|
+|zx0|dzx0_fast|            194|         10,687<br />(65.22%)|      1,480,292<br />(LDIR x 3.92)|
 |zx0|dzx0_mega|            673|         10,687<br />(65.22%)|      1,384,626<br />(LDIR x 3.67)|
-|zx0|dzx0_fastrom|            181|         10,687<br />(65.22%)|      1,479,817<br />(LDIR x 3.92)|
+|zx0|dzx0_fastrom|            181|         10,687<br />(65.22%)|      1,473,562<br />(LDIR x 3.91)|
 |zx0|dzx0_fastrom_180|            181|         10,687<br />(65.22%)|      1,511,353<br />(LDIR x 4.01)|
 |zx1|dzx1_standard|             68|         11,000<br />(67.13%)|      1,563,412<br />(LDIR x 4.14)|
 |zx1|dzx1_standard_ix|             69|         11,000<br />(67.13%)|      1,497,046<br />(LDIR x 3.97)|
@@ -1658,9 +1658,9 @@ test data:KANJJ1.B05(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|          9,756<br />(59.54%)|    177,381,802<br />(LDIR x 470.71)|
 |zx0|dzx0_standard|             68|         10,612<br />(64.77%)|      1,966,749<br />(LDIR x 5.21)|
 |zx0|dzx0_turbo|            126|         10,612<br />(64.77%)|      1,518,970<br />(LDIR x 4.03)|
-|zx0|dzx0_fast|            194|         10,612<br />(64.77%)|      1,473,388<br />(LDIR x 3.90)|
+|zx0|dzx0_fast|            194|         10,612<br />(64.77%)|      1,466,160<br />(LDIR x 3.89)|
 |zx0|dzx0_mega|            673|         10,612<br />(64.77%)|      1,372,226<br />(LDIR x 3.64)|
-|zx0|dzx0_fastrom|            181|         10,612<br />(64.77%)|      1,465,507<br />(LDIR x 3.88)|
+|zx0|dzx0_fastrom|            181|         10,612<br />(64.77%)|      1,459,412<br />(LDIR x 3.87)|
 |zx0|dzx0_fastrom_180|            181|         10,612<br />(64.77%)|      1,496,579<br />(LDIR x 3.97)|
 |zx1|dzx1_standard|             68|         10,895<br />(66.49%)|      1,552,390<br />(LDIR x 4.11)|
 |zx1|dzx1_standard_ix|             69|         10,895<br />(66.49%)|      1,486,519<br />(LDIR x 3.94)|
@@ -1754,9 +1754,9 @@ test data:KANJJ1.B06(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|         10,116<br />(61.74%)|    183,970,371<br />(LDIR x 488.19)|
 |zx0|dzx0_standard|             68|         11,000<br />(67.13%)|      2,033,395<br />(LDIR x 5.39)|
 |zx0|dzx0_turbo|            126|         11,000<br />(67.13%)|      1,568,507<br />(LDIR x 4.16)|
-|zx0|dzx0_fast|            194|         11,000<br />(67.13%)|      1,521,761<br />(LDIR x 4.03)|
+|zx0|dzx0_fast|            194|         11,000<br />(67.13%)|      1,513,749<br />(LDIR x 4.01)|
 |zx0|dzx0_mega|            673|         11,000<br />(67.13%)|      1,415,273<br />(LDIR x 3.75)|
-|zx0|dzx0_fastrom|            181|         11,000<br />(67.13%)|      1,512,675<br />(LDIR x 4.01)|
+|zx0|dzx0_fastrom|            181|         11,000<br />(67.13%)|      1,505,971<br />(LDIR x 3.99)|
 |zx0|dzx0_fastrom_180|            181|         11,000<br />(67.13%)|      1,545,179<br />(LDIR x 4.10)|
 |zx1|dzx1_standard|             68|         11,320<br />(69.09%)|      1,589,729<br />(LDIR x 4.21)|
 |zx1|dzx1_standard_ix|             69|         11,320<br />(69.09%)|      1,521,401<br />(LDIR x 4.03)|
@@ -1850,9 +1850,9 @@ test data:KANJJ1.B07(16KB)
 |Shrinkler(NP)|deshrink_np_r800|            205|          9,172<br />(55.98%)|    166,061,886<br />(LDIR x 440.67)|
 |zx0|dzx0_standard|             68|          9,954<br />(60.75%)|      1,860,699<br />(LDIR x 4.93)|
 |zx0|dzx0_turbo|            126|          9,954<br />(60.75%)|      1,446,126<br />(LDIR x 3.83)|
-|zx0|dzx0_fast|            194|          9,954<br />(60.75%)|      1,402,068<br />(LDIR x 3.72)|
+|zx0|dzx0_fast|            194|          9,954<br />(60.75%)|      1,395,163<br />(LDIR x 3.70)|
 |zx0|dzx0_mega|            673|          9,954<br />(60.75%)|      1,306,424<br />(LDIR x 3.46)|
-|zx0|dzx0_fastrom|            181|          9,954<br />(60.75%)|      1,395,167<br />(LDIR x 3.70)|
+|zx0|dzx0_fastrom|            181|          9,954<br />(60.75%)|      1,389,248<br />(LDIR x 3.68)|
 |zx0|dzx0_fastrom_180|            181|          9,954<br />(60.75%)|      1,424,439<br />(LDIR x 3.77)|
 |zx1|dzx1_standard|             68|         10,247<br />(62.54%)|      1,471,824<br />(LDIR x 3.90)|
 |zx1|dzx1_standard_ix|             69|         10,247<br />(62.54%)|      1,410,804<br />(LDIR x 3.74)|

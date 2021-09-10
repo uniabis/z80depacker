@@ -5,7 +5,7 @@
 ;  ver.01 by spke (24/03/2021, 193(+2) bytes - fixed a bug in the initialization)
 ;  ver.01patch2 by uniabis (25/03/2021, 191(-2) bytes - fixed a bug with elias over 8bits)
 ;  ver.01patch6 by uniabis (16/08/2021, 190(-1) bytes - a bit faster)
-;  ver.01patch7 by uniabis (10/09/2021, 194(+4) bytes - support for new v2 format)
+;  ver.01patch8 by uniabis (10/09/2021, 194(+4) bytes - support for new v2 format)
 ;
 ;  Original ZX0 decompressors were written by Einar Saukas
 ;
@@ -66,7 +66,7 @@ ShorterOffsets:
 
 CopyMatch2:                             ; the case of matches with len=2
         ex      af, af'
-        ld      c, 2
+        ld      bc, 2
 
         ; the faster match copying code
 CopyMatch1:
@@ -117,16 +117,14 @@ ProcessOffset:
         inc     hl
         rra
         ld      (PrevOffset+1), a
-        ld      b, 0
 
         ; lowest bit is the first bit of the gamma code for length
         jr      c, CopyMatch2
 
         ; this wastes 1 t-state for longer matches far away,
         ; but saves 4 t-states for longer nearby (seems to pay off in testing)
-        ld      c, b
 LongerMatch:
-        inc     c
+        ld      bc, 1
         ; doing SCF here ensures that AF' has flag C ON and costs
         ; cheaper than doing SCF in the ShortestOffsets branch
         scf
