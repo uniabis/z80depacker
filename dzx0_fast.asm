@@ -1,11 +1,11 @@
 ;
-;  Speed-optimized ZX0 decompressor by spke (194 bytes)
+;  Speed-optimized ZX0 decompressor by spke (187 bytes)
 ;
 ;  ver.00 by spke (27/01-23/03/2021, 191 bytes)
 ;  ver.01 by spke (24/03/2021, 193(+2) bytes - fixed a bug in the initialization)
 ;  ver.01patch2 by uniabis (25/03/2021, 191(-2) bytes - fixed a bug with elias over 8bits)
 ;  ver.01patch6 by uniabis (16/08/2021, 190(-1) bytes - a bit faster)
-;  ver.01patch8 by uniabis (10/09/2021, 194(+4) bytes - support for new v2 format)
+;  ver.01patch9 by uniabis (10/09/2021, 187(-3) bytes - support for new v2 format)
 ;
 ;  Original ZX0 decompressors were written by Einar Saukas
 ;
@@ -14,7 +14,7 @@
 ;  about 5% faster than the "Turbo" decompressor, which is 128 bytes long.
 ;  It has about the same speed as the 412 bytes version of the "Mega" decompressor.
 ;
-;  The decompressor uses AF, AF', BC, DE, HL and IX and relies upon self-modified code.
+;  The decompressor uses AF, BC, DE, HL and IX and relies upon self-modified code.
 ;
 ;  The decompression is done in the standard way:
 ;
@@ -44,8 +44,7 @@
 ;  3. This notice may not be removed or altered from any source distribution.
 
 DecompressZX0:
-        scf 
-        ex      af, af'
+
         ld      ix, CopyMatch1
         ld      bc, $ffff
         ld      (PrevOffset+1), bc      ; default offset is -1
@@ -55,17 +54,14 @@ DecompressZX0:
 
         ; 7-bit offsets allow additional optimizations, based on the facts that C==0 and AF' has C ON!
 ShorterOffsets:
-        ex      af, af'
-        sbc     a, a
-        ld      (PrevOffset+2), a       ; the top byte of the offset is always $FF
-        ld      a, (hl)
+        ld      b, $ff                  ; the top byte of the offset is always $FF
+        ld      c, (hl)
         inc     hl
-        rra
-        ld      (PrevOffset+1), a       ; note that AF' always has flag C ON
+        rr      c
+        ld      (PrevOffset+1), bc      ; note that AF' always has flag C ON
         jr      nc, LongerMatch
 
 CopyMatch2:                             ; the case of matches with len=2
-        ex      af, af'
         ld      bc, 2
 
         ; the faster match copying code
@@ -107,16 +103,15 @@ LongerOffets:
         call    z, ReloadReadGamma
 
 ProcessOffset:
-        ex      af, af'
-        ld      a, c
-        inc     a
+
+        inc     c
         ret     z                       ; end-of-data marker (only checked for longer offsets)
-        rra
-        ld      (PrevOffset+2), a
-        ld      a, (hl)
+        rr      c
+        ld      b, c
+        ld      c, (hl)
         inc     hl
-        rra
-        ld      (PrevOffset+1), a
+        rr      c
+        ld      (PrevOffset+1), bc
 
         ; lowest bit is the first bit of the gamma code for length
         jr      c, CopyMatch2
@@ -125,10 +120,6 @@ ProcessOffset:
         ; but saves 4 t-states for longer nearby (seems to pay off in testing)
 LongerMatch:
         ld      bc, 1
-        ; doing SCF here ensures that AF' has flag C ON and costs
-        ; cheaper than doing SCF in the ShortestOffsets branch
-        scf
-        ex      af, af'
 
         add     a, a                    ; inline read gamma
         rl      c
