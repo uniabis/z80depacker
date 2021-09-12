@@ -83,7 +83,7 @@ UsualMatch:                             ; this is the case of usual match+offset
         add     a, a
         jr      nc, LongerOffets
         jr      nz, ShorterOffsets      ; NZ after NC == "confirmed C"
-        
+
         ld      a, (hl)                 ; reload bits
         inc     hl
         rla
@@ -148,7 +148,7 @@ RunOfLiterals:
         add     a, a
         jr      nc, LongerRun
         jr      nz, CopyLiteral         ; NZ after NC == "confirmed C"
-        
+
         ld      a, (hl)                 ; reload bits
         inc     hl
         rla
@@ -162,7 +162,7 @@ LongerRun:
         jr      nc, $-4
 
         jr      nz, CopyLiterals
-        
+
         ld      a, (hl)                 ; reload bits
         inc     hl
         rla
