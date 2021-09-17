@@ -183,6 +183,7 @@ sjasmplus --raw=shrinkler_recall_209.bin shrinkler_recall_209.asm
 rem sjasmplus --raw=shrinkler_recall_209_r800_ram.bin shrinkler_recall_209_r800.asm
 sjasmplus -DROM=1 --raw=shrinkler_recall_209_r800_rom.bin shrinkler_recall_209_r800.asm
 
+sjasmplus --raw=deshrinkler.bin deshrinkler.asm
 
 rem shrinkler(NP)
 
