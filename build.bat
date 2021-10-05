@@ -225,6 +225,11 @@ rem zx2
 
 sjasmplus --raw=dzx2_nano.bin dzx2_nano.asm
 
+rem zx5
+
+sjasmplus --raw=dzx5_standard.bin dzx5_standard.asm
+sjasmplus --raw=dzx5_turbo.bin dzx5_turbo.asm
+
 rem zx7
 
 sjasmplus --raw=dzx7_lom_v1.bin dzx7_lom_v1.asm
