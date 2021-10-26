@@ -236,8 +236,8 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |zx5|dzx5_turbo|o|o|x code|            158|61.83%|LDIR x 4.02||
 |zx7|dzx7_lom_v1|o|o|o|            214|64.96%|LDIR x 3.88||
 |zx7|dzx7_lom_v1p1|o|o|o|            198|64.96%|LDIR x 3.71|Shorter, bit faster from dzx7_lom_v1|
-|zx7|dzx7_turbo|o|o|o|             88|64.96%|LDIR x 4.53||
-|zx7|dzx7_standard|o|o|o|             69|64.96%|LDIR x 6.08||
+|zx7|dzx7_turbo|x|x|o|             88|64.96%|LDIR x 4.53||
+|zx7|dzx7_standard|x|x|o|             69|64.96%|LDIR x 6.08||
 |zx7b|dzx7b_fast|x|x|o|            191|65.01%|LDIR x 3.46||
 |zx7b|dzx7b_fast_r800|o|o|o|            184|65.01%|LDIR x 3.42|Support for R800/hd64180, shorter, bit faster from dzx7b_fast|
 |zx7b|dzx7b_slow|x|x|o|             64|65.01%|LDIR x 5.58||
