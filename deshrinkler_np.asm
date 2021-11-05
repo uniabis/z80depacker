@@ -36,12 +36,14 @@ iniloop
 		inc l
 		jr nz,iniloop
 		xor c
-		ld e,b
 		djnz init
 		ld d,b
+		ld e,b
+		push de
+		pop iy			; d2=0
+		inc e
 		ld a,c
 		ex af,af'
-		ld iy,0			; d2=0
 
 literal
 		scf
