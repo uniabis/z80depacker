@@ -118,13 +118,13 @@ _rbok
 		jr getbit
 
 getkind
-		ld a,1
-		and e
-		add a,a
-		add a,probs/256
+		ld a,e
 		exx
-		ld h,a
-		ld l,0
+		ld hl,probs
+		rra
+		jr nc,getbit
+		inc h
+		inc h
 getbit
 		ld a,d
 		add a,a

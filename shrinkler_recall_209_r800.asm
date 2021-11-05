@@ -143,11 +143,11 @@ getkind
 ;use parity as context
           LD   A,E
           EXX
-          AND  1
-          ADD  A
-          ADD  probs/256
-          LD   H,A
-          LD   L,0
+          LD   HL,probs
+          RRA
+          JR   NC,getbit
+          INC  H
+          INC  H
 
 getbit
 ;In: hl points to context prob
