@@ -38,6 +38,7 @@ iniloop
 		ld e,b
 		djnz init
 		ld d,b
+		ld a,c
 		ex af,af'
 		ld iy,0			; d2=0
 
@@ -104,7 +105,6 @@ readbit
 		jr nz,_rbok
 		ld a,(ix)
 		inc ix
-		scf
 		adc a,a
 _rbok
 		ex af,af'

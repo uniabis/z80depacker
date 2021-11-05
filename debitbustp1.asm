@@ -63,11 +63,19 @@ get_bit_length_end:
 
 	pop	hl		; hl = (sp++++) = source
 
-	jr	main_loop
+	jp	main_loop
 
 
 exit:
 	pop	de
+	;ret
+
+get_bit:
+	add	a
+	ret	nz
+	ld	a,(hl)
+	inc	hl
+	adc	a,a
 	ret
 
 
@@ -84,11 +92,3 @@ long_offset_loop:
 	scf
 	jr	apply_offset
 
-
-get_bit:
-	add	a
-	ret	nz
-	ld	a,(hl)
-	inc	hl
-	adc	a,a
-	ret

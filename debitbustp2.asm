@@ -80,6 +80,12 @@ get_length_end:
 
 exit:
 	pop	de
+	;ret
+
+fill_bit_buffer2:
+	ld	a,(hl)
+	inc	hl
+	adc	a,a
 	ret
 
 
@@ -96,11 +102,6 @@ long_offset_loop:
 	jr	c,apply_offset
 	res	7,c
 	scf
-	jr	apply_offset
+	jp	apply_offset
 
 
-fill_bit_buffer2:
-	ld	a,(hl)
-	inc	hl
-	adc	a,a
-	ret
