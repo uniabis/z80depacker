@@ -19,11 +19,6 @@
 
 shrinkler_decrunch
 
-        IFNDEF ROM
-        ELSE
-          LD   IY,0
-        ENDIF
-
           EXX
           LD   HL,8*256+probs
           LD   BC,#0880
@@ -35,10 +30,19 @@ iniloop   LD   (HL),A
           INC  L
           JR   NZ,iniloop ; fill #100 row
           XOR  C
+        IFNDEF ROM
           LD   E,B
+        ENDIF
           DJNZ init
 
           LD   D,B
+        IFNDEF ROM
+        ELSE
+          LD   E,B
+          PUSH DE
+          POP  IY
+          INC  E
+        ENDIF
 
           LD   A,C
           EX   AF,AF'    ; A'= #80
