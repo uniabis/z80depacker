@@ -9,6 +9,7 @@
 ;  ver.05 by spke for LZSA 1.1.1 (11/10/2019, 139(-1) bytes, +0.1% speed)
 ;  ver.06 by spke (11-12/04/2021, added some comments)
 ;  ver.07 by spke (04-05/04/2022, 134(-5) bytes, +1% speed, using self-modifying code by default)
+;  ver.07p1 by uniabis (06/04/2022, -1 byte with AVOID_SELFMODIFYING_CODE)
 ;
 ;  The data must be compressed using the command line compressor by Emmanuel Marty
 ;  The compression is done as follows:
@@ -126,12 +127,13 @@
 			call z,ExtendedCode
 
 .CopyMatch:		ld c,a
-			push hl						; BC = len, DE = dest, HL = -offset, SP -> [src]
 
 	IFNDEF	AVOID_SELFMODIFYING_CODE
+			push hl						; BC = len, DE = dest, HL = -offset, SP -> [src]
 .PrevOffset		EQU $+1 : ld hl,0
 	ELSE
-			push ix : pop hl
+			push ix						; BC = len, DE = dest, HL = -offset, SP -> [src]
+			ex (sp), hl
 	ENDIF
 			ADD_OFFSET
 			BLOCKCOPY					; BC = 0, DE = dest
