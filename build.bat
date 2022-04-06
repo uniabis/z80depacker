@@ -160,7 +160,7 @@ sjasmplus -DHD64180=1 --raw=unlzsa2_fast_180.bin unlzsa2_fast.asm
 
 sjasmplus --raw=unlzsa2_small.bin unlzsa2_small.asm
 
-sjasmplus -DHD64180=1 --raw=unlzsa2_small_180.bin unlzsa2_small.asm
+sjasmplus -DAVOID_SELFMODIFYING_CODE=1 --raw=unlzsa2_small_rom.bin unlzsa2_small.asm
 
 rem megalz
 
