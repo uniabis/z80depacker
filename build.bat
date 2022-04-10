@@ -1,7 +1,5 @@
 @echo off
 
-
-
 goto skip_debug
 
 rem sjasmplus --raw=lzedec.bin lzedec.mac
@@ -156,7 +154,7 @@ sjasmplus --raw=unlzsa1_small.bin unlzsa1_small.asm
 
 sjasmplus --raw=unlzsa2_fast.bin unlzsa2_fast.asm
 
-sjasmplus -DHD64180=1 --raw=unlzsa2_fast_180.bin unlzsa2_fast.asm
+sjasmplus -DAVOID_SELFMODIFYING_CODE=2 --raw=unlzsa2_fast_rom.bin unlzsa2_fast.asm
 
 sjasmplus --raw=unlzsa2_small.bin unlzsa2_small.asm
 
