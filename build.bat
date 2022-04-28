@@ -174,6 +174,12 @@ sjasmplus --raw=unpletter.bin unpletter.asm
 
 sjasmplus -DHD64180=1 --raw=unpletter_180.bin unpletter_180.asm
 
+rem rip
+
+sjasmplus --raw=derip_fast.bin derip_fast.asm
+sjasmplus --raw=derip_small.bin derip_small.asm
+
+
 rem shrinkler
 
 sjasmplus --raw=shrinkler_recall_209.bin shrinkler_recall_209.asm
