@@ -219,8 +219,8 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |MegaLZ|unmegalz_small|o|o|o|             88|63.93%|LDIR x 5.43||
 |Pletter|unpletter|o|x|o|            170|63.89%|LDIR x 4.77||
 |Pletter|unpletter_180|o|o|o|            146|63.89%|LDIR x 4.41|Support for hd64180, faster, shorter from unpletter|
-|rip|derip_fast|o|o|o|            231|58.95%|LDIR x 22.26||
-|rip|derip_small|o|o|o|            228|58.95%|LDIR x 26.01||
+|rip|derip_fast|o|o|x|            231|58.95%|LDIR x 22.26||
+|rip|derip_small|o|o|x|            228|58.95%|LDIR x 26.01||
 |Shrinkler|shrinkler_recall_209|x|x|x code|            209|58.41%|LDIR x 439.21||
 |Shrinkler|shrinkler_recall_209_r800_rom|o|o|o|            211|58.41%|LDIR x 437.24|Support for ROM/R800/hd64180, bit faster, but longer from shrinkler_recall_209|
 |Shrinkler|deshrinkler|o|x|o|            212|58.41%|LDIR x 434.31||
