@@ -181,6 +181,10 @@ sjasmplus --raw=derip_small.bin derip_small.asm
 sjasmplus -DAVOID_SELFMODIFYING_CODE=1 --raw=derip_fast_rom.bin derip_fast_rom.asm
 sjasmplus -DAVOID_SELFMODIFYING_CODE=1 --raw=derip_small_rom.bin derip_small_rom.asm
 
+sjasmplus --raw=demrip_fast.bin demrip_fast.asm
+sjasmplus --raw=demrip_faster.bin demrip_faster.asm
+sjasmplus --raw=demrip_small.bin demrip_small.asm
+
 rem shrinkler
 
 sjasmplus --raw=shrinkler_recall_209.bin shrinkler_recall_209.asm
