@@ -17,11 +17,6 @@ bitlens2=tree+0x120
 
 ;        ORG #5B00
 
-    IFNDEF AVOID_SELFMODIFYING_CODE
-    ELSE
-        LD IY,0
-    ENDIF
-
         ;LD IX, src
         PUSH DE ;dest-1
 

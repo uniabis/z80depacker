@@ -169,7 +169,7 @@ CASE0xx		cp %01000000 : jr c,CASE00x
 
 			; "01x": the case of the 9-bit offset
 CASE01x:		dec b : cp %01100000
-ReadOffsetCRLB	rl b
+.doRLB			rl b
 
 ReadOffsetC		ld c,(hl) : NEXT_HL
 
@@ -225,7 +225,7 @@ CASE10x:	ld c,a : exa : jr nc,.noUpdate
 			rrca : rrca : rrca : rrca
 
 .noUpdate	or #F0 : ld b,a : ld a,c
-		cp %10100000 : dec b : jr ReadOffsetCRLB
+		cp %10100000 : dec b : jr CASE01x.doRLB
 
 
 
