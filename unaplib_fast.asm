@@ -194,7 +194,7 @@ LWM0:			;LWM = 0 (LWM stands for "Last Was Match"; a flag that we did not have a
 	IFNDEF HD64180
 			ld ixl,c : ld ixh,b : push bc
 	ELSE
-			push bc : push bc : pop ix
+			push bc : pop ix : push bc
 	ENDIF
 
 			call GetGammaCoded			; BC = len*

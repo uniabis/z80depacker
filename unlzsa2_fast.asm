@@ -10,7 +10,7 @@
 ;  ver.06 by spke for LZSA 1.1.0 (26/09/2019, added full revision history);
 ;  ver.07 by spke for LZSA 1.1.1 (10/10/2019, +0.2% speed and an option for unrolled copying of long matches);
 ;  ver.08 by spke (07-08/04/2022, 210(-6) bytes, +1.7% speed, using self-modifying code by default)
-;  ver.08p1 by uniabis (09/05/2022, 208(-2) bytes)
+;  ver.08p2 by uniabis (26/05/2022, 207(-3) bytes)
 ;
 ;  The data must be compressed using the command line compressor by Emmanuel Marty
 ;  The compression is done as follows:
@@ -168,8 +168,8 @@ NoLiterals:	or (hl) : NEXT_HL
 CASE0xx		cp %01000000 : jr c,CASE00x
 
 			; "01x": the case of the 9-bit offset
-CASE01x:		dec b : cp %01100000
-.doRLB			rl b
+CASE01x:		cp %01100000
+.doDECB			dec b : rl b
 
 ReadOffsetC		ld c,(hl) : NEXT_HL
 
@@ -225,7 +225,7 @@ CASE10x:	ld c,a : exa : jr nc,.noUpdate
 			rrca : rrca : rrca : rrca
 
 .noUpdate	or #F0 : ld b,a : ld a,c
-		cp %10100000 : dec b : jr CASE01x.doRLB
+		cp %10100000 : jr CASE01x.doDECB
 
 
 

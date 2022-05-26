@@ -175,6 +175,7 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |Exomizer2|deexo_180|o|o|o|            166|61.02%|LDIR x 17.89|Support for hd64180, shorter, faster from deexo|
 |Exomizer2|deexo_180_fast_jp|o|o|o|            176|61.02%|LDIR x 15.32|Faster, but longer from deexo_180|
 |Exomizer2|deexoopt_f3_180_p0|o|o|o|            242|61.02%|LDIR x 12.24|Support for Exomizer2(-P0) from deexoopt_f3_180|
+|Exomizer2|deexo3_p0|o|o|o|            197|61.02%|LDIR x 13.96|Newly implemented|
 |Exomizer3.0|deexo3p7|o|o|o|            176|61.02%|LDIR x 13.45|Support for Exomizer3(-P7) from deexo_180|
 |Exomizer3.0|deexo3p7_fast_jp|o|o|o|            181|61.02%|LDIR x 11.52|Faster, but longer from deexo3p7|
 |Exomizer3.0|deexoopt_f3_fixed_p7|o|x|o|            218|61.02%|LDIR x 10.49|Support for -P7 option with bug fix from deexoopt_f3|
@@ -213,8 +214,8 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |lzexe|z80unlzep2_small|o|o|o|             88|66.42%|LDIR x 5.02|Bit faster, shorter from z80unlze_small|
 |lzsa1|unlzsa1_fast|o|o|o|            113|69.54%|LDIR x 1.60||
 |lzsa1|unlzsa1_small|o|o|o|             67|69.54%|LDIR x 1.87||
-|lzsa2|unlzsa2_fast|o|o|x|            208|63.86%|LDIR x 2.56||
-|lzsa2|unlzsa2_fast_rom|o|o|o|            206|63.86%|LDIR x 2.67|Support for ROM, shorter, but slower from unlzsa2_fast|
+|lzsa2|unlzsa2_fast|o|o|x|            207|63.86%|LDIR x 2.56||
+|lzsa2|unlzsa2_fast_rom|o|o|o|            205|63.86%|LDIR x 2.67|Support for ROM, shorter, but slower from unlzsa2_fast|
 |lzsa2|unlzsa2_small|o|o|x|            134|63.86%|LDIR x 2.92||
 |lzsa2|unlzsa2_small_rom|o|o|o|            132|63.86%|LDIR x 3.03||
 |MegaLZ|megalz_dec40|o|o|o|            110|63.93%|LDIR x 7.57||
@@ -287,6 +288,7 @@ test data:ALL(16*16KB)
 |Exomizer2|deexo_180|            166|        159,966<br />(61.02%)|    107,899,823<br />(LDIR x 17.89)|
 |Exomizer2|deexo_180_fast_jp|            176|        159,966<br />(61.02%)|     92,423,377<br />(LDIR x 15.32)|
 |Exomizer2|deexoopt_f3_180_p0|            242|        159,966<br />(61.02%)|     73,803,369<br />(LDIR x 12.24)|
+|Exomizer2|deexo3_p0|            197|        159,966<br />(61.02%)|     84,221,387<br />(LDIR x 13.96)|
 |Exomizer3.0|deexo3p7|            176|        159,965<br />(61.02%)|     81,104,834<br />(LDIR x 13.45)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|        159,965<br />(61.02%)|     69,499,435<br />(LDIR x 11.52)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|        159,965<br />(61.02%)|     63,293,855<br />(LDIR x 10.49)|
@@ -325,8 +327,8 @@ test data:ALL(16*16KB)
 |lzexe|z80unlzep2_small|             88|        174,132<br />(66.42%)|     30,313,875<br />(LDIR x 5.02)|
 |lzsa1|unlzsa1_fast|            113|        182,295<br />(69.54%)|      9,678,793<br />(LDIR x 1.60)|
 |lzsa1|unlzsa1_small|             67|        182,295<br />(69.54%)|     11,309,112<br />(LDIR x 1.87)|
-|lzsa2|unlzsa2_fast|            208|        167,410<br />(63.86%)|     15,466,192<br />(LDIR x 2.56)|
-|lzsa2|unlzsa2_fast_rom|            206|        167,410<br />(63.86%)|     16,108,478<br />(LDIR x 2.67)|
+|lzsa2|unlzsa2_fast|            207|        167,410<br />(63.86%)|     15,466,192<br />(LDIR x 2.56)|
+|lzsa2|unlzsa2_fast_rom|            205|        167,410<br />(63.86%)|     16,108,478<br />(LDIR x 2.67)|
 |lzsa2|unlzsa2_small|            134|        167,410<br />(63.86%)|     17,628,087<br />(LDIR x 2.92)|
 |lzsa2|unlzsa2_small_rom|            132|        167,410<br />(63.86%)|     18,270,373<br />(LDIR x 3.03)|
 |MegaLZ|megalz_dec40|            110|        167,609<br />(63.93%)|     45,653,296<br />(LDIR x 7.57)|
@@ -394,6 +396,7 @@ test data:MEGASDHC.B00(16KB)
 |Exomizer2|deexo_180|            166|          9,362<br />(57.14%)|      5,454,592<br />(LDIR x 14.47)|
 |Exomizer2|deexo_180_fast_jp|            176|          9,362<br />(57.14%)|      4,682,085<br />(LDIR x 12.42)|
 |Exomizer2|deexoopt_f3_180_p0|            242|          9,362<br />(57.14%)|      3,757,829<br />(LDIR x 9.97)|
+|Exomizer2|deexo3_p0|            197|          9,362<br />(57.14%)|      4,304,772<br />(LDIR x 11.42)|
 |Exomizer3.0|deexo3p7|            176|          9,362<br />(57.14%)|      4,220,354<br />(LDIR x 11.19)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|          9,362<br />(57.14%)|      3,609,927<br />(LDIR x 9.57)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|          9,362<br />(57.14%)|      3,304,393<br />(LDIR x 8.76)|
@@ -432,8 +435,8 @@ test data:MEGASDHC.B00(16KB)
 |lzexe|z80unlzep2_small|             88|         10,089<br />(61.57%)|      1,703,101<br />(LDIR x 4.51)|
 |lzsa1|unlzsa1_fast|            113|         10,338<br />(63.09%)|        529,450<br />(LDIR x 1.40)|
 |lzsa1|unlzsa1_small|             67|         10,338<br />(63.09%)|        595,341<br />(LDIR x 1.57)|
-|lzsa2|unlzsa2_fast|            208|          9,666<br />(58.99%)|        832,946<br />(LDIR x 2.21)|
-|lzsa2|unlzsa2_fast_rom|            206|          9,666<br />(58.99%)|        863,398<br />(LDIR x 2.29)|
+|lzsa2|unlzsa2_fast|            207|          9,666<br />(58.99%)|        832,946<br />(LDIR x 2.21)|
+|lzsa2|unlzsa2_fast_rom|            205|          9,666<br />(58.99%)|        863,398<br />(LDIR x 2.29)|
 |lzsa2|unlzsa2_small|            134|          9,666<br />(58.99%)|        941,885<br />(LDIR x 2.49)|
 |lzsa2|unlzsa2_small_rom|            132|          9,666<br />(58.99%)|        972,337<br />(LDIR x 2.58)|
 |MegaLZ|megalz_dec40|            110|          9,718<br />(59.31%)|      2,363,816<br />(LDIR x 6.27)|
@@ -501,6 +504,7 @@ test data:MEGASDHC.B01(16KB)
 |Exomizer2|deexo_180|            166|          4,902<br />(29.91%)|      3,307,019<br />(LDIR x 8.77)|
 |Exomizer2|deexo_180_fast_jp|            176|          4,902<br />(29.91%)|      2,874,744<br />(LDIR x 7.62)|
 |Exomizer2|deexoopt_f3_180_p0|            242|          4,902<br />(29.91%)|      2,332,339<br />(LDIR x 6.18)|
+|Exomizer2|deexo3_p0|            197|          4,902<br />(29.91%)|      2,635,794<br />(LDIR x 6.99)|
 |Exomizer3.0|deexo3p7|            176|          4,902<br />(29.91%)|      2,759,609<br />(LDIR x 7.32)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|          4,902<br />(29.91%)|      2,382,976<br />(LDIR x 6.32)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|          4,902<br />(29.91%)|      2,155,915<br />(LDIR x 5.72)|
@@ -539,8 +543,8 @@ test data:MEGASDHC.B01(16KB)
 |lzexe|z80unlzep2_small|             88|          5,460<br />(33.32%)|      1,109,937<br />(LDIR x 2.94)|
 |lzsa1|unlzsa1_fast|            113|          5,391<br />(32.90%)|        473,232<br />(LDIR x 1.25)|
 |lzsa1|unlzsa1_small|             67|          5,391<br />(32.90%)|        516,127<br />(LDIR x 1.36)|
-|lzsa2|unlzsa2_fast|            208|          5,091<br />(31.07%)|        624,382<br />(LDIR x 1.65)|
-|lzsa2|unlzsa2_fast_rom|            206|          5,091<br />(31.07%)|        641,282<br />(LDIR x 1.70)|
+|lzsa2|unlzsa2_fast|            207|          5,091<br />(31.07%)|        624,382<br />(LDIR x 1.65)|
+|lzsa2|unlzsa2_fast_rom|            205|          5,091<br />(31.07%)|        641,282<br />(LDIR x 1.70)|
 |lzsa2|unlzsa2_small|            134|          5,091<br />(31.07%)|        682,866<br />(LDIR x 1.81)|
 |lzsa2|unlzsa2_small_rom|            132|          5,091<br />(31.07%)|        699,766<br />(LDIR x 1.85)|
 |MegaLZ|megalz_dec40|            110|          5,124<br />(31.27%)|      1,578,986<br />(LDIR x 4.19)|
@@ -608,6 +612,7 @@ test data:MEGASDHC.B02(16KB)
 |Exomizer2|deexo_180|            166|         12,500<br />(76.29%)|      8,261,457<br />(LDIR x 21.92)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,500<br />(76.29%)|      7,062,383<br />(LDIR x 18.74)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         12,500<br />(76.29%)|      5,619,382<br />(LDIR x 14.91)|
+|Exomizer2|deexo3_p0|            197|         12,500<br />(76.29%)|      6,457,001<br />(LDIR x 17.13)|
 |Exomizer3.0|deexo3p7|            176|         12,500<br />(76.29%)|      6,187,279<br />(LDIR x 16.41)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         12,500<br />(76.29%)|      5,281,063<br />(LDIR x 14.01)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         12,500<br />(76.29%)|      4,823,589<br />(LDIR x 12.80)|
@@ -646,8 +651,8 @@ test data:MEGASDHC.B02(16KB)
 |lzexe|z80unlzep2_small|             88|         13,469<br />(82.20%)|      2,207,159<br />(LDIR x 5.85)|
 |lzsa1|unlzsa1_fast|            113|         14,043<br />(85.71%)|        586,242<br />(LDIR x 1.55)|
 |lzsa1|unlzsa1_small|             67|         14,043<br />(85.71%)|        680,154<br />(LDIR x 1.80)|
-|lzsa2|unlzsa2_fast|            208|         13,117<br />(80.05%)|      1,033,187<br />(LDIR x 2.74)|
-|lzsa2|unlzsa2_fast_rom|            206|         13,117<br />(80.05%)|      1,078,313<br />(LDIR x 2.86)|
+|lzsa2|unlzsa2_fast|            207|         13,117<br />(80.05%)|      1,033,187<br />(LDIR x 2.74)|
+|lzsa2|unlzsa2_fast_rom|            205|         13,117<br />(80.05%)|      1,078,313<br />(LDIR x 2.86)|
 |lzsa2|unlzsa2_small|            134|         13,117<br />(80.05%)|      1,184,098<br />(LDIR x 3.14)|
 |lzsa2|unlzsa2_small_rom|            132|         13,117<br />(80.05%)|      1,229,224<br />(LDIR x 3.26)|
 |MegaLZ|megalz_dec40|            110|         12,965<br />(79.13%)|      3,108,603<br />(LDIR x 8.24)|
@@ -715,6 +720,7 @@ test data:MEGASDHC.B03(16KB)
 |Exomizer2|deexo_180|            166|         12,271<br />(74.89%)|      7,453,132<br />(LDIR x 19.77)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,271<br />(74.89%)|      6,375,947<br />(LDIR x 16.91)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         12,271<br />(74.89%)|      5,078,190<br />(LDIR x 13.47)|
+|Exomizer2|deexo3_p0|            197|         12,271<br />(74.89%)|      5,838,648<br />(LDIR x 15.49)|
 |Exomizer3.0|deexo3p7|            176|         12,271<br />(74.89%)|      5,681,329<br />(LDIR x 15.07)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         12,271<br />(74.89%)|      4,842,624<br />(LDIR x 12.85)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         12,271<br />(74.89%)|      4,419,932<br />(LDIR x 11.72)|
@@ -753,8 +759,8 @@ test data:MEGASDHC.B03(16KB)
 |lzexe|z80unlzep2_small|             88|         13,184<br />(80.46%)|      2,132,666<br />(LDIR x 5.65)|
 |lzsa1|unlzsa1_fast|            113|         13,703<br />(83.63%)|        565,385<br />(LDIR x 1.50)|
 |lzsa1|unlzsa1_small|             67|         13,703<br />(83.63%)|        649,932<br />(LDIR x 1.72)|
-|lzsa2|unlzsa2_fast|            208|         12,795<br />(78.09%)|        970,549<br />(LDIR x 2.57)|
-|lzsa2|unlzsa2_fast_rom|            206|         12,795<br />(78.09%)|      1,011,121<br />(LDIR x 2.68)|
+|lzsa2|unlzsa2_fast|            207|         12,795<br />(78.09%)|        970,549<br />(LDIR x 2.57)|
+|lzsa2|unlzsa2_fast_rom|            205|         12,795<br />(78.09%)|      1,011,121<br />(LDIR x 2.68)|
 |lzsa2|unlzsa2_small|            134|         12,795<br />(78.09%)|      1,108,322<br />(LDIR x 2.94)|
 |lzsa2|unlzsa2_small_rom|            132|         12,795<br />(78.09%)|      1,148,894<br />(LDIR x 3.04)|
 |MegaLZ|megalz_dec40|            110|         12,660<br />(77.27%)|      2,979,373<br />(LDIR x 7.90)|
@@ -822,6 +828,7 @@ test data:MSX2MAIN.B00(16KB)
 |Exomizer2|deexo_180|            166|         12,740<br />(77.75%)|      7,678,762<br />(LDIR x 20.37)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,740<br />(77.75%)|      6,608,801<br />(LDIR x 17.53)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         12,740<br />(77.75%)|      5,234,946<br />(LDIR x 13.89)|
+|Exomizer2|deexo3_p0|            197|         12,740<br />(77.75%)|      5,962,005<br />(LDIR x 15.82)|
 |Exomizer3.0|deexo3p7|            176|         12,739<br />(77.75%)|      6,207,944<br />(LDIR x 16.47)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         12,739<br />(77.75%)|      5,309,942<br />(LDIR x 14.09)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         12,739<br />(77.75%)|      4,714,349<br />(LDIR x 12.51)|
@@ -860,8 +867,8 @@ test data:MSX2MAIN.B00(16KB)
 |lzexe|z80unlzep2_small|             88|         13,695<br />(83.58%)|      2,244,172<br />(LDIR x 5.95)|
 |lzsa1|unlzsa1_fast|            113|         14,087<br />(85.98%)|        560,634<br />(LDIR x 1.48)|
 |lzsa1|unlzsa1_small|             67|         14,087<br />(85.98%)|        645,250<br />(LDIR x 1.71)|
-|lzsa2|unlzsa2_fast|            208|         13,289<br />(81.10%)|        940,122<br />(LDIR x 2.49)|
-|lzsa2|unlzsa2_fast_rom|            206|         13,289<br />(81.10%)|        978,982<br />(LDIR x 2.59)|
+|lzsa2|unlzsa2_fast|            207|         13,289<br />(81.10%)|        940,122<br />(LDIR x 2.49)|
+|lzsa2|unlzsa2_fast_rom|            205|         13,289<br />(81.10%)|        978,982<br />(LDIR x 2.59)|
 |lzsa2|unlzsa2_small|            134|         13,289<br />(81.10%)|      1,071,679<br />(LDIR x 2.84)|
 |lzsa2|unlzsa2_small_rom|            132|         13,289<br />(81.10%)|      1,110,539<br />(LDIR x 2.94)|
 |MegaLZ|megalz_dec40|            110|         13,072<br />(79.78%)|      3,077,702<br />(LDIR x 8.16)|
@@ -929,6 +936,7 @@ test data:MSX2MAIN.B01(16KB)
 |Exomizer2|deexo_180|            166|         13,402<br />(81.79%)|      8,202,696<br />(LDIR x 21.76)|
 |Exomizer2|deexo_180_fast_jp|            176|         13,402<br />(81.79%)|      7,006,812<br />(LDIR x 18.59)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         13,402<br />(81.79%)|      5,579,980<br />(LDIR x 14.80)|
+|Exomizer2|deexo3_p0|            197|         13,402<br />(81.79%)|      6,403,607<br />(LDIR x 16.99)|
 |Exomizer3.0|deexo3p7|            176|         13,402<br />(81.79%)|      6,040,369<br />(LDIR x 16.02)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         13,402<br />(81.79%)|      5,164,262<br />(LDIR x 13.70)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         13,402<br />(81.79%)|      4,720,262<br />(LDIR x 12.52)|
@@ -967,8 +975,8 @@ test data:MSX2MAIN.B01(16KB)
 |lzexe|z80unlzep2_small|             88|         14,386<br />(87.80%)|      2,257,214<br />(LDIR x 5.98)|
 |lzsa1|unlzsa1_fast|            113|         14,892<br />(90.89%)|        561,614<br />(LDIR x 1.49)|
 |lzsa1|unlzsa1_small|             67|         14,892<br />(90.89%)|        643,824<br />(LDIR x 1.70)|
-|lzsa2|unlzsa2_fast|            208|         14,053<br />(85.77%)|        990,867<br />(LDIR x 2.62)|
-|lzsa2|unlzsa2_fast_rom|            206|         14,053<br />(85.77%)|      1,031,957<br />(LDIR x 2.73)|
+|lzsa2|unlzsa2_fast|            207|         14,053<br />(85.77%)|        990,867<br />(LDIR x 2.62)|
+|lzsa2|unlzsa2_fast_rom|            205|         14,053<br />(85.77%)|      1,031,957<br />(LDIR x 2.73)|
 |lzsa2|unlzsa2_small|            134|         14,053<br />(85.77%)|      1,136,569<br />(LDIR x 3.01)|
 |lzsa2|unlzsa2_small_rom|            132|         14,053<br />(85.77%)|      1,177,659<br />(LDIR x 3.12)|
 |MegaLZ|megalz_dec40|            110|         13,917<br />(84.94%)|      3,129,990<br />(LDIR x 8.30)|
@@ -1036,6 +1044,7 @@ test data:MSXMUSIC.B00(16KB)
 |Exomizer2|deexo_180|            166|         10,071<br />(61.46%)|      6,056,746<br />(LDIR x 16.07)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,071<br />(61.46%)|      5,212,942<br />(LDIR x 13.83)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         10,071<br />(61.46%)|      4,160,453<br />(LDIR x 11.04)|
+|Exomizer2|deexo3_p0|            197|         10,071<br />(61.46%)|      4,726,805<br />(LDIR x 12.54)|
 |Exomizer3.0|deexo3p7|            176|         10,071<br />(61.46%)|      4,841,901<br />(LDIR x 12.84)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         10,071<br />(61.46%)|      4,150,023<br />(LDIR x 11.01)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         10,071<br />(61.46%)|      3,711,725<br />(LDIR x 9.84)|
@@ -1074,8 +1083,8 @@ test data:MSXMUSIC.B00(16KB)
 |lzexe|z80unlzep2_small|             88|         10,828<br />(66.08%)|      1,802,636<br />(LDIR x 4.78)|
 |lzsa1|unlzsa1_fast|            113|         11,047<br />(67.42%)|        544,321<br />(LDIR x 1.44)|
 |lzsa1|unlzsa1_small|             67|         11,047<br />(67.42%)|        618,612<br />(LDIR x 1.64)|
-|lzsa2|unlzsa2_fast|            208|         10,336<br />(63.08%)|        833,361<br />(LDIR x 2.21)|
-|lzsa2|unlzsa2_fast_rom|            206|         10,336<br />(63.08%)|        863,559<br />(LDIR x 2.29)|
+|lzsa2|unlzsa2_fast|            207|         10,336<br />(63.08%)|        833,361<br />(LDIR x 2.21)|
+|lzsa2|unlzsa2_fast_rom|            205|         10,336<br />(63.08%)|        863,559<br />(LDIR x 2.29)|
 |lzsa2|unlzsa2_small|            134|         10,336<br />(63.08%)|        945,711<br />(LDIR x 2.50)|
 |lzsa2|unlzsa2_small_rom|            132|         10,336<br />(63.08%)|        975,909<br />(LDIR x 2.58)|
 |MegaLZ|megalz_dec40|            110|         10,407<br />(63.51%)|      2,560,679<br />(LDIR x 6.79)|
@@ -1143,6 +1152,7 @@ test data:MSX2EXT.B00(16KB)
 |Exomizer2|deexo_180|            166|         12,333<br />(75.27%)|      7,529,411<br />(LDIR x 19.98)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,333<br />(75.27%)|      6,455,709<br />(LDIR x 17.13)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         12,333<br />(75.27%)|      5,146,959<br />(LDIR x 13.65)|
+|Exomizer2|deexo3_p0|            197|         12,333<br />(75.27%)|      5,924,440<br />(LDIR x 15.72)|
 |Exomizer3.0|deexo3p7|            176|         12,333<br />(75.27%)|      5,858,686<br />(LDIR x 15.54)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         12,333<br />(75.27%)|      4,995,819<br />(LDIR x 13.25)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         12,333<br />(75.27%)|      4,551,255<br />(LDIR x 12.07)|
@@ -1181,8 +1191,8 @@ test data:MSX2EXT.B00(16KB)
 |lzexe|z80unlzep2_small|             88|         13,300<br />(81.17%)|      2,182,389<br />(LDIR x 5.79)|
 |lzsa1|unlzsa1_fast|            113|         13,719<br />(83.73%)|        588,179<br />(LDIR x 1.56)|
 |lzsa1|unlzsa1_small|             67|         13,719<br />(83.73%)|        684,213<br />(LDIR x 1.81)|
-|lzsa2|unlzsa2_fast|            208|         12,801<br />(78.13%)|        973,213<br />(LDIR x 2.58)|
-|lzsa2|unlzsa2_fast_rom|            206|         12,801<br />(78.13%)|      1,014,163<br />(LDIR x 2.69)|
+|lzsa2|unlzsa2_fast|            207|         12,801<br />(78.13%)|        973,213<br />(LDIR x 2.58)|
+|lzsa2|unlzsa2_fast_rom|            205|         12,801<br />(78.13%)|      1,014,163<br />(LDIR x 2.69)|
 |lzsa2|unlzsa2_small|            134|         12,801<br />(78.13%)|      1,111,906<br />(LDIR x 2.95)|
 |lzsa2|unlzsa2_small_rom|            132|         12,801<br />(78.13%)|      1,152,856<br />(LDIR x 3.05)|
 |MegaLZ|megalz_dec40|            110|         12,833<br />(78.32%)|      3,030,834<br />(LDIR x 8.04)|
@@ -1250,6 +1260,7 @@ test data:KANJJ1.B00(16KB)
 |Exomizer2|deexo_180|            166|          6,098<br />(37.21%)|      5,081,546<br />(LDIR x 13.48)|
 |Exomizer2|deexo_180_fast_jp|            176|          6,098<br />(37.21%)|      4,382,484<br />(LDIR x 11.62)|
 |Exomizer2|deexoopt_f3_180_p0|            242|          6,098<br />(37.21%)|      3,542,167<br />(LDIR x 9.39)|
+|Exomizer2|deexo3_p0|            197|          6,098<br />(37.21%)|      4,040,809<br />(LDIR x 10.72)|
 |Exomizer3.0|deexo3p7|            176|          6,098<br />(37.21%)|      3,980,668<br />(LDIR x 10.56)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|          6,098<br />(37.21%)|      3,422,843<br />(LDIR x 9.08)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|          6,098<br />(37.21%)|      3,148,635<br />(LDIR x 8.35)|
@@ -1288,8 +1299,8 @@ test data:KANJJ1.B00(16KB)
 |lzexe|z80unlzep2_small|             88|          7,023<br />(42.86%)|      1,496,626<br />(LDIR x 3.97)|
 |lzsa1|unlzsa1_fast|            113|          7,316<br />(44.65%)|        635,814<br />(LDIR x 1.68)|
 |lzsa1|unlzsa1_small|             67|          7,316<br />(44.65%)|        752,116<br />(LDIR x 1.99)|
-|lzsa2|unlzsa2_fast|            208|          6,412<br />(39.13%)|        930,574<br />(LDIR x 2.46)|
-|lzsa2|unlzsa2_fast_rom|            206|          6,412<br />(39.13%)|        968,982<br />(LDIR x 2.57)|
+|lzsa2|unlzsa2_fast|            207|          6,412<br />(39.13%)|        930,574<br />(LDIR x 2.46)|
+|lzsa2|unlzsa2_fast_rom|            205|          6,412<br />(39.13%)|        968,982<br />(LDIR x 2.57)|
 |lzsa2|unlzsa2_small|            134|          6,412<br />(39.13%)|      1,052,566<br />(LDIR x 2.79)|
 |lzsa2|unlzsa2_small_rom|            132|          6,412<br />(39.13%)|      1,090,974<br />(LDIR x 2.89)|
 |MegaLZ|megalz_dec40|            110|          6,514<br />(39.75%)|      2,432,743<br />(LDIR x 6.45)|
@@ -1357,6 +1368,7 @@ test data:KANJJ1.B01(16KB)
 |Exomizer2|deexo_180|            166|          3,975<br />(24.26%)|      3,480,462<br />(LDIR x 9.23)|
 |Exomizer2|deexo_180_fast_jp|            176|          3,975<br />(24.26%)|      3,016,788<br />(LDIR x 8.00)|
 |Exomizer2|deexoopt_f3_180_p0|            242|          3,975<br />(24.26%)|      2,449,479<br />(LDIR x 6.50)|
+|Exomizer2|deexo3_p0|            197|          3,975<br />(24.26%)|      2,782,439<br />(LDIR x 7.38)|
 |Exomizer3.0|deexo3p7|            176|          3,975<br />(24.26%)|      2,719,101<br />(LDIR x 7.21)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|          3,975<br />(24.26%)|      2,354,879<br />(LDIR x 6.24)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|          3,975<br />(24.26%)|      2,182,235<br />(LDIR x 5.79)|
@@ -1395,8 +1407,8 @@ test data:KANJJ1.B01(16KB)
 |lzexe|z80unlzep2_small|             88|          4,660<br />(28.44%)|      1,144,735<br />(LDIR x 3.03)|
 |lzsa1|unlzsa1_fast|            113|          4,804<br />(29.32%)|        565,319<br />(LDIR x 1.50)|
 |lzsa1|unlzsa1_small|             67|          4,804<br />(29.32%)|        650,418<br />(LDIR x 1.72)|
-|lzsa2|unlzsa2_fast|            208|          4,247<br />(25.92%)|        763,083<br />(LDIR x 2.02)|
-|lzsa2|unlzsa2_fast_rom|            206|          4,247<br />(25.92%)|        789,959<br />(LDIR x 2.09)|
+|lzsa2|unlzsa2_fast|            207|          4,247<br />(25.92%)|        763,083<br />(LDIR x 2.02)|
+|lzsa2|unlzsa2_fast_rom|            205|          4,247<br />(25.92%)|        789,959<br />(LDIR x 2.09)|
 |lzsa2|unlzsa2_small|            134|          4,247<br />(25.92%)|        847,790<br />(LDIR x 2.24)|
 |lzsa2|unlzsa2_small_rom|            132|          4,247<br />(25.92%)|        874,666<br />(LDIR x 2.32)|
 |MegaLZ|megalz_dec40|            110|          4,320<br />(26.36%)|      1,795,413<br />(LDIR x 4.76)|
@@ -1464,6 +1476,7 @@ test data:KANJJ1.B02(16KB)
 |Exomizer2|deexo_180|            166|         10,680<br />(65.18%)|      7,751,972<br />(LDIR x 20.57)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,680<br />(65.18%)|      6,616,763<br />(LDIR x 17.55)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         10,680<br />(65.18%)|      5,266,373<br />(LDIR x 13.97)|
+|Exomizer2|deexo3_p0|            197|         10,680<br />(65.18%)|      5,996,658<br />(LDIR x 15.91)|
 |Exomizer3.0|deexo3p7|            176|         10,680<br />(65.18%)|      5,626,376<br />(LDIR x 14.93)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         10,680<br />(65.18%)|      4,820,217<br />(LDIR x 12.79)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         10,680<br />(65.18%)|      4,395,308<br />(LDIR x 11.66)|
@@ -1502,8 +1515,8 @@ test data:KANJJ1.B02(16KB)
 |lzexe|z80unlzep2_small|             88|         11,692<br />(71.36%)|      2,057,396<br />(LDIR x 5.45)|
 |lzsa1|unlzsa1_fast|            113|         12,544<br />(76.56%)|        676,535<br />(LDIR x 1.79)|
 |lzsa1|unlzsa1_small|             67|         12,544<br />(76.56%)|        809,337<br />(LDIR x 2.14)|
-|lzsa2|unlzsa2_fast|            208|         11,278<br />(68.83%)|      1,118,170<br />(LDIR x 2.96)|
-|lzsa2|unlzsa2_fast_rom|            206|         11,278<br />(68.83%)|      1,168,314<br />(LDIR x 3.10)|
+|lzsa2|unlzsa2_fast|            207|         11,278<br />(68.83%)|      1,118,170<br />(LDIR x 2.96)|
+|lzsa2|unlzsa2_fast_rom|            205|         11,278<br />(68.83%)|      1,168,314<br />(LDIR x 3.10)|
 |lzsa2|unlzsa2_small|            134|         11,278<br />(68.83%)|      1,286,101<br />(LDIR x 3.41)|
 |lzsa2|unlzsa2_small_rom|            132|         11,278<br />(68.83%)|      1,336,245<br />(LDIR x 3.54)|
 |MegaLZ|megalz_dec40|            110|         11,362<br />(69.34%)|      3,337,759<br />(LDIR x 8.85)|
@@ -1571,6 +1584,7 @@ test data:KANJJ1.B03(16KB)
 |Exomizer2|deexo_180|            166|         10,508<br />(64.13%)|      7,658,777<br />(LDIR x 20.32)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,508<br />(64.13%)|      6,533,341<br />(LDIR x 17.33)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         10,508<br />(64.13%)|      5,215,523<br />(LDIR x 13.84)|
+|Exomizer2|deexo3_p0|            197|         10,508<br />(64.13%)|      5,930,997<br />(LDIR x 15.73)|
 |Exomizer3.0|deexo3p7|            176|         10,508<br />(64.13%)|      5,460,518<br />(LDIR x 14.49)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         10,508<br />(64.13%)|      4,686,823<br />(LDIR x 12.43)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         10,508<br />(64.13%)|      4,291,186<br />(LDIR x 11.38)|
@@ -1609,8 +1623,8 @@ test data:KANJJ1.B03(16KB)
 |lzexe|z80unlzep2_small|             88|         11,490<br />(70.12%)|      2,017,973<br />(LDIR x 5.35)|
 |lzsa1|unlzsa1_fast|            113|         12,252<br />(74.78%)|        680,419<br />(LDIR x 1.80)|
 |lzsa1|unlzsa1_small|             67|         12,252<br />(74.78%)|        816,475<br />(LDIR x 2.16)|
-|lzsa2|unlzsa2_fast|            208|         11,051<br />(67.44%)|      1,094,148<br />(LDIR x 2.90)|
-|lzsa2|unlzsa2_fast_rom|            206|         11,051<br />(67.44%)|      1,143,150<br />(LDIR x 3.03)|
+|lzsa2|unlzsa2_fast|            207|         11,051<br />(67.44%)|      1,094,148<br />(LDIR x 2.90)|
+|lzsa2|unlzsa2_fast_rom|            205|         11,051<br />(67.44%)|      1,143,150<br />(LDIR x 3.03)|
 |lzsa2|unlzsa2_small|            134|         11,051<br />(67.44%)|      1,253,801<br />(LDIR x 3.32)|
 |lzsa2|unlzsa2_small_rom|            132|         11,051<br />(67.44%)|      1,302,803<br />(LDIR x 3.45)|
 |MegaLZ|megalz_dec40|            110|         11,161<br />(68.12%)|      3,294,363<br />(LDIR x 8.74)|
@@ -1678,6 +1692,7 @@ test data:KANJJ1.B04(16KB)
 |Exomizer2|deexo_180|            166|         10,426<br />(63.63%)|      7,638,370<br />(LDIR x 20.26)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,426<br />(63.63%)|      6,524,110<br />(LDIR x 17.31)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         10,426<br />(63.63%)|      5,206,271<br />(LDIR x 13.81)|
+|Exomizer2|deexo3_p0|            197|         10,426<br />(63.63%)|      5,921,468<br />(LDIR x 15.71)|
 |Exomizer3.0|deexo3p7|            176|         10,426<br />(63.63%)|      5,508,625<br />(LDIR x 14.61)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         10,426<br />(63.63%)|      4,730,737<br />(LDIR x 12.55)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         10,426<br />(63.63%)|      4,317,573<br />(LDIR x 11.45)|
@@ -1716,8 +1731,8 @@ test data:KANJJ1.B04(16KB)
 |lzexe|z80unlzep2_small|             88|         11,370<br />(69.39%)|      2,019,457<br />(LDIR x 5.35)|
 |lzsa1|unlzsa1_fast|            113|         12,189<br />(74.39%)|        682,013<br />(LDIR x 1.80)|
 |lzsa1|unlzsa1_small|             67|         12,189<br />(74.39%)|        818,902<br />(LDIR x 2.17)|
-|lzsa2|unlzsa2_fast|            208|         10,927<br />(66.69%)|      1,105,611<br />(LDIR x 2.93)|
-|lzsa2|unlzsa2_fast_rom|            206|         10,927<br />(66.69%)|      1,155,105<br />(LDIR x 3.06)|
+|lzsa2|unlzsa2_fast|            207|         10,927<br />(66.69%)|      1,105,611<br />(LDIR x 2.93)|
+|lzsa2|unlzsa2_fast_rom|            205|         10,927<br />(66.69%)|      1,155,105<br />(LDIR x 3.06)|
 |lzsa2|unlzsa2_small|            134|         10,927<br />(66.69%)|      1,269,584<br />(LDIR x 3.36)|
 |lzsa2|unlzsa2_small_rom|            132|         10,927<br />(66.69%)|      1,319,078<br />(LDIR x 3.50)|
 |MegaLZ|megalz_dec40|            110|         11,016<br />(67.23%)|      3,271,673<br />(LDIR x 8.68)|
@@ -1785,6 +1800,7 @@ test data:KANJJ1.B05(16KB)
 |Exomizer2|deexo_180|            166|         10,349<br />(63.16%)|      7,467,638<br />(LDIR x 19.81)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,349<br />(63.16%)|      6,371,888<br />(LDIR x 16.90)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         10,349<br />(63.16%)|      5,082,195<br />(LDIR x 13.48)|
+|Exomizer2|deexo3_p0|            197|         10,349<br />(63.16%)|      5,776,508<br />(LDIR x 15.32)|
 |Exomizer3.0|deexo3p7|            176|         10,349<br />(63.16%)|      5,378,059<br />(LDIR x 14.27)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         10,349<br />(63.16%)|      4,612,553<br />(LDIR x 12.24)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         10,349<br />(63.16%)|      4,210,047<br />(LDIR x 11.17)|
@@ -1823,8 +1839,8 @@ test data:KANJJ1.B05(16KB)
 |lzexe|z80unlzep2_small|             88|         11,280<br />(68.84%)|      1,997,084<br />(LDIR x 5.29)|
 |lzsa1|unlzsa1_fast|            113|         12,075<br />(73.69%)|        683,662<br />(LDIR x 1.81)|
 |lzsa1|unlzsa1_small|             67|         12,075<br />(73.69%)|        820,158<br />(LDIR x 2.17)|
-|lzsa2|unlzsa2_fast|            208|         10,839<br />(66.15%)|      1,091,370<br />(LDIR x 2.89)|
-|lzsa2|unlzsa2_fast_rom|            206|         10,839<br />(66.15%)|      1,139,912<br />(LDIR x 3.02)|
+|lzsa2|unlzsa2_fast|            207|         10,839<br />(66.15%)|      1,091,370<br />(LDIR x 2.89)|
+|lzsa2|unlzsa2_fast_rom|            205|         10,839<br />(66.15%)|      1,139,912<br />(LDIR x 3.02)|
 |lzsa2|unlzsa2_small|            134|         10,839<br />(66.15%)|      1,251,933<br />(LDIR x 3.32)|
 |lzsa2|unlzsa2_small_rom|            132|         10,839<br />(66.15%)|      1,300,475<br />(LDIR x 3.45)|
 |MegaLZ|megalz_dec40|            110|         11,012<br />(67.21%)|      3,284,220<br />(LDIR x 8.71)|
@@ -1892,6 +1908,7 @@ test data:KANJJ1.B06(16KB)
 |Exomizer2|deexo_180|            166|         10,648<br />(64.99%)|      7,742,101<br />(LDIR x 20.54)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,648<br />(64.99%)|      6,603,967<br />(LDIR x 17.52)|
 |Exomizer2|deexoopt_f3_180_p0|            242|         10,648<br />(64.99%)|      5,262,615<br />(LDIR x 13.96)|
+|Exomizer2|deexo3_p0|            197|         10,648<br />(64.99%)|      5,983,754<br />(LDIR x 15.87)|
 |Exomizer3.0|deexo3p7|            176|         10,648<br />(64.99%)|      5,541,003<br />(LDIR x 14.70)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|         10,648<br />(64.99%)|      4,753,371<br />(LDIR x 12.61)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|         10,648<br />(64.99%)|      4,340,556<br />(LDIR x 11.51)|
@@ -1930,8 +1947,8 @@ test data:KANJJ1.B06(16KB)
 |lzexe|z80unlzep2_small|             88|         11,631<br />(70.98%)|      2,050,866<br />(LDIR x 5.44)|
 |lzsa1|unlzsa1_fast|            113|         12,507<br />(76.33%)|        688,229<br />(LDIR x 1.82)|
 |lzsa1|unlzsa1_small|             67|         12,507<br />(76.33%)|        826,512<br />(LDIR x 2.19)|
-|lzsa2|unlzsa2_fast|            208|         11,267<br />(68.76%)|      1,120,983<br />(LDIR x 2.97)|
-|lzsa2|unlzsa2_fast_rom|            206|         11,267<br />(68.76%)|      1,171,599<br />(LDIR x 3.10)|
+|lzsa2|unlzsa2_fast|            207|         11,267<br />(68.76%)|      1,120,983<br />(LDIR x 2.97)|
+|lzsa2|unlzsa2_fast_rom|            205|         11,267<br />(68.76%)|      1,171,599<br />(LDIR x 3.10)|
 |lzsa2|unlzsa2_small|            134|         11,267<br />(68.76%)|      1,287,923<br />(LDIR x 3.41)|
 |lzsa2|unlzsa2_small_rom|            132|         11,267<br />(68.76%)|      1,338,539<br />(LDIR x 3.55)|
 |MegaLZ|megalz_dec40|            110|         11,281<br />(68.85%)|      3,337,059<br />(LDIR x 8.85)|
@@ -1999,6 +2016,7 @@ test data:KANJJ1.B07(16KB)
 |Exomizer2|deexo_180|            166|          9,701<br />(59.21%)|      7,135,142<br />(LDIR x 18.93)|
 |Exomizer2|deexo_180_fast_jp|            176|          9,701<br />(59.21%)|      6,094,613<br />(LDIR x 16.17)|
 |Exomizer2|deexoopt_f3_180_p0|            242|          9,701<br />(59.21%)|      4,868,668<br />(LDIR x 12.91)|
+|Exomizer2|deexo3_p0|            197|          9,701<br />(59.21%)|      5,535,682<br />(LDIR x 14.68)|
 |Exomizer3.0|deexo3p7|            176|          9,701<br />(59.21%)|      5,093,013<br />(LDIR x 13.51)|
 |Exomizer3.0|deexo3p7_fast_jp|            181|          9,701<br />(59.21%)|      4,381,376<br />(LDIR x 11.62)|
 |Exomizer3.0|deexoopt_f3_fixed_p7|            218|          9,701<br />(59.21%)|      4,006,895<br />(LDIR x 10.63)|
@@ -2037,8 +2055,8 @@ test data:KANJJ1.B07(16KB)
 |lzexe|z80unlzep2_small|             88|         10,575<br />(64.54%)|      1,890,464<br />(LDIR x 5.01)|
 |lzsa1|unlzsa1_fast|            113|         11,388<br />(69.50%)|        657,745<br />(LDIR x 1.74)|
 |lzsa1|unlzsa1_small|             67|         11,388<br />(69.50%)|        781,741<br />(LDIR x 2.07)|
-|lzsa2|unlzsa2_fast|            208|         10,241<br />(62.50%)|      1,043,626<br />(LDIR x 2.76)|
-|lzsa2|unlzsa2_fast_rom|            206|         10,241<br />(62.50%)|      1,088,682<br />(LDIR x 2.88)|
+|lzsa2|unlzsa2_fast|            207|         10,241<br />(62.50%)|      1,043,626<br />(LDIR x 2.76)|
+|lzsa2|unlzsa2_fast_rom|            205|         10,241<br />(62.50%)|      1,088,682<br />(LDIR x 2.88)|
 |lzsa2|unlzsa2_small|            134|         10,241<br />(62.50%)|      1,195,353<br />(LDIR x 3.17)|
 |lzsa2|unlzsa2_small_rom|            132|         10,241<br />(62.50%)|      1,240,409<br />(LDIR x 3.29)|
 |MegaLZ|megalz_dec40|            110|         10,247<br />(62.54%)|      3,070,083<br />(LDIR x 8.14)|

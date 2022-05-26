@@ -59,6 +59,8 @@ sjasmplus -DINLINE_GETBIT=1 -DOPTIMIZE_JUMP=1 --raw=deexo_180_fast_jp.bin deexo_
 
 sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=0 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p0.bin deexoopt_f3.asm
 
+sjasmplus -DPFLAG_CODE=0 --raw=deexo3_p0.bin deexo3.asm 
+
 rem exomizer3.0
 
 sjasmplus --raw=deexo3p7.bin deexo3p7.asm 
