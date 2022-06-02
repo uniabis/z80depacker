@@ -104,9 +104,8 @@ dlze_far:
 		dec	a
 
 dlze_skip:
-		push	hl
-		ld	l,c
-		ld	h,b
+		push	bc
+		ex	(sp),hl
 		ld	c,a
 		ex      af, af';'
 		jr	dlze_copy
