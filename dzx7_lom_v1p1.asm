@@ -1,7 +1,7 @@
 ; -----------------------------------------------------------------------------
 ; ZX7 decoder by Einar Saukas, Antonio Villena & Metalbrain
 ; with additional size-efficient speed optimizations by introspec ("Life on Mars" version 1)
-; 214 bytes long and is always faster than "mega" decompressor (by about 4% on average)
+; 195 bytes long and is always faster than "mega" decompressor (by about 4% on average)
 ; drop me an email if you have any comments/ideas/suggestions: zxintrospec@gmail.com
 ; -----------------------------------------------------------------------------
 ; Parameters:
@@ -10,8 +10,8 @@
 ; -----------------------------------------------------------------------------
 
 
-	DEFINE	AllowUsingIX
-	DEFINE	AllowUsingIY
+	DEFINE	AllowUsingIX ; +3bytes
+	DEFINE	AllowUsingIY ; +0byte
 
 
 ;

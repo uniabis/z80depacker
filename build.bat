@@ -148,6 +148,13 @@ pasmo --equ OPTIMIZE=0 --bin z80unlze.asm z80unlze_small.bin
 pasmo --equ OPTIMIZE=1 --bin z80unlzep2.asm z80unlzep2.bin
 pasmo --equ OPTIMIZE=0 --bin z80unlzep2.asm z80unlzep2_small.bin
 
+rem lzf
+
+sjasmplus --raw=unlzf_small.bin unlzf_small.asm
+sjasmplus --raw=unlzf_smallp1.bin unlzf_smallp1.asm
+sjasmplus --raw=unlzf_fast.bin unlzf_fast.asm
+sjasmplus --raw=unlzf_fastp1.bin unlzf_fastp1.asm
+
 rem lzsa
 
 sjasmplus --raw=unlzsa1_fast.bin unlzsa1_fast.asm
