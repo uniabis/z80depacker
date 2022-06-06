@@ -1,5 +1,5 @@
 ;
-;  Speed-optimized LZSA2 decompressor by spke & uniabis (210 bytes)
+;  Speed-optimized LZSA2 decompressor by spke & uniabis (207 bytes)
 ;
 ;  ver.00 by spke for LZSA 1.0.0 (02-07/06/2019, 218 bytes);
 ;  ver.01 by spke for LZSA 1.0.5 (24/07/2019, added support for backward decompression);

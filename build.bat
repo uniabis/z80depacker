@@ -47,6 +47,17 @@ sjasmplus --raw=debitbust.bin debitbust.asm
 sjasmplus --raw=debitbustp1.bin debitbustp1.asm
 sjasmplus --raw=debitbustp2.bin debitbustp2.asm
 
+rem BitBuster2
+
+sjasmplus -DDISABLE_BITBUSTER_BLOCKS=1 --raw=bitbuster.bin bitbuster.asm
+sjasmplus -DDISABLE_BITBUSTER_BLOCKS=1 -DHD64180=1 --raw=bitbuster_180.bin bitbuster.asm
+sjasmplus -DDISABLE_BITBUSTER_BLOCKS=1 -DBITBUSTER_OPTIMIZE_SPEED=1 --raw=bitbuster_speed.bin bitbuster.asm
+sjasmplus -DDISABLE_BITBUSTER_BLOCKS=1 -DBITBUSTER_OPTIMIZE_SPEED=1 -DHD64180=1 --raw=bitbuster_speed_180.bin bitbuster.asm
+del bitbuster.exp
+
+sjasmplus --raw=unbitbuster2.bin unbitbuster2.asm
+sjasmplus -DBITBUSTER_OPTIMIZE_SPEED=1 --raw=unbitbuster2_speed.bin unbitbuster2.asm
+
 rem exomizer2
 
 sjasmplus --raw=deexo.bin deexo.asm
