@@ -1,7 +1,7 @@
 ; -----------------------------------------------------------------------------
 ; ZX7 decoder by Einar Saukas, Antonio Villena & Metalbrain
 ; with additional size-efficient speed optimizations by introspec ("Life on Mars" version 1)
-; 195 bytes long and is always faster than "mega" decompressor (by about 4% on average)
+; 199 bytes long and is always faster than "mega" decompressor (by about 4% on average)
 ; drop me an email if you have any comments/ideas/suggestions: zxintrospec@gmail.com
 ; -----------------------------------------------------------------------------
 ; Parameters:
@@ -10,8 +10,7 @@
 ; -----------------------------------------------------------------------------
 
 
-	DEFINE	AllowUsingIX ; +3bytes
-	DEFINE	AllowUsingIY ; +0byte
+	DEFINE	AllowUsingIX ; +0byte
 
 
 ;
@@ -22,12 +21,119 @@ dzx7_lom:			ldi
 
 	IFNDEF	AllowUsingIX
 	ELSE
-				ld	ix, dzx7l_main_loop
+				ld	ix, dzx7l_offset_eoverflow
 	ENDIF
-	IFNDEF	AllowUsingIY
+				jr	dzx7l_reload
+
+
+dzx7l_reload_1:			ld	a, (hl)
+				inc	hl
+				rla
+
+				rl	d
+				add	a
+				rl	d
+				add	a
+				rl	d
+				add	a
+
+				jr	nc, dzx7l_copying
+	IFNDEF	AllowUsingIX
+				jp	dzx7l_offset_eoverflow
 	ELSE
-				ld	iy, dzx7l_offset_eoverflow
+				jp	(ix)
 	ENDIF
+
+
+dzx7l_reload_2:			ld	a, (hl)
+				inc	hl
+				rla
+
+				rl	d
+				add	a
+				rl	d
+				add	a
+
+				jr	nc, dzx7l_copying
+	IFNDEF	AllowUsingIX
+				jp	dzx7l_offset_eoverflow
+	ELSE
+				jp	(ix)
+	ENDIF
+
+dzx7l_reload_3:			ld	a, (hl)
+				inc	hl
+				rla
+
+				rl	d
+				add	a
+
+				jr	nc, dzx7l_copying
+	IFNDEF	AllowUsingIX
+				jp	dzx7l_offset_eoverflow
+	ELSE
+				jp	(ix)
+	ENDIF
+
+dzx7l_reload_4:			ld	a, (hl)
+				inc	hl
+				rla
+
+				jr	nc, dzx7l_copying
+	IFNDEF	AllowUsingIX
+				jp	dzx7l_offset_eoverflow
+	ELSE
+				jp	(ix)
+	ENDIF
+
+
+dzx7l_len_value_loop:		add	a
+				jr	z, dzx7l_len_value_reload
+				rl	c
+				jr	c, dzx7l_len_value_bincluded
+
+dzx7l_len_value_start:		dec	d
+				jr	nz, dzx7l_len_value_loop
+
+dzx7l_len_value_done:
+
+
+;
+;  the code that determines offset (pretty neat, actually)
+;
+				ld	e, (hl)				; load offset flag (1 bit) + offset value (7 bits)
+				inc	hl
+				bit	7, e
+				jr	z, dzx7l_copying		; if offset flag is set, load 4 extra bits
+
+				add	a
+				jr	z, dzx7l_reload_1
+				rl	d
+				add	a
+				jr	z, dzx7l_reload_2
+				rl	d
+				add	a
+				jr	z, dzx7l_reload_3
+				rl	d
+				add	a
+				jr	nc, dzx7l_copying		; we need to put 4-bit value into D, then INC D, then SRL D : RR E
+				jr	z, dzx7l_reload_4
+
+dzx7l_offset_eoverflow:		res	7, e				; since bit 7 of E is already 1, we do nothing when NC or RES 7,E : INC D
+				inc	d
+
+dzx7l_copying:			ex	(sp), hl			; store source, restore destination
+				push	hl				; store destination
+				scf
+				sbc	hl, de				; HL = destination - offset - 1
+				pop	de				; DE = destination
+				ldir					; copy previous sequence
+				ldi
+				pop	hl				; restore source address (compressed data)
+
+				add	a
+				jr	nc, dzx7l_copy_byte_loop
+				jr	nz, dzx7l_process_ref
 
 dzx7l_reload:			ld	a, (hl)
 				inc	hl
@@ -77,57 +183,7 @@ dzx7l_reload_size1:		ld	a, (hl)
 dzx7l_len_size_loop:		inc	d
 				add	a
 				jr	nc, dzx7l_len_size_loop
-				jr	z, dzx7l_reload_size2
-
-
-dzx7l_len_value_loop:		add	a
-				jr	z, dzx7l_len_value_reload
-				rl	c
-				jr	c, dzx7l_len_value_bincluded
-
-dzx7l_len_value_start:		dec	d
 				jr	nz, dzx7l_len_value_loop
-
-dzx7l_len_value_done:
-
-
-;
-;  the code that determines offset (pretty neat, actually)
-;
-				ld	e, (hl)				; load offset flag (1 bit) + offset value (7 bits)
-				inc	hl
-				bit	7, e
-				jr	z, dzx7l_copying		; if offset flag is set, load 4 extra bits
-
-				add	a
-				jr	z, dzx7l_reload_1
-				rl	d
-				add	a
-				jr	z, dzx7l_reload_2
-				rl	d
-				add	a
-				jr	z, dzx7l_reload_3
-				rl	d
-				add	a
-				jr	nc, dzx7l_copying		; we need to put 4-bit value into D, then INC D, then SRL D : RR E
-				jr	z, dzx7l_reload_4
-
-dzx7l_offset_eoverflow:		res	7, e				; since bit 7 of E is already 1, we do nothing when NC or RES 7,E : INC D
-				inc	d
-
-dzx7l_copying:			ex	(sp), hl			; store source, restore destination
-				push	hl				; store destination
-				scf
-				sbc	hl, de				; HL = destination - offset - 1
-				pop	de				; DE = destination
-				ldir					; copy previous sequence
-				ldi
-				pop	hl				; restore source address (compressed data)
-	IFNDEF	AllowUsingIX
-				jp	dzx7l_main_loop
-	ELSE
-				jp	(ix)
-	ENDIF
 
 dzx7l_reload_size2:		ld	a, (hl)
 				inc	hl
@@ -135,18 +191,14 @@ dzx7l_reload_size2:		ld	a, (hl)
 				jr	c, dzx7l_len_value_loop
 				jp	dzx7l_len_size_loop
 
+
+
 ;
 ;  the length of the reference is determined here (NB: kinda ugly; the commented out sections runs faster, but takes too much space. DJNZ?)
 ;
 
 dzx7l_len_value_reload:		ld	a, (hl)
 				inc	hl
-;				rla
-;				rl	c
-;dzx7l_len_value_bincluded:	rl	b
-;				jr	c, dzx7l_exit			; check end marker
-;				dec	d
-;				jr	z, dzx7l_len_value_done
 
 dzx7l_len_value_loop2:		adc	a
 				jr	z, dzx7l_len_value_reload
@@ -160,63 +212,5 @@ dzx7l_len_value_bincluded:	rl	b
 dzx7l_exit:			pop	de
 				ret
 
-dzx7l_reload_1:			ld	a, (hl)
-				inc	hl
-				rla
-
-				rl	d
-				add	a
-				rl	d
-				add	a
-				rl	d
-				add	a
-
-				jr	nc, dzx7l_copying
-	IFNDEF	AllowUsingIY
-				jp	dzx7l_offset_eoverflow
-	ELSE
-				jp	(iy)
-	ENDIF
-
-dzx7l_reload_2:			ld	a, (hl)
-				inc	hl
-				rla
-
-				rl	d
-				add	a
-				rl	d
-				add	a
-
-				jr	nc, dzx7l_copying
-	IFNDEF	AllowUsingIY
-				jp	dzx7l_offset_eoverflow
-	ELSE
-				jp	(iy)
-	ENDIF
-
-dzx7l_reload_3:			ld	a, (hl)
-				inc	hl
-				rla
-
-				rl	d
-				add	a
-
-				jr	nc, dzx7l_copying
-	IFNDEF	AllowUsingIY
-				jp	dzx7l_offset_eoverflow
-	ELSE
-				jp	(iy)
-	ENDIF
-
-dzx7l_reload_4:			ld	a, (hl)
-				inc	hl
-				rla
-
-				jr	nc, dzx7l_copying
-	IFNDEF	AllowUsingIY
-				jp	dzx7l_offset_eoverflow
-	ELSE
-				jp	(iy)
-	ENDIF
 
 ; -----------------------------------------------------------------------------
