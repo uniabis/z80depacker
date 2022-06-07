@@ -77,21 +77,7 @@
 		call	get_bit_from_bitstream
 		ENDM
 
-
-; get a bit from the bitstream
-; carry if bit is set, nocarry if bit is clear
-get_bit_from_bitstream:
-		add	a,a		; shift out new bit
-		ret	nz		; if remaining value isn't zere, we're done
-	    
-		ld a,(hl)	; get 8 bits from bitstream
-		inc hl		; increase source data address
-	
-		rla         ;(bit 0 will be set!!!!)
-		ret
-
 		ENDIF		; IFNDEF BITBUSTER_OPTIMIZE_SPEED
-
 
 ; FUNCTION:	depack
 ;	Depack a blob of data that was packed with Bitbuster.
@@ -185,7 +171,22 @@ depack_loop:    GET_BIT_FROM_BITSTREAM		; get compression type bit
 		ENDIF
 
 		jp	depack_loop
+
+		IFNDEF	BITBUSTER_OPTIMIZE_SPEED
+
+; get a bit from the bitstream
+; carry if bit is set, nocarry if bit is clear
+get_bit_from_bitstream:
+		add	a,a		; shift out new bit
+		ret	nz		; if remaining value isn't zere, we're done
+	    
+		ld a,(hl)	; get 8 bits from bitstream
+		inc hl		; increase source data address
 	
+		rla         ;(bit 0 will be set!!!!)
+		ret
+
+		ENDIF		; IFNDEF BITBUSTER_OPTIMIZE_SPEED
 
 ;handle compressed data
 output_compressed:

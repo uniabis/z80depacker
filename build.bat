@@ -41,7 +41,9 @@ sjasmplus --raw=unaplib_fast.bin unaplib_fast.asm
 sjasmplus -DHD64180=1 --raw=unaplib_fast_180.bin unaplib_fast.asm
 sjasmplus --raw=unaplib_small.bin unaplib_small.asm
 
-rem Bitbuster Extreme
+rem Bitbuster1 / BitbusterExtreme
+
+sjasmplus --raw=depack.bin depack.gen
 
 sjasmplus --raw=debitbust.bin debitbust.asm
 sjasmplus --raw=debitbustp1.bin debitbustp1.asm

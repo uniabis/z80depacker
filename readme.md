@@ -15,7 +15,9 @@
 
 [OaPACK](https://gitlab.com/eugene77/oapack)
 
-### [Bitbuster Extreme](http://old.matt.west.co.tt/speccy/apology/)
+### [Bitbuster](https://github.com/abekermsx/BitBuster-1.2) 1.2
+
+[Bitbuster Extreme](http://old.matt.west.co.tt/speccy/apology/)
 
 [Bitbuster Extreme win32 binary](https://cpcrulez.fr/applications_tools_cruncher_bitbuster_extreme_Z80.htm)
 
@@ -130,13 +132,13 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |Packer|ALL|MEGASDHC.B00|MEGASDHC.B01|MEGASDHC.B02|MEGASDHC.B03|MSX2MAIN.B00|MSX2MAIN.B01|MSXMUSIC.B00|MSX2EXT.B00|KANJJ1.B00|KANJJ1.B01|KANJJ1.B02|KANJJ1.B03|KANJJ1.B04|KANJJ1.B05|KANJJ1.B06|KANJJ1.B07|
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 |ApLib<br />(OaPACK)|161,422<br />(61.58%)|9,367<br />(57.17%)|4,926<br />(30.07%)|12,594<br />(76.87%)|12,340<br />(75.32%)|12,835<br />(78.34%)|13,579<br />(82.88%)|10,048<br />(61.33%)|12,361<br />(75.45%)|6,222<br />(37.98%)|4,090<br />(24.96%)|10,834<br />(66.13%)|10,642<br />(64.95%)|10,519<br />(64.20%)|10,453<br />(63.80%)|10,815<br />(66.01%)|9,797<br />(59.80%)|
-|Bitbuster Extreme|172,080<br />(65.64%)|9,830<br />(60.00%)|5,133<br />(31.33%)|13,188<br />(80.49%)|12,856<br />(78.47%)|13,293<br />(81.13%)|14,088<br />(85.99%)|10,551<br />(64.40%)|13,013<br />(79.43%)|6,683<br />(40.79%)|4,507<br />(27.51%)|11,785<br />(71.93%)|11,599<br />(70.79%)|11,542<br />(70.45%)|11,493<br />(70.15%)|11,778<br />(71.89%)|10,741<br />(65.56%)|
-|BitBuster2|171,831<br />(65.55%)|9,830<br />(60.00%)|5,130<br />(31.31%)|13,169<br />(80.38%)|12,852<br />(78.44%)|13,282<br />(81.07%)|14,079<br />(85.93%)|10,545<br />(64.36%)|13,001<br />(79.35%)|6,664<br />(40.67%)|4,498<br />(27.45%)|11,753<br />(71.73%)|11,571<br />(70.62%)|11,516<br />(70.29%)|11,472<br />(70.02%)|11,749<br />(71.71%)|10,720<br />(65.43%)|
+|Bitbuster|172,080<br />(65.64%)|9,830<br />(60.00%)|5,133<br />(31.33%)|13,188<br />(80.49%)|12,856<br />(78.47%)|13,293<br />(81.13%)|14,088<br />(85.99%)|10,551<br />(64.40%)|13,013<br />(79.43%)|6,683<br />(40.79%)|4,507<br />(27.51%)|11,785<br />(71.93%)|11,599<br />(70.79%)|11,542<br />(70.45%)|11,493<br />(70.15%)|11,778<br />(71.89%)|10,741<br />(65.56%)|
+|BitBuster2|171,783<br />(65.53%)|9,827<br />(59.98%)|5,127<br />(31.29%)|13,166<br />(80.36%)|12,849<br />(78.42%)|13,279<br />(81.05%)|14,076<br />(85.91%)|10,542<br />(64.34%)|12,998<br />(79.33%)|6,661<br />(40.66%)|4,495<br />(27.44%)|11,750<br />(71.72%)|11,568<br />(70.61%)|11,513<br />(70.27%)|11,469<br />(70.00%)|11,746<br />(71.69%)|10,717<br />(65.41%)|
 |Exomizer2<br />(-P0)|159,966<br />(61.02%)|9,362<br />(57.14%)|4,902<br />(29.92%)|12,500<br />(76.29%)|12,271<br />(74.90%)|12,740<br />(77.76%)|13,402<br />(81.80%)|10,071<br />(61.47%)|12,333<br />(75.27%)|6,098<br />(37.22%)|3,975<br />(24.26%)|10,680<br />(65.19%)|10,508<br />(64.14%)|10,426<br />(63.64%)|10,349<br />(63.17%)|10,648<br />(64.99%)|9,701<br />(59.21%)|
 |Exomizer3.0<br />(-P7)|159,965<br />(61.02%)|9,362<br />(57.14%)|4,902<br />(29.92%)|12,500<br />(76.29%)|12,271<br />(74.90%)|12,739<br />(77.75%)|13,402<br />(81.80%)|10,071<br />(61.47%)|12,333<br />(75.27%)|6,098<br />(37.22%)|3,975<br />(24.26%)|10,680<br />(65.19%)|10,508<br />(64.14%)|10,426<br />(63.64%)|10,349<br />(63.17%)|10,648<br />(64.99%)|9,701<br />(59.21%)|
 |Exomizer3.1<br />(-P39)|159,597<br />(60.88%)|9,279<br />(56.63%)|4,861<br />(29.67%)|12,427<br />(75.85%)|12,177<br />(74.32%)|12,658<br />(77.26%)|13,355<br />(81.51%)|9,943<br />(60.69%)|12,220<br />(74.58%)|6,123<br />(37.37%)|3,988<br />(24.34%)|10,727<br />(65.47%)|10,544<br />(64.36%)|10,481<br />(63.97%)|10,378<br />(63.34%)|10,698<br />(65.30%)|9,738<br />(59.44%)|
 |hruST<br />(oh1c -r)|162,217<br />(61.88%)|9,369<br />(57.18%)|4,895<br />(29.88%)|12,563<br />(76.68%)|12,282<br />(74.96%)|12,768<br />(77.93%)|13,454<br />(82.12%)|10,079<br />(61.52%)|12,331<br />(75.26%)|6,434<br />(39.27%)|4,230<br />(25.82%)|10,940<br />(66.77%)|10,753<br />(65.63%)|10,679<br />(65.18%)|10,597<br />(64.68%)|10,906<br />(66.56%)|9,937<br />(60.65%)|
-|lz4<br />(lz4ultra)|191,416<br />(73.02%)|10,833<br />(66.12%)|5,794<br />(35.36%)|14,742<br />(89.98%)|14,290<br />(87.22%)|14,837<br />(90.56%)|15,448<br />(94.29%)|11,630<br />(70.98%)|14,578<br />(88.98%)|8,088<br />(49.37%)|5,431<br />(33.15%)|13,003<br />(79.36%)|12,732<br />(77.71%)|12,673<br />(77.35%)|12,535<br />(76.51%)|12,972<br />(79.17%)|11,830<br />(72.20%)|
+|lz4<br />(lz4ultra)|191,240<br />(72.95%)|10,822<br />(66.05%)|5,783<br />(35.30%)|14,731<br />(89.91%)|14,279<br />(87.15%)|14,826<br />(90.49%)|15,437<br />(94.22%)|11,619<br />(70.92%)|14,567<br />(88.91%)|8,077<br />(49.30%)|5,420<br />(33.08%)|12,992<br />(79.30%)|12,721<br />(77.64%)|12,662<br />(77.28%)|12,524<br />(76.44%)|12,961<br />(79.11%)|11,819<br />(72.14%)|
 |lz48|198,227<br />(75.62%)|10,717<br />(65.41%)|5,752<br />(35.11%)|14,588<br />(89.04%)|14,250<br />(86.98%)|14,268<br />(87.08%)|15,305<br />(93.41%)|12,121<br />(73.98%)|14,074<br />(85.90%)|8,167<br />(49.85%)|5,532<br />(33.76%)|14,290<br />(87.22%)|14,024<br />(85.60%)|13,960<br />(85.21%)|13,952<br />(85.16%)|14,179<br />(86.54%)|13,048<br />(79.64%)|
 |lz49|195,027<br />(74.40%)|10,628<br />(64.87%)|5,559<br />(33.93%)|14,512<br />(88.57%)|14,030<br />(85.63%)|14,196<br />(86.65%)|15,254<br />(93.10%)|11,980<br />(73.12%)|13,969<br />(85.26%)|7,824<br />(47.75%)|5,240<br />(31.98%)|13,985<br />(85.36%)|13,761<br />(83.99%)|13,717<br />(83.72%)|13,674<br />(83.46%)|13,920<br />(84.96%)|12,778<br />(77.99%)|
 |LZE<br />(lzee f1r)|174,118<br />(66.42%)|10,088<br />(61.57%)|5,459<br />(33.32%)|13,468<br />(82.20%)|13,183<br />(80.46%)|13,694<br />(83.58%)|14,385<br />(87.80%)|10,826<br />(66.08%)|13,299<br />(81.17%)|7,023<br />(42.86%)|4,660<br />(28.44%)|11,692<br />(71.36%)|11,489<br />(70.12%)|11,369<br />(69.39%)|11,279<br />(68.84%)|11,630<br />(70.98%)|10,574<br />(64.54%)|
@@ -174,15 +176,16 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |ApLib|unaplib_fast|o|x|o|            235|61.57%|LDIR x 4.86||
 |ApLib|unaplib_fast_180|o|o|o|            233|61.57%|LDIR x 4.91|Support for hd64180, shorter, but slower from unaplib_fast|
 |ApLib|unaplib_small|o|o|o|            139|61.57%|LDIR x 7.52||
-|BitbusterExtreme|debitbust|o|o|o|             89|65.64%|LDIR x 5.95||
-|BitbusterExtreme|debitbustp1|o|o|o|             88|65.64%|LDIR x 5.30|Bit faster, shorter from debitbust|
-|BitbusterExtreme|debitbustp2|o|o|o|             96|65.64%|LDIR x 4.44|Faster, but longer from debitbust|
-|BitBuster2|bitbuster|o|x|o|             91|65.54%|LDIR x 5.27||
-|BitBuster2|bitbuster_180|o|o|o|             86|65.54%|LDIR x 5.30|Support for hd64180, shorter, but slower from bitbuster|
-|BitBuster2|bitbuster_speed|o|x|o|            161|65.54%|LDIR x 3.93||
-|BitBuster2|bitbuster_speed_180|o|o|o|            156|65.54%|LDIR x 3.95|Support for hd64180, shorter, but slower from bitbuster_speed|
-|BitBuster2|unbitbuster2|o|o|o|             81|65.54%|LDIR x 4.45||
-|BitBuster2|unbitbuster2_speed|o|o|o|             89|65.54%|LDIR x 3.79||
+|Bitbuster|depack.gen|o|o|o|            168|65.64%|LDIR x 4.55||
+|Bitbuster|debitbust|o|o|o|             89|65.64%|LDIR x 5.95||
+|Bitbuster|debitbustp1|o|o|o|             88|65.64%|LDIR x 5.30|Bit faster, shorter from debitbust|
+|Bitbuster|debitbustp2|o|o|o|             96|65.64%|LDIR x 4.44|Faster, but longer from debitbust|
+|BitBuster2|bitbuster|o|x|o|             91|65.53%|LDIR x 5.27||
+|BitBuster2|bitbuster_180|o|o|o|             86|65.53%|LDIR x 5.30|Support for hd64180, shorter, but slower from bitbuster|
+|BitBuster2|bitbuster_speed|o|x|o|            161|65.53%|LDIR x 3.93||
+|BitBuster2|bitbuster_speed_180|o|o|o|            156|65.53%|LDIR x 3.95|Support for hd64180, shorter, but slower from bitbuster_speed|
+|BitBuster2|unbitbuster2|o|o|o|             81|65.53%|LDIR x 4.45||
+|BitBuster2|unbitbuster2_speed|o|o|o|             89|65.53%|LDIR x 3.79||
 |Exomizer2|deexo|o|x|o|            169|61.02%|LDIR x 17.89||
 |Exomizer2|deexo_180|o|o|o|            166|61.02%|LDIR x 17.89|Support for hd64180, shorter, faster from deexo|
 |Exomizer2|deexo_180_fast_jp|o|o|o|            176|61.02%|LDIR x 15.32|Faster, but longer from deexo_180|
@@ -204,10 +207,10 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |hrust|dehrust_hl|o|o|o|            225|61.88%|LDIR x 7.41|Shorter, bit faster from dehrust_ix|
 |hrust|dehrust_stk|o|o|DI|            209|61.88%|LDIR x 6.84||
 |hrust|dehrust_stk_208b|o|o|DI|            208|61.88%|LDIR x 6.84|Shorter, bit faster from dehrust_stk|
-|lz4|lz4dec|o|o|x code|             97|73.01%|LDIR x 1.80||
-|lz4|unlz4_spke|o|o|o|             92|73.01%|LDIR x 1.66||
-|lz4|unlz4_spke_fast|o|o|o|             87|73.01%|LDIR x 1.60|Shorter, bit faster from unlz4_spke|
-|lz4|unlz4_spke_small|o|o|o|             65|73.01%|LDIR x 1.65|Shorter, bit faster from unlz4_spke|
+|lz4|lz4dec|o|o|x code|             73|72.95%|LDIR x 1.76||
+|lz4|unlz4_spke|o|o|o|             92|72.95%|LDIR x 1.66||
+|lz4|unlz4_spke_fast|o|o|o|             87|72.95%|LDIR x 1.60|Shorter, bit faster from unlz4_spke|
+|lz4|unlz4_spke_small|o|o|o|             65|72.95%|LDIR x 1.65|Shorter, bit faster from unlz4_spke|
 |lz48|lz48decrunch\_v006\_|o|x|o|             70|75.61%|LDIR x 1.65||
 |lz48|lz48decrunch_v006__180|o|o|o|             71|75.61%|LDIR x 1.57|Support for hd64180, bit faster, but longer from lz48decrunch\_v006\_|
 |lz49|lz49decrunch_v001|o|x|o|            106|74.39%|LDIR x 1.88||
@@ -297,15 +300,16 @@ test data:ALL(16*16KB)
 |ApLib|unaplib_fast|            235|        161,422<br />(61.57%)|     29,350,495<br />(LDIR x 4.86)|
 |ApLib|unaplib_fast_180|            233|        161,422<br />(61.57%)|     29,636,463<br />(LDIR x 4.91)|
 |ApLib|unaplib_small|            139|        161,422<br />(61.57%)|     45,350,252<br />(LDIR x 7.52)|
-|BitbusterExtreme|debitbust|             89|        172,080<br />(65.64%)|     35,875,562<br />(LDIR x 5.95)|
-|BitbusterExtreme|debitbustp1|             88|        172,080<br />(65.64%)|     32,002,274<br />(LDIR x 5.30)|
-|BitbusterExtreme|debitbustp2|             96|        172,080<br />(65.64%)|     26,816,065<br />(LDIR x 4.44)|
-|BitBuster2|bitbuster|             91|        171,831<br />(65.54%)|     31,824,231<br />(LDIR x 5.27)|
-|BitBuster2|bitbuster_180|             86|        171,831<br />(65.54%)|     31,967,925<br />(LDIR x 5.30)|
-|BitBuster2|bitbuster_speed|            161|        171,831<br />(65.54%)|     23,697,149<br />(LDIR x 3.93)|
-|BitBuster2|bitbuster_speed_180|            156|        171,831<br />(65.54%)|     23,840,843<br />(LDIR x 3.95)|
-|BitBuster2|unbitbuster2|             81|        171,831<br />(65.54%)|     26,835,247<br />(LDIR x 4.45)|
-|BitBuster2|unbitbuster2_speed|             89|        171,831<br />(65.54%)|     22,853,182<br />(LDIR x 3.79)|
+|Bitbuster|depack.gen|            168|        172,080<br />(65.64%)|     27,472,252<br />(LDIR x 4.55)|
+|Bitbuster|debitbust|             89|        172,080<br />(65.64%)|     35,875,562<br />(LDIR x 5.95)|
+|Bitbuster|debitbustp1|             88|        172,080<br />(65.64%)|     32,002,274<br />(LDIR x 5.30)|
+|Bitbuster|debitbustp2|             96|        172,080<br />(65.64%)|     26,816,065<br />(LDIR x 4.44)|
+|BitBuster2|bitbuster|             91|        171,783<br />(65.53%)|     31,824,231<br />(LDIR x 5.27)|
+|BitBuster2|bitbuster_180|             86|        171,783<br />(65.53%)|     31,967,925<br />(LDIR x 5.30)|
+|BitBuster2|bitbuster_speed|            161|        171,783<br />(65.53%)|     23,697,149<br />(LDIR x 3.93)|
+|BitBuster2|bitbuster_speed_180|            156|        171,783<br />(65.53%)|     23,840,843<br />(LDIR x 3.95)|
+|BitBuster2|unbitbuster2|             81|        171,783<br />(65.53%)|     26,835,247<br />(LDIR x 4.45)|
+|BitBuster2|unbitbuster2_speed|             89|        171,783<br />(65.53%)|     22,853,182<br />(LDIR x 3.79)|
 |Exomizer2|deexo|            169|        159,966<br />(61.02%)|    107,900,507<br />(LDIR x 17.89)|
 |Exomizer2|deexo_180|            166|        159,966<br />(61.02%)|    107,899,823<br />(LDIR x 17.89)|
 |Exomizer2|deexo_180_fast_jp|            176|        159,966<br />(61.02%)|     92,423,377<br />(LDIR x 15.32)|
@@ -327,10 +331,10 @@ test data:ALL(16*16KB)
 |hrust|dehrust_hl|            225|        162,217<br />(61.88%)|     44,724,303<br />(LDIR x 7.41)|
 |hrust|dehrust_stk|            209|        162,217<br />(61.88%)|     41,277,317<br />(LDIR x 6.84)|
 |hrust|dehrust_stk_208b|            208|        162,217<br />(61.88%)|     41,277,269<br />(LDIR x 6.84)|
-|lz4|lz4dec|             97|        191,416<br />(73.01%)|     10,893,051<br />(LDIR x 1.80)|
-|lz4|unlz4_spke|             92|        191,416<br />(73.01%)|     10,030,865<br />(LDIR x 1.66)|
-|lz4|unlz4_spke_fast|             87|        191,416<br />(73.01%)|      9,649,778<br />(LDIR x 1.60)|
-|lz4|unlz4_spke_small|             65|        191,416<br />(73.01%)|      9,970,571<br />(LDIR x 1.65)|
+|lz4|lz4dec|             73|        191,240<br />(72.95%)|     10,639,515<br />(LDIR x 1.76)|
+|lz4|unlz4_spke|             92|        191,240<br />(72.95%)|     10,030,865<br />(LDIR x 1.66)|
+|lz4|unlz4_spke_fast|             87|        191,240<br />(72.95%)|      9,649,778<br />(LDIR x 1.60)|
+|lz4|unlz4_spke_small|             65|        191,240<br />(72.95%)|      9,970,571<br />(LDIR x 1.65)|
 |lz48|lz48decrunch\_v006\_|             70|        198,227<br />(75.61%)|      9,987,125<br />(LDIR x 1.65)|
 |lz48|lz48decrunch_v006__180|             71|        198,227<br />(75.61%)|      9,503,964<br />(LDIR x 1.57)|
 |lz49|lz49decrunch_v001|            106|        195,027<br />(74.39%)|     11,349,204<br />(LDIR x 1.88)|
@@ -415,15 +419,16 @@ test data:MEGASDHC.B00(16KB)
 |ApLib|unaplib_fast|            235|          9,367<br />(57.17%)|      1,543,251<br />(LDIR x 4.09)|
 |ApLib|unaplib_fast_180|            233|          9,367<br />(57.17%)|      1,556,931<br />(LDIR x 4.13)|
 |ApLib|unaplib_small|            139|          9,367<br />(57.17%)|      2,374,849<br />(LDIR x 6.30)|
-|BitbusterExtreme|debitbust|             89|          9,830<br />(59.99%)|      1,819,624<br />(LDIR x 4.82)|
-|BitbusterExtreme|debitbustp1|             88|          9,830<br />(59.99%)|      1,569,711<br />(LDIR x 4.16)|
-|BitbusterExtreme|debitbustp2|             96|          9,830<br />(59.99%)|      1,342,164<br />(LDIR x 3.56)|
-|BitBuster2|bitbuster|             91|          9,830<br />(59.99%)|      1,641,694<br />(LDIR x 4.35)|
-|BitBuster2|bitbuster_180|             86|          9,830<br />(59.99%)|      1,648,456<br />(LDIR x 4.37)|
-|BitBuster2|bitbuster_speed|            161|          9,830<br />(59.99%)|      1,230,805<br />(LDIR x 3.26)|
-|BitBuster2|bitbuster_speed_180|            156|          9,830<br />(59.99%)|      1,237,567<br />(LDIR x 3.28)|
-|BitBuster2|unbitbuster2|             81|          9,830<br />(59.99%)|      1,344,377<br />(LDIR x 3.56)|
-|BitBuster2|unbitbuster2_speed|             89|          9,830<br />(59.99%)|      1,170,354<br />(LDIR x 3.10)|
+|Bitbuster|depack.gen|            168|          9,830<br />(59.99%)|      1,399,638<br />(LDIR x 3.71)|
+|Bitbuster|debitbust|             89|          9,830<br />(59.99%)|      1,819,624<br />(LDIR x 4.82)|
+|Bitbuster|debitbustp1|             88|          9,830<br />(59.99%)|      1,569,711<br />(LDIR x 4.16)|
+|Bitbuster|debitbustp2|             96|          9,830<br />(59.99%)|      1,342,164<br />(LDIR x 3.56)|
+|BitBuster2|bitbuster|             91|          9,827<br />(59.97%)|      1,641,694<br />(LDIR x 4.35)|
+|BitBuster2|bitbuster_180|             86|          9,827<br />(59.97%)|      1,648,456<br />(LDIR x 4.37)|
+|BitBuster2|bitbuster_speed|            161|          9,827<br />(59.97%)|      1,230,805<br />(LDIR x 3.26)|
+|BitBuster2|bitbuster_speed_180|            156|          9,827<br />(59.97%)|      1,237,567<br />(LDIR x 3.28)|
+|BitBuster2|unbitbuster2|             81|          9,827<br />(59.97%)|      1,344,377<br />(LDIR x 3.56)|
+|BitBuster2|unbitbuster2_speed|             89|          9,827<br />(59.97%)|      1,170,354<br />(LDIR x 3.10)|
 |Exomizer2|deexo|            169|          9,362<br />(57.14%)|      5,454,722<br />(LDIR x 14.47)|
 |Exomizer2|deexo_180|            166|          9,362<br />(57.14%)|      5,454,592<br />(LDIR x 14.47)|
 |Exomizer2|deexo_180_fast_jp|            176|          9,362<br />(57.14%)|      4,682,085<br />(LDIR x 12.42)|
@@ -445,10 +450,10 @@ test data:MEGASDHC.B00(16KB)
 |hrust|dehrust_hl|            225|          9,369<br />(57.18%)|      2,314,241<br />(LDIR x 6.14)|
 |hrust|dehrust_stk|            209|          9,369<br />(57.18%)|      2,152,604<br />(LDIR x 5.71)|
 |hrust|dehrust_stk_208b|            208|          9,369<br />(57.18%)|      2,152,601<br />(LDIR x 5.71)|
-|lz4|lz4dec|             97|         10,833<br />(66.11%)|        556,353<br />(LDIR x 1.47)|
-|lz4|unlz4_spke|             92|         10,833<br />(66.11%)|        522,445<br />(LDIR x 1.38)|
-|lz4|unlz4_spke_fast|             87|         10,833<br />(66.11%)|        509,284<br />(LDIR x 1.35)|
-|lz4|unlz4_spke_small|             65|         10,833<br />(66.11%)|        522,620<br />(LDIR x 1.38)|
+|lz4|lz4dec|             73|         10,822<br />(66.05%)|        547,468<br />(LDIR x 1.45)|
+|lz4|unlz4_spke|             92|         10,822<br />(66.05%)|        522,445<br />(LDIR x 1.38)|
+|lz4|unlz4_spke_fast|             87|         10,822<br />(66.05%)|        509,284<br />(LDIR x 1.35)|
+|lz4|unlz4_spke_small|             65|         10,822<br />(66.05%)|        522,620<br />(LDIR x 1.38)|
 |lz48|lz48decrunch\_v006\_|             70|         10,717<br />(65.41%)|        557,554<br />(LDIR x 1.47)|
 |lz48|lz48decrunch_v006__180|             71|         10,717<br />(65.41%)|        537,244<br />(LDIR x 1.42)|
 |lz49|lz49decrunch_v001|            106|         10,628<br />(64.86%)|        608,577<br />(LDIR x 1.61)|
@@ -533,15 +538,16 @@ test data:MEGASDHC.B01(16KB)
 |ApLib|unaplib_fast|            235|          4,926<br />(30.06%)|      1,037,304<br />(LDIR x 2.75)|
 |ApLib|unaplib_fast_180|            233|          4,926<br />(30.06%)|      1,045,256<br />(LDIR x 2.77)|
 |ApLib|unaplib_small|            139|          4,926<br />(30.06%)|      1,495,184<br />(LDIR x 3.96)|
-|BitbusterExtreme|debitbust|             89|          5,133<br />(31.32%)|      1,193,386<br />(LDIR x 3.16)|
-|BitbusterExtreme|debitbustp1|             88|          5,133<br />(31.32%)|      1,055,487<br />(LDIR x 2.80)|
-|BitbusterExtreme|debitbustp2|             96|          5,133<br />(31.32%)|        919,960<br />(LDIR x 2.44)|
-|BitBuster2|bitbuster|             91|          5,130<br />(31.31%)|      1,083,357<br />(LDIR x 2.87)|
-|BitBuster2|bitbuster_180|             86|          5,130<br />(31.31%)|      1,086,972<br />(LDIR x 2.88)|
-|BitBuster2|bitbuster_speed|            161|          5,130<br />(31.31%)|        855,432<br />(LDIR x 2.27)|
-|BitBuster2|bitbuster_speed_180|            156|          5,130<br />(31.31%)|        859,047<br />(LDIR x 2.27)|
-|BitBuster2|unbitbuster2|             81|          5,130<br />(31.31%)|        932,553<br />(LDIR x 2.47)|
-|BitBuster2|unbitbuster2_speed|             89|          5,130<br />(31.31%)|        827,601<br />(LDIR x 2.19)|
+|Bitbuster|depack.gen|            168|          5,133<br />(31.32%)|        959,594<br />(LDIR x 2.54)|
+|Bitbuster|debitbust|             89|          5,133<br />(31.32%)|      1,193,386<br />(LDIR x 3.16)|
+|Bitbuster|debitbustp1|             88|          5,133<br />(31.32%)|      1,055,487<br />(LDIR x 2.80)|
+|Bitbuster|debitbustp2|             96|          5,133<br />(31.32%)|        919,960<br />(LDIR x 2.44)|
+|BitBuster2|bitbuster|             91|          5,127<br />(31.29%)|      1,083,357<br />(LDIR x 2.87)|
+|BitBuster2|bitbuster_180|             86|          5,127<br />(31.29%)|      1,086,972<br />(LDIR x 2.88)|
+|BitBuster2|bitbuster_speed|            161|          5,127<br />(31.29%)|        855,432<br />(LDIR x 2.27)|
+|BitBuster2|bitbuster_speed_180|            156|          5,127<br />(31.29%)|        859,047<br />(LDIR x 2.27)|
+|BitBuster2|unbitbuster2|             81|          5,127<br />(31.29%)|        932,553<br />(LDIR x 2.47)|
+|BitBuster2|unbitbuster2_speed|             89|          5,127<br />(31.29%)|        827,601<br />(LDIR x 2.19)|
 |Exomizer2|deexo|            169|          4,902<br />(29.91%)|      3,307,149<br />(LDIR x 8.77)|
 |Exomizer2|deexo_180|            166|          4,902<br />(29.91%)|      3,307,019<br />(LDIR x 8.77)|
 |Exomizer2|deexo_180_fast_jp|            176|          4,902<br />(29.91%)|      2,874,744<br />(LDIR x 7.62)|
@@ -563,10 +569,10 @@ test data:MEGASDHC.B01(16KB)
 |hrust|dehrust_hl|            225|          4,895<br />(29.87%)|      1,488,784<br />(LDIR x 3.95)|
 |hrust|dehrust_stk|            209|          4,895<br />(29.87%)|      1,394,349<br />(LDIR x 3.70)|
 |hrust|dehrust_stk_208b|            208|          4,895<br />(29.87%)|      1,394,346<br />(LDIR x 3.70)|
-|lz4|lz4dec|             97|          5,794<br />(35.36%)|        514,211<br />(LDIR x 1.36)|
-|lz4|unlz4_spke|             92|          5,794<br />(35.36%)|        490,570<br />(LDIR x 1.30)|
-|lz4|unlz4_spke_fast|             87|          5,794<br />(35.36%)|        480,163<br />(LDIR x 1.27)|
-|lz4|unlz4_spke_small|             65|          5,794<br />(35.36%)|        488,456<br />(LDIR x 1.29)|
+|lz4|lz4dec|             73|          5,783<br />(35.29%)|        507,166<br />(LDIR x 1.34)|
+|lz4|unlz4_spke|             92|          5,783<br />(35.29%)|        490,570<br />(LDIR x 1.30)|
+|lz4|unlz4_spke_fast|             87|          5,783<br />(35.29%)|        480,163<br />(LDIR x 1.27)|
+|lz4|unlz4_spke_small|             65|          5,783<br />(35.29%)|        488,456<br />(LDIR x 1.29)|
 |lz48|lz48decrunch\_v006\_|             70|          5,752<br />(35.10%)|        504,561<br />(LDIR x 1.33)|
 |lz48|lz48decrunch_v006__180|             71|          5,752<br />(35.10%)|        488,345<br />(LDIR x 1.29)|
 |lz49|lz49decrunch_v001|            106|          5,559<br />(33.92%)|        540,251<br />(LDIR x 1.43)|
@@ -651,15 +657,16 @@ test data:MEGASDHC.B02(16KB)
 |ApLib|unaplib_fast|            235|         12,594<br />(76.86%)|      2,079,003<br />(LDIR x 5.51)|
 |ApLib|unaplib_fast_180|            233|         12,594<br />(76.86%)|      2,101,347<br />(LDIR x 5.57)|
 |ApLib|unaplib_small|            139|         12,594<br />(76.86%)|      3,253,015<br />(LDIR x 8.63)|
-|BitbusterExtreme|debitbust|             89|         13,188<br />(80.49%)|      2,486,914<br />(LDIR x 6.59)|
-|BitbusterExtreme|debitbustp1|             88|         13,188<br />(80.49%)|      2,193,808<br />(LDIR x 5.82)|
-|BitbusterExtreme|debitbustp2|             96|         13,188<br />(80.49%)|      1,844,777<br />(LDIR x 4.89)|
-|BitBuster2|bitbuster|             91|         13,169<br />(80.37%)|      2,221,103<br />(LDIR x 5.89)|
-|BitBuster2|bitbuster_180|             86|         13,169<br />(80.37%)|      2,231,693<br />(LDIR x 5.92)|
-|BitBuster2|bitbuster_speed|            161|         13,169<br />(80.37%)|      1,636,775<br />(LDIR x 4.34)|
-|BitBuster2|bitbuster_speed_180|            156|         13,169<br />(80.37%)|      1,647,365<br />(LDIR x 4.37)|
-|BitBuster2|unbitbuster2|             81|         13,169<br />(80.37%)|      1,827,713<br />(LDIR x 4.85)|
-|BitBuster2|unbitbuster2_speed|             89|         13,169<br />(80.37%)|      1,561,931<br />(LDIR x 4.14)|
+|Bitbuster|depack.gen|            168|         13,188<br />(80.49%)|      1,885,126<br />(LDIR x 5.00)|
+|Bitbuster|debitbust|             89|         13,188<br />(80.49%)|      2,486,914<br />(LDIR x 6.59)|
+|Bitbuster|debitbustp1|             88|         13,188<br />(80.49%)|      2,193,808<br />(LDIR x 5.82)|
+|Bitbuster|debitbustp2|             96|         13,188<br />(80.49%)|      1,844,777<br />(LDIR x 4.89)|
+|BitBuster2|bitbuster|             91|         13,166<br />(80.35%)|      2,221,103<br />(LDIR x 5.89)|
+|BitBuster2|bitbuster_180|             86|         13,166<br />(80.35%)|      2,231,693<br />(LDIR x 5.92)|
+|BitBuster2|bitbuster_speed|            161|         13,166<br />(80.35%)|      1,636,775<br />(LDIR x 4.34)|
+|BitBuster2|bitbuster_speed_180|            156|         13,166<br />(80.35%)|      1,647,365<br />(LDIR x 4.37)|
+|BitBuster2|unbitbuster2|             81|         13,166<br />(80.35%)|      1,827,713<br />(LDIR x 4.85)|
+|BitBuster2|unbitbuster2_speed|             89|         13,166<br />(80.35%)|      1,561,931<br />(LDIR x 4.14)|
 |Exomizer2|deexo|            169|         12,500<br />(76.29%)|      8,261,575<br />(LDIR x 21.92)|
 |Exomizer2|deexo_180|            166|         12,500<br />(76.29%)|      8,261,457<br />(LDIR x 21.92)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,500<br />(76.29%)|      7,062,383<br />(LDIR x 18.74)|
@@ -681,10 +688,10 @@ test data:MEGASDHC.B02(16KB)
 |hrust|dehrust_hl|            225|         12,563<br />(76.67%)|      3,098,587<br />(LDIR x 8.22)|
 |hrust|dehrust_stk|            209|         12,563<br />(76.67%)|      2,861,857<br />(LDIR x 7.59)|
 |hrust|dehrust_stk_208b|            208|         12,563<br />(76.67%)|      2,861,854<br />(LDIR x 7.59)|
-|lz4|lz4dec|             97|         14,742<br />(89.97%)|        607,608<br />(LDIR x 1.61)|
-|lz4|unlz4_spke|             92|         14,742<br />(89.97%)|        563,793<br />(LDIR x 1.49)|
-|lz4|unlz4_spke_fast|             87|         14,742<br />(89.97%)|        546,868<br />(LDIR x 1.45)|
-|lz4|unlz4_spke_small|             65|         14,742<br />(89.97%)|        564,148<br />(LDIR x 1.49)|
+|lz4|lz4dec|             73|         14,731<br />(89.91%)|        596,083<br />(LDIR x 1.58)|
+|lz4|unlz4_spke|             92|         14,731<br />(89.91%)|        563,793<br />(LDIR x 1.49)|
+|lz4|unlz4_spke_fast|             87|         14,731<br />(89.91%)|        546,868<br />(LDIR x 1.45)|
+|lz4|unlz4_spke_small|             65|         14,731<br />(89.91%)|        564,148<br />(LDIR x 1.49)|
 |lz48|lz48decrunch\_v006\_|             70|         14,588<br />(89.03%)|        593,341<br />(LDIR x 1.57)|
 |lz48|lz48decrunch_v006__180|             71|         14,588<br />(89.03%)|        568,287<br />(LDIR x 1.50)|
 |lz49|lz49decrunch_v001|            106|         14,512<br />(88.57%)|        675,825<br />(LDIR x 1.79)|
@@ -769,15 +776,16 @@ test data:MEGASDHC.B03(16KB)
 |ApLib|unaplib_fast|            235|         12,340<br />(75.31%)|      1,955,832<br />(LDIR x 5.19)|
 |ApLib|unaplib_fast_180|            233|         12,340<br />(75.31%)|      1,975,984<br />(LDIR x 5.24)|
 |ApLib|unaplib_small|            139|         12,340<br />(75.31%)|      3,063,845<br />(LDIR x 8.13)|
-|BitbusterExtreme|debitbust|             89|         12,856<br />(78.46%)|      2,322,296<br />(LDIR x 6.16)|
-|BitbusterExtreme|debitbustp1|             88|         12,856<br />(78.46%)|      2,021,969<br />(LDIR x 5.36)|
-|BitbusterExtreme|debitbustp2|             96|         12,856<br />(78.46%)|      1,708,568<br />(LDIR x 4.53)|
-|BitBuster2|bitbuster|             91|         12,852<br />(78.44%)|      2,092,185<br />(LDIR x 5.55)|
-|BitBuster2|bitbuster_180|             86|         12,852<br />(78.44%)|      2,101,725<br />(LDIR x 5.57)|
-|BitBuster2|bitbuster_speed|            161|         12,852<br />(78.44%)|      1,540,050<br />(LDIR x 4.08)|
-|BitBuster2|bitbuster_speed_180|            156|         12,852<br />(78.44%)|      1,549,590<br />(LDIR x 4.11)|
-|BitBuster2|unbitbuster2|             81|         12,852<br />(78.44%)|      1,705,056<br />(LDIR x 4.52)|
-|BitBuster2|unbitbuster2_speed|             89|         12,852<br />(78.44%)|      1,463,521<br />(LDIR x 3.88)|
+|Bitbuster|depack.gen|            168|         12,856<br />(78.46%)|      1,758,233<br />(LDIR x 4.66)|
+|Bitbuster|debitbust|             89|         12,856<br />(78.46%)|      2,322,296<br />(LDIR x 6.16)|
+|Bitbuster|debitbustp1|             88|         12,856<br />(78.46%)|      2,021,969<br />(LDIR x 5.36)|
+|Bitbuster|debitbustp2|             96|         12,856<br />(78.46%)|      1,708,568<br />(LDIR x 4.53)|
+|BitBuster2|bitbuster|             91|         12,849<br />(78.42%)|      2,092,185<br />(LDIR x 5.55)|
+|BitBuster2|bitbuster_180|             86|         12,849<br />(78.42%)|      2,101,725<br />(LDIR x 5.57)|
+|BitBuster2|bitbuster_speed|            161|         12,849<br />(78.42%)|      1,540,050<br />(LDIR x 4.08)|
+|BitBuster2|bitbuster_speed_180|            156|         12,849<br />(78.42%)|      1,549,590<br />(LDIR x 4.11)|
+|BitBuster2|unbitbuster2|             81|         12,849<br />(78.42%)|      1,705,056<br />(LDIR x 4.52)|
+|BitBuster2|unbitbuster2_speed|             89|         12,849<br />(78.42%)|      1,463,521<br />(LDIR x 3.88)|
 |Exomizer2|deexo|            169|         12,271<br />(74.89%)|      7,453,254<br />(LDIR x 19.77)|
 |Exomizer2|deexo_180|            166|         12,271<br />(74.89%)|      7,453,132<br />(LDIR x 19.77)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,271<br />(74.89%)|      6,375,947<br />(LDIR x 16.91)|
@@ -799,10 +807,10 @@ test data:MEGASDHC.B03(16KB)
 |hrust|dehrust_hl|            225|         12,282<br />(74.96%)|      2,891,465<br />(LDIR x 7.67)|
 |hrust|dehrust_stk|            209|         12,282<br />(74.96%)|      2,678,183<br />(LDIR x 7.10)|
 |hrust|dehrust_stk_208b|            208|         12,282<br />(74.96%)|      2,678,180<br />(LDIR x 7.10)|
-|lz4|lz4dec|             97|         14,290<br />(87.21%)|        578,338<br />(LDIR x 1.53)|
-|lz4|unlz4_spke|             92|         14,290<br />(87.21%)|        539,707<br />(LDIR x 1.43)|
-|lz4|unlz4_spke_fast|             87|         14,290<br />(87.21%)|        525,085<br />(LDIR x 1.39)|
-|lz4|unlz4_spke_small|             65|         14,290<br />(87.21%)|        540,435<br />(LDIR x 1.43)|
+|lz4|lz4dec|             73|         14,279<br />(87.15%)|        568,349<br />(LDIR x 1.50)|
+|lz4|unlz4_spke|             92|         14,279<br />(87.15%)|        539,707<br />(LDIR x 1.43)|
+|lz4|unlz4_spke_fast|             87|         14,279<br />(87.15%)|        525,085<br />(LDIR x 1.39)|
+|lz4|unlz4_spke_small|             65|         14,279<br />(87.15%)|        540,435<br />(LDIR x 1.43)|
 |lz48|lz48decrunch\_v006\_|             70|         14,250<br />(86.97%)|        581,226<br />(LDIR x 1.54)|
 |lz48|lz48decrunch_v006__180|             71|         14,250<br />(86.97%)|        558,530<br />(LDIR x 1.48)|
 |lz49|lz49decrunch_v001|            106|         14,030<br />(85.63%)|        658,644<br />(LDIR x 1.74)|
@@ -887,15 +895,16 @@ test data:MSX2MAIN.B00(16KB)
 |ApLib|unaplib_fast|            235|         12,835<br />(78.33%)|      1,949,584<br />(LDIR x 5.17)|
 |ApLib|unaplib_fast_180|            233|         12,835<br />(78.33%)|      1,968,960<br />(LDIR x 5.22)|
 |ApLib|unaplib_small|            139|         12,835<br />(78.33%)|      3,066,458<br />(LDIR x 8.13)|
-|BitbusterExtreme|debitbust|             89|         13,293<br />(81.13%)|      2,262,023<br />(LDIR x 6.00)|
-|BitbusterExtreme|debitbustp1|             88|         13,293<br />(81.13%)|      1,922,696<br />(LDIR x 5.10)|
-|BitbusterExtreme|debitbustp2|             96|         13,293<br />(81.13%)|      1,636,331<br />(LDIR x 4.34)|
-|BitBuster2|bitbuster|             91|         13,282<br />(81.06%)|      2,031,327<br />(LDIR x 5.39)|
-|BitBuster2|bitbuster_180|             86|         13,282<br />(81.06%)|      2,040,510<br />(LDIR x 5.41)|
-|BitBuster2|bitbuster_speed|            161|         13,282<br />(81.06%)|      1,495,280<br />(LDIR x 3.96)|
-|BitBuster2|bitbuster_speed_180|            156|         13,282<br />(81.06%)|      1,504,463<br />(LDIR x 3.99)|
-|BitBuster2|unbitbuster2|             81|         13,282<br />(81.06%)|      1,623,401<br />(LDIR x 4.30)|
-|BitBuster2|unbitbuster2_speed|             89|         13,282<br />(81.06%)|      1,409,619<br />(LDIR x 3.74)|
+|Bitbuster|depack.gen|            168|         13,293<br />(81.13%)|      1,713,241<br />(LDIR x 4.54)|
+|Bitbuster|debitbust|             89|         13,293<br />(81.13%)|      2,262,023<br />(LDIR x 6.00)|
+|Bitbuster|debitbustp1|             88|         13,293<br />(81.13%)|      1,922,696<br />(LDIR x 5.10)|
+|Bitbuster|debitbustp2|             96|         13,293<br />(81.13%)|      1,636,331<br />(LDIR x 4.34)|
+|BitBuster2|bitbuster|             91|         13,279<br />(81.04%)|      2,031,327<br />(LDIR x 5.39)|
+|BitBuster2|bitbuster_180|             86|         13,279<br />(81.04%)|      2,040,510<br />(LDIR x 5.41)|
+|BitBuster2|bitbuster_speed|            161|         13,279<br />(81.04%)|      1,495,280<br />(LDIR x 3.96)|
+|BitBuster2|bitbuster_speed_180|            156|         13,279<br />(81.04%)|      1,504,463<br />(LDIR x 3.99)|
+|BitBuster2|unbitbuster2|             81|         13,279<br />(81.04%)|      1,623,401<br />(LDIR x 4.30)|
+|BitBuster2|unbitbuster2_speed|             89|         13,279<br />(81.04%)|      1,409,619<br />(LDIR x 3.74)|
 |Exomizer2|deexo|            169|         12,740<br />(77.75%)|      7,678,676<br />(LDIR x 20.37)|
 |Exomizer2|deexo_180|            166|         12,740<br />(77.75%)|      7,678,762<br />(LDIR x 20.37)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,740<br />(77.75%)|      6,608,801<br />(LDIR x 17.53)|
@@ -917,10 +926,10 @@ test data:MSX2MAIN.B00(16KB)
 |hrust|dehrust_hl|            225|         12,768<br />(77.92%)|      2,964,072<br />(LDIR x 7.86)|
 |hrust|dehrust_stk|            209|         12,768<br />(77.92%)|      2,750,174<br />(LDIR x 7.29)|
 |hrust|dehrust_stk_208b|            208|         12,768<br />(77.92%)|      2,750,171<br />(LDIR x 7.29)|
-|lz4|lz4dec|             97|         14,837<br />(90.55%)|        591,064<br />(LDIR x 1.56)|
-|lz4|unlz4_spke|             92|         14,837<br />(90.55%)|        550,975<br />(LDIR x 1.46)|
-|lz4|unlz4_spke_fast|             87|         14,837<br />(90.55%)|        535,226<br />(LDIR x 1.42)|
-|lz4|unlz4_spke_small|             65|         14,837<br />(90.55%)|        550,769<br />(LDIR x 1.46)|
+|lz4|lz4dec|             73|         14,826<br />(90.49%)|        580,307<br />(LDIR x 1.53)|
+|lz4|unlz4_spke|             92|         14,826<br />(90.49%)|        550,975<br />(LDIR x 1.46)|
+|lz4|unlz4_spke_fast|             87|         14,826<br />(90.49%)|        535,226<br />(LDIR x 1.42)|
+|lz4|unlz4_spke_small|             65|         14,826<br />(90.49%)|        550,769<br />(LDIR x 1.46)|
 |lz48|lz48decrunch\_v006\_|             70|         14,268<br />(87.08%)|        613,020<br />(LDIR x 1.62)|
 |lz48|lz48decrunch_v006__180|             71|         14,268<br />(87.08%)|        584,681<br />(LDIR x 1.55)|
 |lz49|lz49decrunch_v001|            106|         14,196<br />(86.64%)|        680,983<br />(LDIR x 1.80)|
@@ -1005,15 +1014,16 @@ test data:MSX2MAIN.B01(16KB)
 |ApLib|unaplib_fast|            235|         13,579<br />(82.87%)|      2,070,519<br />(LDIR x 5.49)|
 |ApLib|unaplib_fast_180|            233|         13,579<br />(82.87%)|      2,092,399<br />(LDIR x 5.55)|
 |ApLib|unaplib_small|            139|         13,579<br />(82.87%)|      3,267,039<br />(LDIR x 8.66)|
-|BitbusterExtreme|debitbust|             89|         14,088<br />(85.98%)|      2,431,874<br />(LDIR x 6.45)|
-|BitbusterExtreme|debitbustp1|             88|         14,088<br />(85.98%)|      2,108,897<br />(LDIR x 5.59)|
-|BitbusterExtreme|debitbustp2|             96|         14,088<br />(85.98%)|      1,782,948<br />(LDIR x 4.73)|
-|BitBuster2|bitbuster|             91|         14,079<br />(85.93%)|      2,197,580<br />(LDIR x 5.83)|
-|BitBuster2|bitbuster_180|             86|         14,079<br />(85.93%)|      2,207,684<br />(LDIR x 5.85)|
-|BitBuster2|bitbuster_speed|            161|         14,079<br />(85.93%)|      1,607,786<br />(LDIR x 4.26)|
-|BitBuster2|bitbuster_speed_180|            156|         14,079<br />(85.93%)|      1,617,890<br />(LDIR x 4.29)|
-|BitBuster2|unbitbuster2|             81|         14,079<br />(85.93%)|      1,769,673<br />(LDIR x 4.69)|
-|BitBuster2|unbitbuster2_speed|             89|         14,079<br />(85.93%)|      1,519,665<br />(LDIR x 4.03)|
+|Bitbuster|depack.gen|            168|         14,088<br />(85.98%)|      1,830,290<br />(LDIR x 4.85)|
+|Bitbuster|debitbust|             89|         14,088<br />(85.98%)|      2,431,874<br />(LDIR x 6.45)|
+|Bitbuster|debitbustp1|             88|         14,088<br />(85.98%)|      2,108,897<br />(LDIR x 5.59)|
+|Bitbuster|debitbustp2|             96|         14,088<br />(85.98%)|      1,782,948<br />(LDIR x 4.73)|
+|BitBuster2|bitbuster|             91|         14,076<br />(85.91%)|      2,197,580<br />(LDIR x 5.83)|
+|BitBuster2|bitbuster_180|             86|         14,076<br />(85.91%)|      2,207,684<br />(LDIR x 5.85)|
+|BitBuster2|bitbuster_speed|            161|         14,076<br />(85.91%)|      1,607,786<br />(LDIR x 4.26)|
+|BitBuster2|bitbuster_speed_180|            156|         14,076<br />(85.91%)|      1,617,890<br />(LDIR x 4.29)|
+|BitBuster2|unbitbuster2|             81|         14,076<br />(85.91%)|      1,769,673<br />(LDIR x 4.69)|
+|BitBuster2|unbitbuster2_speed|             89|         14,076<br />(85.91%)|      1,519,665<br />(LDIR x 4.03)|
 |Exomizer2|deexo|            169|         13,402<br />(81.79%)|      8,202,762<br />(LDIR x 21.76)|
 |Exomizer2|deexo_180|            166|         13,402<br />(81.79%)|      8,202,696<br />(LDIR x 21.76)|
 |Exomizer2|deexo_180_fast_jp|            176|         13,402<br />(81.79%)|      7,006,812<br />(LDIR x 18.59)|
@@ -1035,10 +1045,10 @@ test data:MSX2MAIN.B01(16KB)
 |hrust|dehrust_hl|            225|         13,454<br />(82.11%)|      3,037,963<br />(LDIR x 8.06)|
 |hrust|dehrust_stk|            209|         13,454<br />(82.11%)|      2,812,027<br />(LDIR x 7.46)|
 |hrust|dehrust_stk_208b|            208|         13,454<br />(82.11%)|      2,812,024<br />(LDIR x 7.46)|
-|lz4|lz4dec|             97|         15,448<br />(94.28%)|        560,185<br />(LDIR x 1.48)|
-|lz4|unlz4_spke|             92|         15,448<br />(94.28%)|        524,602<br />(LDIR x 1.39)|
-|lz4|unlz4_spke_fast|             87|         15,448<br />(94.28%)|        511,617<br />(LDIR x 1.35)|
-|lz4|unlz4_spke_small|             65|         15,448<br />(94.28%)|        525,824<br />(LDIR x 1.39)|
+|lz4|lz4dec|             73|         15,437<br />(94.21%)|        551,188<br />(LDIR x 1.46)|
+|lz4|unlz4_spke|             92|         15,437<br />(94.21%)|        524,602<br />(LDIR x 1.39)|
+|lz4|unlz4_spke_fast|             87|         15,437<br />(94.21%)|        511,617<br />(LDIR x 1.35)|
+|lz4|unlz4_spke_small|             65|         15,437<br />(94.21%)|        525,824<br />(LDIR x 1.39)|
 |lz48|lz48decrunch\_v006\_|             70|         15,305<br />(93.41%)|        563,268<br />(LDIR x 1.49)|
 |lz48|lz48decrunch_v006__180|             71|         15,305<br />(93.41%)|        543,506<br />(LDIR x 1.44)|
 |lz49|lz49decrunch_v001|            106|         15,254<br />(93.10%)|        636,775<br />(LDIR x 1.68)|
@@ -1123,15 +1133,16 @@ test data:MSXMUSIC.B00(16KB)
 |ApLib|unaplib_fast|            235|         10,048<br />(61.32%)|      1,610,543<br />(LDIR x 4.27)|
 |ApLib|unaplib_fast_180|            233|         10,048<br />(61.32%)|      1,623,383<br />(LDIR x 4.30)|
 |ApLib|unaplib_small|            139|         10,048<br />(61.32%)|      2,500,088<br />(LDIR x 6.63)|
-|BitbusterExtreme|debitbust|             89|         10,551<br />(64.39%)|      1,856,557<br />(LDIR x 4.92)|
-|BitbusterExtreme|debitbustp1|             88|         10,551<br />(64.39%)|      1,576,068<br />(LDIR x 4.18)|
-|BitbusterExtreme|debitbustp2|             96|         10,551<br />(64.39%)|      1,349,111<br />(LDIR x 3.58)|
-|BitBuster2|bitbuster|             91|         10,545<br />(64.36%)|      1,675,783<br />(LDIR x 4.44)|
-|BitBuster2|bitbuster_180|             86|         10,545<br />(64.36%)|      1,682,506<br />(LDIR x 4.46)|
-|BitBuster2|bitbuster_speed|            161|         10,545<br />(64.36%)|      1,248,303<br />(LDIR x 3.31)|
-|BitBuster2|bitbuster_speed_180|            156|         10,545<br />(64.36%)|      1,255,026<br />(LDIR x 3.33)|
-|BitBuster2|unbitbuster2|             81|         10,545<br />(64.36%)|      1,353,984<br />(LDIR x 3.59)|
-|BitBuster2|unbitbuster2_speed|             89|         10,545<br />(64.36%)|      1,181,307<br />(LDIR x 3.13)|
+|Bitbuster|depack.gen|            168|         10,551<br />(64.39%)|      1,420,395<br />(LDIR x 3.76)|
+|Bitbuster|debitbust|             89|         10,551<br />(64.39%)|      1,856,557<br />(LDIR x 4.92)|
+|Bitbuster|debitbustp1|             88|         10,551<br />(64.39%)|      1,576,068<br />(LDIR x 4.18)|
+|Bitbuster|debitbustp2|             96|         10,551<br />(64.39%)|      1,349,111<br />(LDIR x 3.58)|
+|BitBuster2|bitbuster|             91|         10,542<br />(64.34%)|      1,675,783<br />(LDIR x 4.44)|
+|BitBuster2|bitbuster_180|             86|         10,542<br />(64.34%)|      1,682,506<br />(LDIR x 4.46)|
+|BitBuster2|bitbuster_speed|            161|         10,542<br />(64.34%)|      1,248,303<br />(LDIR x 3.31)|
+|BitBuster2|bitbuster_speed_180|            156|         10,542<br />(64.34%)|      1,255,026<br />(LDIR x 3.33)|
+|BitBuster2|unbitbuster2|             81|         10,542<br />(64.34%)|      1,353,984<br />(LDIR x 3.59)|
+|BitBuster2|unbitbuster2_speed|             89|         10,542<br />(64.34%)|      1,181,307<br />(LDIR x 3.13)|
 |Exomizer2|deexo|            169|         10,071<br />(61.46%)|      6,056,756<br />(LDIR x 16.07)|
 |Exomizer2|deexo_180|            166|         10,071<br />(61.46%)|      6,056,746<br />(LDIR x 16.07)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,071<br />(61.46%)|      5,212,942<br />(LDIR x 13.83)|
@@ -1153,10 +1164,10 @@ test data:MSXMUSIC.B00(16KB)
 |hrust|dehrust_hl|            225|         10,079<br />(61.51%)|      2,442,951<br />(LDIR x 6.48)|
 |hrust|dehrust_stk|            209|         10,079<br />(61.51%)|      2,273,324<br />(LDIR x 6.03)|
 |hrust|dehrust_stk_208b|            208|         10,079<br />(61.51%)|      2,273,321<br />(LDIR x 6.03)|
-|lz4|lz4dec|             97|         11,630<br />(70.98%)|        596,577<br />(LDIR x 1.58)|
-|lz4|unlz4_spke|             92|         11,630<br />(70.98%)|        556,637<br />(LDIR x 1.47)|
-|lz4|unlz4_spke_fast|             87|         11,630<br />(70.98%)|        540,386<br />(LDIR x 1.43)|
-|lz4|unlz4_spke_small|             65|         11,630<br />(70.98%)|        555,343<br />(LDIR x 1.47)|
+|lz4|lz4dec|             73|         11,619<br />(70.91%)|        585,468<br />(LDIR x 1.55)|
+|lz4|unlz4_spke|             92|         11,619<br />(70.91%)|        556,637<br />(LDIR x 1.47)|
+|lz4|unlz4_spke_fast|             87|         11,619<br />(70.91%)|        540,386<br />(LDIR x 1.43)|
+|lz4|unlz4_spke_small|             65|         11,619<br />(70.91%)|        555,343<br />(LDIR x 1.47)|
 |lz48|lz48decrunch\_v006\_|             70|         12,121<br />(73.98%)|        593,944<br />(LDIR x 1.57)|
 |lz48|lz48decrunch_v006__180|             71|         12,121<br />(73.98%)|        567,709<br />(LDIR x 1.50)|
 |lz49|lz49decrunch_v001|            106|         11,980<br />(73.12%)|        648,929<br />(LDIR x 1.72)|
@@ -1241,15 +1252,16 @@ test data:MSX2EXT.B00(16KB)
 |ApLib|unaplib_fast|            235|         12,361<br />(75.44%)|      1,991,967<br />(LDIR x 5.28)|
 |ApLib|unaplib_fast_180|            233|         12,361<br />(75.44%)|      2,011,183<br />(LDIR x 5.33)|
 |ApLib|unaplib_small|            139|         12,361<br />(75.44%)|      3,124,037<br />(LDIR x 8.29)|
-|BitbusterExtreme|debitbust|             89|         13,013<br />(79.42%)|      2,299,272<br />(LDIR x 6.10)|
-|BitbusterExtreme|debitbustp1|             88|         13,013<br />(79.42%)|      1,973,131<br />(LDIR x 5.23)|
-|BitbusterExtreme|debitbustp2|             96|         13,013<br />(79.42%)|      1,672,895<br />(LDIR x 4.43)|
-|BitBuster2|bitbuster|             91|         13,001<br />(79.35%)|      2,057,758<br />(LDIR x 5.46)|
-|BitBuster2|bitbuster_180|             86|         13,001<br />(79.35%)|      2,067,106<br />(LDIR x 5.48)|
-|BitBuster2|bitbuster_speed|            161|         13,001<br />(79.35%)|      1,516,931<br />(LDIR x 4.02)|
-|BitBuster2|bitbuster_speed_180|            156|         13,001<br />(79.35%)|      1,526,279<br />(LDIR x 4.05)|
-|BitBuster2|unbitbuster2|             81|         13,001<br />(79.35%)|      1,661,738<br />(LDIR x 4.40)|
-|BitBuster2|unbitbuster2_speed|             89|         13,001<br />(79.35%)|      1,436,134<br />(LDIR x 3.81)|
+|Bitbuster|depack.gen|            168|         13,013<br />(79.42%)|      1,744,445<br />(LDIR x 4.62)|
+|Bitbuster|debitbust|             89|         13,013<br />(79.42%)|      2,299,272<br />(LDIR x 6.10)|
+|Bitbuster|debitbustp1|             88|         13,013<br />(79.42%)|      1,973,131<br />(LDIR x 5.23)|
+|Bitbuster|debitbustp2|             96|         13,013<br />(79.42%)|      1,672,895<br />(LDIR x 4.43)|
+|BitBuster2|bitbuster|             91|         12,998<br />(79.33%)|      2,057,758<br />(LDIR x 5.46)|
+|BitBuster2|bitbuster_180|             86|         12,998<br />(79.33%)|      2,067,106<br />(LDIR x 5.48)|
+|BitBuster2|bitbuster_speed|            161|         12,998<br />(79.33%)|      1,516,931<br />(LDIR x 4.02)|
+|BitBuster2|bitbuster_speed_180|            156|         12,998<br />(79.33%)|      1,526,279<br />(LDIR x 4.05)|
+|BitBuster2|unbitbuster2|             81|         12,998<br />(79.33%)|      1,661,738<br />(LDIR x 4.40)|
+|BitBuster2|unbitbuster2_speed|             89|         12,998<br />(79.33%)|      1,436,134<br />(LDIR x 3.81)|
 |Exomizer2|deexo|            169|         12,333<br />(75.27%)|      7,529,417<br />(LDIR x 19.98)|
 |Exomizer2|deexo_180|            166|         12,333<br />(75.27%)|      7,529,411<br />(LDIR x 19.98)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,333<br />(75.27%)|      6,455,709<br />(LDIR x 17.13)|
@@ -1271,10 +1283,10 @@ test data:MSX2EXT.B00(16KB)
 |hrust|dehrust_hl|            225|         12,331<br />(75.26%)|      3,035,653<br />(LDIR x 8.05)|
 |hrust|dehrust_stk|            209|         12,331<br />(75.26%)|      2,808,254<br />(LDIR x 7.45)|
 |hrust|dehrust_stk_208b|            208|         12,331<br />(75.26%)|      2,808,251<br />(LDIR x 7.45)|
-|lz4|lz4dec|             97|         14,578<br />(88.97%)|        601,970<br />(LDIR x 1.59)|
-|lz4|unlz4_spke|             92|         14,578<br />(88.97%)|        559,638<br />(LDIR x 1.48)|
-|lz4|unlz4_spke_fast|             87|         14,578<br />(88.97%)|        543,242<br />(LDIR x 1.44)|
-|lz4|unlz4_spke_small|             65|         14,578<br />(88.97%)|        559,692<br />(LDIR x 1.48)|
+|lz4|lz4dec|             73|         14,567<br />(88.90%)|        590,733<br />(LDIR x 1.56)|
+|lz4|unlz4_spke|             92|         14,567<br />(88.90%)|        559,638<br />(LDIR x 1.48)|
+|lz4|unlz4_spke_fast|             87|         14,567<br />(88.90%)|        543,242<br />(LDIR x 1.44)|
+|lz4|unlz4_spke_small|             65|         14,567<br />(88.90%)|        559,692<br />(LDIR x 1.48)|
 |lz48|lz48decrunch\_v006\_|             70|         14,074<br />(85.90%)|        633,823<br />(LDIR x 1.68)|
 |lz48|lz48decrunch_v006__180|             71|         14,074<br />(85.90%)|        602,329<br />(LDIR x 1.59)|
 |lz49|lz49decrunch_v001|            106|         13,969<br />(85.26%)|        708,915<br />(LDIR x 1.88)|
@@ -1359,15 +1371,16 @@ test data:KANJJ1.B00(16KB)
 |ApLib|unaplib_fast|            235|          6,222<br />(37.97%)|      1,534,158<br />(LDIR x 4.07)|
 |ApLib|unaplib_fast_180|            233|          6,222<br />(37.97%)|      1,548,286<br />(LDIR x 4.10)|
 |ApLib|unaplib_small|            139|          6,222<br />(37.97%)|      2,286,225<br />(LDIR x 6.06)|
-|BitbusterExtreme|debitbust|             89|          6,683<br />(40.78%)|      2,000,457<br />(LDIR x 5.30)|
-|BitbusterExtreme|debitbustp1|             88|          6,683<br />(40.78%)|      1,831,976<br />(LDIR x 4.86)|
-|BitbusterExtreme|debitbustp2|             96|          6,683<br />(40.78%)|      1,514,591<br />(LDIR x 4.01)|
-|BitBuster2|bitbuster|             91|          6,664<br />(40.67%)|      1,716,295<br />(LDIR x 4.55)|
-|BitBuster2|bitbuster_180|             86|          6,664<br />(40.67%)|      1,723,555<br />(LDIR x 4.57)|
-|BitBuster2|bitbuster_speed|            161|          6,664<br />(40.67%)|      1,312,805<br />(LDIR x 3.48)|
-|BitBuster2|bitbuster_speed_180|            156|          6,664<br />(40.67%)|      1,320,065<br />(LDIR x 3.50)|
-|BitBuster2|unbitbuster2|             81|          6,664<br />(40.67%)|      1,547,029<br />(LDIR x 4.10)|
-|BitBuster2|unbitbuster2_speed|             89|          6,664<br />(40.67%)|      1,302,743<br />(LDIR x 3.45)|
+|Bitbuster|depack.gen|            168|          6,683<br />(40.78%)|      1,573,785<br />(LDIR x 4.17)|
+|Bitbuster|debitbust|             89|          6,683<br />(40.78%)|      2,000,457<br />(LDIR x 5.30)|
+|Bitbuster|debitbustp1|             88|          6,683<br />(40.78%)|      1,831,976<br />(LDIR x 4.86)|
+|Bitbuster|debitbustp2|             96|          6,683<br />(40.78%)|      1,514,591<br />(LDIR x 4.01)|
+|BitBuster2|bitbuster|             91|          6,661<br />(40.65%)|      1,716,295<br />(LDIR x 4.55)|
+|BitBuster2|bitbuster_180|             86|          6,661<br />(40.65%)|      1,723,555<br />(LDIR x 4.57)|
+|BitBuster2|bitbuster_speed|            161|          6,661<br />(40.65%)|      1,312,805<br />(LDIR x 3.48)|
+|BitBuster2|bitbuster_speed_180|            156|          6,661<br />(40.65%)|      1,320,065<br />(LDIR x 3.50)|
+|BitBuster2|unbitbuster2|             81|          6,661<br />(40.65%)|      1,547,029<br />(LDIR x 4.10)|
+|BitBuster2|unbitbuster2_speed|             89|          6,661<br />(40.65%)|      1,302,743<br />(LDIR x 3.45)|
 |Exomizer2|deexo|            169|          6,098<br />(37.21%)|      5,081,468<br />(LDIR x 13.48)|
 |Exomizer2|deexo_180|            166|          6,098<br />(37.21%)|      5,081,546<br />(LDIR x 13.48)|
 |Exomizer2|deexo_180_fast_jp|            176|          6,098<br />(37.21%)|      4,382,484<br />(LDIR x 11.62)|
@@ -1389,10 +1402,10 @@ test data:KANJJ1.B00(16KB)
 |hrust|dehrust_hl|            225|          6,434<br />(39.27%)|      2,488,219<br />(LDIR x 6.60)|
 |hrust|dehrust_stk|            209|          6,434<br />(39.27%)|      2,291,475<br />(LDIR x 6.08)|
 |hrust|dehrust_stk_208b|            208|          6,434<br />(39.27%)|      2,291,472<br />(LDIR x 6.08)|
-|lz4|lz4dec|             97|          8,088<br />(49.36%)|        799,199<br />(LDIR x 2.12)|
-|lz4|unlz4_spke|             92|          8,088<br />(49.36%)|        727,761<br />(LDIR x 1.93)|
-|lz4|unlz4_spke_fast|             87|          8,088<br />(49.36%)|        691,885<br />(LDIR x 1.83)|
-|lz4|unlz4_spke_small|             65|          8,088<br />(49.36%)|        717,975<br />(LDIR x 1.90)|
+|lz4|lz4dec|             73|          8,077<br />(49.29%)|        776,298<br />(LDIR x 2.06)|
+|lz4|unlz4_spke|             92|          8,077<br />(49.29%)|        727,761<br />(LDIR x 1.93)|
+|lz4|unlz4_spke_fast|             87|          8,077<br />(49.29%)|        691,885<br />(LDIR x 1.83)|
+|lz4|unlz4_spke_small|             65|          8,077<br />(49.29%)|        717,975<br />(LDIR x 1.90)|
 |lz48|lz48decrunch\_v006\_|             70|          8,167<br />(49.84%)|        735,565<br />(LDIR x 1.95)|
 |lz48|lz48decrunch_v006__180|             71|          8,167<br />(49.84%)|        687,419<br />(LDIR x 1.82)|
 |lz49|lz49decrunch_v001|            106|          7,824<br />(47.75%)|        820,492<br />(LDIR x 2.17)|
@@ -1477,15 +1490,16 @@ test data:KANJJ1.B01(16KB)
 |ApLib|unaplib_fast|            235|          4,090<br />(24.96%)|      1,171,136<br />(LDIR x 3.10)|
 |ApLib|unaplib_fast_180|            233|          4,090<br />(24.96%)|      1,180,992<br />(LDIR x 3.13)|
 |ApLib|unaplib_small|            139|          4,090<br />(24.96%)|      1,681,221<br />(LDIR x 4.46)|
-|BitbusterExtreme|debitbust|             89|          4,507<br />(27.50%)|      1,515,937<br />(LDIR x 4.02)|
-|BitbusterExtreme|debitbustp1|             88|          4,507<br />(27.50%)|      1,397,874<br />(LDIR x 3.70)|
-|BitbusterExtreme|debitbustp2|             96|          4,507<br />(27.50%)|      1,172,677<br />(LDIR x 3.11)|
-|BitBuster2|bitbuster|             91|          4,498<br />(27.45%)|      1,316,038<br />(LDIR x 3.49)|
-|BitBuster2|bitbuster_180|             86|          4,498<br />(27.45%)|      1,321,000<br />(LDIR x 3.50)|
-|BitBuster2|bitbuster_speed|            161|          4,498<br />(27.45%)|      1,032,892<br />(LDIR x 2.74)|
-|BitBuster2|bitbuster_speed_180|            156|          4,498<br />(27.45%)|      1,037,854<br />(LDIR x 2.75)|
-|BitBuster2|unbitbuster2|             81|          4,498<br />(27.45%)|      1,205,044<br />(LDIR x 3.19)|
-|BitBuster2|unbitbuster2_speed|             89|          4,498<br />(27.45%)|      1,028,942<br />(LDIR x 2.73)|
+|Bitbuster|depack.gen|            168|          4,507<br />(27.50%)|      1,217,510<br />(LDIR x 3.23)|
+|Bitbuster|debitbust|             89|          4,507<br />(27.50%)|      1,515,937<br />(LDIR x 4.02)|
+|Bitbuster|debitbustp1|             88|          4,507<br />(27.50%)|      1,397,874<br />(LDIR x 3.70)|
+|Bitbuster|debitbustp2|             96|          4,507<br />(27.50%)|      1,172,677<br />(LDIR x 3.11)|
+|BitBuster2|bitbuster|             91|          4,495<br />(27.43%)|      1,316,038<br />(LDIR x 3.49)|
+|BitBuster2|bitbuster_180|             86|          4,495<br />(27.43%)|      1,321,000<br />(LDIR x 3.50)|
+|BitBuster2|bitbuster_speed|            161|          4,495<br />(27.43%)|      1,032,892<br />(LDIR x 2.74)|
+|BitBuster2|bitbuster_speed_180|            156|          4,495<br />(27.43%)|      1,037,854<br />(LDIR x 2.75)|
+|BitBuster2|unbitbuster2|             81|          4,495<br />(27.43%)|      1,205,044<br />(LDIR x 3.19)|
+|BitBuster2|unbitbuster2_speed|             89|          4,495<br />(27.43%)|      1,028,942<br />(LDIR x 2.73)|
 |Exomizer2|deexo|            169|          3,975<br />(24.26%)|      3,480,396<br />(LDIR x 9.23)|
 |Exomizer2|deexo_180|            166|          3,975<br />(24.26%)|      3,480,462<br />(LDIR x 9.23)|
 |Exomizer2|deexo_180_fast_jp|            176|          3,975<br />(24.26%)|      3,016,788<br />(LDIR x 8.00)|
@@ -1507,10 +1521,10 @@ test data:KANJJ1.B01(16KB)
 |hrust|dehrust_hl|            225|          4,230<br />(25.81%)|      1,828,371<br />(LDIR x 4.85)|
 |hrust|dehrust_stk|            209|          4,230<br />(25.81%)|      1,692,991<br />(LDIR x 4.49)|
 |hrust|dehrust_stk_208b|            208|          4,230<br />(25.81%)|      1,692,988<br />(LDIR x 4.49)|
-|lz4|lz4dec|             97|          5,431<br />(33.14%)|        686,985<br />(LDIR x 1.82)|
-|lz4|unlz4_spke|             92|          5,431<br />(33.14%)|        635,207<br />(LDIR x 1.68)|
-|lz4|unlz4_spke_fast|             87|          5,431<br />(33.14%)|        608,995<br />(LDIR x 1.61)|
-|lz4|unlz4_spke_small|             65|          5,431<br />(33.14%)|        627,506<br />(LDIR x 1.66)|
+|lz4|lz4dec|             73|          5,420<br />(33.08%)|        670,196<br />(LDIR x 1.77)|
+|lz4|unlz4_spke|             92|          5,420<br />(33.08%)|        635,207<br />(LDIR x 1.68)|
+|lz4|unlz4_spke_fast|             87|          5,420<br />(33.08%)|        608,995<br />(LDIR x 1.61)|
+|lz4|unlz4_spke_small|             65|          5,420<br />(33.08%)|        627,506<br />(LDIR x 1.66)|
 |lz48|lz48decrunch\_v006\_|             70|          5,532<br />(33.76%)|        654,070<br />(LDIR x 1.73)|
 |lz48|lz48decrunch_v006__180|             71|          5,532<br />(33.76%)|        616,778<br />(LDIR x 1.63)|
 |lz49|lz49decrunch_v001|            106|          5,240<br />(31.98%)|        714,209<br />(LDIR x 1.89)|
@@ -1595,15 +1609,16 @@ test data:KANJJ1.B02(16KB)
 |ApLib|unaplib_fast|            235|         10,834<br />(66.12%)|      2,103,511<br />(LDIR x 5.58)|
 |ApLib|unaplib_fast_180|            233|         10,834<br />(66.12%)|      2,124,911<br />(LDIR x 5.63)|
 |ApLib|unaplib_small|            139|         10,834<br />(66.12%)|      3,266,915<br />(LDIR x 8.66)|
-|BitbusterExtreme|debitbust|             89|         11,785<br />(71.92%)|      2,663,938<br />(LDIR x 7.06)|
-|BitbusterExtreme|debitbustp1|             88|         11,785<br />(71.92%)|      2,436,521<br />(LDIR x 6.46)|
-|BitbusterExtreme|debitbustp2|             96|         11,785<br />(71.92%)|      2,014,919<br />(LDIR x 5.34)|
-|BitBuster2|bitbuster|             91|         11,753<br />(71.73%)|      2,341,765<br />(LDIR x 6.21)|
-|BitBuster2|bitbuster_180|             86|         11,753<br />(71.73%)|      2,353,000<br />(LDIR x 6.24)|
-|BitBuster2|bitbuster_speed|            161|         11,753<br />(71.73%)|      1,733,791<br />(LDIR x 4.60)|
-|BitBuster2|bitbuster_speed_180|            156|         11,753<br />(71.73%)|      1,745,026<br />(LDIR x 4.63)|
-|BitBuster2|unbitbuster2|             81|         11,753<br />(71.73%)|      2,011,959<br />(LDIR x 5.33)|
-|BitBuster2|unbitbuster2_speed|             89|         11,753<br />(71.73%)|      1,687,006<br />(LDIR x 4.47)|
+|Bitbuster|depack.gen|            168|         11,785<br />(71.92%)|      2,031,231<br />(LDIR x 5.39)|
+|Bitbuster|debitbust|             89|         11,785<br />(71.92%)|      2,663,938<br />(LDIR x 7.06)|
+|Bitbuster|debitbustp1|             88|         11,785<br />(71.92%)|      2,436,521<br />(LDIR x 6.46)|
+|Bitbuster|debitbustp2|             96|         11,785<br />(71.92%)|      2,014,919<br />(LDIR x 5.34)|
+|BitBuster2|bitbuster|             91|         11,750<br />(71.71%)|      2,341,765<br />(LDIR x 6.21)|
+|BitBuster2|bitbuster_180|             86|         11,750<br />(71.71%)|      2,353,000<br />(LDIR x 6.24)|
+|BitBuster2|bitbuster_speed|            161|         11,750<br />(71.71%)|      1,733,791<br />(LDIR x 4.60)|
+|BitBuster2|bitbuster_speed_180|            156|         11,750<br />(71.71%)|      1,745,026<br />(LDIR x 4.63)|
+|BitBuster2|unbitbuster2|             81|         11,750<br />(71.71%)|      2,011,959<br />(LDIR x 5.33)|
+|BitBuster2|unbitbuster2_speed|             89|         11,750<br />(71.71%)|      1,687,006<br />(LDIR x 4.47)|
 |Exomizer2|deexo|            169|         10,680<br />(65.18%)|      7,752,014<br />(LDIR x 20.57)|
 |Exomizer2|deexo_180|            166|         10,680<br />(65.18%)|      7,751,972<br />(LDIR x 20.57)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,680<br />(65.18%)|      6,616,763<br />(LDIR x 17.55)|
@@ -1625,10 +1640,10 @@ test data:KANJJ1.B02(16KB)
 |hrust|dehrust_hl|            225|         10,940<br />(66.77%)|      3,256,561<br />(LDIR x 8.64)|
 |hrust|dehrust_stk|            209|         10,940<br />(66.77%)|      2,988,194<br />(LDIR x 7.92)|
 |hrust|dehrust_stk_208b|            208|         10,940<br />(66.77%)|      2,988,191<br />(LDIR x 7.92)|
-|lz4|lz4dec|             97|         13,003<br />(79.36%)|        802,797<br />(LDIR x 2.13)|
-|lz4|unlz4_spke|             92|         13,003<br />(79.36%)|        728,457<br />(LDIR x 1.93)|
-|lz4|unlz4_spke_fast|             87|         13,003<br />(79.36%)|        694,831<br />(LDIR x 1.84)|
-|lz4|unlz4_spke_small|             65|         13,003<br />(79.36%)|        721,975<br />(LDIR x 1.91)|
+|lz4|lz4dec|             73|         12,992<br />(79.29%)|        780,392<br />(LDIR x 2.07)|
+|lz4|unlz4_spke|             92|         12,992<br />(79.29%)|        728,457<br />(LDIR x 1.93)|
+|lz4|unlz4_spke_fast|             87|         12,992<br />(79.29%)|        694,831<br />(LDIR x 1.84)|
+|lz4|unlz4_spke_small|             65|         12,992<br />(79.29%)|        721,975<br />(LDIR x 1.91)|
 |lz48|lz48decrunch\_v006\_|             70|         14,290<br />(87.21%)|        656,629<br />(LDIR x 1.74)|
 |lz48|lz48decrunch_v006__180|             71|         14,290<br />(87.21%)|        622,804<br />(LDIR x 1.65)|
 |lz49|lz49decrunch_v001|            106|         13,985<br />(85.35%)|        783,598<br />(LDIR x 2.07)|
@@ -1713,15 +1728,16 @@ test data:KANJJ1.B03(16KB)
 |ApLib|unaplib_fast|            235|         10,642<br />(64.95%)|      2,096,823<br />(LDIR x 5.56)|
 |ApLib|unaplib_fast_180|            233|         10,642<br />(64.95%)|      2,117,799<br />(LDIR x 5.61)|
 |ApLib|unaplib_small|            139|         10,642<br />(64.95%)|      3,253,695<br />(LDIR x 8.63)|
-|BitbusterExtreme|debitbust|             89|         11,599<br />(70.79%)|      2,638,165<br />(LDIR x 7.00)|
-|BitbusterExtreme|debitbustp1|             88|         11,599<br />(70.79%)|      2,413,758<br />(LDIR x 6.40)|
-|BitbusterExtreme|debitbustp2|             96|         11,599<br />(70.79%)|      1,995,678<br />(LDIR x 5.29)|
-|BitBuster2|bitbuster|             91|         11,571<br />(70.62%)|      2,318,021<br />(LDIR x 6.15)|
-|BitBuster2|bitbuster_180|             86|         11,571<br />(70.62%)|      2,329,046<br />(LDIR x 6.18)|
-|BitBuster2|bitbuster_speed|            161|         11,571<br />(70.62%)|      1,716,352<br />(LDIR x 4.55)|
-|BitBuster2|bitbuster_speed_180|            156|         11,571<br />(70.62%)|      1,727,377<br />(LDIR x 4.58)|
-|BitBuster2|unbitbuster2|             81|         11,571<br />(70.62%)|      1,994,568<br />(LDIR x 5.29)|
-|BitBuster2|unbitbuster2_speed|             89|         11,571<br />(70.62%)|      1,671,463<br />(LDIR x 4.43)|
+|Bitbuster|depack.gen|            168|         11,599<br />(70.79%)|      2,011,444<br />(LDIR x 5.33)|
+|Bitbuster|debitbust|             89|         11,599<br />(70.79%)|      2,638,165<br />(LDIR x 7.00)|
+|Bitbuster|debitbustp1|             88|         11,599<br />(70.79%)|      2,413,758<br />(LDIR x 6.40)|
+|Bitbuster|debitbustp2|             96|         11,599<br />(70.79%)|      1,995,678<br />(LDIR x 5.29)|
+|BitBuster2|bitbuster|             91|         11,568<br />(70.60%)|      2,318,021<br />(LDIR x 6.15)|
+|BitBuster2|bitbuster_180|             86|         11,568<br />(70.60%)|      2,329,046<br />(LDIR x 6.18)|
+|BitBuster2|bitbuster_speed|            161|         11,568<br />(70.60%)|      1,716,352<br />(LDIR x 4.55)|
+|BitBuster2|bitbuster_speed_180|            156|         11,568<br />(70.60%)|      1,727,377<br />(LDIR x 4.58)|
+|BitBuster2|unbitbuster2|             81|         11,568<br />(70.60%)|      1,994,568<br />(LDIR x 5.29)|
+|BitBuster2|unbitbuster2_speed|             89|         11,568<br />(70.60%)|      1,671,463<br />(LDIR x 4.43)|
 |Exomizer2|deexo|            169|         10,508<br />(64.13%)|      7,658,823<br />(LDIR x 20.32)|
 |Exomizer2|deexo_180|            166|         10,508<br />(64.13%)|      7,658,777<br />(LDIR x 20.32)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,508<br />(64.13%)|      6,533,341<br />(LDIR x 17.33)|
@@ -1743,10 +1759,10 @@ test data:KANJJ1.B03(16KB)
 |hrust|dehrust_hl|            225|         10,753<br />(65.63%)|      3,215,328<br />(LDIR x 8.53)|
 |hrust|dehrust_stk|            209|         10,753<br />(65.63%)|      2,951,087<br />(LDIR x 7.83)|
 |hrust|dehrust_stk_208b|            208|         10,753<br />(65.63%)|      2,951,084<br />(LDIR x 7.83)|
-|lz4|lz4dec|             97|         12,732<br />(77.70%)|        799,245<br />(LDIR x 2.12)|
-|lz4|unlz4_spke|             92|         12,732<br />(77.70%)|        725,793<br />(LDIR x 1.92)|
-|lz4|unlz4_spke_fast|             87|         12,732<br />(77.70%)|        691,857<br />(LDIR x 1.83)|
-|lz4|unlz4_spke_small|             65|         12,732<br />(77.70%)|        718,789<br />(LDIR x 1.90)|
+|lz4|lz4dec|             73|         12,721<br />(77.64%)|        776,840<br />(LDIR x 2.06)|
+|lz4|unlz4_spke|             92|         12,721<br />(77.64%)|        725,793<br />(LDIR x 1.92)|
+|lz4|unlz4_spke_fast|             87|         12,721<br />(77.64%)|        691,857<br />(LDIR x 1.83)|
+|lz4|unlz4_spke_small|             65|         12,721<br />(77.64%)|        718,789<br />(LDIR x 1.90)|
 |lz48|lz48decrunch\_v006\_|             70|         14,024<br />(85.59%)|        668,286<br />(LDIR x 1.77)|
 |lz48|lz48decrunch_v006__180|             71|         14,024<br />(85.59%)|        632,410<br />(LDIR x 1.67)|
 |lz49|lz49decrunch_v001|            106|         13,761<br />(83.99%)|        786,435<br />(LDIR x 2.08)|
@@ -1831,15 +1847,16 @@ test data:KANJJ1.B04(16KB)
 |ApLib|unaplib_fast|            235|         10,519<br />(64.20%)|      2,077,467<br />(LDIR x 5.51)|
 |ApLib|unaplib_fast_180|            233|         10,519<br />(64.20%)|      2,098,587<br />(LDIR x 5.56)|
 |ApLib|unaplib_small|            139|         10,519<br />(64.20%)|      3,219,556<br />(LDIR x 8.54)|
-|BitbusterExtreme|debitbust|             89|         11,542<br />(70.44%)|      2,638,215<br />(LDIR x 7.00)|
-|BitbusterExtreme|debitbustp1|             88|         11,542<br />(70.44%)|      2,413,331<br />(LDIR x 6.40)|
-|BitbusterExtreme|debitbustp2|             96|         11,542<br />(70.44%)|      1,994,472<br />(LDIR x 5.29)|
-|BitBuster2|bitbuster|             91|         11,516<br />(70.28%)|      2,313,686<br />(LDIR x 6.13)|
-|BitBuster2|bitbuster_180|             86|         11,516<br />(70.28%)|      2,324,675<br />(LDIR x 6.16)|
-|BitBuster2|bitbuster_speed|            161|         11,516<br />(70.28%)|      1,713,764<br />(LDIR x 4.54)|
-|BitBuster2|bitbuster_speed_180|            156|         11,516<br />(70.28%)|      1,724,753<br />(LDIR x 4.57)|
-|BitBuster2|unbitbuster2|             81|         11,516<br />(70.28%)|      1,991,532<br />(LDIR x 5.28)|
-|BitBuster2|unbitbuster2_speed|             89|         11,516<br />(70.28%)|      1,669,763<br />(LDIR x 4.43)|
+|Bitbuster|depack.gen|            168|         11,542<br />(70.44%)|      2,012,444<br />(LDIR x 5.34)|
+|Bitbuster|debitbust|             89|         11,542<br />(70.44%)|      2,638,215<br />(LDIR x 7.00)|
+|Bitbuster|debitbustp1|             88|         11,542<br />(70.44%)|      2,413,331<br />(LDIR x 6.40)|
+|Bitbuster|debitbustp2|             96|         11,542<br />(70.44%)|      1,994,472<br />(LDIR x 5.29)|
+|BitBuster2|bitbuster|             91|         11,513<br />(70.26%)|      2,313,686<br />(LDIR x 6.13)|
+|BitBuster2|bitbuster_180|             86|         11,513<br />(70.26%)|      2,324,675<br />(LDIR x 6.16)|
+|BitBuster2|bitbuster_speed|            161|         11,513<br />(70.26%)|      1,713,764<br />(LDIR x 4.54)|
+|BitBuster2|bitbuster_speed_180|            156|         11,513<br />(70.26%)|      1,724,753<br />(LDIR x 4.57)|
+|BitBuster2|unbitbuster2|             81|         11,513<br />(70.26%)|      1,991,532<br />(LDIR x 5.28)|
+|BitBuster2|unbitbuster2_speed|             89|         11,513<br />(70.26%)|      1,669,763<br />(LDIR x 4.43)|
 |Exomizer2|deexo|            169|         10,426<br />(63.63%)|      7,638,440<br />(LDIR x 20.26)|
 |Exomizer2|deexo_180|            166|         10,426<br />(63.63%)|      7,638,370<br />(LDIR x 20.26)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,426<br />(63.63%)|      6,524,110<br />(LDIR x 17.31)|
@@ -1861,10 +1878,10 @@ test data:KANJJ1.B04(16KB)
 |hrust|dehrust_hl|            225|         10,679<br />(65.17%)|      3,213,522<br />(LDIR x 8.52)|
 |hrust|dehrust_stk|            209|         10,679<br />(65.17%)|      2,950,117<br />(LDIR x 7.82)|
 |hrust|dehrust_stk_208b|            208|         10,679<br />(65.17%)|      2,950,114<br />(LDIR x 7.82)|
-|lz4|lz4dec|             97|         12,673<br />(77.34%)|        821,219<br />(LDIR x 2.17)|
-|lz4|unlz4_spke|             92|         12,673<br />(77.34%)|        744,109<br />(LDIR x 1.97)|
-|lz4|unlz4_spke_fast|             87|         12,673<br />(77.34%)|        708,307<br />(LDIR x 1.87)|
-|lz4|unlz4_spke_small|             65|         12,673<br />(77.34%)|        736,539<br />(LDIR x 1.95)|
+|lz4|lz4dec|             73|         12,662<br />(77.28%)|        797,614<br />(LDIR x 2.11)|
+|lz4|unlz4_spke|             92|         12,662<br />(77.28%)|        744,109<br />(LDIR x 1.97)|
+|lz4|unlz4_spke_fast|             87|         12,662<br />(77.28%)|        708,307<br />(LDIR x 1.87)|
+|lz4|unlz4_spke_small|             65|         12,662<br />(77.28%)|        736,539<br />(LDIR x 1.95)|
 |lz48|lz48decrunch\_v006\_|             70|         13,960<br />(85.20%)|        673,078<br />(LDIR x 1.78)|
 |lz48|lz48decrunch_v006__180|             71|         13,960<br />(85.20%)|        636,201<br />(LDIR x 1.68)|
 |lz49|lz49decrunch_v001|            106|         13,717<br />(83.72%)|        784,719<br />(LDIR x 2.08)|
@@ -1949,15 +1966,16 @@ test data:KANJJ1.B05(16KB)
 |ApLib|unaplib_fast|            235|         10,453<br />(63.80%)|      2,050,560<br />(LDIR x 5.44)|
 |ApLib|unaplib_fast_180|            233|         10,453<br />(63.80%)|      2,070,960<br />(LDIR x 5.49)|
 |ApLib|unaplib_small|            139|         10,453<br />(63.80%)|      3,180,433<br />(LDIR x 8.43)|
-|BitbusterExtreme|debitbust|             89|         11,493<br />(70.14%)|      2,613,596<br />(LDIR x 6.93)|
-|BitbusterExtreme|debitbustp1|             88|         11,493<br />(70.14%)|      2,385,274<br />(LDIR x 6.32)|
-|BitbusterExtreme|debitbustp2|             96|         11,493<br />(70.14%)|      1,973,935<br />(LDIR x 5.23)|
-|BitBuster2|bitbuster|             91|         11,472<br />(70.01%)|      2,299,875<br />(LDIR x 6.10)|
-|BitBuster2|bitbuster_180|             86|         11,472<br />(70.01%)|      2,310,807<br />(LDIR x 6.13)|
-|BitBuster2|bitbuster_speed|            161|         11,472<br />(70.01%)|      1,704,446<br />(LDIR x 4.52)|
-|BitBuster2|bitbuster_speed_180|            156|         11,472<br />(70.01%)|      1,715,378<br />(LDIR x 4.55)|
-|BitBuster2|unbitbuster2|             81|         11,472<br />(70.01%)|      1,978,863<br />(LDIR x 5.25)|
-|BitBuster2|unbitbuster2_speed|             89|         11,472<br />(70.01%)|      1,659,910<br />(LDIR x 4.40)|
+|Bitbuster|depack.gen|            168|         11,493<br />(70.14%)|      1,995,190<br />(LDIR x 5.29)|
+|Bitbuster|debitbust|             89|         11,493<br />(70.14%)|      2,613,596<br />(LDIR x 6.93)|
+|Bitbuster|debitbustp1|             88|         11,493<br />(70.14%)|      2,385,274<br />(LDIR x 6.32)|
+|Bitbuster|debitbustp2|             96|         11,493<br />(70.14%)|      1,973,935<br />(LDIR x 5.23)|
+|BitBuster2|bitbuster|             91|         11,469<br />(70.00%)|      2,299,875<br />(LDIR x 6.10)|
+|BitBuster2|bitbuster_180|             86|         11,469<br />(70.00%)|      2,310,807<br />(LDIR x 6.13)|
+|BitBuster2|bitbuster_speed|            161|         11,469<br />(70.00%)|      1,704,446<br />(LDIR x 4.52)|
+|BitBuster2|bitbuster_speed_180|            156|         11,469<br />(70.00%)|      1,715,378<br />(LDIR x 4.55)|
+|BitBuster2|unbitbuster2|             81|         11,469<br />(70.00%)|      1,978,863<br />(LDIR x 5.25)|
+|BitBuster2|unbitbuster2_speed|             89|         11,469<br />(70.00%)|      1,659,910<br />(LDIR x 4.40)|
 |Exomizer2|deexo|            169|         10,349<br />(63.16%)|      7,467,660<br />(LDIR x 19.81)|
 |Exomizer2|deexo_180|            166|         10,349<br />(63.16%)|      7,467,638<br />(LDIR x 19.81)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,349<br />(63.16%)|      6,371,888<br />(LDIR x 16.90)|
@@ -1979,10 +1997,10 @@ test data:KANJJ1.B05(16KB)
 |hrust|dehrust_hl|            225|         10,597<br />(64.67%)|      3,188,467<br />(LDIR x 8.46)|
 |hrust|dehrust_stk|            209|         10,597<br />(64.67%)|      2,927,176<br />(LDIR x 7.76)|
 |hrust|dehrust_stk_208b|            208|         10,597<br />(64.67%)|      2,927,173<br />(LDIR x 7.76)|
-|lz4|lz4dec|             97|         12,535<br />(76.50%)|        808,050<br />(LDIR x 2.14)|
-|lz4|unlz4_spke|             92|         12,535<br />(76.50%)|        733,269<br />(LDIR x 1.94)|
-|lz4|unlz4_spke_fast|             87|         12,535<br />(76.50%)|        698,680<br />(LDIR x 1.85)|
-|lz4|unlz4_spke_small|             65|         12,535<br />(76.50%)|        725,974<br />(LDIR x 1.92)|
+|lz4|lz4dec|             73|         12,524<br />(76.44%)|        785,181<br />(LDIR x 2.08)|
+|lz4|unlz4_spke|             92|         12,524<br />(76.44%)|        733,269<br />(LDIR x 1.94)|
+|lz4|unlz4_spke_fast|             87|         12,524<br />(76.44%)|        698,680<br />(LDIR x 1.85)|
+|lz4|unlz4_spke_small|             65|         12,524<br />(76.44%)|        725,974<br />(LDIR x 1.92)|
 |lz48|lz48decrunch\_v006\_|             70|         13,952<br />(85.15%)|        667,919<br />(LDIR x 1.77)|
 |lz48|lz48decrunch_v006__180|             71|         13,952<br />(85.15%)|        631,875<br />(LDIR x 1.67)|
 |lz49|lz49decrunch_v001|            106|         13,674<br />(83.45%)|        789,919<br />(LDIR x 2.09)|
@@ -2067,15 +2085,16 @@ test data:KANJJ1.B06(16KB)
 |ApLib|unaplib_fast|            235|         10,815<br />(66.00%)|      2,123,900<br />(LDIR x 5.63)|
 |ApLib|unaplib_fast_180|            233|         10,815<br />(66.00%)|      2,145,308<br />(LDIR x 5.69)|
 |ApLib|unaplib_small|            139|         10,815<br />(66.00%)|      3,299,397<br />(LDIR x 8.75)|
-|BitbusterExtreme|debitbust|             89|         11,778<br />(71.88%)|      2,661,582<br />(LDIR x 7.06)|
-|BitbusterExtreme|debitbustp1|             88|         11,778<br />(71.88%)|      2,433,808<br />(LDIR x 6.45)|
-|BitbusterExtreme|debitbustp2|             96|         11,778<br />(71.88%)|      2,012,514<br />(LDIR x 5.34)|
-|BitBuster2|bitbuster|             91|         11,749<br />(71.71%)|      2,339,207<br />(LDIR x 6.20)|
-|BitBuster2|bitbuster_180|             86|         11,749<br />(71.71%)|      2,350,358<br />(LDIR x 6.23)|
-|BitBuster2|bitbuster_speed|            161|         11,749<br />(71.71%)|      1,730,874<br />(LDIR x 4.59)|
-|BitBuster2|bitbuster_speed_180|            156|         11,749<br />(71.71%)|      1,742,025<br />(LDIR x 4.62)|
-|BitBuster2|unbitbuster2|             81|         11,749<br />(71.71%)|      2,009,353<br />(LDIR x 5.33)|
-|BitBuster2|unbitbuster2_speed|             89|         11,749<br />(71.71%)|      1,684,535<br />(LDIR x 4.47)|
+|Bitbuster|depack.gen|            168|         11,778<br />(71.88%)|      2,028,181<br />(LDIR x 5.38)|
+|Bitbuster|debitbust|             89|         11,778<br />(71.88%)|      2,661,582<br />(LDIR x 7.06)|
+|Bitbuster|debitbustp1|             88|         11,778<br />(71.88%)|      2,433,808<br />(LDIR x 6.45)|
+|Bitbuster|debitbustp2|             96|         11,778<br />(71.88%)|      2,012,514<br />(LDIR x 5.34)|
+|BitBuster2|bitbuster|             91|         11,746<br />(71.69%)|      2,339,207<br />(LDIR x 6.20)|
+|BitBuster2|bitbuster_180|             86|         11,746<br />(71.69%)|      2,350,358<br />(LDIR x 6.23)|
+|BitBuster2|bitbuster_speed|            161|         11,746<br />(71.69%)|      1,730,874<br />(LDIR x 4.59)|
+|BitBuster2|bitbuster_speed_180|            156|         11,746<br />(71.69%)|      1,742,025<br />(LDIR x 4.62)|
+|BitBuster2|unbitbuster2|             81|         11,746<br />(71.69%)|      2,009,353<br />(LDIR x 5.33)|
+|BitBuster2|unbitbuster2_speed|             89|         11,746<br />(71.69%)|      1,684,535<br />(LDIR x 4.47)|
 |Exomizer2|deexo|            169|         10,648<br />(64.99%)|      7,742,147<br />(LDIR x 20.54)|
 |Exomizer2|deexo_180|            166|         10,648<br />(64.99%)|      7,742,101<br />(LDIR x 20.54)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,648<br />(64.99%)|      6,603,967<br />(LDIR x 17.52)|
@@ -2097,10 +2116,10 @@ test data:KANJJ1.B06(16KB)
 |hrust|dehrust_hl|            225|         10,906<br />(66.56%)|      3,266,688<br />(LDIR x 8.66)|
 |hrust|dehrust_stk|            209|         10,906<br />(66.56%)|      2,995,867<br />(LDIR x 7.95)|
 |hrust|dehrust_stk_208b|            208|         10,906<br />(66.56%)|      2,995,864<br />(LDIR x 7.95)|
-|lz4|lz4dec|             97|         12,972<br />(79.17%)|        813,377<br />(LDIR x 2.15)|
-|lz4|unlz4_spke|             92|         12,972<br />(79.17%)|        738,105<br />(LDIR x 1.95)|
-|lz4|unlz4_spke_fast|             87|         12,972<br />(79.17%)|        703,399<br />(LDIR x 1.86)|
-|lz4|unlz4_spke_small|             65|         12,972<br />(79.17%)|        730,515<br />(LDIR x 1.93)|
+|lz4|lz4dec|             73|         12,961<br />(79.10%)|        790,268<br />(LDIR x 2.09)|
+|lz4|unlz4_spke|             92|         12,961<br />(79.10%)|        738,105<br />(LDIR x 1.95)|
+|lz4|unlz4_spke_fast|             87|         12,961<br />(79.10%)|        703,399<br />(LDIR x 1.86)|
+|lz4|unlz4_spke_small|             65|         12,961<br />(79.10%)|        730,515<br />(LDIR x 1.93)|
 |lz48|lz48decrunch\_v006\_|             70|         14,179<br />(86.54%)|        656,277<br />(LDIR x 1.74)|
 |lz48|lz48decrunch_v006__180|             71|         14,179<br />(86.54%)|        622,088<br />(LDIR x 1.65)|
 |lz49|lz49decrunch_v001|            106|         13,920<br />(84.96%)|        774,080<br />(LDIR x 2.05)|
@@ -2185,15 +2204,16 @@ test data:KANJJ1.B07(16KB)
 |ApLib|unaplib_fast|            235|          9,797<br />(59.79%)|      1,954,937<br />(LDIR x 5.18)|
 |ApLib|unaplib_fast_180|            233|          9,797<br />(59.79%)|      1,974,177<br />(LDIR x 5.23)|
 |ApLib|unaplib_small|            139|          9,797<br />(59.79%)|      3,018,295<br />(LDIR x 8.00)|
-|BitbusterExtreme|debitbust|             89|         10,741<br />(65.55%)|      2,471,726<br />(LDIR x 6.55)|
-|BitbusterExtreme|debitbustp1|             88|         10,741<br />(65.55%)|      2,267,965<br />(LDIR x 6.01)|
-|BitbusterExtreme|debitbustp2|             96|         10,741<br />(65.55%)|      1,880,525<br />(LDIR x 4.99)|
-|BitBuster2|bitbuster|             91|         10,720<br />(65.42%)|      2,178,557<br />(LDIR x 5.78)|
-|BitBuster2|bitbuster_180|             86|         10,720<br />(65.42%)|      2,188,832<br />(LDIR x 5.80)|
-|BitBuster2|bitbuster_speed|            161|         10,720<br />(65.42%)|      1,620,863<br />(LDIR x 4.30)|
-|BitBuster2|bitbuster_speed_180|            156|         10,720<br />(65.42%)|      1,631,138<br />(LDIR x 4.32)|
-|BitBuster2|unbitbuster2|             81|         10,720<br />(65.42%)|      1,878,404<br />(LDIR x 4.98)|
-|BitBuster2|unbitbuster2_speed|             89|         10,720<br />(65.42%)|      1,578,688<br />(LDIR x 4.18)|
+|Bitbuster|depack.gen|            168|         10,741<br />(65.55%)|      1,891,505<br />(LDIR x 5.01)|
+|Bitbuster|debitbust|             89|         10,741<br />(65.55%)|      2,471,726<br />(LDIR x 6.55)|
+|Bitbuster|debitbustp1|             88|         10,741<br />(65.55%)|      2,267,965<br />(LDIR x 6.01)|
+|Bitbuster|debitbustp2|             96|         10,741<br />(65.55%)|      1,880,525<br />(LDIR x 4.99)|
+|BitBuster2|bitbuster|             91|         10,717<br />(65.41%)|      2,178,557<br />(LDIR x 5.78)|
+|BitBuster2|bitbuster_180|             86|         10,717<br />(65.41%)|      2,188,832<br />(LDIR x 5.80)|
+|BitBuster2|bitbuster_speed|            161|         10,717<br />(65.41%)|      1,620,863<br />(LDIR x 4.30)|
+|BitBuster2|bitbuster_speed_180|            156|         10,717<br />(65.41%)|      1,631,138<br />(LDIR x 4.32)|
+|BitBuster2|unbitbuster2|             81|         10,717<br />(65.41%)|      1,878,404<br />(LDIR x 4.98)|
+|BitBuster2|unbitbuster2_speed|             89|         10,717<br />(65.41%)|      1,578,688<br />(LDIR x 4.18)|
 |Exomizer2|deexo|            169|          9,701<br />(59.21%)|      7,135,248<br />(LDIR x 18.93)|
 |Exomizer2|deexo_180|            166|          9,701<br />(59.21%)|      7,135,142<br />(LDIR x 18.93)|
 |Exomizer2|deexo_180_fast_jp|            176|          9,701<br />(59.21%)|      6,094,613<br />(LDIR x 16.17)|
@@ -2215,10 +2235,10 @@ test data:KANJJ1.B07(16KB)
 |hrust|dehrust_hl|            225|          9,937<br />(60.65%)|      2,993,431<br />(LDIR x 7.94)|
 |hrust|dehrust_stk|            209|          9,937<br />(60.65%)|      2,749,638<br />(LDIR x 7.29)|
 |hrust|dehrust_stk_208b|            208|          9,937<br />(60.65%)|      2,749,635<br />(LDIR x 7.29)|
-|lz4|lz4dec|             97|         11,830<br />(72.20%)|        755,873<br />(LDIR x 2.00)|
-|lz4|unlz4_spke|             92|         11,830<br />(72.20%)|        689,797<br />(LDIR x 1.83)|
-|lz4|unlz4_spke_fast|             87|         11,830<br />(72.20%)|        659,953<br />(LDIR x 1.75)|
-|lz4|unlz4_spke_small|             65|         11,830<br />(72.20%)|        684,011<br />(LDIR x 1.81)|
+|lz4|lz4dec|             73|         11,819<br />(72.13%)|        735,964<br />(LDIR x 1.95)|
+|lz4|unlz4_spke|             92|         11,819<br />(72.13%)|        689,797<br />(LDIR x 1.83)|
+|lz4|unlz4_spke_fast|             87|         11,819<br />(72.13%)|        659,953<br />(LDIR x 1.75)|
+|lz4|unlz4_spke_small|             65|         11,819<br />(72.13%)|        684,011<br />(LDIR x 1.81)|
 |lz48|lz48decrunch\_v006\_|             70|         13,048<br />(79.63%)|        634,564<br />(LDIR x 1.68)|
 |lz48|lz48decrunch_v006__180|             71|         13,048<br />(79.63%)|        603,758<br />(LDIR x 1.60)|
 |lz49|lz49decrunch_v001|            106|         12,778<br />(77.99%)|        736,853<br />(LDIR x 1.95)|

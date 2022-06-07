@@ -1,6 +1,9 @@
 ;------------------------------------------------------------------------------
 ;hl=src de=dst
 lz4decrunch:
+
+	IFDEF	DATA_HAS_HEADERS
+
 	ld			bc,7
 	add			hl,bc
 	ld			c,(hl)
@@ -16,6 +19,8 @@ lz4decrunch:
 	ld			a,h
 	adc			a,b
 	ld			(.endH+1),a					;圧縮データの終端アドレス
+
+	ENDIF
 
 .loop:
 	ld			a,(hl)
@@ -35,6 +40,9 @@ lz4decrunch:
 	ldir									;長さ情報の次から転送開始
 
 .copy:
+
+	IFDEF	DATA_HAS_HEADERS
+
 	ld			a,l							;圧縮データが最終アドレスに達したかどうか
 .endL:
 	sub			$FF
@@ -43,10 +51,20 @@ lz4decrunch:
 	sbc			a,$FF
 	ret			nc							;実質 zf=1 チェック
 
+	ENDIF
+
 	ld			c,(hl)
 	inc			hl
 	ld			b,(hl)						;bc=2byte オフセット値を読み込む
 	inc			hl
+
+	IFNDEF	DATA_HAS_HEADERS
+
+	ld			a,b
+	or			c
+	ret			z
+
+	ENDIF
 
 .litteral:
 	ld			a,0							;litteral ここは書き換え
