@@ -59,6 +59,7 @@ del bitbuster.exp
 
 sjasmplus --raw=unbitbuster2.bin unbitbuster2.asm
 sjasmplus -DBITBUSTER_OPTIMIZE_SPEED=1 --raw=unbitbuster2_speed.bin unbitbuster2.asm
+sjasmplus -DBITBUSTER_OPTIMIZE_SPEED=2 --raw=unbitbuster2_speed2.bin unbitbuster2.asm
 
 rem exomizer2
 

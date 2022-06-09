@@ -126,16 +126,6 @@ unbitbuster2:
 	jr 	nc, .get_offset
 	call	.get_bit
 
-	ELSE
-
-	add	a, a
-	call	z, .fill_bitbuffer
-	jr 	nc, .get_offset
-	add	a, a
-	call	z, .fill_bitbuffer
-
-	ENDIF
-
 	rl	c
 	rl	b
 	jr	nc, .get_length_loop
@@ -143,13 +133,63 @@ unbitbuster2:
 	pop	de
 	;ret
 
-	IFNDEF	BITBUSTER_OPTIMIZE_SPEED
-
 .rld_and_get_bit
 	rl	d
 .get_bit:
 	add	a, a
 	ret	nz
+
+	ELSE
+
+	IF BITBUSTER_OPTIMIZE_SPEED>1
+
+	add	a, a
+	jr 	nc, .get_offset
+	jr	z, .fill_bitbuffer2
+
+	add	a, a
+	jr	z, .fill_bitbuffer3
+
+	rl	c
+	jr	.get_length_loop
+
+.fill_bitbuffer3:
+	ld	a, (hl)
+	inc	hl
+	adc	a, a
+	jr	.wextend
+
+.fill_bitbuffer2:
+	ld	a, (hl)
+	inc	hl
+.get_length_loopw:
+	adc	a, a
+	jr 	nc, .get_offset
+	jr	z, .fill_bitbuffer2
+
+	add	a, a
+	jr	z, .fill_bitbuffer3
+
+	ELSE
+
+.get_length_loopw:
+
+	add	a, a
+	call	z, .fill_bitbuffer
+
+	jr 	nc, .get_offset
+	add	a, a
+	call	z, .fill_bitbuffer
+
+	ENDIF
+
+.wextend:
+	rl	c
+	rl	b
+	jr	nc, .get_length_loopw
+
+	pop	de
+	;ret
 
 	ENDIF
 
