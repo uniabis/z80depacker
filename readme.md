@@ -186,7 +186,7 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |BitBuster2|bitbuster_speed_180|o|o|o|            156|65.53%|LDIR x 3.95|Support for hd64180, shorter, but slower from bitbuster_speed|
 |BitBuster2|unbitbuster2|o|o|o|             81|65.53%|LDIR x 4.45||
 |BitBuster2|unbitbuster2_speed|o|o|o|             89|65.53%|LDIR x 3.79||
-|BitBuster2|unbitbuster2_speed2|o|o|o|            106|65.53%|LDIR x 3.63||
+|BitBuster2|unbitbuster2_speed2|o|o|o|            104|65.53%|LDIR x 3.63||
 |Exomizer2|deexo|o|x|o|            169|61.02%|LDIR x 17.89||
 |Exomizer2|deexo_180|o|o|o|            166|61.02%|LDIR x 17.89|Support for hd64180, shorter, faster from deexo|
 |Exomizer2|deexo_180_fast_jp|o|o|o|            176|61.02%|LDIR x 15.32|Faster, but longer from deexo_180|
@@ -311,7 +311,7 @@ test data:ALL(16*16KB)
 |BitBuster2|bitbuster_speed_180|            156|        171,783<br />(65.53%)|     23,840,843<br />(LDIR x 3.95)|
 |BitBuster2|unbitbuster2|             81|        171,783<br />(65.53%)|     26,835,247<br />(LDIR x 4.45)|
 |BitBuster2|unbitbuster2_speed|             89|        171,783<br />(65.53%)|     22,853,182<br />(LDIR x 3.79)|
-|BitBuster2|unbitbuster2_speed2|            106|        171,783<br />(65.53%)|     21,934,718<br />(LDIR x 3.63)|
+|BitBuster2|unbitbuster2_speed2|            104|        171,783<br />(65.53%)|     21,913,957<br />(LDIR x 3.63)|
 |Exomizer2|deexo|            169|        159,966<br />(61.02%)|    107,900,507<br />(LDIR x 17.89)|
 |Exomizer2|deexo_180|            166|        159,966<br />(61.02%)|    107,899,823<br />(LDIR x 17.89)|
 |Exomizer2|deexo_180_fast_jp|            176|        159,966<br />(61.02%)|     92,423,377<br />(LDIR x 15.32)|
@@ -431,7 +431,7 @@ test data:MEGASDHC.B00(16KB)
 |BitBuster2|bitbuster_speed_180|            156|          9,827<br />(59.97%)|      1,237,567<br />(LDIR x 3.28)|
 |BitBuster2|unbitbuster2|             81|          9,827<br />(59.97%)|      1,344,377<br />(LDIR x 3.56)|
 |BitBuster2|unbitbuster2_speed|             89|          9,827<br />(59.97%)|      1,170,354<br />(LDIR x 3.10)|
-|BitBuster2|unbitbuster2_speed2|            106|          9,827<br />(59.97%)|      1,128,842<br />(LDIR x 2.99)|
+|BitBuster2|unbitbuster2_speed2|            104|          9,827<br />(59.97%)|      1,128,398<br />(LDIR x 2.99)|
 |Exomizer2|deexo|            169|          9,362<br />(57.14%)|      5,454,722<br />(LDIR x 14.47)|
 |Exomizer2|deexo_180|            166|          9,362<br />(57.14%)|      5,454,592<br />(LDIR x 14.47)|
 |Exomizer2|deexo_180_fast_jp|            176|          9,362<br />(57.14%)|      4,682,085<br />(LDIR x 12.42)|
@@ -551,7 +551,7 @@ test data:MEGASDHC.B01(16KB)
 |BitBuster2|bitbuster_speed_180|            156|          5,127<br />(31.29%)|        859,047<br />(LDIR x 2.27)|
 |BitBuster2|unbitbuster2|             81|          5,127<br />(31.29%)|        932,553<br />(LDIR x 2.47)|
 |BitBuster2|unbitbuster2_speed|             89|          5,127<br />(31.29%)|        827,601<br />(LDIR x 2.19)|
-|BitBuster2|unbitbuster2_speed2|            106|          5,127<br />(31.29%)|        800,829<br />(LDIR x 2.12)|
+|BitBuster2|unbitbuster2_speed2|            104|          5,127<br />(31.29%)|        800,230<br />(LDIR x 2.12)|
 |Exomizer2|deexo|            169|          4,902<br />(29.91%)|      3,307,149<br />(LDIR x 8.77)|
 |Exomizer2|deexo_180|            166|          4,902<br />(29.91%)|      3,307,019<br />(LDIR x 8.77)|
 |Exomizer2|deexo_180_fast_jp|            176|          4,902<br />(29.91%)|      2,874,744<br />(LDIR x 7.62)|
@@ -671,7 +671,7 @@ test data:MEGASDHC.B02(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         13,166<br />(80.35%)|      1,647,365<br />(LDIR x 4.37)|
 |BitBuster2|unbitbuster2|             81|         13,166<br />(80.35%)|      1,827,713<br />(LDIR x 4.85)|
 |BitBuster2|unbitbuster2_speed|             89|         13,166<br />(80.35%)|      1,561,931<br />(LDIR x 4.14)|
-|BitBuster2|unbitbuster2_speed2|            106|         13,166<br />(80.35%)|      1,502,665<br />(LDIR x 3.98)|
+|BitBuster2|unbitbuster2_speed2|            104|         13,166<br />(80.35%)|      1,501,511<br />(LDIR x 3.98)|
 |Exomizer2|deexo|            169|         12,500<br />(76.29%)|      8,261,575<br />(LDIR x 21.92)|
 |Exomizer2|deexo_180|            166|         12,500<br />(76.29%)|      8,261,457<br />(LDIR x 21.92)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,500<br />(76.29%)|      7,062,383<br />(LDIR x 18.74)|
@@ -791,7 +791,7 @@ test data:MEGASDHC.B03(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         12,849<br />(78.42%)|      1,549,590<br />(LDIR x 4.11)|
 |BitBuster2|unbitbuster2|             81|         12,849<br />(78.42%)|      1,705,056<br />(LDIR x 4.52)|
 |BitBuster2|unbitbuster2_speed|             89|         12,849<br />(78.42%)|      1,463,521<br />(LDIR x 3.88)|
-|BitBuster2|unbitbuster2_speed2|            106|         12,849<br />(78.42%)|      1,409,498<br />(LDIR x 3.74)|
+|BitBuster2|unbitbuster2_speed2|            104|         12,849<br />(78.42%)|      1,408,296<br />(LDIR x 3.73)|
 |Exomizer2|deexo|            169|         12,271<br />(74.89%)|      7,453,254<br />(LDIR x 19.77)|
 |Exomizer2|deexo_180|            166|         12,271<br />(74.89%)|      7,453,132<br />(LDIR x 19.77)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,271<br />(74.89%)|      6,375,947<br />(LDIR x 16.91)|
@@ -911,7 +911,7 @@ test data:MSX2MAIN.B00(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         13,279<br />(81.04%)|      1,504,463<br />(LDIR x 3.99)|
 |BitBuster2|unbitbuster2|             81|         13,279<br />(81.04%)|      1,623,401<br />(LDIR x 4.30)|
 |BitBuster2|unbitbuster2_speed|             89|         13,279<br />(81.04%)|      1,409,619<br />(LDIR x 3.74)|
-|BitBuster2|unbitbuster2_speed2|            106|         13,279<br />(81.04%)|      1,356,411<br />(LDIR x 3.59)|
+|BitBuster2|unbitbuster2_speed2|            104|         13,279<br />(81.04%)|      1,355,190<br />(LDIR x 3.59)|
 |Exomizer2|deexo|            169|         12,740<br />(77.75%)|      7,678,676<br />(LDIR x 20.37)|
 |Exomizer2|deexo_180|            166|         12,740<br />(77.75%)|      7,678,762<br />(LDIR x 20.37)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,740<br />(77.75%)|      6,608,801<br />(LDIR x 17.53)|
@@ -1031,7 +1031,7 @@ test data:MSX2MAIN.B01(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         14,076<br />(85.91%)|      1,617,890<br />(LDIR x 4.29)|
 |BitBuster2|unbitbuster2|             81|         14,076<br />(85.91%)|      1,769,673<br />(LDIR x 4.69)|
 |BitBuster2|unbitbuster2_speed|             89|         14,076<br />(85.91%)|      1,519,665<br />(LDIR x 4.03)|
-|BitBuster2|unbitbuster2_speed2|            106|         14,076<br />(85.91%)|      1,465,658<br />(LDIR x 3.88)|
+|BitBuster2|unbitbuster2_speed2|            104|         14,076<br />(85.91%)|      1,464,558<br />(LDIR x 3.88)|
 |Exomizer2|deexo|            169|         13,402<br />(81.79%)|      8,202,762<br />(LDIR x 21.76)|
 |Exomizer2|deexo_180|            166|         13,402<br />(81.79%)|      8,202,696<br />(LDIR x 21.76)|
 |Exomizer2|deexo_180_fast_jp|            176|         13,402<br />(81.79%)|      7,006,812<br />(LDIR x 18.59)|
@@ -1151,7 +1151,7 @@ test data:MSXMUSIC.B00(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         10,542<br />(64.34%)|      1,255,026<br />(LDIR x 3.33)|
 |BitBuster2|unbitbuster2|             81|         10,542<br />(64.34%)|      1,353,984<br />(LDIR x 3.59)|
 |BitBuster2|unbitbuster2_speed|             89|         10,542<br />(64.34%)|      1,181,307<br />(LDIR x 3.13)|
-|BitBuster2|unbitbuster2_speed2|            106|         10,542<br />(64.34%)|      1,138,206<br />(LDIR x 3.02)|
+|BitBuster2|unbitbuster2_speed2|            104|         10,542<br />(64.34%)|      1,137,430<br />(LDIR x 3.01)|
 |Exomizer2|deexo|            169|         10,071<br />(61.46%)|      6,056,756<br />(LDIR x 16.07)|
 |Exomizer2|deexo_180|            166|         10,071<br />(61.46%)|      6,056,746<br />(LDIR x 16.07)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,071<br />(61.46%)|      5,212,942<br />(LDIR x 13.83)|
@@ -1271,7 +1271,7 @@ test data:MSX2EXT.B00(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         12,998<br />(79.33%)|      1,526,279<br />(LDIR x 4.05)|
 |BitBuster2|unbitbuster2|             81|         12,998<br />(79.33%)|      1,661,738<br />(LDIR x 4.40)|
 |BitBuster2|unbitbuster2_speed|             89|         12,998<br />(79.33%)|      1,436,134<br />(LDIR x 3.81)|
-|BitBuster2|unbitbuster2_speed2|            106|         12,998<br />(79.33%)|      1,380,697<br />(LDIR x 3.66)|
+|BitBuster2|unbitbuster2_speed2|            104|         12,998<br />(79.33%)|      1,379,503<br />(LDIR x 3.66)|
 |Exomizer2|deexo|            169|         12,333<br />(75.27%)|      7,529,417<br />(LDIR x 19.98)|
 |Exomizer2|deexo_180|            166|         12,333<br />(75.27%)|      7,529,411<br />(LDIR x 19.98)|
 |Exomizer2|deexo_180_fast_jp|            176|         12,333<br />(75.27%)|      6,455,709<br />(LDIR x 17.13)|
@@ -1391,7 +1391,7 @@ test data:KANJJ1.B00(16KB)
 |BitBuster2|bitbuster_speed_180|            156|          6,661<br />(40.65%)|      1,320,065<br />(LDIR x 3.50)|
 |BitBuster2|unbitbuster2|             81|          6,661<br />(40.65%)|      1,547,029<br />(LDIR x 4.10)|
 |BitBuster2|unbitbuster2_speed|             89|          6,661<br />(40.65%)|      1,302,743<br />(LDIR x 3.45)|
-|BitBuster2|unbitbuster2_speed2|            106|          6,661<br />(40.65%)|      1,238,682<br />(LDIR x 3.28)|
+|BitBuster2|unbitbuster2_speed2|            104|          6,661<br />(40.65%)|      1,237,735<br />(LDIR x 3.28)|
 |Exomizer2|deexo|            169|          6,098<br />(37.21%)|      5,081,468<br />(LDIR x 13.48)|
 |Exomizer2|deexo_180|            166|          6,098<br />(37.21%)|      5,081,546<br />(LDIR x 13.48)|
 |Exomizer2|deexo_180_fast_jp|            176|          6,098<br />(37.21%)|      4,382,484<br />(LDIR x 11.62)|
@@ -1511,7 +1511,7 @@ test data:KANJJ1.B01(16KB)
 |BitBuster2|bitbuster_speed_180|            156|          4,495<br />(27.43%)|      1,037,854<br />(LDIR x 2.75)|
 |BitBuster2|unbitbuster2|             81|          4,495<br />(27.43%)|      1,205,044<br />(LDIR x 3.19)|
 |BitBuster2|unbitbuster2_speed|             89|          4,495<br />(27.43%)|      1,028,942<br />(LDIR x 2.73)|
-|BitBuster2|unbitbuster2_speed2|            106|          4,495<br />(27.43%)|        982,354<br />(LDIR x 2.60)|
+|BitBuster2|unbitbuster2_speed2|            104|          4,495<br />(27.43%)|        981,566<br />(LDIR x 2.60)|
 |Exomizer2|deexo|            169|          3,975<br />(24.26%)|      3,480,396<br />(LDIR x 9.23)|
 |Exomizer2|deexo_180|            166|          3,975<br />(24.26%)|      3,480,462<br />(LDIR x 9.23)|
 |Exomizer2|deexo_180_fast_jp|            176|          3,975<br />(24.26%)|      3,016,788<br />(LDIR x 8.00)|
@@ -1631,7 +1631,7 @@ test data:KANJJ1.B02(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         11,750<br />(71.71%)|      1,745,026<br />(LDIR x 4.63)|
 |BitBuster2|unbitbuster2|             81|         11,750<br />(71.71%)|      2,011,959<br />(LDIR x 5.33)|
 |BitBuster2|unbitbuster2_speed|             89|         11,750<br />(71.71%)|      1,687,006<br />(LDIR x 4.47)|
-|BitBuster2|unbitbuster2_speed2|            106|         11,750<br />(71.71%)|      1,615,665<br />(LDIR x 4.28)|
+|BitBuster2|unbitbuster2_speed2|            104|         11,750<br />(71.71%)|      1,613,739<br />(LDIR x 4.28)|
 |Exomizer2|deexo|            169|         10,680<br />(65.18%)|      7,752,014<br />(LDIR x 20.57)|
 |Exomizer2|deexo_180|            166|         10,680<br />(65.18%)|      7,751,972<br />(LDIR x 20.57)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,680<br />(65.18%)|      6,616,763<br />(LDIR x 17.55)|
@@ -1751,7 +1751,7 @@ test data:KANJJ1.B03(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         11,568<br />(70.60%)|      1,727,377<br />(LDIR x 4.58)|
 |BitBuster2|unbitbuster2|             81|         11,568<br />(70.60%)|      1,994,568<br />(LDIR x 5.29)|
 |BitBuster2|unbitbuster2_speed|             89|         11,568<br />(70.60%)|      1,671,463<br />(LDIR x 4.43)|
-|BitBuster2|unbitbuster2_speed2|            106|         11,568<br />(70.60%)|      1,600,624<br />(LDIR x 4.24)|
+|BitBuster2|unbitbuster2_speed2|            104|         11,568<br />(70.60%)|      1,598,445<br />(LDIR x 4.24)|
 |Exomizer2|deexo|            169|         10,508<br />(64.13%)|      7,658,823<br />(LDIR x 20.32)|
 |Exomizer2|deexo_180|            166|         10,508<br />(64.13%)|      7,658,777<br />(LDIR x 20.32)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,508<br />(64.13%)|      6,533,341<br />(LDIR x 17.33)|
@@ -1871,7 +1871,7 @@ test data:KANJJ1.B04(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         11,513<br />(70.26%)|      1,724,753<br />(LDIR x 4.57)|
 |BitBuster2|unbitbuster2|             81|         11,513<br />(70.26%)|      1,991,532<br />(LDIR x 5.28)|
 |BitBuster2|unbitbuster2_speed|             89|         11,513<br />(70.26%)|      1,669,763<br />(LDIR x 4.43)|
-|BitBuster2|unbitbuster2_speed2|            106|         11,513<br />(70.26%)|      1,598,779<br />(LDIR x 4.24)|
+|BitBuster2|unbitbuster2_speed2|            104|         11,513<br />(70.26%)|      1,596,935<br />(LDIR x 4.23)|
 |Exomizer2|deexo|            169|         10,426<br />(63.63%)|      7,638,440<br />(LDIR x 20.26)|
 |Exomizer2|deexo_180|            166|         10,426<br />(63.63%)|      7,638,370<br />(LDIR x 20.26)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,426<br />(63.63%)|      6,524,110<br />(LDIR x 17.31)|
@@ -1991,7 +1991,7 @@ test data:KANJJ1.B05(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         11,469<br />(70.00%)|      1,715,378<br />(LDIR x 4.55)|
 |BitBuster2|unbitbuster2|             81|         11,469<br />(70.00%)|      1,978,863<br />(LDIR x 5.25)|
 |BitBuster2|unbitbuster2_speed|             89|         11,469<br />(70.00%)|      1,659,910<br />(LDIR x 4.40)|
-|BitBuster2|unbitbuster2_speed2|            106|         11,469<br />(70.00%)|      1,589,238<br />(LDIR x 4.21)|
+|BitBuster2|unbitbuster2_speed2|            104|         11,469<br />(70.00%)|      1,587,453<br />(LDIR x 4.21)|
 |Exomizer2|deexo|            169|         10,349<br />(63.16%)|      7,467,660<br />(LDIR x 19.81)|
 |Exomizer2|deexo_180|            166|         10,349<br />(63.16%)|      7,467,638<br />(LDIR x 19.81)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,349<br />(63.16%)|      6,371,888<br />(LDIR x 16.90)|
@@ -2111,7 +2111,7 @@ test data:KANJJ1.B06(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         11,746<br />(71.69%)|      1,742,025<br />(LDIR x 4.62)|
 |BitBuster2|unbitbuster2|             81|         11,746<br />(71.69%)|      2,009,353<br />(LDIR x 5.33)|
 |BitBuster2|unbitbuster2_speed|             89|         11,746<br />(71.69%)|      1,684,535<br />(LDIR x 4.47)|
-|BitBuster2|unbitbuster2_speed2|            106|         11,746<br />(71.69%)|      1,613,074<br />(LDIR x 4.28)|
+|BitBuster2|unbitbuster2_speed2|            104|         11,746<br />(71.69%)|      1,611,343<br />(LDIR x 4.27)|
 |Exomizer2|deexo|            169|         10,648<br />(64.99%)|      7,742,147<br />(LDIR x 20.54)|
 |Exomizer2|deexo_180|            166|         10,648<br />(64.99%)|      7,742,101<br />(LDIR x 20.54)|
 |Exomizer2|deexo_180_fast_jp|            176|         10,648<br />(64.99%)|      6,603,967<br />(LDIR x 17.52)|
@@ -2231,7 +2231,7 @@ test data:KANJJ1.B07(16KB)
 |BitBuster2|bitbuster_speed_180|            156|         10,717<br />(65.41%)|      1,631,138<br />(LDIR x 4.32)|
 |BitBuster2|unbitbuster2|             81|         10,717<br />(65.41%)|      1,878,404<br />(LDIR x 4.98)|
 |BitBuster2|unbitbuster2_speed|             89|         10,717<br />(65.41%)|      1,578,688<br />(LDIR x 4.18)|
-|BitBuster2|unbitbuster2_speed2|            106|         10,717<br />(65.41%)|      1,513,496<br />(LDIR x 4.01)|
+|BitBuster2|unbitbuster2_speed2|            104|         10,717<br />(65.41%)|      1,511,625<br />(LDIR x 4.01)|
 |Exomizer2|deexo|            169|          9,701<br />(59.21%)|      7,135,248<br />(LDIR x 18.93)|
 |Exomizer2|deexo_180|            166|          9,701<br />(59.21%)|      7,135,142<br />(LDIR x 18.93)|
 |Exomizer2|deexo_180_fast_jp|            176|          9,701<br />(59.21%)|      6,094,613<br />(LDIR x 16.17)|

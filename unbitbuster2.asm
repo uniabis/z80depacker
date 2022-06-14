@@ -118,9 +118,9 @@ unbitbuster2:
 	ld	bc, 1
 	ld	d, b
 
-.get_length_loop:
-
 	IFNDEF	BITBUSTER_OPTIMIZE_SPEED
+
+.get_length_loop:
 
 	call	.get_bit
 	jr 	nc, .get_offset
@@ -143,6 +143,8 @@ unbitbuster2:
 
 	IF BITBUSTER_OPTIMIZE_SPEED>1
 
+.get_length_loop_byte:
+
 	add	a, a
 	jr 	nc, .get_offset
 	jr	z, .fill_bitbuffer2
@@ -151,42 +153,43 @@ unbitbuster2:
 	jr	z, .fill_bitbuffer3
 
 	rl	c
-	jr	.get_length_loop
+	jr	.get_length_loop_byte
+
+.fill_bitbuffer2:
+	ld	a, (hl)
+	inc	hl
+.get_length_loop:
+	adc	a, a
+	jr 	nc, .get_offset
+	jr	z, .fill_bitbuffer2
+
+	add	a, a
+	jr	nz, .shift_length_word
 
 .fill_bitbuffer3:
 	ld	a, (hl)
 	inc	hl
 	adc	a, a
-	jr	.wextend
 
-.fill_bitbuffer2:
-	ld	a, (hl)
-	inc	hl
-.get_length_loopw:
-	adc	a, a
-	jr 	nc, .get_offset
-	jr	z, .fill_bitbuffer2
-
-	add	a, a
-	jr	z, .fill_bitbuffer3
+.shift_length_word:
 
 	ELSE
 
-.get_length_loopw:
+.get_length_loop:
 
 	add	a, a
 	call	z, .fill_bitbuffer
 
 	jr 	nc, .get_offset
+
 	add	a, a
 	call	z, .fill_bitbuffer
 
 	ENDIF
 
-.wextend:
 	rl	c
 	rl	b
-	jr	nc, .get_length_loopw
+	jr	nc, .get_length_loop
 
 	pop	de
 	;ret
