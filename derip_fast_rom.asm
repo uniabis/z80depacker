@@ -147,7 +147,7 @@ mTRE1   LD B,A
         JR mTRE0
 mTREdip INC E,DE,E,DE
         LD (HL),D ;ptr to children
-        INC HL
+        INC L
         LD (HL),E
         LD H,D
         LD L,E
@@ -161,7 +161,7 @@ mTREY   CP C
         POP BC
         DEC BC
         LD (HL),B ;leaf
-        INC HL
+        INC L
         LD (HL),C
         LD C,A
         POP AF
@@ -191,7 +191,7 @@ mHFM    SRL C
         JR NC, $+4
         INC L,HL
         LD A,(HL)
-        INC HL
+        INC L
         CP H ;H>=2
         LD L,(HL)
         LD H,A

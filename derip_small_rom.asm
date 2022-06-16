@@ -144,9 +144,9 @@ mTRE1   LD B,A
         JR NZ, mTREY
         INC C
         JR mTRE0
-mTREdip INC DE,DE,DE,DE
+mTREdip INC E,DE,E,DE
         LD (HL),D ;ptr to children
-        INC HL
+        INC L
         LD (HL),E
         LD H,D
         LD L,E
@@ -160,13 +160,13 @@ mTREY   CP C
         POP BC
         DEC BC
         LD (HL),B ;leaf
-        INC HL
+        INC L
         LD (HL),C
         LD C,A
         POP AF
         RET Z
         POP HL
-        INC HL,HL
+        INC L,HL
         JR mTRE1
 
 LLEN    ADD A,-5
@@ -186,9 +186,9 @@ LLEN    ADD A,-5
 mHFMAI  LD HL,maintree
 mHFM    CALL mWBIT
         JR NC, $+4
-        INC HL,HL
+        INC L,HL
         LD A,(HL)
-        INC HL
+        INC L
         CP H ;H>=2
         LD L,(HL)
         LD H,A
