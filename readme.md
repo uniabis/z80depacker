@@ -5,7 +5,7 @@
 
 ### [ApLib](http://ibsensoftware.com/products_aPLib.html) - [OaPACK](https://gitlab.com/eugene77/oapack) version 2022.06.09
 
-[appack_r57shell](http://hypr.ru/blog/dev/740.html)
+[appack_r57shell](https://hype.retroscene.org/blog/dev/740.html)
 
 [apultra](https://github.com/emmanuel-marty/apultra)
 
@@ -41,7 +41,7 @@ License:LGPL
 
 [deexoopt](https://github.com/antoniovillena/deexo)
 
-### hruST - [oh1c spke version](http://hypr.ru/blog/dev/740.html) 1.3 (-r)
+### hruST - [oh1c spke version](https://hype.retroscene.org/blog/dev/740.html) 1.3 (-r)
 
 [mhmt](https://github.com/lvd2/mhmt) License:GPLv3
 
@@ -51,7 +51,7 @@ License:LGPL
 
 [oh1c(old)](https://zx-pk.ru/threads/23111-szhatie-i-upakovka-hrum3-5-hrust1-hrust2-laser-compact-x-x.html?p=787697&viewfull=1#post787697)
 
-[oh1c spke version with raw format support](http://hypr.ru/blog/dev/740.html) in [compression2017.7z](http://introspec.retroscene.org/hype/compression2017.7z)
+[oh1c spke version with raw format support](https://hype.retroscene.org/blog/dev/740.html) in [compression2017.7z](http://introspec.retroscene.org/hype/compression2017.7z)
 
 ### [LZ4](https://github.com/lz4/lz4) - [lz4ultra](https://github.com/emmanuel-marty/lz4ultra) v1.3.0
 
@@ -229,7 +229,7 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |lzexe|z80unlze_small|o|o|o|            112|66.42%|LDIR x 5.30||
 |lzexe|z80unlzep2_small|o|o|o|             88|66.42%|LDIR x 5.02|Bit faster, shorter from z80unlze_small|
 |lzf|unlzf_fast|o|o|o|             86|69.56%|LDIR x 2.04||
-|lzf|unlzf_fastp1|o|o|o|             80|69.56%|LDIR x 2.04|Bit faster, shorter from unlzf_fast|
+|lzf|unlzf_fastp1|o|o|o|             76|69.56%|LDIR x 2.04|Bit faster, shorter from unlzf_fast|
 |lzf|unlzf_small|o|o|o|             56|69.56%|LDIR x 2.22||
 |lzf|unlzf_smallp1|o|o|o|             55|69.56%|LDIR x 2.22|Bit faster, shorter from unlzf_small|
 |lzsa1|unlzsa1_fast|o|o|o|            113|69.54%|LDIR x 1.60||
@@ -354,7 +354,7 @@ test data:ALL(16*16KB)
 |lzexe|z80unlze_small|            112|        174,132<br />(66.42%)|     31,984,416<br />(LDIR x 5.30)|
 |lzexe|z80unlzep2_small|             88|        174,132<br />(66.42%)|     30,313,875<br />(LDIR x 5.02)|
 |lzf|unlzf_fast|             86|        182,358<br />(69.56%)|     12,335,354<br />(LDIR x 2.04)|
-|lzf|unlzf_fastp1|             80|        182,358<br />(69.56%)|     12,331,336<br />(LDIR x 2.04)|
+|lzf|unlzf_fastp1|             76|        182,358<br />(69.56%)|     12,327,823<br />(LDIR x 2.04)|
 |lzf|unlzf_small|             56|        182,358<br />(69.56%)|     13,401,315<br />(LDIR x 2.22)|
 |lzf|unlzf_smallp1|             55|        182,358<br />(69.56%)|     13,397,967<br />(LDIR x 2.22)|
 |lzsa1|unlzsa1_fast|            113|        182,295<br />(69.54%)|      9,678,793<br />(LDIR x 1.60)|
@@ -474,7 +474,7 @@ test data:MEGASDHC.B00(16KB)
 |lzexe|z80unlze_small|            112|         10,089<br />(61.57%)|      1,811,346<br />(LDIR x 4.80)|
 |lzexe|z80unlzep2_small|             88|         10,089<br />(61.57%)|      1,703,101<br />(LDIR x 4.51)|
 |lzf|unlzf_fast|             86|         10,584<br />(64.59%)|        640,099<br />(LDIR x 1.69)|
-|lzf|unlzf_fastp1|             80|         10,584<br />(64.59%)|        639,763<br />(LDIR x 1.69)|
+|lzf|unlzf_fastp1|             76|         10,584<br />(64.59%)|        639,617<br />(LDIR x 1.69)|
 |lzf|unlzf_small|             56|         10,584<br />(64.59%)|        692,565<br />(LDIR x 1.83)|
 |lzf|unlzf_smallp1|             55|         10,584<br />(64.59%)|        692,289<br />(LDIR x 1.83)|
 |lzsa1|unlzsa1_fast|            113|         10,338<br />(63.09%)|        529,450<br />(LDIR x 1.40)|
@@ -594,7 +594,7 @@ test data:MEGASDHC.B01(16KB)
 |lzexe|z80unlze_small|            112|          5,460<br />(33.32%)|      1,166,834<br />(LDIR x 3.09)|
 |lzexe|z80unlzep2_small|             88|          5,460<br />(33.32%)|      1,109,937<br />(LDIR x 2.94)|
 |lzf|unlzf_fast|             86|          5,764<br />(35.18%)|        539,181<br />(LDIR x 1.43)|
-|lzf|unlzf_fastp1|             80|          5,764<br />(35.18%)|        538,439<br />(LDIR x 1.42)|
+|lzf|unlzf_fastp1|             76|          5,764<br />(35.18%)|        538,618<br />(LDIR x 1.42)|
 |lzf|unlzf_small|             56|          5,764<br />(35.18%)|        569,520<br />(LDIR x 1.51)|
 |lzf|unlzf_smallp1|             55|          5,764<br />(35.18%)|        569,088<br />(LDIR x 1.51)|
 |lzsa1|unlzsa1_fast|            113|          5,391<br />(32.90%)|        473,232<br />(LDIR x 1.25)|
@@ -714,7 +714,7 @@ test data:MEGASDHC.B02(16KB)
 |lzexe|z80unlze_small|            112|         13,469<br />(82.20%)|      2,348,656<br />(LDIR x 6.23)|
 |lzexe|z80unlzep2_small|             88|         13,469<br />(82.20%)|      2,207,159<br />(LDIR x 5.85)|
 |lzf|unlzf_fast|             86|         14,249<br />(86.96%)|        761,963<br />(LDIR x 2.02)|
-|lzf|unlzf_fastp1|             80|         14,249<br />(86.96%)|        761,837<br />(LDIR x 2.02)|
+|lzf|unlzf_fastp1|             76|         14,249<br />(86.96%)|        761,333<br />(LDIR x 2.02)|
 |lzf|unlzf_small|             56|         14,249<br />(86.96%)|        836,502<br />(LDIR x 2.21)|
 |lzf|unlzf_smallp1|             55|         14,249<br />(86.96%)|        836,376<br />(LDIR x 2.21)|
 |lzsa1|unlzsa1_fast|            113|         14,043<br />(85.71%)|        586,242<br />(LDIR x 1.55)|
@@ -834,7 +834,7 @@ test data:MEGASDHC.B03(16KB)
 |lzexe|z80unlze_small|            112|         13,184<br />(80.46%)|      2,274,133<br />(LDIR x 6.03)|
 |lzexe|z80unlzep2_small|             88|         13,184<br />(80.46%)|      2,132,666<br />(LDIR x 5.65)|
 |lzf|unlzf_fast|             86|         13,835<br />(84.44%)|        718,789<br />(LDIR x 1.90)|
-|lzf|unlzf_fastp1|             80|         13,835<br />(84.44%)|        718,605<br />(LDIR x 1.90)|
+|lzf|unlzf_fastp1|             76|         13,835<br />(84.44%)|        718,147<br />(LDIR x 1.90)|
 |lzf|unlzf_small|             56|         13,835<br />(84.44%)|        786,492<br />(LDIR x 2.08)|
 |lzf|unlzf_smallp1|             55|         13,835<br />(84.44%)|        786,318<br />(LDIR x 2.08)|
 |lzsa1|unlzsa1_fast|            113|         13,703<br />(83.63%)|        565,385<br />(LDIR x 1.50)|
@@ -954,7 +954,7 @@ test data:MSX2MAIN.B00(16KB)
 |lzexe|z80unlze_small|            112|         13,695<br />(83.58%)|      2,398,275<br />(LDIR x 6.36)|
 |lzexe|z80unlzep2_small|             88|         13,695<br />(83.58%)|      2,244,172<br />(LDIR x 5.95)|
 |lzf|unlzf_fast|             86|         14,438<br />(88.12%)|        701,841<br />(LDIR x 1.86)|
-|lzf|unlzf_fastp1|             80|         14,438<br />(88.12%)|        701,703<br />(LDIR x 1.86)|
+|lzf|unlzf_fastp1|             76|         14,438<br />(88.12%)|        701,224<br />(LDIR x 1.86)|
 |lzf|unlzf_small|             56|         14,438<br />(88.12%)|        768,679<br />(LDIR x 2.03)|
 |lzf|unlzf_smallp1|             55|         14,438<br />(88.12%)|        768,541<br />(LDIR x 2.03)|
 |lzsa1|unlzsa1_fast|            113|         14,087<br />(85.98%)|        560,634<br />(LDIR x 1.48)|
@@ -1074,7 +1074,7 @@ test data:MSX2MAIN.B01(16KB)
 |lzexe|z80unlze_small|            112|         14,386<br />(87.80%)|      2,410,963<br />(LDIR x 6.39)|
 |lzexe|z80unlzep2_small|             88|         14,386<br />(87.80%)|      2,257,214<br />(LDIR x 5.98)|
 |lzf|unlzf_fast|             86|         15,002<br />(91.56%)|        740,365<br />(LDIR x 1.96)|
-|lzf|unlzf_fastp1|             80|         15,002<br />(91.56%)|        740,311<br />(LDIR x 1.96)|
+|lzf|unlzf_fastp1|             76|         15,002<br />(91.56%)|        739,719<br />(LDIR x 1.96)|
 |lzf|unlzf_small|             56|         15,002<br />(91.56%)|        810,622<br />(LDIR x 2.15)|
 |lzf|unlzf_smallp1|             55|         15,002<br />(91.56%)|        810,568<br />(LDIR x 2.15)|
 |lzsa1|unlzsa1_fast|            113|         14,892<br />(90.89%)|        561,614<br />(LDIR x 1.49)|
@@ -1194,7 +1194,7 @@ test data:MSXMUSIC.B00(16KB)
 |lzexe|z80unlze_small|            112|         10,828<br />(66.08%)|      1,920,714<br />(LDIR x 5.09)|
 |lzexe|z80unlzep2_small|             88|         10,828<br />(66.08%)|      1,802,636<br />(LDIR x 4.78)|
 |lzf|unlzf_fast|             86|         11,387<br />(69.50%)|        658,336<br />(LDIR x 1.74)|
-|lzf|unlzf_fastp1|             80|         11,387<br />(69.50%)|        658,084<br />(LDIR x 1.74)|
+|lzf|unlzf_fastp1|             76|         11,387<br />(69.50%)|        657,820<br />(LDIR x 1.74)|
 |lzf|unlzf_small|             56|         11,387<br />(69.50%)|        712,666<br />(LDIR x 1.89)|
 |lzf|unlzf_smallp1|             55|         11,387<br />(69.50%)|        712,474<br />(LDIR x 1.89)|
 |lzsa1|unlzsa1_fast|            113|         11,047<br />(67.42%)|        544,321<br />(LDIR x 1.44)|
@@ -1314,7 +1314,7 @@ test data:MSX2EXT.B00(16KB)
 |lzexe|z80unlze_small|            112|         13,300<br />(81.17%)|      2,328,558<br />(LDIR x 6.17)|
 |lzexe|z80unlzep2_small|             88|         13,300<br />(81.17%)|      2,182,389<br />(LDIR x 5.79)|
 |lzf|unlzf_fast|             86|         14,134<br />(86.26%)|        737,429<br />(LDIR x 1.95)|
-|lzf|unlzf_fastp1|             80|         14,134<br />(86.26%)|        737,213<br />(LDIR x 1.95)|
+|lzf|unlzf_fastp1|             76|         14,134<br />(86.26%)|        736,723<br />(LDIR x 1.95)|
 |lzf|unlzf_small|             56|         14,134<br />(86.26%)|        812,412<br />(LDIR x 2.15)|
 |lzf|unlzf_smallp1|             55|         14,134<br />(86.26%)|        812,196<br />(LDIR x 2.15)|
 |lzsa1|unlzsa1_fast|            113|         13,719<br />(83.73%)|        588,179<br />(LDIR x 1.56)|
@@ -1434,7 +1434,7 @@ test data:KANJJ1.B00(16KB)
 |lzexe|z80unlze_small|            112|          7,023<br />(42.86%)|      1,550,324<br />(LDIR x 4.11)|
 |lzexe|z80unlzep2_small|             88|          7,023<br />(42.86%)|      1,496,626<br />(LDIR x 3.97)|
 |lzf|unlzf_fast|             86|          7,335<br />(44.76%)|        795,755<br />(LDIR x 2.11)|
-|lzf|unlzf_fastp1|             80|          7,335<br />(44.76%)|        795,108<br />(LDIR x 2.10)|
+|lzf|unlzf_fastp1|             76|          7,335<br />(44.76%)|        795,309<br />(LDIR x 2.11)|
 |lzf|unlzf_small|             56|          7,335<br />(44.76%)|        858,157<br />(LDIR x 2.27)|
 |lzf|unlzf_smallp1|             55|          7,335<br />(44.76%)|        857,530<br />(LDIR x 2.27)|
 |lzsa1|unlzsa1_fast|            113|          7,316<br />(44.65%)|        635,814<br />(LDIR x 1.68)|
@@ -1554,7 +1554,7 @@ test data:KANJJ1.B01(16KB)
 |lzexe|z80unlze_small|            112|          4,660<br />(28.44%)|      1,178,787<br />(LDIR x 3.12)|
 |lzexe|z80unlzep2_small|             88|          4,660<br />(28.44%)|      1,144,735<br />(LDIR x 3.03)|
 |lzf|unlzf_fast|             86|          4,950<br />(30.21%)|        680,705<br />(LDIR x 1.80)|
-|lzf|unlzf_fastp1|             80|          4,950<br />(30.21%)|        680,083<br />(LDIR x 1.80)|
+|lzf|unlzf_fastp1|             76|          4,950<br />(30.21%)|        680,228<br />(LDIR x 1.80)|
 |lzf|unlzf_small|             56|          4,950<br />(30.21%)|        726,499<br />(LDIR x 1.92)|
 |lzf|unlzf_smallp1|             55|          4,950<br />(30.21%)|        726,037<br />(LDIR x 1.92)|
 |lzsa1|unlzsa1_fast|            113|          4,804<br />(29.32%)|        565,319<br />(LDIR x 1.50)|
@@ -1674,7 +1674,7 @@ test data:KANJJ1.B02(16KB)
 |lzexe|z80unlze_small|            112|         11,692<br />(71.36%)|      2,155,135<br />(LDIR x 5.71)|
 |lzexe|z80unlzep2_small|             88|         11,692<br />(71.36%)|      2,057,396<br />(LDIR x 5.45)|
 |lzf|unlzf_fast|             86|         12,175<br />(74.31%)|        899,902<br />(LDIR x 2.38)|
-|lzf|unlzf_fastp1|             80|         12,175<br />(74.31%)|        899,821<br />(LDIR x 2.38)|
+|lzf|unlzf_fastp1|             76|         12,175<br />(74.31%)|        899,605<br />(LDIR x 2.38)|
 |lzf|unlzf_small|             56|         12,175<br />(74.31%)|        979,269<br />(LDIR x 2.59)|
 |lzf|unlzf_smallp1|             55|         12,175<br />(74.31%)|        979,188<br />(LDIR x 2.59)|
 |lzsa1|unlzsa1_fast|            113|         12,544<br />(76.56%)|        676,535<br />(LDIR x 1.79)|
@@ -1794,7 +1794,7 @@ test data:KANJJ1.B03(16KB)
 |lzexe|z80unlze_small|            112|         11,490<br />(70.12%)|      2,112,947<br />(LDIR x 5.60)|
 |lzexe|z80unlzep2_small|             88|         11,490<br />(70.12%)|      2,017,973<br />(LDIR x 5.35)|
 |lzf|unlzf_fast|             86|         11,892<br />(72.58%)|        895,998<br />(LDIR x 2.37)|
-|lzf|unlzf_fastp1|             80|         11,892<br />(72.58%)|        895,899<br />(LDIR x 2.37)|
+|lzf|unlzf_fastp1|             76|         11,892<br />(72.58%)|        895,705<br />(LDIR x 2.37)|
 |lzf|unlzf_small|             56|         11,892<br />(72.58%)|        972,890<br />(LDIR x 2.58)|
 |lzf|unlzf_smallp1|             55|         11,892<br />(72.58%)|        972,791<br />(LDIR x 2.58)|
 |lzsa1|unlzsa1_fast|            113|         12,252<br />(74.78%)|        680,419<br />(LDIR x 1.80)|
@@ -1914,7 +1914,7 @@ test data:KANJJ1.B04(16KB)
 |lzexe|z80unlze_small|            112|         11,370<br />(69.39%)|      2,113,461<br />(LDIR x 5.60)|
 |lzexe|z80unlzep2_small|             88|         11,370<br />(69.39%)|      2,019,457<br />(LDIR x 5.35)|
 |lzf|unlzf_fast|             86|         11,799<br />(72.01%)|        897,891<br />(LDIR x 2.38)|
-|lzf|unlzf_fastp1|             80|         11,799<br />(72.01%)|        897,792<br />(LDIR x 2.38)|
+|lzf|unlzf_fastp1|             76|         11,799<br />(72.01%)|        897,593<br />(LDIR x 2.38)|
 |lzf|unlzf_small|             56|         11,799<br />(72.01%)|        976,116<br />(LDIR x 2.59)|
 |lzf|unlzf_smallp1|             55|         11,799<br />(72.01%)|        976,017<br />(LDIR x 2.59)|
 |lzsa1|unlzsa1_fast|            113|         12,189<br />(74.39%)|        682,013<br />(LDIR x 1.80)|
@@ -2034,7 +2034,7 @@ test data:KANJJ1.B05(16KB)
 |lzexe|z80unlze_small|            112|         11,280<br />(68.84%)|      2,089,679<br />(LDIR x 5.54)|
 |lzexe|z80unlzep2_small|             88|         11,280<br />(68.84%)|      1,997,084<br />(LDIR x 5.29)|
 |lzf|unlzf_fast|             86|         11,704<br />(71.43%)|        896,711<br />(LDIR x 2.37)|
-|lzf|unlzf_fastp1|             80|         11,704<br />(71.43%)|        896,573<br />(LDIR x 2.37)|
+|lzf|unlzf_fastp1|             76|         11,704<br />(71.43%)|        896,428<br />(LDIR x 2.37)|
 |lzf|unlzf_small|             56|         11,704<br />(71.43%)|        974,395<br />(LDIR x 2.58)|
 |lzf|unlzf_smallp1|             55|         11,704<br />(71.43%)|        974,257<br />(LDIR x 2.58)|
 |lzsa1|unlzsa1_fast|            113|         12,075<br />(73.69%)|        683,662<br />(LDIR x 1.81)|
@@ -2154,7 +2154,7 @@ test data:KANJJ1.B06(16KB)
 |lzexe|z80unlze_small|            112|         11,631<br />(70.98%)|      2,145,871<br />(LDIR x 5.69)|
 |lzexe|z80unlzep2_small|             88|         11,631<br />(70.98%)|      2,050,866<br />(LDIR x 5.44)|
 |lzf|unlzf_fast|             86|         12,078<br />(73.71%)|        914,736<br />(LDIR x 2.42)|
-|lzf|unlzf_fastp1|             80|         12,078<br />(73.71%)|        914,646<br />(LDIR x 2.42)|
+|lzf|unlzf_fastp1|             76|         12,078<br />(73.71%)|        914,490<br />(LDIR x 2.42)|
 |lzf|unlzf_small|             56|         12,078<br />(73.71%)|        995,113<br />(LDIR x 2.64)|
 |lzf|unlzf_smallp1|             55|         12,078<br />(73.71%)|        995,023<br />(LDIR x 2.64)|
 |lzsa1|unlzsa1_fast|            113|         12,507<br />(76.33%)|        688,229<br />(LDIR x 1.82)|
@@ -2274,7 +2274,7 @@ test data:KANJJ1.B07(16KB)
 |lzexe|z80unlze_small|            112|         10,575<br />(64.54%)|      1,978,733<br />(LDIR x 5.25)|
 |lzexe|z80unlzep2_small|             88|         10,575<br />(64.54%)|      1,890,464<br />(LDIR x 5.01)|
 |lzf|unlzf_fast|             86|         11,032<br />(67.33%)|        855,653<br />(LDIR x 2.27)|
-|lzf|unlzf_fastp1|             80|         11,032<br />(67.33%)|        855,459<br />(LDIR x 2.27)|
+|lzf|unlzf_fastp1|             76|         11,032<br />(67.33%)|        855,264<br />(LDIR x 2.26)|
 |lzf|unlzf_small|             56|         11,032<br />(67.33%)|        929,418<br />(LDIR x 2.46)|
 |lzf|unlzf_smallp1|             55|         11,032<br />(67.33%)|        929,274<br />(LDIR x 2.46)|
 |lzsa1|unlzsa1_fast|            113|         11,388<br />(69.50%)|        657,745<br />(LDIR x 1.74)|

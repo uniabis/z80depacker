@@ -88,7 +88,7 @@ MAINLOOP1
 CPY1
         LD A,C
         POP BC ;len
-        JR Z, $+3 ; offset<256 or using last offset?
+        JR Z, COPY ; offset<256 or using last offset?
         INC BC
 COPY    ;cf=0
         PUSH DE
@@ -176,11 +176,11 @@ LLEN    ADD A,-5
         ADC A,L
         RRA 
         RL L
-        SRL C
+LLENl   SRL C
         CALL Z, mWBYTE
         ADC HL,HL
         DEC A
-        JR NZ, $-8
+        JR NZ, LLENl
         INC HL
         RET 
 
@@ -188,9 +188,9 @@ LLEN    ADD A,-5
 mHFMAI  LD HL,maintree
 mHFM    SRL C
         CALL Z, mWBYTE
-        JR NC, $+4
+        JR NC, mHFMs
         INC L,HL
-        LD A,(HL)
+mHFMs   LD A,(HL)
         INC L
         CP H ;H>=2
         LD L,(HL)

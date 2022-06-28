@@ -135,6 +135,7 @@ depack_next_block:
 
 		ENDIF
 
+		IFNDEF	DISABLE_BITBUSTER_BLOCKS
 ; FUNCTION:	depack_block
 ;	Depack data that was packed with Bitbuster.
 ;	Decompresses the RAW data, i.e. the data that is stored after the block count and block size!
@@ -153,6 +154,7 @@ depack_next_block:
 depack_block:	EXPORT	bitbuster.depack_block
 				IFDEF	MAKE_BITBUSTER_GLOBAL
 @depack_block:	EXPORT	depack_block
+                ENDIF
                 ENDIF
                 
         ld	a,128

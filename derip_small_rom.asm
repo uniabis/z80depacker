@@ -87,7 +87,7 @@ MAINLOOP1
 CPY1
         LD A,C
         POP BC ;len
-        JR Z, $+3 ; offset<256 or using last offset?
+        JR Z, COPY ; offset<256 or using last offset?
         INC BC
 COPY    ;cf=0
         PUSH DE
@@ -173,21 +173,21 @@ LLEN    ADD A,-5
         RET NC
         LD L,1
         ADC A,L
-        RRA 
+        RRA
         RL L
-        CALL mWBIT
+LLENl   CALL mWBIT
         ADC HL,HL
         DEC A
-        JR NZ, $-6
+        JR NZ, LLENl
         INC HL
         RET 
 
 ; Read code from tree
 mHFMAI  LD HL,maintree
 mHFM    CALL mWBIT
-        JR NC, $+4
+        JR NC, mHFMs
         INC L,HL
-        LD A,(HL)
+mHFMs   LD A,(HL)
         INC L
         CP H ;H>=2
         LD L,(HL)

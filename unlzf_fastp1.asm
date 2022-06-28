@@ -1,6 +1,6 @@
 ;
 ;  Speed-optimized LZF decompressor by spke (v.1 21-29/08/2018, 86 bytes)
-;(v.1 21p1-02/06/2022, 80 bytes)
+;(v.1 21p1-28/06/2022, 76 bytes)
 ;
 ;  The data must be comressed using the nearly optimal LZF command line compressor
 ;  (c) 2013-2018 Ilya Muravyov (aka encode); the command line is:
@@ -27,17 +27,9 @@
 
 
 @DecompressLZF:	ld b,0 : jr MainLoop
-
-
-Token20:	inc hl : ld a,(hl) : or a : ret z	; token #20 is shadowing as the first byte of the end marker
-
-
-		ld c,3
-		push hl : ld l,a : ld h,b
-		jp CopyingMatch2
  
 ProcessMatches:	jr z,Token20
-		sub #E0 : jr nc,LongMatch
+NotTheEnd:	sub #E0 : jr nc,LongMatch
 
 
 ShortMatch:	rlca : rlca : rlca
@@ -67,10 +59,13 @@ ProcessLiterals:
 
 		ld a,(hl) : cp #20 : jr c,ProcessLiterals
 
+		jp nz,NotTheEnd
 
-		jr z,Token20
-		sub #E0 : jp c,ShortMatch
+Token20:	inc hl : ld a,(hl) : or a : ret z	; token #20 is shadowing as the first byte of the end marker
 
+		ld c,3
+		push hl : ld l,a : ld h,b
+		jp CopyingMatch2
 
 LongMatch:	exa : inc hl
 		ld a,(hl) : inc hl
