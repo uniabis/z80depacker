@@ -1,5 +1,5 @@
 ;
-;  Speed-optimized MegaLZ decompressor by spke (ver.04p1 30/06/2022, 229 bytes)
+;  Speed-optimized MegaLZ decompressor by spke (ver.04p2 06/07/2022, 229 bytes)
 ;
 ;  The commonly used "classic" decompressor for MegaLZ is a 110 byte relocatable routine
 ;  "DEC40.asm" written by Fyrex^MhM in 1998
@@ -11,7 +11,7 @@
 ;  ver.02 by spke (27/08/2019, +1.5% speed);
 ;  ver.03 by uniabis & spke (15-17/05/2020, 229(-4) bytes, +2.5% speed);
 ;  ver.04 by spke (13/01/2021, added full revision history)
-;  ver.04p1 by uniabis (30/06/2022, bit faster)
+;  ver.04p2 by uniabis (06/07/2022, bit faster)
 ;
 ;  The data must be compressed using one of the optimal MegaLZ compressors by LVD^NedoPC,
 ;  either modern "mhmt": https://github.com/lvd2/mhmt
@@ -70,81 +70,12 @@ CASE1:			ldi					; first byte is always copied as literal
 ;  main decompressor loop
 
 MainLoop:		add a : jr c,CASEc		; "1"+BYTE = copy literal
-CASE0xx			add a : jr c,CASE0c
-
-
-
-
-
-CASE00x			add a : jr nc,CASE000 : jr z,ReloadByte3
-
-CASE001:		; "001"+[OFFSET] is a close 2-byte match
-			push hl
-			ld l,(hl) : ld h,#FF
-			add hl,de
-
-			ldi : ldi
-
-			pop hl : inc hl
-		IFDEF	AllowUsingIX
-			jp (ix)
-		ELSE
-			jp MainLoop
-		ENDIF
-
-ReloadByte2		ld a,(hl) : inc hl : adc a : jr nc,CASE00x
-
-CASE0c			jr z,ReloadByte2
+CASE0xx			add a : jr nc,CASE00x
+			jr z,ReloadByte2
 CASE01x			; "01" could be a 3-byte match or longer match
-			add a : jr c,CASE01c
+			add a : jr nc,CASE010
 
-CASE010:		; "010" is a 3-byte match
-			ld b,#FF
-			GET_BIT : jr nc,ShortOffset1
-
-			DUP 4
-			GET_BIT : rl b
-			EDUP
-			dec b
-
-ShortOffset1		push hl
-			ld l,(hl) : ld h,b
-			add hl,de
-
-			ldi : ldi : ldi
-
-			pop hl : inc hl
-		IFDEF	AllowUsingIX
-			jp (ix)
-		ELSE
-			jp MainLoop
-		ENDIF
-
-
-ReloadByte3		ld a,(hl) : inc hl : adc a : jr c,CASE001
-
-CASE000:		; "000"+ooo is a very close 1-byte match
-			ld b,#FF
-			DUP 3
-			GET_BIT : rl b
-			EDUP
-
-			push hl
-			ld l,b : ld h,#FF
-			add hl,de
-
-			ldi
-
-			pop hl
-		IFDEF	AllowUsingIX
-			jp (ix)
-		ELSE
-			jp MainLoop
-		ENDIF
-
-ReloadByte4		ld a,(hl) : inc hl : adc a : jr nc,CASE010
-
-CASE01c:		jr z,ReloadByte4
+			jr z,ReloadByte4
 CASE011:		; "011" are general length matches
 			ld bc,1					; BC = 1
 			GET_BIT : jr c,ShortLength		; significant speed-up
@@ -177,6 +108,68 @@ ShortOffset2		push hl
 			ldi : ldir : ldi : ldi
 			pop hl : inc hl
 
+		IFDEF	AllowUsingIX
+			jp (ix)
+		ELSE
+			jp MainLoop
+		ENDIF
+
+ReloadByte2		ld a,(hl) : inc hl : adc a : jr c,CASE01x
+CASE00x			add a : jr nc,CASE000 : jr z,ReloadByte3
+
+CASE001:		; "001"+[OFFSET] is a close 2-byte match
+			push hl
+			ld l,(hl) : ld h,#FF
+			add hl,de
+
+			ldi : ldi
+
+			pop hl : inc hl
+		IFDEF	AllowUsingIX
+			jp (ix)
+		ELSE
+			jp MainLoop
+		ENDIF
+
+ReloadByte4		ld a,(hl) : inc hl : adc a : jr c,CASE011
+
+CASE010:		; "010" is a 3-byte match
+			ld b,#FF
+			GET_BIT : jr nc,ShortOffset1
+
+			DUP 4
+			GET_BIT : rl b
+			EDUP
+			dec b
+
+ShortOffset1		push hl
+			ld l,(hl) : ld h,b
+			add hl,de
+
+			ldi : ldi : ldi
+
+			pop hl : inc hl
+		IFDEF	AllowUsingIX
+			jp (ix)
+		ELSE
+			jp MainLoop
+		ENDIF
+
+ReloadByte3		ld a,(hl) : inc hl : adc a : jr c,CASE001
+
+CASE000:		; "000"+ooo is a very close 1-byte match
+			ld b,#FF
+			DUP 3
+			GET_BIT : rl b
+			EDUP
+
+			push hl
+			ld l,b : ld h,#FF
+			add hl,de
+
+			ldi
+
+			pop hl
 		IFDEF	AllowUsingIX
 			jp (ix)
 		ELSE
