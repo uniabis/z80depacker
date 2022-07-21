@@ -60,22 +60,20 @@ ReloadByte1		ld a,(hl) : inc hl : adc a : jr nc,CASE0xx
 			DUP 1
 			ldi : add a : jr nc,CASE0xx
 			EDUP
+
+CASEc:	 		jr z,ReloadByte1
 ;
 ;  case "1"+BYTE: copy a single literal
 
-CASEc:	 		jr z,ReloadByte1
 CASE1:			ldi					; first byte is always copied as literal
 
 ;
 ;  main decompressor loop
 
 MainLoop:		add a : jr c,CASEc		; "1"+BYTE = copy literal
-CASE0xx			add a : jr nc,CASE00x
-			jr z,ReloadByte2
+CASE0xx			add a : jr nc,CASE00x : jr z,ReloadByte2
 CASE01x			; "01" could be a 3-byte match or longer match
-			add a : jr nc,CASE010
-
-			jr z,ReloadByte4
+			add a : jr nc,CASE010 : jr z,ReloadByte4
 CASE011:		; "011" are general length matches
 			ld bc,1					; BC = 1
 			GET_BIT : jr c,ShortLength		; significant speed-up
