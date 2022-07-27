@@ -1,9 +1,5 @@
 @echo off
 
-sjasmplus --raw=dehrust8_hl.bin dehrust8_hl.asm
-
-pause
-
 goto skip_debug
 
 rem sjasmplus --raw=lzedec.bin lzedec.mac
@@ -123,6 +119,7 @@ sjasmplus --raw=dehrust_stk_208b.bin dehrust_stk_208b.asm
 rem hrust8
 
 sjasmplus --raw=dehrust8_hl.bin dehrust8_hl.asm
+sjasmplus --raw=dehrust8_hl_size.bin dehrust8_hl_size.asm
 
 rem lz4
 
