@@ -1,5 +1,9 @@
 @echo off
 
+sjasmplus --raw=dehrust8_hl.bin dehrust8_hl.asm
+
+pause
+
 goto skip_debug
 
 rem sjasmplus --raw=lzedec.bin lzedec.mac

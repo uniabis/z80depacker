@@ -145,13 +145,7 @@ dehrust8:
 .code011:
 	call	.get_bit_proc
 
-	jr	nc, .code0110
-.code0111:
-	ld	e, #0F
-
-	jr	.get_offset_bit_loop
-
-
+	jr	c, .code0111
 
 .code0110:
 	ld	e, c
@@ -199,19 +193,11 @@ dehrust8:
 
 
 
-.check1100:
-	djnz	.set_length_c
-.code1100:
+.code0111:
+.get_offset10:
+	ld	de, #FF0F
 
-	call	.get_bit_proc
-
-	jr	nc, .code11000
-
-.code11001:
-	ld	de, #FF1F
-
-	call	.get_bits_proc
-	jr	.copy_rir
+	jr	.get_offset_bit_loop
 
 
 
@@ -231,7 +217,23 @@ dehrust8:
 
 	pop	de
 	ldir
-	jp	.main_loop
+	jr	.main_loop
+
+
+
+.check1100:
+	djnz	.set_length_c
+.code1100:
+
+	call	.get_bit_proc
+
+	jr	nc, .code11000
+
+.code11001:
+	ld	de, #FF1F
+
+	call	.get_bits_proc
+	jr	.copy_rir
 
 
 
@@ -297,14 +299,7 @@ dehrust8:
 
 .get_offset1x:
 	call	.get_bit_proc
-	jr	c, .get_offset11
-
-.get_offset10:
-	ld	de, #FF0F
-
-	jp	.get_offset_bit_loop
-
-
+	jr	nc, .get_offset10
 
 .get_offset11:
 	ex	af,af';'
