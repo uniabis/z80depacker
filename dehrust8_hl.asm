@@ -39,19 +39,38 @@ dehrust8:
 
 
 
-.offset_extend:
+.code011:
+	call	.get_bit_proc
+
+	jr	c, .code0111
+
+.code0110:
+	ld	e, c
+
+.checkE0:
+	push	af
+	ld	a, (hl)
+	inc	hl
+	cp	#E0
+	jr	nc, .rirE0
+	ld	e, a
 	pop	af
-	ex	af,af';'
-	rrca
-	ex	af,af';'
-	pop	de
-	jr	.main_loop
+
+	jr	.copy_block
 
 
 
 .code00:
 	inc	c
 	ld	de, #FF3F
+
+	jr	.get_offset_bit_loop
+
+
+
+.code0111:
+.get_offset10:
+	ld	de, #FF0F
 
 .get_offset_bit_loop:
 	call	.get_bits_proc
@@ -141,24 +160,40 @@ dehrust8:
 
 
 
-.code011:
+.get_offset1x:
 	call	.get_bit_proc
+	jr	nc, .get_offset10
 
-	jr	c, .code0111
-
-.code0110:
-	ld	e, c
-
-.checkE0:
-	push	af
-	ld	a, (hl)
-	inc	hl
-	cp	#E0
-	jr	nc, .rirE0
+.get_offset11:
+	ex	af,af';'
 	ld	e, a
-	pop	af
+	ex	af,af';'
+	dec	e
+	;jr	z, .exit1
+	call	.get_bits_proc
 
-	jr	.copy_block
+	ld	d, e
+	ld	e, (hl)
+	inc	hl
+
+	jp	.copy_block
+
+
+
+.offset_extend:
+	pop	af
+	ex	af,af';'
+	rrca
+	ex	af,af';'
+	pop	de
+	jr	.main_loop
+
+
+
+.get_offset01:
+	ld	de, #FF03
+
+	jr	.checkE0
 
 
 
@@ -189,14 +224,6 @@ dehrust8:
 	pop	hl
 
 	jr	.main_loop
-
-
-
-.code0111:
-.get_offset10:
-	ld	de, #FF0F
-
-	jr	.get_offset_bit_loop
 
 
 
@@ -263,13 +290,6 @@ dehrust8:
 
 
 
-.get_offset01:
-	ld	de, #FF03
-
-	jr	.checkE0
-
-
-
 .code11000:
 	call	.get_bit_proc
 	jr	c, .code110001
@@ -292,26 +312,6 @@ dehrust8:
 .short_length:
 	ld	a, e
 	jr	.set_length_bc
-
-
-
-.get_offset1x:
-	call	.get_bit_proc
-	jr	nc, .get_offset10
-
-.get_offset11:
-	ex	af,af';'
-	ld	e, a
-	ex	af,af';'
-	dec	e
-	;jr	z, .exit1
-	call	.get_bits_proc
-
-	ld	d, e
-	ld	e, (hl)
-	inc	hl
-
-	jp	.copy_block
 
 
 

@@ -1,4 +1,4 @@
-; hrust 8bits-buffer depacker for Z80 sjasm (231bytes)
+; hrust 8bits-buffer depacker for Z80 sjasm (230bytes)
 ;
 ; license:zlib license
 ;
@@ -51,6 +51,14 @@ dehrust8:
 .code00:
 	inc	c
 	ld	e, #3F
+
+	;jr	.get_offset_bit_loop
+	db	#CA ; Z80 opcode jp z,nnnn
+
+.code0111:
+.get_offset10:
+	ld	e, #0F
+
 
 .get_offset_bit_loop:
 	call	.get_bits_proc
@@ -148,6 +156,23 @@ dehrust8:
 
 
 
+.get_offset1x:
+	call	.get_bit_proc
+	jr	nc, .get_offset10
+
+.get_offset11:
+	ex	af,af';'
+	ld	e, a
+	ex	af,af';'
+	dec	e
+	;jr	z, .exit1
+	call	.get_bits_proc
+
+	ld	d, e
+	jr	.copy_block_reade
+
+
+
 .rirE0:
 	scf
 	adc	a, a
@@ -175,14 +200,6 @@ dehrust8:
 	jr	.main_loop_pophl
 	;pop	hl
 	;jr	.main_loop
-
-
-
-.code0111:
-.get_offset10:
-	ld	e, #0F
-
-	jr	.get_offset_bit_loop
 
 
 
@@ -245,26 +262,6 @@ dehrust8:
 	ld	e, #03
 
 	jr	.checkE0
-
-
-
-.get_offset1x:
-	call	.get_bit_proc
-	jr	nc, .get_offset10
-
-.get_offset11:
-	ex	af,af';'
-	ld	e, a
-	ex	af,af';'
-	dec	e
-	;jr	z, .exit1
-	call	.get_bits_proc
-
-	ld	d, e
-	jr	.copy_block_reade
-
-
-
 
 
 
