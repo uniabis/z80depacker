@@ -1,4 +1,4 @@
-; hrust 8bits-buffer depacker for Z80 sjasm
+; hrust 8bits-buffer depacker for Z80 sjasm (262bytes)
 ;
 ; license:zlib license
 ;

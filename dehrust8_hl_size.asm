@@ -1,4 +1,4 @@
-; hrust 8bits-buffer depacker for Z80 sjasm
+; hrust 8bits-buffer depacker for Z80 sjasm (231bytes)
 ;
 ; license:zlib license
 ;
@@ -34,8 +34,7 @@ dehrust8:
 	ld	a, #80
 	ex	af,af';'
 	ld	a, #80
-	ldi
-	jr	.main_loop
+	jr	.insert_one
 
 
 
@@ -64,6 +63,7 @@ dehrust8:
 
 	ldir
 
+.main_loop_pophl:
 	pop	hl
 
 	;jr	.main_loop
@@ -172,9 +172,9 @@ dehrust8:
 	inc	hl
 	ldi
 
-	pop	hl
-
-	jr	.main_loop
+	jr	.main_loop_pophl
+	;pop	hl
+	;jr	.main_loop
 
 
 
