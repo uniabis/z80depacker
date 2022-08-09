@@ -1,6 +1,6 @@
 ;
 ;  Speed-optimized LZF decompressor by spke (v.1 21-29/08/2018, 86 bytes)
-;(v.1 21p1-28/06/2022, 76 bytes)
+;(v.1 21p1-09/08/2022, 75 bytes)
 ;
 ;  The data must be comressed using the nearly optimal LZF command line compressor
 ;  (c) 2013-2018 Ilya Muravyov (aka encode); the command line is:
@@ -37,11 +37,11 @@ ShortMatch:	rlca : rlca : rlca
 		inc a : ld c,a				; BC = len
 
 
-		ld a,(hl) : inc hl
+		ld a,(hl)
 		and %00011111				; A = high(offset)
 
-
-CopyingMatch:	push hl : ld l,(hl) : ld h,a		; HL = offset
+CopyingMatch:	inc hl
+		push hl : ld l,(hl) : ld h,a		; HL = offset
 CopyingMatch2:	push de : ex de,hl			; DE = offset, HL = dest
 		sbc hl,de				; HL = dest-offset
 		pop de
@@ -68,6 +68,6 @@ Token20:	inc hl : ld a,(hl) : or a : ret z	; token #20 is shadowing as the first
 		jp CopyingMatch2
 
 LongMatch:	exa : inc hl
-		ld a,(hl) : inc hl
+		ld a,(hl)
 		add 9 : ld c,a : rl b
 		exa : jp CopyingMatch
