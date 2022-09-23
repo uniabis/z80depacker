@@ -21,6 +21,8 @@
 
 ;     DEFINE UPKR_UNPACK_SPEED        ; uncomment to get larger but faster unpack routine
 
+;     DEFINE AVOID_SELFMODIFYING_CODE ; uncomment to avoid self-modifying code for supporting ROM
+
 ; code size hint: if you put probs array just ahead of BASIC entry point, you will get BC
 ; initialised to probs.e by BASIC `USR` command and you can remove it from unpack init (-3B)
 
@@ -76,12 +78,6 @@ int upkr_unpack(void* destination, void* compressed_data) {
     return write_ptr - (u8*)destination;
 }
 */
-
-unpack_hlde:
-; IN: HL = compressed_data, DE = destination
-    push hl
-    pop ix
-    exx
 
 ; IN: IX = compressed_data, DE' = destination
 unpack:
