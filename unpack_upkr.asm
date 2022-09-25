@@ -1,5 +1,5 @@
 ;; https://github.com/exoticorn/upkr/blob/z80/c_unpacker/unpack.c - original C implementation
-;; C source in comments ahead of asm - the C macros are removed to keep only bitstream variant
+;; C source in comments ahead of asm - the C macros are removed to keep only z80 variant
 ;;
 ;; initial version by Peter "Ped" Helcmanovsky (C) 2022, licensed same as upkr project ("unlicensed")
 ;; to assemble use z00m's sjasmplus: https://github.com/z00m128/sjasmplus
