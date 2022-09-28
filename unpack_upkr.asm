@@ -95,7 +95,7 @@ unpack:
     jr      nz,.reset_probs
     exa
     ; BC = probs (context_index 0), state HL = 0, A' = 0x80 (no source bits left in upkr_current_byte)
-    jr .decompress_data:
+    jr      .decompress_data:
 
 .literal:
   ; * extract byte from compressed data (literal)
