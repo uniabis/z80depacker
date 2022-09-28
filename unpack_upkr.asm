@@ -12,16 +12,20 @@
 ;;     upkr.unpack
 ;;         IN: IX = packed data, DE' (shadow DE) = destination
 ;;         OUT: IX = after packed data
-;;         modifies: all registers except IY, requires 10 bytes of stack space
+;;         modifies: all registers except IY, requires ~12 bytes of stack space
 ;;
 
-;     DEFINE BACKWARDS_UNPACK         ; uncomment to build backwards depacker (write_ptr--, upkr_data_ptr--)
+;     DEFINE+ UPKR_INVERT_IS_MATCH_BIT    ; -1 byte unpack when --invert-is-match-bit
+
+;     DEFINE+ UPKR_REVERSE                ; reverse depacker (write_ptr--, upkr_data_ptr--), -4 bytes
             ; initial IX points at last byte of compressed data
             ; initial DE' points at last byte of unpacked data
 
-;     DEFINE UPKR_UNPACK_SPEED        ; uncomment to get larger but faster unpack routine
+;     DEFINE+ UPKR_UNPACK_SPEED           ; faster unpack routine, but +25 bytes
 
-;     DEFINE AVOID_SELFMODIFYING_CODE ; uncomment to avoid self-modifying code for supporting ROM
+;     DEFINE+ UPKR_ALLOW_USE_IY           ; allow use IY register, bit faster
+
+;     DEFINE+ UPKR_ALLOW_SELF_MODIFYING   ; allow use self-modifying code, bit faster
 
 ; code size hint: if you put probs array just ahead of BASIC entry point, you will get BC
 ; initialised to probs.e by BASIC `USR` command and you can remove it from unpack init (-3B)
@@ -78,10 +82,8 @@ int upkr_unpack(void* destination, void* compressed_data) {
     return write_ptr - (u8*)destination;
 }
 */
-
 ; IN: IX = compressed_data, DE' = destination
 unpack:
-
   ; ** reset probs to 0x80, also reset HL (state) to zero, and set BC to probs+context 0
     ld      hl,probs.c>>1
     ld      bc,probs.e
@@ -93,21 +95,30 @@ unpack:
     ld      (bc),a
     dec     l
     jr      nz,.reset_probs
+    IFNDEF UPKR_ALLOW_SELF_MODIFYING
+    IFNDEF UPKR_ALLOW_USE_IY
+        push    hl              ; push fake last offset (== 0) onto stack
+    ENDIF
+    ENDIF
     exa
     ; BC = probs (context_index 0), state HL = 0, A' = 0x80 (no source bits left in upkr_current_byte)
+
     jr      .decompress_data:
 
 .literal:
+    IFNDEF UPKR_INVERT_IS_MATCH_BIT
+        inc     c               ; init: byte = 1 (for non invert-is-match-bit variant)
+    ENDIF
+
   ; * extract byte from compressed data (literal)
-    inc     c                   ; C = byte = 1 (and also context_index)
 .decode_byte:
-    call    decode_bit          ; bit = upkr_decode_bit(byte);
-    rl      c                   ; byte = (byte << 1) + bit;
+    call    nc,decode_bit       ; init: skip        // loop: bit = upkr_decode_bit(byte);
+    rl      c                   ; init: byte = 1    // loop: byte = (byte << 1) + bit;
     jr      nc,.decode_byte     ; while(byte < 256)
     ld      a,c
     exx
     ld      (de),a              ; *write_ptr++ = byte;
-    IFNDEF BACKWARDS_UNPACK : inc de : ELSE : dec de : ENDIF
+    IFNDEF UPKR_REVERSE : inc de : ELSE : dec de : ENDIF
     exx
     ld      d,b                 ; prev_was_match = false
 
@@ -117,7 +128,11 @@ unpack:
 .decompress_data:
     ld      c,0
     call    decode_bit          ; if(upkr_decode_bit(0))
-    jr      nc,.literal
+    IFDEF UPKR_INVERT_IS_MATCH_BIT
+        jr      c,.literal
+    ELSE
+        jr      nc,.literal
+    ENDIF
 
   ; * copy chunk of already decompressed data (match)
 .copy_chunk:
@@ -129,17 +144,26 @@ unpack:
         ;             }
     cp      d                   ; CF = prev_was_match
     call    nc,decode_bit       ; if not prev_was_match, then upkr_decode_bit(256)
-    jr      nc,.keep_offset     ; if neither, keep old offset
+    jr      nc,.keep_offset     ; if neither, keep last offset
+    IFNDEF UPKR_ALLOW_SELF_MODIFYING
+    IFNDEF UPKR_ALLOW_USE_IY
+        pop     de              ; throw away last offset
+    ENDIF
+    ENDIF
     call    decode_number       ; context_index is already 257-1 as needed by decode_number
     dec     de                  ; offset = upkr_decode_length(257) - 1;
     ld      a,d
     or      e
     ret     z                   ; if(offset == 0) break
-    IFNDEF AVOID_SELFMODIFYING_CODE
-    ld      (.offset),de
+    IFNDEF UPKR_ALLOW_SELF_MODIFYING
+    IFNDEF UPKR_ALLOW_USE_IY
+        push    de              ; store new offset onto stack
     ELSE
-    push    de
-    pop     iy
+        push    de
+        pop     iy
+    ENDIF
+    ELSE
+        ld      (.offset),de
     ENDIF
 .keep_offset:
         ;             int length = upkr_decode_length(257 + 64);
@@ -152,31 +176,58 @@ unpack:
     call    decode_number_nc    ; length = upkr_decode_length(257 + 64);
     push    de
     exx
-    IFNDEF BACKWARDS_UNPACK
+  IFNDEF UPKR_REVERSE
+    IFNDEF UPKR_ALLOW_SELF_MODIFYING
+    IFNDEF UPKR_ALLOW_USE_IY
         ; forward unpack (write_ptr++, upkr_data_ptr++)
+        pop     bc              ; BC = length
+        pop     hl              ; HL = offset
+        push    hl              ; preserve current offset
+        push    de              ; preserve write_ptr
+        ex      de,hl           ; HL = write_ptr, DE = offset
+        sbc     hl,de           ; CF=0 from decode_number ; HL = write_ptr - offset
+        pop     de              ; restore write_ptr
+    ELSE
         ld      h,d             ; DE = write_ptr
         ld      l,e
-    IFNDEF AVOID_SELFMODIFYING_CODE
-.offset+*:  ld  bc,0
-    ELSE
         push    iy
         pop     bc
-    ENDIF
         sbc     hl,bc           ; CF=0 from decode_number ; HL = write_ptr - offset
         pop     bc              ; BC = length
+    ENDIF
+    ELSE
+        ld      h,d             ; DE = write_ptr
+        ld      l,e
+.offset+*:  ld  bc,0
+        sbc     hl,bc           ; CF=0 from decode_number ; HL = write_ptr - offset
+        pop     bc              ; BC = length
+    ENDIF
         ldir
-    ELSE
+  ELSE
+    IFNDEF UPKR_ALLOW_SELF_MODIFYING
+    IFNDEF UPKR_ALLOW_USE_IY
         ; backward unpack (write_ptr--, upkr_data_ptr--)
-    IFNDEF AVOID_SELFMODIFYING_CODE
-.offset+*:  ld  hl,0
+        pop     bc              ; BC = length
+        pop     hl              ; HL = offset
+        push    hl              ; preserve current offset
+        add     hl,de           ; HL = write_ptr + offset
     ELSE
+        ld      h,d             ; DE = write_ptr
+        ld      l,e
         push    iy
         pop     hl
-    ENDIF
         add     hl,de           ; HL = write_ptr + offset
         pop     bc              ; BC = length
-        lddr
     ENDIF
+    ELSE
+        ld      h,d             ; DE = write_ptr
+        ld      l,e
+.offset+*:  ld  hl,0
+        add     hl,de           ; HL = write_ptr + offset
+        pop     bc              ; BC = length
+    ENDIF
+        lddr
+  ENDIF
     exx
     ld      d,b                 ; prev_was_match = true
     djnz    .decompress_data    ; adjust context_index back to 0..255 range, go to main loop
@@ -233,7 +284,7 @@ decode_bit:
     jr      nz,.has_bit             ; CF=data, ZF=0 -> some bits + stop bit still available
   ; CF=1 (by stop bit)
     ld      a,(ix)
-    IFNDEF BACKWARDS_UNPACK : inc ix : ELSE : dec ix : ENDIF    ; upkr_current_byte = *upkr_data_ptr++;
+    IFNDEF UPKR_REVERSE : inc ix : ELSE : dec ix : ENDIF    ; upkr_current_byte = *upkr_data_ptr++;
     adc     a,a                     ; CF=data, b0=1 as new stop bit
 .has_bit:
     adc     hl,hl                   ; upkr_state = (upkr_state << 1) + (upkr_current_byte >> 7);

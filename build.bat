@@ -233,11 +233,10 @@ sjasmplus --raw=deshrinkler_np.bin deshrinkler_np.asm
 
 rem upkr
 
-sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_UNPACK_SPEED --raw=unpack_upkr_speed.bin unpack_upkr.asm
-sjasmplus -DUPKR_PROBS_ORIGIN=$3000 --raw=unpack_upkr_size.bin unpack_upkr.asm
-sjasmplus -DAVOID_SELFMODIFYING_CODE -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_UNPACK_SPEED --raw=unpack_upkr_speed_rom.bin unpack_upkr.asm
-sjasmplus -DAVOID_SELFMODIFYING_CODE -DUPKR_PROBS_ORIGIN=$3000 --raw=unpack_upkr_size_rom.bin unpack_upkr.asm
-
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_SELF_MODIFYING -DUPKR_UNPACK_SPEED --raw=unpack_upkr_speed.bin unpack_upkr.asm
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_SELF_MODIFYING --raw=unpack_upkr_size.bin unpack_upkr.asm
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY -DUPKR_UNPACK_SPEED --raw=unpack_upkr_speed_rom.bin unpack_upkr.asm
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY --raw=unpack_upkr_size_rom.bin unpack_upkr.asm
 
 rem zx0
 
