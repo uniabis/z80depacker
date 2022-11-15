@@ -79,7 +79,11 @@ map_disp_hi equ (map_disp_bit+map_len*2)
     ENDIF
 
 gb4     ld      a, (hl)
+      IF back==1
+        dec     hl
+      ELSE
         inc     hl
+      ENDIF
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 get4    adc     a, a
       ELSE
@@ -171,7 +175,11 @@ bit0    ld      (iy+map_disp_bit), a
     ENDIF
 
 gbi     ld      a, (hl)
+      IF back==1
+        dec     hl
+      ELSE
         inc     hl
+      ENDIF
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
         adc     a, a
       ELSE
@@ -185,7 +193,11 @@ gbi     ld      a, (hl)
       ENDIF
 
 gbm     ld      a, (hl)
+      IF back==1
+        dec     hl
+      ELSE
         inc     hl
+      ENDIF
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
         adc     a, a
       ELSE
@@ -194,7 +206,11 @@ gbm     ld      a, (hl)
         jr      nc, gbmc
 
 litcop:
+      IF back==1
+        ldd
+      ELSE
         ldi
+      ENDIF
 mloop:
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
         add     a, a
@@ -326,10 +342,16 @@ useofs:
         pop     bc
 
         ex      (sp), hl
+      IF back==1
+        ex      de, hl
+        add     hl,de
+        lddr
+      ELSE
         push    hl
         sbc     hl, de
         pop     de
         ldir
+      ENDIF
         pop     hl
 
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
@@ -365,9 +387,17 @@ litcat:
 
       IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
         ld      b, (hl)
+      IF back==1
+        dec     hl
+      ELSE
         inc     hl
+      ENDIF
         ld      c, (hl)
+      IF back==1
+        dec     hl
+      ELSE
         inc     hl
+      ENDIF
       ELSE
         ld      bc, 8 * 256
         or      a
@@ -375,7 +405,11 @@ litcat:
         call    lee16
         ex      de, hl
       ENDIF
+      IF back==1
+        lddr
+      ELSE
         ldir
+      ENDIF
 
       IF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
 
@@ -410,7 +444,11 @@ checkreuse:
         jr      nz, .skip
 
         ld      a, (de)
+      IF back==1
+        dec     de
+      ELSE
         inc     de
+      ENDIF
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
         adc     a, a
       ELSE
@@ -434,7 +472,11 @@ getbits jp      p, lee8
         srl     b
         defb    250     ;250=0FAh;JP M,nnnn
 xopy    ld      a, (de)
+      IF back==1
+        dec     de
+      ELSE
         inc     de
+      ENDIF
 
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 lee16   adc     a, a
@@ -450,7 +492,11 @@ lee16   rr      a
 
 gby     ex      de, hl
         ld      c, (hl)
+      IF back==1
+        dec     hl
+      ELSE
         inc     hl
+      ENDIF
         ex      de, hl
         ret
 
@@ -460,7 +506,11 @@ gby     ld      c, 1
         or      a
         defb    218     ;218=0DAh;JP C,nnnn
 .f      ld      a, (de)
+      IF back==1
+        dec     de
+      ELSE
         inc     de
+      ENDIF
 
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 .l      adc     a, a
@@ -475,7 +525,11 @@ gby     ld      c, 1
     ENDIF
 
 copy    ld      a, (de)
+      IF back==1
+        dec     de
+      ELSE
         inc     de
+      ENDIF
       IF (PFLAG_CODE & PFLAG_BITS_ORDER_BE)
 lee8    adc     a, a
       ELSE

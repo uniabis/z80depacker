@@ -71,7 +71,7 @@ rem sjasmplus -DINLINE_GETBIT=1 --raw=deexo_180_fast.bin deexo_180.asm
 
 sjasmplus -DINLINE_GETBIT=1 -DOPTIMIZE_JUMP=1 --raw=deexo_180_fast_jp.bin deexo_180.asm
 
-sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=0 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p0.bin deexoopt_f3.asm
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=0 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_x3_180_p0.bin deexoopt_x3.asm
 
 sjasmplus -DPFLAG_CODE=0 --raw=deexo3_p0.bin deexo3.asm 
 
@@ -86,11 +86,11 @@ rem sjasmplus -DINLINE_GETBIT=1 --raw=deexo3p7_fast.bin deexo3p7.asm
 
 sjasmplus -DINLINE_GETBIT=1 -DOPTIMIZE_JUMP=1 --raw=deexo3p7_fast_jp.bin deexo3p7.asm 
 
-sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=3 --raw=deexoopt_p7.bin deexoopt.asm
+sjasmplus -Dbitsalignstart=0 -Dmapbase=0100h -Dliterals=1 -Dback=0 -Dspeed=3 --raw=deexoopt_p7.bin deexoopt_p7.asm
 
-sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_f3_p7.bin deexoopt_f3.asm
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_x3_p7.bin deexoopt_x3.asm
 
-sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p7.bin deexoopt_f3.asm
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=7 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_x3_180_p7.bin deexoopt_x3.asm
 
 sjasmplus -Dmapbase=0200h -Dliterals=1 -Dreuse=0 --raw=deexoopt_f3_fixed_p7.bin deexoopt_f3_fixed.asm
 
@@ -98,9 +98,9 @@ rem exomizer3.1
 
 sjasmplus -DPFLAG_CODE=39 --raw=deexo3_p39.bin deexo3.asm 
 
-sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=39 -Dmapbase=0200h -Dliterals=1 --raw=deexoopt_f3_p39.bin deexoopt_f3.asm
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=39 -Dmapbase=0200h -Dliterals=1 --raw=deexoopt_x3_p39.bin deexoopt_x3.asm
 
-sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=39 -Dmapbase=0200h -Dliterals=1 -DHD64180=1 --raw=deexoopt_f3_180_p39.bin deexoopt_f3.asm
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=39 -Dmapbase=0200h -Dliterals=1 -DHD64180=1 --raw=deexoopt_x3_180_p39.bin deexoopt_x3.asm
 
 sjasmplus -Dmapbase=0200h -Dliterals=1 -Dreuse=1 --raw=deexoopt_f3_fixed_p39.bin deexoopt_f3_fixed.asm
 
