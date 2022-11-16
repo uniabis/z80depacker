@@ -223,6 +223,8 @@ rem sjasmplus --raw=shrinkler_recall_209_r800_ram.bin shrinkler_recall_209_r800.
 sjasmplus -DROM=1 --raw=shrinkler_recall_209_r800_rom.bin shrinkler_recall_209_r800.asm
 
 sjasmplus --raw=deshrinkler.bin deshrinkler.asm
+sjasmplus --raw=deshrinkler_p1.bin deshrinkler_p1.asm
+sjasmplus -DHD64180 --raw=deshrinkler_p1_180.bin deshrinkler_p1.asm
 
 rem shrinkler(NP)
 
@@ -230,6 +232,8 @@ sjasmplus --raw=deshrink_np.bin deshrink_np.asm
 sjasmplus -DROM=1 --raw=deshrink_np_r800.bin deshrink_np_r800.asm
 
 sjasmplus --raw=deshrinkler_np.bin deshrinkler_np.asm
+sjasmplus --raw=deshrinkler_np_p1.bin deshrinkler_np_p1.asm
+sjasmplus -DHD64180 --raw=deshrinkler_np_p1_180.bin deshrinkler_np_p1.asm
 
 rem upkr
 

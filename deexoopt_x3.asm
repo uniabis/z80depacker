@@ -23,6 +23,14 @@
 ;   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 ;
 
+
+  IFNDEF back
+    ; without -b option
+    DEFINE back 0
+    ; with -b option
+    ;DEFINE back 1
+  ENDIF
+
   DEFINE PFLAG_BITS_ORDER_BE (1<<0)
   DEFINE PFLAG_BITS_COPY_GT_7 (1<<1)
   DEFINE PFLAG_IMPL_1LITERAL (1<<2)
