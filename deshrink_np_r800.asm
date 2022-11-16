@@ -10,7 +10,7 @@
 ; v9: DE init optimisation          14.23 s   / 208 bytes
 ; vA: no more parity context                  / 202 bytes
 ; r800: replace SLL A to ADC A                / 202 bytes
-; rom: remove self-modification               / 205 bytes
+; rom: remove self-modification               / 202 bytes
 
 ; CALL shrinkler_decrunch
 ; input IX=source
@@ -116,6 +116,10 @@ readbit
           SLA  E
           RL   D ; d3 <<= 1
           EX   AF,AF'
+        IFNDEF ROM
+        ELSE
+          ADD  IY,IY
+        ENDIF
           ADD  A
           JR   NZ,_rbok
           LD   A,(IX)
@@ -131,10 +135,8 @@ d2        LD   HL,#00   ; TODO replace by IY
           POP  HL
         ELSE
           JR   NC,iync
-          ADD  IY,IY
           INC  IY
-          DB   #CA      ; (JP z,nnnn)
-iync      ADD  IY,IY
+iync
         ENDIF
           EX   AF,AF'
           JR   getbit

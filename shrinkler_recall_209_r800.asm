@@ -10,7 +10,7 @@
 ; v8: replace D5 by HL              14.23 s   / 209 bytes
 ; v9: DE init optimisation          14.23 s   / 208 bytes
 ; r800: replace SLL A to SCF/RLA    14.23 s   / 208 bytes
-; rom: remove self-modification     14.17 s   / 211 bytes
+; rom: remove self-modification     14.17 s   / 208 bytes
 
 ; shrinkler_decrunch
 ; input IX=source
@@ -115,6 +115,10 @@ readbit
           SLA  E
           RL   D ; d3 <<= 1
           EX   AF,AF'
+        IFNDEF ROM
+        ELSE
+          ADD  IY,IY
+        ENDIF
           ADD  A
           JR   NZ,_rbok
           LD   A,(IX)
@@ -131,10 +135,8 @@ d2        LD   HL,#00   ; TODO replace by IY
           POP  HL
         ELSE
           JR   NC,iync
-          ADD  IY,IY
           INC  IY
-          DB   #CA      ; (JP z,nnnn)
-iync      ADD  IY,IY
+iync
         ENDIF
           EX   AF,AF'
           JR   getbit
