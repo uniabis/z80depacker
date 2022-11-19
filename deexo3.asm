@@ -288,6 +288,8 @@ start_copy:
 
 	exx
 
+	push	bc
+
 	jr	nz, new_offset
 
 	ex	af, af'	;'
@@ -303,9 +305,11 @@ new_offset:
 	ld	a, b
 	or	a
 
-	ENDIF
+	ELSE
 
 	push	bc
+
+	ENDIF
 
 	jr	nz, defaultofs
 	dec	c
@@ -428,8 +432,6 @@ reuse_exit
 reuse_offset_ix:
 
 	ex	af, af'	;'
-
-	push	bc
 
 	push	ix
 	pop	bc

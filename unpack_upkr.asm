@@ -204,27 +204,21 @@ unpack:
     ENDIF
         ldir
   ELSE
+        pop     bc              ; BC = length
     IFNDEF UPKR_ALLOW_SELF_MODIFYING
     IFNDEF UPKR_ALLOW_USE_IY
         ; backward unpack (write_ptr--, upkr_data_ptr--)
-        pop     bc              ; BC = length
         pop     hl              ; HL = offset
         push    hl              ; preserve current offset
         add     hl,de           ; HL = write_ptr + offset
     ELSE
-        ld      h,d             ; DE = write_ptr
-        ld      l,e
         push    iy
         pop     hl
         add     hl,de           ; HL = write_ptr + offset
-        pop     bc              ; BC = length
     ENDIF
     ELSE
-        ld      h,d             ; DE = write_ptr
-        ld      l,e
 .offset+*:  ld  hl,0
         add     hl,de           ; HL = write_ptr + offset
-        pop     bc              ; BC = length
     ENDIF
         lddr
   ENDIF

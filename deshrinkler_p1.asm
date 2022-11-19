@@ -108,8 +108,8 @@ readbit
 		ex de,hl
 		add hl,hl
 		ex de,hl
-		add iy,iy
 		ex af,af'
+		add iy,iy
 		add a,a
 		jr nz,_rbok
 		ld a,(ix)
