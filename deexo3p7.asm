@@ -2,8 +2,8 @@
 ;Copyright (C) 2008-2016 by Jaime Tejedor Gomez (Metalbrain)
 ;
 ;Optimized by Antonio Villena and Urusergi (169 bytes)
-;Modified using z80 alternate registers to prevent undocumented instruction(169 -> 167bytes)
-;Modified for Exomizer 3 raw -P7(default) (167 -> 176bytes)
+;Modified using z80 alternate registers to prevent undocumented instruction(169 -> 167bytes) by uniabis
+;Modified for Exomizer 3 raw -P7(default) (167 -> 176bytes) by uniabis
 ;Apply speed boost(176 -> 179bytes)
 ;Replace JR with JP(179-> 181ytes)
 ;

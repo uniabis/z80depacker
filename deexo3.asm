@@ -2,7 +2,7 @@
 ;
 ; license:zlib license
 ;
-; Copyright (c) 2019-2021 uniabis
+; Copyright (c) 2019-2022 uniabis
 ;
 ; This software is provided 'as-is', without any express or implied
 ; warranty. In no event will the authors be held liable for any damages
@@ -29,6 +29,13 @@
 	DEFINE	INLINE_GETBITS8	1
 	DEFINE	INLINE_FILBIT	0
 
+; -b option
+	IFNDEF BACKWARDS
+	;DEFINE	BACKWARDS	1
+	DEFINE	BACKWARDS	0
+	ENDIF
+
+; -P option bits
 	DEFINE	PFLAG_BITS_ORDER_BE	(1<<0)
 	DEFINE	PFLAG_BITS_COPY_GT_7	(1<<1)
 	DEFINE	PFLAG_IMPL_1LITERAL	(1<<2)
@@ -69,7 +76,11 @@ tbl_size_all	EQU	(tbl_bytes + tbl_bytes + tbl_bytes)
 
 	MACRO	m_filbit1
 	ld	a, (hl)
+	IF BACKWARDS==1
+	dec	hl
+	ELSE
 	inc	hl
+	ENDIF
 	rla
 	ENDM
 	ELSE
@@ -79,7 +90,11 @@ tbl_size_all	EQU	(tbl_bytes + tbl_bytes + tbl_bytes)
 
 	MACRO	m_filbit1
 	ld	a, (hl)
+	IF BACKWARDS==1
+	dec	hl
+	ELSE
 	inc	hl
+	ENDIF
 	rra
 	ENDM
 	ENDIF
@@ -149,7 +164,11 @@ deexo3:
 
 gb4:
 	ld	a, (hl)
+	IF BACKWARDS==1
+	dec	hl
+	ELSE
 	inc	hl
+	ENDIF
 
 init:
 get4:
@@ -227,7 +246,11 @@ filbit:
 
 literal_one:
 
+	IF BACKWARDS==1
+	ldd
+	ELSE
 	ldi
+	ENDIF
 
 next:
 	IF (INLINE_FILBIT == 1)
@@ -354,15 +377,19 @@ reuse_offset_bc:
 
 	ex	(sp), hl
 	push	hl
-
 	ld	h, d
 	ld	l, e
+
+	IF BACKWARDS==1
+	add	hl, bc
+	pop	bc
+	lddr
+	ELSE
 	;or	a	;clear CF
 	sbc	hl, bc
-
 	pop	bc
-
 	ldir
+	ENDIF
 
 	pop	hl
 
@@ -398,10 +425,18 @@ literal:
 
 	IF (PFLAG_CODE & PFLAG_BITS_COPY_GT_7)
 	ld	b, (hl)
+	IF BACKWARDS==1
+	dec	hl
+	ELSE
 	inc	hl
+	ENDIF
 
 	ld	c, (hl)
+	IF BACKWARDS==1
+	dec	hl
+	ELSE
 	inc	hl
+	ENDIF
 	ELSE
 
 	ld	c, b
@@ -410,7 +445,11 @@ literal:
 	call	p_getbits16_b
 	ENDIF
 
+	IF BACKWARDS==1
+	lddr
+	ELSE
 	ldir
+	ENDIF
 
 	ex	af, af'	;'
 
@@ -450,6 +489,7 @@ p_readtable:
 ;[out]
 ; bc :bits data
 ; ZF :set if high byte of output bits data equals zero
+; CF :reset always
 ;[affect]
 ; af', hl :bit buffer & pointer
 ;[work]
@@ -473,7 +513,11 @@ p_readtable:
 
 	ld	b, c
 	ld	c, (hl)
+	IF BACKWARDS==1
+	dec	hl
+	ELSE
 	inc	hl
+	ENDIF
 
 .skp4:
 

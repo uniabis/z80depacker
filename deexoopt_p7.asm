@@ -3,6 +3,8 @@
 ;
 ;Optimized by Antonio Villena and Urusergi
 ;
+;Fixed a bug, and supported raw default on Exomizer3.0(-P7) by uniabis
+;
 ;Compression algorithm by Magnus Lind
 ;   exomizer raw -P5 -T0 [-b] (speed<3, literals=1, bitsalignstart=0)
 ;   exomizer raw -P5 -T1 [-b] (speed<3, literals=0, bitsalignstart=0)

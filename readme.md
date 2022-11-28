@@ -184,6 +184,7 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |ApLib|unaplib_small|o|o|o|            139|61.57%|LDIR x 7.52||
 |Bitbuster|depack.gen|o|o|o|            168|65.64%|LDIR x 4.55||
 |Bitbuster|debitbust|o|o|o|             89|65.64%|LDIR x 5.95||
+|Bitbuster|debitbustp0|o|o|o|             84|65.64%|LDIR x 5.84|Bit faster, shorter from debitbust|
 |Bitbuster|debitbustp1|o|o|o|             88|65.64%|LDIR x 5.30|Bit faster, shorter from debitbust|
 |Bitbuster|debitbustp2|o|o|o|             96|65.64%|LDIR x 4.44|Faster, but longer from debitbust|
 |BitBuster2|bitbuster|o|x|o|             91|65.53%|LDIR x 5.27||
@@ -321,6 +322,7 @@ test data:ALL(16*16KB)
 |ApLib|unaplib_small|            139|        161,422<br />(61.57%)|     45,350,252<br />(LDIR x 7.52)|
 |Bitbuster|depack.gen|            168|        172,080<br />(65.64%)|     27,472,252<br />(LDIR x 4.55)|
 |Bitbuster|debitbust|             89|        172,080<br />(65.64%)|     35,875,562<br />(LDIR x 5.95)|
+|Bitbuster|debitbustp0|             84|        172,080<br />(65.64%)|     35,233,892<br />(LDIR x 5.84)|
 |Bitbuster|debitbustp1|             88|        172,080<br />(65.64%)|     32,002,274<br />(LDIR x 5.30)|
 |Bitbuster|debitbustp2|             96|        172,080<br />(65.64%)|     26,816,065<br />(LDIR x 4.44)|
 |BitBuster2|bitbuster|             91|        171,783<br />(65.53%)|     31,824,231<br />(LDIR x 5.27)|
@@ -453,6 +455,7 @@ test data:MEGASDHC.B00(16KB)
 |ApLib|unaplib_small|            139|          9,367<br />(57.17%)|      2,374,849<br />(LDIR x 6.30)|
 |Bitbuster|depack.gen|            168|          9,830<br />(59.99%)|      1,399,638<br />(LDIR x 3.71)|
 |Bitbuster|debitbust|             89|          9,830<br />(59.99%)|      1,819,624<br />(LDIR x 4.82)|
+|Bitbuster|debitbustp0|             84|          9,830<br />(59.99%)|      1,768,600<br />(LDIR x 4.69)|
 |Bitbuster|debitbustp1|             88|          9,830<br />(59.99%)|      1,569,711<br />(LDIR x 4.16)|
 |Bitbuster|debitbustp2|             96|          9,830<br />(59.99%)|      1,342,164<br />(LDIR x 3.56)|
 |BitBuster2|bitbuster|             91|          9,827<br />(59.97%)|      1,641,694<br />(LDIR x 4.35)|
@@ -585,6 +588,7 @@ test data:MEGASDHC.B01(16KB)
 |ApLib|unaplib_small|            139|          4,926<br />(30.06%)|      1,495,184<br />(LDIR x 3.96)|
 |Bitbuster|depack.gen|            168|          5,133<br />(31.32%)|        959,594<br />(LDIR x 2.54)|
 |Bitbuster|debitbust|             89|          5,133<br />(31.32%)|      1,193,386<br />(LDIR x 3.16)|
+|Bitbuster|debitbustp0|             84|          5,133<br />(31.32%)|      1,156,560<br />(LDIR x 3.06)|
 |Bitbuster|debitbustp1|             88|          5,133<br />(31.32%)|      1,055,487<br />(LDIR x 2.80)|
 |Bitbuster|debitbustp2|             96|          5,133<br />(31.32%)|        919,960<br />(LDIR x 2.44)|
 |BitBuster2|bitbuster|             91|          5,127<br />(31.29%)|      1,083,357<br />(LDIR x 2.87)|
@@ -717,6 +721,7 @@ test data:MEGASDHC.B02(16KB)
 |ApLib|unaplib_small|            139|         12,594<br />(76.86%)|      3,253,015<br />(LDIR x 8.63)|
 |Bitbuster|depack.gen|            168|         13,188<br />(80.49%)|      1,885,126<br />(LDIR x 5.00)|
 |Bitbuster|debitbust|             89|         13,188<br />(80.49%)|      2,486,914<br />(LDIR x 6.59)|
+|Bitbuster|debitbustp0|             84|         13,188<br />(80.49%)|      2,450,689<br />(LDIR x 6.50)|
 |Bitbuster|debitbustp1|             88|         13,188<br />(80.49%)|      2,193,808<br />(LDIR x 5.82)|
 |Bitbuster|debitbustp2|             96|         13,188<br />(80.49%)|      1,844,777<br />(LDIR x 4.89)|
 |BitBuster2|bitbuster|             91|         13,166<br />(80.35%)|      2,221,103<br />(LDIR x 5.89)|
@@ -849,6 +854,7 @@ test data:MEGASDHC.B03(16KB)
 |ApLib|unaplib_small|            139|         12,340<br />(75.31%)|      3,063,845<br />(LDIR x 8.13)|
 |Bitbuster|depack.gen|            168|         12,856<br />(78.46%)|      1,758,233<br />(LDIR x 4.66)|
 |Bitbuster|debitbust|             89|         12,856<br />(78.46%)|      2,322,296<br />(LDIR x 6.16)|
+|Bitbuster|debitbustp0|             84|         12,856<br />(78.46%)|      2,278,582<br />(LDIR x 6.04)|
 |Bitbuster|debitbustp1|             88|         12,856<br />(78.46%)|      2,021,969<br />(LDIR x 5.36)|
 |Bitbuster|debitbustp2|             96|         12,856<br />(78.46%)|      1,708,568<br />(LDIR x 4.53)|
 |BitBuster2|bitbuster|             91|         12,849<br />(78.42%)|      2,092,185<br />(LDIR x 5.55)|
@@ -981,6 +987,7 @@ test data:MSX2MAIN.B00(16KB)
 |ApLib|unaplib_small|            139|         12,835<br />(78.33%)|      3,066,458<br />(LDIR x 8.13)|
 |Bitbuster|depack.gen|            168|         13,293<br />(81.13%)|      1,713,241<br />(LDIR x 4.54)|
 |Bitbuster|debitbust|             89|         13,293<br />(81.13%)|      2,262,023<br />(LDIR x 6.00)|
+|Bitbuster|debitbustp0|             84|         13,293<br />(81.13%)|      2,195,460<br />(LDIR x 5.82)|
 |Bitbuster|debitbustp1|             88|         13,293<br />(81.13%)|      1,922,696<br />(LDIR x 5.10)|
 |Bitbuster|debitbustp2|             96|         13,293<br />(81.13%)|      1,636,331<br />(LDIR x 4.34)|
 |BitBuster2|bitbuster|             91|         13,279<br />(81.04%)|      2,031,327<br />(LDIR x 5.39)|
@@ -1113,6 +1120,7 @@ test data:MSX2MAIN.B01(16KB)
 |ApLib|unaplib_small|            139|         13,579<br />(82.87%)|      3,267,039<br />(LDIR x 8.66)|
 |Bitbuster|depack.gen|            168|         14,088<br />(85.98%)|      1,830,290<br />(LDIR x 4.85)|
 |Bitbuster|debitbust|             89|         14,088<br />(85.98%)|      2,431,874<br />(LDIR x 6.45)|
+|Bitbuster|debitbustp0|             84|         14,088<br />(85.98%)|      2,392,786<br />(LDIR x 6.34)|
 |Bitbuster|debitbustp1|             88|         14,088<br />(85.98%)|      2,108,897<br />(LDIR x 5.59)|
 |Bitbuster|debitbustp2|             96|         14,088<br />(85.98%)|      1,782,948<br />(LDIR x 4.73)|
 |BitBuster2|bitbuster|             91|         14,076<br />(85.91%)|      2,197,580<br />(LDIR x 5.83)|
@@ -1245,6 +1253,7 @@ test data:MSXMUSIC.B00(16KB)
 |ApLib|unaplib_small|            139|         10,048<br />(61.32%)|      2,500,088<br />(LDIR x 6.63)|
 |Bitbuster|depack.gen|            168|         10,551<br />(64.39%)|      1,420,395<br />(LDIR x 3.76)|
 |Bitbuster|debitbust|             89|         10,551<br />(64.39%)|      1,856,557<br />(LDIR x 4.92)|
+|Bitbuster|debitbustp0|             84|         10,551<br />(64.39%)|      1,793,945<br />(LDIR x 4.76)|
 |Bitbuster|debitbustp1|             88|         10,551<br />(64.39%)|      1,576,068<br />(LDIR x 4.18)|
 |Bitbuster|debitbustp2|             96|         10,551<br />(64.39%)|      1,349,111<br />(LDIR x 3.58)|
 |BitBuster2|bitbuster|             91|         10,542<br />(64.34%)|      1,675,783<br />(LDIR x 4.44)|
@@ -1377,6 +1386,7 @@ test data:MSX2EXT.B00(16KB)
 |ApLib|unaplib_small|            139|         12,361<br />(75.44%)|      3,124,037<br />(LDIR x 8.29)|
 |Bitbuster|depack.gen|            168|         13,013<br />(79.42%)|      1,744,445<br />(LDIR x 4.62)|
 |Bitbuster|debitbust|             89|         13,013<br />(79.42%)|      2,299,272<br />(LDIR x 6.10)|
+|Bitbuster|debitbustp0|             84|         13,013<br />(79.42%)|      2,236,204<br />(LDIR x 5.93)|
 |Bitbuster|debitbustp1|             88|         13,013<br />(79.42%)|      1,973,131<br />(LDIR x 5.23)|
 |Bitbuster|debitbustp2|             96|         13,013<br />(79.42%)|      1,672,895<br />(LDIR x 4.43)|
 |BitBuster2|bitbuster|             91|         12,998<br />(79.33%)|      2,057,758<br />(LDIR x 5.46)|
@@ -1509,6 +1519,7 @@ test data:KANJJ1.B00(16KB)
 |ApLib|unaplib_small|            139|          6,222<br />(37.97%)|      2,286,225<br />(LDIR x 6.06)|
 |Bitbuster|depack.gen|            168|          6,683<br />(40.78%)|      1,573,785<br />(LDIR x 4.17)|
 |Bitbuster|debitbust|             89|          6,683<br />(40.78%)|      2,000,457<br />(LDIR x 5.30)|
+|Bitbuster|debitbustp0|             84|          6,683<br />(40.78%)|      1,934,967<br />(LDIR x 5.13)|
 |Bitbuster|debitbustp1|             88|          6,683<br />(40.78%)|      1,831,976<br />(LDIR x 4.86)|
 |Bitbuster|debitbustp2|             96|          6,683<br />(40.78%)|      1,514,591<br />(LDIR x 4.01)|
 |BitBuster2|bitbuster|             91|          6,661<br />(40.65%)|      1,716,295<br />(LDIR x 4.55)|
@@ -1641,6 +1652,7 @@ test data:KANJJ1.B01(16KB)
 |ApLib|unaplib_small|            139|          4,090<br />(24.96%)|      1,681,221<br />(LDIR x 4.46)|
 |Bitbuster|depack.gen|            168|          4,507<br />(27.50%)|      1,217,510<br />(LDIR x 3.23)|
 |Bitbuster|debitbust|             89|          4,507<br />(27.50%)|      1,515,937<br />(LDIR x 4.02)|
+|Bitbuster|debitbustp0|             84|          4,507<br />(27.50%)|      1,465,787<br />(LDIR x 3.88)|
 |Bitbuster|debitbustp1|             88|          4,507<br />(27.50%)|      1,397,874<br />(LDIR x 3.70)|
 |Bitbuster|debitbustp2|             96|          4,507<br />(27.50%)|      1,172,677<br />(LDIR x 3.11)|
 |BitBuster2|bitbuster|             91|          4,495<br />(27.43%)|      1,316,038<br />(LDIR x 3.49)|
@@ -1773,6 +1785,7 @@ test data:KANJJ1.B02(16KB)
 |ApLib|unaplib_small|            139|         10,834<br />(66.12%)|      3,266,915<br />(LDIR x 8.66)|
 |Bitbuster|depack.gen|            168|         11,785<br />(71.92%)|      2,031,231<br />(LDIR x 5.39)|
 |Bitbuster|debitbust|             89|         11,785<br />(71.92%)|      2,663,938<br />(LDIR x 7.06)|
+|Bitbuster|debitbustp0|             84|         11,785<br />(71.92%)|      2,643,230<br />(LDIR x 7.01)|
 |Bitbuster|debitbustp1|             88|         11,785<br />(71.92%)|      2,436,521<br />(LDIR x 6.46)|
 |Bitbuster|debitbustp2|             96|         11,785<br />(71.92%)|      2,014,919<br />(LDIR x 5.34)|
 |BitBuster2|bitbuster|             91|         11,750<br />(71.71%)|      2,341,765<br />(LDIR x 6.21)|
@@ -1905,6 +1918,7 @@ test data:KANJJ1.B03(16KB)
 |ApLib|unaplib_small|            139|         10,642<br />(64.95%)|      3,253,695<br />(LDIR x 8.63)|
 |Bitbuster|depack.gen|            168|         11,599<br />(70.79%)|      2,011,444<br />(LDIR x 5.33)|
 |Bitbuster|debitbust|             89|         11,599<br />(70.79%)|      2,638,165<br />(LDIR x 7.00)|
+|Bitbuster|debitbustp0|             84|         11,599<br />(70.79%)|      2,617,097<br />(LDIR x 6.94)|
 |Bitbuster|debitbustp1|             88|         11,599<br />(70.79%)|      2,413,758<br />(LDIR x 6.40)|
 |Bitbuster|debitbustp2|             96|         11,599<br />(70.79%)|      1,995,678<br />(LDIR x 5.29)|
 |BitBuster2|bitbuster|             91|         11,568<br />(70.60%)|      2,318,021<br />(LDIR x 6.15)|
@@ -2037,6 +2051,7 @@ test data:KANJJ1.B04(16KB)
 |ApLib|unaplib_small|            139|         10,519<br />(64.20%)|      3,219,556<br />(LDIR x 8.54)|
 |Bitbuster|depack.gen|            168|         11,542<br />(70.44%)|      2,012,444<br />(LDIR x 5.34)|
 |Bitbuster|debitbust|             89|         11,542<br />(70.44%)|      2,638,215<br />(LDIR x 7.00)|
+|Bitbuster|debitbustp0|             84|         11,542<br />(70.44%)|      2,615,179<br />(LDIR x 6.93)|
 |Bitbuster|debitbustp1|             88|         11,542<br />(70.44%)|      2,413,331<br />(LDIR x 6.40)|
 |Bitbuster|debitbustp2|             96|         11,542<br />(70.44%)|      1,994,472<br />(LDIR x 5.29)|
 |BitBuster2|bitbuster|             91|         11,513<br />(70.26%)|      2,313,686<br />(LDIR x 6.13)|
@@ -2169,6 +2184,7 @@ test data:KANJJ1.B05(16KB)
 |ApLib|unaplib_small|            139|         10,453<br />(63.80%)|      3,180,433<br />(LDIR x 8.43)|
 |Bitbuster|depack.gen|            168|         11,493<br />(70.14%)|      1,995,190<br />(LDIR x 5.29)|
 |Bitbuster|debitbust|             89|         11,493<br />(70.14%)|      2,613,596<br />(LDIR x 6.93)|
+|Bitbuster|debitbustp0|             84|         11,493<br />(70.14%)|      2,587,676<br />(LDIR x 6.86)|
 |Bitbuster|debitbustp1|             88|         11,493<br />(70.14%)|      2,385,274<br />(LDIR x 6.32)|
 |Bitbuster|debitbustp2|             96|         11,493<br />(70.14%)|      1,973,935<br />(LDIR x 5.23)|
 |BitBuster2|bitbuster|             91|         11,469<br />(70.00%)|      2,299,875<br />(LDIR x 6.10)|
@@ -2301,6 +2317,7 @@ test data:KANJJ1.B06(16KB)
 |ApLib|unaplib_small|            139|         10,815<br />(66.00%)|      3,299,397<br />(LDIR x 8.75)|
 |Bitbuster|depack.gen|            168|         11,778<br />(71.88%)|      2,028,181<br />(LDIR x 5.38)|
 |Bitbuster|debitbust|             89|         11,778<br />(71.88%)|      2,661,582<br />(LDIR x 7.06)|
+|Bitbuster|debitbustp0|             84|         11,778<br />(71.88%)|      2,641,221<br />(LDIR x 7.00)|
 |Bitbuster|debitbustp1|             88|         11,778<br />(71.88%)|      2,433,808<br />(LDIR x 6.45)|
 |Bitbuster|debitbustp2|             96|         11,778<br />(71.88%)|      2,012,514<br />(LDIR x 5.34)|
 |BitBuster2|bitbuster|             91|         11,746<br />(71.69%)|      2,339,207<br />(LDIR x 6.20)|
@@ -2433,6 +2450,7 @@ test data:KANJJ1.B07(16KB)
 |ApLib|unaplib_small|            139|          9,797<br />(59.79%)|      3,018,295<br />(LDIR x 8.00)|
 |Bitbuster|depack.gen|            168|         10,741<br />(65.55%)|      1,891,505<br />(LDIR x 5.01)|
 |Bitbuster|debitbust|             89|         10,741<br />(65.55%)|      2,471,726<br />(LDIR x 6.55)|
+|Bitbuster|debitbustp0|             84|         10,741<br />(65.55%)|      2,455,909<br />(LDIR x 6.51)|
 |Bitbuster|debitbustp1|             88|         10,741<br />(65.55%)|      2,267,965<br />(LDIR x 6.01)|
 |Bitbuster|debitbustp2|             96|         10,741<br />(65.55%)|      1,880,525<br />(LDIR x 4.99)|
 |BitBuster2|bitbuster|             91|         10,717<br />(65.41%)|      2,178,557<br />(LDIR x 5.78)|

@@ -46,6 +46,7 @@ rem Bitbuster1 / BitbusterExtreme
 sjasmplus --raw=depack.bin depack.gen
 
 sjasmplus --raw=debitbust.bin debitbust.asm
+sjasmplus --raw=debitbustp0.bin debitbustp0.asm
 sjasmplus --raw=debitbustp1.bin debitbustp1.asm
 sjasmplus --raw=debitbustp2.bin debitbustp2.asm
 

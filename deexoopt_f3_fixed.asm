@@ -3,6 +3,8 @@
 ;
 ;Optimized by Antonio Villena and Urusergi
 ;
+;Fixed a bug, and supported raw default on Exomizer3.0(-P7) / Exomizer3.1(-P39) by uniabis
+;
 ;Compression algorithm by Magnus Lind
 ;   exomizer raw -P7 -T0 (literals=1) (reuse=0)
 ;   exomizer raw -P7 -T1 (literals=0) (reuse=0)

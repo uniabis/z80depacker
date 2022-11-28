@@ -3,6 +3,8 @@
 ;
 ;Optimized by Antonio Villena and Urusergi
 ;
+;Fixed a bug, and optimized, and added support for all -P options by uniabis
+;
 ;Compression algorithm by Magnus Lind
 ;   exomizer raw -P15 -T0 (literals=1) (reuse=0)
 ;   exomizer raw -P15 -T1 (literals=0) (reuse=0)
@@ -31,6 +33,10 @@
     ;DEFINE back 1
   ENDIF
 
+  IFNDEF literals
+    DEFINE literals 0
+  ENDIF
+
   DEFINE PFLAG_BITS_ORDER_BE (1<<0)
   DEFINE PFLAG_BITS_COPY_GT_7 (1<<1)
   DEFINE PFLAG_IMPL_1LITERAL (1<<2)
@@ -49,7 +55,7 @@
     IFNDEF reuse
       ; -P15
       DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL | PFLAG_BITS_ALIGN_START)
-    ELSEIF reuse=0
+    ELSEIF reuse==0
       ; -P15
       DEFINE PFLAG_CODE (PFLAG_BITS_ORDER_BE | PFLAG_BITS_COPY_GT_7 | PFLAG_IMPL_1LITERAL | PFLAG_BITS_ALIGN_START)
     ELSE
@@ -248,7 +254,7 @@ gbic    inc     c
         jr      nc, getind
     IF  map_ofs==0
         bit     4, c
-      IF  literals=1
+      IF  literals==1
         jr      nz, litcat
       ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
         jr      nz, reuse_exit
@@ -256,7 +262,7 @@ gbic    inc     c
         ret     nz
       ENDIF
     ELSE
-      IF  literals=1
+      IF  literals==1
         jp      m, litcat
       ELSEIF (PFLAG_CODE & PFLAG_REUSE_OFFSET)
         jp      m, reuse_exit
@@ -376,7 +382,7 @@ useofs:
         jp      (ix)
       ENDIF
 
-    IF  literals=1
+    IF  literals==1
 litcat:
       IF  map_ofs==0
         bit     0, c
