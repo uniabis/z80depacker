@@ -132,10 +132,6 @@ depack_next_block:
 		dec a				; one less to decompress
 		ret
 
-
-		ENDIF
-
-		IFNDEF	DISABLE_BITBUSTER_BLOCKS
 ; FUNCTION:	depack_block
 ;	Depack data that was packed with Bitbuster.
 ;	Decompresses the RAW data, i.e. the data that is stored after the block count and block size!

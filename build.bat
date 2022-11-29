@@ -136,7 +136,8 @@ rem lz48
 
 sjasmplus --raw=lz48decrunch_v006_.bin lz48decrunch_v006_.asm
 
-sjasmplus --raw=lz48decrunch_v006__180.bin lz48decrunch_v006__180.asm
+sjasmplus --raw=lz48decrunch_v006_180_size.bin lz48decrunch_v006_180_size.asm
+sjasmplus --raw=lz48decrunch_v006_180_speed.bin lz48decrunch_v006_180_speed.asm
 
 rem lz49
 
