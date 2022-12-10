@@ -24,6 +24,7 @@
 ;   distribution.
 ;
 
+	;DEFINE	ALLOW_LENGTH_UNROLLING
 	;DEFINE	ALLOW_LDIR_UNROLLING
 	;DEFINE	ALLOW_INLINE_GETBIT
 
@@ -52,12 +53,20 @@ dlze_lp2:
 
 		GET_BIT
 		jr	c,dlze_far
-		ld	c,0
 
+	IFNDEF	ALLOW_LENGTH_UNROLLING
+		ld	c,080h
+dlze_lp3:
+		GET_BIT
+		rl	c
+		jr	c,dlze_lp3
+	ELSE
+		ld	c,0
 		GET_BIT
 		rl	c
 		GET_BIT
 		rl	c
+	ENDIF
 
 		push	hl
 		ld	l,(hl)
@@ -85,12 +94,20 @@ dlze_far:
 		inc	hl
 
 		ld	c,(hl)
+	IFNDEF	ALLOW_LENGTH_UNROLLING
+		ld	b,3
+dlze_lp4:
+		rra
+		rr	c
+		djnz	dlze_lp4
+	ELSE
 		rra
 		rr	c
 		rra
 		rr	c
 		rra
 		rr	c
+	ENDIF
 		or	0e0h
 		ld	b,a
 

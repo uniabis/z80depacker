@@ -25,6 +25,7 @@
 ;
 
 	;DEFINE	OBSOLETED_F4
+	;DEFINE	ALLOW_LENGTH_UNROLLING
 	;DEFINE	ALLOW_LDIR_UNROLLING
 	;DEFINE	ALLOW_INLINE_GETBIT
 
@@ -54,11 +55,19 @@ dlze_lp2:
 		GET_BIT
 		jr	c,dlze_far
 
+	IFNDEF	ALLOW_LENGTH_UNROLLING
+		ld	c,080h
+dlze_lp3:
+		GET_BIT
+		rl	c
+		jr	c,dlze_lp3
+	ELSE
 		ld	c,0
 		GET_BIT
 		rl	c
 		GET_BIT
 		rl	c
+	ENDIF
 
 		push	hl
 		ld	l,(hl)
@@ -70,7 +79,6 @@ dlze_copy:
 		add	hl,de
 	IFNDEF	ALLOW_LDIR_UNROLLING
 		inc	bc
-		
 		ldir
 	ELSE
 		ldir

@@ -72,6 +72,8 @@ rem sjasmplus -DINLINE_GETBIT=1 --raw=deexo_180_fast.bin deexo_180.asm
 
 sjasmplus -DINLINE_GETBIT=1 -DOPTIMIZE_JUMP=1 --raw=deexo_180_fast_jp.bin deexo_180.asm
 
+sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=0 -Dmapbase=0100h -Dliterals=1 --raw=deexoopt_x3_p0.bin deexoopt_x3.asm
+
 sjasmplus -DOPTIMIZE_JUMP=1 -DPFLAG_CODE=0 -Dmapbase=0100h -Dliterals=1 -DHD64180=1 --raw=deexoopt_x3_180_p0.bin deexoopt_x3.asm
 
 sjasmplus -DPFLAG_CODE=0 --raw=deexo3_p0.bin deexo3.asm 
@@ -283,6 +285,7 @@ rem zx5
 
 sjasmplus --raw=dzx5_standard.bin dzx5_standard.asm
 sjasmplus --raw=dzx5_turbo.bin dzx5_turbo.asm
+sjasmplus --raw=dzx5_turbo_rom.bin dzx5_turbo_rom.asm
 
 rem zx7
 

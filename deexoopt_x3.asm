@@ -313,7 +313,7 @@ readofs:
         push    hl
         inc     h
         dec     h
-        jr      nz, dontgo
+        jr      nz, fixhi
       IF (PFLAG_CODE & PFLAG_4_OFFSET_TABLES)
         ld      bc, 2*256+(map_ofs+64)/4
         dec     l
@@ -325,7 +325,7 @@ readofs:
         dec     l
         jr      z, goit
         dec     l
-dontgo  ld      bc, 4*256+(map_ofs+32)/16
+fixhi   ld      bc, 4*256+(map_ofs+32)/16
         jr      z, goit
         dec     c
 

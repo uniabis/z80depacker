@@ -103,7 +103,7 @@ unpack:
     exa
     ; BC = probs (context_index 0), state HL = 0, A' = 0x80 (no source bits left in upkr_current_byte)
 
-    jr      .decompress_data:
+    jr      .decompress_start
 
 .literal:
     IFNDEF UPKR_INVERT_IS_MATCH_BIT
@@ -127,6 +127,7 @@ unpack:
     ; values for false/true of prev_was_match are: false = high(probs), true = 1 + high(probs)
 .decompress_data:
     ld      c,0
+.decompress_start:
     call    decode_bit          ; if(upkr_decode_bit(0))
     IFDEF UPKR_INVERT_IS_MATCH_BIT
         jr      c,.literal
