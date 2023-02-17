@@ -40,6 +40,8 @@
 hst equ UPKR_HST_ORIGIN
     ELSE
 hst:
+
+    ; sjasmplus v1.20.2
     DUP 256, i
     db	low (i * i / 2)
     EDUP
@@ -316,19 +318,23 @@ decode_bit:
     neg                             ; A = -prob == (256-prob), CF=1 preserved
 .bit_is_0:
 
+
+;; multiplier algorithm 'minus-square' by skyriver
+;; https://piclabo.blog.ss-blog.jp/Z80MultiplicationOptimization
+;; 
+;; mulu8xu8tohl.start
+
     ;[input]
     ;a:arg1
     ;h:arg2
     ;[output]
     ;hl:arg1 * arg2
-    ;d:0
     ;e:arg1
-    ;b:0
-    ;c:preserve
+    ;c:preserved
+    ;[work]
+    ;b,d,a
 
-    ld      d,0
     ld      e,a
-    push    de
     ld      l,h
     and     l
     rra
@@ -348,16 +354,17 @@ decode_bit:
     neg ; if ( arg1 - arg2 < 0 ) a = -(arg1 - arg2);
 .grta1:
     ld      l,a
-    ld      e,(hl)
-    dec     h
     ld      a,b
+    ld      b,(hl)
+    dec     h
     sub     (hl)
     ld      l,a
     ld      a,d
-    sbc     a,e
+    sbc     a,b
     ld      h,a
 
-    pop     de
+;; mulu8xu8tohl.end
+    ld      d,0
     ld      b,d
 
     add     hl,bc                   ; HL = state_scale * (upkr_state >> 8) + (upkr_state & 255)
