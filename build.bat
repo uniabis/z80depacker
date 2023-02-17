@@ -246,6 +246,8 @@ sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_SELF_MODIFYING --raw=unpack_upk
 sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY -DUPKR_UNPACK_SPEED --raw=unpack_upkr_speed_rom.bin unpack_upkr.asm
 sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY --raw=unpack_upkr_size_rom.bin unpack_upkr.asm
 
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY --raw=unpack_upkr_minusquare.bin unpack_upkr_minusquare.asm
+
 rem zx0
 
 sjasmplus --raw=dzx0_mega.bin dzx0_mega.asm
