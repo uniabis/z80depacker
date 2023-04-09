@@ -77,11 +77,11 @@ License:LGPL
 
 ### [lzf](https://encode.su/threads/1819-LZF-Optimized-LZF-compressor) 1.03(cx)
 
-### [lzsa1](https://github.com/emmanuel-marty/lzsa) 1.4.0(-f1 -r)
+### [lzsa1](https://github.com/emmanuel-marty/lzsa) 1.4.1(-f1 -r)
 
 License:zlib
 
-### [lzsa2](https://github.com/emmanuel-marty/lzsa) 1.4.0(-f2 -r)
+### [lzsa2](https://github.com/emmanuel-marty/lzsa) 1.4.1(-f2 -r)
 
 License:zlib
 
@@ -93,7 +93,7 @@ License:zlib
 
 License:Mit
 
-### [RIP](https://gitlab.com/eugene77/rip) v2022.05.30
+### [RIP](https://gitlab.com/eugene77/rip) v2023.03.30
 
 [mRIP](https://gitlab.com/eugene77/mrip)
 
@@ -256,8 +256,8 @@ test data:DEOCM-PLD-CV BIOS(16x16KB)
 |MegaLZ|unmegalz_small|o|o|o|             88|63.93%|LDIR x 5.43||
 |Pletter|unpletter|o|x|o|            170|63.89%|LDIR x 4.77||
 |Pletter|unpletter_180|o|o|o|            145|63.89%|LDIR x 4.34|Support for hd64180, faster, shorter from unpletter|
-|RIP|derip_fast|o|o|x|            231|58.95%|LDIR x 22.26||
-|RIP|derip_small|o|o|x|            228|58.95%|LDIR x 26.01||
+|RIP|derip_fast|o|o|x|            231|58.95%|LDIR x 21.90||
+|RIP|derip_small|o|o|x|            228|58.95%|LDIR x 25.46||
 |RIP|derip_fast_rom|o|o|o|            231|58.95%|LDIR x 22.04|Support for ROM, bit faster from derip_fast|
 |RIP|derip_small_rom|o|o|o|            228|58.95%|LDIR x 25.60|Support for ROM, bit faster from derip_small|
 |mRIP|demrip_faster|o|o|o|            223|59.67%|LDIR x 22.03||
@@ -398,8 +398,8 @@ test data:ALL(16*16KB)
 |MegaLZ|unmegalz_small|             88|        167,609<br />(63.93%)|     32,779,690<br />(LDIR x 5.43)|
 |Pletter|unpletter|            170|        167,494<br />(63.89%)|     28,812,190<br />(LDIR x 4.77)|
 |Pletter|unpletter_180|            145|        167,494<br />(63.89%)|     26,186,463<br />(LDIR x 4.34)|
-|RIP|derip_fast|            231|        154,535<br />(58.95%)|    134,243,515<br />(LDIR x 22.26)|
-|RIP|derip_small|            228|        154,535<br />(58.95%)|    156,828,418<br />(LDIR x 26.01)|
+|RIP|derip_fast|            231|        154,535<br />(58.95%)|    132,080,977<br />(LDIR x 21.90)|
+|RIP|derip_small|            228|        154,535<br />(58.95%)|    153,560,544<br />(LDIR x 25.46)|
 |RIP|derip_fast_rom|            231|        154,535<br />(58.95%)|    132,918,621<br />(LDIR x 22.04)|
 |RIP|derip_small_rom|            228|        154,535<br />(58.95%)|    154,398,188<br />(LDIR x 25.60)|
 |mRIP|demrip_faster|            223|        156,445<br />(59.67%)|    132,848,485<br />(LDIR x 22.03)|
@@ -535,8 +535,8 @@ test data:MEGASDHC.B00(16KB)
 |MegaLZ|unmegalz_small|             88|          9,718<br />(59.31%)|      1,692,915<br />(LDIR x 4.49)|
 |Pletter|unpletter|            170|          9,706<br />(59.24%)|      1,459,575<br />(LDIR x 3.87)|
 |Pletter|unpletter_180|            145|          9,706<br />(59.24%)|      1,312,645<br />(LDIR x 3.48)|
-|RIP|derip_fast|            231|          9,011<br />(54.99%)|      7,852,091<br />(LDIR x 20.83)|
-|RIP|derip_small|            228|          9,011<br />(54.99%)|      9,171,146<br />(LDIR x 24.33)|
+|RIP|derip_fast|            231|          9,011<br />(54.99%)|      7,721,239<br />(LDIR x 20.48)|
+|RIP|derip_small|            228|          9,011<br />(54.99%)|      8,973,768<br />(LDIR x 23.81)|
 |RIP|derip_fast_rom|            231|          9,011<br />(54.99%)|      7,763,205<br />(LDIR x 20.60)|
 |RIP|derip_small_rom|            228|          9,011<br />(54.99%)|      9,015,734<br />(LDIR x 23.92)|
 |mRIP|demrip_faster|            223|          9,092<br />(55.49%)|      7,776,395<br />(LDIR x 20.63)|
@@ -672,8 +672,8 @@ test data:MEGASDHC.B01(16KB)
 |MegaLZ|unmegalz_small|             88|          5,124<br />(31.27%)|      1,204,930<br />(LDIR x 3.19)|
 |Pletter|unpletter|            170|          5,083<br />(31.02%)|        905,030<br />(LDIR x 2.40)|
 |Pletter|unpletter_180|            145|          5,083<br />(31.02%)|        830,503<br />(LDIR x 2.20)|
-|RIP|derip_fast|            231|          4,869<br />(29.71%)|      4,507,672<br />(LDIR x 11.96)|
-|RIP|derip_small|            228|          4,869<br />(29.71%)|      5,220,313<br />(LDIR x 13.85)|
+|RIP|derip_fast|            231|          4,869<br />(29.71%)|      4,437,806<br />(LDIR x 11.77)|
+|RIP|derip_small|            228|          4,869<br />(29.71%)|      5,114,597<br />(LDIR x 13.57)|
 |RIP|derip_fast_rom|            231|          4,869<br />(29.71%)|      4,462,701<br />(LDIR x 11.84)|
 |RIP|derip_small_rom|            228|          4,869<br />(29.71%)|      5,139,492<br />(LDIR x 13.63)|
 |mRIP|demrip_faster|            223|          4,877<br />(29.76%)|      4,444,263<br />(LDIR x 11.79)|
@@ -809,8 +809,8 @@ test data:MEGASDHC.B02(16KB)
 |MegaLZ|unmegalz_small|             88|         12,965<br />(79.13%)|      2,190,373<br />(LDIR x 5.81)|
 |Pletter|unpletter|            170|         12,945<br />(79.01%)|      1,990,443<br />(LDIR x 5.28)|
 |Pletter|unpletter_180|            145|         12,945<br />(79.01%)|      1,783,812<br />(LDIR x 4.73)|
-|RIP|derip_fast|            231|         12,047<br />(73.52%)|     10,312,955<br />(LDIR x 27.36)|
-|RIP|derip_small|            228|         12,047<br />(73.52%)|     12,073,292<br />(LDIR x 32.03)|
+|RIP|derip_fast|            231|         12,047<br />(73.52%)|     10,145,491<br />(LDIR x 26.92)|
+|RIP|derip_small|            228|         12,047<br />(73.52%)|     11,819,986<br />(LDIR x 31.36)|
 |RIP|derip_fast_rom|            231|         12,047<br />(73.52%)|     10,212,147<br />(LDIR x 27.09)|
 |RIP|derip_small_rom|            228|         12,047<br />(73.52%)|     11,886,642<br />(LDIR x 31.54)|
 |mRIP|demrip_faster|            223|         12,128<br />(74.02%)|     10,160,851<br />(LDIR x 26.96)|
@@ -946,8 +946,8 @@ test data:MEGASDHC.B03(16KB)
 |MegaLZ|unmegalz_small|             88|         12,660<br />(77.27%)|      2,100,232<br />(LDIR x 5.57)|
 |Pletter|unpletter|            170|         12,700<br />(77.51%)|      1,873,970<br />(LDIR x 4.97)|
 |Pletter|unpletter_180|            145|         12,700<br />(77.51%)|      1,675,739<br />(LDIR x 4.44)|
-|RIP|derip_fast|            231|         11,904<br />(72.65%)|     10,189,978<br />(LDIR x 27.04)|
-|RIP|derip_small|            228|         11,904<br />(72.65%)|     11,931,497<br />(LDIR x 31.66)|
+|RIP|derip_fast|            231|         11,904<br />(72.65%)|     10,021,220<br />(LDIR x 26.59)|
+|RIP|derip_small|            228|         11,904<br />(72.65%)|     11,675,819<br />(LDIR x 30.98)|
 |RIP|derip_fast_rom|            231|         11,904<br />(72.65%)|     10,082,165<br />(LDIR x 26.75)|
 |RIP|derip_small_rom|            228|         11,904<br />(72.65%)|     11,736,764<br />(LDIR x 31.14)|
 |mRIP|demrip_faster|            223|         11,978<br />(73.10%)|     10,053,579<br />(LDIR x 26.67)|
@@ -1083,8 +1083,8 @@ test data:MSX2MAIN.B00(16KB)
 |MegaLZ|unmegalz_small|             88|         13,072<br />(79.78%)|      2,163,810<br />(LDIR x 5.74)|
 |Pletter|unpletter|            170|         13,205<br />(80.59%)|      1,788,932<br />(LDIR x 4.74)|
 |Pletter|unpletter_180|            145|         13,205<br />(80.59%)|      1,587,148<br />(LDIR x 4.21)|
-|RIP|derip_fast|            231|         12,475<br />(76.14%)|     10,688,564<br />(LDIR x 28.36)|
-|RIP|derip_small|            228|         12,475<br />(76.14%)|     12,515,006<br />(LDIR x 33.21)|
+|RIP|derip_fast|            231|         12,475<br />(76.14%)|     10,508,730<br />(LDIR x 27.88)|
+|RIP|derip_small|            228|         12,475<br />(76.14%)|     12,242,660<br />(LDIR x 32.48)|
 |RIP|derip_fast_rom|            231|         12,475<br />(76.14%)|     10,572,619<br />(LDIR x 28.05)|
 |RIP|derip_small_rom|            228|         12,475<br />(76.14%)|     12,306,549<br />(LDIR x 32.65)|
 |mRIP|demrip_faster|            223|         12,552<br />(76.61%)|     10,556,339<br />(LDIR x 28.01)|
@@ -1220,8 +1220,8 @@ test data:MSX2MAIN.B01(16KB)
 |MegaLZ|unmegalz_small|             88|         13,917<br />(84.94%)|      2,186,081<br />(LDIR x 5.80)|
 |Pletter|unpletter|            170|         13,909<br />(84.89%)|      1,997,407<br />(LDIR x 5.30)|
 |Pletter|unpletter_180|            145|         13,909<br />(84.89%)|      1,780,994<br />(LDIR x 4.72)|
-|RIP|derip_fast|            231|         12,943<br />(78.99%)|     10,976,322<br />(LDIR x 29.12)|
-|RIP|derip_small|            228|         12,943<br />(78.99%)|     12,868,644<br />(LDIR x 34.14)|
+|RIP|derip_fast|            231|         12,943<br />(78.99%)|     10,794,552<br />(LDIR x 28.64)|
+|RIP|derip_small|            228|         12,943<br />(78.99%)|     12,593,610<br />(LDIR x 33.41)|
 |RIP|derip_fast_rom|            231|         12,943<br />(78.99%)|     10,858,208<br />(LDIR x 28.81)|
 |RIP|derip_small_rom|            228|         12,943<br />(78.99%)|     12,657,266<br />(LDIR x 33.58)|
 |mRIP|demrip_faster|            223|         12,996<br />(79.32%)|     10,819,405<br />(LDIR x 28.71)|
@@ -1357,8 +1357,8 @@ test data:MSXMUSIC.B00(16KB)
 |MegaLZ|unmegalz_small|             88|         10,407<br />(63.51%)|      1,825,109<br />(LDIR x 4.84)|
 |Pletter|unpletter|            170|         10,466<br />(63.87%)|      1,474,879<br />(LDIR x 3.91)|
 |Pletter|unpletter_180|            145|         10,466<br />(63.87%)|      1,319,962<br />(LDIR x 3.50)|
-|RIP|derip_fast|            231|          9,727<br />(59.36%)|      8,434,863<br />(LDIR x 22.38)|
-|RIP|derip_small|            228|          9,727<br />(59.36%)|      9,860,917<br />(LDIR x 26.16)|
+|RIP|derip_fast|            231|          9,727<br />(59.36%)|      8,292,039<br />(LDIR x 22.00)|
+|RIP|derip_small|            228|          9,727<br />(59.36%)|      9,644,035<br />(LDIR x 25.59)|
 |RIP|derip_fast_rom|            231|          9,727<br />(59.36%)|      8,334,493<br />(LDIR x 22.11)|
 |RIP|derip_small_rom|            228|          9,727<br />(59.36%)|      9,686,489<br />(LDIR x 25.70)|
 |mRIP|demrip_faster|            223|          9,873<br />(60.26%)|      8,400,523<br />(LDIR x 22.29)|
@@ -1494,8 +1494,8 @@ test data:MSX2EXT.B00(16KB)
 |MegaLZ|unmegalz_small|             88|         12,833<br />(78.32%)|      2,127,328<br />(LDIR x 5.64)|
 |Pletter|unpletter|            170|         12,858<br />(78.47%)|      2,027,765<br />(LDIR x 5.38)|
 |Pletter|unpletter_180|            145|         12,858<br />(78.47%)|      1,825,966<br />(LDIR x 4.84)|
-|RIP|derip_fast|            231|         11,891<br />(72.57%)|     10,197,317<br />(LDIR x 27.06)|
-|RIP|derip_small|            228|         11,891<br />(72.57%)|     11,937,762<br />(LDIR x 31.67)|
+|RIP|derip_fast|            231|         11,891<br />(72.57%)|     10,024,909<br />(LDIR x 26.60)|
+|RIP|derip_small|            228|         11,891<br />(72.57%)|     11,677,682<br />(LDIR x 30.98)|
 |RIP|derip_fast_rom|            231|         11,891<br />(72.57%)|     10,081,316<br />(LDIR x 26.75)|
 |RIP|derip_small_rom|            228|         11,891<br />(72.57%)|     11,734,089<br />(LDIR x 31.13)|
 |mRIP|demrip_faster|            223|         12,011<br />(73.30%)|     10,113,820<br />(LDIR x 26.83)|
@@ -1631,8 +1631,8 @@ test data:KANJJ1.B00(16KB)
 |MegaLZ|unmegalz_small|             88|          6,514<br />(39.75%)|      1,807,735<br />(LDIR x 4.79)|
 |Pletter|unpletter|            170|          6,511<br />(39.73%)|      1,461,388<br />(LDIR x 3.87)|
 |Pletter|unpletter_180|            145|          6,511<br />(39.73%)|      1,355,138<br />(LDIR x 3.59)|
-|RIP|derip_fast|            231|          5,833<br />(35.60%)|      5,430,824<br />(LDIR x 14.41)|
-|RIP|derip_small|            228|          5,833<br />(35.60%)|      6,281,948<br />(LDIR x 16.67)|
+|RIP|derip_fast|            231|          5,833<br />(35.60%)|      5,350,794<br />(LDIR x 14.19)|
+|RIP|derip_small|            228|          5,833<br />(35.60%)|      6,161,524<br />(LDIR x 16.35)|
 |RIP|derip_fast_rom|            231|          5,833<br />(35.60%)|      5,394,492<br />(LDIR x 14.31)|
 |RIP|derip_small_rom|            228|          5,833<br />(35.60%)|      6,205,222<br />(LDIR x 16.46)|
 |mRIP|demrip_faster|            223|          5,943<br />(36.27%)|      5,396,137<br />(LDIR x 14.31)|
@@ -1768,8 +1768,8 @@ test data:KANJJ1.B01(16KB)
 |MegaLZ|unmegalz_small|             88|          4,320<br />(26.36%)|      1,369,669<br />(LDIR x 3.63)|
 |Pletter|unpletter|            170|          4,269<br />(26.05%)|      1,106,926<br />(LDIR x 2.93)|
 |Pletter|unpletter_180|            145|          4,269<br />(26.05%)|      1,038,241<br />(LDIR x 2.75)|
-|RIP|derip_fast|            231|          3,750<br />(22.88%)|      3,709,061<br />(LDIR x 9.84)|
-|RIP|derip_small|            228|          3,750<br />(22.88%)|      4,255,711<br />(LDIR x 11.29)|
+|RIP|derip_fast|            231|          3,750<br />(22.88%)|      3,658,237<br />(LDIR x 9.70)|
+|RIP|derip_small|            228|          3,750<br />(22.88%)|      4,179,411<br />(LDIR x 11.09)|
 |RIP|derip_fast_rom|            231|          3,750<br />(22.88%)|      3,690,032<br />(LDIR x 9.79)|
 |RIP|derip_small_rom|            228|          3,750<br />(22.88%)|      4,211,206<br />(LDIR x 11.17)|
 |mRIP|demrip_faster|            223|          3,844<br />(23.46%)|      3,675,746<br />(LDIR x 9.75)|
@@ -1905,8 +1905,8 @@ test data:KANJJ1.B02(16KB)
 |MegaLZ|unmegalz_small|             88|         11,362<br />(69.34%)|      2,397,832<br />(LDIR x 6.36)|
 |Pletter|unpletter|            170|         11,340<br />(69.21%)|      2,176,730<br />(LDIR x 5.77)|
 |Pletter|unpletter_180|            145|         11,340<br />(69.21%)|      1,995,038<br />(LDIR x 5.29)|
-|RIP|derip_fast|            231|         10,330<br />(63.04%)|      8,910,791<br />(LDIR x 23.64)|
-|RIP|derip_small|            228|         10,330<br />(63.04%)|     10,419,107<br />(LDIR x 27.64)|
+|RIP|derip_fast|            231|         10,330<br />(63.04%)|      8,769,089<br />(LDIR x 23.27)|
+|RIP|derip_small|            228|         10,330<br />(63.04%)|     10,204,883<br />(LDIR x 27.08)|
 |RIP|derip_fast_rom|            231|         10,330<br />(63.04%)|      8,825,730<br />(LDIR x 23.42)|
 |RIP|derip_small_rom|            228|         10,330<br />(63.04%)|     10,261,524<br />(LDIR x 27.23)|
 |mRIP|demrip_faster|            223|         10,494<br />(64.05%)|      8,812,430<br />(LDIR x 23.38)|
@@ -2042,8 +2042,8 @@ test data:KANJJ1.B03(16KB)
 |MegaLZ|unmegalz_small|             88|         11,161<br />(68.12%)|      2,370,712<br />(LDIR x 6.29)|
 |Pletter|unpletter|            170|         11,105<br />(67.77%)|      2,137,378<br />(LDIR x 5.67)|
 |Pletter|unpletter_180|            145|         11,105<br />(67.77%)|      1,960,943<br />(LDIR x 5.20)|
-|RIP|derip_fast|            231|         10,146<br />(61.92%)|      8,746,889<br />(LDIR x 23.21)|
-|RIP|derip_small|            228|         10,146<br />(61.92%)|     10,227,463<br />(LDIR x 27.14)|
+|RIP|derip_fast|            231|         10,146<br />(61.92%)|      8,608,883<br />(LDIR x 22.84)|
+|RIP|derip_small|            228|         10,146<br />(61.92%)|     10,019,177<br />(LDIR x 26.58)|
 |RIP|derip_fast_rom|            231|         10,146<br />(61.92%)|      8,664,791<br />(LDIR x 22.99)|
 |RIP|derip_small_rom|            228|         10,146<br />(61.92%)|     10,075,085<br />(LDIR x 26.73)|
 |mRIP|demrip_faster|            223|         10,323<br />(63.00%)|      8,668,870<br />(LDIR x 23.00)|
@@ -2179,8 +2179,8 @@ test data:KANJJ1.B04(16KB)
 |MegaLZ|unmegalz_small|             88|         11,016<br />(67.23%)|      2,352,837<br />(LDIR x 6.24)|
 |Pletter|unpletter|            170|         10,992<br />(67.08%)|      2,130,343<br />(LDIR x 5.65)|
 |Pletter|unpletter_180|            145|         10,992<br />(67.08%)|      1,955,199<br />(LDIR x 5.18)|
-|RIP|derip_fast|            231|         10,021<br />(61.16%)|      8,669,912<br />(LDIR x 23.00)|
-|RIP|derip_small|            228|         10,021<br />(61.16%)|     10,132,533<br />(LDIR x 26.88)|
+|RIP|derip_fast|            231|         10,021<br />(61.16%)|      8,533,884<br />(LDIR x 22.64)|
+|RIP|derip_small|            228|         10,021<br />(61.16%)|      9,926,765<br />(LDIR x 26.34)|
 |RIP|derip_fast_rom|            231|         10,021<br />(61.16%)|      8,591,430<br />(LDIR x 22.79)|
 |RIP|derip_small_rom|            228|         10,021<br />(61.16%)|      9,984,311<br />(LDIR x 26.49)|
 |mRIP|demrip_faster|            223|         10,205<br />(62.28%)|      8,588,428<br />(LDIR x 22.79)|
@@ -2316,8 +2316,8 @@ test data:KANJJ1.B05(16KB)
 |MegaLZ|unmegalz_small|             88|         11,012<br />(67.21%)|      2,366,499<br />(LDIR x 6.27)|
 |Pletter|unpletter|            170|         10,908<br />(66.57%)|      2,106,071<br />(LDIR x 5.58)|
 |Pletter|unpletter_180|            145|         10,908<br />(66.57%)|      1,932,869<br />(LDIR x 5.12)|
-|RIP|derip_fast|            231|          9,968<br />(60.83%)|      8,625,287<br />(LDIR x 22.88)|
-|RIP|derip_small|            228|          9,968<br />(60.83%)|     10,079,245<br />(LDIR x 26.74)|
+|RIP|derip_fast|            231|          9,968<br />(60.83%)|      8,490,671<br />(LDIR x 22.53)|
+|RIP|derip_small|            228|          9,968<br />(60.83%)|      9,876,223<br />(LDIR x 26.20)|
 |RIP|derip_fast_rom|            231|          9,968<br />(60.83%)|      8,550,205<br />(LDIR x 22.68)|
 |RIP|derip_small_rom|            228|          9,968<br />(60.83%)|      9,935,757<br />(LDIR x 26.36)|
 |mRIP|demrip_faster|            223|         10,149<br />(61.94%)|      8,537,585<br />(LDIR x 22.65)|
@@ -2453,8 +2453,8 @@ test data:KANJJ1.B06(16KB)
 |MegaLZ|unmegalz_small|             88|         11,281<br />(68.85%)|      2,397,920<br />(LDIR x 6.36)|
 |Pletter|unpletter|            170|         11,252<br />(68.67%)|      2,178,723<br />(LDIR x 5.78)|
 |Pletter|unpletter_180|            145|         11,252<br />(68.67%)|      1,999,102<br />(LDIR x 5.30)|
-|RIP|derip_fast|            231|         10,284<br />(62.76%)|      8,877,058<br />(LDIR x 23.55)|
-|RIP|derip_small|            228|         10,284<br />(62.76%)|     10,376,899<br />(LDIR x 27.53)|
+|RIP|derip_fast|            231|         10,284<br />(62.76%)|      8,737,492<br />(LDIR x 23.18)|
+|RIP|derip_small|            228|         10,284<br />(62.76%)|     10,166,873<br />(LDIR x 26.97)|
 |RIP|derip_fast_rom|            231|         10,284<br />(62.76%)|      8,797,343<br />(LDIR x 23.34)|
 |RIP|derip_small_rom|            228|         10,284<br />(62.76%)|     10,226,724<br />(LDIR x 27.13)|
 |mRIP|demrip_faster|            223|         10,434<br />(63.68%)|      8,771,543<br />(LDIR x 23.27)|
@@ -2590,8 +2590,8 @@ test data:KANJJ1.B07(16KB)
 |MegaLZ|unmegalz_small|             88|         10,247<br />(62.54%)|      2,225,708<br />(LDIR x 5.90)|
 |Pletter|unpletter|            170|         10,245<br />(62.53%)|      1,996,630<br />(LDIR x 5.29)|
 |Pletter|unpletter_180|            145|         10,245<br />(62.53%)|      1,833,164<br />(LDIR x 4.86)|
-|RIP|derip_fast|            231|          9,336<br />(56.98%)|      8,113,931<br />(LDIR x 21.53)|
-|RIP|derip_small|            228|          9,336<br />(56.98%)|      9,476,935<br />(LDIR x 25.14)|
+|RIP|derip_fast|            231|          9,336<br />(56.98%)|      7,985,941<br />(LDIR x 21.19)|
+|RIP|derip_small|            228|          9,336<br />(56.98%)|      9,283,531<br />(LDIR x 24.63)|
 |RIP|derip_fast_rom|            231|          9,336<br />(56.98%)|      8,037,744<br />(LDIR x 21.32)|
 |RIP|derip_small_rom|            228|          9,336<br />(56.98%)|      9,335,334<br />(LDIR x 24.77)|
 |mRIP|demrip_faster|            223|          9,546<br />(58.26%)|      8,072,571<br />(LDIR x 21.42)|

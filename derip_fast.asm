@@ -1,10 +1,10 @@
 ; Recommended compiler: SjASM 1.07 (https://vtrd.in/pcutilz/SJASMRC7.zip)
-; Compiled size: 231 bytes; +17% speed to derip_small.asm
+; Compiled size: 231 bytes; +16.4% speed to derip_small.asm
 ; Params:
 ;  IX = src addr
 ;  DE = dest addr -1
 
-;        OUTPUT derip_f.C
+        OUTPUT derip.C
 
 workarea=#0800
 ;workarea=#F880 ;must be >=#0200, must be even
@@ -13,7 +13,7 @@ maintree=workarea
 tree=maintree+0x120*4
 bitlens2=tree+0x120
 
-;        ORG #5B00
+        ;ORG #5B00
 
         ;LD IX, src
         PUSH DE ;dest-1
@@ -53,7 +53,7 @@ GETLENQ PUSH BC
         EXX 
         LD DE,tree
         CALL mTRE
-		;LD HL,#2758:EXX ;uncomment if returning to Basic
+        ;LD HL,#2758:EXX ;uncomment if returning to Basic
         POP BC
 
         POP DE ;dest-1
@@ -135,7 +135,7 @@ mTRE1   LD B,A
         JR mTRE0
 mTREdip INC E,DE,E,DE
         LD (HL),D ;ptr to children
-        INC HL
+        INC L
         LD (HL),E
         LD H,D
         LD L,E
@@ -149,7 +149,7 @@ mTREY   CP C
         POP BC
         DEC BC
         LD (HL),B ;leaf
-        INC HL
+        INC L
         LD (HL),C
         LD C,A
         POP AF
@@ -162,7 +162,7 @@ LLEN    ADD A,-5
         RET NC
         LD L,1
         ADC A,L
-        RRA 
+        RRA
         RL L
         SRL C
         CALL Z, mWBYTE
@@ -179,7 +179,7 @@ mHFM    SRL C
         JR NC, $+4
         INC L,HL
         LD A,(HL)
-        INC HL
+        INC L
         CP H ;H>=2
         LD L,(HL)
         LD H,A
