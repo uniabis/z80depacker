@@ -8,7 +8,7 @@
 ;; otherwise it will be positioned after the unpacker code (256 aligned)
 ;;
 ;; multiplier algorithm 'minus-square' by skyriver
-;; https://piclabo.blog.ss-blog.jp/Z80MultiplicationOptimization
+;; https://piclabo.seesaa.net/article/Z80MultiplicationOptimization.html
 ;; you can define UPKR_HST_ORIGIN to specific 256 byte aligned address for half square table(512 bytes)
 ;; otherwise it will be positioned before the unpacker code
 ;;
@@ -320,7 +320,7 @@ decode_bit:
 
 
 ;; multiplier algorithm 'minus-square' by skyriver
-;; https://piclabo.blog.ss-blog.jp/Z80MultiplicationOptimization
+;; https://piclabo.seesaa.net/article/Z80MultiplicationOptimization.html
 ;; 
 ;; mulu8xu8tohl.start
 

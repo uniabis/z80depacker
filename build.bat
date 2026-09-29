@@ -206,7 +206,8 @@ rem pletter
 
 sjasmplus --raw=unpletter.bin unpletter.asm
 
-sjasmplus -DHD64180=1 --raw=unpletter_180.bin unpletter_180.asm
+sjasmplus --raw=unpletter_180.bin unpletter_180.asm
+sjasmplus --raw=unpletter_fast_180.bin unpletter_fast_180.asm
 
 rem rip
 
@@ -241,12 +242,13 @@ sjasmplus -DHD64180 --raw=deshrinkler_np_p1_180.bin deshrinkler_np_p1.asm
 
 rem upkr
 
-sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_SELF_MODIFYING -DUPKR_UNPACK_SPEED --raw=unpack_upkr_speed.bin unpack_upkr.asm
-sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_SELF_MODIFYING --raw=unpack_upkr_size.bin unpack_upkr.asm
-sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY -DUPKR_UNPACK_SPEED --raw=unpack_upkr_speed_rom.bin unpack_upkr.asm
-sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY --raw=unpack_upkr_size_rom.bin unpack_upkr.asm
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_SELF_MODIFYING -DUPKR_UNPACK_SPEED --raw=unpack_upkr_z80_speed.bin unpack_upkr_z80.asm
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_SELF_MODIFYING --raw=unpack_upkr_z80_size.bin unpack_upkr_z80.asm
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY -DUPKR_UNPACK_SPEED --raw=unpack_upkr_z80_speed_rom.bin unpack_upkr_z80.asm
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY --raw=unpack_upkr_z80_size_rom.bin unpack_upkr_z80.asm
 
-sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY --raw=unpack_upkr_minusquare.bin unpack_upkr_minusquare.asm
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY --raw=unpack_upkr_z80_minusquare.bin unpack_upkr_z80_minusquare.asm
+sjasmplus -DUPKR_PROBS_ORIGIN=$3000 -DUPKR_ALLOW_USE_IY --raw=unpack_upkr_z80_difave.bin unpack_upkr_z80_difave.asm
 
 rem zx0
 
