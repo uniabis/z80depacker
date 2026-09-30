@@ -25,17 +25,17 @@ License:MIT
 
 ### [BitBuster2](https://github.com/abekermsx/Bitbuster-2)
 
-### [Exomizer2](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.1.1(raw -P0)
+### [Exomizer2](https://bitbucket.org/magli143/exomizer) [v3.1.2](https://web.archive.org/web/20260328174834/https://bytebucket.org/magli143/exomizer/wiki/downloads/exomizer-3.1.2.zip?rev=2ef89043a8d6e07c76cfb5bd44c3e208f01ed4bb)(raw -P0)
 
 License:LGPL
 
-### [Exomizer3.0](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.1.1(raw -P7)
+### [Exomizer3.0](https://bitbucket.org/magli143/exomizer) [v3.1.2](https://web.archive.org/web/20260328174834/https://bytebucket.org/magli143/exomizer/wiki/downloads/exomizer-3.1.2.zip?rev=2ef89043a8d6e07c76cfb5bd44c3e208f01ed4bb)(raw -P7)
 
 License:LGPL
 
 [deexoopt](https://github.com/antoniovillena/deexo)
 
-### [Exomizer3.1](https://bitbucket.org/magli143/exomizer/wiki/Home) v3.1.1(raw -P39)
+### [Exomizer3.1](https://bitbucket.org/magli143/exomizer) [v3.1.2](https://web.archive.org/web/20260328174834/https://bytebucket.org/magli143/exomizer/wiki/downloads/exomizer-3.1.2.zip?rev=2ef89043a8d6e07c76cfb5bd44c3e208f01ed4bb)(raw -P39)
 
 License:LGPL
 
